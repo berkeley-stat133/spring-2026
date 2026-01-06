@@ -1,6 +1,6 @@
 ---
 title: "Statistics 133: Concepts in Computing with Data"
-subtitle: "UC Berkeley, STAT 133, Spring 2025"
+subtitle: "UC Berkeley, STAT 133, Spring 2026"
 listing:
   - id: schedule
     template: schedule.ejs
