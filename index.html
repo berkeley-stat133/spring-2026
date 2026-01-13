@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.7.28">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistics 133: Concepts in Computing with Data</title>
+<title>STAT 133: Concepts in Computing with Data – STAT 133</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,20 +30,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./assets/favicon.ico" rel="icon">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<link href="./assets/stat133-hex-logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0229372d3681f9145429f15426e7efd2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b880a317d4e47616d5831ba0a659ac23.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,63 +68,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-schedule .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-week','listing-days',{ data: ['index'] },{ data: ['categories'] }],
-      
-      searchColumns: ["listing-week","listing-days"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-schedule'] = new List('listing-schedule', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-buttons .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-button','listing-link','listing-color',{ data: ['index'] },{ data: ['categories'] }],
-      
-      searchColumns: ["listing-button","listing-link","listing-color"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-buttons'] = new List('listing-buttons', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CES9J82GLL"></script>
 
 <script type="text/javascript">
@@ -137,39 +77,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </script>
-<script async="" src="”https://siteimproveanalytics.com/js/siteanalyze_6294756.js”"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -181,7 +91,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home / Schedule</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -196,14 +106,10 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./assets/stat_bear.png" alt="UC Berkeley Statistics logo" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="./assets/stat_bear.png" alt="UC Berkeley Statistics logo" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <img src="./assets/stat133-hex-logo-small.png" alt="UC Berkeley Statistics logo" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">STAT 133 <br><small>Spring 2026</small></a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/berkeley-stat133/spring-2026" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -216,7 +122,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Home / Schedule</span></a>
+ <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -231,175 +137,32 @@ window.Quarto = {
  <span class="menu-text">About</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Units</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./units/unit1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1) Intro</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./units/unit2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2) R Vectors</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./units/unit3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3) Lists and Matrices</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./units/unit4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4) Functions and Conditionals</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./units/unit5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5) Tables and Tidyverse-1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./units/unit6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6) Tables and Tidyverse-2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./units/unit7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7) Iterations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./units/unit8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8) Regular Expressions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./units/unit9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9) Text Mining 1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./units/unit10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10) Text Mining 2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./units/unit11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11) Maps 1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./units/unit12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12) Maps 2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./units/unit13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13) Web Tech 1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./units/unit14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">14) Web Tech 2</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Other</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./staff.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Staff</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cheatsheets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Cheatsheets</span></a>
+ <span class="menu-text">Cheat Sheets</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./email.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Email</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./ed-netiquette.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ed Netiquette</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./faqs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FAQs</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./five-things.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5 Things to know</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./license.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">License</span></a>
   </div>
 </li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#schedule" id="toc-schedule" class="nav-link active" data-scroll-target="#schedule">Schedule 📅</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Statistics 133: Concepts in Computing with Data</h1>
-<p class="subtitle lead">UC Berkeley, STAT 133, Spring 2026</p>
+<h1 class="title">STAT 133: Concepts in Computing with Data</h1>
 </div>
 
 
@@ -416,2200 +179,444 @@ window.Quarto = {
 </header>
 
 
-<div id="listing-buttons" class="quarto-listing quarto-listing-container-custom">
-
-  <button style="background-color: #e7298a;"><a href="https://bcourses.berkeley.edu/courses/1541135">bCourses</a></button>
-
-  <button style="background-color: #7570b3;"><a href="https://edstem.org/us/courses/70355/discussion/">Ed</a></button>
-
-  <button style="background-color: #666666;"><a href="https://r.datahub.berkeley.edu">R-DataHub</a></button>
-
-<div class="listing-no-matching d-none">No matching items</div>
+<div class="quarto-layout-panel" data-layout-ncol="4">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 10.0%;justify-content: flex-start;">
+<p><a href="https://edstem.org/us/courses/92259/discussion" class="btn btn-info" role="button">Ed</a></p>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Announcements 📣">
+<div class="column quarto-layout-cell" style="flex-basis: 15.0%;justify-content: flex-start;">
+<p><a href="https://bcourses.berkeley.edu/courses/1551809" class="btn btn-primary" role="button">bCourses</a></p>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<p><a href="https://r.datahub.berkeley.edu/" class="btn btn-secondary" role="button">R-DataHub</a></p>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Announcements 📣
+Announcements
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Final Exam on May-14th (7-10pm)</p>
-<p>See reminders in bCourses</p>
+<p>See you on Wed 1/21.</p>
+<p>BTW: There is nothing due this first week.</p>
 </div>
 </div>
-<section id="schedule" class="level2">
-<h2 class="anchored" data-anchor-id="schedule">Schedule 📅</h2>
-<p>Tentative calendar subject to change.</p>
-<div id="listing-schedule" class="quarto-listing quarto-listing-container-custom">
-<h4 class="anchored">Week 1</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">About</th>
-             
-             
-               <td><strong class="label label-Overview">Overview </strong> <a href="./units/unit1.html" target="_blank">Unit 1: Introduction</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Jan 22</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="slides/stat133-00-intro1-welcome.pdf" target="_blank">Welcome to Stat 133 (slides)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Jan 23</th>
-             
-             
-               <td><strong class="label label-Labwork">Labwork </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841737" target="_blank">Lab 1: Intro to R and RStudio</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Jan 24</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-ice-breaker/1-08-session-management.html" target="_blank">R Housekeeping (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-00-intro2-RStudio.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-     </tbody>
-  
-   </table>
-  
-
-   <h4 class="anchored">Week 2</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">About</th>
-             
-             
-               <td><strong class="label label-Overview">Overview </strong> <a href="./units/unit2.html" target="_blank">Unit 2: R Vectors</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Jan 27</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-coding-basics/1-01-vectors-intro.html" target="_blank">Vectors, part 1 (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-01-objs1-vectors-part1.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90887798" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Lectur2">Lectur2 </strong> <a href="https://www.gastonsanchez.com/R-coding-basics/1-02-vectors-properties.html" target="_blank">Vectors, part 2 (notes)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Jan 29</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-coding-basics/1-03-vectors-creation.html" target="_blank">Vectors, part 3 (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-01-objs1-vectors-part2.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90887799" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Lectur2">Lectur2 </strong> <a href="https://www.gastonsanchez.com/R-coding-basics/1-04-vectors-concepts.html" target="_blank">Vectors, part 4 (notes)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Jan 30</th>
-             
-             
-               <td><strong class="label label-Labwork">Labwork </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841738" target="_blank">Lab 2: Vectors  (due 1/31)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Jan 31</th>
-             
-             
-               <td><strong class="label label-Shiny">Shiny </strong> <a href="https://github.com/data133/shiny/tree/main/old-faithful1-default" target="_blank">Shiny Friday: Old Faithful (default app)</a></td>
-             
-             
-               <td><a href="slides/shiny-tutorial-part1-by-Garret-Grolemund.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Homework">Homework </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841731" target="_blank">HW 1: Vectors (avail 2/01, due 2/07)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-     </tbody>
-  
-   </table>
-  
-
-   <h4 class="anchored">Week 3</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">About</th>
-             
-             
-               <td><strong class="label label-Overview">Overview </strong> <a href="./units/unit3.html" target="_blank">Unit 3: R Matrices and Lists</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Feb 3</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-coding-basics/3-01-matrices-intro.html" target="_blank">Matrices, part 1 (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-01-objs2-matrices-factors.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90887800" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Lectur2">Lectur2 </strong> <a href="https://www.gastonsanchez.com/R-coding-basics/3-02-matrices-operations.html" target="_blank">Matrices, part 2 (notes)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Feb 5</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-coding-basics/4-01-lists.html" target="_blank">Lists (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-01-objs3-lists.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90903774" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Feb 6</th>
-             
-             
-               <td><strong class="label label-Labwork">Labwork </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841739" target="_blank">Lab 3: Lists and Matrices (due 2/07)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Feb 7</th>
-             
-             
-               <td><strong class="label label-Shiny">Shiny </strong> <a href="https://github.com/data133/shiny/blob/main/future-value2-sliders/app.R" target="_blank">Shiny Friday: Future Value</a></td>
-             
-             
-               <td><a href="slides/stat133-01-shiny-future-value.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Homework">Homework </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841732" target="_blank">HW 2: Lists &amp; Matrices (avail 2/08, due 2/14)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-     </tbody>
-  
-   </table>
-  
-
-   <h4 class="anchored">Week 4</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">About</th>
-             
-             
-               <td><strong class="label label-Overview">Overview </strong> <a href="./units/unit4.html" target="_blank">Unit 4: Simple Functions and Conditionals</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Feb 10</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-coding-basics/5-01-functions-intro.html" target="_blank">Intro to Functions (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-02-prog1-intro-functions.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90974345" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Lectur2">Lectur2 </strong> <a href="https://www.gastonsanchez.com/R-coding-basics/5-02-expressions.html" target="_blank">R Compound Expressions (notes)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Feb 12</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-coding-basics/5-03-conditionals.html" target="_blank">If-else statements (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-02-prog2-if-else.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=90974346" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Feb 13</th>
-             
-             
-               <td><strong class="label label-Labwork">Labwork </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841740" target="_blank">Lab 4: Functions and If-else (due 2/14)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Feb 14</th>
-             
-             
-               <td><strong class="label label-Shiny">Shiny </strong> <a href="https://github.com/data133/shiny/blob/main/old-faithful3-average-radio/app.R" target="_blank">Shiny Friday: Old Faithful revisited</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Homework">Homework </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841733" target="_blank">HW 3: Functions (avail 2/15, due 2/21)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-     </tbody>
-  
-   </table>
-  
-
-   <h4 class="anchored">Week 5</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">About</th>
-             
-             
-               <td><strong class="label label-Overview">Overview </strong> <a href="./units/unit5.html" target="_blank">Unit 5: Tables and Tidyverse (part 1)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Feb 17</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> Academic Holiday (no class)</td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Feb 19</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-tidy-hurricanes/2-01-intro-ggplot.html" target="_blank">Graphics with ggplot2 (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-01-objs4-data-frames.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91028584" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Lectur2">Lectur2 </strong> <a href="https://www.gastonsanchez.com/R-tidy-hurricanes/3-02-storms-1975.html" target="_blank">More graphics with ggplot2 (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-03-tables1-grammar-graphics.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Feb 20</th>
-             
-             
-               <td><strong class="label label-Labwork">Labwork </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841742" target="_blank">Lab 5a: Intro to ggplot2 (due 2/21)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Labwork2">Labwork2 </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841754" target="_blank">Lab 5b: Shiny app Old Faithful w/ggplot2</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Feb 21</th>
-             
-             
-               <td><strong class="label label-Shiny">Shiny </strong> <a href="https://github.com/data133/shiny/blob/main/mtcars-scatterplots1-ggplot/app.R" target="_blank">Shiny Friday: graphics with ggplot</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Homework">Homework </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841734" target="_blank">HW4: Graphics (avail 2/22, due 2/28)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-     </tbody>
-  
-   </table>
-  
-
-   <h4 class="anchored">Week 6</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">About</th>
-             
-             
-               <td><strong class="label label-Overview">Overview </strong> <a href="./units/unit6.html" target="_blank">Unit 6: Tables and Tidyverse (part 2)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Feb 24</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-tidy-hurricanes/2-02-intro-dplyr.html" target="_blank">Manipulating tables with dplyr (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-03-tables2-intro-dplyr.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91074701" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Feb 26</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-tidy-hurricanes/2-03-intro-pipes.html" target="_blank">More dplyr (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-03-tables3-more-dplyr.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91097212" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Feb 27</th>
-             
-             
-               <td><strong class="label label-Labwork">Labwork </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841743" target="_blank">Lab 6: Intro to dplyr (due 2/28)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Feb 28</th>
-             
-             
-               <td><strong class="label label-Shiny">Shiny </strong> <a href="https://github.com/data133/shiny/blob/main/mtcars-topn-barchart/app.R" target="_blank">Shiny Friday: Top-n mtcars</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Homework">Homework </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841735" target="_blank">HW5: Data Wrangling (avail 3/01, due 3/07)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-     </tbody>
-  
-   </table>
-  
-
-   <h4 class="anchored">Week 7</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">About</th>
-             
-             
-               <td><strong class="label label-Overview">Overview </strong> <a href="./units/unit7.html" target="_blank">Unit 7: Iterations and Loops</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Mar 3</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-coding-basics/5-04-for-loop.html" target="_blank">Iterations (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-02-prog3-for-loop.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91145077" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Mar 5</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-coding-basics/5-05-while-loop.html" target="_blank">More Iterations and Simulations (slides)</a></td>
-             
-             
-               <td><a href="slides/stat133-02-prog4-apply-loops.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91172407" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Midterm">Midterm </strong> See announcement in bCourses</td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Mar 6</th>
-             
-             
-               <td><strong class="label label-Labwork">Labwork </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841744" target="_blank">Lab 7: Loops in R (due 3/07)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Mar 7</th>
-             
-             
-               <td><strong class="label label-Shiny">Shiny </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos/shiny-app6?preview=91188169" target="_blank">Shiny Friday: Simulations</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91187994" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Homework">Homework </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841736" target="_blank">HW6: Iterations (avail 3/08, due 3/14)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-     </tbody>
-  
-   </table>
-  
-
-   <h4 class="anchored">Week 8</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">About</th>
-             
-             
-               <td><strong class="label label-Overview">Overview </strong> <a href="./units/unit8.html" target="_blank">Unit 8: Regular Expressions</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Mar 10</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-for-strings/08-regex-intro.html" target="_blank">Intro to Regular Expressions (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-04-regex1-part1.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91219310" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Lectur2">Lectur2 </strong> <a href="https://www.gastonsanchez.com/R-for-strings/09-regex-charsets.html" target="_blank">Character sets (notes)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Mar 12</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-for-strings/10-regex-anchors.html" target="_blank">Anchors (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-04-regex2-part2.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91243111" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Lectur2">Lectur2 </strong> <a href="https://www.gastonsanchez.com/R-for-strings/11-regex-quantifiers.html" target="_blank">Quantifiers (notes)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Mar 13</th>
-             
-             
-               <td><strong class="label label-Labwork">Labwork </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841746" target="_blank">Lab 8a: Publishing a shiny app (due 3/14)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Labwork2">Labwork2 </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841747" target="_blank">Lab 8b: Intro to Regex (due 3/14)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Mar 14</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-for-strings/12-regex-boundaries.html" target="_blank">Look Arounds (notes)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91257331" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Homework">Homework </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841728" target="_blank">Shiny App-1 (avail 3/15, due 4/04)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-     </tbody>
-  
-   </table>
-  
-
-   <h4 class="anchored">Week 9</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">About</th>
-             
-             
-               <td><strong class="label label-Overview">Overview </strong> <a href="./units/unit9.html" target="_blank">Unit 9: Text Mining 1</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Mar 17</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.tidytextmining.com/tidytext" target="_blank">Text Mining, introduction (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-05-text1-mining-intro.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91289066" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Mar 19</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.tidytextmining.com/tidytext" target="_blank">Text Mining, word frequencies (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-05-text2-mining-tidytext.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91316198" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Mar 20</th>
-             
-             
-               <td><strong class="label label-Labwork">Labwork </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841748" target="_blank">Lab 9: More Regex (due 3/21)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Mar 21</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.tidytextmining.com/ngrams" target="_blank">Text Mining, part 3</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91331554" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-     
-     </tbody>
-  
-   </table>
-  
-
-   <h4 class="anchored">Week Spring Recess</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">None</th>
-             
-             
-               <td><strong class="label label-None">None </strong> </td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-     </tbody>
-  
-   </table>
-  
-
-   <h4 class="anchored">Week 10</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">About</th>
-             
-             
-               <td><strong class="label label-Overview">Overview </strong> <a href="./units/unit10.html" target="_blank">Unit 10: Text Mining 2</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Mar 31</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.tidytextmining.com/sentiment" target="_blank">Sentiment Analysis 1 (notes)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91368010" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Apr 2</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.tidytextmining.com/sentiment" target="_blank">Sentiment Analysis 2 (notes)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91387030" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Lectur2">Lectur2 </strong> <a href="https://stat133.berkeley.edu/fall-2024/docs/tm-correspondence/text-mining-corresp-analysis1.html" target="_blank">Correspondence Analysis (notes)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Apr 3</th>
-             
-             
-               <td><strong class="label label-Labwork">Labwork </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841749" target="_blank">Lab 10: Text Mining (due 4/04)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Apr 4</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://stat133.berkeley.edu/fall-2024/docs/tm-correspondence/text-mining-corresp-analysis2.html" target="_blank">More Correspondence Analysis (notes)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Homework">Homework </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841729" target="_blank">Shiny App-2 (avail 4/05, due 4/18)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-     </tbody>
-  
-   </table>
-  
-
-   <h4 class="anchored">Week 11</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">About</th>
-             
-             
-               <td><strong class="label label-Overview">Overview </strong> <a href="./units/unit11.html" target="_blank">Unit 11: Geospatial Data 1</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Apr 7</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-tidy-hurricanes/5-03-maps-sf.html" target="_blank">Mapping Storms, simple features (notes)</a></td>
-             
-             
-               <td><a href="https://bcourses.berkeley.edu/files/91437291/download?download_frd=1" target="_blank">Slides</a></td>
-              
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Apr 9</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-tidy-hurricanes/5-04-maps-leaflet.html" target="_blank">Mapping Storms, leaflet (notes)</a></td>
-             
-             
-               <td><a href="https://bcourses.berkeley.edu/files/91455032/download?download_frd=1" target="_blank">Slides</a></td>
-              
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Apr 10</th>
-             
-             
-               <td><strong class="label label-Labwork">Labwork </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841750" target="_blank">Lab 11: Maps 1 (due 4/11)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Apr 11</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> Mapping Storms (part 3)</td>
-             
-             
-               <td> </td>
-             
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91464129" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-     
-     </tbody>
-  
-   </table>
-  
-
-   <h4 class="anchored">Week 12</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">About</th>
-             
-             
-               <td><strong class="label label-Overview">Overview </strong> <a href="./units/unit12.html" target="_blank">Unit 12: Geospatial Data 2</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Apr 14</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91476801" target="_blank">Choropleth maps 1</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91476801" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Apr 16</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="docs/choropleth/us-elections-slides1.html" target="_blank">Choropleth maps 2</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91505786" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Apr 17</th>
-             
-             
-               <td><strong class="label label-Labwork">Labwork </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841751" target="_blank">Lab 12: Maps 2 (due 4/18)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Apr 18</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91526425" target="_blank">Choropleth maps 3</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91526425" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Homework">Homework </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841730" target="_blank">Shiny App-3 (avail 4/19, due 5/02)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-     </tbody>
-  
-   </table>
-  
-
-   <h4 class="anchored">Week 13</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">About</th>
-             
-             
-               <td><strong class="label label-Overview">Overview </strong> <a href="./units/unit13.html" target="_blank">Unit 13: Web Tech 1</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Apr 21</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-web-technologies/3-01-json.html" target="_blank">JSON data (notes)</a></td>
-             
-             
-               <td><a href="docs/api-open-notify/open-notify-slides.html" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91550558" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Apr 23</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-web-technologies/4-02-api-open-notify.html" target="_blank">APIs (notes)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91672460" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Apr 24</th>
-             
-             
-               <td><strong class="label label-Labwork">Labwork </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841752" target="_blank">Lab 13: Bart API (due 4/25)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Apr 25</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-web-technologies/2-01-xml.html" target="_blank">XML 1 (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-07-web2-xml-intro.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91672463" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-     
-     </tbody>
-  
-   </table>
-  
-
-   <h4 class="anchored">Week 14</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">About</th>
-             
-             
-               <td><strong class="label label-Overview">Overview </strong> <a href="./units/unit14.html" target="_blank">Unit 14: Web Tech 2</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="2">Apr 28</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-web-technologies/2-02-parsing-xml.html" target="_blank">Xpath (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-07-web3-parsing-xml.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td><a href="https://bcourses.berkeley.edu/courses/1541135/files/folder/demos?preview=91676685" target="_blank">Demo</a></td>
-              
-                  
-             </tr>
-          
-  
-  
-  
-             <tr>
-             
-             
-               <td><strong class="label label-Lectur2">Lectur2 </strong> <a href="https://www.gastonsanchez.com/R-web-technologies/2-03-xpath.html" target="_blank">Xpath (notes)</a></td>
-             
-             
-               <td><a href="slides/stat133-07-web3-parsing-xml.pdf" target="_blank">Slides</a></td>
-              
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">Apr 30</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> <a href="https://www.gastonsanchez.com/R-web-technologies/2-04-html.html" target="_blank">Web Scraping: HTML (notes)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">May 1</th>
-             
-             
-               <td><strong class="label label-Labwork">Labwork </strong> <a href="https://bcourses.berkeley.edu/courses/1541135/assignments/8841753" target="_blank">Lab 14: Web Scraping (due 5/02)</a></td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">May 2</th>
-             
-             
-               <td><strong class="label label-Lecture">Lecture </strong> Closing Talk</td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-     </tbody>
-  
-   </table>
-  
-
-   <h4 class="anchored">Week 15</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">About</th>
-             
-             
-               <td><strong class="label label-Overview">Overview </strong> RRR Week</td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-     </tbody>
-  
-   </table>
-  
-
-   <h4 class="anchored">Week 16</h4>
-
-   <table class="table" data-quarto-disable-processing="true">
-   <!-- 'table' class causes use of quarto styling for tables, seemingly from bootstrap.min.css -->
-   <!-- data-quarto-disable-processing="true" prevents Quarto processing of tables (https://quarto.org/docs/authoring/tables.html#disabling-quarto-table-processing) -->
-   
-   <tbody>
-     
-  
-          
-  
-  
-  
-             <tr>
-             
-             <th scope="row" rowspan="1">May 14</th>
-             
-             
-               <td><strong class="label label-Final">Final </strong> Final Exam 5/14 (see announcement in bCourses)</td>
-             
-             
-               <td> </td>
-             
-             
-               <td> </td>
-             
-                  
-             </tr>
-          
-     
-     </tbody>
-  
-   </table>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
-
-
-
+<hr>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<section id="week-1" class="level4">
+<h4 class="anchored" data-anchor-id="week-1">Week 1</h4>
+<ul>
+<li><p>Wed 1/21</p></li>
+<li><p><span class="label-Labwork">Thu 1/22</span></p></li>
+<li><p>Fri 1/23</p></li>
+</ul>
 </section>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<section id="description" class="level4">
+<h4 class="anchored" data-anchor-id="description">Description</h4>
+<p>Welcome</p>
+<p>Lab 1: slides</p>
+<p>Introduction</p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<section id="week-2" class="level4">
+<h4 class="anchored" data-anchor-id="week-2">Week 2</h4>
+<ul>
+<li><p>Mon 1/26</p></li>
+<li><p>Wed 1/28</p></li>
+<li><p><span class="label-Labwork">Thu 1/29</span></p></li>
+<li><p>Fri 1/30</p></li>
+</ul>
+</section>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<section id="description-1" class="level4">
+<h4 class="anchored" data-anchor-id="description-1">Description</h4>
+<p>Vectors</p>
+<p>Working with Vectors</p>
+<p>Lab 2: slides | PS1 | <span class="label-Pub">due: Pub1</span></p>
+<p>Unix Basics | Proj1</p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<section id="week-3" class="level4">
+<h4 class="anchored" data-anchor-id="week-3">Week 3</h4>
+<ul>
+<li><p>Mon 2/2</p></li>
+<li><p>Wed 2/4</p></li>
+<li><p><span class="label-Labwork">Thu 2/5</span></p></li>
+<li><p>Fri 2/6</p></li>
+</ul>
+</section>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<section id="description-2" class="level4">
+<h4 class="anchored" data-anchor-id="description-2">Description</h4>
+<p>Extending Vectors</p>
+<p>Lists | <span class="label-Homework">due: PS1</span></p>
+<p>Lab 3: <span class="label-Quiz"><strong>Quiz 1</strong></span> | slides | PS2 | <span class="label-Pub">due: Pub2</span></p>
+<p>Control Flow</p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<section id="week-4" class="level4">
+<h4 class="anchored" data-anchor-id="week-4">Week 4</h4>
+<ul>
+<li><p>Mon 2/9</p></li>
+<li><p>Wed 2/11</p></li>
+<li><p><span class="label-Labwork">Thu 2/12</span></p></li>
+<li><p>Fri 2/13</p></li>
+</ul>
+</section>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<section id="description-3" class="level4">
+<h4 class="anchored" data-anchor-id="description-3">Description</h4>
+<p>Functions</p>
+<p>Factors and Data Frames | <span class="label-Homework">due: PS2</span></p>
+<p>Lab 4: slides | PS3 | <span class="label-Pub">due: Pub3</span></p>
+<p>Data Wrangling I | Proj2 | <span class="label-Project">due: Proj1</span></p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<section id="week-5" class="level4">
+<h4 class="anchored" data-anchor-id="week-5">Week 5</h4>
+<ul>
+<li><p><span class="label-None">Mon 2/16</span></p></li>
+<li><p>Wed 2/18</p></li>
+<li><p><span class="label-Labwork">Thu 2/19</span></p></li>
+<li><p>Fri 2/20</p></li>
+</ul>
+</section>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<section id="description-4" class="level4">
+<h4 class="anchored" data-anchor-id="description-4">Description</h4>
+<p><span class="label-None">No class</span></p>
+<p>Data Wrangling II | <span class="label-Homework">due: PS3</span></p>
+<p>Lab 5: <span class="label-Quiz"><strong>Quiz 2</strong></span> | slides | PS4 | <span class="label-Pub">due: Pub4</span></p>
+<p>Importing Tables</p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<section id="week-6" class="level4">
+<h4 class="anchored" data-anchor-id="week-6">Week 6</h4>
+<ul>
+<li><p>Mon 2/23</p></li>
+<li><p>Wed 2/25</p></li>
+<li><p><span class="label-Labwork">Thu 2/26</span></p></li>
+<li><p>Fri 2/27</p></li>
+</ul>
+</section>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<section id="description-5" class="level4">
+<h4 class="anchored" data-anchor-id="description-5">Description</h4>
+<p>Dataviz I</p>
+<p>Dataviz II | <span class="label-Homework">due: PS4</span></p>
+<p>Lab 5: slides | PS5 | <span class="label-Pub">due: Pub5</span></p>
+<p>Dataviz III | Proj3 | <span class="label-Project">due: Proj2</span></p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<section id="week-7" class="level4">
+<h4 class="anchored" data-anchor-id="week-7">Week 7</h4>
+<ul>
+<li><p>Mon 3/2</p></li>
+<li><p>Wed 3/4</p></li>
+<li><p><span class="label-Labwork">Thu 3/5</span></p></li>
+<li><p>Fri 3/6</p></li>
+</ul>
+</section>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<section id="description-6" class="level4">
+<h4 class="anchored" data-anchor-id="description-6">Description</h4>
+<p>Joins and Pivots</p>
+<p>Exploratory EDA | <span class="label-Homework">due: PS5</span></p>
+<p>Lab 6: <span class="label-Quiz"><strong>Quiz 3</strong></span> | slides | PS6 | <span class="label-Pub">due: Pub6</span></p>
+<p>Explanatory EDA</p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<section id="week-8" class="level4">
+<h4 class="anchored" data-anchor-id="week-8">Week 8</h4>
+<ul>
+<li><p>Mon 3/9</p></li>
+<li><p>Wed 3/11</p></li>
+<li><p><span class="label-Labwork">Thu 3/12</span></p></li>
+<li><p>Fri 3/13</p></li>
+</ul>
+</section>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<section id="description-7" class="level4">
+<h4 class="anchored" data-anchor-id="description-7">Description</h4>
+<p>Strings I</p>
+<p>Strings II | <span class="label-Homework">due: PS6</span></p>
+<p>Lab 7: slides | PS7 | <span class="label-Pub">due: Pub7</span></p>
+<p>Strings III | Proj4 | <span class="label-Project">due: Proj3</span></p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<section id="week-9" class="level4">
+<h4 class="anchored" data-anchor-id="week-9">Week 9</h4>
+<ul>
+<li><p>Mon 3/16</p></li>
+<li><p>Wed 3/18</p></li>
+<li><p><span class="label-Labwork">Thu 3/19</span></p></li>
+<li><p>Fri 3/20</p></li>
+</ul>
+</section>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<section id="description-8" class="level4">
+<h4 class="anchored" data-anchor-id="description-8">Description</h4>
+<p>Dates and Times I</p>
+<p>Dates and Times II | <span class="label-Homework">due: PS7</span></p>
+<p>Lab 8: <span class="label-Quiz"><strong>Quiz 4</strong></span> | slides | PS8 | <span class="label-Pub">due: Pub8</span></p>
+<p>Geospatial Data</p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<section id="week-10" class="level4">
+<h4 class="anchored" data-anchor-id="week-10">Week 10</h4>
+<ul>
+<li><span class="label-None">3/23-3/27</span></li>
+</ul>
+</section>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<section id="description-9" class="level4">
+<h4 class="anchored" data-anchor-id="description-9">Description</h4>
+<p><span class="label-None">Spring Recess</span></p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<section id="week-11" class="level4">
+<h4 class="anchored" data-anchor-id="week-11">Week 11</h4>
+<ul>
+<li><p>Mon 3/30</p></li>
+<li><p>Wed 4/1</p></li>
+<li><p><span class="label-Labwork">Thu 4/2</span></p></li>
+<li><p>Fri 4/3</p></li>
+</ul>
+</section>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<section id="description-10" class="level4">
+<h4 class="anchored" data-anchor-id="description-10">Description</h4>
+<p>Storm Tracks I</p>
+<p>Leaflet Maps | <span class="label-Homework">due: PS8</span></p>
+<p>Lab 9: slides | PS9 | <span class="label-Pub">due: Pub9</span></p>
+<p>Shapefiles | Proj5 | <span class="label-Project">due: Proj4</span></p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<section id="week-12" class="level4">
+<h4 class="anchored" data-anchor-id="week-12">Week 12</h4>
+<ul>
+<li><p>Mon 4/6</p></li>
+<li><p>Wed 4/8</p></li>
+<li><p><span class="label-Labwork">Thu 4/9</span></p></li>
+<li><p>Fri 4/10</p></li>
+</ul>
+</section>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<section id="description-11" class="level4">
+<h4 class="anchored" data-anchor-id="description-11">Description</h4>
+<p>Choropleth Maps</p>
+<p>Raster Data I | <span class="label-Homework">due: PS9</span></p>
+<p>Lab 10: <span class="label-Quiz"><strong>Quiz 5</strong></span> | slides | PS10 | <span class="label-Pub">due: Pub10</span></p>
+<p>Raster Data II</p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<section id="week-13" class="level4">
+<h4 class="anchored" data-anchor-id="week-13">Week 13</h4>
+<ul>
+<li><p>Mon 4/13</p></li>
+<li><p>Wed 4/15</p></li>
+<li><p><span class="label-Labwork">Thu 4/16</span></p></li>
+<li><p>Fri 4/17</p></li>
+</ul>
+</section>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<section id="description-12" class="level4">
+<h4 class="anchored" data-anchor-id="description-12">Description</h4>
+<p>JSON Data</p>
+<p>APIs | <span class="label-Homework">due: PS10</span></p>
+<p>Lab 11: slides | PS11 | <span class="label-Pub">due: Pub11</span></p>
+<p>XML Data | Proj6 | <span class="label-Project">due: Proj5</span></p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<section id="week-14" class="level4">
+<h4 class="anchored" data-anchor-id="week-14">Week 14</h4>
+<ul>
+<li><p>Mon 4/20</p></li>
+<li><p>Wed 4/22</p></li>
+<li><p><span class="label-Labwork">Thu 4/23</span></p></li>
+<li><p>Fri 4/24</p></li>
+</ul>
+</section>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<section id="description-13" class="level4">
+<h4 class="anchored" data-anchor-id="description-13">Description</h4>
+<p>Text Analysis 1</p>
+<p>Text Analysis 2 | <span class="label-Homework">due: PS11</span></p>
+<p>Lab 12: <span class="label-Quiz"><strong>Quiz 6</strong></span> | slides | PS12 | <span class="label-Pub">due: Pub12</span></p>
+<p>Text Analysis 3</p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<section id="week-15" class="level4">
+<h4 class="anchored" data-anchor-id="week-15">Week 15</h4>
+<ul>
+<li><p>Mon 4/27</p></li>
+<li><p>Wed 4/29</p></li>
+<li><p><span class="label-Labwork">Thu 4/30</span></p></li>
+<li><p>Fri 5/1</p></li>
+</ul>
+</section>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<section id="description-14" class="level4">
+<h4 class="anchored" data-anchor-id="description-14">Description</h4>
+<p>TBD</p>
+<p>TBD | <span class="label-Homework">due: PS12</span></p>
+<p>Lab 14: slides</p>
+<p>Closing Lecture | <span class="label-Project">due: Proj6</span></p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<section id="week-16" class="level4">
+<h4 class="anchored" data-anchor-id="week-16">Week 16</h4>
+<ul>
+<li><span class="label-None">5/4-5/8</span></li>
+</ul>
+</section>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<section id="description-15" class="level4">
+<h4 class="anchored" data-anchor-id="description-15">Description</h4>
+<p><span class="label-None">RRR Week</span></p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<section id="week-17" class="level4">
+<h4 class="anchored" data-anchor-id="week-17">Week 17</h4>
+<ul>
+<li>5/11</li>
+</ul>
+</section>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
+<section id="description-16" class="level4">
+<h4 class="anchored" data-anchor-id="description-16">Description</h4>
+<p><span class="label-Quiz"><strong>Final Exam, 7-10pm</strong></span></p>
+</section>
+</div>
+</div>
+</div>
+<hr>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -2663,14 +670,13 @@ window.Quarto = {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -2699,6 +705,11 @@ window.Quarto = {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

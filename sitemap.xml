@@ -1,111 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/units/unit10.html</loc>
-    <lastmod>2026-01-06T00:17:11.193Z</lastmod>
-  </url>
-  <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/units/unit11.html</loc>
-    <lastmod>2026-01-06T00:17:11.193Z</lastmod>
-  </url>
-  <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/units/unit4.html</loc>
-    <lastmod>2026-01-06T00:17:11.194Z</lastmod>
-  </url>
-  <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/units/unit7.html</loc>
-    <lastmod>2026-01-06T00:17:11.194Z</lastmod>
-  </url>
-  <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/units/unit6.html</loc>
-    <lastmod>2026-01-06T00:17:11.194Z</lastmod>
-  </url>
-  <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/units/unit2.html</loc>
-    <lastmod>2026-01-06T00:17:11.194Z</lastmod>
-  </url>
-  <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/units/unit1.html</loc>
-    <lastmod>2026-01-06T00:17:11.193Z</lastmod>
-  </url>
-  <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/units/unit3.html</loc>
-    <lastmod>2026-01-06T00:17:11.194Z</lastmod>
-  </url>
-  <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/faqs.html</loc>
-    <lastmod>2026-01-06T00:17:11.153Z</lastmod>
-  </url>
-  <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/staff.html</loc>
-    <lastmod>2026-01-06T00:17:11.193Z</lastmod>
-  </url>
-  <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/ed-netiquette.html</loc>
-    <lastmod>2026-01-06T00:17:11.153Z</lastmod>
-  </url>
-  <url>
     <loc>https://berkeley-stat133.github.io/spring-2026/cheatsheets.html</loc>
-    <lastmod>2026-01-06T00:17:11.095Z</lastmod>
+    <lastmod>2026-01-11T00:53:47.770Z</lastmod>
   </url>
   <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/five-things.html</loc>
-    <lastmod>2026-01-06T00:17:11.153Z</lastmod>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/11-data-wrangling1/slides.html</loc>
+    <lastmod>2025-12-27T23:24:28.581Z</lastmod>
   </url>
   <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/data.html</loc>
-    <lastmod>2026-01-06T00:17:11.153Z</lastmod>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/12-data-wrangling2/slides.html</loc>
+    <lastmod>2025-12-28T01:11:41.343Z</lastmod>
   </url>
   <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/index.html</loc>
-    <lastmod>2026-01-06T00:17:11.153Z</lastmod>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/26-geospatial1/slides.html</loc>
+    <lastmod>2026-01-08T15:33:14.379Z</lastmod>
   </url>
   <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/email.html</loc>
-    <lastmod>2026-01-06T00:17:11.153Z</lastmod>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/22-strings3/slides.html</loc>
+    <lastmod>2026-01-03T02:41:25.452Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/19-eda2/slides.html</loc>
+    <lastmod>2026-01-05T00:02:15.162Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/20-strings1/slides.html</loc>
+    <lastmod>2026-01-01T23:22:10.213Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/10-factors/slides.html</loc>
+    <lastmod>2025-12-22T22:04:14.274Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/14-dataviz1/slides.html</loc>
+    <lastmod>2025-12-28T18:06:58.505Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/9-functions/slides.html</loc>
+    <lastmod>2025-12-22T02:57:00.546Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/7-lists/slides.html</loc>
+    <lastmod>2025-12-18T22:26:27.070Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/4-more-vectors/slides.html</loc>
+    <lastmod>2025-12-17T18:19:35.182Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/21-strings2/slides.html</loc>
+    <lastmod>2026-01-02T00:12:30.775Z</lastmod>
   </url>
   <url>
     <loc>https://berkeley-stat133.github.io/spring-2026/license.html</loc>
-    <lastmod>2026-01-06T00:17:11.153Z</lastmod>
+    <lastmod>2026-01-11T00:53:47.804Z</lastmod>
   </url>
   <url>
     <loc>https://berkeley-stat133.github.io/spring-2026/about.html</loc>
-    <lastmod>2026-01-06T00:17:11.094Z</lastmod>
+    <lastmod>2026-01-11T04:12:34.714Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/faqs.html</loc>
+    <lastmod>2026-01-11T00:53:47.803Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/ed-netiquette.html</loc>
+    <lastmod>2026-01-11T00:53:47.803Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/email.html</loc>
+    <lastmod>2026-01-11T00:53:47.803Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/index.html</loc>
+    <lastmod>2026-01-13T01:49:48.614Z</lastmod>
   </url>
   <url>
     <loc>https://berkeley-stat133.github.io/spring-2026/syllabus.html</loc>
-    <lastmod>2026-01-06T00:17:11.193Z</lastmod>
+    <lastmod>2026-01-13T02:13:38.889Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/8-control-flow/slides.html</loc>
+    <lastmod>2025-12-27T03:15:55.977Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/1-welcome/slides.html</loc>
+    <lastmod>2025-12-26T02:56:12.507Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/18-eda1/slides.html</loc>
+    <lastmod>2026-01-05T15:55:35.162Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/6-extending-vectors/slides.html</loc>
+    <lastmod>2025-12-18T02:38:08.036Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/2-intro/slides.html</loc>
+    <lastmod>2025-12-26T15:08:54.238Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/17-joins-pivots/slides.html</loc>
+    <lastmod>2025-12-31T16:43:58.073Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/13-importing-tables/slides.html</loc>
+    <lastmod>2025-12-31T04:30:54.438Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/3-atomic-vectors/slides.html</loc>
+    <lastmod>2025-12-29T16:20:32.055Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/27-geospatial2/slides.html</loc>
+    <lastmod>2026-01-09T15:35:50.412Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/5-unix-basics/slides.html</loc>
+    <lastmod>2025-12-26T02:19:29.922Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/15-dataviz2/slides.html</loc>
+    <lastmod>2025-12-29T02:51:16.740Z</lastmod>
+  </url>
+  <url>
+    <loc>https://berkeley-stat133.github.io/spring-2026/lectures/28-geospatial3/slides.html</loc>
+    <lastmod>2026-01-11T14:34:47.455Z</lastmod>
   </url>
   <url>
     <loc>https://berkeley-stat133.github.io/spring-2026/calendar.html</loc>
-    <lastmod>2026-01-06T00:17:11.095Z</lastmod>
-  </url>
-  <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/units/unit8.html</loc>
-    <lastmod>2026-01-06T00:17:11.194Z</lastmod>
-  </url>
-  <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/units/unit5.html</loc>
-    <lastmod>2026-01-06T00:17:11.194Z</lastmod>
-  </url>
-  <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/units/unit14.html</loc>
-    <lastmod>2026-01-06T00:17:11.194Z</lastmod>
-  </url>
-  <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/units/macros.html</loc>
-    <lastmod>2026-01-06T00:17:11.193Z</lastmod>
-  </url>
-  <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/units/unit12.html</loc>
-    <lastmod>2026-01-06T00:17:11.194Z</lastmod>
-  </url>
-  <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/units/unit13.html</loc>
-    <lastmod>2026-01-06T00:17:11.194Z</lastmod>
-  </url>
-  <url>
-    <loc>https://berkeley-stat133.github.io/spring-2026/units/unit9.html</loc>
-    <lastmod>2026-01-06T00:17:11.194Z</lastmod>
+    <lastmod>2026-01-11T00:53:47.770Z</lastmod>
   </url>
 </urlset>
