@@ -7,29 +7,22 @@ No, STAT 133 will not be offered in hybrid mode. Instead, all classes and sectio
 
 <br>
 
-__Will attendance be enforced?__ <br>
-Attending class and section contributes to achieving the learning outcomes of this course. You should attend every class and section to the best of your abilities, but I understand that extenuating circumstances arise. If you cannot attend a class or section, please stay on track with the covered materials.
-
-On a side note, here's one fun fact from the students' course evaluations. The most common answer provided by the students when asked "What advice would you give to another student who is considering taking this course?" is: __"Go to all the lectures and start working on assignments early."__
-
-<br>
-
 __Will there be live webcast or recordings of lectures?__ <br>
-Unless Campus authorities decide to switch to remote instruction, there won't be live webcast or live zoom recordings. With that said, lectures may be recorded for archival purposes, but not necessarily be shared with the class.
+No. The class is designed assuming that you'll be present in both lecture and discussion.
 
 <br>
 
-__Do you have a Covid (or other illness) policy?__ <br>
-Maintaining your health and that of the Berkeley community is of primary importance to course staff, so if you are feeling ill or have been exposed to illness, please do not come to class. All of the materials used in class will be posted either in this website or in bCourses. Likewise, you’re encouraged to reach out to fellow students to discuss the class materials or stop by office hours to chat with the GSI, the tutor, or the instructor.
+__What can I do if I have to miss class?__ <br>
+Missing a class should be a truly exceptional occurrence---reserved for emergencies or significant personal illness---rather than a recurring habit. On a side note, here's one fun fact from the students' course evaluations. The most common answer provided by the students when asked "What advice would you give to another student who is considering taking this course?" is: __"Go to all the lectures and labs and start working on assignments early."__
 
-Having said that, we expect you to attend lecture and lab. Past experience tells us that students who constantly miss lecture/lab tend to have a mediocre performance.
+I understand that your lives are incredibly full and that you are often navigating a heavy load of assignments, exams, job interviews, and various personal and extracurricular commitments. While it can be tempting to deprioritize this class when other deadlines feel more urgent, please remember that STAT 133 is a cumulative course where each session builds directly upon the previous one. Losing focus, even temporarily, can create significant gaps in your understanding that are difficult to bridge later in the semester.
 
-Also, missing lecture/lab does not give you the right to use OH as a replacement for receiving instruction. We are always willing to help you understand the learning materials during OH, but this also requires that you make an honest effort reviewing them before coming to OH.
+Your presence not only keeps you in sync with our cumulative material but also enriches the experience for your peers, as your unique questions and insights often spark the most meaningful "lightbulb moments" for everyone in the room. My goal is for you to not only succeed but to master these analytical tools for your future careers. To achieve this, I ask that you treat our class time and coursework as a non-negotiable priority in your schedule. If you find yourself consistently overwhelmed, please reach out to us early so we can discuss strategies for managing the workload effectively.
 
 <br>
 
-__I am a concurrent student. What are my chances of enrolling in the class?__ <br>
-Depending on the size of the waitlist, and the available space in the labs, you may or may not have a chance to join the class. For example, there have been semesters in which only 10% of concurrent applications have been accepted. Likewise, there have been semesters in which 100% of concurrent applications have been accepted.
+__I am a Concurrent Enrollment student. What are my chances of enrolling in the class?__ <br>
+Concurrent Enrollment students will only be allowed to enroll if (a) there is space in the course and all UC Berkeley students who want to take the course have had a chance to enroll, meaning there should be no waitlist, and (b) we have determined that you have remained engaged with all the learning activities since the beginning of instruction. This includes, but is not limited to: attending lectures and labs, participating in discussions, completing assignments on time, and overall demonstrating a commitment to learning the material.
 
 Keep in mind that the approval process for concurrent enrollment students takes place between the 2nd and 3rd week of instruction, and it is a somewhat slow 2-step process, which takes some days, and it involves not only my intervention but also the participation of one of the advisors in the Dept. of Statistics.
 
@@ -41,9 +34,9 @@ This semester we don't have a special grading structure for graduate students. A
 <br>
 
 __What if I join the class late?__ <br>
-If you join the class within the first two weeks, read the syllabus and lecture notes, take a look at bCourses to get a sense of any assignments that may have already passed, and visit office hours to check that you're up to date with things.
+If you join the class within the first two weeks, read the syllabus and lecture notes, take a look at bCourses to get a sense of any assignments that may have already passed, and visit office hours to check that you're up to date with things. Please keep in mind that we will not be providing late or make-up submissions for any missed assignments.
 
-After two weeks into the semester, you’ll have too much material that you’ll need to make up, so you will have to wait to a subsequent semester to take STAT 133.
+I do not recommend joining the class after two weeks into the semester, so you will have to wait to a subsequent semester to take STAT 133.
 
 <br>
 
@@ -53,7 +46,7 @@ STAT 133 does not allow students to enroll with time conflicts.
 <br>
 
 __I would like to switch lab sections with other student. Is this possible?__ <br>
-This is not possible. You should attend the lab section you are officially enrolled in.
+This is not possible. You should attend the lab section you are officially enrolled in. If you have a time conflict with your lab section, please drop the course and enroll in a different section that fits your schedule or wait until a future semester to take STAT 133.
 
 <br>
 
@@ -62,13 +55,13 @@ Quick answer: yes. Because Stat 133 has no prerequisites, we actually expect tha
 
 <br>
 
-__Is this course a good fit if I don't have any data analysis experience?__ <br>
-Yes. Because STAT 133 has no prerequisites, we actually expect that most of you come without any data analysis experience. In this course you will be working with a variety of fairly simple real data sets, as well as with simulated data.
+__What if I don't have any data analysis experience?__ <br>
+No problem. Because STAT 133 has no prerequisites, we actually expect that most of you come without any data analysis experience. In this course you will be working with a variety of fairly simple real data sets, as well as with simulated data.
 
 <br>
  
-__Is this course a good fit if I've already taken several programming courses?__ <br>
-You may find some parts of this course somewhat slow (and boring?) in terms of basics concepts such as data types, data structures, conditionals, loops, and functions. Unless Stat 133 is a required course for your major/minor (or you are eager to learn about R), please consider taking more advanced courses if what you are interested in is algorithms, computational statistics, databases, machine learning and statistical learning.
+__What if I've already taken several programming courses?__ <br>
+You may find some parts of this course somewhat slow (and boring?) in terms of basics concepts such as data types, data structures, conditionals, loops, and functions. Unless STAT 133 is a required course for your major/minor (or you are eager to learn about R), please consider taking more advanced courses if what you are interested in is algorithms, computational statistics, databases, machine learning and statistical learning.
 
 <br>
  
@@ -77,11 +70,6 @@ STAT 133 is one of the core courses of the Statistics Major. The way I've been t
 
 <br>
  
-__What if I want to declare Statistics as my major, but I already have taken other programming courses on Campus?__ <br>
-You may need to talk to a student advisor for more information about this. In 2019, students that took Data 100 (e.g. C100) "Principles & Techniques of Data Science", were able to waive Stat 133 by just taking Stat 33B "Introduction to Advanced Programming in R". Please contact your advisor to know if this option is still available.
-
-<br>
-
 __Is this course a good fit to become a data scientist?__ <br>
 Becoming a data scientist is not a (one-semester) sprint. It is a (years-long) marathon. Like any other profession, it takes many years of learning, practice, practice, practice, and then some practice, to become a proficient data scientist/analyst. This course can be very useful, and we are confident it will help you to build a good foundation in your DS career.
 
@@ -121,18 +109,8 @@ The Statistics department offers two core courses on these topics: STAT 134: Con
 
 <br>
 
-__Are we going to learn about Reproducible Research (RR)?__ <br>
-We are just going to scratch the surface. We will touch on dynamic documents, and some practices and tools that are useful in RR. 
-
-<br>
-
 __Can we work in groups?__ <br>
 Yes, absolutely. We strongly encourage you to not work alone. Well, let me rephrase that. You should try to first work on your own (trial and error). Take notes of the things you don't understand. Then get with other people and discuss ideas, share tips (but not the entire solution).
-
-<br>
-
-__Aren't you suppose to teach us?__ <br>
-Yes. But you don't learn programming by watching someone else program. The same way that you don't learn to swim by simply watching someone else swimming. You have to get into the pool, and do all the drills your instructor says. This is a very hands-on course, and you will be required to do a great amount of work on your own.
 
 <br>
 
@@ -147,9 +125,5 @@ Please take a look at this document before asking me to write you a letter of re
 <br>
 
 __I invited you to join my network in LinkedIn. Why haven't you accepted my invitation?__ <br>
-First: Don't take it personal. It's not you, it's me. Second: if you really want that I become part of your network, why don't you talk to me in person? We can meet in OH, or you can also schedule a meeting at a different time. Let me know you better than just as a distant contact in a social media networking site.
+First: Don't take it personal. It's not you, it's me. Second: if you really want that I become part of your network, why don't you talk to me in person? We can meet in Office Hours, or you can also schedule a meeting at a different time. Let me know you better than just as a distant contact in a social media networking site.
 
-<br>
-
-__Do you have research projects open to undergrad students?__ <br>
-Lecturing takes most of my time and I don't have a lab. Sometimes, however, I may look for collaborators to create some data-based project. This typically happens in the Summer.

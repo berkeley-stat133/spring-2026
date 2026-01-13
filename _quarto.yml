@@ -8,24 +8,29 @@ website:
   page-footer: 
     center:
       - text: About
-        href: about.qmd
+        href: info/about.qmd
       - text: License
-        href: license.qmd
-      - text: GitHub
-        href: "https://github.com/berkeley-stat133"
+        href: info/license.qmd
     background: "dark"
   sidebar:
     style: "docked"
     title: "STAT 133 <br><small>Spring 2026</small>"
     logo: assets/stat133-hex-logo-small.png
     logo-alt: "UC Berkeley Statistics logo"
+    collapse-level: 1
     contents:
       - href: index.qmd
         text: Home
       - syllabus.qmd
-      - about.qmd
+      - href: officehours.qmd
+        text: "Office Hours"
       - cheatsheets.qmd
-      - license.qmd
+      - section: "More"
+        contents:
+          - info/about.qmd
+          - href: info/faqs.qmd
+            text: "FAQs"
+          - info/license.qmd
 
 format:
   html:

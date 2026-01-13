@@ -29,8 +29,7 @@ BTW: There is nothing due this first week.
 
 -----
 
-:::: {layout-ncol=2}
-
+:::: {layout-ncol=3}
 ::: {.column width="20%"}
 #### Week 1
 - Wed 1/21 
@@ -40,7 +39,7 @@ BTW: There is nothing due this first week.
 - Fri 1/23 
 :::
 
-::: {.column width="80%"}
+::: {.column width="30%"}
 #### Description
 Welcome
 
@@ -49,11 +48,15 @@ Lab 1: slides
 Introduction
 :::
 
+::: {.column width="50%"}
+#### Due
+
+:::
 ::::
 
 -----
 
-:::: {layout-ncol=2}
+:::: {layout-ncol=3}
 
 ::: {.column width="20%"}
 #### Week 2
@@ -66,23 +69,33 @@ Introduction
 - Fri 1/30
 :::
 
-::: {.column width="80%"}
+::: {.column width="30%"}
 #### Description
 Vectors
 
 Working with Vectors
 
-Lab 2: slides | PS1 | [due: Pub1]{.label-Pub}
+Lab 2: slides | PS1
  
 Unix Basics | Proj1
 :::
 
+::: {.column width="50%"}
+#### Due
+&nbsp;
+
+&nbsp;
+
+[Pub1]{.label-Pub}
+
+&nbsp;
+:::
 ::::
 
 
 -----
 
-:::: {layout-ncol=2}
+:::: {layout-ncol=3}
 
 ::: {.column width="20%"}
 #### Week 3
@@ -95,22 +108,32 @@ Unix Basics | Proj1
 - Fri 2/6 
 :::
 
-::: {.column width="80%"}
+::: {.column width="30%"}
 #### Description
 Extending Vectors
 
-Lists | [due: PS1]{.label-Homework}
+Lists
 
-Lab 3: [__Quiz 1__]{.label-Quiz} | slides | PS2 | [due: Pub2]{.label-Pub}
+Lab 3: [__Quiz 1__]{.label-Quiz} | slides | PS2 
 
 Control Flow
 :::
 
+::: {.column width="50%"}
+#### Due
+&nbsp;
+
+[PS1]{.label-Homework}
+
+[Pub2]{.label-Pub}
+
+&nbsp;
+:::
 ::::
 
 -----
 
-:::: {layout-ncol=2}
+:::: {layout-ncol=3}
 
 ::: {.column width="20%"}
 #### Week 4
@@ -123,22 +146,32 @@ Control Flow
 - Fri 2/13 
 :::
 
-::: {.column width="80%"}
+::: {.column width="30%"}
 #### Description
 Functions
 
-Factors and Data Frames | [due: PS2]{.label-Homework}
+Factors and Data Frames 
 
-Lab 4: slides | PS3 | [due: Pub3]{.label-Pub}
+Lab 4: slides | PS3
 
-Data Wrangling I | Proj2 | [due: Proj1]{.label-Project}
+Data Wrangling I | Proj2
 :::
 
+::: {.column width="50%"}
+#### Due
+&nbsp;
+
+[PS2]{.label-Homework}
+
+[Pub3]{.label-Pub}
+
+[Proj1]{.label-Project}
+:::
 ::::
 
 -----
 
-:::: {layout-ncol=2}
+:::: {layout-ncol=3}
 
 ::: {.column width="20%"}
 #### Week 5
@@ -151,22 +184,32 @@ Data Wrangling I | Proj2 | [due: Proj1]{.label-Project}
 - Fri 2/20
 :::
 
-::: {.column width="80%"}
+::: {.column width="30%"}
 #### Description
 [No class]{.label-None}
 
-Data Wrangling II | [due: PS3]{.label-Homework}
+Data Wrangling II
 
-Lab 5: [__Quiz 2__]{.label-Quiz} | slides | PS4 | [due: Pub4]{.label-Pub}
+Lab 5: [__Quiz 2__]{.label-Quiz} | slides | PS4
 
 Importing Tables
 :::
 
+::: {.column width="50%"}
+#### Due
+&nbsp;
+
+[PS3]{.label-Homework}
+
+[Pub4]{.label-Pub}
+
+&nbsp;
+:::
 ::::
 
 -----
 
-:::: {layout-ncol=2}
+:::: {layout-ncol=3}
 
 ::: {.column width="20%"}
 #### Week 6
@@ -179,22 +222,32 @@ Importing Tables
 - Fri 2/27
 :::
 
-::: {.column width="80%"}
+::: {.column width="30%"}
 #### Description
 Dataviz I
 
-Dataviz II | [due: PS4]{.label-Homework}
+Dataviz II 
 
-Lab 5: slides | PS5 | [due: Pub5]{.label-Pub}
+Lab 5: slides | PS5 
 
-Dataviz III | Proj3 | [due: Proj2]{.label-Project}
+Dataviz III | Proj3 
 :::
 
+::: {.column width="50%"}
+#### Due
+&nbsp;
+
+[PS4]{.label-Homework}
+
+[Pub5]{.label-Pub}
+
+[Proj2]{.label-Project}
+:::
 ::::
 
 -----
 
-:::: {layout-ncol=2}
+:::: {layout-ncol=3}
 
 ::: {.column width="20%"}
 #### Week 7
@@ -207,22 +260,32 @@ Dataviz III | Proj3 | [due: Proj2]{.label-Project}
 - Fri 3/6
 :::
 
-::: {.column width="80%"}
+::: {.column width="30%"}
 #### Description
 Joins and Pivots
 
-Exploratory EDA | [due: PS5]{.label-Homework}
+Exploratory EDA
 
-Lab 6: [__Quiz 3__]{.label-Quiz} | slides | PS6 | [due: Pub6]{.label-Pub}
+Lab 6: [__Quiz 3__]{.label-Quiz} | slides | PS6
 
 Explanatory EDA
 :::
 
+::: {.column width="50%"}
+#### Due
+&nbsp;
+
+[PS5]{.label-Homework}
+
+[Pub6]{.label-Pub}
+
+&nbsp;
+:::
 ::::
 
 -----
 
-:::: {layout-ncol=2}
+:::: {layout-ncol=3}
 
 ::: {.column width="20%"}
 #### Week 8
@@ -235,22 +298,32 @@ Explanatory EDA
 - Fri 3/13
 :::
 
-::: {.column width="80%"}
+::: {.column width="30%"}
 #### Description
 Strings I
 
-Strings II | [due: PS6]{.label-Homework}
+Strings II
 
-Lab 7: slides | PS7 | [due: Pub7]{.label-Pub}
+Lab 7: slides | PS7 
 
-Strings III | Proj4 | [due: Proj3]{.label-Project}
+Strings III | Proj4 
 :::
 
+::: {.column width="50%"}
+#### Due
+&nbsp;
+
+[PS6]{.label-Homework}
+
+[Pub7]{.label-Pub}
+
+[Proj3]{.label-Project}
+:::
 ::::
 
 -----
 
-:::: {layout-ncol=2}
+:::: {layout-ncol=3}
 
 ::: {.column width="20%"}
 #### Week 9
@@ -263,17 +336,27 @@ Strings III | Proj4 | [due: Proj3]{.label-Project}
 - Fri 3/20
 :::
 
-::: {.column width="80%"}
+::: {.column width="30%"}
 #### Description
 Dates and Times I
 
-Dates and Times II | [due: PS7]{.label-Homework}
+Dates and Times II
 
-Lab 8: [__Quiz 4__]{.label-Quiz} | slides | PS8 | [due: Pub8]{.label-Pub}
+Lab 8: [__Quiz 4__]{.label-Quiz} | slides | PS8
 
 Geospatial Data
 :::
 
+::: {.column width="50%"}
+#### Due
+&nbsp;
+
+[PS7]{.label-Homework}
+
+[Pub8]{.label-Pub}
+
+&nbsp;
+:::
 ::::
 
 -----
@@ -294,7 +377,7 @@ Geospatial Data
 
 -----
 
-:::: {layout-ncol=2}
+:::: {layout-ncol=3}
 
 ::: {.column width="20%"}
 #### Week 11
@@ -307,22 +390,32 @@ Geospatial Data
 - Fri 4/3
 :::
 
-::: {.column width="80%"}
+::: {.column width="30%"}
 #### Description
 Storm Tracks I
 
-Leaflet Maps | [due: PS8]{.label-Homework}
+Leaflet Maps
 
-Lab 9: slides | PS9 | [due: Pub9]{.label-Pub}
+Lab 9: slides | PS9
 
-Shapefiles | Proj5 | [due: Proj4]{.label-Project}
+Shapefiles | Proj5
 :::
 
+::: {.column width="50%"}
+#### Due
+&nbsp;
+
+[PS8]{.label-Homework}
+
+[Pub9]{.label-Pub}
+
+[Proj4]{.label-Project}
+:::
 ::::
 
 -----
 
-:::: {layout-ncol=2}
+:::: {layout-ncol=3}
 
 ::: {.column width="20%"}
 #### Week 12
@@ -335,22 +428,32 @@ Shapefiles | Proj5 | [due: Proj4]{.label-Project}
 - Fri 4/10
 :::
 
-::: {.column width="80%"}
+::: {.column width="30%"}
 #### Description
 Choropleth Maps
 
-Raster Data I | [due: PS9]{.label-Homework}
+Raster Data I
 
-Lab 10: [__Quiz 5__]{.label-Quiz} | slides | PS10 | [due: Pub10]{.label-Pub}
+Lab 10: [__Quiz 5__]{.label-Quiz} | slides | PS10
 
 Raster Data II
 :::
 
+::: {.column width="50%"}
+#### Due
+&nbsp;
+
+[PS9]{.label-Homework}
+
+[Pub10]{.label-Pub}
+
+&nbsp;
+:::
 ::::
 
 -----
 
-:::: {layout-ncol=2}
+:::: {layout-ncol=3}
 
 ::: {.column width="20%"}
 #### Week 13
@@ -363,22 +466,32 @@ Raster Data II
 - Fri 4/17
 :::
 
-::: {.column width="80%"}
+::: {.column width="30%"}
 #### Description
 JSON Data
 
-APIs | [due: PS10]{.label-Homework}
+APIs
 
-Lab 11: slides | PS11 | [due: Pub11]{.label-Pub}
+Lab 11: slides | PS11
 
-XML Data | Proj6 | [due: Proj5]{.label-Project}
+XML Data | Proj6
 :::
 
+::: {.column width="50%"}
+#### Due
+&nbsp;
+
+[PS10]{.label-Homework}
+
+[Pub11]{.label-Pub}
+
+[Proj5]{.label-Project}
+:::
 ::::
 
 -----
 
-:::: {layout-ncol=2}
+:::: {layout-ncol=3}
 
 ::: {.column width="20%"}
 #### Week 14
@@ -391,22 +504,32 @@ XML Data | Proj6 | [due: Proj5]{.label-Project}
 - Fri 4/24
 :::
 
-::: {.column width="80%"}
+::: {.column width="30%"}
 #### Description
 Text Analysis 1
 
-Text Analysis 2 | [due: PS11]{.label-Homework}
+Text Analysis 2
 
-Lab 12: [__Quiz 6__]{.label-Quiz} | slides | PS12 | [due: Pub12]{.label-Pub}
+Lab 12: [__Quiz 6__]{.label-Quiz} | slides | PS12
 
 Text Analysis 3
 :::
 
+::: {.column width="50%"}
+#### Due
+&nbsp;
+
+[PS11]{.label-Homework}
+
+[Pub12]{.label-Pub}
+
+&nbsp;
+:::
 ::::
 
 -----
 
-:::: {layout-ncol=2}
+:::: {layout-ncol=3}
 
 ::: {.column width="20%"}
 #### Week 15
@@ -419,17 +542,27 @@ Text Analysis 3
 - Fri 5/1
 :::
 
-::: {.column width="80%"}
+::: {.column width="30%"}
 #### Description
 TBD
 
-TBD | [due: PS12]{.label-Homework}
+TBD 
 
 Lab 14: slides
 
-Closing Lecture | [due: Proj6]{.label-Project}
+Closing Lecture
 :::
 
+::: {.column width="50%"}
+#### Due
+&nbsp;
+
+[PS12]{.label-Homework}
+
+&nbsp;
+
+[Proj6]{.label-Project}
+:::
 ::::
 
 -----
