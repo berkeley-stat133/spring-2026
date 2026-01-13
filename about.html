@@ -91,7 +91,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./about.html">About</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./about.html">Info &amp; Office Hours</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -134,7 +134,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./about.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">About</span></a>
+ <span class="menu-text">Info &amp; Office Hours</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -211,7 +211,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 <p><strong>Instructor:</strong> Gaston Sanchez<br> <code>gastonsanchez</code><br> Office hours: <br> - Day hh-hh, Evans 309<br></p>
 </div>
 <div class="g-col-6">
-<p><strong>GSI</strong>: Drew Galloro<br> <code>arg2159</code><br> Office hours:<br> - Day hh-hh, Evans TBD<br> - Day hh-hh, Evans TBD</p>
+<p><strong>GSI</strong>: Drew Galloro<br> <code>argg2159</code><br> Office hours:<br> - Day hh-hh, Evans TBD<br> - Day hh-hh, Evans TBD</p>
 </div>
 <div class="g-col-6">
 <p><strong>GSI</strong>: Clara Reckhorn<br> <code>clara_reckhorn</code><br> Office hours: <br> - Day hh-hh, Evans TBD<br> - Day hh-hh, Evans TBD</p>
@@ -303,7 +303,7 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/berkeley-stat133\.github\.io\/spring-2026\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -651,11 +651,6 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
     <li class="nav-item">
     <a class="nav-link" href="./license.html">
 <p>License</p>
-</a>
-  </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="https://github.com/berkeley-stat133">
-<p>GitHub</p>
 </a>
   </li>  
 </ul>
