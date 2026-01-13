@@ -1,0 +1,265 @@
+---
+title: "Working with Vectors"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+```
+
+## Review
+
+Last time ...
+
+## Announcements
+
+-   Working locally
+
+-   Office Hours / Group Tutoring
+
+-   Problem Sets
+
+# Vectors
+
+## Vectors
+
+-   Central data structure in R
+
+-   Ordered set of elements
+
+-   **Atomic**: elements of the same type
+
+## Atomic\*
+
+Special values in an atomic vector.
+
+-   `NA`: Not Available / Missing
+
+-   `NULL`: Does not exist (nothing)
+
+-   `NaN`: Not a Number (e.g. dividing by zero)
+
+-   `Inf`: Infinity
+
+## A comment about comments {auto-animate="true"}
+
+Comment character: special character to skip evaluation of remaining characters on a line. R (and Python) use `#`.
+
+::: fragment
+```{r}
+#| output-location: fragment
+# create vector
+c("A", "C", "D") # vector created!
+```
+:::
+
+::: fragment
+vs.
+
+```{r}
+#| output-location: fragment
+create vector
+c("A", "C", "D") vector created!
+```
+:::
+
+# Behavior of Vectors
+
+## Question
+
+Turn to neighbor and speculate: what will each of the following lines of code return?
+
+```{r}
+#| eval: false
+c(1, 2, 3) + c(2, 4, 8)
+
+c(1, 2, 3) + c(2, 4)
+
+c(1, "dog", TRUE)
+```
+
+```{r}
+#| echo: false
+countdown::countdown(2.5, bottom = 0)
+```
+
+## Vectorization
+
+[Vectorized]{.bold-hilit}: Operations and functions that can run on an entire vector at once.
+
+```{r}
+dbl_vec <- c(1, 2.3, 4)
+
+log(dbl_vec) # vectorized
+```
+
+\
+
+```{r}
+sum(dbl_vec) # vector-as-argument
+```
+
+## Vector Recycling
+
+[Vector Recycling]{.bold-hilit}: If a function requires a longer vector than provided, it will fill the vector with the existing elements, in order.
+
+```{r}
+c(2, 6, 1)^2
+```
+
+## Coercion
+
+[Implicit Coercion]{.bold-hilit}: Automatic change of data types to ensure atomic vectors. Changes follow a hierarchy.
+
+logical \< integer \< double \< character
+
+## Coercion
+
+[Explicit Coercion]{.bold-hilit}: R provides functions to explicitly coerce from one type to another.
+
+-   `as.logical()`
+
+-   `as.integer()`
+
+-   `as.double()`
+
+-   `as.character()`
+
+. . .
+
+Depending on what data-type you want to coerce to, these functions may or may not work.
+
+. . .
+
+```{r}
+as.double(c(TRUE, FALSE, FALSE, FALSE))
+```
+
+# Vector Subsetting
+
+## Square Bracket Syntax
+
+## Subsetting by Index
+
+*aka* numeric subsetting
+
+```{r}
+#| output-location: fragment
+char_vec <- c("bear", "owl", "squirrel")
+char_vec
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+char_vec[2]
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+char_vec[2:3] 
+```
+
+## Subsetting by Name
+
+*aka* character subsetting
+
+```{r}
+#| output-location: fragment
+char_vec2 <- c("oski" = "bear", "fiat" = "owl", "lux" = "squirrel")
+char_vec2
+```
+
+. . .
+
+```{r}
+char_vec2["oski"]
+```
+
+. . .
+
+```{r}
+char_vec2[c("lux", "fiat")]
+```
+
+## Subsetting by Logicals
+
+*aka* logical subsetting
+
+```{r}
+#| output-location: fragment
+char_vec2[c(TRUE, FALSE, TRUE)]
+```
+
+. . .
+
+Note: the logical vector should be of the same length.
+
+## Question
+
+Write down three methods to generate each vector from the vector `z`, one for each subsetting method.
+
+```{r}
+z <- c(latte = 2, boba = 4, matcha = 6)
+```
+
+. . .
+
+Vector 1:
+
+```{r}
+#| echo: false
+z[2:1]
+```
+
+. . .
+
+Vector 2:
+
+```{r}
+#| echo: false
+z[c(3, 3)]
+```
+
+```{r}
+#| echo: false
+countdown::countdown(2.5, bottom = 0)
+```
+
+## Change in place syntax
+
+You can assign into a subsetted vector to change its contents in place.
+
+```{r}
+#| output-location: fragment
+z <- c(latte = 2, boba = 4, matcha = 6)
+z[c(TRUE, FALSE, TRUE)] <- 12
+z
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+names(z)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+names(z) <- c("A", "B", "C")
+z
+```
+
+## For next time
+
+-   Work on problem sets.
+
+-   Visit office hours and group tutoring.
+
+-   Have a great weekend 😎

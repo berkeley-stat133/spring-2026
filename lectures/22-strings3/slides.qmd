@@ -1,0 +1,525 @@
+---
+title: "Strings III"
+subtitle: "Parsing text with regular expressions"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+library(rvest)
+```
+
+
+## Agenda
+
+- Practice with Men's Long Jump Records
+
+- Look Arounds
+    + look behind
+    + look ahead
+
+
+# Men's Long Jump World Record Progression 
+
+##
+
+![](images/mens-long-jump-table2.png){fig-align="center"}
+
+
+## Men's Long Jump World Record Progression {.smaller}
+
+```{r}
+#| echo: false
+doc <- read_html("mens-long-jump.html")
+dat <- html_table(doc)[[2]]
+```
+
+```{r}
+#| eval: false
+url <- "https://en.wikipedia.org/wiki/Men%27s_long_jump_world_record_progression"
+
+# import HTML file
+doc <- read_html(url)
+
+# extract 2nd HTML table (as data.frame/tibble)
+dat <- html_table(doc)[[2]]
+dat
+```
+
+. . .
+
+```{r}
+#| echo: false
+dat
+```
+
+
+# Your Turn: Record Dates
+
+##
+
+```{r}
+dat$Date[1:6]
+```
+
+\
+
+[Goal:]{.mdlit} Get the strings of the Date (day month year)
+
+<!--
+How would you use the following to extract "day month year":
+
+- `str_sub(dat$Date[1:6], start = ..., end = ...)`
+- `str_remove(dat$Date[1:6], pattern = ...)`
+- `str_extract(dat$Date[1:6], pattern = ...)`
+-->
+
+
+##
+
+```{r}
+dat$Date[1:6]
+```
+
+\
+
+[Goal:]{.mdlit} Get the strings of the Date (day month year) with `str_sub()`
+
+\
+
+```{r}
+#| eval: false
+str_sub(dat$Date[1:6], ________)
+```
+
+```{r}
+#| echo: false
+countdown::countdown(1, bottom = 0)
+```
+
+
+##
+
+```{r}
+dat$Date[1:6]
+```
+
+\
+
+[Goal:]{.mdlit} Get the strings of the Date (day month year) with `str_sub()`
+
+\
+
+```{r}
+#| output-location: fragment
+str_sub(dat$Date[1:6], end = -4)
+```
+
+
+##
+
+```{r}
+dat$Date[1:6]
+```
+
+\
+
+[Goal:]{.mdlit} Get the strings of the Date (day month year) with `str_remove()`
+
+\
+
+```{r}
+#| eval: false
+str_remove(dat$Date[1:6], pattern = "_______")
+```
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+
+##
+
+```{r}
+dat$Date[1:6]
+```
+
+\
+
+[Goal:]{.mdlit} Get the strings of the Date (day month year) with `str_remove()`
+
+\
+
+```{r}
+#| output-location: fragment
+str_remove(dat$Date[1:6], pattern = "\\[1\\]")
+```
+
+
+##
+
+```{r}
+dat$Date[1:6]
+```
+
+\
+
+[Goal:]{.mdlit} Get the strings of the Date (day month year) with `str_extract()`
+
+\
+
+```{r}
+#| eval: false
+str_extract(dat$Date[1:6], pattern = "________________")
+```
+
+```{r}
+#| echo: false
+countdown::countdown(2, bottom = 0)
+```
+
+## 
+
+```{r}
+dat$Date[1:6]
+```
+
+\
+
+[Goal:]{.mdlit} Get the strings of the Date (day month year) with `str_extract()`
+
+\
+
+```{r}
+#| output-location: fragment
+str_extract(dat$Date[1:6], pattern = "\\d+ \\w+ \\d{4}")
+```
+
+
+## Wait a second ... {.smaller}
+
+```{r}
+#| output-location: fragment
+str_sub(dat$Date, end = -4)
+```
+
+. . .
+
+🤦‍♀️
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_remove(dat$Date, pattern = "\\[1\\]")
+```
+
+. . .
+
+🤦‍♀️
+
+
+## Wait a second {.smaller}
+
+```{r}
+str_remove(dat$Date, pattern = "\\[1\\]")
+```
+
+Can we fix the pattern?
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_remove(dat$Date, pattern = "(\\[(\\w+ )?\\d\\])+")
+```
+
+. . .
+
+👍
+
+
+## {.smaller}
+
+```{r}
+#| output-location: fragment
+str_extract(dat$Date, pattern = "\\d+ \\w+ \\d{4}")
+```
+
+. . .
+
+👍
+
+
+# Your Turn: Mark (distance) values
+
+##
+
+```{r}
+head(dat$Mark)
+```
+
+\
+
+Question: How would you use `str_extract()` to get:
+
+1) the distance values (in meters): `"7.61" "7.69" "7.76"` etc
+
+2) just the meter digit: `"7" "7" "7"` etc
+
+3) just the decimals (the centimeters): `"61" "69" "76"` etc
+
+
+##
+
+```{r}
+dat$Mark[1:6]
+```
+
+\
+
+[Goal:]{.mdlit} Get the distance values (in meters) with `str_extract()`
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+
+##
+
+```{r}
+dat$Mark[1:6]
+```
+
+\
+
+[Goal:]{.mdlit} Get the distance values (in meters) with `str_extract()`
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_extract(dat$Mark, pattern = "^\\d\\.\\d{2}")
+```
+
+
+##
+
+```{r}
+dat$Mark[1:6]
+```
+
+\
+
+[Goal:]{.mdlit} Get just the meter digit with `str_extract()`
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+##
+
+```{r}
+dat$Mark[1:6]
+```
+
+\
+
+[Goal:]{.mdlit} Get just the meter digit with `str_extract()`
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_extract(dat$Mark, pattern = "^\\d")
+```
+
+
+##
+
+```{r}
+dat$Mark[1:6]
+```
+
+\
+
+[Goal:]{.mdlit} Get just the decimals (i.e. centimeters) with `str_extract()`
+
+\
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+##
+
+```{r}
+dat$Mark[1:6]
+```
+
+\
+
+[Goal:]{.mdlit} Get just the decimals (i.e. centimeters) with `str_extract()`
+
+\
+
+. . .
+
+:::: {.columns}
+::: {.column width="75%"}
+```{r}
+#| eval: false
+str_extract(dat$Mark[1:6], pattern = "______")
+```
+:::
+
+::: {.column .fragment width="20%"}
+🤷
+:::
+::::
+
+
+# Look Arounds
+
+## Look Arounds
+
+Regex [lookarounds]{.hilit} are zero-width assertions that match a pattern based on the surrounding text without including the surrounding text in the final match.
+
+\
+
+| Example   | description             | nickname            |
+|-----------|-------------------------|---------------------|
+| `a(?=c)`  | "a" followed by "c"     | Positive lookahead  |
+
+## Look Arounds
+
+Regex [lookarounds]{.hilit} are zero-width assertions that match a pattern based on the surrounding text without including the surrounding text in the final match.
+
+\
+
+| Example   | description             | nickname            |
+|-----------|-------------------------|---------------------|
+| `a(?=c)`  | "a" followed by "c"     | Positive lookahead  |
+| `a(?!c)`  | "a" not followed by "c" | Negative lookahead  |
+
+## Look Arounds
+
+Regex [lookarounds]{.hilit} are zero-width assertions that match a pattern based on the surrounding text without including the surrounding text in the final match.
+
+\
+
+| Example   | description             | nickname            |
+|-----------|-------------------------|---------------------|
+| `a(?=c)`  | "a" followed by "c"     | Positive lookahead  |
+| `a(?!c)`  | "a" not followed by "c" | Negative lookahead  |
+| `(?<=c)a` | "a" preceded by "c"     | Positive lookbehind |
+
+## Look Arounds
+
+Regex [lookarounds]{.hilit} are zero-width assertions that match a pattern based on the surrounding text without including the surrounding text in the final match.
+
+\
+
+| Example   | description             | nickname            |
+|-----------|-------------------------|---------------------|
+| `a(?=c)`  | "a" followed by "c"     | Positive lookahead  |
+| `a(?!c)`  | "a" not followed by "c" | Negative lookahead  |
+| `(?<=c)a` | "a" preceded by "c"     | Positive lookbehind |
+| `(?<!c)a` | "a" not preceded by "c" | Negative lookbehind |
+
+
+##
+
+```{r}
+dat$Mark[1:6]
+```
+
+\
+
+[Goal:]{.mdlit} Get just the decimals (i.e. centimeters) with `str_extract()`
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+# dot followed by 2 digits
+str_extract(dat$Mark[1:6], "\\.\\d{2}")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# look behind ("preceded by dot but excluding it")
+str_extract(dat$Mark[1:6], "(?<=\\.)\\d{2}")
+```
+
+
+##
+
+Example with Athlete's country:
+
+```{r}
+dat$Athlete[1:5]
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+# last time: extract country abbreviation
+str_extract(dat$Athlete[1:5], "[[:upper:]]{3}")
+```
+
+. . .
+
+[Let's see how to do it with look arounds]{.mdlit}
+
+
+##
+
+Example with Athlete's country:
+
+```{r}
+dat$Athlete[1:5]
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# 3 characters followed by right parenthesis
+str_extract(dat$Athlete[1:5], "...(?=\\))")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# 3 characters preceded by left parenthesis
+str_extract(dat$Athlete[1:5], "(?<=\\()...")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# 3 characters surrounded by left-and-right parenthesis
+str_extract(dat$Athlete[1:5], "(?<=\\()...(?=\\))")
+```
+
+

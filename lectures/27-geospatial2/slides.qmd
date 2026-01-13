@@ -1,0 +1,682 @@
+---
+title: "Storms in North Atlantic I"
+subtitle: "Maps part II"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+library(sf)
+library(rnaturalearth)
+```
+
+
+# Last Time ...
+
+## Two fundamental spatial data models {.nostretch}
+
+![](images/vector-vs-raster.png){width="60%" fig-align="center"}
+
+
+## Two fundamental spatial data models {.nostretch}
+
+:::: {.columns}
+::: {.column width="50%"}
+### Vector Data
+
+![](images/vector-example-cal-fires.png)
+:::
+
+::: {.column .fragment  width="50%"}
+### Raster Data
+
+![](images/raster-example-cal-fires.png)
+:::
+::::
+
+
+## Vector Data
+
+:::: {.columns}
+::: {.column width="50%"}
+![](images/vector-example-cal-fires.png)
+:::
+
+::: {.column width="50%"}
+- Each row represents one geospatial feature:
+    + a single fire
+- Attributes describe the features (fields or columns):
+    + name of fire
+    + date of fire alarm
+    + area burned
+- Each feature has an associated geometry:
+    + polygon
+:::
+::::
+
+
+## Raster Data
+
+:::: {.columns}
+::: {.column width="50%"}
+![](images/raster-example-cal-fires.png)
+:::
+
+::: {.column width="50%"}
+- Geographic area represented as a grid.
+- Grid has dimension: fixed number of rows and columns.
+- A location is represented by a grid cell.
+- Each cell has a value that represents the attribute of interest: emissions.
+- Each cell is color-coded based on attribute value.
+:::
+::::
+
+
+## 
+
+:::: {.columns}
+::: {.column width="50%"}
+### Vector Data
+
+Vector data are better for discretely bounded data, e.g. bike racks, rivers, political boundaries, etc.
+
+![](images/vector-features.png)
+:::
+
+::: {.column width="50%"}
+### Raster Data
+
+Raster data are better for continuous data, e.g. temperature, elevation, rainfall, etc.
+
+![](images/raster-features.png)
+:::
+::::
+
+
+# Storms Data (Tropical Cylones)
+
+
+## Hurricane Sandy 2012 {background-color="black" background-image="images/sandy-satellite.jpg" background-repeat="no-repeat"}
+
+
+## {.nostretch}
+
+:::: {.columns}
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%"}
+![](images/sandy-tracking-map.png){width="90%"}
+:::
+
+::: {.column width="40%"}
+Vector or Raster?
+:::
+::::
+
+```{r}
+#| echo: false
+countdown::countdown(1/3, bottom = 0)
+```
+
+
+## {.nostretch}
+
+Vector or Raster?
+
+![](images/sandy-wind-speed-map.gif){width="70%"}
+
+```{r}
+#| echo: false
+countdown::countdown(1/3, top = 0)
+```
+
+
+## {.nostretch}
+
+Vector or Raster?
+
+![](images/Sandy_2012_path.png){width="60%"}
+
+```{r}
+#| echo: false
+countdown::countdown(1/3, top = 0)
+```
+
+
+# Storms in North Atlantic  
+
+## {.nostretch}
+
+![](images/tropical-cyclones-map.webp){fig-align="center"}
+
+
+## `storms` data from `"dplyr"` (North Atlantic) {.smaller}
+
+```{r}
+storms
+```
+
+. . .
+
+\
+
+- Source: NOAA Atlantic hurricane database best track data
+- The data includes the positions and attributes of storms from 1975-2022. 
+
+
+## Storms in 1975 {.smaller}
+
+```{r}
+storms |> 
+  filter(year == 1975)
+```
+
+
+## 
+
+```{r}
+storms |> 
+  filter(year == 1975) |> 
+  ggplot(aes(x = long, y = lat)) +
+  geom_point()
+```
+
+## 
+
+```{r}
+storms |> 
+  filter(year == 1975) |> 
+  ggplot(aes(x = long, y = lat, color = name)) +
+  geom_point()
+```
+
+## 
+
+```{r}
+storms |> 
+  filter(year == 1975) |> 
+  ggplot(aes(x = long, y = lat, color = name)) +
+  geom_point() +
+  geom_path()
+```
+
+## What about a map of North America?
+
+:::: {.columns}
+::: {.column .fragment width="70%"}
+```{r}
+#| out-width: 100%
+#| fig-width: 7
+#| fig-height: 5
+#| echo: false
+storms75 = storms |> filter(year == 1975)
+
+map_north_america = ne_countries(
+  continent = "north america", 
+  returnclass = "sf")
+
+ggplot() +
+  geom_sf(data = map_north_america) +
+  coord_sf(xlim = c(-110, -30), ylim = c(5, 65)) +
+  geom_point(data = storms75, 
+             aes(x = long, y = lat, color = name)) +
+  geom_path(data = storms75, 
+          aes(x = long, y = lat, color = name)) +
+  theme(panel.background = element_blank()) + 
+  labs(title = "North Atlantic Storms (1975)")
+```
+:::
+
+::: {.column .fragment width="30%"}
+\
+
+What vector geometries are in this map?
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+:::
+::::
+
+
+## What about a map of North America?
+
+:::: {.columns}
+::: {.column width="70%"}
+```{r}
+#| out-width: 100%
+#| fig-width: 7
+#| fig-height: 5
+#| echo: false
+ggplot() +
+  geom_sf(data = map_north_america) +
+  coord_sf(xlim = c(-110, -30), ylim = c(5, 65)) +
+  geom_point(data = storms75, 
+             aes(x = long, y = lat, color = name)) +
+  geom_path(data = storms75, 
+          aes(x = long, y = lat, color = name)) +
+  theme(panel.background = element_blank()) + 
+  labs(title = "North Atlantic Storms (1975)")
+```
+:::
+
+::: {.column .fragment width="30%"}
+\
+
+We have 2 kinds of geometries:
+
+1) Country geometries (polygons)
+2) Storm geometries (points and lines)
+
+::: {.fragment}
+[Let's see how this map is made.]{.mdlit}
+:::
+
+:::
+::::
+
+
+# Maps of Vector Data in R
+
+## Maps with `"ggplot2"` and `"sf"`
+
+Packages:
+
+```{r}
+#| eval: false
+library(tidyverse)      # includes ggplot2
+library(sf)             # simple features
+library(rnaturalearth)  # World Map Data
+```
+
+
+- `"sf"`: _Simple Features_ package (for handling vector data in a tidy way)
+
+- `"rnaturalearth"`: package that provides World Map data (i.e. vector data sets).  
+
+
+## Simple Features
+
+- A [feature]{.hilit} is thought of as a thing, or an object in the real world, such as a building, a tree, a bike rack, or a tropical cyclone.
+
+- Features have a [geometry]{.hilit} describing where on Earth the feature is located.
+
+- Features can have [attributes]{.hilit}, which describe other properties.
+
+- The [Simple Features]{.hilit} package `"sf"` is based on a standard describing how objects located in the real world can be represented in computers.
+
+- The _Simple Features_ standard puts emphasis on the [spatial geometry]{.hilit} of these objects.
+
+- The standard is widely implemented in spatial databases such as PostGIS, commercial GIS, and libraries such as GDAL.
+
+
+## {.nostretch}
+
+```{r}
+#| output-location: fragment
+#| fig-width: 10
+#| fig-height: 5
+#| out-width: 80%
+# world map data ("sf" object)
+world1 <- ne_coastline(returnclass = "sf")
+
+ggplot(data = world1) +
+  geom_sf()
+```
+
+
+## {.smaller}
+
+```{r}
+class(world1)
+```
+
+. . .
+
+\
+
+```{r}
+dim(world1)
+```
+
+. . .
+
+\
+
+```{r}
+head(world1)
+```
+
+. . .
+
+\
+
+```{r}
+names(world1)
+```
+
+
+## 
+
+```{r}
+world1$geometry
+```
+
+```
+LINESTRING (-163.7129 -78.59567, -163.1058 -78....
+LINESTRING (-6.197885 53.86757, -6.032985 53.15...
+LINESTRING (141.0002 -2.600151, 142.7352 -3.289...
+LINESTRING (114.204 4.525874, 114.6 4.900011, 1...
+LINESTRING (-93.61276 74.98, -94.15691 74.59235...
+```
+
+
+##
+
+`world1` is an `"sf"` object:
+
+- it is a special data.frame (df with a `geometry` column)
+
+- each row is a feature
+
+- each column (or variable) is an attribute
+
+- it specifies the Coordinate Reference System: WGS 84
+
+- i.e. coordinates are longitude and latitude in Decimal Degrees (DD)
+
+- the `geometry` indicates the kind of vector geometry (e.g. points, lines, polygons)
+
+    + sf object uses only one type of geometry (not allowed to mix them!)
+    
+- `geometry` is used by `geom_sf()` to plot the corresponding vector geometries
+
+
+## 
+
+Plotting `world1` with `ggplot() + geom_sf()` produces a 2D map.
+
+- To be more precise, the LINESTRINGS are projected into a 2D map, which means there is a Projected Coordinate System used by `geom_sf()` behind the scenes.
+
+- By default `geom_sf()` uses the __Plate Carrée__ (equirectangular) projection when plotting data in a geographic system like WGS 84.
+
+
+## Another World Map from `"rnaturalearth"` {.nostretch}
+
+. . .
+
+```{r}
+#| output-location: fragment
+#| fig-width: 10
+#| fig-height: 5
+#| out-width: 80%
+# another world map data ("sf" object)
+world2 <- ne_countries(returnclass = "sf")
+ggplot(data = world2) +
+  geom_sf()
+```
+
+
+## {.smaller}
+
+```{r}
+class(world2)
+```
+
+. . .
+
+\
+
+```{r}
+dim(world2)
+```
+
+. . .
+
+\
+
+```{r}
+names(world2)
+```
+
+
+## So far ...
+
+```{r}
+#| eval: false
+# map of world
+world2 <- ne_countries(returnclass = "sf")
+
+ggplot(data = world2) +
+  geom_sf()
+```
+
+. . .
+
+\
+
+```{r}
+#| eval: false
+# scatter plot of storm tracks
+storms75 <- filter(storms, year == 1975)
+
+ggplot(storms75, aes(x = long, y = lat, color = name)) +
+  geom_point() +
+  geom_path() +
+  labs(title = "North Atlantic Storms (1975)")
+```
+
+
+## So far ...
+
+:::: {.columns}
+::: {.column width="50%"}
+Map of World
+
+```{r}
+#| echo: false
+# map of world
+world2 <- ne_countries(returnclass = "sf")
+
+ggplot(data = world2) +
+  geom_sf()
+```
+
+- Data: `"sf"` object `world2`
+- Geom layer: `geom_sf()`
+- No explicit `aes()`
+:::
+
+::: {.column width="50%"}
+Scatter plot of storm tracks
+
+```{r}
+#| echo: false
+# scatter plot of storm tracks
+storms75 <- filter(storms, year == 1975)
+
+ggplot(storms75, aes(x = long, y = lat, color = name)) +
+  geom_point() +
+  geom_path() +
+  labs(title = "North Atlantic Storms (1975)")
+```
+
+- Data: tibble `storms75`
+- Geom layer: `geom_point()`
+- `x=long, y=lat, color=name`
+:::
+::::
+
+
+## So how do we get this map?
+
+```{r}
+#| out-width: 100%
+#| fig-width: 7
+#| fig-height: 5
+#| fig-align: center
+#| echo: false
+ggplot() +
+  geom_sf(data = map_north_america) +
+  coord_sf(xlim = c(-110, -30), ylim = c(5, 65)) +
+  geom_point(data = storms75, 
+             aes(x = long, y = lat, color = name)) +
+  geom_path(data = storms75, 
+          aes(x = long, y = lat, color = name)) +
+  theme(panel.background = element_blank()) + 
+  labs(title = "North Atlantic Storms (1975)")
+```
+
+
+## Combine data sets with `geom_()` layers
+
+. . .
+
+```{r}
+#| output-location: fragment
+#| code-line-numbers: "1|1-2|1-4|1-6"
+ggplot() +
+  geom_sf(data = world2) +
+  geom_point(data = storms75, 
+             aes(x = long, y = lat, color = name)) +
+  geom_path(data = storms75, 
+            aes(x = long, y = lat, color = name))
+```
+
+## Adjust coordinates with `coord_sf_()` layers
+
+. . .
+
+```{r}
+#| output-location: fragment
+#| code-line-numbers: "1|1-2|1-3|1-5|1-7"
+ggplot() +
+  geom_sf(data = world2) +
+  coord_sf(xlim = c(-110, -30), ylim = c(5, 65)) +
+  geom_point(data = storms75, 
+             aes(x = long, y = lat, color = name)) +
+  geom_path(data = storms75, 
+            aes(x = long, y = lat, color = name))
+```
+
+
+## Customize theme and labels
+
+. . .
+
+```{r}
+#| output-location: fragment
+#| code-line-numbers: "1-7|1-9"
+ggplot() +
+  geom_sf(data = world2) +
+  coord_sf(xlim = c(-110, -30), ylim = c(5, 65)) +
+  geom_point(data = storms75, 
+             aes(x = long, y = lat, color = name)) +
+  geom_path(data = storms75, 
+            aes(x = long, y = lat, color = name)) +
+  theme(panel.background = element_blank()) + 
+  labs(title = "North Atlantic Storms (1975)")
+```
+
+
+## 
+
+```{r}
+#| code-fold: true
+ggplot() +
+  geom_sf(data = world2) +
+  coord_sf(xlim = c(-110, -30), ylim = c(5, 65)) +
+  geom_point(data = storms75, 
+             aes(x = long, y = lat, color = name)) +
+  geom_path(data = storms75, 
+            aes(x = long, y = lat, color = name)) +
+  theme(panel.background = element_blank()) + 
+  labs(title = "North Atlantic Storms (1975)")
+```
+
+
+## Our first workflow {.nostretch}
+
+![](images/storm-track-workflow1.svg){width="80%" fig-align="center"}
+
+
+# Projections
+
+## {.nostretch}
+
+![](images/projections.png){width="80%" fig-align="center"}
+
+
+## Change Projection
+
+You can change the projection with the ggplot layer `coord_sf()`
+
+```{r}
+#| eval: false
+world2 <- ne_countries(returnclass = "sf")
+
+ggplot(data = world2) +
+  geom_sf() +
+  coord_sf(crs = ...)
+```
+
+
+##
+
+```{r}
+ggplot(data = world2) +
+  geom_sf() +
+  coord_sf(crs = 4326)
+```
+
+##
+
+```{r}
+ggplot(data = world2) +
+  geom_sf() +
+  coord_sf(crs = "+proj=moll")
+```
+
+##
+
+```{r}
+# Equal Area Cylindrical
+ggplot(data = world2) +
+  geom_sf() +
+  coord_sf(crs = "+proj=cea")
+```
+
+##
+
+```{r}
+ggplot(data = world2) +
+  geom_sf() +
+  coord_sf(crs = "+proj=eck1")
+```
+
+##
+
+```{r}
+ggplot(data = world2) +
+  geom_sf() +
+  coord_sf(crs = "+proj=eck2")
+```
+
+## Some Projections
+
+- Central Cylindrical: `+proj=cc`
+- Equal Area Cylindrical: `+proj=cea`
+- Lagrange: `+proj=lagrng`
+- Mercator: `+proj=merc`
+- Wagner 1: `+proj=wag1`
+- Times: `+proj=times`
+
+
+## {.nostretch}
+
+![](images/projections-website.png){width="80%" fig-align="center"}
+

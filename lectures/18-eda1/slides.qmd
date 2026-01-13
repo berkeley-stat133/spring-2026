@@ -1,0 +1,454 @@
+---
+title: "Exploratory Data Analysis"
+subtitle: "EDA part I"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+library(plotly)
+library(patchwork)
+```
+
+
+# EDA
+
+## NBA 2024-2025 season: Roster Data
+
+![](images/GSW-roster-2025.png){fig-align="center"}
+
+Source: Basketball Reference
+
+
+## Files
+
+- CSV file: `all-teams-2025-roster.csv`
+- Data Dictionary: `roster-data-dictionary.md`
+
+
+## Data Dictionary (i.e. codebook)
+
+:::: {.columns}
+::: {.column width="50%"}
+| Variable     | Type  | Description  |
+|--------------|-------|--------------|
+| `number`     | `chr` | Number (in jersey) |
+| `player`     | `chr` | Name of player |
+| `team`       | `chr` | Team (3-letter abbreviation) |
+| `position`   | `chr` | Position (abbreviated) |
+| `height`     | `dbl` | Height (in inches) |
+| `weight`     | `dbl` | Weight (in pounds) |
+:::
+
+::: {.column .fragment width="50%"}
+| Variable     | Type  | Description  |
+|--------------|-------|--------------|
+| `birth_date` | `chr` | Birth date (Month dd, yyyy) |
+| `country`    | `chr` | Country (2-letter abbreviation) |
+| `experience` | `chr` | Years of experience (R = rookie) |
+| `college`    | `chr` | Name of college |
+:::
+::::
+
+
+## 30 NBA Teams
+
+![](images/nba-chart-11.webp){fig-align="center"}
+
+## Basketball Positions and Roles {.smaller}
+
+:::: {.columns}
+::: {.column width="55%"}
+![](images/basketball-positions.png){fig-align="center"}
+:::
+::: {.column .fragment width="45%"}
+::: {.nonincremental}
+- [Point Guard (PG)]{.hilit}: The team's primary ball handler and playmaker.
+
+- [Shooting Guard (SG)]{.hilit}: Focused on scoring, specially from long range.
+
+- [Small Forward (SF)]{.hilit}: Versatile player skilled in both offense and defense.
+
+- [Power Forward (PF)]{.hilit}: Strong player who scores inside and rebounds.
+
+- [Center (C)]{.hilit}: Tallest player, dominant near the rim, controls rebounds and block shots.
+
+:::
+:::
+::::
+
+
+## NBA Roster Data (season 2024-2025) {.smaller}
+
+```{r}
+dat <- read_csv("all-teams-2025-roster.csv")
+dat
+```
+
+
+## Questions
+
+Talk to your neighbor(s) and come up with at least 4 questions that you would like to ask about the `height` of NBA players.
+
+```{r}
+#| echo: false
+countdown::countdown(2, bottom = 0)
+```
+
+
+## NBA Roster Data (season 2024-2025) {.smaller}
+
+```{r}
+slice_sample(dat, n = 8)
+```
+
+\
+
+[Let's explore the height of NBA players]{.mdlit}
+
+
+## Sanity checks
+
+```{r}
+#| output-location: fragment
+dim(dat)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+dat |> distinct(team) |> pull(team)
+```
+
+
+# Univariate Analysis
+
+## Sanity check
+
+```{r}
+#| output-location: fragment
+summary(dat$height)
+```
+
+\
+
+- Does the output make sense?
+- Do the Min and Max seem reasonable?
+- What about the other summaries?
+
+
+## Visual Inspection
+
+We can look at the distribution of `height` by graphing:
+
+- histogram
+- density plot
+- boxplot
+
+
+## Histogram
+
+```{r}
+#| code-fold: true
+# default histogram (30 bins)
+ggplot(dat, aes(x = height)) +
+  geom_histogram(bins = 30)
+```
+
+
+## Histogram
+
+```{r}
+#| code-fold: true
+# default histogram (30 bins)
+ggplot(dat, aes(x = height)) +
+  geom_histogram(binwidth = 1, color = "white")
+```
+
+## Histogram (interactive)
+
+```{r}
+#| code-fold: true
+# default histogram (30 bins)
+ggplotly(
+  ggplot(dat, aes(x = height)) +
+  geom_histogram(binwidth = 1, color = "white")
+)
+```
+
+
+##
+
+```{r warning=FALSE, echo=FALSE}
+#| fig-width: 15
+#| fig-height: 6
+p1 <- dat |> 
+  ggplot(aes(x = height)) +
+  geom_histogram(binwidth = 1, color = "white") +
+  labs(title = "Histogram") +
+  theme_bw()
+
+p2 <- dat |> 
+  ggplot(aes(x = height)) +
+  geom_density() +
+  labs(title = "Density") +
+  theme_bw()
+
+p3 <- dat |> 
+  ggplot(aes(x = height)) +
+  geom_boxplot() +
+  labs(title = "Boxplot") +
+  theme_bw()
+
+distrib_plots <- p1 + p2 + p3
+print(distrib_plots)
+```
+
+
+##
+
+```{r}
+#| output-location: fragment
+# shortest player
+dat |> 
+  slice_min(height) |> 
+  select(player, team, position, height, country)
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+# tallest player
+dat |> 
+  slice_max(height) |> 
+  select(player, team, position, height, country)
+```
+
+
+## Average Height
+
+```{r}
+dat |> 
+  mutate(height_m = height * 0.0254) |> 
+  summarize(avg_height_in = mean(height),
+            avg_height_m = mean(height_m))
+```
+
+
+# Bivariate Analysis
+
+- `height` and `weight`
+
+- `height` and `position`
+
+- `height` and `team`
+
+
+# Height and Weight
+
+## Height and Weight
+
+```{r}
+#| code-fold: true
+ggplot(dat, aes(x = height, y = weight)) +
+  geom_point()
+```
+
+
+## Height and Weight
+
+```{r}
+#| code-fold: true
+ggplot(dat, aes(x = height, y = weight)) +
+  geom_point(color = "green3", alpha = 0.7) +
+  theme_bw()
+```
+
+
+## Height and Weight with `plotly()` (ver 1)
+
+```{r}
+#| code-fold: true
+#| fig-width: 12
+#| fig-height: 7.5
+ggplotly(
+  ggplot(dat, aes(x = height, y = weight)) +
+    geom_point(color = "green3", alpha = 0.7) +
+    theme_bw()
+)
+```
+
+
+## Height and Weight with `plotly()` (ver 2)
+
+```{r}
+#| code-fold: true
+#| fig-width: 12
+#| fig-height: 7.5
+ggplotly(
+  ggplot(dat, aes(x = height, y = weight, label = player)) +
+    geom_point(color = "green3", alpha = 0.7) +
+    theme_bw()
+)
+```
+
+
+# Height and Position
+
+## Height and Position
+
+```{r}
+#| code-fold: true
+ggplot(dat, aes(x = height, y = position)) +
+  geom_point()
+```
+
+
+## Height and Position (boxplots)
+
+```{r}
+#| code-fold: true
+ggplot(dat, aes(x = height, y = position)) +
+  geom_boxplot()
+```
+
+
+## Height and Position (violin plots)
+
+```{r}
+#| code-fold: true
+ggplot(dat, aes(x = height, y = position)) +
+  geom_violin()
+```
+
+
+## Height and Position
+
+```{r}
+#| output-location: fragment
+dat |> 
+  group_by(position) |> 
+  summarize(
+    min_ht = min(height),
+    avg_ht = mean(height),
+    max_ht = max(height)) |> 
+  arrange(avg_ht)
+```
+
+
+## Histograms: `height` by `position`
+
+```{r}
+#| code-fold: true
+# default histogram (30 bins)
+ggplot(dat, aes(x = height)) +
+  geom_histogram(binwidth = 1, color = "white") +
+  facet_wrap(~ position)
+```
+
+
+## Histograms: `height` by `position`
+
+```{r}
+#| code-fold: true
+# default histogram (30 bins)
+ggplot(dat, aes(x = height)) +
+  geom_histogram(binwidth = 1, color = "white") +
+  facet_wrap(~ position, scales = "free_y")
+```
+
+
+# Height and Team
+
+## Height and Team
+
+```{r}
+#| code-fold: true
+ggplot(dat, aes(x = height, y = team)) +
+  geom_point()
+```
+
+
+## Height and Team: 👍 or 👎?
+
+```{r}
+#| code-fold: true
+ggplot(dat, aes(x = height, y = team, color = team)) +
+  geom_point()
+```
+
+
+
+## Height and Team
+
+```{r}
+#| code-fold: true
+ggplot(dat, aes(x = height, y = team)) +
+  geom_boxplot()
+```
+
+
+## Histograms: `height` facets by `team`
+
+```{r}
+#| code-fold: true
+ggplot(dat, aes(x = height)) +
+  geom_histogram(binwidth = 1, color = "white") +
+  facet_wrap(~ team)
+```
+
+
+## Density curves: `height` facets by `team`
+
+```{r}
+#| code-fold: true
+ggplot(dat, aes(x = height)) +
+  geom_density() +
+  facet_wrap(~ team)
+```
+
+
+## Ranking Teams by Avg Height
+
+. . .
+
+```{r}
+#| output-location: fragment
+dat |> 
+  group_by(team) |> 
+  summarize(avg_ht = mean(height)) |> 
+  arrange(desc(avg_ht)) |> 
+  print(n = 30)
+```
+
+
+##
+
+```{r}
+#| output-location: fragment
+dat |> 
+  group_by(team) |> 
+  summarize(avg_ht = mean(height)) |> 
+  ggplot(aes(x = avg_ht, y = team)) +
+  geom_col()
+```
+
+
+##
+
+```{r}
+#| output-location: fragment
+dat |> 
+  group_by(team) |> 
+  summarize(avg_ht = mean(height)) |> 
+  ggplot(aes(x = avg_ht, y = reorder(team, avg_ht))) +
+  geom_col() +
+  labs(x = "average height", y = "")
+```
+

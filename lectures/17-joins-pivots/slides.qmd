@@ -1,0 +1,646 @@
+---
+title: "Joins and Pivots"
+subtitle: "Merging and Reshaping data frames"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+```
+
+
+## Agenda
+
+. . .
+
+Two big ideas today:
+
+- Joins (or merges)
+- Pivots
+
+
+## {auto-animate=true}
+
+![](images/tidyverse-hex-logo.png){fig-align="center"}
+
+## {auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+![](images/tidyverse-hex-logo.png)
+:::
+
+::: {.column width="50%"}
+![](images/tidyr-hex-logo.png)
+:::
+:::
+
+
+##
+
+Consider the following 2 tables
+ 
+```{r}
+tbl1 <- tibble(
+  name = c("Harry", "Hermione", "Ron"),
+  gpa = c(3.8, 4.0, 3.0),
+  coffee = c("yes", "no", "yes")
+)
+
+tbl2 <- tibble(
+  name = c("Harry", "Bellatrix", "Hermione", "Draco"),
+  spells = c(60, 75, 70, 55),
+  lunch = c("pizza", "tacos", "burrito", "pad thai")
+)
+```
+
+
+##
+
+Consider the following 2 tables
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+tbl1
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+tbl2
+```
+:::
+::::
+
+
+## Joins
+
+A [join]{.hilit} is an operation that combines two data frames by linking the 
+rows by their unique identifier called a [key]{.mdlit}.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+This can be done in six ways:
+
+::: {.nonincremental}
+1) Left join
+2) Right join
+3) Full join
+4) Inner join
+5) Semi join
+6) Anti join
+:::
+:::
+
+::: {.column width="50%"}
+![](images/original-dfs.png)
+:::
+::::
+
+
+# Left Join
+
+## Left Join
+
+All rows from `x`, and all columns from `x` and `y`. Rows in `x` with no match in `y` will have `NA` values in the new columns.
+
+:::: {.columns}
+::: {.column width="50%"}
+![](images/original-dfs.png)
+:::
+
+::: {.column .fragment width="50%"}
+\
+
+![](images/left-join.gif)
+:::
+::::
+
+
+## Left Join
+
+All rows from `x`, and all columns from `x` and `y`. Rows in `x` with no match in `y` will have `NA` values in the new columns.
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+tbl1
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+tbl2
+```
+:::
+::::
+
+
+## Left Join
+
+All rows from `x`, and all columns from `x` and `y`. Rows in `x` with no match in `y` will have `NA` values in the new columns.
+
+```{r}
+#| output-location: fragment
+left_join(x = tbl1, y = tbl2, by = "name")
+```
+
+
+
+# Right Join
+
+## Right Join
+
+All rows from `y`, and all columns from `x` and `y`. Rows in `y` with no match in `x` will have `NA` values in the new columns.
+
+:::: {.columns}
+::: {.column width="50%"}
+![](images/original-dfs.png)
+:::
+
+::: {.column .fragment width="50%"}
+\
+
+![](images/right-join.gif)
+:::
+::::
+
+
+## Right Join
+
+All rows from `y`, and all columns from `x` and `y`. Rows in `y` with no match in `x` will have `NA` values in the new columns.
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+tbl1
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+tbl2
+```
+:::
+::::
+
+
+## Right Join
+
+All rows from `y`, and all columns from `x` and `y`. Rows in `y` with no match in `x` will have `NA` values in the new columns.
+
+```{r}
+#| output-location: fragment
+right_join(x = tbl1, y = tbl2, by = "name")
+```
+
+
+# Full Join
+
+## Full Join
+
+All rows and all columns from both `x` and `y`. Where there are not matching values, returns `NA` for the ones missing.
+
+:::: {.columns}
+::: {.column width="50%"}
+![](images/original-dfs.png)
+:::
+
+::: {.column .fragment width="50%"}
+\
+
+![](images/full-join.gif)
+:::
+::::
+
+
+## Full Join
+
+All rows and all columns from both `x` and `y`. Where there are not matching values, returns `NA` for the ones missing.
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+tbl1
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+tbl2
+```
+:::
+::::
+
+
+## Full Join
+
+All rows and all columns from both `x` and `y`. Where there are not matching values, returns `NA` for the ones missing.
+
+```{r}
+#| output-location: fragment
+full_join(tbl1, tbl2, by = "name")
+```
+
+
+# Inner Join
+
+## Inner Join
+
+All rows from `x` where there are matching values in `y`, and all columns from `x` and `y`.
+
+:::: {.columns}
+::: {.column width="50%"}
+![](images/original-dfs.png)
+:::
+
+::: {.column .fragment width="50%"}
+\
+
+![](images/inner-join.gif)
+:::
+::::
+
+
+## Inner Join
+
+All rows from `x` where there are matching values in `y`, and all columns from `x` and `y`.
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+tbl1
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+tbl2
+```
+:::
+::::
+
+
+## Inner Join
+
+All rows from `x` where there are matching values in `y`, and all columns from `x` and `y`.
+
+
+```{r}
+#| output-location: fragment
+inner_join(tbl1, tbl2, by = "name")
+```
+
+
+# Semi Join
+
+## Semi Join
+
+All rows from `x` where there are matching values in `y`, keeping just columns from `x`.
+
+:::: {.columns}
+::: {.column width="50%"}
+![](images/original-dfs.png)
+:::
+
+::: {.column .fragment width="50%"}
+\
+
+![](images/semi-join.gif)
+:::
+::::
+
+
+## Semi Join
+
+All rows from `x` where there are matching values in `y`, keeping just columns from `x`.
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+tbl1
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+tbl2
+```
+:::
+::::
+
+
+## Semi Join
+
+All rows from `x` where there are matching values in `y`, keeping just columns from `x`.
+
+```{r}
+#| output-location: fragment
+semi_join(tbl1, tbl2, by = "name")
+```
+
+
+# Anti Join
+
+## Anti Join
+
+All rows from `x` where there are not matching values in `y`, keeping just columns from `x`.
+
+:::: {.columns}
+::: {.column width="50%"}
+![](images/original-dfs.png)
+:::
+
+::: {.column .fragment width="50%"}
+\
+
+![](images/anti-join.gif)
+:::
+::::
+
+
+## Anti Join
+
+All rows from `x` where there are not matching values in `y`, keeping just columns from `x`.
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+tbl1
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+tbl2
+```
+:::
+::::
+
+
+## Anti Join
+
+All rows from `x` where there are not matching values in `y`, keeping just columns from `x`.
+
+```{r}
+#| output-location: fragment
+anti_join(tbl1, tbl2, by = "name")
+```
+
+
+##
+
+![](images/joins.png){fig-align="center"}
+
+##
+
+What if the ID columns in `x` and `y` have different names?
+
+```{r}
+#| echo: false
+x <- tibble(
+  id1 = c("Harry", "Hermione", "Ron"),
+  gpa = c(3.8, 4.0, 3.0),
+  coffee = c("yes", "no", "yes")
+)
+
+y <- tibble(
+  id2 = c("Harry", "Bellatrix", "Hermione", "Draco"),
+  spells = c(60, 75, 70, 55),
+  lunch = c("pizza", "tacos", "burrito", "pad thai")
+)
+```
+
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+x
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+y
+```
+:::
+::::
+
+. . .
+
+```{r}
+#| output-location: fragment
+semi_join(x, y, by = join_by(id1 == id2))
+```
+
+
+# Pivots
+
+## {auto-animate=true}
+
+How do you go from `gpa1` to `gpa2`?
+
+```{r}
+#| echo: false
+gpa1 <- tibble(
+  name = c("Harry", "Hermione", "Ron"),
+  year1 = c(3.7, 3.9, 3.1),
+  year2 = c(3.8, 4.0, 3.0))
+
+gpa2 <- pivot_longer(
+  gpa1, 
+  cols = c(year1, year2), 
+  names_to = "year", 
+  values_to = "gpa")
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+gpa1
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+gpa2
+```
+:::
+::::
+
+. . .
+
+\
+
+```{r}
+#| eval: false
+#| code-line-numbers: "1|1-2|1-3|1-4|1-5"
+gpa2 <- pivot_longer(
+  data = gpa1, 
+  cols = c(year1, year2), 
+  names_to = "year", 
+  values_to = "gpa")
+```
+
+
+## {auto-animate=true}
+
+How do you go from `gpa2` to `gpa1`?
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+gpa2
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+gpa1
+```
+:::
+::::
+
+. . .
+
+\
+
+```{r}
+#| eval: false
+#| code-line-numbers: "1|1-2|1-3|1-4"
+gpa1 <- pivot_wider(
+  data = gpa2, 
+  names_from = year, 
+  values_from = gpa)
+```
+
+
+## About Pivots
+
+Pivoting is a method to reshape a data frame to become either wider or longer. Requires that you specify the names and values involved in any transformation. Implemented in `"tidyr"`.
+
+```{r}
+#| eval: false
+library(tidyverse) # contains "tidyr"
+```
+
+. . .
+
+\
+
+```{r}
+#| eval: false
+pivot_longer(data, cols, names_to, values_to)
+```
+
+\
+
+```{r}
+#| eval: false
+pivot_wider(data, names_from, values_from)
+```
+
+
+
+## {auto-animate=true}
+
+How do you go from `tb1` to `tb2`?
+
+```{r}
+#| echo: false
+tb1 <- tibble(
+  name = rep(c("Harry", "Hermione", "Ron"), each = 2),
+  year = c(1, 2, 1, 2, 1, 2),
+  spells = c(8, 10, 15, 17, 5, 7),
+  potions = c(10, 12, 18, 20, 6, 8))
+
+tb2 <- pivot_longer(
+  data = tb1,
+  cols = c(spells, potions),
+  names_to = "type",
+  values_to = "count")
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+tb1
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+tb2
+```
+:::
+::::
+
+. . .
+
+\
+
+```{r}
+#| eval: false
+#| code-line-numbers: "1|1-2|1-3|1-4|1-5"
+tb2 <- pivot_longer(
+  data = tb1,
+  cols = c(spells, potions),
+  names_to = "type",
+  values_to = "count")
+```
+
+
+## {auto-animate=true}
+
+How do you go from `tb1` to `tb3`?
+
+```{r}
+#| echo: false
+tb1 <- tibble(
+  name = rep(c("Harry", "Hermione", "Ron"), each = 2),
+  year = c(1, 2, 1, 2, 1, 2),
+  spells = c(8, 10, 15, 17, 5, 7),
+  potions = c(10, 12, 18, 20, 6, 8))
+
+tb3 <- unite(
+  data = tb1,
+  ratio, spells, potions,
+  sep = "/", remove = TRUE
+)
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+tb1
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+tb3
+```
+:::
+::::
+
+. . .
+
+\
+
+```{r}
+#| eval: false
+#| code-line-numbers: "1|1-2|1-3|1-4|1-5"
+tb3 <- unite(
+  data = tb1,
+  ratio, spells, potions,
+  sep = "/", 
+  remove = TRUE)
+```
+
+
+

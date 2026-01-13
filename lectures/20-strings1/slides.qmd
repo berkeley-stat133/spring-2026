@@ -1,0 +1,893 @@
+---
+title: "Strings I"
+subtitle: "Parsing text with regular expressions"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+library(rvest)
+```
+
+
+## Agenda
+
+- Fundamentals of character strings
+- Regular Expressions
+  + Literal Characters
+  + Metacharacters
+    - Wildcard
+    - Escape
+  + Character sets
+  + Character classes
+  + Abbreviated classes
+
+
+# Fundamentals of Strings
+
+## Character Vectors
+
+```{r}
+teas <- c("taro", "green", "black", "matcha", "jasmine")
+```
+
+. . .
+
+\
+
+```{r}
+vehicles <- c("car", "bike", "train", "boat", "airplane")
+```
+
+. . .
+
+\
+
+```{r}
+fives <- c("5.00", "5100", "5 00", "5-00", "$5.55")
+```
+
+
+## 
+
+A [character vector]{.hilit} is a set of strings, each of which has a number of characters (`nchar()`).
+
+```{r}
+#| output-location: fragment
+teas
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+length(teas)
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+nchar(teas)
+```
+
+
+## Creating Strings
+
+::: {.nonincremental}
+- Wrap the characters either in `"` or `'`.
+- Combine strings with `paste()`
+:::
+
+```{r}
+#| output-location: fragment
+paste("pa", "tro", "num")
+```
+
+
+## Creating Strings
+
+::: {.nonincremental}
+- Wrap the characters either in `"` or `'`.
+- Combine strings with `paste()`
+:::
+
+```{r}
+#| output-location: fragment
+paste("pa", "tro", "num", sep = ",")
+```
+
+
+## Creating Strings
+
+::: {.nonincremental}
+- Wrap the characters either in `"` or `'`.
+- Combine strings with `paste()`
+:::
+
+```{r}
+#| output-location: fragment
+paste("pa", "tro", "num", sep = "")
+```
+
+
+## Changing Case
+
+- `tolower()` makes all letter characters lowercase
+- `toupper()` makes all letter characters uppercase
+
+. . .
+
+```{r}
+#| output-location: fragment
+TEAS <- toupper(teas)
+TEAS
+```
+
+. . . 
+
+\
+
+```{r}
+#| output-location: fragment
+tolower(TEAS)
+```
+
+
+## Quotations
+
+```{r}
+#| output-location: fragment
+"Harry pulled out his wand. "Expecto Patronum!" he yelled."
+```
+
+. . . 
+
+\
+
+Include a quotation in a string by using `'`.
+
+```{r}
+#| output-location: fragment
+'Harry pulled out his wand. "Expecto Patronum!" he yelled.'
+```
+
+
+## Some Special Characters
+
+- `"` normally starts or ends a string. `\"` is the double-quote character.
+
+- `t` normally is the lowercase Latin t. `\t` is a tab space.
+
+- `n` normally is the lowercase Latin n. `\n` is a new line.
+
+- U0001F600 normal is just that. `\U0001F600` is [😀.]{.fragment}
+
+```{r}
+#| echo: false
+#| eval: false
+str_view(" I \U0002665\U000FE0F you")
+```
+
+
+# Package `"stringr"`
+
+## `"stringr"`
+
+Provides a large set of functions for string manipulation
+
+:::: {.columns}
+::: {.column width="50%"}
+- `str_length()`: analog of `nchar()`
+- `str_c()`: analog of `paste()`
+- `str_view()`
+- `str_sub()`
+- `str_detect()`
+:::
+
+::: {.column width="50%"}
+- `str_split()`
+- `str_match()`
+- `str_replace()`
+- `str_extract()`
+:::
+:::
+
+
+## `str_view()`
+
+Show more readable version of strings. Also see how a pattern matches.
+
+```{r}
+#| output-location: fragment
+x <- 'Harry pulled out his wand. "Expecto Patronum!" he yelled.'
+x
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+str_view(x)
+```
+
+
+## `str_sub()`
+
+Subset strings by position
+
+. . . 
+
+```{r}
+#| output-location: fragment
+teas
+```
+
+. . . 
+
+\
+
+```{r}
+#| output-location: fragment
+str_sub(teas, start = 1, end = 2)
+```
+
+. . . 
+
+\
+
+```{r}
+#| output-location: fragment
+str_sub(teas, start = 1, end = 3)
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+str_sub(teas, start = -3)
+```
+
+
+## `str_detect()`
+
+Detects the presence or absence of a pattern in a string
+
+```{r}
+teas
+```
+
+. . . 
+
+```{r}
+#| output-location: fragment
+str_detect(teas, pattern = "tar")
+```
+
+. . . 
+
+\
+
+```{r}
+#| output-location: fragment
+str_detect(teas, pattern = "at")
+```
+
+. . . 
+
+\
+
+```{r}
+#| output-location: fragment
+str_view(teas, pattern = "at")
+```
+
+
+# Regular Expressions
+
+## Regular Expressions (regex)
+
+A sequence of characters expressing a string or pattern to be searched for within a longer piece of text.
+
+. . .
+
+Regex is not:
+
+- a programming language
+- a markup syntax
+- a UNIX utility
+
+
+## Regex
+
+Simply put, regex is 
+
+a text string (i.e. set of characters) that defines
+
+::: {.fragment .highlight-red}
+[a certain amount of text]{.highlight-red}
+:::
+
+. . .
+
+\
+
+That "certain amount of text" is called a [pattern]{.hilit}.
+
+. . .
+
+\
+
+Regex, at its core, has to do with matching patterns of text.
+
+
+## 2 main types of characters
+
+\
+
+::: {.fragment}
+### 1) Literal Characters
+
+A literal character is a character that matches itself.
+:::
+
+\
+
+::: {.fragment}
+### 2) Metacharacters
+
+A metacharacter is a character that does NOT match itself.
+:::
+
+
+## Literal Characters
+
+```{r}
+vehicles
+```
+
+. . .
+
+\
+
+Match the letter "a".
+
+```{r}
+#| output-location: fragment
+str_view(vehicles, pattern = "a")
+```
+
+
+## Literal Characters
+
+```{r}
+vehicles
+```
+
+. . .
+
+\
+
+Match the letter "i".
+
+```{r}
+#| output-location: fragment
+str_view(vehicles, pattern = "i")
+```
+
+
+## Literal Characters
+
+```{r}
+vehicles
+```
+
+. . .
+
+\
+
+Match the letters "ai".
+
+```{r}
+#| output-location: fragment
+str_view(vehicles, pattern = "ai")
+```
+
+
+## Literal Characters
+
+```{r}
+vehicles
+```
+
+. . .
+
+\
+
+Match the letters "air".
+
+```{r}
+#| output-location: fragment
+str_view(vehicles, pattern = "air")
+```
+
+
+## Metacharacters
+
+Non-letter characters with special meaning.
+
+- `.`
+- `?`
+- `+`
+- `*`
+- `[`
+- `]`
+- etc
+
+
+## Wildcard `.`
+
+`.` will match ANY single character
+
+```{r}
+fives
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+str_view(fives, pattern = ".")
+```
+
+
+## Wildcard `.`
+
+```{r}
+fives
+```
+
+. . .
+
+\
+
+5 followed by any character: "5."
+
+```{r}
+#| output-location: fragment
+str_view(fives, pattern = "5.")
+```
+
+
+## Wildcard `.`
+
+```{r}
+fives
+```
+
+. . .
+
+\
+
+any character followed by zero: ".0"
+
+```{r}
+#| output-location: fragment
+str_view(fives, pattern = ".0")
+```
+
+
+## Escape metacharacter `\`
+
+But what if the string has an actual period?
+
+```{r}
+fives
+```
+
+. . .
+
+\
+
+How do we match `"5."` but not `"51"` (or any other character)?
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_view(fives, pattern = "5\\.")
+```
+
+. . .
+
+The first `\` escapes it for the string, the second `\` escapes it for the regex.
+
+
+# Character Sets
+
+## Character Set
+
+A character set is a set of characters defined (grouped) within brackets `[  ]`
+
+
+## Character Set
+
+```{r}
+vehicles
+```
+
+. . .
+
+\
+
+Match single occurrence of either "a" or "o".
+
+```{r}
+#| output-location: fragment
+str_view(vehicles, pattern = "[ao]")
+```
+
+. . .
+
+[A character set matches any single character in the set]{.mdlit}
+
+
+## Character Set
+
+```{r}
+vehicles
+```
+
+. . .
+
+\
+
+Match any vowel.
+
+```{r}
+#| output-location: fragment
+str_view(vehicles, pattern = "[aeiou]")
+```
+
+
+## Character Set
+
+```{r}
+vehicles
+```
+
+. . .
+
+\
+
+Match single occurrence of either "k" or "t".
+
+```{r}
+#| output-location: fragment
+str_view(vehicles, pattern = "[kt]")
+```
+
+
+## Character Set
+
+```{r}
+vehicles
+```
+
+. . .
+
+\
+
+Match single occurrence of "c", "a", or "r".
+
+```{r}
+#| output-location: fragment
+str_view(vehicles, pattern = "[car]")
+```
+
+. . .
+
+\
+
+BTW: Do NOT confuse `"[car]"` with `"car"`
+
+
+# Character Ranges
+
+## Character Ranges
+
+A character set is a set of characters defined (grouped) within brackets `[  ]`
+
+- `[0123456789]`
+- `[abcdefghijklmnopqrstuvwxyz]`
+- `[ABCDEFGHIJKLMNOPQRSTUVWXYZ]`
+
+
+## Character Ranges
+
+A character set is a set of characters defined (grouped) within brackets `[  ]`
+
+::: {.nonincremental}
+- `[0123456789]` $\ \rightarrow \ $ `[0-9]`
+- `[abcdefghijklmnopqrstuvwxyz]` $\ \rightarrow \ $ `[a-z]`
+- `[ABCDEFGHIJKLMNOPQRSTUVWXYZ]` $\ \rightarrow \ $ `[A-Z]`
+:::
+
+- `[012...789abc...xyz]` $\ \rightarrow \ $ `[0-9a-z]`
+- `[012...789ABC...XYZ]` $\ \rightarrow \ $ `[0-9A-Z]`
+- `[abc...xyzABC...XYZ]` $\ \rightarrow \ $ `[a-zA-Z]`
+- `[abcdefg34567UVWXYZ]` $\ \rightarrow \ $ `[a-g3-7U-Z]`
+
+##
+
+```{r}
+fives
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_view(fives, pattern = "[0-9]")
+```
+. . .
+
+```{r}
+#| output-location: fragment
+str_view(fives, pattern = "[0-9][0-9]")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_view(fives, pattern = "[0-9][0-9][0-9]")
+```
+
+
+# POSIX Classes
+
+## POSIX Classes
+
+A POSIX class is a special set designed as a standardized set to ensure consistency across different regex tools.
+
+\
+
+POSIX classes are used inside a bracket expression `[ ]` and are themselves enclosed in `[:` and `:]` delimiters.
+
+\
+
+For example `[[:digit:]]` which is equivalent to `[0-9]`
+
+
+## POSIX Classes
+
+- `[[:digit:]]` analog of `[0-9]`
+- `[[:alpha:]]` analog of `[A-Za-z]`
+- `[[:alnum:]]` analog of `[A-Za-z0-9a]`
+- `[[:lower:]]` analog of `[a-z]`
+- `[[:upper:]]` analog of `[A-Z]`
+- `[[:space:]]` for whitespace characters
+- `[[:punct:]]` for punctuation characters
+- `[[:xdigit:]]` for hexadecimal digits
+- `[[:blank:]]` for space and tab characters
+
+
+## 
+
+What will be matched by the following patterns?
+
+```{r}
+txt <- c("5\t00", "car", "Bike", "TARO 5.00")
+```
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+\
+
+. . .
+
+```{r}
+#| eval: false
+str_view(txt, pattern = "[[:digit:]]")
+```
+
+\
+
+```{r}
+#| eval: false
+str_view(txt, pattern = "[[:space:]]")
+```
+
+\
+
+```{r}
+#| eval: false
+str_view(txt, pattern = "[[:upper:]]")
+```
+
+
+## 
+
+What will be matched by the following patterns?
+
+```{r}
+txt <- c("5\t00", "car", "Bike", "TARO 5.00")
+```
+
+\
+
+```{r}
+str_view(txt, pattern = "[[:digit:]]")
+```
+
+
+```{r}
+#| output-location: fragment
+str_view(txt, pattern = "[[:space:]]")
+```
+
+
+```{r}
+#| output-location: fragment
+str_view(txt, pattern = "[[:upper:]]")
+```
+
+
+## 
+
+(cont) What will be matched by the following patterns?
+
+```{r}
+txt <- c("5\t00", "car", "Bike", "TARO 5.00")
+```
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+\
+
+. . .
+
+```{r}
+#| eval: false
+str_view(txt, pattern = "[[:alnum:]]")
+```
+
+\
+
+```{r}
+#| eval: false
+str_view(txt, pattern = "[[:punct:]]")
+```
+
+\
+
+```{r}
+#| eval: false
+str_view(txt, pattern = "[[:alpha:]]")
+```
+
+
+## 
+
+(cont) What will be matched by the following patterns?
+
+```{r}
+txt <- c("5\t00", "car", "Bike", "TARO 5.00")
+```
+
+\
+
+```{r}
+str_view(txt, pattern = "[[:alnum:]]")
+```
+
+```{r}
+#| output-location: fragment
+str_view(txt, pattern = "[[:punct:]]")
+```
+
+```{r}
+#| output-location: fragment
+str_view(txt, pattern = "[[:alpha:]]")
+```
+
+
+# Abbreviated Classes
+
+## Abbreviated Classes
+
+- `\s` (in R: `\\s`) : any spaces
+    + equivalent to `[[:space:]]`
+
+- `\d` (in R: `\\d`) : digits
+    + equivalent to `[[:digit]]`
+    
+- `\w` (in R: `\\w`) : "word" character: lower & upper case letters, digits, \_
+    + equivalent to `[A-Za-z0-9_]`
+
+- `\b` (in R: `\\b`) : word boundaries
+
+. . .
+
+There are also negation classes: `\S`, `\D`, `\W`, and `\B` (in R: `\\S`, `\\D`, `\\W`, `\\B`)
+
+
+##
+
+```{r}
+fives
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_view(fives, pattern = "\\d")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_view(fives, pattern = "\\d\\d")
+```
+
+
+##
+
+```{r}
+fives
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_view(fives, pattern = "\\s")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_view(fives, pattern = "\\S")
+```
+
+##
+
+```{r}
+fives
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_view(fives, pattern = "\\w")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_view(fives, pattern = "\\W")
+```

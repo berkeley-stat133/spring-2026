@@ -1,0 +1,438 @@
+---
+title: "The Grammar of Graphics"
+subtitle: "Data Visualization I"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+library(patchwork)
+```
+
+
+# Intro
+
+## Meet the Palmer Penguins {.smaller}
+
+```{r}
+#| output-location: fragment
+library(palmerpenguins)
+penguins
+```
+
+
+## 
+
+Question: In terms of the way they are constructed ...
+
+```{r warning=FALSE, echo=FALSE}
+#| fig-width: 15
+#| fig-height: 6
+p1 <- penguins |> 
+  ggplot(aes(x = bill_length_mm)) +
+  geom_histogram(bins = 30) +
+  theme_bw()
+
+p2 <- penguins |> 
+  ggplot(aes(x = bill_depth_mm)) +
+  geom_density() +
+  theme_bw()
+
+p3 <- penguins |> 
+  ggplot(aes(x = body_mass_g)) +
+  geom_boxplot() +
+  theme_bw()
+
+distrib_plots <- p1 + p2 + p3
+print(distrib_plots)
+```
+
+What do these plots have in common? How do they differ?
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+
+## 
+
+Question: What do these plots have in common? How do they differ?
+
+```{r warning=FALSE, echo=FALSE}
+p4 <- penguins |> 
+  ggplot(aes(x = island, fill = species)) +
+  geom_bar(position = "fill")
+
+p5 <- penguins |> 
+  ggplot(aes(x = sex)) +
+  geom_bar() +
+  coord_flip()
+
+barplots <- p4 + p5
+print(barplots)
+```
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+
+# The Grammar of Graphics
+
+## The Grammar of Graphics (GG)
+
+Leland Wilkinson (1999)
+
+::: {.columns}
+::: {.column width="50%"}
+- A grammar to describes all statistical graphics.
+- Underlies most modern data visualization software.
+:::
+
+::: {.column .fragment width="50%"}
+![](images/grammar-of-graphics.png)
+:::
+:::
+
+
+## Aesthetic Mapping
+
+An [aesthetic mapping]{.hilit} links a variable in the data to a visual attribute.
+
+![](images/aesthetics1.png){fig-align="center"}
+
+
+## Aesthetic Mapping
+
+An [aesthetic mapping]{.hilit} links a variable in the data to a visual attribute.
+
+![](images/aesthetics2.png){fig-align="center"}
+
+
+## Geometry
+
+The geometry describes how to translate the observations into marks on the page.
+
+### Examples
+
+- Point
+- Line
+- Bar
+- Polygon (area)
+
+
+## Geometries
+
+![](images/geometries.png){fig-align="center"}
+
+
+## 
+
+Question: What are the aesthetic mappings and geometries used here?
+
+```{r}
+#| echo: false
+penguins |> 
+  ggplot(aes(x = bill_length_mm, y = flipper_length_mm)) +
+  geom_point(aes(color = species, shape = sex), size = 2)
+```
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+
+# ggplot2
+
+## {auto-animate=true}
+
+![](images/tidyverse-hex-logo.png){fig-align="center"}
+
+
+## {auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+![](images/ggplot2-hex-logo.png)
+:::
+
+::: {.column width="50%"}
+![](images/tidyverse-hex-logo.png)
+:::
+:::
+
+
+## `"ggplot2"`
+
+. . .
+ 
+A plot can be decomposed into three primary elements:
+
+1) the [data]{.hilit},
+
+2) the [aesthetic mapping]{.hilit} of the variables in the data to visual channels, and
+
+3) the [geometry]{.hilit} used to translate the observations into marks on the plot.
+
+
+## {.smaller .nostretch}
+
+::: {.columns}
+::: {.column .fragment width="50%"}
+```{r}
+penguins |>
+  select(bill_length_mm,
+         flipper_length_mm,
+         species)
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+penguins |>
+  select(bill_length_mm,
+         flipper_length_mm,
+         species) |> 
+  ggplot(aes(x = bill_length_mm, y = flipper_length_mm)) +
+  geom_point(aes(color = species))
+```
+:::
+:::
+
+
+## `ggplot()` syntax
+
+. . .
+
+`ggplot()` builds a plot layer by layer, each one added on top of one another with `+` (not `|>`).
+
+- `ggplot()` creates canvas
+- `aes()` creates mappings, called inside `ggplot()` or a `geom()`
+- `geom_()` puts down marks using declared geometry
+
+. . .
+
+- Usually you specify the `data` in `ggplot()`
+- the `data` must be a dataframe or tibble
+
+
+## Layer by layer
+
+```{r}
+#| eval: false
+penguins |>
+  ggplot(aes(x = bill_length_mm,
+             y = flipper_length_mm,
+             color = species)) +
+  geom_point() +
+  theme_gray(base_size = 18)
+```  
+
+
+## Common `aes()`
+
+::: {.columns}
+::: {.column .fragment width="50%"}
+- `x`
+- `y`
+- `color`
+- `fill`
+:::
+
+::: {.column .fragment width="50%"}
+- `size`
+- `shape`
+- `alpha`
+:::
+:::
+
+
+## Common `geom()`
+
+::: {.columns}
+::: {.column .fragment width="50%"}
+- `geom_point()`
+- `geom_bar()` / `geom_col()`
+- `geom_line()`
+:::
+
+::: {.column .fragment width="50%"}
+- `geom_histogram()`
+- `geom_density()`
+- `geom_boxplot()`
+- `geom_violin()`
+:::
+:::
+
+
+## Mapping vs Setting
+
+Demo
+
+
+## Main inquiries when using `"ggplot2"`
+
+Always ask yourself:
+
+- What is the [data]{.hilit} set of interest?
+- What [variables]{.hilit} (columns) will be used to make the plot?
+- What graphic objects or [geoms]{.hilit} will be used to display the data?
+- What visual attributes will be used to represent the data values?
+    + `x`, `y`
+    + `color`, `fill`
+    + `shape`
+    + _etc_
+
+
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column .fragment width="50%"}
+```{r}
+#| eval: false
+ggplot()
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot()
+```
+:::
+:::
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins)
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins)
+```
+:::
+:::
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm))
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, y = flipper_length_mm))
+```
+:::
+:::
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm)) +
+  geom_point()
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, y = flipper_length_mm)) +
+  geom_point()
+```
+:::
+:::
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+```
+:::
+:::
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm)) +
+  geom_point(aes(color = species))
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm)) +
+  geom_point(aes(color = species))
+```
+:::
+:::
+
+

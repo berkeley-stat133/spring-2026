@@ -2,7 +2,8 @@ project:
   type: website
 
 website:
-  favicon: assets/favicon.ico
+  title: "STAT 133"
+  favicon: assets/stat133-hex-logo.png
   google-analytics: G-CES9J82GLL
   page-footer: 
     center:
@@ -16,58 +17,26 @@ website:
   sidebar:
     style: "docked"
     title: "STAT 133 <br><small>Spring 2026</small>"
-    logo: assets/stat_bear.png
+    logo: assets/stat133-hex-logo-small.png
     logo-alt: "UC Berkeley Statistics logo"
-    tools:
-      - icon: github
-        href: https://github.com/berkeley-stat133/spring-2026
     contents:
       - href: index.qmd
-        text: Home / Schedule
-      - href: syllabus.qmd
-        text: Syllabus
-      - href: about.qmd
-        text: About
-      - section: "Units"
-        contents:
-          - units/unit1.qmd
-          - units/unit2.qmd
-          - units/unit3.qmd
-          - units/unit4.qmd
-          - units/unit5.qmd
-          - units/unit6.qmd
-          - units/unit7.qmd
-          - units/unit8.qmd
-          - units/unit9.qmd
-          - units/unit10.qmd
-          - units/unit11.qmd
-          - units/unit12.qmd
-          - units/unit13.qmd
-          - units/unit14.qmd
-      - section: "Other"
-        contents:
-          - href: staff.qmd
-            text: Staff
-          - href: cheatsheets.qmd
-            text: Cheatsheets
-          - href: email.qmd
-            text: Email
-          - href: ed-netiquette.qmd
-            text: "Ed Netiquette"
-          - href: faqs.qmd
-            text: FAQs
-          - href: five-things.qmd
-            text: "5 Things to know"
-          - href: license.qmd
-            text: License
+        text: Home
+      - syllabus.qmd
+      - about.qmd
+      - cheatsheets.qmd
+      - license.qmd
 
 format:
   html:
-    theme: lumen
-    fontsize: 1em
-    css: assets/styles.css
+    theme:
+      - cosmo
+      - brand
+    fontsize: 1.0em
+    grid: 
+      sidebar-width: 300px
+      body-width: 1000px
+      margin-width: 300px
+    css: styles.css
     toc: true
-    include-in-header:
-      file: siteimprove.html
-
-
+    link-external-newwindow: true # opens links in new tab

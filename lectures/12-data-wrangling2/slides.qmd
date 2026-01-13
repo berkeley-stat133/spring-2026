@@ -1,0 +1,426 @@
+---
+title: "Data Warngling II"
+subtitle: "Manipulating data frames with `dplyr`"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+```
+
+
+## Agenda
+
+. . .
+
+Two big ideas today:
+
+- Data Pipelines
+- Grouped Operations
+
+
+# Data Pipelines
+
+##
+
+```{r eval = FALSE}
+library(tidyverse)
+
+wizards <- data.frame(
+  name = c("Harry", "Bellatrix", "Hermione", "Draco"),
+  house = c("Gryffindor", "Slytherin", "Gryffindor",  "Slytherin"),
+  height = c(1.78, 1.57, 1.65, 1.75),
+  spells = c(60, 75, 70, 55)
+)
+```
+
+```{r echo = FALSE}
+wizards <- data.frame(
+  name = c("Harry", "Bellatrix", "Hermione", "Draco"),
+  house = c("Gryffindor", "Slytherin", "Gryffindor",  "Slytherin"),
+  height = c(1.78, 1.57, 1.65, 1.75),
+  spells = c(60, 75, 70, 55)
+)
+```
+
+Using base R data frame subsetting, create from `wizards` ...
+
+4) The average height of characters from Gryffindor.
+
+. . .
+
+[Let's look at three ways to solve this.]{.mdlit}
+
+
+## Nesting
+
+```{r}
+#| output-location: fragment
+summarize(filter(wizards, house == "Gryffindor"), mean(height))
+```
+
+\
+
+::: {.columns}
+::: {.column .fragment width="50%"}
+- Must be read from the inside out 👎
+- Hard to keep track of arguments 👎
+:::
+
+::: {.column .fragment width="50%"}
+- All in one line of code 👍
+- Only refer to one data frame 👍
+:::
+:::
+
+
+## Step-by-step
+
+```{r}
+#| output-location: fragment
+wizards2 <- filter(wizards, house == "Gryffindor")
+summarize(wizards2, mean(height))
+```
+
+\
+
+::: {.columns}
+::: {.column .fragment width="50%"}
+- Have to repeat data frame names 👎
+- Creates unnecessary objects 👎
+:::
+
+::: {.column .fragment width="50%"}
+- Stores intermediate objects 👍
+- Can be read from top to bottom 👍
+:::
+:::
+
+
+## Data Pipelines in R
+
+\
+
+::: {.columns}
+::: {.column .fragment width="50%"}
+2016: 
+
+`"magrittr"` introduces `%>%`
+:::
+
+::: {.column .fragment width="50%"}
+2021:
+
+> R now provides a simple native
+> forward pipe syntax |>. The simple
+> form of the forward pipe inserts the
+> left-had side as the first argument in 
+> the right-hand side call.
+:::
+:::
+
+
+## Using the Pipe Operator {auto-animate=true}
+
+```{r}
+#| eval: false
+wizards
+```
+
+## Using the Pipe Operator {auto-animate=true}
+
+```{r}
+#| eval: false
+wizards |>
+  filter(house == "Gryffindor")
+```
+
+## Using the Pipe Operator {auto-animate=true}
+
+```{r}
+#| output-location: fragment
+wizards |>
+  filter(house == "Gryffindor") |> 
+  summarize(mean(height))
+```
+
+\
+
+::: {.columns}
+::: {.column .fragment width="40%"}
+- 🤷
+:::
+
+::: {.column .fragment width="60%"}
+- Can be read like an English paragraph 👍
+- Only type the data once 👍
+- No leftover objects 👍
+:::
+:::
+
+
+## Understanding your pipeline
+
+It's good practice to understand the output of each line by breaking the pipe.
+
+\
+
+. . .
+
+::: {.columns}
+::: {.column .fragment width="50%"}
+```{r}
+#| output-location: fragment
+wizards |> 
+  select(house) |> 
+  filter(mean(height))
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r}
+#| output-location: fragment
+wizards |> 
+  select(house)
+```
+:::
+:::
+
+
+##
+
+```{r}
+#| eval: false
+wizards |> # A #<<
+    filter(house == "Gryffindor",
+           name %in% c("Harry", "Hermione")) |> # B #<<
+    select(height, spells) |> # C #<<
+    summarize(mean(height), sd(height),
+              mean(spells), sd(spells)) # D #<<
+```
+
+[Question:]{.mdlit} What are the dimensions of the data frame at each stage of the pipe: A, B, C, and D?
+
+```{r}
+#| echo: false
+countdown::countdown(2, bottom = 0)
+```
+
+
+## `|>` works everywhere
+
+> R now provides a simple native forward pipe syntax |>. 
+> The simple form of the forward pipe inserts the left-hand 
+> side as the first argument in the right-hand side call.
+
+```{r}
+factor(c("owl", "fox", "owl")) |> summary()
+```
+
+
+# Grouped Operations
+
+##
+
+```{r}
+wizards <- data.frame(
+  name = c("Harry", "Bellatrix", "Hermione", "Draco"),
+  house = c("Gryffindor", "Slytherin", "Gryffindor",  "Slytherin"),
+  height = c(1.78, 1.57, 1.65, 1.75),
+  spells = c(60, 75, 70, 55)
+)
+```
+
+Using base R data frame subsetting, create from `wizards` ...
+
+4) The average height of characters [from Gryffindor]{.fragment .strike} [across each house.]{.fragment}
+
+. . .
+
+[You could set up two pipelines with different filters. But there’s a better way.]{.mdlit}
+
+
+## `group_by()`
+
+Flag the rows of a dataframe as belong to a group defined by a factor. For use in downstream operations.
+
+. . .
+
+```{r}
+#| output-location: fragment
+wizards |>
+    group_by(house)
+```
+
+
+## `group_by()` {auto-animate=true}
+
+Flag the rows of a dataframe as belong to a group defined by a factor. For use in downstream operations.
+
+. . .
+
+```{r}
+#| output-location: fragment
+wizards |>
+  group_by(house) |> 
+  summarize(mean(height))
+```
+
+
+## `group_by()` with `summarize()` {auto-animate=true}
+. . .
+
+```{r}
+#| output-location: fragment
+wizards |>
+  summarize(mean(height))
+```
+
+## `group_by()` with `summarize()` {auto-animate=true}
+
+```{r}
+#| output-location: fragment
+wizards |>
+  group_by(house) |> 
+  summarize(mean(height))
+```
+
+. . .
+
+\
+
+[Makes a summary row for each group.]{.mdlit}
+    
+
+## `group_by()` with `filter()` {auto-animate=true}
+. . .
+
+```{r}
+#| output-location: fragment
+wizards |>
+  filter(height == max(height))
+```
+
+## `group_by()` with `filter()` {auto-animate=true}
+
+```{r}
+#| output-location: fragment
+wizards |>
+  group_by(house) |> 
+  filter(height == max(height))
+```
+
+. . .
+
+\
+
+[Changes the scope of functions inside `filter()` to operate within groups.]{.mdlit}
+
+
+## `group_by()` with `arrange()` {auto-animate=true}
+. . .
+
+```{r}
+#| output-location: fragment
+wizards |>
+  arrange(desc(height))
+```
+
+## `group_by()` with `arrange()` {auto-animate=true}
+
+```{r}
+#| output-location: fragment
+wizards |>
+  group_by(house) |> 
+  arrange(desc(height))
+```
+
+. . .
+
+\
+
+[`arrange()` ignores `group_by()` and is always global. Why?]{.mdlit}
+
+
+## 
+
+```{r}
+#| output-location: fragment
+wizards |>
+  arrange(house, height)
+```
+
+
+## `group_by()` with `mutate()` {auto-animate=true}
+. . .
+
+```{r}
+#| output-location: fragment
+wizards |>
+  mutate(height_z = (height - mean(height)) / sd(height))
+```
+
+## `group_by()` with `mutate()` {auto-animate=true}
+
+```{r}
+#| output-location: fragment
+wizards |>
+  group_by(house) |> 
+  mutate(height_z = (height - mean(height)) / sd(height))
+```
+
+. . .
+
+\
+
+[Changes the scope of functions inside `mutate()` to operate within groups.]{.mdlit}
+
+
+## Statefulness
+
+What will this produce?
+
+```{r}
+#| output-location: fragment
+wizards |> 
+  group_by(house) |> 
+  mutate(height_z = (height - mean(height)) / sd(height)) |> 
+  summarize(mean(height_z))
+```
+
+. . .
+
+[Once grouped, a data frame stays grouped until reduced to one-row-per group or it is ungrouped.]{.mdlit}
+
+
+## Statefulness
+
+What will this produce?
+
+```{r}
+#| output-location: fragment
+wizards |> 
+  group_by(house) |> 
+  mutate(height_z = (height - mean(height)) / sd(height)) |> 
+  ungroup() |> 
+  summarize(mean(height_z))
+```
+
+
+## Shortcut: `.by`
+
+Most `"dplyr"` functions have a `.by` argument to apply the function to the groups of another variable.
+
+- Not stateful
+- Good for single line operations
+
+. . . 
+ 
+```{r}
+#| output-location: fragment
+wizards |> 
+    summarize(mean(height), .by = house)
+```
+

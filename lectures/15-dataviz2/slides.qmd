@@ -1,0 +1,272 @@
+---
+title: "The Grammar of Graphics"
+subtitle: "Data Visualization II"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+library(patchwork)
+```
+
+
+# Recap
+
+## Palmer Penguins {.smaller}
+
+```{r}
+library(palmerpenguins)
+penguins
+```
+
+
+## `ggplot()` syntax
+
+. . .
+
+`ggplot()` builds a plot layer by layer, each one added on top of one another with `+` (not `|>`).
+
+- `ggplot()` creates canvas
+- `aes()` creates mappings, called inside `ggplot()` or a `geom()`
+- `geom_()` puts down marks using declared geometry
+
+. . .
+
+- Usually you specify the `data` in `ggplot()`
+- the `data` must be a dataframe or tibble
+
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm))
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, y = flipper_length_mm))
+```
+:::
+:::
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm)) +
+  geom_point()
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, y = flipper_length_mm)) +
+  geom_point()
+```
+:::
+:::
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+```
+:::
+:::
+
+
+# More Graphical Elements
+
+## Additional graphical elements
+
+- Labels
+    + Title
+    + Subtitle
+    + Axis labels
+- Annotations
+- Themes
+- Scales
+- Facets
+
+
+## Labels
+
+`labs()` allows you to add
+
+```r
+labs(
+  title = "...",
+  subtitle = "...",
+  x = "...",
+  y = "..."
+)
+```
+
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+```
+:::
+:::
+
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point() +
+  labs(
+    title = "Bill and flipper length",
+    subtitle = "Positive relation",
+    x = "Bill length (mm)",
+    y = "Flipper length (mm)")
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point() +
+  labs(
+    title = "Bill and flipper length",
+    subtitle = "Positive relation",
+    x = "Bill length (mm)",
+    y = "Flipper length (mm)")
+```
+:::
+:::
+
+
+# Facets
+
+## Facets
+
+- `facet_wrap()` wraps a 1d sequence of panels into 2d
+
+- `facet_grid()` forms a matrix of panels defined by row and column faceting variables
+
+    + `facet_grid(rows = vars(...))`
+    + `facet_grid(cols = vars(...))`
+    + `facet_grid(row_var ~ col_var)`
+
+
+## {.smaller .nostretch auto-animate=true}
+
+```{r}
+#| out-width: "95%"
+#| output-location: fragment
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+  geom_point() +
+  facet_wrap(~ species)
+```
+
+
+## {.smaller .nostretch auto-animate=true}
+
+```{r}
+#| out-width: "95%"
+#| output-location: fragment
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+  geom_point() +
+  facet_grid(. ~ species)
+```
+
+
+## {.smaller .nostretch auto-animate=true}
+
+```{r}
+#| out-width: "95%"
+#| output-location: fragment
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+  geom_point() +
+  facet_grid(species ~ .)
+```
+
+
+# Themes
+
+## Theme Functions
+
+- `theme_gray()`
+- `theme_bw()`
+- `theme_minimal()`
+- `theme_classic()`
+- `theme_light()`
+

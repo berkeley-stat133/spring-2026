@@ -1,0 +1,400 @@
+---
+title: "Control Flow"
+subtitle: "Choices and Iterations"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+```
+
+
+# Choices
+
+## Lightsabers
+
+![](images/jedi-vs-sith.png){fig-align="center"}
+
+## Jedi or Sith based on color of Lightsaber
+
+\
+
+Suppose the color of a lightsaber can be either [green]{style="color:green; font-weight: 900;"} or [red]{style="color:red; font-weight: 900;"}.
+
+\
+
+. . .
+
+[Task:]{.mdlit} decide the kind of saber based on the color of the light: 
+
+. . .
+
+\
+
+::: {.columns}
+::: {.column width="10%"}
+:::
+
+::: {.column .fragment width="40%"}
+[green]{style="color:green; font-weight: 900;"} light $\rightarrow$ Jedi
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column .fragment width="40%"}
+[red]{style="color:red; font-weight: 900;"} light $\rightarrow$ Sith
+:::
+:::
+
+
+## Jedi or Sith based on color of Lightsaber
+
+\
+
+Suppose the color of a lightsaber can be either [green]{style="color:green; font-weight: 900;"} or [red]{style="color:red; font-weight: 900;"}.
+
+\
+
+. . .
+
+Task: decide the kind of `saber` based on the color of the `light`:
+
+. . .
+
+\
+
+`light == "green"` $\ \Rightarrow \ $ `saber <- "Jedi"`
+
+. . .
+
+\
+
+`light == "red"` $\ \Rightarrow \ $ `saber <- "Sith"`
+
+
+## Jedi or Sith based on color of Lightsaber {auto-animate=true}
+
+```{r}
+#| output-location: fragment
+light <- "green"
+```
+
+## Jedi or Sith based on color of Lightsaber {auto-animate=true}
+
+```{r}
+#| output-location: fragment
+light <- "green"
+
+if (light == "green") {
+  saber <- "Jedi"
+}
+```
+
+## Jedi or Sith based on color of Lightsaber
+
+```{r}
+#| output-location: fragment
+light <- "green"
+
+if (light == "green") {
+  saber <- "Jedi"
+} else {
+  saber <- "Sith"
+}
+```
+
+## Jedi or Sith based on color of Lightsaber
+
+```{r}
+#| output-location: fragment
+light <- "green"
+
+if (light == "green") {
+  saber <- "Jedi"
+} else {
+  saber <- "Sith"
+}
+
+saber
+```
+
+
+## if-else
+
+["if else" statement:]{.hilit} executes one block of code if a condition is met and a different block of code if it is not met.
+
+```{r}
+#| output-location: fragment
+light <- "red"
+
+if (light == "green") {
+  saber <- "Jedi"
+} else {
+  saber <- "Sith"
+}
+
+saber
+```
+
+
+## If-else 
+
+Generic blueprint of `if-else` in R:
+
+```r
+if (condition) {
+  # what to do if condition is TRUE
+} else {
+  # what to do if condition is FALSE
+}
+```
+
+## Simplified If
+
+If we only care about the `if` part:
+
+. . . 
+
+```r
+if (condition) {
+  # what to do if condition is TRUE
+}
+```
+
+
+## Nested if's
+
+You can chain multiple if-else's
+
+. . .
+
+```{r}
+#| output-location: fragment
+light <- "purple"
+
+if (light == "green") {
+  saber <- "Jedi"
+} else if (light == "red") {
+  saber <- "Sith"
+} else {
+  saber <- "Dathomir"
+}
+
+saber
+```
+
+
+## College Years
+
+| Year |   Name      |
+|:----:|-------------|
+|  1   |  Freshman   |
+|  2   |  Sophomore  |
+|  3   |  Junior     |
+|  4   |  Senior     |
+
+. . .
+
+### Question
+
+Given an object `year <- sample(1:4, size = 1)`, write a decision tree in R using nested if-else statements to determine its corresponding `name`
+
+```{r}
+#| echo: false
+countdown::countdown(2, bottom = 0)
+```
+
+
+##
+
+```{r}
+year <- sample(1:4, size = 1)
+
+if (year == 1) {
+  name <- "freshman"
+} else if (year == 2) {
+  name <- "sophomore"
+} else if (year == 3) {
+  name <- "junior"
+} else {
+  name <- "senior"
+}
+
+name
+```
+
+
+# Iterations
+
+## Big Favor
+
+In order to learn about loops, I'm going to ask you to [forget about vectorization]{.mdlit}.
+
+Instead, let's describe how to perform those type of operations "manually", step by step.
+
+
+## Motivation Example {.nostretch}
+
+![](images/for-loop1.png){width="75%" fig-align="center"}
+
+## Motivation Example {.nostretch}
+
+![](images/for-loop2.png){width="75%" fig-align="center"}
+
+## Motivation Example {.nostretch}
+
+![](images/for-loop3.png){width="75%" fig-align="center"}
+
+## Motivation Example {.nostretch}
+
+![](images/for-loop4.png){width="75%" fig-align="center"}
+
+## Motivation Example {.nostretch}
+
+![](images/for-loop5.png){width="75%" fig-align="center"}
+
+
+## For loops
+
+```r
+for (item in vector) {
+  perform_action
+}
+```
+
+
+# Iterated Choices
+
+## What if `lights` has multiple elements?
+
+. . .
+
+```{r}
+#| output-location: fragment
+set.seed(133)
+green_red <- c("green", "red")
+lights <- sample(green_red, size = 3, replace = TRUE)
+lights
+```
+
+. . .
+
+\
+
+```{r eval = FALSE}
+    if (lights == "green") {
+      sabers <- "Jedi"
+    }
+```
+
+
+## Option 1
+
+```{r}
+lights
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+sabers <- character(length = 3)
+sabers
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+for (i in 1:length(lights)) {
+  if (lights[i] == "green") {
+    sabers[i] <- "Jedi"
+  } else {
+    sabers[i] <- "Sith"
+  }
+}
+
+sabers
+```
+
+
+## Option 2
+
+```{r}
+lights
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+sabers <- rep("", 3)
+sabers
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+for (i in 1:length(lights)) {
+  if (lights[i] == "green") {
+    sabers[i] <- "Jedi"
+  } else {
+    sabers[i] <- "Sith"
+  }
+}
+
+sabers
+```
+
+
+## Option 3
+
+```{r}
+lights
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+sabers <- rep("Sith", 3)
+sabers
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+for (i in 1:length(lights)) {
+  if (lights[i] == "green") {
+    sabers[i] <- "Jedi"
+  }
+}
+
+sabers
+```
+
+
+## `ifelse()`
+
+`ifelse()`: A vectorized if-else statement.
+
+. . .
+
+```{r}
+#| output-location: fragment
+lights
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+ifelse(lights == "green", yes = "Jedi", no = "Sith")
+```
+

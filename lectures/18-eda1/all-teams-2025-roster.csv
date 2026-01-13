@@ -1,0 +1,656 @@
+number,player,team,position,height,weight,birth_date,country,experience,college
+31,Jarrett Allen,CLE,C,81,243,"April 21, 1998",US,7,Texas
+21,Emoni Bates,CLE,SF,81,202,"January 28, 2004",US,1,"Memphis, Eastern Michigan"
+10,Darius Garland,CLE,PG,73,192,"January 26, 2000",US,5,Vanderbilt
+8,Javonte Green,CLE,SG,77,205,"July 23, 1993",US,5,Radford
+12,De'Andre Hunter,CLE,SF,79,221,"December 2, 1997",US,5,Virginia
+2,Ty Jerome,CLE,SG,77,195,"July 8, 1997",US,5,Virginia
+3,Caris LeVert,CLE,SF,79,205,"August 25, 1994",US,8,Michigan
+5,Sam Merrill,CLE,SG,76,205,"May 15, 1996",US,4,Utah State University
+45,Donovan Mitchell,CLE,SG,74,215,"September 7, 1996",US,7,Louisville
+4,Evan Mobley,CLE,PF,83,215,"June 18, 2001",US,3,USC
+20,Georges Niang,CLE,PF,78,230,"June 17, 1993",US,8,Iowa State
+18,Chuma Okeke,CLE,PF,79,229,"August 18, 1998",US,4,Auburn
+35,Isaac Okoro,CLE,SG,76,225,"January 26, 2001",US,4,Auburn
+9,Craig Porter Jr.,CLE,PG,73,180,"February 26, 2000",US,1,"Vincennes University, Wichita State"
+1,Max Strus,CLE,SF,77,215,"March 28, 1996",US,5,"Lewis (IL), DePaul"
+13,Tristan Thompson,CLE,C,81,254,"March 13, 1991",CA,13,Texas
+15,JT Thor,CLE,PF,81,203,"August 26, 2002",US,3,Auburn
+30,Nae'Qwan Tomlin,CLE,PF,80,210,"December 10, 2000",US,R,"Monroe Community College, Chipola College, Kansas State, Memphis"
+33,Luke Travers,CLE,SG,78,207,"September 3, 2001",AU,R,NA
+24,Jaylon Tyson,CLE,SG,78,215,"December 2, 2002",US,R,"Texas, Texas Tech, California"
+32,Dean Wade,CLE,PF,81,228,"November 20, 1996",US,5,Kansas State
+7,Jaylen Brown,BOS,SF,78,223,"October 24, 1996",US,8,California
+12,Torrey Craig,BOS,SF,77,221,"December 19, 1990",US,7,USC Upstate
+20,JD Davison,BOS,PG,73,195,"October 3, 2002",US,2,Alabama
+30,Sam Hauser,BOS,PF,79,217,"December 8, 1997",US,3,"Marquette, Virginia"
+4,Jrue Holiday,BOS,PG,76,220,"June 12, 1990",US,15,UCLA
+42,Al Horford,BOS,C,80,240,"June 3, 1986",DO,17,Florida
+40,Luke Kornet,BOS,C,85,250,"July 15, 1995",US,7,Vanderbilt
+44,Miles Norris,BOS,PF,79,220,"April 15, 2000",US,R,"Oregon, City College of San Francisco, UC Santa Barbara"
+13,Drew Peterson,BOS,PF,80,205,"November 9, 1999",US,1,"Rice University, USC"
+8,Kristaps PorziÅÄ£is,BOS,C,86,240,"August 2, 1995",LV,8,NA
+11,Payton Pritchard,BOS,PG,73,195,"January 28, 1998",US,4,Oregon
+88,Neemias Queta,BOS,C,84,248,"July 13, 1999",PT,3,Utah State University
+55,Baylor Scheierman,BOS,SG,78,205,"September 26, 2000",US,R,"South Dakota State, Creighton"
+44,Jaden Springer,BOS,SG,76,202,"September 25, 2002",US,3,Tennessee
+0,Jayson Tatum,BOS,PF,80,210,"March 3, 1998",US,7,Duke
+26,Xavier Tillman Sr.,BOS,C,80,245,"January 12, 1999",US,4,Michigan State
+27,Jordan Walsh,BOS,PF,78,205,"March 3, 2004",US,1,Arkansas
+9,Derrick White,BOS,SG,76,190,"July 2, 1994",US,7,"Colorado-Colorado Springs, Colorado"
+5,Precious Achiuwa,NYK,C,80,243,"September 19, 1999",NG,4,Memphis
+8,OG Anunoby,NYK,PF,79,240,"July 17, 1997",GB,7,Indiana
+14,MarJon Beauchamp,NYK,SF,79,199,"October 12, 2000",US,2,Yakima Valley Community College
+25,Mikal Bridges,NYK,SF,78,209,"August 30, 1996",US,6,Villanova
+11,Jalen Brunson,NYK,PG,74,190,"August 31, 1996",US,6,Villanova
+4,Pacome Dadiet,NYK,SG,81,210,"July 27, 2005",FR,R,NA
+3,Josh Hart,NYK,SG,77,215,"March 6, 1995",US,7,Villanova
+55,Ariel Hukporti,NYK,C,84,246,"April 11, 2002",DE,R,NA
+13,Tyler Kolek,NYK,PG,74,195,"March 27, 2001",US,R,"George Mason, Marquette"
+2,Miles McBride,NYK,SG,74,195,"September 8, 2000",US,3,West Virginia
+9,Kevin McCullar Jr.,NYK,SF,78,210,"March 15, 2001",US,R,"Texas Tech, Kansas"
+1,Cameron Payne,NYK,PG,74,183,"August 8, 1994",US,9,Murray State
+23,Mitchell Robinson,NYK,C,84,240,"April 1, 1998",US,6,Western Kentucky
+37,Matt Ryan,NYK,SF,78,215,"April 17, 1997",US,3,"Notre Dame, Vanderbilt, Chattanooga"
+44,Landry Shamet,NYK,SG,77,190,"March 13, 1997",US,6,Wichita State
+20,Jericho Sims,NYK,C,82,250,"October 20, 1998",US,3,Texas
+00,Jacob Toppin,NYK,SF,81,200,"May 8, 2000",US,1,"Rhode Island, Kentucky"
+32,Karl-Anthony Towns,NYK,C,84,248,"November 15, 1995",US,9,Kentucky
+17,P.J. Tucker,NYK,SF,77,245,"May 5, 1985",US,13,Texas
+21,Anton Watson,NYK,SF,80,225,"October 6, 2000",US,R,Gonzaga
+0,Delon Wright,NYK,PG,76,185,"April 26, 1992",US,9,Utah
+13,Tony Bradley,IND,C,82,248,"January 8, 1998",US,6,UNC
+3,Moses Brown,IND,C,86,258,"October 13, 1999",US,5,UCLA
+3,Thomas Bryant,IND,C,81,248,"July 31, 1997",US,7,Indiana
+10,RayJ Dennis,IND,PG,73,180,"March 30, 2001",US,R,"Boise State, Toledo, Baylor"
+8,Enrique Freeman,IND,PF,81,220,"July 29, 2000",US,R,University of Akron
+12,Johnny Furphy,IND,SG,80,200,"December 8, 2004",AU,R,Kansas
+0,Tyrese Haliburton,IND,PG,77,185,"February 29, 2000",US,4,Iowa State
+22,Isaiah Jackson,IND,C,80,205,"January 10, 2002",US,3,Kentucky
+29,Quenton Jackson,IND,PG,76,173,"September 15, 1998",US,2,Texas A&M
+16,James Johnson,IND,PF,79,240,"February 20, 1987",US,15,Wake Forest
+00,Bennedict Mathurin,IND,SF,77,210,"June 19, 2002",CA,2,Arizona
+9,T.J. McConnell,IND,PG,73,190,"March 25, 1992",US,9,"Duquesne, Arizona"
+2,Andrew Nembhard,IND,SG,76,191,"January 16, 2000",CA,2,"Florida, Gonzaga"
+23,Aaron Nesmith,IND,SF,77,215,"October 16, 1999",US,4,Vanderbilt
+4,Tristen Newton,IND,SG,77,190,"April 26, 2001",US,R,"East Carolina University, UConn"
+15,Jahlil Okafor,IND,C,82,270,"December 15, 1995",US,6,Duke
+26,Ben Sheppard,IND,SG,78,190,"July 16, 2001",US,1,Belmont
+43,Pascal Siakam,IND,PF,80,245,"April 2, 1994",CM,8,New Mexico State
+1,Obi Toppin,IND,PF,81,220,"March 4, 1998",US,4,Dayton
+33,Myles Turner,IND,C,83,250,"March 24, 1996",US,9,Texas
+5,Jarace Walker,IND,PF,79,235,"September 4, 2003",US,1,Houston
+13,James Wiseman,IND,C,83,240,"March 31, 2001",US,3,Memphis
+34,Giannis Antetokounmpo,MIL,PF,83,243,"December 6, 1994",GR,11,NA
+3,MarJon Beauchamp,MIL,SF,79,199,"October 12, 2000",US,2,Yakima Valley Community College
+15,Jamaree Bouyea,MIL,PG,74,180,"June 27, 1999",US,2,San Francisco
+24,Pat Connaughton,MIL,SG,77,209,"January 6, 1993",US,9,Notre Dame
+20,A.J. Green,MIL,SG,76,190,"September 27, 1999",US,2,University of Northern Iowa
+44,Andre Jackson Jr.,MIL,SG,78,209,"November 13, 2001",US,1,UConn
+77,AJ Johnson,MIL,SG,77,160,"December 1, 2004",US,R,NA
+18,Kyle Kuzma,MIL,PF,80,221,"July 24, 1995",US,7,Utah
+0,Damian Lillard,MIL,PG,74,200,"July 15, 1990",US,12,Weber State
+7,Chris Livingston,MIL,SF,78,220,"October 15, 2003",US,1,Kentucky
+11,Brook Lopez,MIL,C,85,282,"April 1, 1988",US,16,Stanford
+22,Khris Middleton,MIL,SF,79,222,"August 12, 1991",US,12,Texas A&M
+35,Pete Nance,MIL,PF,81,225,"February 19, 2000",US,1,"Northwestern, UNC"
+3,Kevin Porter Jr.,MIL,SG,77,203,"May 4, 2000",US,4,USC
+9,Bobby Portis,MIL,PF,81,250,"February 10, 1995",US,9,Arkansas
+12,Taurean Prince,MIL,SF,78,218,"March 22, 1994",US,8,Baylor
+15,Liam Robbins,MIL,C,84,250,"July 12, 1999",US,R,"Drake University, Minnesota, Vanderbilt"
+13,Ryan Rollins,MIL,PG,75,180,"July 3, 2002",US,2,Toledo
+00,Jericho Sims,MIL,C,82,250,"October 20, 1998",US,3,Texas
+21,Tyler Smith,MIL,PF,81,224,"November 2, 2004",US,R,NA
+5,Gary Trent Jr.,MIL,SG,77,204,"January 18, 1999",US,6,Duke
+17,Stanley Umude,MIL,SG,78,210,"April 12, 1999",US,2,"South Dakota, Arkansas"
+55,Delon Wright,MIL,PG,76,185,"April 26, 1992",US,9,Utah
+5,Malik Beasley,DET,SG,76,187,"November 26, 1996",US,8,Florida State
+2,Cade Cunningham,DET,PG,78,220,"September 25, 2001",US,3,Oklahoma State
+0,Jalen Duren,DET,C,82,250,"November 18, 2003",US,2,Memphis
+19,Simone Fontecchio,DET,SF,79,209,"December 9, 1995",IT,2,NA
+8,Tim Hardaway Jr.,DET,SG,77,205,"March 16, 1992",US,11,Michigan
+13,Ron Harper Jr.,DET,SF,77,233,"April 12, 2000",US,2,Rutgers University
+12,Tobias Harris,DET,PF,80,226,"July 15, 1992",US,13,Tennessee
+00,Ron Holland,DET,SF,80,206,"July 7, 2005",US,R,NA
+23,Jaden Ivey,DET,SG,75,195,"February 13, 2002",US,2,Purdue
+24,Daniss Jenkins,DET,PG,76,165,"August 17, 2001",US,R,"University of the Pacific, Iona College, St. John's"
+34,Bobi Klintman,DET,SF,81,225,"March 6, 2003",SE,R,Wake Forest
+14,Wendell Moore Jr.,DET,SG,77,215,"September 18, 2001",US,2,Duke
+7,Paul Reed,DET,C,81,210,"June 14, 1999",US,4,DePaul
+25,Marcus Sasser,DET,PG,73,195,"September 21, 2000",US,1,Houston
+17,Dennis SchrÃ¶der,DET,PG,73,175,"September 15, 1993",DE,11,NA
+35,Tolu Smith,DET,PF,83,254,"July 26, 2000",US,R,"Western Kentucky, Mississippi State"
+28,Isaiah Stewart,DET,C,80,250,"May 22, 2001",US,4,Washington
+13,Cole Swider,DET,SF,82,220,"May 8, 1999",US,2,"Villanova, Syracuse"
+9,Ausar Thompson,DET,SF,79,205,"January 30, 2003",US,1,NA
+43,Lindy Waters III,DET,SG,77,210,"July 28, 1997",US,3,Oklahoma State
+31,Alondes Williams,DET,SG,76,210,"June 19, 1999",US,2,"Triton College, Oklahoma, Wake Forest"
+50,Cole Anthony,ORL,PG,74,185,"May 15, 2000",US,4,UNC
+5,Paolo Banchero,ORL,PF,82,250,"November 12, 2002",US,2,Duke
+35,Goga Bitadze,ORL,C,83,250,"July 20, 1999",GE,5,NA
+0,Anthony Black,ORL,PG,79,200,"January 20, 2004",US,1,Arkansas
+3,Kentavious Caldwell-Pope,ORL,SG,77,204,"February 18, 1993",US,11,Georgia
+34,Wendell Carter Jr.,ORL,C,82,270,"April 16, 1999",US,6,Duke
+23,Tristan Da Silva,ORL,SF,80,217,"May 15, 2001",DE,R,Colorado
+14,Gary Harris,ORL,SG,76,210,"September 14, 1994",US,10,Michigan State
+2,Caleb Houstan,ORL,SF,80,205,"January 9, 2003",CA,2,Michigan
+13,Jett Howard,ORL,SF,80,215,"September 14, 2003",US,1,Michigan
+1,Jonathan Isaac,ORL,PF,82,230,"October 3, 1997",US,5,Florida State
+10,Cory Joseph,ORL,PG,74,200,"August 20, 1991",CA,13,Texas
+8,Mac McClung,ORL,SG,74,185,"January 6, 1999",US,2,"Georgetown, Texas Tech"
+12,Trevelin Queen,ORL,SG,77,190,"February 25, 1997",US,3,"College of Marin, New Mexico Military Institute, New Mexico State"
+4,Jalen Suggs,ORL,PG,77,205,"June 3, 2001",US,3,Gonzaga
+22,Franz Wagner,ORL,SF,82,220,"August 27, 2001",DE,3,Michigan
+21,Moritz Wagner,ORL,C,83,245,"April 26, 1997",DE,6,Michigan
+0,Dominick Barlow,ATL,PF,81,215,"May 26, 2003",US,2,NA
+13,Bogdan BogdanoviÄ,ATL,SG,77,225,"August 18, 1992",RS,7,NA
+4,Kobe Bufkin,ATL,SG,76,195,"September 21, 2003",US,1,Michigan
+15,Clint Capela,ATL,C,82,256,"May 18, 1994",CH,10,NA
+5,Dyson Daniels,ATL,SG,79,199,"March 17, 2003",AU,2,NA
+18,Mouhamed Gueye,ATL,PF,83,210,"November 9, 2002",SN,1,Washington State
+12,De'Andre Hunter,ATL,SF,79,221,"December 2, 1997",US,5,Virginia
+1,Jalen Johnson,ATL,SF,80,219,"December 18, 2001",US,3,Duke
+27,Vit Krejci,ATL,PG,80,195,"June 19, 2000",CZ,3,NA
+3,Caris LeVert,ATL,SG,79,205,"August 25, 1994",US,8,Michigan
+14,Terance Mann,ATL,SG,78,215,"October 18, 1996",US,5,Florida State
+24,Garrison Mathews,ATL,SG,77,215,"October 24, 1996",US,5,Lipscomb
+22,Larry Nance Jr.,ATL,PF,78,245,"January 1, 1993",US,9,Wyoming
+20,Georges Niang,ATL,PF,78,230,"June 17, 1993",US,8,Iowa State
+17,Onyeka Okongwu,ATL,C,82,240,"December 11, 2000",US,4,USC
+29,Daeqwon Plowden,ATL,SG,76,216,"August 29, 1998",US,R,Bowling Green
+10,Zaccharie Risacher,ATL,SF,80,200,"April 8, 2005",ES,R,NA
+8,David Roddy,ATL,PF,77,255,"March 27, 2001",US,2,Colorado State
+00,Jacob Toppin,ATL,SF,81,200,"May 8, 2000",US,1,"Rhode Island, Kentucky"
+2,Keaton Wallace,ATL,PG,75,185,"February 26, 1999",US,R,Texas-San Antonio
+11,Trae Young,ATL,PG,74,164,"September 19, 1998",US,6,Oklahoma
+2,Lonzo Ball,CHI,PG,77,190,"October 27, 1997",US,5,UCLA
+14,Matas Buzelis,CHI,SF,80,209,"October 13, 2004",US,R,NA
+5,Jevon Carter,CHI,PG,72,200,"September 14, 1995",US,6,West Virginia
+12,Zach Collins,CHI,PF,81,250,"November 19, 1997",US,6,Gonzaga
+13,Torrey Craig,CHI,SF,77,221,"December 19, 1990",US,7,USC Upstate
+11,Ayo Dosunmu,CHI,SG,76,200,"January 17, 2000",US,3,Illinois
+27,Chris Duarte,CHI,SG,77,190,"June 13, 1997",DO,3,Oregon
+3,Josh Giddey,CHI,PG,79,216,"October 10, 2002",AU,3,NA
+22,Talen Horton-Tucker,CHI,SG,76,234,"November 25, 2000",US,5,Iowa State
+13,Kevin Huerter,CHI,SG,78,198,"August 27, 1998",US,6,Maryland
+30,Tre Jones,CHI,PG,73,185,"January 8, 2000",US,4,Duke
+8,Zach LaVine,CHI,SF,77,200,"March 10, 1995",US,10,UCLA
+32,E.J. Liddell,CHI,PF,78,240,"December 18, 2000",US,1,Ohio State
+20,Emanuel Miller,CHI,PF,77,215,"June 19, 2000",CA,R,"Texas A&M, TCU"
+15,Julian Phillips,CHI,SF,78,198,"November 5, 2003",US,1,Tennessee
+21,Adama Sanogo,CHI,C,81,245,"February 12, 2002",ML,1,UConn
+7,Jalen Smith,CHI,C,80,215,"March 16, 2000",US,4,Maryland
+25,Dalen Terry,CHI,SG,78,195,"July 12, 2002",US,2,Arizona
+9,Nikola VuÄeviÄ,CHI,C,81,260,"October 24, 1990",CH,13,USC
+0,Coby White,CHI,SG,76,195,"February 16, 2000",US,5,UNC
+44,Patrick Williams,CHI,PF,78,215,"August 26, 2001",US,4,Florida State
+17,Jahmir Young,CHI,PG,72,185,"October 7, 2000",US,R,"UNC Charlotte, Maryland"
+13,Bam Adebayo,MIA,C,81,255,"July 18, 1997",US,7,Kentucky
+20,Kyle Anderson,MIA,SF,80,230,"September 20, 1993",US,10,UCLA
+31,Thomas Bryant,MIA,C,81,248,"July 31, 1997",US,7,Indiana
+18,Alec Burks,MIA,SG,77,214,"July 20, 1991",US,13,Colorado
+22,Jimmy Butler,MIA,PF,78,230,"September 14, 1989",US,13,"Tyler Junior College, Marquette"
+8,Josh Christopher,MIA,SG,76,215,"December 8, 2001",US,2,Arizona State
+14,Tyler Herro,MIA,SG,77,195,"January 20, 2000",US,5,Kentucky
+24,Haywood Highsmith,MIA,SF,77,220,"December 9, 1996",US,4,Wheeling University
+11,Jaime Jaquez Jr.,MIA,SF,78,225,"February 18, 2001",US,1,UCLA
+16,Keshad Johnson,MIA,SF,78,225,"June 23, 2001",US,R,"San Diego State, Arizona"
+5,Nikola JoviÄ,MIA,PF,82,205,"June 9, 2003",GB,2,NA
+9,Pelle Larsson,MIA,SG,77,215,"February 23, 2001",SE,R,"Utah, Arizona"
+42,Kevin Love,MIA,PF,82,251,"September 7, 1988",US,16,UCLA
+45,Davion Mitchell,MIA,PG,72,202,"September 5, 1998",US,3,"Auburn, Baylor"
+0,Josh Richardson,MIA,SG,77,200,"September 15, 1993",US,9,Tennessee
+55,Duncan Robinson,MIA,SF,79,215,"April 22, 1994",US,6,"Williams, Michigan"
+2,Terry Rozier,MIA,PG,73,190,"March 17, 1994",US,9,Louisville
+12,Dru Smith,MIA,SG,74,203,"December 30, 1997",US,2,"University of Evansville, Missouri"
+4,Isaiah Stevens,MIA,PG,71,185,"November 1, 2000",US,R,Colorado State
+7,Kel'el Ware,MIA,C,84,230,"April 20, 2004",US,R,"Oregon, Indiana"
+22,Andrew Wiggins,MIA,SF,78,197,"February 23, 1995",CA,10,Kansas
+30,Ochai Agbaji,TOR,SG,77,215,"April 20, 2000",US,2,Kansas
+4,Scottie Barnes,TOR,PF,80,237,"August 1, 2001",US,3,Florida State
+9,RJ Barrett,TOR,SF,78,214,"June 14, 2000",CA,5,Duke
+77,Jamison Battle,TOR,SF,79,220,"May 10, 2001",US,R,"George Washington, Minnesota, Ohio State"
+25,Chris Boucher,TOR,PF,80,200,"January 11, 1993",LC,7,"New Mexico Junior College, Northwest College, Oregon"
+11,Bruce Brown,TOR,PG,76,202,"August 15, 1996",US,6,Miami (FL)
+3,D.J. Carton,TOR,SG,74,200,"August 5, 2000",US,1,"Ohio State, Marquette"
+11,Colin Castleton,TOR,C,82,250,"May 25, 2000",US,1,"Michigan, Florida"
+22,Ulrich Chomche,TOR,PF,83,235,"December 30, 2005",CM,R,NA
+1,Gradey Dick,TOR,SG,79,200,"November 20, 2003",US,1,Kansas
+24,Bruno Fernando,TOR,C,81,240,"August 15, 1998",AO,5,Maryland
+0,A.J. Lawson,TOR,SG,78,179,"July 15, 2000",CA,2,South Carolina
+45,Davion Mitchell,TOR,PG,72,202,"September 5, 1998",US,3,"Auburn, Baylor"
+2,Jonathan Mogbo,TOR,PF,81,225,"October 29, 2001",US,R,"Missouri State, San Francisco"
+41,Kelly Olynyk,TOR,C,84,240,"April 19, 1991",CA,11,Gonzaga
+19,Jakob Poeltl,TOR,C,84,253,"October 15, 1995",AT,8,Utah
+5,Immanuel Quickley,TOR,PG,74,190,"June 17, 1999",US,4,Kentucky
+8,Jared Rhoden,TOR,SG,77,210,"August 27, 1999",US,2,Seton Hall
+21,Orlando Robinson,TOR,C,82,235,"July 10, 2000",US,2,Fresno State
+23,Jamal Shead,TOR,PG,73,200,"June 24, 2002",US,R,Houston
+12,Cole Swider,TOR,SF,82,220,"May 8, 1999",US,2,"Villanova, Syracuse"
+17,Garrett Temple,TOR,SG,77,195,"May 8, 1986",US,14,LSU
+14,Ja'Kobe Walter,TOR,SG,76,180,"September 4, 2004",US,R,Baylor
+4,Reece Beekman,BRK,PG,75,190,"October 8, 2001",US,R,Virginia
+33,Nic Claxton,BRK,C,83,215,"April 17, 1999",US,5,Georgia
+21,Noah Clowney,BRK,PF,82,210,"July 14, 2004",US,1,Alabama
+8,Cui Yongxi,BRK,SG,77,190,"May 28, 2003",CN,R,NA
+10,Tyson Etienne,BRK,PG,72,200,"September 17, 1999",US,R,Wichita State
+12,Tosan Evbuomwan,BRK,SF,80,217,"February 16, 2001",UK,1,Princeton
+28,Dorian Finney-Smith,BRK,PF,79,220,"May 4, 1993",US,8,Florida
+7,Killian Hayes,BRK,PG,76,195,"July 27, 2001",US,4,NA
+2,Cameron Johnson,BRK,PF,80,210,"March 3, 1996",US,5,"Pitt, UNC"
+45,Keon Johnson,BRK,SG,77,185,"March 10, 2002",US,3,Tennessee
+27,Maxwell Lewis,BRK,SF,79,215,"July 27, 2002",US,1,Pepperdine
+16,Jaylen Martin,BRK,SF,78,216,"January 28, 2004",US,R,NA
+13,Tyrese Martin,BRK,SG,78,215,"March 7, 1999",US,1,"Rhode Island, UConn"
+0,Dariq Whitehead,BRK,SF,78,220,"August 1, 2004",US,1,Duke
+7,Shake Milton,BRK,SG,77,205,"September 26, 1996",US,6,SMU
+1,D'Angelo Russell,BRK,PG,75,193,"February 23, 1996",US,9,Ohio State
+17,Dennis SchrÃ¶der,BRK,PG,73,175,"September 15, 1993",DE,11,NA
+20,Day'Ron Sharpe,BRK,C,82,265,"November 6, 2001",US,3,UNC
+10,Ben Simmons,BRK,PG,82,240,"July 20, 1996",AU,6,LSU
+24,Cam Thomas,BRK,SG,75,210,"October 13, 2001",JP,3,LSU
+26,Drew Timme,BRK,PF,81,235,"September 9, 2000",US,R,Gonzaga
+9,Trendon Watford,BRK,PF,80,237,"November 9, 2000",US,3,LSU
+"1, 8",Ziaire Williams,BRK,SF,81,185,"September 12, 2001",US,3,Stanford
+22,Jalen Wilson,BRK,PF,78,220,"November 4, 2000",US,1,Kansas
+35,Marcus Bagley,PHI,SF,80,215,"October 23, 2001",US,R,Arizona State
+30,Adem Bona,PHI,C,82,235,"March 28, 2003",NG,R,UCLA
+22,Oshae Brissett,PHI,SF,79,210,"June 20, 1998",CA,5,Syracuse
+12,Jared Butler,PHI,SG,75,193,"August 25, 2000",US,3,Baylor
+18,Colin Castleton,PHI,C,82,250,"May 25, 2000",US,1,"Michigan, Florida"
+14,Ricky Council IV,PHI,SF,78,207,"August 3, 2001",US,1,"Wichita State, Arkansas"
+11,Jeff Dowtin Jr.,PHI,PG,75,177,"May 10, 1997",US,3,Rhode Island
+"1, 5",Andre Drummond,PHI,C,83,279,"August 10, 1993",US,12,UConn
+19,Justin Edwards,PHI,SF,79,203,"December 16, 2003",US,R,Kentucky
+21,Joel Embiid,PHI,C,84,280,"March 16, 1994",CM,8,Kansas
+8,Paul George,PHI,PF,80,220,"May 2, 1990",US,14,Fresno State
+23,Eric Gordon,PHI,SG,75,215,"December 25, 1988",US,16,Indiana
+5,Quentin Grimes,PHI,SG,76,210,"May 8, 2000",US,3,"Kansas, Houston"
+17,Jalen Hood-Schifino,PHI,SG,77,210,"June 19, 2003",US,1,Indiana
+00,Reggie Jackson,PHI,PG,74,208,"April 16, 1990",IT,13,Boston College
+7,Kyle Lowry,PHI,PG,72,196,"March 25, 1986",US,18,Villanova
+16,Caleb Martin,PHI,SF,77,205,"September 28, 1995",US,5,"NC State, Nevada"
+1,KJ Martin,PHI,PF,78,215,"January 6, 2001",US,4,NA
+0,Tyrese Maxey,PHI,PG,74,200,"November 4, 2000",US,4,Kentucky
+20,Jared McCain,PHI,SG,75,195,"February 20, 2004",US,R,Duke
+25,Isaiah Mobley,PHI,PF,80,238,"September 24, 1999",US,2,USC
+22,Pete Nance,PHI,C,81,225,"February 19, 2000",US,1,"Northwestern, UNC"
+18,Chuma Okeke,PHI,PF,79,229,"August 18, 1998",US,4,Auburn
+9,Kelly Oubre Jr.,PHI,SF,80,203,"December 9, 1995",US,9,Kansas
+25,Lester QuiÃ±ones,PHI,SG,77,208,"November 16, 2000",US,2,Memphis
+65,Alex Reese,PHI,PF,81,245,"May 21, 1999",US,R,Alabama
+45,David Roddy,PHI,PF,77,255,"March 27, 2001",US,2,Colorado State
+16,Lonnie Walker IV,PHI,SG,76,204,"December 14, 1998",US,6,Miami (FL)
+36,Phillip Wheeler,PHI,PF,80,185,"April 23, 2002",US,R,NA
+28,Guerschon Yabusele,PHI,C,79,265,"December 17, 1995",FR,2,NA
+1,LaMelo Ball,CHO,PG,79,180,"August 22, 2001",US,4,NA
+7,Damion Baugh,CHO,SG,76,194,"August 3, 2000",US,R,"Memphis, TCU"
+0,Miles Bridges,CHO,PF,79,225,"March 21, 1998",US,5,Michigan State
+30,Seth Curry,CHO,SG,73,185,"August 23, 1990",US,10,"Liberty, Duke"
+14,Moussa DiabatÃ©,CHO,C,82,210,"January 21, 2002",FR,2,Michigan
+22,Malachi Flynn,CHO,PG,73,185,"May 10, 1998",US,4,"Washington State, San Diego State"
+28,Marcus Garrett,CHO,SG,77,205,"November 9, 1998",US,1,Kansas
+67,Taj Gibson,CHO,C,81,232,"June 24, 1985",US,15,USC
+10,Josh Green,CHO,SG,78,200,"November 16, 2000",AU,4,Arizona
+3,DaQuan Jeffries,CHO,SG,77,222,"August 30, 1997",US,5,"Oral Roberts, Tulsa"
+23,Tre Mann,CHO,PG,76,178,"February 3, 2001",US,3,Florida
+11,Cody Martin,CHO,SF,78,205,"September 28, 1995",US,5,"NC State, Nevada"
+22,Vasilije MiciÄ,CHO,PG,75,188,"January 13, 1994",RS,1,NA
+24,Brandon Miller,CHO,SF,79,200,"November 22, 2002",US,1,Alabama
+9,Wendell Moore Jr.,CHO,SG,77,215,"September 18, 2001",US,2,Duke
+11,Jusuf NurkiÄ,CHO,C,83,290,"August 23, 1994",BA,10,NA
+12,Josh Okogie,CHO,SG,76,213,"September 1, 1998",NG,6,Georgia Tech
+22,Elfrid Payton,CHO,PG,75,195,"February 22, 1994",US,8,Louisiana
+27,Jared Rhoden,CHO,SG,77,210,"August 27, 1999",US,2,Seton Hall
+4,Nick Richards,CHO,C,83,245,"November 29, 1997",JM,4,Kentucky
+31,Tidjane SalaÃ¼n,CHO,PF,82,207,"August 10, 2005",FR,R,NA
+25,KJ Simpson,CHO,PG,74,189,"August 8, 2002",US,R,Colorado
+33,Jaylen Sims,CHO,SG,78,210,"December 11, 1998",US,R,UNC Wilmington
+8,Nick Smith Jr.,CHO,SG,74,185,"April 18, 2004",US,1,Arkansas
+2,Grant Williams,CHO,PF,79,236,"November 30, 1998",US,5,Tennessee
+5,Mark Williams,CHO,C,85,240,"December 16, 2001",US,2,Duke
+21,Isaiah Wong,CHO,SG,75,185,"January 28, 2001",US,1,Miami (FL)
+35,Marvin Bagley III,WAS,C,82,235,"March 14, 1999",US,6,Duke
+7,Patrick Baldwin Jr.,WAS,SF,84,220,"November 18, 2002",US,2,UW-Milwaukee
+15,Malcolm Brogdon,WAS,PG,76,229,"December 11, 1992",US,8,Virginia
+4,Jared Butler,WAS,PG,75,193,"August 25, 2000",US,3,Baylor
+8,Bub Carrington,WAS,PG,76,190,"July 21, 2005",US,R,Pitt
+9,Justin Champagnie,WAS,SF,78,206,"June 29, 2001",US,3,Pitt
+0,Bilal Coulibaly,WAS,SF,79,195,"July 26, 2004",FR,1,NA
+1,Johnny Davis,WAS,SG,76,195,"February 27, 2002",US,2,Wisconsin
+18,Kyshawn George,WAS,SG,80,200,"December 12, 2003",CH,R,Miami (FL)
+16,Anthony Gill,WAS,PF,79,230,"October 17, 1992",US,4,"South Carolina, Virginia"
+22,Richaun Holmes,WAS,PF,81,235,"October 15, 1993",US,9,Bowling Green
+5,AJ Johnson,WAS,SG,77,160,"December 1, 2004",US,R,NA
+1,Colby Jones,WAS,SG,78,207,"May 28, 2002",US,1,Xavier
+24,Corey Kispert,WAS,SF,78,224,"March 3, 1999",US,3,Gonzaga
+33,Kyle Kuzma,WAS,PF,80,221,"July 24, 1995",US,7,Utah
+4,Jaylen Martin,WAS,SF,78,216,"January 28, 2004",US,R,NA
+26,Jalen McDaniels,WAS,SF,81,205,"January 31, 1998",US,5,San Diego State
+32,Khris Middleton,WAS,SF,79,222,"August 12, 1991",US,12,Texas A&M
+13,Jordan Poole,WAS,SG,76,194,"June 19, 1999",US,5,Michigan
+20,Alex Sarr,WAS,C,84,205,"April 26, 2005",FR,R,NA
+36,Marcus Smart,WAS,PG,75,220,"March 6, 1994",US,10,Oklahoma State
+21,JT Thor,WAS,PF,81,203,"August 26, 2002",US,3,Auburn
+17,Jonas ValanÄiÅ«nas,WAS,C,83,265,"May 6, 1992",LT,12,NA
+00,Tristan Vukcevic,WAS,C,84,220,"March 11, 2003",IT,1,NA
+15,Branden Carlson,OKC,C,84,220,"June 14, 1999",US,R,Utah
+9,Alex Caruso,OKC,SG,77,186,"February 28, 1994",US,7,Texas A&M
+13,Ousmane Dieng,OKC,C,81,185,"May 21, 2003",FR,2,NA
+5,Luguentz Dort,OKC,SF,76,220,"April 19, 1999",CA,5,Arizona State
+88,Alex Ducas,OKC,SG,79,220,"December 11, 2000",AU,R,Saint Mary's
+14,Adam Flagler,OKC,SG,73,180,"December 1, 1999",US,1,"Presbyterian College, Baylor"
+2,Shai Gilgeous-Alexander,OKC,PG,78,195,"July 12, 1998",CA,6,Kentucky
+55,Isaiah Hartenstein,OKC,C,84,250,"May 5, 1998",US,6,NA
+7,Chet Holmgren,OKC,C,85,208,"May 1, 2002",US,1,Gonzaga
+11,Isaiah Joe,OKC,SG,76,165,"July 2, 1999",US,4,Arkansas
+3,Dillon Jones,OKC,SF,77,235,"October 29, 2001",US,R,Weber State
+17,Malevy Leons,OKC,SF,81,210,"September 23, 1999",NL,R,"Mineral Area College, Bradley"
+25,Ajay Mitchell,OKC,SG,76,190,"June 25, 2002",BE,R,UC Santa Barbara
+15,Alex Reese,OKC,PF,81,245,"May 21, 1999",US,R,Alabama
+22,Cason Wallace,OKC,SG,75,195,"November 7, 2003",US,1,Kentucky
+21,Aaron Wiggins,OKC,SG,77,190,"January 2, 1999",US,3,Maryland
+8,Jalen Williams,OKC,SG,77,211,"April 14, 2001",US,2,Santa Clara
+6,Jaylin Williams,OKC,PF,81,240,"June 29, 2002",US,2,Arkansas
+34,Kenrich Williams,OKC,PF,79,210,"December 2, 1994",US,6,TCU
+12,Steven Adams,HOU,C,83,265,"July 20, 1993",NZ,10,Pitt
+9,Dillon Brooks,HOU,SF,79,225,"January 22, 1996",CA,7,Oregon
+3,N'Faly Dante,HOU,C,83,230,"October 19, 2001",ML,R,Oregon
+17,Tari Eason,HOU,PF,80,215,"May 10, 2001",US,2,"Cincinnati, LSU"
+4,Jalen Green,HOU,SG,76,186,"February 9, 2002",US,3,NA
+32,Jeff Green,HOU,PF,80,235,"August 28, 1986",US,16,Georgetown
+0,Aaron Holiday,HOU,PG,72,185,"September 30, 1996",US,6,UCLA
+2,Jock Landale,HOU,C,83,255,"October 25, 1995",AU,3,Saint Mary's
+58,Jack McVeigh,HOU,PF,80,215,"June 27, 1996",AU,R,Nebraska
+21,David Roddy,HOU,PF,77,255,"March 27, 2001",US,2,Colorado State
+28,Alperen ÅengÃ¼n,HOU,C,83,243,"July 25, 2002",TR,3,NA
+15,Reed Sheppard,HOU,PG,74,185,"June 24, 2004",US,R,Kentucky
+10,Jabari Smith Jr.,HOU,PF,83,220,"May 13, 2003",US,2,Auburn
+8,Jae'Sean Tate,HOU,SF,76,230,"October 28, 1995",US,4,Ohio State
+1,Amen Thompson,HOU,SF,79,200,"January 30, 2003",US,1,NA
+5,Fred VanVleet,HOU,PG,72,197,"February 25, 1994",US,8,Wichita State
+7,Cam Whitmore,HOU,SF,78,230,"July 8, 2004",US,1,Villanova
+19,Jeenathan Williams,HOU,SG,77,205,"February 12, 1999",US,2,Buffalo
+12,Max Christie,LAL,SG,77,190,"February 10, 2003",US,2,Michigan State
+3,Anthony Davis,LAL,C,82,253,"March 11, 1993",US,12,Kentucky
+77,Luka DonÄiÄ,LAL,PG,80,230,"February 28, 1999",SI,6,NA
+17,Dorian Finney-Smith,LAL,PF,79,220,"May 4, 1993",US,8,Florida
+30,Jordan Goodwin,LAL,PG,75,215,"October 23, 1998",US,3,Saint Louis
+28,Rui Hachimura,LAL,PF,80,230,"February 8, 1998",JP,5,Gonzaga
+11,Jaxson Hayes,LAL,C,84,220,"May 23, 2000",US,5,Texas
+0,Jalen Hood-Schifino,LAL,SG,77,210,"June 19, 2003",US,1,Indiana
+9,Bronny James,LAL,SG,74,210,"October 6, 2004",US,R,USC
+23,LeBron James,LAL,SF,81,250,"December 30, 1984",US,21,NA
+55,Trey Jemison,LAL,C,82,270,"November 28, 1999",US,1,"Clemson, UAB"
+14,Maxi Kleber,LAL,PF,82,240,"January 29, 1992",DE,7,NA
+4,Dalton Knecht,LAL,SF,78,215,"April 19, 2001",US,R,"Northeastern Junior College, University of Northern Colorado, Tennessee"
+10,Christian Koloko,LAL,C,83,225,"June 20, 2000",CM,1,Arizona
+27,Alex Len,LAL,C,84,250,"June 16, 1993",UA,11,Maryland
+20,Maxwell Lewis,LAL,SF,79,215,"July 27, 2002",US,1,Pepperdine
+20,Shake Milton,LAL,SG,77,205,"September 26, 1996",US,6,SMU
+88,Markieff Morris,LAL,PF,81,245,"September 2, 1989",US,13,Kansas
+41,Quincy Olivari,LAL,PG,74,201,"May 27, 2001",US,R,"Rice University, Xavier"
+15,Austin Reaves,LAL,SG,77,197,"May 29, 1998",US,3,"Wichita State, Oklahoma"
+5,Cam Reddish,LAL,SF,79,230,"September 1, 1999",US,5,Duke
+1,D'Angelo Russell,LAL,PG,75,193,"February 23, 1996",US,9,Ohio State
+94,Armel TraorÃ©,LAL,SF,81,246,"January 23, 2003",FR,R,NA
+2,Jarred Vanderbilt,LAL,PF,80,214,"April 3, 1999",US,6,Kentucky
+7,Gabe Vincent,LAL,PG,74,200,"June 14, 1996",US,5,UC Santa Barbara
+23,Trey Alexander,DEN,SG,77,185,"May 2, 2003",US,R,Creighton
+0,Christian Braun,DEN,SG,78,220,"April 17, 2001",US,2,Kansas
+31,Vlatko ÄanÄar,DEN,PF,80,236,"April 10, 1997",SI,4,NA
+32,Aaron Gordon,DEN,PF,80,235,"September 16, 1995",US,10,Arizona
+13,PJ Hall,DEN,C,80,245,"February 21, 2002",US,R,Clemson
+15,Nikola JokiÄ,DEN,C,83,284,"February 19, 1995",RS,9,NA
+21,Spencer Jones,DEN,SF,79,225,"June 14, 2001",US,R,Stanford
+6,DeAndre Jordan,DEN,C,83,265,"July 21, 1988",US,16,Texas A&M
+27,Jamal Murray,DEN,PG,76,215,"February 23, 1997",CA,7,Kentucky
+22,Zeke Nnaji,DEN,PF,82,240,"January 9, 2001",US,4,Arizona
+24,Jalen Pickett,DEN,SG,74,202,"October 22, 1999",US,1,"Siena College, Penn State"
+1,Michael Porter Jr.,DEN,SF,82,218,"June 29, 1998",US,5,Missouri
+9,Dario Å ariÄ,DEN,C,82,225,"April 8, 1994",HR,7,NA
+3,Julian Strawther,DEN,SG,78,205,"April 18, 2002",US,1,Gonzaga
+5,Hunter Tyson,DEN,PF,80,215,"June 13, 2000",US,1,Clemson
+8,Peyton Watson,DEN,SF,80,200,"September 11, 2002",US,2,UCLA
+4,Russell Westbrook,DEN,PG,76,200,"November 12, 1988",US,16,UCLA
+23,Patrick Baldwin Jr.,LAC,SF,84,220,"November 18, 2002",US,2,UW-Milwaukee
+4,Mo Bamba,LAC,C,84,231,"May 12, 1998",US,6,Texas
+33,Nicolas Batum,LAC,PF,79,230,"December 14, 1988",FR,16,NA
+0,MarJon Beauchamp,LAC,SF,79,199,"October 12, 2000",US,2,Yakima Valley Community College
+10,Bogdan BogdanoviÄ,LAC,SG,77,225,"August 18, 1992",RS,7,NA
+21,Kobe Brown,LAC,PF,79,250,"January 1, 2000",US,1,Missouri
+12,Cam Christie,LAC,SG,77,190,"July 24, 2005",US,R,Minnesota
+7,Amir Coffey,LAC,SG,79,210,"June 17, 1997",US,5,Minnesota
+8,Kris Dunn,LAC,PG,75,205,"March 18, 1994",US,8,Providence
+15,Drew Eubanks,LAC,C,82,245,"February 1, 1997",US,6,Oregon State
+9,Trentyn Flowers,LAC,SF,81,185,"March 8, 2005",US,R,NA
+1,James Harden,LAC,PG,77,220,"August 26, 1989",US,15,Arizona State
+5,Bones Hyland,LAC,PG,74,169,"September 14, 2000",US,3,VCU
+55,Derrick Jones Jr.,LAC,SF,78,210,"February 15, 1997",US,8,UNLV
+23,Kai Jones,LAC,C,83,221,"January 19, 2001",BS,2,Texas
+2,Kawhi Leonard,LAC,SF,78,225,"June 29, 1991",US,12,San Diego State
+14,Terance Mann,LAC,SG,78,215,"October 18, 1996",US,5,Florida State
+11,Jordan Miller,LAC,SF,77,194,"January 23, 2000",US,1,"George Mason, Miami (FL)"
+88,Patty Mills,LAC,PG,74,180,"August 11, 1988",AU,15,Saint Mary's
+77,Kevin Porter Jr.,LAC,SG,77,203,"May 4, 2000",US,4,USC
+24,Norman Powell,LAC,SG,75,215,"May 25, 1993",US,9,UCLA
+25,Ben Simmons,LAC,PG,82,240,"July 20, 1996",AU,6,LSU
+40,Ivica Zubac,LAC,C,84,240,"March 18, 1997",BA,8,NA
+9,Nickeil Alexander-Walker,MIN,SG,77,205,"September 2, 1998",CA,5,Virginia Tech
+22,Jaylen Clark,MIN,SG,77,205,"October 13, 2001",US,R,UCLA
+10,Mike Conley,MIN,PG,73,175,"October 11, 1987",US,17,Ohio State
+4,Rob Dillingham,MIN,PG,74,175,"January 4, 2005",US,R,Kentucky
+0,Donte DiVincenzo,MIN,SG,76,203,"January 31, 1997",US,6,Villanova
+35,PJ Dozier,MIN,SG,78,212,"October 25, 1996",US,6,South Carolina
+5,Anthony Edwards,MIN,SG,76,225,"August 5, 2001",US,4,Georgia
+14,Jesse Edwards,MIN,C,84,236,"March 18, 2000",NL,R,"West Virginia, Syracuse"
+55,Luka Garza,MIN,C,82,243,"December 27, 1998",US,3,Iowa
+27,Rudy Gobert,MIN,C,85,258,"June 26, 1992",FR,11,NA
+77,Bones Hyland,MIN,PG,74,169,"September 14, 2000",US,3,VCU
+7,Joe Ingles,MIN,SF,80,220,"October 2, 1987",AU,10,NA
+3,Jaden McDaniels,MIN,PF,81,185,"September 29, 2000",US,4,Washington
+33,Leonard Miller,MIN,SF,82,220,"November 26, 2003",CA,1,NA
+8,Josh Minott,MIN,SF,80,205,"November 25, 2002",US,2,Memphis
+13,Tristen Newton,MIN,SG,77,190,"April 26, 2001",US,R,"East Carolina University, UConn"
+1,Daishen Nix,MIN,PG,75,226,"February 13, 2002",US,3,NA
+30,Julius Randle,MIN,PF,81,250,"November 29, 1994",US,10,Kentucky
+11,Naz Reid,MIN,C,81,264,"August 26, 1999",US,5,LSU
+00,Terrence Shannon Jr.,MIN,SG,78,215,"July 30, 2000",US,R,"Texas Tech, Illinois"
+1,Kyle Anderson,GSW,PF,80,230,"September 20, 1993",US,10,UCLA
+3,Reece Beekman,GSW,PG,75,190,"October 8, 2001",US,R,Virginia
+10,Jimmy Butler,GSW,SF,78,230,"September 14, 1989",US,13,"Tyler Junior College, Marquette"
+99,Yuri Collins,GSW,PG,72,190,"March 7, 2001",US,R,Saint Louis
+30,Stephen Curry,GSW,PG,74,185,"March 14, 1988",US,15,Davidson
+23,Draymond Green,GSW,PF,78,230,"March 4, 1990",US,12,Michigan State
+7,Buddy Hield,GSW,SG,76,220,"December 17, 1992",BS,8,Oklahoma
+32,Trayce Jackson-Davis,GSW,C,81,245,"February 22, 2000",US,1,Indiana
+12,Braxton Key,GSW,SF,79,225,"February 14, 1997",US,3,"Alabama, Virginia"
+31,Kevin Knox,GSW,SF,80,215,"August 11, 1999",US,6,Kentucky
+00,Jonathan Kuminga,GSW,PF,79,225,"October 6, 2002",CD,3,NA
+5,Kevon Looney,GSW,C,81,222,"February 6, 1996",US,9,UCLA
+8,De'Anthony Melton,GSW,SG,74,200,"May 28, 1998",US,6,USC
+4,Moses Moody,GSW,SG,77,211,"May 31, 2002",US,3,Arkansas
+0,Gary Payton II,GSW,SG,74,195,"December 1, 1992",US,8,Oregon State
+2,Brandin Podziemski,GSW,SG,76,205,"February 25, 2003",US,1,"Illinois, Santa Clara"
+21,Quinten Post,GSW,PF,84,238,"March 21, 2000",NL,R,"Mississippi State, Boston College"
+44,Jackson Rowe,GSW,PF,78,210,"January 4, 1997",CA,R,Cal State Fullerton
+15,Gui Santos,GSW,PF,79,185,"June 22, 2002",BR,1,NA
+71,Dennis SchrÃ¶der,GSW,SG,73,175,"September 15, 1993",DE,11,NA
+61,Pat Spencer,GSW,PG,74,205,"July 4, 1996",US,1,"Loyola (MD), Northwestern"
+43,Lindy Waters III,GSW,SG,77,210,"July 28, 1997",US,3,Oklahoma State
+22,Andrew Wiggins,GSW,SF,78,197,"February 23, 1995",CA,10,Kansas
+7,Santi Aldama,MEM,PF,84,215,"January 10, 2001",ES,3,Loyola (MD)
+35,Marvin Bagley III,MEM,PF,82,235,"March 14, 1999",US,6,Duke
+22,Desmond Bane,MEM,SG,78,215,"June 25, 1998",US,4,TCU
+8,Colin Castleton,MEM,C,82,250,"May 25, 2000",US,1,"Michigan, Florida"
+15,Brandon Clarke,MEM,PF,80,215,"September 19, 1996",CA,5,"San Jose State, Gonzaga"
+14,Zach Edey,MEM,C,87,305,"May 14, 2002",CA,R,Purdue
+30,Jay Huff,MEM,C,85,240,"August 25, 1998",US,3,Virginia
+45,GG Jackson II,MEM,PF,81,210,"December 17, 2004",US,1,South Carolina
+13,Jaren Jackson Jr.,MEM,C,82,242,"September 15, 1999",US,6,Michigan State
+17,Yuki Kawamura,MEM,PG,67,159,"May 2, 2001",JP,R,NA
+10,Luke Kennard,MEM,SG,77,206,"June 24, 1996",US,7,Duke
+46,John Konchar,MEM,SG,77,210,"March 22, 1996",US,5,Purdue-Fort Wayne
+3,Jake LaRavia,MEM,PF,79,235,"November 3, 2001",US,2,"Indiana State University, Wake Forest"
+12,Ja Morant,MEM,PG,74,174,"August 10, 1999",US,5,Murray State
+1,Scotty Pippen Jr.,MEM,PG,74,170,"November 10, 2000",US,2,Vanderbilt
+2,Zyon Pullin,MEM,SG,76,206,"March 3, 2001",US,R,"University of California, Riverside, Florida"
+36,Marcus Smart,MEM,PG,75,220,"March 6, 1994",US,10,Oklahoma State
+24,Cam Spencer,MEM,SG,75,205,"April 6, 2000",US,R,"Loyola (MD), Rutgers University, UConn"
+8,Lamar Stevens,MEM,PF,79,230,"July 9, 1997",US,4,Penn State
+0,Jaylen Wells,MEM,SG,79,206,"August 26, 2003",US,R,"Sonoma State University, Washington State"
+5,Vince Williams Jr.,MEM,SG,76,205,"August 30, 2000",US,2,VCU
+22,Devin Carter,SAC,PG,74,195,"March 18, 2002",US,R,"South Carolina, Providence"
+24,Isaiah Crawford,SAC,SF,78,220,"November 1, 2001",US,R,Louisiana Tech
+99,Jae Crowder,SAC,PF,78,235,"July 6, 1990",US,12,Marquette
+9,Terence Davis,SAC,SG,76,201,"May 16, 1997",US,4,Ole Miss
+10,DeMar DeRozan,SAC,SF,78,220,"August 7, 1989",US,15,USC
+23,Keon Ellis,SAC,SG,76,175,"January 8, 2000",US,2,"Florida SouthWestern State College, Alabama"
+5,De'Aaron Fox,SAC,PG,75,185,"December 20, 1997",US,7,Kentucky
+20,Markelle Fultz,SAC,PG,76,209,"May 29, 1998",US,7,Washington
+9,Kevin Huerter,SAC,SG,78,198,"August 27, 1998",US,6,Maryland
+20,Colby Jones,SAC,SG,78,207,"May 28, 2002",US,1,Xavier
+"3, 17",Isaac Jones,SAC,PF,80,245,"July 11, 2000",US,R,"Wenatchee Valley College, Idaho, Washington State"
+15,Mason Jones,SAC,SG,76,200,"July 21, 1998",US,3,"Connors State College, Arkansas"
+25,Skal LabissiÃ¨re,SAC,PF,82,235,"March 18, 1996",HT,4,Kentucky
+33,Jake LaRavia,SAC,PF,79,235,"November 3, 2001",US,2,"Indiana State University, Wake Forest"
+8,Zach LaVine,SAC,SG,77,200,"March 10, 1995",US,10,UCLA
+25,Alex Len,SAC,C,84,250,"June 16, 1993",UA,11,Maryland
+41,Trey Lyles,SAC,PF,81,234,"November 5, 1995",CA,9,Kentucky
+7,Doug McDermott,SAC,SF,79,225,"January 3, 1992",US,10,Creighton
+3,Jordan McLaughlin,SAC,PG,71,185,"April 9, 1996",US,5,USC
+0,Malik Monk,SAC,SG,75,200,"February 4, 1998",US,7,Kentucky
+13,Keegan Murray,SAC,PF,80,225,"August 19, 2000",US,2,Iowa
+77,Orlando Robinson,SAC,C,82,235,"July 10, 2000",US,2,Fresno State
+11,Domantas Sabonis,SAC,C,82,240,"May 3, 1996",US,8,Gonzaga
+32,Terry Taylor,SAC,PF,77,230,"September 23, 1999",US,3,Austin Peay State University
+17,Jonas ValanÄiÅ«nas,SAC,C,83,265,"May 6, 1992",LT,12,NA
+9,Moses Brown,DAL,C,86,258,"October 13, 1999",US,5,UCLA
+00,Max Christie,DAL,SG,77,190,"February 10, 2003",US,2,Michigan State
+3,Anthony Davis,DAL,PF,82,253,"March 11, 1993",US,12,Kentucky
+26,Spencer Dinwiddie,DAL,PG,77,215,"April 6, 1993",US,10,Colorado
+77,Luka DonÄiÄ,DAL,PG,80,230,"February 28, 1999",SI,6,NA
+20,Kessler Edwards,DAL,SF,80,203,"August 9, 2000",US,3,Pepperdine
+0,Dante Exum,DAL,PG,77,214,"July 13, 1995",AU,7,NA
+21,Daniel Gafford,DAL,C,82,265,"October 1, 1998",US,5,Arkansas
+00,Jazian Gortman,DAL,PG,74,184,"April 14, 2003",US,R,NA
+5,Quentin Grimes,DAL,SG,76,210,"May 8, 2000",US,3,"Kansas, Houston"
+1,Jaden Hardy,DAL,SG,75,198,"July 5, 2002",US,2,NA
+11,Kyrie Irving,DAL,SG,74,195,"March 23, 1992",AU,13,Duke
+23,Kai Jones,DAL,C,83,221,"January 19, 2001",BS,2,Texas
+50,Kylor Kelley,DAL,C,84,215,"August 26, 1997",US,R,Oregon State
+42,Maxi Kleber,DAL,PF,82,240,"January 29, 1992",DE,7,NA
+2,Dereck Lively II,DAL,C,85,230,"February 12, 2004",US,1,Duke
+13,Naji Marshall,DAL,SF,78,220,"January 24, 1998",US,4,Xavier
+16,Caleb Martin,DAL,SF,77,205,"September 28, 1995",US,5,"NC State, Nevada"
+88,Markieff Morris,DAL,PF,81,245,"September 2, 1989",US,13,Kansas
+7,Dwight Powell,DAL,C,82,240,"July 20, 1991",CA,10,Stanford
+8,Olivier-Maxence Prosper,DAL,PF,79,230,"July 3, 2002",CA,1,"Clemson, Marquette"
+31,Klay Thompson,DAL,SF,77,220,"February 8, 1990",US,11,Washington State
+25,P.J. Washington,DAL,PF,79,230,"August 23, 1998",US,5,Kentucky
+10,Brandon Williams,DAL,PG,73,190,"November 22, 1999",US,2,Arizona
+8,Grayson Allen,PHO,SG,75,198,"October 8, 1995",US,6,Duke
+3,Bradley Beal,PHO,SG,76,207,"June 28, 1993",US,12,Florida
+11,Bol Bol,PHO,PF,87,220,"November 16, 1999",SD,5,Oregon
+1,Devin Booker,PHO,SG,77,206,"October 30, 1996",US,9,Kentucky
+15,Jalen Bridges,PHO,SF,79,225,"May 14, 2001",US,R,"West Virginia, Baylor"
+0,Ryan Dunn,PHO,SF,79,216,"January 7, 2003",US,R,Virginia
+35,Kevin Durant,PHO,PF,83,240,"September 29, 1988",US,16,Texas
+12,Collin Gillespie,PHO,PG,73,195,"June 25, 1999",US,1,Villanova
+4,Oso Ighodaro,PHO,PF,83,235,"July 14, 2002",US,R,Marquette
+21,Tyus Jones,PHO,PG,72,196,"May 10, 1996",US,9,Duke
+10,Damion Lee,PHO,SG,78,210,"October 21, 1992",US,6,"Drexel, Louisville"
+17,Cody Martin,PHO,SF,78,205,"September 28, 1995",US,5,"NC State, Nevada"
+18,Vasilije MiciÄ,PHO,PG,75,188,"January 13, 1994",RS,1,NA
+23,Monte Morris,PHO,PG,74,183,"June 27, 1995",US,7,Iowa State
+20,Jusuf NurkiÄ,PHO,C,83,290,"August 23, 1994",BA,10,NA
+00,Royce O'Neale,PHO,SF,78,226,"June 5, 1993",US,7,"Denver, Baylor"
+2,Josh Okogie,PHO,SG,76,213,"September 1, 1998",NG,6,Georgia Tech
+22,Mason Plumlee,PHO,C,84,254,"March 5, 1990",US,11,Duke
+2,Nick Richards,PHO,C,83,245,"November 29, 1997",JM,4,Kentucky
+14,TyTy Washington Jr.,PHO,PG,75,195,"November 15, 2001",US,2,Kentucky
+8,Deni Avdija,POR,SF,80,228,"January 3, 2001",IL,4,NA
+2,Deandre Ayton,POR,C,84,252,"July 23, 1998",BS,6,Arizona
+5,Dalano Banton,POR,PG,80,203,"November 7, 1999",CA,3,Nebraska
+33,Toumani Camara,POR,PF,79,230,"May 8, 2000",BE,1,Dayton
+91,Sidy Cissoko,POR,SF,78,220,"April 2, 2004",FR,1,NA
+23,Donovan Clingan,POR,C,86,280,"February 23, 2004",US,R,UConn
+9,Jerami Grant,POR,PF,79,213,"March 12, 1994",US,10,Syracuse
+00,Scoot Henderson,POR,PG,75,207,"February 3, 2004",US,1,NA
+11,Bryce McGowens,POR,SG,78,190,"November 8, 2002",US,2,Nebraska
+10,Justin Minaya,POR,SF,77,205,"March 26, 1999",US,2,"South Carolina, Providence"
+76,Taze Moore,POR,SG,77,195,"June 29, 1998",US,1,"Cal State-Bakersfield, Houston"
+24,Kris Murray,POR,SF,80,218,"August 19, 2000",US,1,Iowa
+26,Duop Reath,POR,C,81,245,"June 26, 1996",SS,1,"Lee College, LSU"
+21,Rayan Rupert,POR,SG,79,205,"May 31, 2004",FR,1,NA
+17,Shaedon Sharpe,POR,SG,77,210,"May 30, 2003",CA,2,Kentucky
+1,Anfernee Simons,POR,SG,75,200,"June 8, 1999",US,6,NA
+4,Matisse Thybulle,POR,SG,77,202,"March 4, 1997",US,5,Washington
+34,Jabari Walker,POR,PF,79,237,"July 30, 2002",US,2,Colorado
+35,Robert Williams,POR,C,81,249,"October 17, 1997",US,6,Texas A&M
+40,Harrison Barnes,SAS,PF,79,225,"May 30, 1992",US,12,UNC
+28,Charles Bassey,SAS,C,82,230,"October 28, 2000",NG,3,Western Kentucky
+18,Bismack Biyombo,SAS,C,80,255,"August 28, 1992",CD,13,NA
+22,Malaki Branham,SAS,SG,76,180,"May 12, 2003",US,2,Ohio State
+5,Stephon Castle,SAS,SG,78,215,"November 1, 2004",US,R,UConn
+30,Julian Champagnie,SAS,SF,79,217,"June 29, 2001",US,2,St. John's
+25,Sidy Cissoko,SAS,SF,78,220,"April 2, 2004",FR,1,NA
+23,Zach Collins,SAS,C,81,250,"November 19, 1997",US,6,Gonzaga
+7,David Duke Jr.,SAS,SG,76,204,"October 13, 1999",US,3,Providence
+4,De'Aaron Fox,SAS,PG,75,185,"December 20, 1997",US,7,Kentucky
+55,Harrison Ingram,SAS,SF,77,230,"November 27, 2002",US,R,"Stanford, UNC"
+0,Keldon Johnson,SAS,SF,78,220,"October 11, 1999",US,5,Kentucky
+33,Tre Jones,SAS,PG,73,185,"January 8, 2000",US,4,Duke
+54,Sandro Mamukelashvili,SAS,PF,81,240,"May 23, 1999",US,3,Seton Hall
+11,Jordan McLaughlin,SAS,PG,71,185,"April 9, 1996",US,5,USC
+27,Riley Minix,SAS,SF,79,230,"September 22, 2000",US,R,"Southeastern University, Morehead State University"
+3,Chris Paul,SAS,PG,72,175,"May 6, 1985",US,19,Wake Forest
+10,Jeremy Sochan,SAS,PF,80,230,"May 20, 2003",US,2,Baylor
+24,Devin Vassell,SAS,SG,77,200,"August 23, 2000",US,4,Florida State
+1,Victor Wembanyama,SAS,C,88,235,"January 4, 2004",FR,1,NA
+14,Blake Wesley,SAS,SG,76,190,"March 16, 2003",US,2,Notre Dame
+15,Jose Alvarado,NOP,PG,72,179,"April 12, 1998",US,3,Georgia Tech
+4,Mo Bamba,NOP,C,84,231,"May 12, 1998",US,6,Texas
+11,Brandon Boston Jr.,NOP,SG,78,188,"November 28, 2001",US,3,Kentucky
+0,Keion Brooks Jr.,NOP,SF,79,210,"August 7, 2000",US,R,"Kentucky, Washington"
+00,Bruce Brown,NOP,PG,76,202,"August 15, 1996",US,6,Miami (FL)
+8,Jamal Cain,NOP,SF,79,191,"March 20, 1999",US,2,"Marquette, Oakland"
+4,Javonte Green,NOP,SG,77,205,"July 23, 1993",US,5,Radford
+24,Jordan Hawkins,NOP,SG,77,190,"April 29, 2002",US,1,UConn
+14,Brandon Ingram,NOP,SF,80,190,"September 2, 1997",US,8,Duke
+55,Trey Jemison,NOP,C,82,270,"November 28, 1999",US,1,"Clemson, UAB"
+2,Herbert Jones,NOP,SF,79,206,"October 6, 1998",US,3,Alabama
+35,Kylor Kelley,NOP,C,84,215,"August 26, 1997",US,R,Oregon State
+17,Karlo MatkoviÄ,NOP,PF,82,231,"March 30, 2001",BA,R,NA
+3,CJ McCollum,NOP,PG,75,190,"September 19, 1991",US,11,Lehigh
+21,Yves Missi,NOP,C,83,235,"May 14, 2004",BE,R,Baylor
+25,Trey Murphy III,NOP,SF,80,206,"June 18, 2000",US,3,"Rice University, Virginia"
+5,Dejounte Murray,NOP,PG,76,180,"September 19, 1996",US,7,Washington
+20,Jaylen Nowell,NOP,SG,76,201,"July 9, 1999",US,5,Washington
+13,Kelly Olynyk,NOP,C,84,240,"April 19, 1991",CA,11,Gonzaga
+"4, 22",Elfrid Payton,NOP,PG,75,195,"February 22, 1994",US,8,Louisiana
+22,Lester QuiÃ±ones,NOP,SG,77,208,"November 16, 2000",US,2,Memphis
+12,Antonio Reeves,NOP,SG,77,205,"November 20, 2000",US,R,"Illinois State, Kentucky"
+50,Jeremiah Robinson-Earl,NOP,PF,81,240,"November 3, 2000",US,3,Villanova
+10,Daniel Theis,NOP,C,80,245,"April 4, 1992",DE,7,NA
+1,Zion Williamson,NOP,PF,78,284,"July 6, 2000",US,4,Duke
+00,Jordan Clarkson,UTA,SG,77,194,"June 7, 1992",US,10,"Tulsa, Missouri"
+13,Isaiah Collier,UTA,PG,76,210,"October 8, 2004",US,R,USC
+20,John Collins,UTA,PF,81,226,"September 23, 1997",US,7,Wake Forest
+15,Drew Eubanks,UTA,C,82,245,"February 1, 1997",US,6,Oregon State
+22,Kyle Filipowski,UTA,C,83,250,"November 7, 2003",US,R,Duke
+3,Keyonte George,UTA,PG,76,185,"November 8, 2003",US,1,Baylor
+16,Elijah Harkless,UTA,SG,75,195,"February 3, 2000",US,R,"Cal State Northridge, Oklahoma, UNLV"
+0,Taylor Hendricks,UTA,PF,81,215,"November 22, 2003",US,1,Central Florida
+33,Johnny Juzang,UTA,SG,79,226,"March 17, 2001",US,2,"Kentucky, UCLA"
+24,Walker Kessler,UTA,C,86,245,"July 26, 2001",US,2,"UNC, Auburn"
+23,Lauri Markkanen,UTA,PF,85,240,"May 22, 1997",FI,7,Arizona
+99,KJ Martin,UTA,SF,78,215,"January 6, 2001",US,4,NA
+8,Patty Mills,UTA,PG,74,180,"August 11, 1988",AU,15,Saint Mary's
+19,Svi Mykhailiuk,UTA,SF,79,205,"June 10, 1997",UA,6,Kansas
+25,Micah Potter,UTA,C,81,248,"April 6, 1998",US,3,"Ohio State, Wisconsin"
+28,Brice Sensabaugh,UTA,SF,78,235,"October 30, 2003",US,1,Ohio State
+2,Collin Sexton,UTA,SG,75,190,"January 4, 1999",US,6,Alabama
+11,Jaden Springer,UTA,PG,76,202,"September 25, 2002",US,3,Tennessee
+34,Oscar Tshiebwe,UTA,C,80,255,"November 27, 1999",CD,1,"West Virginia, Kentucky"
+5,Cody Williams,UTA,SG,80,190,"November 20, 2004",US,R,Colorado

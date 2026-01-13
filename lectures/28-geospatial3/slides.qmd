@@ -1,0 +1,815 @@
+---
+title: "Storms in North Atlantic II"
+subtitle: "Web Interactive Maps with Leaflet"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+library(leaflet)
+library(rnaturalearth)
+```
+
+
+# Web Interactive Maps with Leaflet
+
+## Leaflet: Web Interactive Maps
+
+```{r}
+#| echo: false
+#| out-width: 90%
+#| fig-width: 13
+#| fig-height: 8
+# all tropical cyclones in 1975
+storms |>
+  filter(year == 1975) |>
+  leaflet() |>
+  setView(lng = -60, lat = 30, zoom = 4) |>
+  addProviderTiles(provider = 'CartoDB') |>
+  addCircleMarkers(
+    lng = ~long, 
+    lat = ~lat,
+    radius = 1)
+```
+
+
+## Leaflet
+
+```{r}
+#| eval: false
+library(leaflet)
+```
+
+[Leaflet](https://leafletjs.com/) is a JavaScript library used to build 
+interactive maps for websites and web mapping applications.
+
+. . .
+
+The R package `"leaflet"` lets you create and customize _Leaflet_ maps in R. 
+
+. . .
+
+These maps can be used directly from the R console, Positron, RStudio, in Markdown 
+documents (e.g. `qmd`, `Rmd`), and in Shiny applications.
+
+
+## Basic Usage
+
+You create a Leaflet map with these basic steps:
+
+1) Create a map widget by calling `leaflet()`.
+
+2) Add layers (i.e. features) to the map by using layer functions:
+
+    + `addTiles()`
+    + `addMarkers()`
+    + `addCircles()`
+    + `addPolygons()`
+    + `addLegend()`
+
+3) Repeat step 2 as desired.
+
+4) Print the map widget to display it.
+
+
+## Basic Usage
+
+:::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+leaflet()
+```
+:::
+
+::: {.column .fragment width="55%"}
+```{r}
+#| echo: false
+leaflet()
+```
+:::
+::::
+
+
+## Basic Usage
+
+:::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+leaflet() |> 
+  addTiles()
+```
+:::
+
+::: {.column .fragment width="55%"}
+```{r}
+#| echo: false
+leaflet() |> 
+  addTiles()
+```
+:::
+::::
+
+
+## Basic Usage
+
+:::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+leaflet() |> 
+  addTiles() |> 
+  addMarkers(
+    lng = -122.2579, 
+    lat = 37.8718)
+```
+:::
+
+::: {.column .fragment width="55%"}
+```{r}
+#| echo: false
+leaflet() |> 
+  addTiles() |> 
+  addMarkers(
+    lng = -122.2579, 
+    lat = 37.8718)
+```
+:::
+::::
+
+
+## Basic Usage
+
+:::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+leaflet() |> 
+  addTiles() |> 
+  addMarkers(
+    lng = -122.2579, 
+    lat = 37.8718, 
+    popup = "Fiat Lux")
+```
+:::
+
+::: {.column .fragment width="55%"}
+```{r}
+#| echo: false
+leaflet() |> 
+  addTiles() |> 
+  addMarkers(
+    lng = -122.2579, 
+    lat = 37.8718, 
+    popup = "Fiat Lux")
+```
+:::
+::::
+
+
+## Basic Usage
+
+:::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+leaflet() |> 
+  addTiles() |> 
+  addMarkers(
+    lng = -122.2579, 
+    lat = 37.8718, 
+    popup = "Fiat Lux") |> 
+  setView(
+    lng = -122.2579, 
+    lat = 37.8718,
+    zoom = 18)
+```
+:::
+
+::: {.column .fragment width="55%"}
+```{r}
+#| echo: false
+leaflet() |> 
+  addTiles() |> 
+  addMarkers(
+    lng = -122.2579, 
+    lat = 37.8718, 
+    popup = "Fiat Lux") |> 
+  setView(
+    lng = -122.2579, 
+    lat = 37.8718,
+    zoom = 18)
+```
+:::
+::::
+
+
+## Basic Usage
+
+:::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+leaflet() |> 
+  addTiles() |> 
+  addMarkers(
+    lng = -122.2579, 
+    lat = 37.8718, 
+    popup = "Fiat Lux") |> 
+  setView(
+    lng = -122.2579, 
+    lat = 37.8718,
+    zoom = 10)
+```
+:::
+
+::: {.column .fragment width="55%"}
+```{r}
+#| echo: false
+leaflet() |> 
+  addTiles() |> 
+  addMarkers(
+    lng = -122.2579, 
+    lat = 37.8718, 
+    popup = "Fiat Lux") |> 
+  setView(
+    lng = -122.2579, 
+    lat = 37.8718,
+    zoom = 10)
+```
+:::
+::::
+
+
+# Map Tiles
+
+## Map Tiles
+
+Leaflet uses map tiles from:
+
+- OpenStreetMap (OSM): <https://www.openstreetmap.org/>
+
+    + OSM is simply the database with all the data in xml-vector format.
+
+- CartoDB: <https://carto.com/basemaps/>
+
+. . .
+
+You can change the tiles with `addProviderTiles()`, specifying the 
+`provider` argument.
+
+See demo gallery at: <https://leaflet-extras.github.io/leaflet-providers/preview/>
+
+
+## Changing Tiles
+
+:::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+leaflet() |> 
+  addProviderTiles(
+    "CartoDB.Positron") |> 
+  addMarkers(
+    lng = -122.2579, 
+    lat = 37.8718, 
+    popup = "Fiat Lux")
+```
+:::
+
+::: {.column .fragment width="55%"}
+```{r}
+#| echo: false
+leaflet() |> 
+  addProviderTiles(
+    "CartoDB.Positron") |> 
+  addMarkers(
+    lng = -122.2579, 
+    lat = 37.8718, 
+    popup = "Fiat Lux")
+```
+:::
+::::
+
+
+## Changing Tiles
+
+:::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+leaflet() |> 
+  addProviderTiles(
+    "Esri.WorldImagery") |> 
+  addMarkers(
+    lng = -122.2579, 
+    lat = 37.8718, 
+    popup = "Fiat Lux")
+```
+:::
+
+::: {.column .fragment width="55%"}
+```{r}
+#| echo: false
+leaflet() |> 
+  addProviderTiles(
+    "Esri.WorldImagery") |> 
+  addMarkers(
+    lng = -122.2579, 
+    lat = 37.8718, 
+    popup = "Fiat Lux")
+```
+:::
+::::
+
+
+# Adding Data to Leaflet Maps
+
+## Adding Data Objects
+
+Both `leaflet()` and the map layer functions have an optional `data` parameter 
+that is designed to receive spatial data in one of several forms:
+
+- From base R:
+    + lng/lat matrix
+    + data frame with lng/lat columns
+- From the `"sf"` package:
+    + the data frame of class `"sf"`
+- From the `"maps"` package
+    + the data frame from returned from `map()`
+
+
+## {.smaller}
+
+```{r}
+storms75 <- filter(storms, year == 1975)
+
+storms75
+```
+
+. . .
+
+\
+
+`storms75` has columns `lat` (latitude) and `long` (longitude) which can be passed to the arguments `lat` and `lng` of leaflet functions
+
+
+## 
+
+:::: {.columns}
+::: {.column width="40%"}
+```{r}
+#| eval: false
+storms75 |> 
+  leaflet() |> 
+  addTiles()
+```
+
+\
+
+::: {.fragment}
+Note: this is an empty map because no geometries have been added.
+:::
+:::
+
+::: {.column .fragment width="60%"}
+```{r}
+#| echo: false
+storms75 |> 
+  leaflet() |> 
+  addTiles()
+```
+:::
+::::
+
+
+## 
+
+:::: {.columns}
+::: {.column width="40%"}
+```{r}
+#| eval: false
+storms75 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat)
+```
+:::
+
+::: {.column .fragment width="60%"}
+```{r}
+#| echo: false
+storms75 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat)
+```
+:::
+::::
+
+. . .
+
+\
+
+Note the use of the tilde `~` to _map_ (i.e. link) columns `long` and `lat` to arguments `lng` and `lat` respectively.
+
+
+## 
+
+:::: {.columns}
+::: {.column width="40%"}
+```{r}
+#| eval: false
+storms75 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat,
+    label = ~name)
+```
+:::
+
+::: {.column .fragment width="60%"}
+```{r}
+#| echo: false
+storms75 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat,
+    label = ~name)
+```
+:::
+::::
+
+
+## 
+
+:::: {.columns}
+::: {.column width="40%"}
+```{r}
+#| eval: false
+storms75 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat,
+    label = ~name,
+    radius = 50000)
+```
+:::
+
+::: {.column .fragment width="60%"}
+```{r}
+#| echo: false
+storms75 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat,
+    label = ~name,
+    radius = 50000)
+```
+:::
+::::
+
+
+## 
+
+:::: {.columns}
+::: {.column width="40%"}
+```{r}
+#| eval: false
+storms75 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat,
+    label = ~name,
+    radius = 50000, 
+    weight = 1)
+```
+:::
+
+::: {.column .fragment width="60%"}
+```{r}
+#| echo: false
+storms75 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat,
+    label = ~name,
+    radius = 50000,
+    weight = 1)
+```
+:::
+::::
+
+
+## 
+
+:::: {.columns}
+::: {.column width="40%"}
+```{r}
+#| eval: false
+storms75 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat,
+    label = ~name,
+    radius = 50000, 
+    weight = 1,
+    fillOpacity = 0.7)
+```
+:::
+
+::: {.column .fragment width="60%"}
+```{r}
+#| echo: false
+storms75 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat,
+    label = ~name,
+    radius = 50000,
+    weight = 1,
+    fillOpacity = 0.7)
+```
+:::
+::::
+
+
+## 
+
+:::: {.columns}
+::: {.column width="40%"}
+```{r}
+#| eval: false
+storms75 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat,
+    label = ~name,
+    color = ~name)
+```
+
+::: {.fragment}
+👎 How NOT to color-code: trying to map column `name` to argument `color` won't work
+:::
+:::
+
+::: {.column .fragment width="60%"}
+```{r}
+#| echo: false
+storms75 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat,
+    label = ~name,
+    color = ~name)
+```
+:::
+::::
+
+
+## {.nostretch}
+
+![](images/leaflet-colors.png){width="80%" fig-align="center"}
+
+
+## Mapping Variables to Colors
+
+`"leaflet"` package provides a couple of functions to generate colors:
+
+- `colorNumeric()`: simple linear mapping from continuous numeric data to an interpolated palette
+
+- `colorBin()`: maps continuous numeric data, but performs binning based on value
+
+- `colorQuantile()`: maps continuous numeric data, but performs binning via the `quantile()` function
+
+- `colorFactor()`: maps factors to colors (to be used for categorical data)
+
+
+##
+
+To color code storms based on their `name` (categorical values) we have to create a color palette via `colorFactor()`.
+
+:::: {.columns}
+::: {.column .fragment width="50%"}
+Unique storm names in 1975:
+
+```{r}
+storms75 |> distinct(name)
+```
+:::
+
+::: {.column .fragment width="50%"}
+Rainbow colors:
+
+```{r}
+rainbow(8)
+```
+
+::: {.fragment}
+Color palette function:
+
+```{r}
+pal <- colorFactor(
+  palette = rainbow(8), 
+  domain = storms75$name)
+
+pal(c("Amy", "Blanche"))
+```
+:::
+:::
+::::
+
+
+## 
+
+:::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+storms75 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat,
+    label = ~name,
+    color = ~pal(name))
+```
+
+::: {.fragment}
+👍 How to color-code: use the `pal()` function to generate colors according to `name` of storm
+:::
+:::
+
+::: {.column .fragment width="55%"}
+```{r}
+#| echo: false
+storms75 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat,
+    label = ~name,
+    color = ~pal(name))
+```
+
+
+::: {.fragment}
+[What about a legend?]{.mdlit}
+:::
+:::
+::::
+
+
+## 
+
+:::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+storms75 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat,
+    label = ~name,
+    color = ~pal(name)) |> 
+  addLegend(
+    position = "bottomleft", 
+    pal = pal, 
+    values = ~name)
+```
+:::
+
+::: {.column .fragment width="55%"}
+```{r}
+#| echo: false
+storms75 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat,
+    label = ~name,
+    color = ~pal(name)) |> 
+  addLegend(
+    position = "bottomleft", 
+    pal = pal, 
+    values = ~name)
+```
+:::
+::::
+
+
+##
+
+```{r}
+#| code-fold: true
+#| code-summary: View Code
+#| fig-width: 12
+#| fig-height: 8
+storms75 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat,
+    label = ~paste0(name, ": ", month, "-", day),
+    radius = ~wind*1000,
+    weight = 1, 
+    fillOpacity = 0.7,
+    color = ~pal(name)) |> 
+  addLegend(
+    position = "bottomleft", 
+    pal = pal, 
+    values = ~name)
+```
+
+
+# Polygons
+
+## Example: adding `"sf"` data polygons
+
+```{r}
+usa_states = ne_states(
+  country = "United States of America", 
+  returnclass = "sf")
+
+leaflet(data = usa_states) |> 
+  addTiles() |>
+  setView(lng = -90, lat = 40, zoom = 3) |>
+  addPolygons(fillColor = rainbow(10), stroke = FALSE)
+```
+
+
+
+## Leaflet Maps
+
+```{r}
+#| code-fold: true
+#| code-summary: View Code
+#| echo: true
+storms |>
+  filter(year == 1975) |>
+leaflet() |>
+  setView(lng = -50, lat = 30, zoom = 3) |>
+  addTiles() |>
+  addProviderTiles(provider = "NASAGIBS.ViirsEarthAtNight2012") |>
+  addCircleMarkers(
+    lng = ~long, 
+    lat = ~lat,
+    radius = 1, 
+    color = "#DDFF03")
+```
+
+
+## Leaflet Maps
+
+```{r}
+#| code-fold: true
+#| code-summary: View Code
+#| echo: true
+storms |>
+  filter(year == 1975) |>
+leaflet() |>
+  setView(lng = -50, lat = 30, zoom = 3) |>
+  addTiles() |>
+  addProviderTiles(provider = "NASAGIBS.ViirsEarthAtNight2012") |>
+  addCircleMarkers(
+    lng = ~long, 
+    lat = ~lat,
+    radius = 1, 
+    color = "#DDFF03", 
+    weight = ~wind/5)
+```
+
+

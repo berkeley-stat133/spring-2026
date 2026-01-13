@@ -1,0 +1,530 @@
+---
+title: "Atomic Vectors"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+```
+
+## Review
+
+Last time ...
+
+
+## Announcements
+
+- Working locally
+
+- Office Hours / Group Tutoring
+
+- Problem Sets
+
+
+# Intro to Vectors and Types
+
+## {.nostretch}
+
+![](images/leia-info.svg){width="80%" fig-align="center"}
+
+
+## Leia's data {auto-animate=true}
+
+::: {.columns}
+::: {.column width="40%"}
+![](images/leia-info.png){fig-align="center" width="40%"}
+:::
+
+::: {.column .fragment width="50%"}
+\
+
+```{r}
+#| output-location: fragment
+name <- "Leia"
+```
+:::
+:::
+
+
+## Leia's data {auto-animate=true}
+
+::: {.columns}
+::: {.column width="40%"}
+![](images/leia-info.png){fig-align="center" width="40%"}
+:::
+
+::: {.column width="50%"}
+\
+
+```{r}
+#| output-location: fragment
+name <- "Leia"
+
+gender <- "female"
+```
+:::
+:::
+
+
+## Leia's data {auto-animate=true}
+
+::: {.columns}
+::: {.column width="40%"}
+![](images/leia-info.png){fig-align="center" width="40%"}
+:::
+
+::: {.column width="50%"}
+\
+
+```{r}
+#| output-location: fragment
+name <- "Leia"
+
+gender <- "female"
+
+height <- 1.50
+```
+:::
+:::
+
+
+## Leia's data {auto-animate=true}
+
+::: {.columns}
+::: {.column width="40%"}
+![](images/leia-info2.png){fig-align="center" width="40%"}
+:::
+
+::: {.column width="50%"}
+\
+
+```{r}
+#| output-location: fragment
+name <- "Leia"
+
+gender <- "female"
+
+height <- 1.50
+
+force <- TRUE
+```
+:::
+:::
+
+
+## Data Types 
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| output-location: fragment
+# character (chr)
+name <- "Leia"
+
+# character (chr)
+gender <- "female"
+
+# logical (lgl)
+force <- TRUE
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r}
+#| output-location: fragment
+# double (dbl)
+height <- 1.50
+
+# double (dbl)
+height_cm <- 150
+
+# integer (int)
+height_cm2 <- 150L
+```
+:::
+:::
+
+
+# More Data
+
+## {.nostretch}
+
+![](images/leia-luke-han-info.svg){width="80%" fig-align="center"}
+
+
+## Vectors {auto-animate=true}
+
+To create bigger vectors we use the [combine]{.hilit} function `c()`
+
+```{r}
+#| output-location: fragment
+name <- c("Leia", "Luke", "Han")
+```
+
+## Vectors {auto-animate=true}
+
+To create bigger vectors we use the [combine]{.hilit} function `c()`
+
+```{r}
+#| output-location: fragment
+name <- c("Leia", "Luke", "Han")
+
+gender <- c("female", "male", "male")
+```
+
+## Vectors {auto-animate=true}
+
+To create bigger vectors we use the [combine]{.hilit} function `c()`
+
+```{r}
+#| output-location: fragment
+name <- c("Leia", "Luke", "Han")
+
+gender <- c("female", "male", "male")
+
+height <- c(1.50, 1.75, 1.80)
+```
+
+## Vectors {auto-animate=true}
+
+To create bigger vectors we use the [combine]{.hilit} function `c()`
+
+```{r}
+#| output-location: fragment
+name <- c("Leia", "Luke", "Han")
+
+gender <- c("female", "male", "male")
+
+height <- c(1.50, 1.75, 1.80)
+
+force <- c(TRUE, TRUE, FALSE)
+```
+
+
+# Properties of Vectors
+
+## Vectors
+
+- Central---and most basic---data structure in R
+
+- Ordered set of elements (i.e. contiguous cells)
+
+- Can be of any length (including zero)
+
+- [Atomic:]{.mdlit} elements of the same type
+
+- Elements can have names
+
+
+##
+
+```{r}
+#| output-location: fragment
+name <- c("Leia", "Luke", "Han")
+name
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+length(name)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+height <- c(1.50, 1.75, 1.80)
+height
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+names(height) <- name
+height
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+weight_kg <- c("Leia" = 55, "Luke" = 75, "Han" = 85)
+weight_kg
+```
+
+
+## Atomic Vectors
+
+- Vectors are [atomic]{.hilit} structures
+
+- The values in a vector must be [ALL]{.mdlit} of the same type!
+
+- Either all logicals, or integers, or doubles, or characters
+
+- You CANNOT have a vector of different data types
+
+
+## Atomic*
+
+Special values in an atomic vector:
+
+- `NA`: Not Available / Missing
+
+- `NULL`: Does not exist (nothing)
+
+- `NaN`: Not a Number (e.g. dividing by zero)
+
+- `Inf`: Infinity
+
+
+## A comment about comments
+
+Comment character: special character to skip evaluation of remaining characters on a line. R (and Python) use `#`.
+
+```{r}
+# create vector
+c("A", "C", "D") # vector created!
+```
+
+vs.
+
+```{r}
+create vector
+c("A", "C", "D") vector created!
+```
+
+
+## R jargon: Types and Modes
+
+- You'll often see/hear useRs talking about "modes" instead of "types".
+
+- The function `typeof()` returns the [type of data]{.hilit}: this is how the values are stored internally in R.
+
+. . .
+
+```{r}
+#| output-location: fragment
+typeof(name)
+```
+
+- In S terminology[^1], instead of talking about types we talk about [modes]{.mdlit}.
+
+- The function `mode()` returns the "mode" of an R object.
+
+. . .
+
+```{r}
+#| output-location: fragment
+mode(name)
+```
+
+[^1]: S is the language on which R is based on.
+
+
+## Types and Modes {.nostretch}
+
+![](images/obj-vector-atomic-modes.png){width="70%" fig-align="center"}
+
+. . .
+
+- 4 main types: logical, integer, double, character
+- 3 main modes: logical, numeric, character
+
+
+# Creating Vectors
+
+## Functions to create vectors
+
+R has a large repertoire of functions to create a variety of vectors in different ways.
+
+We've already seen the combine function `c()`.
+
+Functions to initialize "dummy" vectors:
+
+- `logical(length = )`
+- `integer(length = )`
+- `double(length = )`
+- `character(length = )`
+- `vector(mode = , length = )`
+
+
+## Functions to initialize "dummy" vectors
+
+```{r}
+#| output-location: fragment
+logi <- logical(length = 2)
+logi
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+int <- integer(length = 3)
+int
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+dbl <- double(length = 4)
+dbl
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+char <- character(length = 5)
+char
+```
+
+. . .
+
+We typically create these vectors to have an output object whose elements will be populated or updated in later computations.
+
+
+## Functions to create vectors: `vector()`
+
+```{r}
+logi <- vector(mode = "logical", length = 2)
+logi
+```
+
+```{r}
+int <- vector(mode = "integer", length = 3)
+int
+```
+
+```{r}
+dbl <- vector(mode = "double", length = 4)
+dbl
+```
+
+```{r}
+char <- vector(mode = "character", length = 5)
+char
+```
+
+
+## Numeric Sequences with `seq()`
+
+`seq()` allows you create numeric sequences of different kinds, for example:
+
+. . .
+
+```{r}
+#| output-location: fragment
+seq(from = 1, to = 5, by = 1)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+seq(from = 1, to = 10, by = 2)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+seq(from = 10, to = 1, by = -2)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+seq(from = 1, by = 2, length.out = 6)
+```
+
+
+## Numeric Sequences with `:`
+
+The colon operator `:` also lets you create simple sequences
+
+. . .
+
+```{r}
+#| output-location: fragment
+1:5
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+1:10
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+10:1
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+-3:3
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+-3.5:3.5
+```
+
+. . .
+
+The output sequence is produced in 1-unit steps.
+
+
+## Replicates with `rep()`
+
+`rep()` replicates the values of the input vector in a handful of different ways:
+
+. . .
+
+```{r}
+#| output-location: fragment
+rep(1, times = 3)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+rep(1:3, times = 2)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+rep(1:3, each = 2)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+rep(1:3, each = 2, times = 2)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+rep(1:3, each = 2, times = 2, length.out = 10)
+```
+

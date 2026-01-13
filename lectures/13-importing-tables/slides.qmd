@@ -1,0 +1,991 @@
+---
+title: "Importing Tables"
+subtitle: "Reading data in R"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+```
+
+
+## Example
+
+Files containing the same data arranged in 2 different ways:
+
+:::: {.columns}
+::: {.column width="45%"}
+```{.markdown filename="file1.txt"}
+2 4 6 8 10
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="50%"}
+```{.markdown filename="file2.txt"}
+2
+4
+6
+8
+10
+```
+:::
+::::
+
+
+### Question
+
+What kind of R object would you use to store/handle this data set?
+
+```{r}
+#| echo: false
+countdown::countdown(1, bottom = 0)
+```
+
+
+# Reading Data Values with `scan()`
+
+## `scan()`
+
+:::: {.columns}
+::: {.column .fragment width="45%"}
+Consider a text file with the following content:
+
+```{.markdown filename="file1.txt"}
+2 4 6 8 10
+```
+
+::: {.fragment}
+How to import `file1.txt` in R?
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="50%"}
+Assuming `file1.txt` is in your working directory: 
+
+::: {.fragment}
+```{r}
+#| output-location: fragment
+#| code-line-numbers: "1|1-2|1-3|1-6"
+x <- scan(
+  file = "file1.txt",
+  what = numeric()
+)
+
+x
+```
+:::
+
+:::
+::::
+
+
+## `scan()` example 1
+
+You can modify the `what` argument to specify different data types:
+
+. . .
+
+```{r}
+#| output-location: fragment
+x_int <- scan(file = "file1.txt", what = integer())
+x_int
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+x_dbl <- scan(file = "file1.txt", what = double())
+x_dbl
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+x_chr <- scan(file = "file1.txt", what = character())
+x_chr
+```
+
+
+## 
+
+:::: {.columns}
+::: {.column .fragment width="45%"}
+What about `file2.txt`?
+
+::: {.fragment}
+```{.markdown filename="file2.txt"}
+2
+4
+6
+8
+10
+```
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="50%"}
+Assuming `file2.txt` is in your working directory: 
+
+::: {.fragment}
+```{r}
+#| output-location: fragment
+#| code-line-numbers: "1|1-2|1-3|1-6"
+y <- scan(
+  file = "file2.txt",
+  what = numeric()
+)
+
+y
+```
+:::
+
+:::
+::::
+
+
+## 
+
+Consider another file named `file3.txt`
+
+. . .
+
+```{.markdown filename="file3.txt"}
+Leia is a 1.50 meters tall female
+Luke is a 1.70 meters tall male
+Han is a 1.80 meters tall male
+```
+
+. . .
+
+\
+
+By default, `scan()` expects to read "white-space" delimited input fields:
+
+. . .
+
+```{r}
+#| output-location: fragment
+z <- scan(file = "file3.txt", what = character())
+z
+```
+
+. . .
+
+[This may not be the best option]{.mdlit} 😕
+
+
+## 
+
+Consider another file named `file3.txt`
+
+```{.markdown filename="file3.txt"}
+Leia is a 1.50 meters tall female
+Luke is a 1.70 meters tall male
+Han is a 1.80 meters tall male
+```
+
+. . .
+
+\
+
+To scan each line at a time, we must change the [separator]{.hilit} argument from "white-space" to "new line character", that is: `sep = "\n"`
+
+. . .
+
+```{r}
+#| output-location: fragment
+z <- scan(file = "file3.txt", what = character(), sep = "\n")
+z
+```
+
+
+## 
+
+Consider yet another file named `file4.txt`
+
+. . .
+
+```{.markdown filename="file4.txt"}
+FIRST LINE
+Leia female 1.50
+Luke male 1.70
+Han male 1.80
+```
+
+. . .
+
+- The first line is not that relevant.
+- The subsequent lines (2-4) ARE important.
+- The data in each line consists of:
+    + name
+    + gender
+    + height
+
+
+##
+
+Here's how to use `scan()` to import `file4.txt` in R:
+
+:::: {.columns}
+::: {.column width="45%"}
+```{.markdown filename="file4.txt"}
+FIRST LINE
+Leia female 1.50
+Luke male 1.70
+Han male 1.80
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="50%"}
+```{r}
+#| output-location: fragment
+#| code-line-numbers: "1|1-2|1-3|1-4|1-8|1-9"
+w <- scan(
+  file = "file4.txt", 
+  skip = 1,
+  what = list(
+    character(), 
+    character(), 
+    double()))
+
+w
+```
+:::
+::::
+
+
+## 
+
+Another way to use `scan()` to import `file4.txt` in R:
+
+:::: {.columns}
+::: {.column width="45%"}
+```{.markdown filename="file4.txt"}
+FIRST LINE
+Leia female 1.50
+Luke male 1.70
+Han male 1.80
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="50%"}
+```{r}
+#| output-location: fragment
+#| code-line-numbers: "1|1-2|1-3|1-4|1-8|1-9"
+w <- scan(
+  file = "file4.txt", 
+  skip = 1,
+  what = list(
+    name = character(), 
+    gender = character(), 
+    height = double()))
+
+w
+```
+:::
+::::
+
+
+##
+
+File `values.txt`
+
+. . .
+
+```{.markdown filename="values.txt"}
+10 20
+30 40
+50 60
+70 80
+```
+
+. . .
+
+\
+
+Goal: I would like to have this data as:
+
+- a `matrix`
+- a `data.frame`
+
+```{r}
+#| echo: false
+countdown::countdown(2, bottom = 0)
+```
+
+
+## {.smaller}
+
+```{.markdown filename="values.txt"}
+10 20
+30 40
+50 60
+70 80
+```
+
+. . .
+
+As a `matrix`
+
+```{r}
+#| output-location: fragment
+# step 1
+vals <- scan(file = "values.txt", what = numeric())
+vals
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# step 2
+mat <- matrix(vals, nrow = 4, ncol = 2, byrow = TRUE)
+mat
+```
+
+
+## {.smaller}
+
+```{.markdown filename="values.txt"}
+10 20
+30 40
+50 60
+70 80
+```
+
+. . .
+
+As a `data.frame`
+
+```{r}
+#| output-location: fragment
+# step 1
+vals <- scan(file = "values.txt", what = list(x=numeric(), y=numeric()))
+vals
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# step 2
+df <- data.frame(vals)
+df
+```
+
+
+## About `scan()`
+
+- `scan()` is R's main [low-level]{.mdlit} function to read in data values.
+- It imports data either into a __vector__ or a __list__ (argument `what`).
+- `scan()` expects to read "white-space" delimited input fields by default.
+- You can change the field separator with `sep`.
+- In practice, you won't be using `scan()` that much, instead you'll use [high-level]{.mdlit} functions---which depend on `scan()`.
+- But now you know about its basic usage.
+- See `?scan` for more information.
+
+
+# Reading a File
+
+## Reading a file, line-by-line
+
+The standard recipe to read the content of a file follows these steps:
+
+1) Establish a [connection]{.hilit} (or stream source) with the desired file.
+
+2) Open the desired file in [read mode]{.hilit}.
+
+3) [Read each line]{.hilit}, and check whether the end-of-file has been reached.
+
+4) [Parse and convert]{.hilit} raw string into individual data points.
+
+5) [Close]{.hilit} the connection to the file.
+
+. . .
+
+- In R, pretty much all functions to import data take care of all these steps.
+
+- Most of the time you will be specifying [arguments related to step 4]{.mdlit} to tell R 
+details about the parsing and data conversion.
+
+
+## Data Reading Functions in base R
+
+![](images/read-data-functions1.png){fig-align="center"}
+
+## Data Reading Functions in base R
+
+![](images/read-data-functions2.png){fig-align="center"}
+
+
+# Importing Data Tables
+
+## Tabular Data
+
+## {.nostretch}
+
+![](images/leia-luke-han-info.svg){width="80%" fig-align="center"}
+
+
+## Table
+
+\
+
+| Name | Gender | Height | Force |
+|------|--------|--------|-------|
+| Leia | female |  1.50  | TRUE  |
+| Luke |   male |  1.70  | TRUE  |
+| Han  |   male |  1.80  | FALSE |
+
+
+##
+
+Common formats to store tabular data
+
+:::: {.columns}
+
+::: {.column .fragment width="45%"}
+Space separated values
+
+```{.markdown filename="data.txt"}
+Name Gender Height Force
+Leia female 1.50 TRUE
+Luke male 1.70 TRUE
+Han male 1.80 FALSE
+```
+
+\
+
+::: {.fragment}
+Comma separated values
+
+```{.markdown filename="data.csv"}
+Name,Gender,Height,Force
+Leia,female,1.50,TRUE
+Luke,male,1.70,TRUE
+Han,male,1.80,FALSE
+```
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="50%"}
+
+Tab separated values
+
+```{.markdown filename="data.tsv"}
+Name  Gender  Height  Force
+Leia  female  1.50  TRUE
+Luke  male  1.70  TRUE
+Han male  1.80  FALSE
+```
+
+\
+
+::: {.fragment}
+Fixed width format
+
+```{.markdown filename="data.fwf"}
+Name Gender Height Force
+Leia female 1.50   TRUE
+Luke male   1.70   TRUE
+Han  male   1.80   FALSE
+```
+:::
+:::
+
+::::
+
+
+##
+
+`read.table()` example 1.1
+
+:::: {.columns}
+
+::: {.column .fragment width="45%"}
+Space separated
+
+```{.markdown filename="data.txt"}
+Name Gender Height Force
+Leia female 1.50 TRUE
+Luke male 1.70 TRUE
+Han male 1.80 FALSE
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="50%"}
+Import
+
+```{r}
+#| output-location: fragment
+dat <- read.table(
+  file = "data.txt", 
+  header = TRUE)
+
+dat
+```
+:::
+
+::::
+
+
+##
+
+`read.table()` example 1.2
+
+:::: {.columns}
+
+::: {.column width="45%"}
+Space separated
+
+```{.markdown filename="data.txt"}
+Name Gender Height Force
+Leia female 1.50 TRUE
+Luke male 1.70 TRUE
+Han male 1.80 FALSE
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="50%"}
+Import (more specific)
+
+```{r}
+#| output-location: fragment
+dat <- read.table(
+  file = "data.txt", 
+  header = TRUE, 
+  colClasses = c("character",
+                 "character",
+                 "double",
+                 "logical"))
+
+dat
+```
+:::
+
+::::
+
+
+##
+
+`read.table()` example 2.1
+
+:::: {.columns}
+
+::: {.column width="45%"}
+Comma separated
+
+```{.markdown filename="data.csv"}
+Name,Gender,Height,Force
+Leia,female,1.50,TRUE
+Luke,male,1.70,TRUE
+Han,male,1.80,FALSE
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="50%"}
+Import with `read.table()`
+
+```{r}
+#| output-location: fragment
+dat <- read.table(
+  file = "data.csv", 
+  header = TRUE, 
+  sep = ",")
+
+dat
+```
+:::
+
+::::
+
+
+##
+
+`read.csv()` example 2.2
+
+:::: {.columns}
+
+::: {.column width="45%"}
+Comma separated
+
+```{.markdown filename="data.csv"}
+Name,Gender,Height,Force
+Leia,female,1.50,TRUE
+Luke,male,1.70,TRUE
+Han,male,1.80,FALSE
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="50%"}
+Import with `read.csv()`
+
+```{r}
+#| output-location: fragment
+dat <- read.csv(
+  file = "data.csv")
+
+dat
+```
+:::
+
+::::
+
+
+# Importing Data Tables with `"readr"`
+
+
+## {auto-animate=true}
+
+![](images/tidyverse-hex-logo.png){fig-align="center"}
+
+## {auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+![](images/tidyverse-hex-logo.png)
+:::
+
+::: {.column width="50%"}
+![](images/readr-hex-logo.jpg)
+:::
+:::
+
+
+## `"readr"` functions
+
+```{r eval = FALSE}
+library(tidyverse) # includes "readr"
+```
+
+\
+
+| `"readr"`      | base R         | Description  |
+|----------------|----------------|--------------|
+| `read_table()` | `read.table()` | whitespace-separated files |
+| `read_csv()`   | `read.csv()`   | comma-separated values (CSV) |
+| `read_csv2()`  | `read.csv2()`  | semicolon-separated values (CSV) |
+| `read_tsv()`   | `read.table()` | tab-separated values (TSV) |
+| `read_delim()` | `read.delim()` | delimited files (CSV and TSV) |
+| `read_fwf()`   | `read.fwf()`   | fixed-width files |
+| `read_log()`   |                | web log files |
+
+\
+
+
+## About `"readr"`
+
+- Provides a fast and friendly way to read rectangular data from delimited files.
+
+- Designed to parse many types of data found in the wild.
+
+- Gives an informative problem report when parsing leads to unexpected results.
+
+- `"readr"` functions return a [tibble]{.hilit} instead of a dataframe.
+
+
+## 
+
+Compared to base R, `"readr"` functions
+
+- Use a consistent naming scheme for the parameters (e.g. `col_names` and `col_types` not `header` and `colClasses`).
+
+- Are generally much faster (up to 10x-100x) depending on the dataset.
+
+- Leave strings as is by default, and automatically parse common date/time formats.
+
+- Have a helpful progress bar if loading is going to take a while.
+
+
+##
+
+`read_table()` example
+
+:::: {.columns}
+
+::: {.column width="45%"}
+Space separated
+
+```{.markdown filename="data.txt"}
+Name Gender Height Force
+Leia female 1.50 TRUE
+Luke male 1.70 TRUE
+Han male 1.80 FALSE
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="50%"}
+Import
+
+```{r}
+#| output-location: fragment
+dat <- read_table(
+  file = "data.txt")
+
+dat
+```
+:::
+
+::::
+
+
+##
+
+`read_table()` example
+
+:::: {.columns}
+
+::: {.column width="45%"}
+Space separated
+
+```{.markdown filename="data.txt"}
+Name Gender Height Force
+Leia female 1.50 TRUE
+Luke male 1.70 TRUE
+Han male 1.80 FALSE
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="50%"}
+Specifying `col_types`
+
+```{r}
+#| output-location: fragment
+dat <- read_table(
+  file = "data.txt", 
+  col_types = list(
+    Name = col_character(),
+    Gender = col_character(),
+    Height = col_double(),
+    Force = col_logical()
+  ))
+
+dat
+```
+:::
+
+::::
+
+
+##
+
+`read_table()` example
+
+:::: {.columns}
+
+::: {.column width="45%"}
+Space separated
+
+```{.markdown filename="data.txt"}
+Name Gender Height Force
+Leia female 1.50 TRUE
+Luke male 1.70 TRUE
+Han male 1.80 FALSE
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="50%"}
+Abbreviating `col_types`
+
+```{r}
+#| output-location: fragment
+dat <- read_table(
+  file = "data.txt", 
+  col_types = "ccdl")
+
+dat
+```
+:::
+
+::::
+
+
+## {.smaller}
+
+Column types and their abbreviations
+
+::: {.nonincremental}
+- `l`: `col_logical()` (TRUE/FALSE)
+- `i`: `col_integer()` (integers)
+- `d`: `col_double()` (floating-point numbers)
+- `c`: `col_character()` (text, everything else)
+- `D`: `col_date()` (dates)
+- `T`: `col_datetime()` (date-times)
+- `t`: `col_time()` (times)
+- `n`: `col_number()` (numbers with grouping symbols like commas)
+- `f`: `col_factor()` (factors/categorical data)
+- `?`: `col_guess()` (let readr guess the type)
+- `_` or `-`: `col_skip()` (ignore the column) 
+:::
+
+
+## {.smaller}
+
+:::: {.columns}
+
+::: {.column width="35%"}
+Comma separated
+
+```{.markdown filename="data.csv"}
+Name,Gender,Height,Force
+Leia,female,1.50,TRUE
+Luke,male,1.70,TRUE
+Han,male,1.80,FALSE
+```
+
+::: {.nonincremental}
+- Name (character)
+- Gender (factor)
+- Height (skip it)
+- Force (logical)
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="60%"}
+Import
+
+```{r}
+#| output-location: fragment
+dat <- read_csv(
+  file = "data.csv",
+  col_types = list(
+    Name = col_character(),
+    Gender = col_factor(levels = c("female", "male")),
+    Height = col_skip(),
+    Force = col_logical()
+  ))
+
+dat
+```
+:::
+
+::::
+
+
+
+## {.smaller}
+
+`read_fwf()` example
+
+:::: {.columns}
+
+::: {.column width="35%"}
+Fixed width
+
+```{.markdown filename="data.fwf"}
+Name Gender Height Force
+Leia female 1.50   TRUE
+Luke male   1.70   TRUE
+Han  male   1.80   FALSE
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="60%"}
+Import
+
+```{r}
+#| output-location: fragment
+dat <- read_fwf(
+  file = "data.fwf",
+  skip = 1,
+  col_positions = fwf_cols(
+    Name = 5,
+    Gender = 7,
+    Height = 7,
+    Force = 5)
+)
+
+dat
+```
+
+:::
+
+::::
+
+
+# Considerations
+
+## Before importing a data table in R
+
+- What is the file path?
+
+- What is the character(s) used as field delimiter?
+
+- Does the file contain names of columns?
+
+- Are there any missing values? If yes, how are they encoded?
+
+- Do you want/need to read in all rows?
+
+- Do you want/need to read in all columns?
+
+
+## Files from other programs
+
+| Type	  | Package	  | Function        |
+|---------|-----------|-----------------|
+| Excel 	| "readxl"  | `read_excel()`  |
+| SPSS	  | "foreign"	| `read.spss()`   |
+| SAS	    | "foreign"	| `read.ssd()`    |
+| SAS	    | "foreign"	| `read.xport()`  |
+| Matlab	| "R.matlab"|	`readMat()`     |
+| Stata	  | "foreign"	| `read.dta()`    |
+| Octave	| "foreign"	| `read.octave()` |
+| Minitab	| "foreign"	| `read.mtp()`    |
+| Systat	| "foreign" |	`read.systat()` |
+
+
+

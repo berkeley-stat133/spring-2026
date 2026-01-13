@@ -1,0 +1,3 @@
+Leia is a 1.50 meters tall female
+Luke is a 1.70 meters tall male
+Han is a 1.80 meters tall male

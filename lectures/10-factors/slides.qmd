@@ -1,0 +1,476 @@
+---
+title: "Factors and Data Frames"
+subtitle: Data structures for data science
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+```
+
+
+## While you're waiting
+
+Imagine you collect University ID number and major from 5 friends:
+
+```{r}
+uid <- c("3850278", "5869204", "4728112", "3829651", "3859278")
+maj <- c("statistics", "economics", "statistics", "data", "economics")
+```
+
+::: {.nonincremental}
+- Conceptually, in what ways is the data in these two vectors similar? In what ways is it different?
+
+- Imagine instead you asked 100 friends. For each vector, can you think of a more efficient way for the computer to store that data?
+:::
+
+
+## Agenda
+
+1) Factors
+
+2) Data Frames
+
+
+# Factors
+
+## While you're waiting
+
+Imagine you collect University ID number and major from 5 friends:
+
+```{r}
+uid <- c("3850278", "5869204", "4728112", "3829651", "3859278")
+maj <- c("STAT", "ECON", "STAT", "DATA", "ECON")
+```
+
+::: {.nonincremental}
+- Conceptually, in what ways is the data in these two vectors similar? In what ways is it different?
+
+- Imagine instead you asked 100 friends. For each vector, can you think of a more efficient way for the computer to store that data?
+:::
+
+
+## Factors
+
+A data structure for storing categorical data. 
+
+. . .
+
+Stores the values in an integer vector and adds a levels attribute to map integers to character strings. Created with `factor()`.
+
+. . .
+
+```{r}
+#| output-location: fragment
+maj <- factor(x = c("STAT", "ECON", "STAT", "DATA", "ECON"))
+maj
+```
+
+
+##
+
+```{r}
+as.integer(maj)
+```
+
+. . .
+
+```{r}
+c(maj, 2L)
+```
+
+
+## Attributes
+
+Objects built on top of simpler data structures can have attributes. A factor's attributes include its `class` and `levels`.
+
+. . .
+
+```{r}
+#| output-location: fragment
+class(maj)
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+levels(maj)
+```
+
+
+## Setting Levels
+
+Quickly change all of the values with a particular level.
+
+. . .
+
+```{r}
+#| output-location: fragment
+levels(maj) <- c("DATA", "ECON", "STATISTICS")
+maj
+```
+
+. . .
+
+Add a level even if it's not observed.
+
+. . .
+
+```{r}
+#| output-location: fragment
+levels(maj) <- c("DATA", "ECON", "STATISTICS", "BIO")
+maj
+```
+
+
+## Taking advantage of class
+
+Certain functions behaved differently depending on the class of the object that is passed to it.
+
+. . .
+
+```{r}
+#| output-location: fragment
+class(1:4)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+summary(1:4)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+class(maj)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+summary(maj)
+```
+
+
+## Ordering levels
+
+You can create a factor with ordered levels by adding `ordered = TRUE`.
+
+. . .
+
+```{r}
+#| output-location: fragment
+maj_or <- factor(x = c("STAT", "ECON", "STAT", "DATA", "ECON"),
+                 levels = c("STAT", "ECON", "DATA", "BIO"),
+                 ordered = TRUE)
+maj_or
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+sort(maj_or)
+```
+
+
+##
+
+::::: columns
+::: {.column .fragment width="50%"}
+```{r}
+#| output-location: fragment
+barplot(summary(maj_or))
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r}
+#| output-location: fragment
+barplot(summary(maj))
+```
+:::
+:::::
+
+
+## Factors and Matrices
+
+Both are augmented versions of atomic vectors that are given classes to allow for special behavior.
+
+. . .
+
+```{r}
+#| output-location: fragment
+mat <- matrix(1:4, ncol = 2)
+class(mat)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+summary(mat)
+```
+
+
+# The Limitations of Our Structures
+
+## The Limitation of Atomic Vectors
+
+. . .
+
+```{r}
+#| output-location: fragment
+songs <- factor(c("Golden by Huntrix", "Stay with me", "4me4u", "Golden by Huntrix"))
+distances <- c(2000, 800, 100, 10)
+```
+
+. . .
+
+__Question:__ What was the song and distance of the second index card?
+
+. . .
+
+```{r}
+#| output-location: fragment
+songs[2]
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+distances[2]
+```
+
+. . .
+
+😬 This is brittle!
+
+
+## The Limitation of Matrices
+
+. . .
+
+```{r}
+#| output-location: fragment
+mat <- matrix(c(songs, distances), ncol = 2)
+mat[2,]
+```
+
+. . .
+
+__Task:__ Summarize the distribution of songs and distances.
+
+
+```{r}
+#| output-location: fragment
+summary(mat)
+```
+
+
+## The Limitation of Lists
+
+. . .
+
+```{r}
+#| output-location: fragment
+lst <- list("songs" = songs, "distances" = distances)
+summary(lst[["songs"]])
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+summary(lst[["distances"]])
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+lst[["songs"]][2]
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+lst[["distances"]][2]
+```
+
+. . .
+
+🤯 Too complicated to subset.
+
+
+## Data Structures in R (recap)
+
+
+# Data Frames
+
+## Data Frame
+
+A __data frame__ is a named list of vectors of the same length.  Created with `data.frame()`.
+
+. . .
+
+```{r}
+#| output-location: fragment
+star_wars <- data.frame(
+    name = c("Anakin", "Padme", "Luke", "Leia"),
+    gender = c("male", "female", "male", "female"),
+    height = c(1.88, 1.65, 1.72, 1.50),
+    weight = c(84, 45, 77, 49)
+)
+star_wars
+```
+
+
+## Data Frame (cont.)
+
+A __data frame__ holds attributes for (column) `names`, `row.names`, and its class, `"data.frame"`.
+
+```{r}
+attributes(star_wars)
+```
+
+
+## Data Frame Attributes
+
+. . .
+
+```{r}
+#| output-location: fragment
+names(star_wars)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+row.names(star_wars)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+class(star_wars)
+```
+
+
+## Other useful functions for Data Frames
+
+- `summary()`: summary of each column
+- `str()`: structure
+- `head()`: first `n` rows
+- `tail()`: last `n` rows
+- `dim()`: dimensions
+- `ncol()`: number of columns
+- `nrow()`: number of rows
+
+
+## Question
+
+```{r echo = FALSE}
+star_wars
+```
+
+Using what you know about matrix and list subsetting, write code to subset from `star_wars` ...
+
+::: {.nonincremental}
+1) The data frame containing only `height` and `weight`.
+2) The character vector `gender`.
+3) The data frame containing only the last row.
+4) The value `1.88`
+:::
+
+```{r}
+#| echo: false
+countdown::countdown(2.5, bottom = 0)
+```
+
+
+## Subsetting Data Frames
+
+Data frames can be subset in 2 ways:
+
+1) as a two dimensional array: 
+    + `dat[row, col]`
+    + `dat[row, ]`
+    + `dat[ ,col]`
+
+2) as a one dimensional list: 
+    + `dat[]`
+    + `dat[[]]`
+    + `dat$`
+
+
+## The Evoluation of the Data Frame
+
+::: {.columns}
+::: {.column width="30%"}
+- 1990: Data Frame (R) {.fragment fragment-index="1"}
+- 2009: Pandas DF (Py) {.fragment fragment-index="2"}
+- 2016: Tibble (R) {.fragment fragment-index="3"}
+- 2020: Polars (R/Py) {.fragment fragment-index="4"}
+:::
+
+::: {.column width="70%"}
+::: {.r-stack}
+![](images/data-frame1-R.png){.fragment fragment-index="1" width=400}
+
+![](images/data-frame2-py.png){.fragment fragment-index="2" width=400}
+
+![](images/data-frame3-tibble.png){.fragment fragment-index="3" width=400}
+
+![](images/data-frame4-polars.png){.fragment fragment-index="4" width=400}
+:::
+:::
+:::
+
+
+## The Evoluation of the Data Frame
+
+::: {.r-stack}
+![](images/data-frame1-R.png){.fragment fragment-index="1" width=1200}
+
+![](images/data-frame2-py.png){.fragment fragment-index="2" width=1200}
+
+![](images/data-frame3-tibble.png){.fragment fragment-index="3" width=1200}
+
+![](images/data-frame4-polars.png){.fragment fragment-index="4" width=1200}
+:::
+
+
+## Tibbles
+
+An updated version of a data frame with convenient behaviors.
+
+. . .
+
+```{r}
+#| output-location: fragment
+library(tibble)
+star_wars_tbl <- as_tibble(star_wars)
+star_wars_tbl
+```
+
+
+## Tibbles
+
+> The main difference is that tibbles are lazy and surly: they do less and complain more.
+>
+> Hadley Wickham
+
+<https://tibble.tidyverse.org/>

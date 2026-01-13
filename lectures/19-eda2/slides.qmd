@@ -1,0 +1,251 @@
+---
+title: "Explanatory Data Analysis"
+subtitle: "EDA part II"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+library(plotly)
+library(patchwork)
+dat <- read_csv("all-teams-2025-roster.csv")
+```
+
+
+## Exploratory Data Analysis
+
+:::: {.columns}
+::: {.column .fragment width="50%"}
+__Features__
+
+- consumer: the analyst
+- goals: 
+    + get to know the data
+    + uncover structure for further analysis
+- prioritize quick and accurate interpretation
+
+:::
+
+::: {.column .fragment width="50%"}
+__Common Questions__
+
+- What is the unit of observation?
+- What are the variables, their types, and levels?
+- How is missingness encoded?
+- What is the distribution of variables?
+- Are there any interesting outliers?
+:::
+::::
+
+
+## Explanatory Data Analysis
+
+:::: {.columns}
+::: {.column .fragment width="50%"}
+__Features__
+
+- consumer: the stakeholder
+- goal: tell a specific story
+- customized
+- polished aesthetic
+
+:::
+
+::: {.column .fragment width="50%"}
+__Common Questions__
+
+- Who is my audience?
+- What is the main story?
+- What is/are the main analytical task(s)?
+- Can my plot be clearly read?
+- Is it polished and customized for audience?
+:::
+::::
+
+
+# Some Examples
+
+## Facilitating Comparison
+
+1) How does _this_ compare to _that_?
+
+2) How does _this_ compare to what's _typical_?
+
+3) How big is _this_ variability relative to _that_ variability?
+
+
+## {.nostretch}
+
+![](images/climate-change-excessive-heat1.png){width="60%" fig-align="center"}
+
+
+## {.nostretch}
+
+![](images/yale-climate-opinion-map.png){width="75%" fig-align="center"}
+
+
+## {.nostretch}
+
+![](images/sea-surface-temp-anomaly-jul-31-2023.png){width="85%" fig-align="center"}
+
+
+##
+
+```{r}
+dat |> 
+  group_by(position) |> 
+  summarize(avg_ht = mean(height)) |> 
+  ggplot(aes(x = position, y = avg_ht)) +
+  geom_col() +
+  labs(title = "Average Height by Position",
+       y = "height")
+```
+
+
+##
+
+```{r}
+dat |> 
+  group_by(position) |> 
+  summarize(avg_ht = mean(height)) |> 
+  ggplot(aes(x = reorder(position, -avg_ht), y = avg_ht)) +
+  geom_col() +
+  labs(title = "Average Height by Position",
+       y = "height")
+```
+
+# Height and Weight
+
+## The Plan
+
+__Audience:__ Basketball enthusiasts
+
+. . .
+
+__My story:__ Relationship between `height` and `weight` doesn't seem to be constant across  `position`s
+
+. . .
+
+__My strategy:__ Display the relationship between `height` and `weight` in a manner that makes it easy to see and compare the difference between players' `position`
+
+
+## 
+
+```{r}
+#| code-fold: true
+ggplot(dat, aes(x = height, y = weight)) +
+  geom_point()
+```
+
+
+## 
+
+```{r}
+#| code-fold: true
+ggplot(dat, aes(x = height, y = weight, color = position)) +
+  geom_point()
+```
+
+
+## 
+
+```{r}
+#| code-fold: true
+ggplot(dat, aes(x = height, y = weight, color = position)) +
+  geom_point(alpha = 0.7) +
+  theme_bw()
+```
+
+
+## 
+
+```{r}
+#| code-fold: true
+ggplot(dat, aes(x = height, y = weight, color = position)) +
+  geom_point(alpha = 0.7) +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_bw()
+```
+
+
+##
+
+```{r}
+#| code-fold: true
+ggplot(dat, aes(x = height, y = weight, color = position)) +
+  geom_point(alpha = 0.7) +
+  theme_bw() +
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_wrap(~ position)
+```
+
+
+## 
+
+```{r}
+#| code-fold: true
+dat |> 
+  mutate(position = case_when(
+    position == "C" ~ "Center",
+    position == "PF" ~ "Power Forward",
+    position == "PG" ~ "Point Guard",
+    position == "SF" ~ "Small Forward",
+    position == "SG" ~ "Shooting Guard"
+  )) |> 
+ggplot(aes(x = height, y = weight, color = position)) +
+  geom_point(alpha = 0.7) +
+  theme_bw() +
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_wrap(~ position)
+```
+
+## 
+
+```{r}
+#| code-fold: true
+dat |> 
+  mutate(position = case_when(
+    position == "C" ~ "Center",
+    position == "PF" ~ "Power Forward",
+    position == "PG" ~ "Point Guard",
+    position == "SF" ~ "Small Forward",
+    position == "SG" ~ "Shooting Guard"
+  )) |> 
+ggplot(aes(x = height, y = weight, color = position)) +
+  geom_point(alpha = 0.7) +
+  theme_bw() +
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_wrap(~ position) +
+  theme(legend.position = "none")
+```
+
+
+## 
+
+```{r}
+#| code-fold: true
+#| fig-width: 10
+#| fig-height: 8
+#| out-width: "100%"
+ggplotly(
+  dat |> 
+    mutate(position = case_when(
+      position == "C" ~ "Center",
+      position == "PF" ~ "Power Forward",
+      position == "PG" ~ "Point Guard",
+      position == "SF" ~ "Small Forward",
+      position == "SG" ~ "Shooting Guard"
+    )) |> 
+    ggplot(aes(x = height, y = weight, color = position, label = player)) +
+    geom_point(alpha = 0.7) +
+    theme_bw() +
+    geom_smooth(method = "lm", se = FALSE) +
+    facet_wrap(~ position) +
+    theme(legend.position = "none")
+)
+```
+
+
+

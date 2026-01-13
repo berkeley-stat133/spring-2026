@@ -1,0 +1,303 @@
+---
+title: "Lists"
+subtitle: The most flexible of structures
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+```
+
+
+# Review
+
+## Discuss with a neighbor
+
+Which of the following four objects are the same?
+
+```{r}
+#| eval: false
+seq(1, 6)
+
+seq(1, 3) + seq(4, 6)
+
+c(seq(1, 3), seq(4, 6))
+
+c(c(seq(1, 3), seq(4, 6)))
+```
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+
+## Discuss with a neighbor
+
+Which of the following four objects are the same?
+
+```{r}
+seq(1, 6)
+
+seq(1, 3) + seq(4, 6)
+
+c(seq(1, 3), seq(4, 6))
+
+c(c(seq(1, 3), seq(4, 6)))
+```
+
+
+## Atomic Vectors
+
+By atomic we mean:
+
+1) All elements of the same type
+2) Cannot contain other vectors
+
+
+# Lists: Non-atomic vectors
+
+## Lists, defined
+
+A list is a _non-atomic_ vector that can contain:
+
+1) Atomic vectors of different types
+2) Other lists
+
+. . . 
+
+Created with `list()`
+
+```{r}
+#| output-location: fragment
+list(1, "two")
+```
+
+
+## Contains atomic vectors of different types
+
+::::: columns
+::: {.column .fragment width="50%"}
+```{r}
+#| output-location: fragment
+list(1, "two")
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r}
+#| output-location: fragment
+list(1:3, "a", 4:6)
+```
+:::
+
+:::::
+
+
+## Subsetting with `[]`
+
+`[]` extracts elements of a vector (atomic or non-atomic) using a subsetting (atomic) vector.
+
+- Atomic vectors and matrices return atomic vectors
+
+. . .
+
+```{r}
+#| output-location: fragment
+vec <- 1:4
+vec[1:2]
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+mat <- matrix(vec, nrow = 2)
+mat
+```
+
+
+## Subsetting with `[]`
+
+`[]` extracts elements of a vector (atomic or non-atomic) using a subsetting (atomic) vector.
+
+- Atomic vectors and matrices return atomic vectors
+
+- Lists returns lists
+
+. . .
+
+```{r}
+#| output-location: fragment
+x <- list(1:3, "a", 4:6)
+x[1]
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+x[2:3]
+```
+
+
+## Yes, you can name elements of a list
+
+. . .
+
+```{r}
+#| output-location: fragment
+named_x <- list("Ape" = 1:3, "Boy" = "a", "Cat" = 4:6)
+named_x
+```
+
+. . . 
+
+```{r}
+#| output-location: fragment
+named_x[c("Boy", "Cat")]
+```
+
+
+## Yes, it works with logicals too
+
+. . . 
+
+```{r}
+#| output-location: fragment
+named_x <- list("Ape" = 1:3, "Boy" = "a", "Cat" = 4:6)
+named_x[c(FALSE, TRUE, FALSE)]
+```
+
+. . .
+
+> But what if you want the actual data structure inside the list?
+
+
+## Subsetting single elements with `[[]]`
+
+`[[i]]` Extracts original object inside the list.
+
+. . . 
+
+```{r}
+#| output-location: fragment
+x <- list(1:3, "a", 4:6)
+x[[1]]
+```
+
+. . .
+
+To tell `[]` and `[[]]` apart, let's use a metaphor of a train.
+
+
+##
+
+![](images/train1.png)
+
+Draw the appropriate train or car for each of the following
+
+1) `x[1:2]`
+2) `x[[3]]`
+3) `x[-2]`
+4) `x[c(1, 2)]`
+5) `c(x[[3]], x[[1]])`
+
+```{r}
+#| echo: false
+countdown::countdown(2.5, bottom = 0)
+```
+
+
+## {.nostretch}
+
+![](images/train2.png){.nostretch fig-align="left" width="800px"}
+
+
+## 
+
+![](images/train3.png)
+
+
+## Subsetting single elements with `$`
+
+`$` will extract a single element of a list by name.
+
+```{r}
+#| output-location: fragment
+named_x <- list("Ape" = 1:3, "Boy" = "a", "Cat" = 4:6)
+named_x$Cat
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+named_x$C
+```
+
+. . .
+
+Permits partial matching.
+
+
+# Lists: Nesting
+
+
+## Lists, defined
+
+A list is a non-atomic vector that can contain:
+
+. . .
+
+Atomic vectors of different types
+
+. . .
+
+::: {.fragment .highlight-red}
+Other lists
+:::
+
+. . .
+
+```{r}
+#| output-location: fragment
+list(1, "two", list(TRUE, 1:3))
+```
+
+
+## Implications for subsetting
+
+. . . 
+
+```{r}
+y <- list(1, "two", list(TRUE, 1:3))
+```
+
+Draw the train:
+
+
+##
+
+```{r}
+y <- list(1, "two", list(TRUE, 1:3))
+```
+
+Draw the train and then write the R code to extract:
+
+1) The list containing the character vector with `"two"`
+2) The vector `"two"`
+3) The second element of the list element in `y`
+4) The vector `1:3`
+5) The element `2`.
+
+```{r}
+#| echo: false
+countdown::countdown(2, bottom = 0)
+```
+
+
+## References
+
+- Train diagrams from [Advanced R](https://adv-r.hadley.nz/subsetting.html) by Hadley Wickham.

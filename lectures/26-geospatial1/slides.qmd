@@ -1,0 +1,404 @@
+---
+title: "Geospatial Data"
+subtitle: "Maps part I"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+```
+
+
+# Intro
+
+## Geographic Data
+
+A collection of "objects" on which we have information about their geographic location (and possibly other variables or attributes)
+
+. . .
+
+Examples of "objects" on Campus:
+
+:::: {.columns}
+::: {.column width="50%"}
+- Bike racks
+- Trees
+- Green areas
+- Buildings
+- Swimming pools
+:::
+
+::: {.column width="50%"}
+- Loop stations
+- Bus stops
+- Fire hydrants
+- Bathrooms
+- ETC
+:::
+::::
+
+
+## Example: Bike Racks on Campus {auto-animate=true}
+
+![](images/bike-rack-vlsb.jpg){fig-align="center"}
+
+
+## {auto-animate=true}
+
+:::: {.columns}
+::: {.column width="50%"}
+![](images/bike-rack-vlsb.jpg)
+:::
+
+::: {.column width="50%"}
+A single unit of geographic data includes:
+
+- [Location (where):]{.hilit} given by a set of coordinates.
+- [Attributes (what):]{.mdlit} data that describe the location
+    + year of installation
+    + material(s)
+    + capacity (# bikes)
+    + maintenance
+:::
+::::
+
+## {.nostretch auto-animate=true}
+
+:::: {.columns}
+::: {.column width="30%"}
+![](images/bike-rack-vlsb.jpg)
+:::
+
+::: {.column .fragment width="70%"}
+![](images/map-campus-bike-racks.png){width="110%"}
+:::
+::::
+
+. . .
+
+Objects (e.g., bike racks) visualized in some kind of map.
+
+
+## {.nostretch}
+
+How do we know that those coordinates reference that specific location?
+
+![](images/map-campus-bike-routes.png){width="70%" fig-align="center"}
+
+
+# Coordinate Reference Systems (CRS)
+
+## Coordinate Reference System (CRS) {.nostretch}
+
+\
+
+:::: {.columns}
+::: {.column width="45%"}
+A Coordinate Reference System, or CRS, is a system for associating coordinates  with a specific, unambiguous location on the surface of the Earth.
+:::
+
+::: {.column width="55%"}
+![](images/Globe_Atlantic.svg){width="65%" fig-align="center"}
+:::
+::::
+
+
+## Two Types of CRSs
+
+\
+
+:::: {.columns}
+::: {.column .fragment width="50%"}
+### Geographic CRS
+
+![](images/geographics-crs.png)
+
+Angular Units = Degrees
+:::
+
+::: {.column .fragment width="50%"}
+### Projected CRS
+
+![](images/projected-crs.png)
+
+Cartesian Units = Feet or Meters
+:::
+::::
+
+
+## Coordinate Reference Systems (CRS) {.nostretch}
+
+There are many CRS, not just one!
+
+Why? Because our understanding of and ability to measure the shape of the earth has changed over time.
+
+
+## Geographic Coordinate Systems (GCS)
+
+Widely used! Expressed as latitude & longitude
+
+:::: {.columns}
+::: {.column width="50%"}
+__WGS84 (EPSG: 4326)__
+
+- Based on satellites, used by cell phones, GPS
+- Best overall fit for most places on earth
+
+__NAD83 (EPSG: 4269)__
+
+- Based on satellites and survey data
+- Best fit for USA
+- Used by many federal data products, like Census data
+:::
+
+::: {.column width="50%"}
+![](images/geographics-crs.png)
+:::
+::::
+
+
+## Projected Coordinate Systems (PCS)
+
+:::: {.columns}
+::: {.column width="60%"}
+- Map Projections transform geographic coordinates (lat/lon) to 2D coordinates (X/Y) 
+- All map projections introduce distortion in area, shape, distance or direction.
+- Specific map projections minimize distortion in one or more properties
+- You need to know the coordinate reference system of your input data
+- You need to select the CRS that is most suitable for your data and application.
+:::
+
+::: {.column width="40%"}
+![](images/projected-crs.png)
+:::
+::::
+
+
+## Projected Coordinate Systems (PCS)
+
+![](images/projections.png){fig-align="center"}
+
+## In short ...
+
+
+:::: {.columns}
+::: {.column width="40%"}
+![](images/earth-orange-skin.png){fig-align="center"}
+:::
+
+::: {.column width="60%"}
+The Earth is not Flat!
+
+- But computer screens, paper maps and most of the math underlying spatial analysis methods assume it is!
+- We use map projections to transform geographic coordinates from a 3D model of the earth to a 2D plane.
+- This makes location data much more usable BUT
+- It introduces distortion.
+- You need to understand how this distortion impacts your maps and spatial analysis!
+:::
+::::
+
+
+# Types of Spatial Data
+
+
+## {.nostretch}
+
+Which representation is better A or B?
+
+![](images/landscape2.jpg){width="80%" fig-align="center"}
+
+```{r}
+#| echo: false
+countdown::countdown(2, top = 0)
+```
+
+
+## Mapping the World in 2 styles {.nostretch}
+
+There are two fundamental spatial data models:
+
+. . .
+
+![](images/landscape1.png){width="90%" fig-align="center"}
+
+# Vector Data {.nostretch}
+
+![](images/landscape-vector.jpg){width="60%" fig-align="center"}
+
+
+## Vector Data Geometries {.nostretch}
+
+![](images/vector-shapes.svg){width="85%" fig-align="center"}
+
+## Vector Data Geometris and Attributes {.nostretch}
+
+![](images/vector-shapes-datasets.svg){width="75%" fig-align="center"}
+
+
+## Vector Data with Attributes
+
+Each row represents one geospatial feature
+
+Attributes describe the features (fields or columns)
+
+Each feature has an associated geometry or geometry collection
+
+A group of features is called a layer
+
+
+# Raster Data {.nostretch}
+
+![](images/landscape-raster.jpg){width="60%" fig-align="center"}
+
+
+## Raster Data {.nostretch}
+
+![](images/raster-grid-data.jpg){width="65%" fig-align="center"}
+
+## Raster Data (regular grids)
+
+A location is represented by a grid cell
+
+Cells have regular size, e.g. 30x30m
+
+Grid has dimension - fixed number of rows and columns
+
+Each cell has a value that represents the attribute of interest, e.g. elevation
+
+
+## Vector Data -vs- Raster Data
+
+:::: {.columns}
+::: {.column width="50%"}
+Vector data are better for discretely bounded data, e.g. bike racks, rivers, political boundaries, etc.
+
+![](images/vector-features.png)
+:::
+
+::: {.column .fragment  width="50%"}
+Raster data are better for continuous data, e.g. temperature, elevation, rainfall, etc.
+
+![](images/raster-features.png)
+:::
+::::
+
+## {.nostretch}
+
+![](images/vector-vs-raster.png){width="65%" fig-align="center"}
+
+
+## Some Common File Formats
+
+:::: {.columns}
+::: {.column width="50%"}
+__Vector Data__
+
+- Shapefile (.shp)
+- GeoJSON, JSON
+- KML (keyhole markup language)
+- GeoPackage
+:::
+
+::: {.column width="50%"}
+__Raster Data__
+
+- GeoTIFF
+- netCDF
+- DEM
+:::
+::::
+
+
+
+## {.nostretch}
+
+Vector example: California Wildfires
+
+![](images/vector-example-wildfires1.png){width="45%" fig-align="center"}
+
+
+## {.nostretch}
+
+Raster example: Soil Moisture
+
+![](images/raster-example-moisture.jpg){width="50%" fig-align="center"}
+
+
+## {.nostretch}
+
+Raster example: Normalized Difference Vegetation Index (NDVI)
+
+![](images/raster-example-ndvi.jpg){width="55%" fig-align="center"}
+
+
+# Your Turn
+
+## {.nostretch}
+
+:::: {.columns}
+::: {.column width="70%"}
+![](images/vector-example-wildfires4.jpg){width="95%" fig-align="center"}
+:::
+
+::: {.column width="30%"}
+__Question:__
+
+Vector or Raster?
+
+```{r}
+#| echo: false
+countdown::countdown(0.3, bottom = 0)
+```
+:::
+::::
+
+
+## {.nostretch}
+
+:::: {.columns}
+::: {.column width="70%"}
+![](images/raster-example-cal-fires.png){width="100%" fig-align="center"}
+:::
+
+::: {.column width="30%"}
+__Question:__
+
+Vector or Raster?
+
+```{r}
+#| echo: false
+countdown::countdown(0.3, bottom = 0)
+```
+:::
+::::
+
+
+## {.nostretch}
+
+:::: {.columns}
+::: {.column width="10%"}
+:::
+
+::: {.column width="60%"}
+![](images/vector-example-wildfires2.png){width="120%" fig-align="center"}
+:::
+
+::: {.column width="30%"}
+__Question:__
+
+Vector or Raster?
+
+```{r}
+#| echo: false
+countdown::countdown(0.5, bottom = 0)
+```
+:::
+::::
+
+
+## {.nostretch}
+
+![](images/vector-example-wildfires3.png)
+

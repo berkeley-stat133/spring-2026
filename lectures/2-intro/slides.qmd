@@ -1,0 +1,525 @@
+---
+title: "Introduction"
+subtitle: "Some housekeeping stuff"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+## Yesterday's Lab
+
+-   Met your GSI
+-   Installed software
+    -   R
+    -   Positron or RStudio
+    -   Git (windows users)
+-   Created `stat133` folder
+-   Got first contact with basic Quarto file (`.qmd`)
+
+## Folder for STAT 133
+
+-   You should have in your computer a dedicated directory (i.e. folder) `stat133/`
+
+-   You should use this directory for all the work done in this class.
+
+-   BTW: Your `Downloads/` folder is not a replacement for a `stat133/` folder.
+
+
+## STAT 133 content
+
+```         
+Documents/
+  stat133/
+    labs/
+      lab1/
+        lab1-gaston-sanchez.qmd
+        lab1-gaston-sanchez.html
+      lab2/
+      lab3/
+    psets/
+      pset1/
+      pset2/
+      ...
+    projects/
+      project1/
+      project2/
+```
+
+# Men's Long Jump World Records
+
+## Last Time ...
+
+::::: columns
+::: {.column .fragment width="50%"}
+Data
+
+![](images/mens-long-jump-table2.png)
+:::
+
+::: {.column .fragment width="50%"}
+Visualization
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Long_jump_world_record_progression_%28men%29.svg/1024px-Long_jump_world_record_progression_%28men%29.svg.png)
+:::
+:::::
+
+## How does a Data Analysis Project (DAP) look like from the files standpoint?
+
+## Option A {.nostretch}
+
+![](images/long-jump-files1.png){fig-align="center"}
+
+. . .
+
+<hr>
+
+![](images/long-jump-files2.png){fig-align="center"}
+
+## Option B {.nostretch}
+
+![](images/long-jump-files3.png){fig-align="center"}
+
+. . .
+
+<hr>
+
+![](images/long-jump-files4.png){fig-align="center"}
+
+# More Sophisticated Projects
+
+## Option C {.nostretch}
+
+\
+
+![](images/project-files1.png){width="70%" fig-align="center"}
+
+##  {auto-animate="true"}
+
+File structure
+
+``` r
+long_jump/
+```
+
+##  {auto-animate="true"}
+
+File structure
+
+``` r
+long_jump/
+  data/
+    raw_data.html
+    clean_data.html
+```
+
+##  {auto-animate="true"}
+
+File structure
+
+``` r
+long_jump/
+  data/
+    raw_data.html
+    clean_data.html
+  scripts/
+    cleaning_data.R
+    plots.R
+```
+
+##  {auto-animate="true"}
+
+File structure
+
+``` r
+long_jump/
+  data/
+    raw_data.html
+    clean_data.html
+  scripts/
+    cleaning_data.R
+    plots.R
+  images/
+    timeline.png
+```
+
+##  {auto-animate="true"}
+
+File structure
+
+``` r
+long_jump/
+  data/
+    raw_data.html
+    clean_data.html
+  scripts/
+    cleaning_data.R
+    plots.R
+  images/
+    timeline.png
+  report/
+    doc.qmd
+    doc.html
+```
+
+## Option D
+
+![](images/project-files2.png){fig-align="center"}
+
+# File System Basics
+
+## An Analogy {.nostretch}
+
+::::: columns
+::: {.column .fragment width="50%"}
+![](images/tools.png){width="87%"}
+:::
+
+::: {.column .fragment width="50%"}
+![](images/tool-cabinet.webp){width="93%"}
+:::
+:::::
+
+## 
+
+Computing with data involves dealing with multiple files:
+
+-   some files will be inputs
+-   some files will be outputs
+-   some files will be data files
+-   some files will be image files
+-   some files will be script files (code)
+-   some files will be reports
+-   some files will play auxiliary roles
+
+. . .
+
+It's important to have a good organization of files
+
+## An Analogy {.nostretch}
+
+::::: columns
+::: {.column width="50%"}
+Messy file system 😢
+
+![](images/workshop-messy.jpg){width="87%"}
+:::
+
+::: {.column .fragment width="50%"}
+Neat file system 😍
+
+![](images/workshop-tidy.jpeg){width="93%"}
+:::
+:::::
+
+## Main Unix Concepts
+
+-   The filesystem is a hierarchy (of folders & files)
+-   Files organized in a tree structure ("inverted tree")
+
+::: fragment
+![](images/file-system2.png){width="70%" fig-align="center"}
+:::
+
+## Main Unix Concepts
+
+-   Everything is a File (including directories)
+-   Folder = Directory
+-   No concept of "disk"
+-   At any given time we are inside a directory
+-   The current directory is the working directory
+-   From that directory we can move up or down
+
+##  {.nostretch}
+
+![](images/file-system3.png){width="90%" fig-align="center"}
+
+## Special Directories
+
+[Root directory:]{.hilit} the top-level folder in a computer's file system, acting as the main starting point from which all other directories and files branch out, similar to the trunk of a tree
+
+\
+
+[Home directory:]{.hilit} a user's personal folder in a multi-user operating system that holds their private files, settings, and data, acting as their default workspace upon login.
+
+\
+
+[Working directory:]{.hilit} the specific folder in a computer's file system where a user is currently working or where a process is executing commands.
+
+# File Paths
+
+## The Very Basics {.nostretch}
+
+![](https://media1.tenor.com/m/7ylbiN-tF7QAAAAC/wax-on-wax-off.gif){width="80%"}
+
+## File Paths
+
+Each file and directory has a unique name in the filesystem called a [__path__]{.hilit}.
+
+. . .
+
+\
+
+File paths can be specified in 2 ways:
+
+1)  [Absolute Paths:]{.mdlit} always from the root directory.
+
+2)  [Relative Paths:]{.mdlit} location relative to a working directory.
+
+## Special Symbols
+
+\
+
+| Symbol | Meaning                             |
+|--------|-------------------------------------|
+| `/`    | root directory (1st slash)          |
+| `A/B`  | A contains B (intermediate slash)   |
+| `~`    | home directory (i.e. `/home/user/`) |
+| `.`    | current directory                   |
+| `..`   | parent directory                    |
+
+## File System Example {.nostretch}
+
+![](images/file-system1.png){width="80%" fig-align="center"}
+
+##  {.nostretch}
+
+Example of absolute path
+
+![](images/file-system2.png){width="70%" fig-align="center"}
+
+Absolute path to `Music/`
+
+. . .
+
+```         
+/Users/Drew/Music/
+```
+
+##  {.nostretch}
+
+Example of absolute path
+
+![](images/file-system2.png){width="70%" fig-align="center"}
+
+Absolute path to `pop.mp3`
+
+. . .
+
+```         
+/Users/Drew/Music/pop.mp3
+```
+
+##  {.nostretch}
+
+Your Turn
+
+![](images/file-system2.png){width="70%" fig-align="center"}
+
+Absolute path to `README.md`
+
+```{r}
+#| echo: false
+countdown::countdown(0.5, bottom = 0)
+```
+
+. . .
+
+```         
+/Users/Clara/Documents/README.md
+```
+
+##  {.nostretch}
+
+Example of relative path
+
+![](images/file-system2.png){width="70%" fig-align="center"}
+
+Relative path to `README.md`, assuming working directory is `Clara/`
+
+. . .
+
+```         
+Documents/README.md
+```
+
+##  {.nostretch}
+
+Example of relative path
+
+![](images/file-system2.png){width="70%" fig-align="center"}
+
+Relative path to `README.md`, assuming working directory is `Drew/`
+
+. . .
+
+```         
+../Clara/Documents/README.md
+```
+
+##  {.nostretch}
+
+Example of relative path
+
+![](images/file-system2.png){width="70%" fig-align="center"}
+
+Relative path to `pop.mp3`, assuming working directory is `Project/`
+
+. . .
+
+```         
+../../Drew/Music/pop.mp3
+```
+
+##  {.nostretch}
+
+Your Turn
+
+![](images/file-system2.png){width="70%" fig-align="center"}
+
+Relative path to `doc.qmd`, assuming working directory is `Documents/`
+
+```{r}
+#| echo: false
+countdown::countdown(0.5, bottom = 0)
+```
+
+. . .
+
+```         
+../../Gaston/Project/doc.qmd
+```
+
+## Advantages of Relative Paths
+
+**Portability:** Your code works anywhere (your machine, a colleague's, a web server) without changing paths, as long as the file structure within the project remains consistent.
+
+\
+
+. . .
+
+**Flexibility:** You can restructure folders within your project.
+
+\
+
+. . .
+
+**Self-Contained Projects:** Keeps everything needed for the project bundled together.
+
+\
+
+. . .
+
+**Simpler References:** Shorter paths are quicker to type and less prone to errors than long absolute paths.
+
+# Why should we care?
+
+## 
+
+Let's consider 3 different file structures
+
+:::::: columns
+::: {.column .fragment width="33%"}
+Scenario A
+
+``` r
+long_jump/
+  doc.qmd
+  records.html
+```
+:::
+
+::: {.column .fragment width="33%"}
+Scenario B
+
+``` r
+long_jump/
+  doc.qmd
+  data/
+    records.html
+```
+:::
+
+::: {.column .fragment width="33%"}
+Scenario C
+
+``` r
+long_jump/
+  report/
+    doc.qmd
+  data/
+    records.html
+```
+:::
+::::::
+
+. . .
+
+\
+
+In `report.qmd` we need to import (read) `records.html`. This involves specifying the correct file path.
+
+## Scenario A {.nostretch}
+
+::::: columns
+::: {.column .fragment width="30%"}
+File structure
+
+``` r
+long_jump/
+  doc.qmd
+  records.html
+```
+:::
+
+::: {.column .fragment width="70%"}
+Report qmd file
+
+![](images/filepath1.png)
+:::
+:::::
+
+## Scenario B {.nostretch}
+
+::::: columns
+::: {.column .fragment width="30%"}
+File structure
+
+``` r
+long_jump/
+  doc.qmd
+  data/
+    records.html
+```
+:::
+
+::: {.column .fragment width="70%"}
+Report qmd file
+
+![](images/filepath2.png)
+:::
+:::::
+
+## Scenario C {.nostretch}
+
+::::: columns
+::: {.column .fragment width="30%"}
+File structure
+
+``` r
+long_jump/
+  report/
+    doc.qmd
+  data/
+    records.html
+```
+:::
+
+::: {.column .fragment width="70%"}
+Report qmd file
+
+![](images/filepath3.png)
+:::
+:::::
+
+## 
+
+-   When a **Terminal** is started the working directory is the home directory

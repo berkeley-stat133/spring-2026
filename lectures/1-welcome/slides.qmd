@@ -1,0 +1,257 @@
+---
+title: "Welcome"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+## Welcome to STAT 133!
+
+We will begin at ten past. By that time, please
+
+::: {.nonincremental}
+- silence phones and put into your bag
+
+- close and stow your laptops
+:::
+
+
+# Introductions
+
+## Instructor
+
+## With the people around you ...
+
+Take a few minutes to share:
+
+- your name
+
+- how many years have you been at Cal?
+
+- your major
+
+```{r}
+countdown::countdown(5, top = 0)
+```
+
+
+# What is this class about {.nostretch}
+
+## Men's Long Jump World Record Progression {.nostretch}
+
+![](images/mens-long-jump-table.png){width="65%" fig-align="center"}
+
+[https://en.wikipedia.org/wiki/Men%27s_long_jump_world_record_progression](https://en.wikipedia.org/wiki/Men%27s_long_jump_world_record_progression){style="font-size: 0.5em;"}
+
+
+## Men's Long Jump World Record Progression {.nostretch}
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Long_jump_world_record_progression_%28men%29.svg/1024px-Long_jump_world_record_progression_%28men%29.svg.png){fig-align="center"}
+
+
+## Mike Powell's Jump {.nostretch}
+
+![](images/mike-powell.jpg){height="90%" fig-align="center"}
+
+[https://www.youtube.com/watch?v=T0WfsAwvTSU](https://www.youtube.com/watch?v=T0WfsAwvTSU){style="font-size: 0.5em;"}
+
+
+## Mike Powell's World Record
+
+\
+
+![](images/long-jump-record.png)
+
+
+## Question
+
+What would you do to replicate timeline graphic?
+
+::: {.columns}
+::: {.column width="50%"}
+![](images/mens-long-jump-table2.png)
+:::
+
+::: {.column width="50%"}
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Long_jump_world_record_progression_%28men%29.svg/1024px-Long_jump_world_record_progression_%28men%29.svg.png)
+:::
+:::
+
+
+## {.nostretch}
+
+![](images/mens-long-jump-table-graphic.png){width="78%" fig-align="center"}
+
+```{r}
+countdown::countdown(3, bottom = 0)
+```
+
+
+## {.nostretch}
+
+![](images/mens-long-jump-table2.png){width="80%" fig-align="center"}
+
+
+## Analysis workflow
+
+1) Access and store data
+
+2) Scrape or extract data
+
+
+## Boardwork
+
+
+## Analysis workflow
+
+1) Access and store data
+
+2) Scrape or extract data
+
+3) Extract Mark in meters (just the numbers)
+
+4) Extract the date
+
+5) Create line plot
+
+
+## In Summary {.nostretch}
+
+::: {.columns}
+::: {.column width="50%"}
+![](images/dac.png)
+:::
+
+::: {.column width="50%"}
+1) Data Preparation
+    + get the data (e.g. into some sort of tabular object)
+    + extract the distance and year, which involves data manipulation
+
+2) Analysis: exploratory graph with a scatter plot
+
+3) Report
+:::
+
+:::
+
+
+## {.nostretch}
+
+\ 
+
+![](images/data-by-the-numbers.png){width="90%" fig-align="center"}
+
+
+# How this class works
+
+## Who takes it
+
+- Statistics (majors)
+
+- Data science (minor)
+
+- Applied Math
+
+- Economics
+
+- Psychology
+
+- Other
+
+
+## Statistics major
+
+::: {.columns}
+::: {.column width="50%"}
+- Prereqs:
+    + Calculus
+    + Calculus II
+    + Multivariable Calculus
+    + Linear Algebra
+- Core:
+    + STAT 133: Computing
+    + STAT 134: Probability
+    + STAT 135: Statistics
+:::
+
+::: {.column width="50%"}
+- Electives:
+    + STAT 150
+    + STAT 151A
+    + STAT 152
+    + STAT 153
+    + STAT 154
+    + STAT 159
+    + ETC
+:::
+:::
+
+## Cornerstones
+
+- Data Manipulation
+- Data Visualization
+- Reporting Tools
+- Programming Concepts
+- Data Technologies
+- R & other tools
+
+
+## Lecture
+
+- Stow laptops and phones
+
+- I'll do mix of slides and boardwork
+
+- Take handwritten notes (paper or tablet)
+
+
+## Lab
+
+- A mix of new ideas, practice, and working on problem sets.
+
+- Introduction and practice with Quarto authoring tools.
+
+- Every other week you take a quiz in lab.
+
+
+## Assignment types
+
+- 6% Problem Sets (credit / no credit): assortment of practice problems
+
+- 2% Quarto Publications (credit / no credit)
+
+- 12% Projects (credit / no credit): Explorations of real data and computing workflows
+
+- 45% Quizzes: Every two weeks in lab
+
+- 35% Final Exam: Monday of finals week 7 - 10 pm
+
+
+## In lab tomorrow
+
+> Bring a laptop! (no need to install anything ... yet)
+
+You will:
+
+1) Meet your GSI
+
+2) Discuss the syllabus
+
+3) Install software
+
+4) Get introduced to Quarto markdwon files
+
+
+## Parting words
+
+You'll get out of this course what you put into it.
+
+. . .
+
+\
+
+I have 2 rules for you:
+
+- __Rule 1)__ Let's enjoy this semester
+
+- __Rule 2)__ Don't forget Rule 1)
+

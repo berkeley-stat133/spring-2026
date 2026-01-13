@@ -1,31 +1,472 @@
 ---
-title: "Statistics 133: Concepts in Computing with Data"
-subtitle: "UC Berkeley, STAT 133, Spring 2026"
-listing:
-  - id: schedule
-    template: schedule.ejs
-    contents: schedule.yml
-  - id: buttons
-    template: buttons.ejs
-    contents: buttons.yml
+title: "STAT 133: Concepts in Computing with Data"
 ---
 
-::: {#buttons}
+:::: {layout-ncol=4}
+::: {.column width="10%"}
+[Ed](https://edstem.org/us/courses/92259/discussion){.btn .btn-info role="button"}
 :::
 
-
-
-::: {.callout-note title="Announcements 📣"}
-Final Exam on May-14th (7-10pm)
-
-See reminders in bCourses
+::: {.column width="15%"}
+[bCourses](https://bcourses.berkeley.edu/courses/1551809){.btn .btn-primary role="button"}
 :::
 
-
-## Schedule 📅
-
-Tentative calendar subject to change.
-
-::: {#schedule}
+::: {.column width="25%"}
+[R-DataHub](https://r.datahub.berkeley.edu/){.btn .btn-secondary role="button"}
 :::
+
+::: {.column width="50%"}
+:::
+::::
+
+::: {.callout-tip icon="false"}
+## Announcements
+
+See you on Wed 1/21.
+
+BTW: There is nothing due this first week.
+:::
+
+-----
+
+:::: {layout-ncol=2}
+
+::: {.column width="20%"}
+#### Week 1
+- Wed 1/21 
+
+- [Thu 1/22]{.label-Labwork}
+
+- Fri 1/23 
+:::
+
+::: {.column width="80%"}
+#### Description
+Welcome
+
+Lab 1: slides
+
+Introduction
+:::
+
+::::
+
+-----
+
+:::: {layout-ncol=2}
+
+::: {.column width="20%"}
+#### Week 2
+- Mon 1/26
+
+- Wed 1/28
+
+- [Thu 1/29]{.label-Labwork}
+
+- Fri 1/30
+:::
+
+::: {.column width="80%"}
+#### Description
+Vectors
+
+Working with Vectors
+
+Lab 2: slides | PS1 | [due: Pub1]{.label-Pub}
+ 
+Unix Basics | Proj1
+:::
+
+::::
+
+
+-----
+
+:::: {layout-ncol=2}
+
+::: {.column width="20%"}
+#### Week 3
+- Mon 2/2
+
+- Wed 2/4 
+
+- [Thu 2/5]{.label-Labwork}
+
+- Fri 2/6 
+:::
+
+::: {.column width="80%"}
+#### Description
+Extending Vectors
+
+Lists | [due: PS1]{.label-Homework}
+
+Lab 3: [__Quiz 1__]{.label-Quiz} | slides | PS2 | [due: Pub2]{.label-Pub}
+
+Control Flow
+:::
+
+::::
+
+-----
+
+:::: {layout-ncol=2}
+
+::: {.column width="20%"}
+#### Week 4
+- Mon 2/9
+
+- Wed 2/11 
+
+- [Thu 2/12]{.label-Labwork}
+
+- Fri 2/13 
+:::
+
+::: {.column width="80%"}
+#### Description
+Functions
+
+Factors and Data Frames | [due: PS2]{.label-Homework}
+
+Lab 4: slides | PS3 | [due: Pub3]{.label-Pub}
+
+Data Wrangling I | Proj2 | [due: Proj1]{.label-Project}
+:::
+
+::::
+
+-----
+
+:::: {layout-ncol=2}
+
+::: {.column width="20%"}
+#### Week 5
+- [Mon 2/16]{.label-None}
+
+- Wed 2/18 
+
+- [Thu 2/19]{.label-Labwork}
+
+- Fri 2/20
+:::
+
+::: {.column width="80%"}
+#### Description
+[No class]{.label-None}
+
+Data Wrangling II | [due: PS3]{.label-Homework}
+
+Lab 5: [__Quiz 2__]{.label-Quiz} | slides | PS4 | [due: Pub4]{.label-Pub}
+
+Importing Tables
+:::
+
+::::
+
+-----
+
+:::: {layout-ncol=2}
+
+::: {.column width="20%"}
+#### Week 6
+- Mon 2/23
+
+- Wed 2/25 
+
+- [Thu 2/26]{.label-Labwork}
+
+- Fri 2/27
+:::
+
+::: {.column width="80%"}
+#### Description
+Dataviz I
+
+Dataviz II | [due: PS4]{.label-Homework}
+
+Lab 5: slides | PS5 | [due: Pub5]{.label-Pub}
+
+Dataviz III | Proj3 | [due: Proj2]{.label-Project}
+:::
+
+::::
+
+-----
+
+:::: {layout-ncol=2}
+
+::: {.column width="20%"}
+#### Week 7
+- Mon 3/2
+
+- Wed 3/4 
+
+- [Thu 3/5]{.label-Labwork}
+
+- Fri 3/6
+:::
+
+::: {.column width="80%"}
+#### Description
+Joins and Pivots
+
+Exploratory EDA | [due: PS5]{.label-Homework}
+
+Lab 6: [__Quiz 3__]{.label-Quiz} | slides | PS6 | [due: Pub6]{.label-Pub}
+
+Explanatory EDA
+:::
+
+::::
+
+-----
+
+:::: {layout-ncol=2}
+
+::: {.column width="20%"}
+#### Week 8
+- Mon 3/9
+
+- Wed 3/11 
+
+- [Thu 3/12]{.label-Labwork}
+
+- Fri 3/13
+:::
+
+::: {.column width="80%"}
+#### Description
+Strings I
+
+Strings II | [due: PS6]{.label-Homework}
+
+Lab 7: slides | PS7 | [due: Pub7]{.label-Pub}
+
+Strings III | Proj4 | [due: Proj3]{.label-Project}
+:::
+
+::::
+
+-----
+
+:::: {layout-ncol=2}
+
+::: {.column width="20%"}
+#### Week 9
+- Mon 3/16
+
+- Wed 3/18
+
+- [Thu 3/19]{.label-Labwork}
+
+- Fri 3/20
+:::
+
+::: {.column width="80%"}
+#### Description
+Dates and Times I
+
+Dates and Times II | [due: PS7]{.label-Homework}
+
+Lab 8: [__Quiz 4__]{.label-Quiz} | slides | PS8 | [due: Pub8]{.label-Pub}
+
+Geospatial Data
+:::
+
+::::
+
+-----
+
+:::: {layout-ncol=2}
+
+::: {.column width="20%"}
+#### Week 10
+- [3/23-3/27]{.label-None}
+:::
+
+::: {.column width="80%"}
+#### Description
+[Spring Recess]{.label-None}
+:::
+
+::::
+
+-----
+
+:::: {layout-ncol=2}
+
+::: {.column width="20%"}
+#### Week 11
+- Mon 3/30
+
+- Wed 4/1 
+
+- [Thu 4/2]{.label-Labwork}
+
+- Fri 4/3
+:::
+
+::: {.column width="80%"}
+#### Description
+Storm Tracks I
+
+Leaflet Maps | [due: PS8]{.label-Homework}
+
+Lab 9: slides | PS9 | [due: Pub9]{.label-Pub}
+
+Shapefiles | Proj5 | [due: Proj4]{.label-Project}
+:::
+
+::::
+
+-----
+
+:::: {layout-ncol=2}
+
+::: {.column width="20%"}
+#### Week 12
+- Mon 4/6
+
+- Wed 4/8
+
+- [Thu 4/9]{.label-Labwork}
+
+- Fri 4/10
+:::
+
+::: {.column width="80%"}
+#### Description
+Choropleth Maps
+
+Raster Data I | [due: PS9]{.label-Homework}
+
+Lab 10: [__Quiz 5__]{.label-Quiz} | slides | PS10 | [due: Pub10]{.label-Pub}
+
+Raster Data II
+:::
+
+::::
+
+-----
+
+:::: {layout-ncol=2}
+
+::: {.column width="20%"}
+#### Week 13
+- Mon 4/13
+
+- Wed 4/15
+
+- [Thu 4/16]{.label-Labwork}
+
+- Fri 4/17
+:::
+
+::: {.column width="80%"}
+#### Description
+JSON Data
+
+APIs | [due: PS10]{.label-Homework}
+
+Lab 11: slides | PS11 | [due: Pub11]{.label-Pub}
+
+XML Data | Proj6 | [due: Proj5]{.label-Project}
+:::
+
+::::
+
+-----
+
+:::: {layout-ncol=2}
+
+::: {.column width="20%"}
+#### Week 14
+- Mon 4/20
+
+- Wed 4/22
+
+- [Thu 4/23]{.label-Labwork}
+
+- Fri 4/24
+:::
+
+::: {.column width="80%"}
+#### Description
+Text Analysis 1
+
+Text Analysis 2 | [due: PS11]{.label-Homework}
+
+Lab 12: [__Quiz 6__]{.label-Quiz} | slides | PS12 | [due: Pub12]{.label-Pub}
+
+Text Analysis 3
+:::
+
+::::
+
+-----
+
+:::: {layout-ncol=2}
+
+::: {.column width="20%"}
+#### Week 15
+- Mon 4/27
+
+- Wed 4/29
+
+- [Thu 4/30]{.label-Labwork}
+
+- Fri 5/1
+:::
+
+::: {.column width="80%"}
+#### Description
+TBD
+
+TBD | [due: PS12]{.label-Homework}
+
+Lab 14: slides
+
+Closing Lecture | [due: Proj6]{.label-Project}
+:::
+
+::::
+
+-----
+
+:::: {layout-ncol=2}
+
+::: {.column width="20%"}
+#### Week 16
+- [5/4-5/8]{.label-None}
+:::
+
+::: {.column width="80%"}
+#### Description
+[RRR Week]{.label-None}
+:::
+
+::::
+
+-----
+
+:::: {layout-ncol=2}
+
+::: {.column width="20%"}
+#### Week 17
+- 5/11
+:::
+
+::: {.column width="80%"}
+#### Description
+[__Final Exam, 7-10pm__]{.label-Quiz}
+:::
+
+::::
+
+-----
+
+
+
+
 

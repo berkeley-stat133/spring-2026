@@ -1,0 +1,173 @@
+---
+title: "Unix Basics"
+subtitle: "More housekeeping stuff"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+## Yesterday's Lab
+
+-   Basic Unix commands
+-   Opened QuartoPub account
+-   Installed Quarto
+-   Published a basic qmd file
+-   Started PS1
+
+
+## Review of Quarto Commands
+
+```{.markdown filename="Terminal" code-line-numbers="false"}
+quarto render demo.qmd
+```
+
+. . .
+
+\
+
+```{.markdown filename="Terminal" code-line-numbers="false"}
+quarto preview demo.qmd
+```
+
+. . .
+
+\
+
+```{.markdown filename="Terminal" code-line-numbers="false"}
+quarto publish demo.qmd
+```
+
+
+# GUIs and CLIs
+
+## GUI {.nostretch}
+
+Windows and Mac use a Graphical User Interface (GUI) for you to interact with 
+the Operating System.
+
+![](images/finder_window.jpg){width=50%}
+
+
+## About GUIs
+
+- Easy to learn
+- Rely on visual displays
+- Can be extremely useful
+- Have improved the friendliness and usability of computers
+- Excellent for:
+    + Photo editing
+    + Document Layout
+    + Browsing the web
+    + Graphic design
+    + Watching movies
+    + Playing Games
+
+
+##
+
+\
+
+### Instead of a GUI, you can use a Command-Line Interface (CLI)
+
+
+## CLIs
+
+- CLI: Command Line Interface
+- The command-line is a text-based interface
+- Instead of using a GUI we can use a CLI
+- By typing commands we perform tasks on the computer
+
+
+## {.nostretch}
+
+![](images/terminal-shell.png){width="70%" fig-align="center"}
+
+
+## About the Kernel
+
+- The Kernel is the core of the operating system in Unix
+- It takes care of allocating time and memory to programs
+- It does very fundamental root level management
+
+
+## About the Shell
+
+- The Shell is the outer layer of the OS
+- That's what we see when we open up a terminal window
+- We are working in the Shell
+- It interacts with the user and sends requests to the kernel
+- The Kernel sends results back to the Shell
+
+
+## CLI and Terminal
+
+The command line is a text-based interface where you type commands and direct text-based input and output to the screen, to files, or to other programs.
+
+The __Terminal__ (a.k.a. terminal emulator) is the program that opens a window and lets you interact with the shell.
+
+Often, people blur the distinction between the Terminal and the Shell.
+
+
+# Unix Commands
+
+## Anatomy of Unix Commands {.nostretch}
+
+\
+
+![](images/unix-commands1.png){width="85%" fig-align="center"}
+
+
+## Anatomy of Unix Commands {.nostretch}
+
+\
+
+![](images/unix-commands2.png){width="85%" fig-align="center"}
+
+
+## Anatomy of Unix Commands {.nostretch}
+
+\
+
+![](images/unix-commands3.png){width="85%" fig-align="center"}
+
+
+## Anatomy of Unix Commands {.nostretch}
+
+\
+
+![](images/unix-commands4.png){width="85%" fig-align="center"}
+
+
+## 
+
+```{.markdown filename="Example 1" code-line-numbers="false"}
+# no options, no arguments
+ls
+```
+
+. . .
+
+```{.markdown filename="Example 2" code-line-numbers="false"}
+# one option, no arguments
+ls -l
+```
+
+. . .
+
+```{.markdown filename="Example 3" code-line-numbers="false"}
+# no options, one argument
+ls Documents/
+```
+
+. . .
+
+```{.markdown filename="Example 4" code-line-numbers="false"}
+# one option, one argument
+ls -l Documents/
+```
+
+. . .
+
+```{.markdown filename="Example 5" code-line-numbers="false"}
+# two options, one argument
+ls -la Documents/
+```

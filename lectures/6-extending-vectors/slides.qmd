@@ -1,0 +1,286 @@
+---
+title: "Extending Vectors"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+```
+
+## Review
+
+## Change in place syntax
+
+You can assign into a subsetted vector to change its contents in place.
+
+```{r}
+#| output-location: fragment
+z <- c(latte = 2, boba = 4, matcha = 6)
+z[c(TRUE, FALSE, TRUE)] <- 12
+z
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+names(z)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+names(z) <- c("A", "B", "C")
+z
+```
+
+
+## Question
+
+```{r}
+w <- c(FALSE, FALSE, TRUE, TRUE, FALSE)
+```
+
+Write down two ways to change-in-place the `FALSE` to `TRUE`, each using a different form of subsetting.
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+
+## Review Vectors
+
+- Central data structure in R
+- Vectorization
+- Vector Recycling
+- Ordered set of elements
+- Subsetting with `[]`
+- Atomic: elements of the same type
+- Coercion
+
+
+# Matrices
+
+## Matrix
+
+A two-dimensional data structure for atomic data. Created with `matrix()`.
+
+```{r}
+#| output-location: fragment
+mat1 <- matrix(data = c(1, 2, 3, 4), nrow = 2)
+mat1
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+typeof(mat1)
+```
+
+. . .
+
+Note: defaults to fill the matrix by columns (`byrow = FALSE`)
+
+
+## Matrices as Vectors
+
+```{r}
+#| output-location: fragment
+vec <- 1:4
+dim(vec) <- c(2, 2)
+vec
+```
+
+. . .
+
+Matrices are simply vectors with dimensions `dim()`. All vector behavior still applies.
+
+
+## Question
+
+Using what you know about how vectors work, predict the outcome of the following:
+
+```{r}
+#| eval: false
+matrix(c(1, 2, 3, 4), nrow = 2) *
+    matrix(c(1, 2, 3, 4), nrow = 2)
+```
+
+\
+
+```{r}
+#| eval: false
+matrix(data = c("iz", "buzz", "poppy"), nrow = 2)
+```
+
+\
+
+```{r}
+#| eval: false
+matrix(c(TRUE, 3L, 1.0, FALSE), nrow = 2)
+```
+
+```{r}
+#| echo: false
+countdown::countdown(2, bottom = 0)
+```
+
+
+# Matrix Subsetting
+
+## By Index
+
+```{r}
+#| output-location: fragment
+mat <- matrix(1:4, nrow = 2)
+mat
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+mat[1, 2]
+```
+
+
+## By Index (cont'd)
+
+```{r}
+mat2 <- matrix(1:9, nrow = 3)
+mat2
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+mat2[1:2, 2:3]
+```
+
+
+## By Index (cont'd)
+
+```{r}
+mat2 <- matrix(1:9, nrow = 3)
+mat2
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+mat2[1, ]
+```
+ 
+. . . 
+
+Notes:
+
+- subsetting a matrix creates a vector
+- empty subsetting vectors > all entries
+
+
+## By Name
+
+```{r}
+#| output-location: fragment
+mat <- matrix(1:4, nrow = 2)
+rownames(mat) <- c("a", "b")
+colnames(mat) <- c("i", "ii")
+mat
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+mat["a", "ii"]
+```
+
+
+## By Logical
+
+
+```{r}
+#| output-location: fragment
+mat[c(TRUE, FALSE), c(FALSE, TRUE)]
+```
+
+. . .
+
+\
+
+### You can mix and match
+
+```{r}
+#| output-location: fragment
+mat["a", c(FALSE, TRUE)]
+```
+
+
+## What's going on here?
+
+```{r}
+#| output-location: fragment
+mat
+```
+
+. . .
+
+```{r echo = 2}
+#| output-location: fragment
+mat_log <- matrix(c(TRUE, FALSE, TRUE, FALSE), 2, 2)
+mat_log
+```
+
+. . .
+
+### Question
+
+What will the following command produce? Why?
+
+```{r}
+#| eval: false
+mat[mat_log]
+```
+
+```{r}
+#| echo: false
+countdown::countdown(1, bottom = 0)
+```
+
+
+##
+
+::::: columns
+::: {.column .fragment width="45%"}
+### Vectors
+
+- Central data structure in R
+  + Vectorization
+  + Vector Recycling
+- Ordered set of elements
+  + Subsetting with `[]`
+- Atomic: elements of the same type
+  + Type coercion
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column .fragment width="45%"}
+### Matrices
+
+- A vector with dimension info
+  + Vectorization
+  + Vector Recycling
+- Ordered set of elements
+  + Subsetting with `[vec_ind]` or `[row,col]`
+- Also Atomic
+:::
+:::::

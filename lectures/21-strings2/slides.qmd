@@ -1,0 +1,521 @@
+---
+title: "Strings II"
+subtitle: "Parsing text with regular expressions"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+library(rvest)
+```
+
+
+## Agenda
+
+- Recap
+- Anchors
+- Quantifiers
+- Grouping and Alternation
+- Men's Long Jump World Records
+
+
+## Recap
+
+Last time we learned about:
+
+- literal characters
+
+- wildcard metacharacter: `.`
+
+- escape metacharacter: `\`, (in R is `\\`)
+
+- character sets (aka character classes)
+
+    + e.g. set of lower case vowels: `[aeiou]`
+
+    + e.g. set of all digits: `[0123456789]`
+
+    + character ranges: `[0-9]` , `[a-z]` , `[A-Z]` , `[3-7d-mQ-Y]`
+
+    + POSIX classes: e.g. `[[:digit:]]`, `[[:alpha:]]`, `[[:alnum:]]`
+
+    + abbreviated: e.g. `\\s`, `\\d`, `\\w`, `\\b`
+
+
+## Character Vectors
+
+```{r}
+teas <- c("taro", "green", "black", "matcha", "jasmine")
+```
+
+\
+
+```{r}
+vehicles <- c("car", "bike", "train", "boat", "airplane")
+```
+
+\
+
+```{r}
+fives <- c("5.00", "5100", "5 00", "5-00", "$5.55")
+```
+
+
+##
+
+```{r}
+sw <- c(
+  "LEIA is a 1.50 meters tall Female",
+  "LUKE is a 1.70 meters tall Male",
+  "HAN is a 1.80 meters tall Male"
+)
+```
+
+
+```{r}
+str_view(sw, pattern = "[A-Z]")
+```
+
+
+# Anchors
+
+## Anchors
+
+You can [anchor]{.hilit} the regular expression using `^` to match the start or `$` to match the end.
+
+\
+
+Example:
+
+::: {.nonincremental}
+- `^a`: stars with "a"
+- `a$`: ends with "a"
+:::
+
+
+##
+
+```{r}
+vehicles
+```
+
+. . .
+
+\
+
+```{r}
+# start with vowel
+str_view(vehicles, pattern = "^[aeiou]")
+```
+
+
+## 
+
+```{r}
+teas
+```
+
+. . .
+
+\
+
+```{r}
+# end in vowel
+str_view(teas, pattern = "[aeiou]$")
+```
+
+. . .
+
+```{r}
+# end in not a vowel
+str_view(teas, pattern = "[^aeiou]$")
+```
+
+
+## Anchors
+
+```{r}
+vehicles
+```
+
+. . .
+
+```{r}
+# first character
+str_view(vehicles, pattern = "^.")
+```
+. . .
+
+```{r}
+# last character
+str_view(vehicles, pattern = ".$")
+```
+
+
+
+# Quantifiers
+
+## Quantifiers
+
+| Example    | Description                     | Quantity       |
+|------------|---------------------------------|----------------|
+| `"a*"`     | matches "a" any number of times | \[0, $\infty$) |
+| `"a+"`     | matches at least one "a"        | \[1, $\infty$) |
+| `"a?"`     | optional number of "a"          | \[0, 1\]       |
+| `"a{5}"`   | 5 consecutive a's               | 5 |
+| `"a{3,6}"` | between 3 and 6 a's             | \[3, 6\] |
+| `"a{3,}"`  | 3 or more a's                   | $\geq 3$ |
+
+
+##
+
+```{r}
+abc <- c("a", "aab", "aaabbc", "bcc")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# any number of "a"
+str_extract(abc, pattern = "a*")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# at least one "a"
+str_extract(abc, pattern = "a+")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# optional "a"
+str_extract(abc, pattern = "a?")
+```
+
+
+##
+
+```{r}
+abc <- c("a", "aab", "aaabbc", "bcc")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# 2 consecutive "a"
+str_extract(abc, pattern = "a{2}")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# 1 or 2 "a"
+str_extract(abc, pattern = "a{1,2}")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# 3 or more "a"
+str_extract(abc, pattern = "a{3,}")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# at most 3 "a"
+str_extract(abc, pattern = "a{0,3}")
+```
+
+
+
+## Quantifiers (cheat sheet)
+
+| Example    | Description                     |
+|------------|---------------------------------|
+| `"a*"`     | Any amount (unlim allowed; none required)  |
+| `"a+"`     | At least one (unlim allowed; one required) |
+| `"a?"`     | One optional (one allowed; none required)  |
+| `"a{n}"`   | n consecutive times |
+| `"a{min,max}"` | Interval including min and max |
+| `"a{min,}"` | Min required, no max limit |
+
+
+# Grouping and Alternation
+
+## Grouping
+
+You can change the scope of different operations by grouping characters with `()`
+
+. . .
+
+```{r}
+x <- c("hah", "hahaha", "haaa")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_view(x, pattern = "ha+")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_view(x, pattern = "(ha)+")
+```
+
+
+## Alternation
+
+You can separate different possible patterns with `|`; reads like "or"
+
+```{r}
+vehicles
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_view(vehicles, "in|ir")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_view(vehicles, "ar|an")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+str_view(vehicles, "a(r|n|t)")
+```
+
+
+## Your Turn {auto-animate=true}
+
+```{r}
+#| eval: false
+str_view('Hermione said, "Yaaaay", and hugged Ron', pattern = )
+```
+
+Question: Write down 5 different regular expressions to match `<Yaaaay>`.
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+
+## Your Turn {auto-animate=true}
+
+```{r}
+p <- "Yaaaay"
+p <- "Ya+y"
+p <- "Ya{4}y"
+p <- "Ya*y"
+```
+
+```{r}
+#| eval: false
+str_view('Hermione said, "Yaaaay", and hugged Ron', pattern = p)
+```
+
+Question: Write down 5 different regular expressions to match `<Yaaaay>`.
+
+
+# Men's Long Jump World Record Progression 
+
+##
+
+![](images/mens-long-jump-table2.png){fig-align="center"}
+
+
+## Men's Long Jump World Record Progression {.smaller}
+
+```{r}
+#| echo: false
+doc <- read_html("mens-long-jump.html")
+dat <- html_table(doc)[[2]]
+```
+
+```{r}
+#| eval: false
+url <- "https://en.wikipedia.org/wiki/Men%27s_long_jump_world_record_progression"
+
+# import HTML file
+doc <- read_html(url)
+
+# extract 2nd HTML table (as data.frame/tibble)
+dat <- html_table(doc)[[2]]
+dat
+```
+
+. . .
+
+```{r}
+#| echo: false
+dat
+```
+
+
+## 
+
+```{r}
+head(dat$Mark)
+```
+
+\
+
+Question: Write down 3 different regex patterns to match the distance values (in meters): e.g. `"7.61" "7.69" "7.76"` etc
+
+```{r}
+#| echo: false
+countdown::countdown(2, bottom = 0)
+```
+
+
+## 
+
+```{r}
+head(dat$Mark)
+```
+
+\
+
+Question: Write down 3 different regex patterns to match the distance values (in meters): e.g. `"7.61" "7.69" "7.76"` etc
+
+```{r}
+#| eval: false
+str_view(dat$Mark, pattern = "^[0-9]\\.[0-9][0-9]")
+```
+
+```{r}
+#| eval: false
+str_view(dat$Mark, pattern = "^[0-9]\\.[0-9]{2}")
+```
+
+```{r}
+#| eval: false
+str_view(dat$Mark, pattern = "^\\d\\.\\d\\d")
+```
+
+```{r}
+#| eval: false
+str_view(dat$Mark, pattern = "^\\d\\.\\d{2}")
+```
+
+```{r}
+#| eval: false
+str_view(dat$Mark, pattern = "^.{4}")
+```
+
+
+## 
+
+```{r}
+head(dat$Athlete)
+```
+
+\
+
+Question: Write down 3 different regex patterns to match the country abbreviation of the Athlete
+
+```{r}
+#| echo: false
+countdown::countdown(2, bottom = 0)
+```
+
+
+## 
+
+```{r}
+head(dat$Athlete)
+```
+
+\
+
+Question: Write down 3 different regex patterns to match the country abbreviation of the Athlete.
+
+```{r}
+#| eval: false
+str_view(dat$Athlete, pattern = "[A-Z][A-Z][A-Z]")
+```
+
+```{r}
+#| eval: false
+str_view(dat$Athlete, pattern = "[A-Z]{3}")
+```
+
+```{r}
+#| eval: false
+str_view(dat$Athlete, pattern = "[[:upper:]]{3}")
+```
+
+
+## 
+
+```{r}
+head(dat$Athlete)
+```
+
+\
+
+Question: Write down 3 different regex patterns to match the first name of the Athlete
+
+```{r}
+#| echo: false
+countdown::countdown(2, bottom = 0)
+```
+
+
+## 
+
+```{r}
+head(dat$Athlete)
+```
+
+\
+
+Question: Write down 3 different regex patterns to match the first name of the Athlete
+
+```{r}
+#| eval: false
+str_view(dat$Athlete, pattern = "^[A-Za-z]+")
+```
+
+```{r}
+#| eval: false
+str_view(dat$Athlete, pattern = "^[[:alpha:]]+")
+```
+
+```{r}
+#| eval: false
+str_view(dat$Athlete, pattern = "^[A-Z][A-Za-z]+")
+```
+
+```{r}
+#| eval: false
+str_view(dat$Athlete, pattern = "^\\w+")
+```
+
+
+
+

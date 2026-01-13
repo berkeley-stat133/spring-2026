@@ -1,0 +1,4 @@
+Name,Gender,Height,Force
+Leia,female,1.50,TRUE
+Luke,male,1.70,TRUE
+Han,male,1.80,FALSE

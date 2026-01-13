@@ -1,0 +1,752 @@
+---
+title: "Data Warngling I"
+subtitle: "Manipulating data frames with `dplyr`"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+```
+
+
+# Room for Improvement in Base R
+
+##
+
+```{r}
+wizards <- data.frame(
+  name = c("Harry", "Bellatrix", "Hermione", "Draco"),
+  house = c("Gryffindor", "Slytherin", "Gryffindor",  "Slytherin"),
+  height = c(1.78, 1.57, 1.65, 1.75),
+  spells = c(60, 75, 70, 55)
+)
+```
+
+Using base R data frame subsetting, create from `wizards` ...
+
+1) The vector of heights.
+2) A data frame that contains only the characters shorter than 1.70.
+3) A data frame that contains the four original cols plus the one with the height in inches.
+4) The average height of characters from Gryffindor.
+
+```{r}
+#| echo: false
+countdown::countdown(2.5, bottom = 0)
+```
+
+
+## Boardwork
+
+
+## What's going on here?
+
+```{r}
+#| output-location: fragment
+wizards[wizards$height < 1.70, ]
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+wizards$height
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+wizards$height < 1.70
+```
+
+
+## Comparison Operators
+
+You can form a logical vector through a logical comparison:
+
+
+## Examples
+
+```{r}
+#| output-location: fragment
+c("owl", "wolf", "fox", "owl") == "owl"
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+"owl" == c("owl", "wolf", "fox", "owl")
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+"owl" %in% c("owl", "wolf", "fox", "owl")
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+c("owl", "wolf", "fox", "owl") %in% "owl"
+```
+
+
+## Examples
+
+```{r}
+#| output-location: fragment
+c("owl", "fox") %in% c("owl", "wolf", "fox", "owl")
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+c("owl", "wolf", "fox", "owl") %in% c("owl", "fox")
+```
+
+
+## Let's make this better
+
+\
+
+```{r eval = FALSE}
+wizards[wizards$height < 1.70, ]
+```
+
+\
+
+. . .
+
+```{r eval = FALSE}
+wizards$height_in <- wizards$height * 39.3701
+```
+
+\
+
+. . .
+
+```{r eval = FALSE}
+mean(wizards$height[wizards$house == "Gryffindor"])
+```
+
+
+## {.nostretch}
+
+::: {.columns}
+::: {.column width="40%"}
+![](images/tidy-tools-manifesto.png)
+:::
+
+::: {.column width="60%"}
+Four Principles:
+
+1) Reuse existing data structures.
+    + The Data Frame
+
+2) Compose simple functions with the pipe.
+    + `|>`
+
+3) Embrace functional programming.
+    + Clear separate of data structure and functions.
+
+4) Design for humans.
+    + It should be readable!
+:::
+
+:::
+
+
+## {auto-animate=true}
+
+![](images/tidyverse-hex-logo.png){fig-align="center"}
+
+
+## {auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+![](images/tidyverse-hex-logo.png)
+:::
+
+::: {.column width="50%"}
+![](images/dplyr-hex-logo.png)
+:::
+:::
+
+
+
+# dplyr
+
+## About dplyr
+
+```{r eval = FALSE}
+library(tidyverse)   # includes dplyr
+```
+
+\
+
+The `"dplyr"` package in R is a fundamental tool for data manipulation, forming 
+a core component of the [tidyverse]{.hilit} suite of packages. 
+
+It provides a consistent set of "verbs" or functions designed to simplify common data wrangling tasks with data frames and tibbles (an enhanced data frame structure).
+
+
+
+## dplyr verbs
+
+:::: {.columns}
+
+::: {.column width="40%"}
+- `slice()`
+
+- `select()`
+
+- `filter()`
+
+- `mutate()`
+
+- `arrange()`
+
+- `summarize()`
+
+- `group_by()`
+:::
+
+
+::: {.column .fragment width="60%"}
+::: {.incremental}
+1) All of these have a [data frame]{.hilit} as the first argument.
+
+\
+
+2) All of these produce a [data frame]{.hilit} as output.
+
+\
+
+3) Within the function, you can simply refer to columns names unquoted.
+:::
+:::
+
+::::
+
+
+## Our example data set
+
+```{r}
+#| output-location: fragment
+wizards <- data.frame(
+  name = c("Harry", "Bellatrix", "Hermione", "Draco"),
+  house = c("Gryffindor", "Slytherin", "Gryffindor",  "Slytherin"),
+  height = c(1.78, 1.57, 1.65, 1.75),
+  spells = c(60, 75, 70, 55)
+)
+
+wizards
+```
+
+
+## `slice()`
+
+. . .
+
+Isolates particular rows of a data frame by row number.
+
+. . .
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+slice(wizards, 2)
+```
+
+
+## `slice()`
+
+Isolates particular rows of a data frame by row number.
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+slice(wizards, 2:4)
+```
+
+
+## `slice()`
+
+Isolates particular rows of a data frame by row number.
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+slice(wizards, -3)
+```
+
+
+## `select()`
+
+. . .
+
+Selects variables by name or number.
+
+. . .
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+select(wizards, house)
+```
+
+
+## `select()`
+
+Selects variables by name or number.
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+select(wizards, 2)
+```
+
+
+## `select()`
+
+Selects variables by name or number.
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+select(wizards, house, name)
+```
+
+
+## `select()`
+
+Selects variables by name or number.
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+select(wizards, -spells)
+```
+
+
+## `select()`
+
+Selects variables by name or number.
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+select(wizards, name:height)
+```
+
+
+## `filter()`
+
+. . .
+
+Returns rows that meet certain criteria.
+
+. . .
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+filter(wizards, house == "Gryffindor")
+```
+
+
+## `filter()`
+
+Returns rows that meet certain criteria.
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+filter(wizards, spells < 60)
+```
+
+
+## `filter()`
+
+Returns rows that meet certain criteria.
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+filter(wizards, name %in% c("Harry", "Hermione"))
+```
+
+
+## `filter()`
+
+Returns rows that meet certain criteria.
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+filter(wizards, 
+       name %in% c("Harry", "Hermione"),
+       spells < 70)
+```
+
+
+## `mutate()`
+
+. . .
+
+Updates an existing variable, or adds a new variable that can be a function of previous variables.
+
+. . .
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+mutate(wizards, name = toupper(name))
+```
+
+
+## `mutate()`
+
+Updates an existing variable, or adds a new variable that can be a function of previous variables.
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+mutate(wizards, height_cm = height * 100)
+```
+
+
+## `arrange()`
+
+. . .
+
+Sort the rows of a data frame by the values of variables.
+
+. . .
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+arrange(wizards, height)
+```
+
+
+## `arrange()`
+
+Sort the rows of a data frame by the values of variables.
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+arrange(wizards, desc(height))
+```
+
+
+## `arrange()`
+
+Sort the rows of a data frame by the values of variables.
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+arrange(wizards, house)
+```
+
+
+## `arrange()`
+
+Sort the rows of a data frame by the values of variables.
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+arrange(wizards, house, height)
+```
+
+
+## `summarize()`
+
+. . .
+
+Summarize a variable with a statistic.
+
+. . .
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+summarize(wizards, 
+          mean(height))
+```
+
+
+## `summarize()`
+
+Summarize a variable with a statistic.
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+summarize(wizards, 
+          avg_height = mean(height))
+```
+
+
+## `summarize()`
+
+Summarize a variable with a statistic.
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+summarize(wizards, 
+          avg_height = mean(height),
+          sd_height = sd(height))
+```
+
+
+## Question
+
+```{r}
+wizards <- data.frame(
+  name = c("Harry", "Bellatrix", "Hermione", "Draco"),
+  house = c("Gryffindor", "Slytherin", "Gryffindor",  "Slytherin"),
+  height = c(1.78, 1.57, 1.65, 1.75),
+  spells = c(60, 75, 70, 55)
+)
+```
+
+Using `"dplyr"`, create from `wizards` ...
+
+1) The vector of heights.
+2) A data frame that contains only the characters shorter than 1.70.
+3) A data frame that contains the four original cols plus the one with the height in inches.
+4) The average height of characters from Gryffindor.
+
+```{r}
+#| echo: false
+countdown::countdown(3, bottom = 0)
+```
+
+
+## Boardwork
+
+
+# Data Wrangling Made Even Easier
+
+## `select()`
+
+Selects variables by name or number.
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+select(wizards, name:height)
+```
+
+
+## `select()`
+
+Selects variables by name or number.
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+select(wizards, contains("hou"))
+```
+
+
+## `select()`
+
+Selects variables by name or number.
+
+```{r}
+wizards
+```
+
+\
+
+Other helpers select variables by matching patterns in their names:
+
+- `starts_with()`: Starts with a prefix.
+
+- `ends_with()`: Ends with a suffix.
+
+- `contains()`: Contains a literal string.
+
