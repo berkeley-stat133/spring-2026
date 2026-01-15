@@ -29,6 +29,8 @@ Take a few minutes to share:
 
 - your major
 
+- your hometown
+
 ```{r}
 countdown::countdown(5, top = 0)
 ```
@@ -38,7 +40,7 @@ countdown::countdown(5, top = 0)
 
 ## Men's Long Jump World Record Progression {.nostretch}
 
-![](images/mens-long-jump-table.png){width="65%" fig-align="center"}
+![](images/mens-long-jump-table.png){width="70%" fig-align="center"}
 
 [https://en.wikipedia.org/wiki/Men%27s_long_jump_world_record_progression](https://en.wikipedia.org/wiki/Men%27s_long_jump_world_record_progression){style="font-size: 0.5em;"}
 
@@ -48,7 +50,7 @@ countdown::countdown(5, top = 0)
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Long_jump_world_record_progression_%28men%29.svg/1024px-Long_jump_world_record_progression_%28men%29.svg.png){fig-align="center"}
 
 
-## Mike Powell's Jump {.nostretch}
+## Mike Powell's Long Jump {.nostretch}
 
 ![](images/mike-powell.jpg){height="90%" fig-align="center"}
 
@@ -59,12 +61,19 @@ countdown::countdown(5, top = 0)
 
 \
 
-![](images/long-jump-record.png)
+![](images/long-jump-record1.png)
+
+
+## Mike Powell's World Record
+
+\
+
+![](images/long-jump-record2.png)
 
 
 ## Question
 
-What would you do to replicate timeline graphic?
+What would you do to replicate the timeline graphic?
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -155,7 +164,7 @@ countdown::countdown(3, bottom = 0)
 
 - Psychology
 
-- Other
+- Many other
 
 
 ## Statistics major
@@ -210,14 +219,16 @@ countdown::countdown(3, bottom = 0)
 
 - Introduction and practice with Quarto authoring tools.
 
+    + Quarto Publications (weekly)
+
 - Every other week you take a quiz in lab.
 
 
 ## Assignment types
 
-- 6% Problem Sets (credit / no credit): assortment of practice problems
-
 - 2% Quarto Publications (credit / no credit)
+
+- 6% Problem Sets (credit / no credit): assortment of practice problems
 
 - 12% Projects (credit / no credit): Explorations of real data and computing workflows
 

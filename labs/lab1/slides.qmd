@@ -1,0 +1,265 @@
+---
+title: "Lab 1"
+subtitle: "Welcome"
+author: "STAT 133"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+# Introductions
+
+## Meet your GSI
+
+::: {.notes}
+Introduce yourself to the clasas. You can talk about your:
+
+- Name
+- Major
+- Experience
+- Fun fact
+:::
+
+
+## With the people around you ...
+
+. . .
+
+Take a few minutes to share your:
+
+::: {.columns}
+::: {.column width="45%"}
+::: {.nonincremental}
+- Name
+- Major
+- Year
+- Hometown
+- Which dog mood are you today?
+:::
+:::
+
+::: {.column width="55%"}
+![](images/dog-mood.png){width="85%"}
+:::
+:::
+
+```{r}
+#| echo: false
+countdown::countdown(5, top = 0)
+```
+
+
+# About the Course
+
+## Course Website
+
+### https://stat133.berkeley.edu/spring-2026
+
+
+## Syllabus
+
+Please take some minutes to read the syllabus and jot down at least two questions that you have.
+
+<https://stat133.berkeley.edu/spring-2026/syllabus.html>
+
+```{r}
+#| echo: false
+countdown::countdown(5, bottom = 0)
+```
+
+
+# Software
+
+## Installation
+
+__1)__ R <br>
+<https://www.r-project.org/>
+
+\
+
+__2)__ Positron <br>
+<https://positron.posit.co/>
+
+\
+
+⚠️ __2b)__ If Positron fails, then RStudio <br>
+<https://posit.co/download/rstudio-desktop/>
+
+\
+
+__3)__ Windows users‼️: Git <br>
+<https://git-scm.com/>
+
+```{r}
+#| echo: false
+countdown::countdown(10, bottom = 0)
+```
+
+
+# Folder `stat133`
+
+## Directory `stat133`
+
+In your computer, e.g. __Desktop__ or __Documents__, please create a folder (i.e. directory)
+for this course.
+
+::: {.columns}
+::: {.column width="50%"}
+👍 Good Names:
+
+::: {.nonincremental}
+- `stat133`
+- `STAT133`
+- `Stat133`
+:::
+:::
+
+::: {.column width="50%"}
+👎 Bad Names (no blank spaces):
+
+::: {.nonincremental}
+- `stat 133`
+- `STAT 133`
+- `Stat 133`
+:::
+:::
+
+:::
+
+This will be a dedicated directory for all the work you'll do in this course.
+
+
+# IDE: Positron (or RStudio)
+
+## {.nostretch}
+
+![](images/positron.png){width="85%" fig-align="center"}
+
+
+## First contact with Positron (or Rstudio)
+
+Demo:
+
+- Open Positron
+
+- Understanding workspace
+
+- Quadrants or panes
+
+
+## Explorer (Positron) {.nostretch}
+
+Let's focus on the __Explorer__ tab
+
+![](images/positron-explorer.png){width="60%"}
+
+## Explorer (Positron) {.nostretch}
+
+Open your folder `stat133`
+
+![](images/positron-folder.png){width="55%"}
+
+
+## Explorer tab
+
+- Let's focus on the __Explorer__ tab
+
+- Use it to find your folder `stat133`
+
+- Click on `stat133` (i.e. move inside this folder)
+
+- Click on folder icon to create a `labs` folder
+
+- Click on `labs` (i.e. move inside this folder)
+
+- Inside `labs`, create a folder `lab1`
+
+
+## First contact with Quarto File
+
+- Open a Quarto file (i.e. Quarto document)
+
+- Understanding anatomy of basic quarto file
+
+    + YAML header
+    + Narrative elements
+    + Code chunks
+    
+- Edit YAML header:
+
+    + `title: "Lab 1"`
+    + `author: "First Last"`
+
+
+## Rendering a `.qmd` file
+
+- Click the [__Render__]{.hilit} button.
+
+- Save file in your `lab1` folder.
+
+- Output file is an HTML document (assuming `format: html`)
+
+- BTW: most assignments will require submission of their `.qmd` and `.html` files.
+
+
+## Submission to bCourses
+
+Submit both your `.qmd` and `.html` files to bCourses under the [lab1]{.hilit} assignment.
+
+\
+
+This is a "dummy" assignment: won't be part of your grade; we just want to make sure everyone knows how and where to submit `.qmd` and `.html` files.
+
+
+## So far ...
+
+::: {.nonincremental}
+- Software Installed
+
+- Directory, subdirectories, and files: 
+
+```
+  stat133/
+    labs/
+        lab1/
+          lab1-first-last.qmd
+          lab1-first-last.html
+```
+
+- Lab1 `.qmd` and `.html` files submitted to bCourses
+:::
+
+
+
+# Terminology
+
+## 
+
+### File
+
+A named container that stores data---such as text, images, or programs---on a computer disk. 
+
+The file name usually ends in an extension (`.txt`, `.png`, `.qmd`) that indicates the format.
+
+\
+
+### Directory (or Folder)
+
+A named container that stores a set of files or other folders. 
+
+We'll write directories by appending a slash at the end: e.g., `Documents/`, `stat133/`, `lab1/`
+
+
+## In case of trouble
+
+If you experienced any issues today, for example:
+
+::: {.nonincremental}
+- installing software
+- rendering `.qmd` file
+- submission to bCourses
+- got lost along the discussion
+:::
+
+then please come to office hours!
+
+
