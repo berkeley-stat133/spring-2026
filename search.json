@@ -2473,7 +2473,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"senior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"junior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -2767,7 +2767,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 11     Colin Castl… TOR   C            82    250 May 25, 2… US      1         \n2 23     Lauri Markk… UTA   PF           85    240 May 22, 1… FI      7         \n3 11     Isaiah Joe   OKC   SG           76    165 July 2, 1… US      4         \n4 20     Alex Sarr    WAS   C            84    205 April 26,… FR      R         \n5 24     Cam Spencer  MEM   SG           75    205 April 6, … US      R         \n6 77     Orlando Rob… SAC   C            82    235 July 10, … US      2         \n7 65     Alex Reese   PHI   PF           81    245 May 21, 1… US      R         \n8 0      Ryan Dunn    PHO   SF           79    216 January 7… US      R         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 8      Tim Hardawa… DET   SG           77    205 March 16,… US      11        \n2 20     Alex Sarr    WAS   C            84    205 April 26,… FR      R         \n3 7      Damion Baugh CHO   SG           76    194 August 3,… US      R         \n4 26     Drew Timme   BRK   PF           81    235 September… US      R         \n5 8      OG Anunoby   NYK   PF           79    240 July 17, … GB      7         \n6 33     Nicolas Bat… LAC   PF           79    230 December … FR      16        \n7 2      Jarred Vand… LAL   PF           80    214 April 3, … US      6         \n8 22     Andrew Wigg… MIA   SF           78    197 February … CA      10        \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
