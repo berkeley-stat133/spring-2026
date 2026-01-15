@@ -2114,6 +2114,118 @@
     ]
   },
   {
+    "objectID": "labs/lab1/slides.html#meet-your-gsi",
+    "href": "labs/lab1/slides.html#meet-your-gsi",
+    "title": "Lab 1",
+    "section": "Meet your GSI",
+    "text": "Meet your GSI\n\nIntroduce yourself to the clasas. You can talk about your:\n\nName\nMajor\nExperience\nFun fact"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#with-the-people-around-you",
+    "href": "labs/lab1/slides.html#with-the-people-around-you",
+    "title": "Lab 1",
+    "section": "With the people around you …",
+    "text": "With the people around you …\n\nTake a few minutes to share your:\n\n\n\nName\nMajor\nYear\nHometown\nWhich dog mood are you today?\n\n\n\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#course-website",
+    "href": "labs/lab1/slides.html#course-website",
+    "title": "Lab 1",
+    "section": "Course Website",
+    "text": "Course Website\nhttps://stat133.berkeley.edu/spring-2026"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#syllabus",
+    "href": "labs/lab1/slides.html#syllabus",
+    "title": "Lab 1",
+    "section": "Syllabus",
+    "text": "Syllabus\nPlease take some minutes to read the syllabus and jot down at least two questions that you have.\nhttps://stat133.berkeley.edu/spring-2026/syllabus.html\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#installation",
+    "href": "labs/lab1/slides.html#installation",
+    "title": "Lab 1",
+    "section": "Installation",
+    "text": "Installation\n1) R  https://www.r-project.org/\n\n\n2) Positron  https://positron.posit.co/\n\n\n⚠️ 2b) If Positron fails, then RStudio  https://posit.co/download/rstudio-desktop/\n\n\n3) Windows users‼️: Git  https://git-scm.com/\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#directory-stat133",
+    "href": "labs/lab1/slides.html#directory-stat133",
+    "title": "Lab 1",
+    "section": "Directory stat133",
+    "text": "Directory stat133\nIn your computer, e.g. Desktop or Documents, please create a folder (i.e. directory) for this course.\n\n\n👍 Good Names:\n\nstat133\nSTAT133\nStat133\n\n\n👎 Bad Names (no blank spaces):\n\nstat 133\nSTAT 133\nStat 133\n\n\nThis will be a dedicated directory for all the work you’ll do in this course."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
+    "href": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
+    "title": "Lab 1",
+    "section": "First contact with Positron (or Rstudio)",
+    "text": "First contact with Positron (or Rstudio)\nDemo:\n\nOpen Positron\nUnderstanding workspace\nQuadrants or panes"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#explorer-positron",
+    "href": "labs/lab1/slides.html#explorer-positron",
+    "title": "Lab 1",
+    "section": "Explorer (Positron)",
+    "text": "Explorer (Positron)\nLet’s focus on the Explorer tab"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#explorer-positron-1",
+    "href": "labs/lab1/slides.html#explorer-positron-1",
+    "title": "Lab 1",
+    "section": "Explorer (Positron)",
+    "text": "Explorer (Positron)\nOpen your folder stat133"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#explorer-tab",
+    "href": "labs/lab1/slides.html#explorer-tab",
+    "title": "Lab 1",
+    "section": "Explorer tab",
+    "text": "Explorer tab\n\nLet’s focus on the Explorer tab\nUse it to find your folder stat133\nClick on stat133 (i.e. move inside this folder)\nClick on folder icon to create a labs folder\nClick on labs (i.e. move inside this folder)\nInside labs, create a folder lab1"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#first-contact-with-quarto-file",
+    "href": "labs/lab1/slides.html#first-contact-with-quarto-file",
+    "title": "Lab 1",
+    "section": "First contact with Quarto File",
+    "text": "First contact with Quarto File\n\nOpen a Quarto file (i.e. Quarto document)\nUnderstanding anatomy of basic quarto file\n\nYAML header\nNarrative elements\nCode chunks\n\nEdit YAML header:\n\ntitle: \"Lab 1\"\nauthor: \"First Last\""
+  },
+  {
+    "objectID": "labs/lab1/slides.html#rendering-a-.qmd-file",
+    "href": "labs/lab1/slides.html#rendering-a-.qmd-file",
+    "title": "Lab 1",
+    "section": "Rendering a .qmd file",
+    "text": "Rendering a .qmd file\n\nClick the Render button.\nSave file in your lab1 folder.\nOutput file is an HTML document (assuming format: html)\nBTW: most assignments will require submission of their .qmd and .html files."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#submission-to-bcourses",
+    "href": "labs/lab1/slides.html#submission-to-bcourses",
+    "title": "Lab 1",
+    "section": "Submission to bCourses",
+    "text": "Submission to bCourses\nSubmit both your .qmd and .html files to bCourses under the lab1 assignment.\n\n\nThis is a “dummy” assignment: won’t be part of your grade; we just want to make sure everyone knows how and where to submit .qmd and .html files."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#so-far",
+    "href": "labs/lab1/slides.html#so-far",
+    "title": "Lab 1",
+    "section": "So far …",
+    "text": "So far …\n\nSoftware Installed\nDirectory, subdirectories, and files:\n\n  stat133/\n    labs/\n        lab1/\n          lab1-first-last.qmd\n          lab1-first-last.html\n\nLab1 .qmd and .html files submitted to bCourses"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#section-1",
+    "href": "labs/lab1/slides.html#section-1",
+    "title": "Lab 1",
+    "section": "",
+    "text": "File\nA named container that stores data—such as text, images, or programs—on a computer disk.\nThe file name usually ends in an extension (.txt, .png, .qmd) that indicates the format.\n\n\nDirectory (or Folder)\nA named container that stores a set of files or other folders.\nWe’ll write directories by appending a slash at the end: e.g., Documents/, stat133/, lab1/"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#in-case-of-trouble",
+    "href": "labs/lab1/slides.html#in-case-of-trouble",
+    "title": "Lab 1",
+    "section": "In case of trouble",
+    "text": "In case of trouble\nIf you experienced any issues today, for example:\n\ninstalling software\nrendering .qmd file\nsubmission to bCourses\ngot lost along the discussion\n\nthen please come to office hours!"
+  },
+  {
     "objectID": "ed-netiquette.html",
     "href": "ed-netiquette.html",
     "title": "Ed-Discussion Netiquette",
@@ -2361,7 +2473,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"junior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"senior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -2466,7 +2578,7 @@
     "href": "lectures/1-welcome/slides.html#with-the-people-around-you",
     "title": "Welcome",
     "section": "With the people around you …",
-    "text": "With the people around you …\nTake a few minutes to share:\n\nyour name\nhow many years have you been at Cal?\nyour major\n\n\n\n\n−+\n05:00"
+    "text": "With the people around you …\nTake a few minutes to share:\n\nyour name\nhow many years have you been at Cal?\nyour major\nyour hometown\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "lectures/1-welcome/slides.html#mens-long-jump-world-record-progression",
@@ -2483,11 +2595,11 @@
     "text": "Men’s Long Jump World Record Progression"
   },
   {
-    "objectID": "lectures/1-welcome/slides.html#mike-powells-jump",
-    "href": "lectures/1-welcome/slides.html#mike-powells-jump",
+    "objectID": "lectures/1-welcome/slides.html#mike-powells-long-jump",
+    "href": "lectures/1-welcome/slides.html#mike-powells-long-jump",
     "title": "Welcome",
-    "section": "Mike Powell’s Jump",
-    "text": "Mike Powell’s Jump\n\n\n\n\n\nhttps://www.youtube.com/watch?v=T0WfsAwvTSU"
+    "section": "Mike Powell’s Long Jump",
+    "text": "Mike Powell’s Long Jump\n\n\n\n\n\nhttps://www.youtube.com/watch?v=T0WfsAwvTSU"
   },
   {
     "objectID": "lectures/1-welcome/slides.html#mike-powells-world-record",
@@ -2497,11 +2609,18 @@
     "text": "Mike Powell’s World Record"
   },
   {
+    "objectID": "lectures/1-welcome/slides.html#mike-powells-world-record-1",
+    "href": "lectures/1-welcome/slides.html#mike-powells-world-record-1",
+    "title": "Welcome",
+    "section": "Mike Powell’s World Record",
+    "text": "Mike Powell’s World Record"
+  },
+  {
     "objectID": "lectures/1-welcome/slides.html#question",
     "href": "lectures/1-welcome/slides.html#question",
     "title": "Welcome",
     "section": "Question",
-    "text": "Question\nWhat would you do to replicate timeline graphic?"
+    "text": "Question\nWhat would you do to replicate the timeline graphic?"
   },
   {
     "objectID": "lectures/1-welcome/slides.html#section",
@@ -2543,7 +2662,7 @@
     "href": "lectures/1-welcome/slides.html#who-takes-it",
     "title": "Welcome",
     "section": "Who takes it",
-    "text": "Who takes it\n\nStatistics (majors)\nData science (minor)\nApplied Math\nEconomics\nPsychology\nOther"
+    "text": "Who takes it\n\nStatistics (majors)\nData science (minor)\nApplied Math\nEconomics\nPsychology\nMany other"
   },
   {
     "objectID": "lectures/1-welcome/slides.html#statistics-major",
@@ -2571,14 +2690,14 @@
     "href": "lectures/1-welcome/slides.html#lab",
     "title": "Welcome",
     "section": "Lab",
-    "text": "Lab\n\nA mix of new ideas, practice, and working on problem sets.\nIntroduction and practice with Quarto authoring tools.\nEvery other week you take a quiz in lab."
+    "text": "Lab\n\nA mix of new ideas, practice, and working on problem sets.\nIntroduction and practice with Quarto authoring tools.\n\nQuarto Publications (weekly)\n\nEvery other week you take a quiz in lab."
   },
   {
     "objectID": "lectures/1-welcome/slides.html#assignment-types",
     "href": "lectures/1-welcome/slides.html#assignment-types",
     "title": "Welcome",
     "section": "Assignment types",
-    "text": "Assignment types\n\n6% Problem Sets (credit / no credit): assortment of practice problems\n2% Quarto Publications (credit / no credit)\n12% Projects (credit / no credit): Explorations of real data and computing workflows\n45% Quizzes: Every two weeks in lab\n35% Final Exam: Monday of finals week 7 - 10 pm"
+    "text": "Assignment types\n\n2% Quarto Publications (credit / no credit)\n6% Problem Sets (credit / no credit): assortment of practice problems\n12% Projects (credit / no credit): Explorations of real data and computing workflows\n45% Quizzes: Every two weeks in lab\n35% Final Exam: Monday of finals week 7 - 10 pm"
   },
   {
     "objectID": "lectures/1-welcome/slides.html#in-lab-tomorrow",
@@ -2648,7 +2767,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 4      Jalen Green  HOU   SG           76    186 February … US      3         \n2 30     Jay Huff     MEM   C            85    240 August 25… US      3         \n3 11     Jaime Jaque… MIA   SF           78    225 February … US      1         \n4 22     Richaun Hol… WAS   PF           81    235 October 1… US      9         \n5 34     Giannis Ant… MIL   PF           83    243 December … GR      11        \n6 37     Matt Ryan    NYK   SF           78    215 April 17,… US      3         \n7 9      Bronny James LAL   SG           74    210 October 6… US      R         \n8 19     Jeenathan W… HOU   SG           77    205 February … US      2         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 11     Colin Castl… TOR   C            82    250 May 25, 2… US      1         \n2 23     Lauri Markk… UTA   PF           85    240 May 22, 1… FI      7         \n3 11     Isaiah Joe   OKC   SG           76    165 July 2, 1… US      4         \n4 20     Alex Sarr    WAS   C            84    205 April 26,… FR      R         \n5 24     Cam Spencer  MEM   SG           75    205 April 6, … US      R         \n6 77     Orlando Rob… SAC   C            82    235 July 10, … US      2         \n7 65     Alex Reese   PHI   PF           81    245 May 21, 1… US      R         \n8 0      Ryan Dunn    PHO   SF           79    216 January 7… US      R         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
