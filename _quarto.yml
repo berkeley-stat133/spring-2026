@@ -3,6 +3,7 @@ project:
 
 website:
   title: "STAT 133"
+  site-url: "https://stat133.berkeley.edu/spring-2026/"
   favicon: assets/stat133-hex-logo.png
   google-analytics: G-CES9J82GLL
   page-footer: 
