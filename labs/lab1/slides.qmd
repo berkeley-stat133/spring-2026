@@ -71,35 +71,41 @@ countdown::countdown(5, bottom = 0)
 
 ## Installation
 
+```{r}
+#| echo: false
+countdown::countdown(3, bottom = 0)
+```
+
 __1)__ R <br>
 <https://www.r-project.org/>
+
+. . .
 
 \
 
 __2)__ Positron <br>
 <https://positron.posit.co/>
 
+. . .
+
 \
 
 ⚠️ __2b)__ If Positron fails, then RStudio <br>
 <https://posit.co/download/rstudio-desktop/>
+
+. . .
 
 \
 
 __3)__ Windows users‼️: Git <br>
 <https://git-scm.com/>
 
-```{r}
-#| echo: false
-countdown::countdown(10, bottom = 0)
-```
-
 
 # Folder `stat133`
 
 ## Directory `stat133`
 
-In your computer, e.g. __Desktop__ or __Documents__, please create a folder (i.e. directory)
+In your computer, e.g. folder __Desktop__ or __Documents__, please create a folder (i.e. directory)
 for this course.
 
 ::: {.columns}
@@ -199,6 +205,22 @@ Open your folder `stat133`
 - Output file is an HTML document (assuming `format: html`)
 
 - BTW: most assignments will require submission of their `.qmd` and `.html` files.
+
+
+## Editing a `.qmd` file
+
+Edit the content of your `.qmd` file to include the following content:
+
+- Major(s) and, if applicable, minor.
+- Hometown.
+- Favorite song in the last 3 months.
+- Insert a table (e.g. 3x3 table).
+- Insert an image.
+- Include a quote.
+
+. . .
+
+Render your quarto file again.
 
 
 ## Submission to bCourses
