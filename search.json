@@ -2146,14 +2146,14 @@
     "href": "labs/lab1/slides.html#installation",
     "title": "Lab 1",
     "section": "Installation",
-    "text": "Installation\n1) R  https://www.r-project.org/\n\n\n2) Positron  https://positron.posit.co/\n\n\n⚠️ 2b) If Positron fails, then RStudio  https://posit.co/download/rstudio-desktop/\n\n\n3) Windows users‼️: Git  https://git-scm.com/\n\n\n\n−+\n10:00"
+    "text": "Installation\n\n\n\n−+\n03:00\n\n\n\n1) R  https://www.r-project.org/\n\n\n\n2) Positron  https://positron.posit.co/\n\n\n\n\n⚠️ 2b) If Positron fails, then RStudio  https://posit.co/download/rstudio-desktop/\n\n\n\n\n3) Windows users‼️: Git  https://git-scm.com/"
   },
   {
     "objectID": "labs/lab1/slides.html#directory-stat133",
     "href": "labs/lab1/slides.html#directory-stat133",
     "title": "Lab 1",
     "section": "Directory stat133",
-    "text": "Directory stat133\nIn your computer, e.g. Desktop or Documents, please create a folder (i.e. directory) for this course.\n\n\n👍 Good Names:\n\nstat133\nSTAT133\nStat133\n\n\n👎 Bad Names (no blank spaces):\n\nstat 133\nSTAT 133\nStat 133\n\n\nThis will be a dedicated directory for all the work you’ll do in this course."
+    "text": "Directory stat133\nIn your computer, e.g. folder Desktop or Documents, please create a folder (i.e. directory) for this course.\n\n\n👍 Good Names:\n\nstat133\nSTAT133\nStat133\n\n\n👎 Bad Names (no blank spaces):\n\nstat 133\nSTAT 133\nStat 133\n\n\nThis will be a dedicated directory for all the work you’ll do in this course."
   },
   {
     "objectID": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
@@ -2196,6 +2196,13 @@
     "title": "Lab 1",
     "section": "Rendering a .qmd file",
     "text": "Rendering a .qmd file\n\nClick the Render button.\nSave file in your lab1 folder.\nOutput file is an HTML document (assuming format: html)\nBTW: most assignments will require submission of their .qmd and .html files."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#editing-a-.qmd-file",
+    "href": "labs/lab1/slides.html#editing-a-.qmd-file",
+    "title": "Lab 1",
+    "section": "Editing a .qmd file",
+    "text": "Editing a .qmd file\nEdit the content of your .qmd file to include the following content:\n\nMajor(s) and, if applicable, minor.\nHometown.\nFavorite song in the last 3 months.\nInsert a table (e.g. 3x3 table).\nInsert an image.\nInclude a quote.\n\n\nRender your quarto file again."
   },
   {
     "objectID": "labs/lab1/slides.html#submission-to-bcourses",
@@ -2473,7 +2480,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"freshman\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"sophomore\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -2767,7 +2774,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 55     Baylor Sche… BOS   SG           78    205 September… US      R         \n2 35     Marvin Bagl… WAS   C            82    235 March 14,… US      6         \n3 20     Jericho Sims NYK   C            82    250 October 2… US      3         \n4 24     Norman Powe… LAC   SG           75    215 May 25, 1… US      9         \n5 35     Isaac Okoro  CLE   SG           76    225 January 2… US      4         \n6 14     Adam Flagler OKC   SG           73    180 December … US      1         \n7 17     Tari Eason   HOU   PF           80    215 May 10, 2… US      2         \n8 12     De'Andre Hu… ATL   SF           79    221 December … US      5         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 27     Jared Rhoden CHO   SG           77    210 August 27… US      2         \n2 54     Sandro Mamu… SAS   PF           81    240 May 23, 1… US      3         \n3 22     Malachi Fly… CHO   PG           73    185 May 10, 1… US      4         \n4 5      Kevon Looney GSW   C            81    222 February … US      9         \n5 23     Aaron Nesmi… IND   SF           77    215 October 1… US      4         \n6 27     Vit Krejci   ATL   PG           80    195 June 19, … CZ      3         \n7 44     Jackson Rowe GSW   PF           78    210 January 4… CA      R         \n8 9      Wendell Moo… CHO   SG           77    215 September… US      2         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
