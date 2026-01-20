@@ -32,7 +32,7 @@ Office hours: <br>
 :::
 
 ::: {.g-col-6}
-**GSI:** William Torous<br>
+**GSI:** Will Torous<br>
 `wtorous`<br>
 Office hours: <br>
 - Day hh-hh, Evans TBD<br>

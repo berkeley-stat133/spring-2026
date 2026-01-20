@@ -228,7 +228,7 @@ Dataviz I
 
 Dataviz II 
 
-Lab 5: slides | PS5 
+Lab 6: slides | PS5 
 
 Dataviz III | Proj3 
 :::
@@ -266,7 +266,7 @@ Joins and Pivots
 
 Exploratory EDA
 
-Lab 6: [__Quiz 3__]{.label-Quiz} | slides | PS6
+Lab 7: [__Quiz 3__]{.label-Quiz} | slides | PS6
 
 Explanatory EDA
 :::
@@ -304,7 +304,7 @@ Strings I
 
 Strings II
 
-Lab 7: slides | PS7 
+Lab 8: slides | PS7 
 
 Strings III | Proj4 
 :::
@@ -342,7 +342,7 @@ Dates and Times I
 
 Dates and Times II
 
-Lab 8: [__Quiz 4__]{.label-Quiz} | slides | PS8
+Lab 9: [__Quiz 4__]{.label-Quiz} | slides | PS8
 
 Geospatial Data
 :::
@@ -396,7 +396,7 @@ Storm Tracks I
 
 Leaflet Maps
 
-Lab 9: slides | PS9
+Lab 10: slides | PS9
 
 Shapefiles | Proj5
 :::
@@ -434,7 +434,7 @@ Choropleth Maps
 
 Raster Data I
 
-Lab 10: [__Quiz 5__]{.label-Quiz} | slides | PS10
+Lab 11: [__Quiz 5__]{.label-Quiz} | slides | PS10
 
 Raster Data II
 :::
@@ -472,7 +472,7 @@ JSON Data
 
 APIs
 
-Lab 11: slides | PS11
+Lab 12: slides | PS11
 
 XML Data | Proj6
 :::
@@ -510,7 +510,7 @@ Text Analysis 1
 
 Text Analysis 2
 
-Lab 12: [__Quiz 6__]{.label-Quiz} | slides | PS12
+Lab 13: [__Quiz 6__]{.label-Quiz} | slides | PS12
 
 Text Analysis 3
 :::
