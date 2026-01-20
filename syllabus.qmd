@@ -105,7 +105,7 @@ As a matter of course policy, I do not round up when calculating letter grades. 
 
 ### Late Work
 
-Rigorously completing the publications, problem sets and projects is for your own benefit. Since we grade them credit / no credit, no late work is accepted. Note that you can receive full credit for an assignment that is not complete as long as we see evidence of earnest engagment (please don't just submit a blank page).
+Rigorously completing the publications, problem sets and projects is for your own benefit. Since we grade them credit / no credit, no late work is accepted. Note that you can receive full credit for an assignment that is not complete as long as we see evidence of earnest engagment (please don't just submit a blank or empty template file).
 
 
 ### Collaboration policy
