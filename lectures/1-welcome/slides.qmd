@@ -226,15 +226,15 @@ countdown::countdown(3, bottom = 0)
 
 ## Assignment types
 
-- 2% Quarto Publications (credit / no credit)
+- 5% Quarto Publications (credit / no credit)
 
-- 6% Problem Sets (credit / no credit): assortment of practice problems
+- 10% Problem Sets (credit / no credit): assortment of practice problems
 
-- 12% Projects (credit / no credit): Explorations of real data and computing workflows
+- 15% Projects (credit / no credit): Explorations of real data and computing workflows
 
-- 45% Quizzes: Every two weeks in lab
+- 40% Quizzes: Every two weeks in lab
 
-- 35% Final Exam: Monday of finals week 7 - 10 pm
+- 30% Final Exam: Monday of finals week 7 - 10 pm
 
 
 ## In lab tomorrow
