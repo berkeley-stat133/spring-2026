@@ -2487,7 +2487,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"sophomore\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"freshman\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -2711,7 +2711,7 @@
     "href": "lectures/1-welcome/slides.html#assignment-types",
     "title": "Welcome",
     "section": "Assignment types",
-    "text": "Assignment types\n\n2% Quarto Publications (credit / no credit)\n6% Problem Sets (credit / no credit): assortment of practice problems\n12% Projects (credit / no credit): Explorations of real data and computing workflows\n45% Quizzes: Every two weeks in lab\n35% Final Exam: Monday of finals week 7 - 10 pm"
+    "text": "Assignment types\n\n5% Quarto Publications (credit / no credit)\n10% Problem Sets (credit / no credit): assortment of practice problems\n15% Projects (credit / no credit): Explorations of real data and computing workflows\n40% Quizzes: Every two weeks in lab\n30% Final Exam: Monday of finals week 7 - 10 pm"
   },
   {
     "objectID": "lectures/1-welcome/slides.html#in-lab-tomorrow",
@@ -2781,7 +2781,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 22     Pete Nance   PHI   C            81    225 February … US      1         \n2 0      Keion Brook… NOP   SF           79    210 August 7,… US      R         \n3 34     Giannis Ant… MIL   PF           83    243 December … GR      11        \n4 99     KJ Martin    UTA   SF           78    215 January 6… US      4         \n5 23     Mitchell Ro… NYK   C            84    240 April 1, … US      6         \n6 32     Jeff Green   HOU   PF           80    235 August 28… US      16        \n7 14     Blake Wesley SAS   SG           76    190 March 16,… US      2         \n8 3      Jaden McDan… MIN   PF           81    185 September… US      4         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 34     Jabari Walk… POR   PF           79    237 July 30, … US      2         \n2 42     Maxi Kleber  DAL   PF           82    240 January 2… DE      7         \n3 21     Noah Clowney BRK   PF           82    210 July 14, … US      1         \n4 8      OG Anunoby   NYK   PF           79    240 July 17, … GB      7         \n5 77     Kevin Porte… LAC   SG           77    203 May 4, 20… US      4         \n6 11     Jordan Mill… LAC   SF           77    194 January 2… US      1         \n7 10     Ben Simmons  BRK   PG           82    240 July 20, … AU      6         \n8 7      Paul Reed    DET   C            81    210 June 14, … US      4         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
