@@ -41,7 +41,7 @@ BTW: There is nothing due this first week.
 
 ::: {.column width="30%"}
 #### Description
-Welcome
+[Welcome](lectures/2-intro/slides.html)
 
 Lab 1: slides
 
