@@ -455,7 +455,7 @@ long_jump/
 
 \
 
-In `report.qmd` we need to import (read) `records.html`. This involves specifying the correct file path.
+In `doc.qmd` we need to import (read) `records.html`. This involves specifying the correct file path.
 
 ## Scenario A {.nostretch}
 
@@ -471,11 +471,41 @@ long_jump/
 :::
 
 ::: {.column .fragment width="70%"}
-Report qmd file
+Assume we are editing `doc.qmd` to import `records.html`
+
+\
+
+```r
+library(rvest)
+records <- read_html("___________")
+```
+
+\
+
+What is the relative path to `records.html`?
+:::
+:::::
+
+## Scenario A {.nostretch}
+
+::::: columns
+::: {.column width="30%"}
+File structure
+
+``` r
+long_jump/
+  doc.qmd
+  records.html
+```
+:::
+
+::: {.column .fragment width="70%"}
+Report `doc.qmd` file
 
 ![](images/filepath1.png)
 :::
 :::::
+
 
 ## Scenario B {.nostretch}
 
@@ -492,11 +522,42 @@ long_jump/
 :::
 
 ::: {.column .fragment width="70%"}
-Report qmd file
+Assume we are editing `doc.qmd` to import `records.html`
+
+\
+
+```r
+library(rvest)
+records <- read_html("___________")
+```
+
+\
+
+What is the relative path to `records.html`?
+:::
+:::::
+
+## Scenario B {.nostretch}
+
+::::: columns
+::: {.column width="30%"}
+File structure
+
+``` r
+long_jump/
+  doc.qmd
+  data/
+    records.html
+```
+:::
+
+::: {.column .fragment width="70%"}
+Report `doc.qmd` file
 
 ![](images/filepath2.png)
 :::
 :::::
+
 
 ## Scenario C {.nostretch}
 
@@ -514,12 +575,55 @@ long_jump/
 :::
 
 ::: {.column .fragment width="70%"}
-Report qmd file
+Assume we are editing `doc.qmd` to import `records.html`
+
+\
+
+```r
+library(rvest)
+records <- read_html("___________")
+```
+
+\
+
+What is the relative path to `records.html`?
+:::
+:::::
+
+
+## Scenario C {.nostretch}
+
+::::: columns
+::: {.column width="30%"}
+File structure
+
+``` r
+long_jump/
+  report/
+    doc.qmd
+  data/
+    records.html
+```
+:::
+
+::: {.column .fragment width="70%"}
+Report `doc.qmd` file
 
 ![](images/filepath3.png)
 :::
 :::::
 
+
+# In Summary
+
 ## 
 
--   When a **Terminal** is started the working directory is the home directory
+- Everything is a __File__ (including directories).
+- Files organized in a tree.
+- The filesystem is a hierarchy (of folders & files).
+- Folder = Directory
+- No concept of "disk".
+- File paths can be specified in 2 ways:
+    + Absolute Paths: always from the root directory.
+    + Relative Paths: location relative to a working directory.
+- [Use relative file paths!]{.hilit} 

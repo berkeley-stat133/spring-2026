@@ -23,13 +23,18 @@ We will begin at ten past. By that time, please
 
 Take a few minutes to share:
 
-- your name
+- Your Name
 
-- how many years have you been at Cal?
+- Num. of years at Cal
 
-- your major
+- Major
 
-- your hometown
+- Hometown
+
+- Which of the following would you prefer to have when graduating from college?
+    a) GPA of 3.7 or higher
+    b) Have no student loans
+    c) Meet soulmate
 
 ```{r}
 countdown::countdown(5, top = 0)
@@ -254,15 +259,23 @@ You will:
 
 ## Parting words
 
-You'll get out of this course what you put into it.
+:::: {.columns}
+::: {.column .fragment width="50%"}
+![](images/license-plate.jpeg)
+:::
 
-. . .
-
-\
-
+::: {.column .fragment width="50%"}
 I have 2 rules for you:
 
 - __Rule 1)__ Let's enjoy this semester
 
 - __Rule 2)__ Don't forget Rule 1)
 
+\
+
+::: {.fragment}
+You'll get out of this course what you put into it!
+:::
+:::
+
+::::
