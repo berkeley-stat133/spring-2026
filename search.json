@@ -2487,7 +2487,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"freshman\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"sophomore\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -2592,7 +2592,7 @@
     "href": "lectures/1-welcome/slides.html#with-the-people-around-you",
     "title": "Welcome",
     "section": "With the people around you …",
-    "text": "With the people around you …\nTake a few minutes to share:\n\nyour name\nhow many years have you been at Cal?\nyour major\nyour hometown\n\n\n\n\n−+\n05:00"
+    "text": "With the people around you …\nTake a few minutes to share:\n\nYour Name\nNum. of years at Cal\nMajor\nHometown\nWhich of the following would you prefer to have when graduating from college?\n\nGPA of 3.7 or higher\nHave no student loans\nMeet soulmate\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "lectures/1-welcome/slides.html#mens-long-jump-world-record-progression",
@@ -2725,7 +2725,7 @@
     "href": "lectures/1-welcome/slides.html#parting-words",
     "title": "Welcome",
     "section": "Parting words",
-    "text": "Parting words\nYou’ll get out of this course what you put into it.\n\n\n\nI have 2 rules for you:\n\nRule 1) Let’s enjoy this semester\nRule 2) Don’t forget Rule 1)"
+    "text": "Parting words\n\n\n\n\nI have 2 rules for you:\n\nRule 1) Let’s enjoy this semester\nRule 2) Don’t forget Rule 1)\n\n\n\n\nYou’ll get out of this course what you put into it!"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#nba-2024-2025-season-roster-data",
@@ -2781,7 +2781,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 34     Jabari Walk… POR   PF           79    237 July 30, … US      2         \n2 42     Maxi Kleber  DAL   PF           82    240 January 2… DE      7         \n3 21     Noah Clowney BRK   PF           82    210 July 14, … US      1         \n4 8      OG Anunoby   NYK   PF           79    240 July 17, … GB      7         \n5 77     Kevin Porte… LAC   SG           77    203 May 4, 20… US      4         \n6 11     Jordan Mill… LAC   SF           77    194 January 2… US      1         \n7 10     Ben Simmons  BRK   PG           82    240 July 20, … AU      6         \n8 7      Paul Reed    DET   C            81    210 June 14, … US      4         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 10     Brandon Wil… DAL   PG           73    190 November … US      2         \n2 0      Aaron Holid… HOU   PG           72    185 September… US      6         \n3 9      Nickeil Ale… MIN   SG           77    205 September… CA      5         \n4 2      Caleb Houst… ORL   SF           80    205 January 9… CA      2         \n5 3      Julian Stra… DEN   SG           78    205 April 18,… US      1         \n6 21     JT Thor      WAS   PF           81    203 August 26… US      3         \n7 17     Tari Eason   HOU   PF           80    215 May 10, 2… US      2         \n8 5      AJ Johnson   WAS   SG           77    160 December … US      R         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -3292,35 +3292,56 @@
     "href": "lectures/2-intro/slides.html#section-14",
     "title": "Introduction",
     "section": "",
-    "text": "Let’s consider 3 different file structures\n\n\nScenario A\nlong_jump/\n  doc.qmd\n  records.html\n\nScenario B\nlong_jump/\n  doc.qmd\n  data/\n    records.html\n\nScenario C\nlong_jump/\n  report/\n    doc.qmd\n  data/\n    records.html\n\n\n\n\nIn report.qmd we need to import (read) records.html. This involves specifying the correct file path."
+    "text": "Let’s consider 3 different file structures\n\n\nScenario A\nlong_jump/\n  doc.qmd\n  records.html\n\nScenario B\nlong_jump/\n  doc.qmd\n  data/\n    records.html\n\nScenario C\nlong_jump/\n  report/\n    doc.qmd\n  data/\n    records.html\n\n\n\n\nIn doc.qmd we need to import (read) records.html. This involves specifying the correct file path."
   },
   {
     "objectID": "lectures/2-intro/slides.html#scenario-a",
     "href": "lectures/2-intro/slides.html#scenario-a",
     "title": "Introduction",
     "section": "Scenario A",
-    "text": "Scenario A\n\n\nFile structure\nlong_jump/\n  doc.qmd\n  records.html\n\nReport qmd file"
+    "text": "Scenario A\n\n\nFile structure\nlong_jump/\n  doc.qmd\n  records.html\n\nAssume we are editing doc.qmd to import records.html\n\n\nlibrary(rvest)\nrecords &lt;- read_html(\"___________\")\n\n\nWhat is the relative path to records.html?"
+  },
+  {
+    "objectID": "lectures/2-intro/slides.html#scenario-a-1",
+    "href": "lectures/2-intro/slides.html#scenario-a-1",
+    "title": "Introduction",
+    "section": "Scenario A",
+    "text": "Scenario A\n\n\nFile structure\nlong_jump/\n  doc.qmd\n  records.html\n\nReport doc.qmd file"
   },
   {
     "objectID": "lectures/2-intro/slides.html#scenario-b",
     "href": "lectures/2-intro/slides.html#scenario-b",
     "title": "Introduction",
     "section": "Scenario B",
-    "text": "Scenario B\n\n\nFile structure\nlong_jump/\n  doc.qmd\n  data/\n    records.html\n\nReport qmd file"
+    "text": "Scenario B\n\n\nFile structure\nlong_jump/\n  doc.qmd\n  data/\n    records.html\n\nAssume we are editing doc.qmd to import records.html\n\n\nlibrary(rvest)\nrecords &lt;- read_html(\"___________\")\n\n\nWhat is the relative path to records.html?"
+  },
+  {
+    "objectID": "lectures/2-intro/slides.html#scenario-b-1",
+    "href": "lectures/2-intro/slides.html#scenario-b-1",
+    "title": "Introduction",
+    "section": "Scenario B",
+    "text": "Scenario B\n\n\nFile structure\nlong_jump/\n  doc.qmd\n  data/\n    records.html\n\nReport doc.qmd file"
   },
   {
     "objectID": "lectures/2-intro/slides.html#scenario-c",
     "href": "lectures/2-intro/slides.html#scenario-c",
     "title": "Introduction",
     "section": "Scenario C",
-    "text": "Scenario C\n\n\nFile structure\nlong_jump/\n  report/\n    doc.qmd\n  data/\n    records.html\n\nReport qmd file"
+    "text": "Scenario C\n\n\nFile structure\nlong_jump/\n  report/\n    doc.qmd\n  data/\n    records.html\n\nAssume we are editing doc.qmd to import records.html\n\n\nlibrary(rvest)\nrecords &lt;- read_html(\"___________\")\n\n\nWhat is the relative path to records.html?"
+  },
+  {
+    "objectID": "lectures/2-intro/slides.html#scenario-c-1",
+    "href": "lectures/2-intro/slides.html#scenario-c-1",
+    "title": "Introduction",
+    "section": "Scenario C",
+    "text": "Scenario C\n\n\nFile structure\nlong_jump/\n  report/\n    doc.qmd\n  data/\n    records.html\n\nReport doc.qmd file"
   },
   {
     "objectID": "lectures/2-intro/slides.html#section-15",
     "href": "lectures/2-intro/slides.html#section-15",
     "title": "Introduction",
     "section": "",
-    "text": "When a Terminal is started the working directory is the home directory"
+    "text": "Everything is a File (including directories).\nFiles organized in a tree.\nThe filesystem is a hierarchy (of folders & files).\nFolder = Directory\nNo concept of “disk”.\nFile paths can be specified in 2 ways:\n\nAbsolute Paths: always from the root directory.\nRelative Paths: location relative to a working directory.\n\nUse relative file paths!"
   },
   {
     "objectID": "lectures/17-joins-pivots/slides.html#agenda",

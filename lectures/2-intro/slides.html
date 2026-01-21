@@ -568,7 +568,7 @@ Gaston Sanchez
 <p>Absolute path to <code>README.md</code></p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_3b18f6f3" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_5c4c42a1" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
@@ -628,7 +628,7 @@ Gaston Sanchez
 <p>Relative path to <code>doc.qmd</code>, assuming working directory is <code>Documents/</code></p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_50047494" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_e713ca44" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
@@ -688,7 +688,7 @@ Gaston Sanchez
 <div class="fragment">
 <p><br>
 </p>
-<p>In <code>report.qmd</code> we need to import (read) <code>records.html</code>. This involves specifying the correct file path.</p>
+<p>In <code>doc.qmd</code> we need to import (read) <code>records.html</code>. This involves specifying the correct file path.</p>
 </div>
 </section>
 <section id="scenario-a" class="slide level2 nostretch">
@@ -700,7 +700,26 @@ Gaston Sanchez
 <span id="cb17-2"><a></a>  doc.qmd</span>
 <span id="cb17-3"><a></a>  records.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment" style="width:70%;">
-<p>Report qmd file</p>
+<p>Assume we are editing <code>doc.qmd</code> to import <code>records.html</code></p>
+<p><br>
+</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">library</span>(rvest)</span>
+<span id="cb18-2"><a></a>records <span class="ot">&lt;-</span> <span class="fu">read_html</span>(<span class="st">"___________"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br>
+</p>
+<p>What is the relative path to <code>records.html</code>?</p>
+</div></div>
+</section>
+<section id="scenario-a-1" class="slide level2 nostretch">
+<h2>Scenario A</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p>File structure</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>long_jump<span class="sc">/</span></span>
+<span id="cb19-2"><a></a>  doc.qmd</span>
+<span id="cb19-3"><a></a>  records.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fragment" style="width:70%;">
+<p>Report <code>doc.qmd</code> file</p>
 <p><img data-src="images/filepath1.png"></p>
 </div></div>
 </section>
@@ -709,12 +728,32 @@ Gaston Sanchez
 <div class="columns">
 <div class="column fragment" style="width:30%;">
 <p>File structure</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>long_jump<span class="sc">/</span></span>
-<span id="cb18-2"><a></a>  doc.qmd</span>
-<span id="cb18-3"><a></a>  data<span class="sc">/</span></span>
-<span id="cb18-4"><a></a>    records.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>long_jump<span class="sc">/</span></span>
+<span id="cb20-2"><a></a>  doc.qmd</span>
+<span id="cb20-3"><a></a>  data<span class="sc">/</span></span>
+<span id="cb20-4"><a></a>    records.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment" style="width:70%;">
-<p>Report qmd file</p>
+<p>Assume we are editing <code>doc.qmd</code> to import <code>records.html</code></p>
+<p><br>
+</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">library</span>(rvest)</span>
+<span id="cb21-2"><a></a>records <span class="ot">&lt;-</span> <span class="fu">read_html</span>(<span class="st">"___________"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br>
+</p>
+<p>What is the relative path to <code>records.html</code>?</p>
+</div></div>
+</section>
+<section id="scenario-b-1" class="slide level2 nostretch">
+<h2>Scenario B</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p>File structure</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>long_jump<span class="sc">/</span></span>
+<span id="cb22-2"><a></a>  doc.qmd</span>
+<span id="cb22-3"><a></a>  data<span class="sc">/</span></span>
+<span id="cb22-4"><a></a>    records.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fragment" style="width:70%;">
+<p>Report <code>doc.qmd</code> file</p>
 <p><img data-src="images/filepath2.png"></p>
 </div></div>
 </section>
@@ -723,20 +762,56 @@ Gaston Sanchez
 <div class="columns">
 <div class="column fragment" style="width:30%;">
 <p>File structure</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>long_jump<span class="sc">/</span></span>
-<span id="cb19-2"><a></a>  report<span class="sc">/</span></span>
-<span id="cb19-3"><a></a>    doc.qmd</span>
-<span id="cb19-4"><a></a>  data<span class="sc">/</span></span>
-<span id="cb19-5"><a></a>    records.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>long_jump<span class="sc">/</span></span>
+<span id="cb23-2"><a></a>  report<span class="sc">/</span></span>
+<span id="cb23-3"><a></a>    doc.qmd</span>
+<span id="cb23-4"><a></a>  data<span class="sc">/</span></span>
+<span id="cb23-5"><a></a>    records.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment" style="width:70%;">
-<p>Report qmd file</p>
+<p>Assume we are editing <code>doc.qmd</code> to import <code>records.html</code></p>
+<p><br>
+</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">library</span>(rvest)</span>
+<span id="cb24-2"><a></a>records <span class="ot">&lt;-</span> <span class="fu">read_html</span>(<span class="st">"___________"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br>
+</p>
+<p>What is the relative path to <code>records.html</code>?</p>
+</div></div>
+</section>
+<section id="scenario-c-1" class="slide level2 nostretch">
+<h2>Scenario C</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p>File structure</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>long_jump<span class="sc">/</span></span>
+<span id="cb25-2"><a></a>  report<span class="sc">/</span></span>
+<span id="cb25-3"><a></a>    doc.qmd</span>
+<span id="cb25-4"><a></a>  data<span class="sc">/</span></span>
+<span id="cb25-5"><a></a>    records.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fragment" style="width:70%;">
+<p>Report <code>doc.qmd</code> file</p>
 <p><img data-src="images/filepath3.png"></p>
 </div></div>
+</section></section>
+<section>
+<section id="in-summary" class="title-slide slide level1 center">
+<h1>In Summary</h1>
+
 </section>
 <section id="section-15" class="slide level2">
 <h2></h2>
 <ul>
-<li class="fragment">When a <strong>Terminal</strong> is started the working directory is the home directory</li>
+<li class="fragment">Everything is a <strong>File</strong> (including directories).</li>
+<li class="fragment">Files organized in a tree.</li>
+<li class="fragment">The filesystem is a hierarchy (of folders &amp; files).</li>
+<li class="fragment">Folder = Directory</li>
+<li class="fragment">No concept of “disk”.</li>
+<li class="fragment">File paths can be specified in 2 ways:
+<ul>
+<li class="fragment">Absolute Paths: always from the root directory.</li>
+<li class="fragment">Relative Paths: location relative to a working directory.</li>
+</ul></li>
+<li class="fragment"><span class="hilit">Use relative file paths!</span></li>
 </ul>
 
 
