@@ -300,6 +300,20 @@ Example of absolute path
 
 ![](images/file-system2.png){width="70%" fig-align="center"}
 
+Absolute path to `Music/`, assuming `Drew/` is the home directory 
+
+. . .
+
+```         
+~/Music/
+```
+
+##  {.nostretch}
+
+Example of absolute path
+
+![](images/file-system2.png){width="70%" fig-align="center"}
+
 Absolute path to `pop.mp3`
 
 . . .

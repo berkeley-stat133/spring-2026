@@ -11,15 +11,15 @@ Append `@berkeley.edu` to all email addresses.
 **Instructor:** Gaston Sanchez<br>
 `gastonsanchez`<br>
 Office hours: <br>
-- Day hh-hh, Evans 309<br>
+- Mon 1:30pm-2:30pm, Evans 309<br>
+- Tue 1:30pm-2:30pm, Evans 309<br>
 :::
 
 ::: {.g-col-6}
 **GSI**: Drew Galloro<br>
 `argg2159`<br>
 Office hours:<br>
-- Day hh-hh, Evans TBD<br>
-- Day hh-hh, Evans TBD
+- Tue 3:00pm-5:00pm, Evans 434<br>
 :::
 
 
@@ -28,30 +28,29 @@ Office hours:<br>
 `clara_reckhorn`<br>
 Office hours: <br>
 - Day hh-hh, Evans TBD<br>
-- Day hh-hh, Evans TBD
 :::
 
 ::: {.g-col-6}
 **GSI:** Will Torous<br>
 `wtorous`<br>
 Office hours: <br>
-- Day hh-hh, Evans TBD<br>
-- Day hh-hh, Evans TBD
+- Mon 1:00pm-2:00pm, Evans 434<br>
+- Wed 12:30pm-1:30pm, Evans 434
 :::
 
 
 ::: {.g-col-6}
 **Tutor:** Carlota Blanco<br>
 Office hours: <br>
-- Day hh-hh, Evans TBD<br>
-- Day hh-hh, Evans TBD
+- Mon 10:10am-12:10pm, Evans TBD<br>
+- Wed 10:10am-12:10pm, Evans TBD
 :::
 
 ::: {.g-col-6}
 **Tutor**: Montserrat Ibarra<br>
 Office hours: <br>
-- Day hh-hh, Evans TBD<br>
-- Day hh-hh, Evans TBD
+- Mon 2:00pm-4:00pm, Evans TBD<br>
+- Fri 2:00pm-4:00pm, Evans TBD
 :::
 
 :::
