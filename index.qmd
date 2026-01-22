@@ -43,7 +43,7 @@ BTW: There is nothing due this first week.
 #### Description
 [Welcome](lectures/1-welcome/slides.html)
 
-Lab 1: slides
+Lab 1: [slides](labs/lab1/slides.html)
 
 Introduction
 :::
