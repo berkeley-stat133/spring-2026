@@ -2781,7 +2781,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 28     Rui Hachimu… LAL   PF           80    230 February … JP      5         \n2 3      Anthony Dav… DAL   PF           82    253 March 11,… US      12        \n3 5      Dalano Bant… POR   PG           80    203 November … CA      3         \n4 4      Isaiah Stev… MIA   PG           71    185 November … US      R         \n5 8      Jalen Willi… OKC   SG           77    211 April 14,… US      2         \n6 16     Anthony Gill WAS   PF           79    230 October 1… US      4         \n7 3      DaQuan Jeff… CHO   SG           77    222 August 30… US      5         \n8 8      Zach LaVine  CHI   SF           77    200 March 10,… US      10        \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 30     Jordan Good… LAL   PG           75    215 October 2… US      3         \n2 1      James Harden LAC   PG           77    220 August 26… US      15        \n3 4      Moses Moody  GSW   SG           77    211 May 31, 2… US      3         \n4 77     Jamison Bat… TOR   SF           79    220 May 10, 2… US      R         \n5 35     Goga Bitadze ORL   C            83    250 July 20, … GE      5         \n6 22     Andrew Wigg… MIA   SF           78    197 February … CA      10        \n7 88     Patty Mills  LAC   PG           74    180 August 11… AU      15        \n8 55     Luka Garza   MIN   C            82    243 December … US      3         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -3243,39 +3243,46 @@
     "href": "lectures/2-intro/slides.html#section-8",
     "title": "Introduction",
     "section": "",
-    "text": "Example of absolute path\n\n\n\n\n\nAbsolute path to pop.mp3\n\n/Users/Drew/Music/pop.mp3"
+    "text": "Example of absolute path\n\n\n\n\n\nAbsolute path to Music/, assuming Drew/ is the home directory\n\n~/Music/"
   },
   {
     "objectID": "lectures/2-intro/slides.html#section-9",
     "href": "lectures/2-intro/slides.html#section-9",
     "title": "Introduction",
     "section": "",
-    "text": "Your Turn\n\n\n\n\n\nAbsolute path to README.md\n\n\n\n−+\n00:30\n\n\n\n\n/Users/Clara/Documents/README.md"
+    "text": "Example of absolute path\n\n\n\n\n\nAbsolute path to pop.mp3\n\n/Users/Drew/Music/pop.mp3"
   },
   {
     "objectID": "lectures/2-intro/slides.html#section-10",
     "href": "lectures/2-intro/slides.html#section-10",
     "title": "Introduction",
     "section": "",
-    "text": "Example of relative path\n\n\n\n\n\nRelative path to README.md, assuming working directory is Clara/\n\nDocuments/README.md"
+    "text": "Your Turn\n\n\n\n\n\nAbsolute path to README.md\n\n\n\n−+\n00:30\n\n\n\n\n/Users/Clara/Documents/README.md"
   },
   {
     "objectID": "lectures/2-intro/slides.html#section-11",
     "href": "lectures/2-intro/slides.html#section-11",
     "title": "Introduction",
     "section": "",
-    "text": "Example of relative path\n\n\n\n\n\nRelative path to README.md, assuming working directory is Drew/\n\n../Clara/Documents/README.md"
+    "text": "Example of relative path\n\n\n\n\n\nRelative path to README.md, assuming working directory is Clara/\n\nDocuments/README.md"
   },
   {
     "objectID": "lectures/2-intro/slides.html#section-12",
     "href": "lectures/2-intro/slides.html#section-12",
     "title": "Introduction",
     "section": "",
-    "text": "Example of relative path\n\n\n\n\n\nRelative path to pop.mp3, assuming working directory is Project/\n\n../../Drew/Music/pop.mp3"
+    "text": "Example of relative path\n\n\n\n\n\nRelative path to README.md, assuming working directory is Drew/\n\n../Clara/Documents/README.md"
   },
   {
     "objectID": "lectures/2-intro/slides.html#section-13",
     "href": "lectures/2-intro/slides.html#section-13",
+    "title": "Introduction",
+    "section": "",
+    "text": "Example of relative path\n\n\n\n\n\nRelative path to pop.mp3, assuming working directory is Project/\n\n../../Drew/Music/pop.mp3"
+  },
+  {
+    "objectID": "lectures/2-intro/slides.html#section-14",
+    "href": "lectures/2-intro/slides.html#section-14",
     "title": "Introduction",
     "section": "",
     "text": "Your Turn\n\n\n\n\n\nRelative path to doc.qmd, assuming working directory is Documents/\n\n\n\n−+\n00:30\n\n\n\n\n../../Gaston/Project/doc.qmd"
@@ -3288,8 +3295,8 @@
     "text": "Advantages of Relative Paths\nPortability: Your code works anywhere (your machine, a colleague’s, a web server) without changing paths, as long as the file structure within the project remains consistent.\n\n\n\nFlexibility: You can restructure folders within your project.\n\n\n\n\nSelf-Contained Projects: Keeps everything needed for the project bundled together.\n\n\n\n\nSimpler References: Shorter paths are quicker to type and less prone to errors than long absolute paths."
   },
   {
-    "objectID": "lectures/2-intro/slides.html#section-14",
-    "href": "lectures/2-intro/slides.html#section-14",
+    "objectID": "lectures/2-intro/slides.html#section-15",
+    "href": "lectures/2-intro/slides.html#section-15",
     "title": "Introduction",
     "section": "",
     "text": "Let’s consider 3 different file structures\n\n\nScenario A\nlong_jump/\n  doc.qmd\n  records.html\n\nScenario B\nlong_jump/\n  doc.qmd\n  data/\n    records.html\n\nScenario C\nlong_jump/\n  report/\n    doc.qmd\n  data/\n    records.html\n\n\n\n\nIn doc.qmd we need to import (read) records.html. This involves specifying the correct file path."
@@ -3337,8 +3344,8 @@
     "text": "Scenario C\n\n\nFile structure\nlong_jump/\n  report/\n    doc.qmd\n  data/\n    records.html\n\nReport doc.qmd file"
   },
   {
-    "objectID": "lectures/2-intro/slides.html#section-15",
-    "href": "lectures/2-intro/slides.html#section-15",
+    "objectID": "lectures/2-intro/slides.html#section-16",
+    "href": "lectures/2-intro/slides.html#section-16",
     "title": "Introduction",
     "section": "",
     "text": "Everything is a File (including directories).\nFiles organized in a tree.\nThe filesystem is a hierarchy (of folders & files).\nFolder = Directory\nNo concept of “disk”.\nFile paths can be specified in 2 ways:\n\nAbsolute Paths: always from the root directory.\nRelative Paths: location relative to a working directory.\n\nUse relative file paths!"
