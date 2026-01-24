@@ -11,7 +11,7 @@ chalkboard: true
 -   Opened QuartoPub account
 -   Installed Quarto
 -   Published a basic qmd file
--   Started PS1
+-   Started PS1 (available on bCourses)
 
 
 ## Review of Quarto Commands

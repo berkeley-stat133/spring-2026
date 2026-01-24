@@ -8,57 +8,54 @@ chalkboard: true
 knitr::opts_chunk$set(echo = TRUE, error = TRUE)
 ```
 
-## Review
-
-Last time ...
-
 
 ## Announcements
 
-- Working locally
-
 - Office Hours / Group Tutoring
 
-- Problem Sets
+- DSP accommodations ✉️
+
+- Quarto Publication 1 (Thu 1/29 in lab)
+
+- Problem Set 1 (available Thu 1/29, due Wed 2/4)
 
 
-# Intro to Vectors and Types
+# Vectors and Data Types
 
 ## {.nostretch}
 
-![](images/leia-info.svg){width="80%" fig-align="center"}
+![](images/leia-info.svg){width="83%" fig-align="center"}
 
 
-## Leia's data {auto-animate=true}
+## Leia's data objects {auto-animate=true}
 
 ::: {.columns}
 ::: {.column width="40%"}
-![](images/leia-info.png){fig-align="center" width="40%"}
+![](images/leia-info2.png){fig-align="center" width="45%"}
 :::
 
 ::: {.column .fragment width="50%"}
 \
 
 ```{r}
-#| output-location: fragment
 name <- "Leia"
 ```
+
 :::
 :::
 
 
-## Leia's data {auto-animate=true}
+## Leia's data objects {auto-animate=true}
 
 ::: {.columns}
 ::: {.column width="40%"}
-![](images/leia-info.png){fig-align="center" width="40%"}
+![](images/leia-info2.png){fig-align="center" width="45%"}
 :::
 
 ::: {.column width="50%"}
 \
 
 ```{r}
-#| output-location: fragment
 name <- "Leia"
 
 gender <- "female"
@@ -67,18 +64,17 @@ gender <- "female"
 :::
 
 
-## Leia's data {auto-animate=true}
+## Leia's data objects {auto-animate=true}
 
 ::: {.columns}
 ::: {.column width="40%"}
-![](images/leia-info.png){fig-align="center" width="40%"}
+![](images/leia-info2.png){fig-align="center" width="45%"}
 :::
 
 ::: {.column width="50%"}
 \
 
 ```{r}
-#| output-location: fragment
 name <- "Leia"
 
 gender <- "female"
@@ -89,18 +85,17 @@ height <- 1.50
 :::
 
 
-## Leia's data {auto-animate=true}
+## Leia's data objects {auto-animate=true}
 
 ::: {.columns}
 ::: {.column width="40%"}
-![](images/leia-info2.png){fig-align="center" width="40%"}
+![](images/leia-info2.png){fig-align="center" width="45%"}
 :::
 
 ::: {.column width="50%"}
 \
 
 ```{r}
-#| output-location: fragment
 name <- "Leia"
 
 gender <- "female"
@@ -118,7 +113,6 @@ force <- TRUE
 ::: {.columns}
 ::: {.column width="50%"}
 ```{r}
-#| output-location: fragment
 # character (chr)
 name <- "Leia"
 
@@ -132,7 +126,6 @@ force <- TRUE
 
 ::: {.column .fragment width="50%"}
 ```{r}
-#| output-location: fragment
 # double (dbl)
 height <- 1.50
 
@@ -145,60 +138,51 @@ height_cm2 <- 150L
 :::
 :::
 
+\
+
+. . .
+
+BTW: All these objects are [vectors]{.bold-hilit}.
 
 # More Data
 
 ## {.nostretch}
 
-![](images/leia-luke-han-info.svg){width="80%" fig-align="center"}
+![](images/leia-luke-han-info.svg){width="84%" fig-align="center"}
 
 
 ## Vectors {auto-animate=true}
 
-To create bigger vectors we use the [combine]{.hilit} function `c()`
+To create "larger" vectors we use the [combine]{.hilit} function `c()`
+
+. . .
 
 ```{r}
 #| output-location: fragment
 name <- c("Leia", "Luke", "Han")
+name
 ```
 
-## Vectors {auto-animate=true}
-
-To create bigger vectors we use the [combine]{.hilit} function `c()`
+. . .
 
 ```{r}
 #| output-location: fragment
-name <- c("Leia", "Luke", "Han")
-
 gender <- c("female", "male", "male")
+gender
 ```
 
-## Vectors {auto-animate=true}
-
-To create bigger vectors we use the [combine]{.hilit} function `c()`
-
+. . .
 ```{r}
 #| output-location: fragment
-name <- c("Leia", "Luke", "Han")
-
-gender <- c("female", "male", "male")
-
-height <- c(1.50, 1.75, 1.80)
+height <- c(1.50, 1.70, 1.80)
+height
 ```
 
-## Vectors {auto-animate=true}
-
-To create bigger vectors we use the [combine]{.hilit} function `c()`
-
+. . .
 ```{r}
 #| output-location: fragment
-name <- c("Leia", "Luke", "Han")
-
-gender <- c("female", "male", "male")
-
-height <- c(1.50, 1.75, 1.80)
-
 force <- c(TRUE, TRUE, FALSE)
+force
 ```
 
 
@@ -236,7 +220,7 @@ length(name)
 
 ```{r}
 #| output-location: fragment
-height <- c(1.50, 1.75, 1.80)
+height <- c(1.50, 1.70, 1.80)
 height
 ```
 
@@ -283,16 +267,20 @@ Special values in an atomic vector:
 
 ## A comment about comments
 
-Comment character: special character to skip evaluation of remaining characters on a line. R (and Python) use `#`.
+[Comment character]{.bold-hilit}: special character to skip evaluation of remaining characters on a line. R (and Python) use `#`.
 
 ```{r}
+#| output-location: fragment
 # create vector
 c("A", "C", "D") # vector created!
 ```
 
+. . .
+
 vs.
 
 ```{r}
+#| output-location: fragment
 create vector
 c("A", "C", "D") vector created!
 ```
@@ -300,9 +288,9 @@ c("A", "C", "D") vector created!
 
 ## R jargon: Types and Modes
 
-- You'll often see/hear useRs talking about "modes" instead of "types".
+- You'll often see/hear useRs talking about ["modes"]{.mdlit} instead of ["types"]{.hilit}.
 
-- The function `typeof()` returns the [type of data]{.hilit}: this is how the values are stored internally in R.
+- The function `typeof()` returns the [type of data]{.bold-hilit}: this is how the values are stored internally in R.
 
 . . .
 
@@ -329,19 +317,105 @@ mode(name)
 
 ![](images/obj-vector-atomic-modes.png){width="70%" fig-align="center"}
 
+- 4 main [types]{.hilit}: logical, integer, double, character
+- 3 main [modes]{.mdlit}: logical, numeric, character
+
+
+# Your Turn
+
+##
+
+| [Name]{.bold-hilit} | [House]{.bold-hilit} | [Spells]{.bold-hilit} |
+|-----------|------------|:------:|
+| Harry     | Gryffindor | 60 |
+| Bellatrix | Slytherin  | 75 |
+| Hermione  | Gryffindor | 70 |
+
+\
+
 . . .
 
-- 4 main types: logical, integer, double, character
-- 3 main modes: logical, numeric, character
+```{r}
+#| echo: false
+countdown::countdown(1, bottom = 0)
+```
+
+Which command creates a valid vector `Name`?
+
+::: {.nonincremental}
+a) `Name <- (Harry, Bellatrix, Hermione)`
+b) `Name <- c(Harry, Bellatrix, Hermione)`
+c) `Name -> c("Harry", "Bellatrix", "Hermione")`
+d) `Name <- c("Harry", "Bellatrix", "Hermione")`
+:::
+
+
+##
+
+| [Name]{.bold-hilit} | [House]{.bold-hilit} | [Spells]{.bold-hilit} |
+|-----------|------------|:------:|
+| Harry     | Gryffindor | 60 |
+| Bellatrix | Slytherin  | 75 |
+| Hermione  | Gryffindor | 70 |
+
+\
+
+. . .
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+What is the [data type]{.bold-hilit} of the following vectors?
+
+::: {.nonincremental}
+a) `spells1 <- c(60, 75, 70)`
+b) `spells2 <- c(60.0, 75.0, 70.0)`
+c) `spells3 <- c(60L, 75L, 70L)`
+d) `spells3 <- c("60", "75", "70")`
+:::
+
+
+##
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+Consider the following vectors:
+
+::: {.nonincremental}
+- `HH <- c("Harry", "Hermione")` 
+- `Spells <- c(60, 75, 70)` 
+:::
+
+\
+
+. . .
+
+What is the [length]{.bold-hilit} of the following vectors?
+
+::: {.nonincremental}
+1) `c(HH, "Ron")`
+2) `c(HH, c("Ron", "Luna"))`
+3) `c(Spells, Spells)`
+4) `c(Spells, NULL)`
+:::
 
 
 # Creating Vectors
 
 ## Functions to create vectors
 
-R has a large repertoire of functions to create a variety of vectors in different ways.
+R has a large repertoire of functions to create a variety of vectors.
 
 We've already seen the combine function `c()`.
+
+\
+
+. . .
 
 Functions to initialize "dummy" vectors:
 

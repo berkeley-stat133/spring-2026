@@ -8,27 +8,20 @@ chalkboard: true
 knitr::opts_chunk$set(echo = TRUE, error = TRUE)
 ```
 
-## Review
-
-Last time ...
-
-## Announcements
-
--   Working locally
-
--   Office Hours / Group Tutoring
-
--   Problem Sets
-
-# Vectors
+# Last time ...
 
 ## Vectors
 
--   Central data structure in R
+- Central data structure in R
 
--   Ordered set of elements
+- Ordered set of elements
 
--   **Atomic**: elements of the same type
+- **Atomic**: elements of the same type: `typeof()`
+
+- Have `length()`
+
+- Elements can be named: `names()`
+
 
 ## Atomic\*
 
@@ -42,27 +35,151 @@ Special values in an atomic vector.
 
 -   `Inf`: Infinity
 
-## A comment about comments {auto-animate="true"}
 
-Comment character: special character to skip evaluation of remaining characters on a line. R (and Python) use `#`.
+## Functions to create vectors
 
-::: fragment
+- `c()`
+- `vector(mode = , length = )`
+    + `logical()`, `integer()`, `double()`, `character()`
+- `seq(from = , to = , by = )`
+- `rep(x, each = , times = , length.out = )`
+- colon operator: `1:10`
+
+
+##
+
+Fill in the blanks to get the following sequences: 
+
 ```{r}
-#| output-location: fragment
-# create vector
-c("A", "C", "D") # vector created!
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
 ```
-:::
-
-::: fragment
-vs.
 
 ```{r}
-#| output-location: fragment
-create vector
-c("A", "C", "D") vector created!
+#| eval: false
+seq(from = __, to = __, by = __)
 ```
-:::
+
+```{r}
+#| echo: false
+seq(from = 3, to = 15, by = 3)
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: "answer"
+#| eval: false
+seq(from = 3, to = 15, by = 3)
+```
+
+\
+
+```{r}
+#| eval: false
+seq(from = __, to = __, by = __)
+```
+
+```{r}
+#| echo: false
+seq(from = 10, to = 0, by = -2)
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: "answer"
+#| eval: false
+seq(from = 10, to = 0, by = -2)
+```
+
+\
+
+```{r}
+#| eval: false
+seq(from = __, to = __, by = __)
+```
+
+```{r}
+#| echo: false
+seq(from = 0, to = -10, by = -2)
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: "answer"
+#| eval: false
+seq(from = 0, to = -10, by = -2)
+```
+
+
+##
+
+Fill in the blanks to get the following repetitions:
+
+```{r}
+#| echo: false
+countdown::countdown(1, bottom = 0)
+```
+
+```{r}
+#| eval: false
+y <- c(0, 1, 2)
+
+rep(y, times = __)
+```
+
+```{r}
+#| echo: false
+y <- c(0, 1, 2)
+rep(y, times = 3)
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: "answer"
+#| eval: false
+rep(y, times = 3)
+```
+
+\
+
+```{r}
+#| eval: false
+rep(y, each = __)
+```
+
+```{r}
+#| echo: false
+y <- c(0, 1, 2)
+rep(y, each = 2)
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: "answer"
+#| eval: false
+rep(y, each = 2)
+```
+
+\
+
+```{r}
+#| eval: false
+rep(y, times = __)
+```
+
+```{r}
+#| echo: false
+y <- c(0, 1, 2)
+rep(y, times = 1:3)
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: "answer"
+#| eval: false
+rep(y, times = 1:3)
+```
+
 
 # Behavior of Vectors
 
@@ -84,11 +201,17 @@ c(1, "dog", TRUE)
 countdown::countdown(2.5, bottom = 0)
 ```
 
+
 ## Vectorization
 
-[Vectorized]{.bold-hilit}: Operations and functions that can run on an entire vector at once.
+. . .
+
+[Vectorized]{.bold-hilit}: Operations and functions that can run on an entire vector at once (i.e. element-wise computations)
+
+. . .
 
 ```{r}
+#| output-location: fragment
 dbl_vec <- c(1, 2.3, 4)
 
 log(dbl_vec) # vectorized
@@ -96,23 +219,50 @@ log(dbl_vec) # vectorized
 
 \
 
+. . .
+
 ```{r}
+#| output-location: fragment
+# not vectorized
 sum(dbl_vec) # vector-as-argument
 ```
 
+
 ## Vector Recycling
+
+. . .
 
 [Vector Recycling]{.bold-hilit}: If a function requires a longer vector than provided, it will fill the vector with the existing elements, in order.
 
+. . .
+
 ```{r}
+#| output-location: fragment
 c(2, 6, 1)^2
 ```
 
+
 ## Coercion
 
-[Implicit Coercion]{.bold-hilit}: Automatic change of data types to ensure atomic vectors. Changes follow a hierarchy.
+. . .
+
+[Implicit Coercion]{.bold-hilit}: Automatic change of data types to ensure atomic vectors. 
+
+. . .
+
+```{r}
+#| output-location: fragment
+c(1, "dog", TRUE)
+```
+
+. . .
+
+\
+
+Changes follow a hierarchy.
 
 logical \< integer \< double \< character
+
 
 ## Coercion
 
@@ -135,6 +285,7 @@ Depending on what data-type you want to coerce to, these functions may or may no
 ```{r}
 as.double(c(TRUE, FALSE, FALSE, FALSE))
 ```
+
 
 # Vector Subsetting
 
@@ -164,6 +315,20 @@ char_vec[2]
 char_vec[2:3] 
 ```
 
+. . .
+
+```{r}
+#| output-location: fragment
+char_vec[-2] 
+```
+
+. . .
+
+\
+
+[Recall that R starts indexing at 1!]{.mdlit}
+
+
 ## Subsetting by Name
 
 *aka* character subsetting
@@ -191,6 +356,14 @@ char_vec2[c("lux", "fiat")]
 *aka* logical subsetting
 
 ```{r}
+char_vec2
+```
+
+. . .
+
+\
+
+```{r}
 #| output-location: fragment
 char_vec2[c(TRUE, FALSE, TRUE)]
 ```
@@ -198,6 +371,12 @@ char_vec2[c(TRUE, FALSE, TRUE)]
 . . .
 
 Note: the logical vector should be of the same length.
+
+```{r}
+#| output-location: fragment
+char_vec2[TRUE]
+```
+
 
 ## Question
 
@@ -256,10 +435,3 @@ names(z) <- c("A", "B", "C")
 z
 ```
 
-## For next time
-
--   Work on problem sets.
-
--   Visit office hours and group tutoring.
-
--   Have a great weekend 😎
