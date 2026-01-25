@@ -1,0 +1,425 @@
+---
+title: "Lab 2"
+subtitle: "Unix commands, QuartoPub, and Vectors"
+author: "STAT 133"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+## Agenda
+
+- Using the Terminal and basic Unix commands
+    + `pwd`, `cd`, `ls`
+- Review: `qmd` files with [code chunks]{.bold-hilit}
+    + R as a calculator
+- QuartoPub
+    + Sign up
+- 1st Quarto Publication
+- Problem Set 1
+
+
+## Folder `stat133/`
+
+Somewhere in your computer (e.g. Desktop, Documents) you should have the following folders and files:
+
+\
+
+:::: {.columns}
+::: {.column width="55%"}
+```{.markdown code-line-numbers="false"}
+  stat133/
+    labs/
+        lab1/
+          lab1-first-last.qmd
+          lab1-first-last.html
+```
+:::
+
+::: {.column width="45%"}
+:::
+::::
+
+\
+
+Let's determine the following file paths to `stat133/`
+
+1) [absolute]{.mdlit} path to `stat133/`
+2) [relative]{.hilit} path (from home directory) to `stat133/`
+
+
+## 
+
+For example, assume I have the following file structure---starting at the root directory `/`
+
+\
+
+:::: {.columns}
+::: {.column .fragment width="55%"}
+```{.markdown code-line-numbers="false"}
+  /
+    Users/
+      gaston/
+        Documents/
+          stat133/
+            labs/
+              lab1/
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="40%"}
+Note:
+
+My home directory is `/Users/gaston` which can be abbreviated as `~`
+:::
+::::
+
+\
+
+
+:::: {.columns}
+::: {.column .fragment width="60%"}
+[Absolute path:]{.mdlit}
+
+- `/Users/gaston/Documents/stat133`
+- `~/Documents/stat133`
+:::
+
+::: {.column .fragment width="40%"}
+[Relative path (from home):]{.hilit}
+
+- `Documents/stat133`
+:::
+::::
+
+
+# Terminal and Basic Unix commands
+
+## Terminal in IDE
+
+1) Launch your IDE (Positron or RStuio)
+
+2) Locate the [Terminal]{.bold-hilit} tab (next to the _Console_ tab)
+
+3) Click on the Terminal
+
+- We use the **Terminal** to interact with the operating system.
+
+- The way we carry out this interaction is by typing commands, e.g.
+    - `pwd`: print working directory
+    - `ls`: list files
+    - `cd`: change directory
+    - `mkdir`: make directory
+
+
+##
+
+In your Terminal, type the following commands:
+
+. . .
+
+```{.markdown filename="Terminal" code-line-numbers="false"}
+# print working directory (in theory your Home directory)
+pwd
+```
+
+\
+
+. . .
+
+```{.markdown filename="Terminal" code-line-numbers="false"}
+# list files in current directory
+ls
+```
+
+\
+
+. . .
+
+```{.markdown filename="Terminal" code-line-numbers="false"}
+# change directory to the parent dir of stat133/
+# in my case it would be Documents (yours may vary)
+cd Documents
+```
+
+
+## 
+
+Assuming you are in the parent directory of `stat133/`
+
+. . .
+
+```{.markdown filename="Terminal" code-line-numbers="false"}
+# list contents
+ls
+```
+
+\
+
+. . .
+
+```{.markdown filename="Terminal" code-line-numbers="false"}
+# change directory to your stat133 folder, and list contents
+cd stat133
+ls
+```
+
+\
+
+. . .
+
+```{.markdown filename="Terminal" code-line-numbers="false"}
+# change directory to labs folder, and list contents
+cd labs
+ls
+```
+
+
+## 
+
+Assuming you are in your `labs/` folder
+
+. . .
+
+```{.markdown filename="Terminal" code-line-numbers="false"}
+# create a new folder lab2
+mkdir lab2
+```
+
+\
+
+. . .
+
+```{.markdown filename="Terminal" code-line-numbers="false"}
+# change directory to lab2
+cd lab2
+```
+
+\
+
+. . .
+
+```{.markdown filename="Terminal" code-line-numbers="false"}
+# create an empty qmd file "demo-pub1.qmd"
+# (to be used for your first Quarto demo publication)
+touch demo-pub1.qmd
+```
+
+
+# Quarto Files with Code Chunks
+
+## Quarto Markdown (`qmd`) files
+
+- YAML header (i.e. front matter)
+- Narrative using markdown elements, e.g.
+    + Sections, subsections, etc
+    + Itemized lists (bullets)
+    + Tables
+    + Images
+    + Hyperlinks
+    + _ETC_
+- [What about code?]{.bold-hilit}
+
+
+## Open your `demo-pub1.qmd` document {.smaller}
+
+Make sure your `qmd` file has the following content (or something similar):
+
+```{.markdown filename="demo-pub1.qmd" code-line-numbers="false" }
+---
+title: "Demo Publication 1"
+author: "Your Name"
+format: html
+---
+
+## Markdown Content
+
+This is my first [Quarto Pub](https://quartopub.com/) demo.
+
+- Coffee
+- Tea
+- Soda
+
+![R logo](https://www.r-project.org/Rlogo.png)
+```
+
+
+## Code Chunks (_aka_ code cells)
+
+```{{r}}
+
+```
+
+\
+
+A code chunk is defined by:
+
+- 3 "opening" consecutive backticks
+- immediately followed by curly braces
+    + `r` inside curly braces (R code cell)
+- 3 "closing" consecutive backticks
+- You write R code inside a chunk
+
+
+## R Code Chunks
+
+```{{r}}
+2 + 3
+```
+
+\
+
+```{{r}}
+name <- c("Leia", "Luke", "Han")
+```
+
+\
+
+```{{r}}
+seq(from = 1, to = 10, by = 2)
+```
+
+
+## Keyboard shortcuts to insert a code cell
+
+:::: {.columns}
+::: {.column width="50%"}
+[Positron:]{.hilit}
+
+::: {.nonincremental}
+- Mac: `Cmd + Shift + I`
+- Windows: `Crtl + Shift + I`
+:::
+:::
+
+::: {.column width="50%"}
+[RStudio:]{.mdlit}
+
+::: {.nonincremental}
+- Mac: `Cmd + Option + I`
+- Windows: `Crtl + Alt + I`
+:::
+:::
+::::
+
+. . .
+
+- Don't be a _code chunk miser_ (stingy)
+- Avoid "monster" chunks with too many things in them
+- Better to use simpler chunks
+    - easier to understand
+    - easier to inspect
+    - easier to debug
+
+
+## Your Turn
+
+Insert multiple code chunks in your `qmd` file to compute the following:
+
+- Arithmetic operations
+- Vectors using functions:
+    - `c()`
+    - `seq()`
+    - `rep()`
+- Vectorized operations: `sqrt()`, `log()`
+- Summary functions: `sum()`, `mean()`, `min()`, `max()`
+
+. . .
+
+Preview (or render) your file.
+
+
+# Quarto Pub
+
+## 
+
+![](images/quartopub1.png){fig-align="center"}
+
+
+## About Quarto Pub
+
+__Quarto Pub__ is a free publishing service for static content created with Quarto. Quarto Pub is ideal for blogs, course or project websites, books, presentations, and personal hobby sites. 
+
+\
+
+<https://quartopub.com/>
+
+
+## Quarto Pub Account: Sign Up
+
+```{r}
+#| echo: false
+countdown::countdown(3, bottom = 0)
+```
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](images/quartopub2.png)
+:::
+
+::: {.column width="50%"}
+- Sign up for a Quarto Pub account.
+- Recommendation: choose a professional username.
+    + a name you won't be embarrased to show to a future employer.
+- You can use your `berkeley.edu` email address or other address.
+:::
+
+::::
+
+
+## Publishing Steps
+
+Assume I have a file called `demo-pub1.qmd` opened in Positron. To publish my `qmd` file to my QuartoPub account I follow these steps:
+
+1) Go to the __Terminal__ tab.
+    + Make sure your working directory contains the qmd file.
+2) Type command: `quarto publish demo-pub1.qmd`
+3) Choose provider [Quarto Pub]{.bold-hilit} and press return (enter)
+4) Publish with default account (linked to my email address)
+5) Optionally: I can change the name of the document
+6) Press return (enter)
+
+. . .
+
+Once published, there will be an associated link (URL), something like:
+<https://username.quarto.pub/demo-pub-1>
+
+
+## Submission to bCourses
+
+Submit the URL (link) of your published document to the corresponding assignment in bCourses.
+
+See [Assignments tab > Quarto Publications > Pub1]{.bold-hilit}
+
+
+# Problem Set 1
+
+## Pset 1
+
+Available in bCourses:
+
+See [Assignments tab > Problem Sets > PS1]{.bold-hilit}
+
+You'll find 2 files:
+
+- `ps1.html`: instructions
+
+- `ps1.qmd`: template file to write your answers
+
+. . .
+
+In case of trouble: Go to Files tab, folder `problem-sets`, folder `ps1`, and download the `qmd` file.
+
+Sometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome).
+
+
+## Pset 1 Submission
+
+- Submit your `qmd` and `html` files to bCourses.
+- Use assignment problem set __ps1__
+- Submission deadline: Wednesday 2/4 by 6PM.
+- Graded credit / no-credit
+- Credit for evidence of earnest engagement (just don't submit a blank or empty template file)

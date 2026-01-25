@@ -201,7 +201,7 @@ Open your folder `stat133`
 
 ## Rendering a `.qmd` file
 
-- Click the [__Render__]{.hilit} button.
+- Click the [__Preview__]{.hilit} button. In RStudio is the __Render__ button.
 
 - Save file in your `lab1` folder.
 
@@ -252,7 +252,6 @@ This is a "dummy" assignment: won't be part of your grade; we just want to make 
 
 - Lab1 `.qmd` and `.html` files submitted to bCourses
 :::
-
 
 
 # Terminology
