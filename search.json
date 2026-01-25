@@ -1753,25 +1753,11 @@
     "text": "References\n\nTrain diagrams from Advanced R by Hadley Wickham."
   },
   {
-    "objectID": "lectures/4-more-vectors/slides.html#review",
-    "href": "lectures/4-more-vectors/slides.html#review",
-    "title": "Working with Vectors",
-    "section": "Review",
-    "text": "Review\nLast time …"
-  },
-  {
-    "objectID": "lectures/4-more-vectors/slides.html#announcements",
-    "href": "lectures/4-more-vectors/slides.html#announcements",
-    "title": "Working with Vectors",
-    "section": "Announcements",
-    "text": "Announcements\n\nWorking locally\nOffice Hours / Group Tutoring\nProblem Sets"
-  },
-  {
-    "objectID": "lectures/4-more-vectors/slides.html#vectors-1",
-    "href": "lectures/4-more-vectors/slides.html#vectors-1",
+    "objectID": "lectures/4-more-vectors/slides.html#vectors",
+    "href": "lectures/4-more-vectors/slides.html#vectors",
     "title": "Working with Vectors",
     "section": "Vectors",
-    "text": "Vectors\n\nCentral data structure in R\nOrdered set of elements\nAtomic: elements of the same type"
+    "text": "Vectors\n\nCentral data structure in R\nOrdered set of elements\nAtomic: elements of the same type: typeof()\nHave length()\nElements can be named: names()"
   },
   {
     "objectID": "lectures/4-more-vectors/slides.html#atomic",
@@ -1781,11 +1767,25 @@
     "text": "Atomic*\nSpecial values in an atomic vector.\n\nNA: Not Available / Missing\nNULL: Does not exist (nothing)\nNaN: Not a Number (e.g. dividing by zero)\nInf: Infinity"
   },
   {
-    "objectID": "lectures/4-more-vectors/slides.html#a-comment-about-comments",
-    "href": "lectures/4-more-vectors/slides.html#a-comment-about-comments",
+    "objectID": "lectures/4-more-vectors/slides.html#functions-to-create-vectors",
+    "href": "lectures/4-more-vectors/slides.html#functions-to-create-vectors",
     "title": "Working with Vectors",
-    "section": "A comment about comments",
-    "text": "A comment about comments\nComment character: special character to skip evaluation of remaining characters on a line. R (and Python) use #.\n\n\n# create vector\nc(\"A\", \"C\", \"D\") # vector created!\n\n\n\n[1] \"A\" \"C\" \"D\"\n\n\n\n\nvs.\n\ncreate vector\nc(\"A\", \"C\", \"D\") vector created!\n\n\n\nError in parse(text = input): &lt;text&gt;:1:8: unexpected symbol\n1: create vector\n           ^"
+    "section": "Functions to create vectors",
+    "text": "Functions to create vectors\n\nc()\nvector(mode = , length = )\n\nlogical(), integer(), double(), character()\n\nseq(from = , to = , by = )\nrep(x, each = , times = , length.out = )\ncolon operator: 1:10"
+  },
+  {
+    "objectID": "lectures/4-more-vectors/slides.html#section",
+    "href": "lectures/4-more-vectors/slides.html#section",
+    "title": "Working with Vectors",
+    "section": "",
+    "text": "Fill in the blanks to get the following sequences:\n\n\n\n−+\n01:30\n\n\n\n\nseq(from = __, to = __, by = __)\n\n\n\n[1]  3  6  9 12 15\n\n\n\n\nanswer\nseq(from = 3, to = 15, by = 3)\n\n\n\n\n\nseq(from = __, to = __, by = __)\n\n\n\n[1] 10  8  6  4  2  0\n\n\n\n\nanswer\nseq(from = 10, to = 0, by = -2)\n\n\n\n\n\nseq(from = __, to = __, by = __)\n\n\n\n[1]   0  -2  -4  -6  -8 -10\n\n\n\n\nanswer\nseq(from = 0, to = -10, by = -2)"
+  },
+  {
+    "objectID": "lectures/4-more-vectors/slides.html#section-1",
+    "href": "lectures/4-more-vectors/slides.html#section-1",
+    "title": "Working with Vectors",
+    "section": "",
+    "text": "Fill in the blanks to get the following repetitions:\n\n\n\n−+\n01:00\n\n\n\n\ny &lt;- c(0, 1, 2)\n\nrep(y, times = __)\n\n\n\n[1] 0 1 2 0 1 2 0 1 2\n\n\n\n\nanswer\nrep(y, times = 3)\n\n\n\n\n\nrep(y, each = __)\n\n\n\n[1] 0 0 1 1 2 2\n\n\n\n\nanswer\nrep(y, each = 2)\n\n\n\n\n\nrep(y, times = __)\n\n\n\n[1] 0 1 1 2 2 2\n\n\n\n\nanswer\nrep(y, times = 1:3)"
   },
   {
     "objectID": "lectures/4-more-vectors/slides.html#question",
@@ -1799,21 +1799,21 @@
     "href": "lectures/4-more-vectors/slides.html#vectorization",
     "title": "Working with Vectors",
     "section": "Vectorization",
-    "text": "Vectorization\nVectorized: Operations and functions that can run on an entire vector at once.\n\ndbl_vec &lt;- c(1, 2.3, 4)\n\nlog(dbl_vec) # vectorized\n\n[1] 0.0000000 0.8329091 1.3862944\n\n\n\n\n\nsum(dbl_vec) # vector-as-argument\n\n[1] 7.3"
+    "text": "Vectorization\n\nVectorized: Operations and functions that can run on an entire vector at once (i.e. element-wise computations)\n\n\n\ndbl_vec &lt;- c(1, 2.3, 4)\n\nlog(dbl_vec) # vectorized\n\n\n\n[1] 0.0000000 0.8329091 1.3862944\n\n\n\n\n\n\n\n# not vectorized\nsum(dbl_vec) # vector-as-argument\n\n\n\n[1] 7.3"
   },
   {
     "objectID": "lectures/4-more-vectors/slides.html#vector-recycling",
     "href": "lectures/4-more-vectors/slides.html#vector-recycling",
     "title": "Working with Vectors",
     "section": "Vector Recycling",
-    "text": "Vector Recycling\nVector Recycling: If a function requires a longer vector than provided, it will fill the vector with the existing elements, in order.\n\nc(2, 6, 1)^2\n\n[1]  4 36  1"
+    "text": "Vector Recycling\n\nVector Recycling: If a function requires a longer vector than provided, it will fill the vector with the existing elements, in order.\n\n\n\nc(2, 6, 1)^2\n\n\n\n[1]  4 36  1"
   },
   {
     "objectID": "lectures/4-more-vectors/slides.html#coercion",
     "href": "lectures/4-more-vectors/slides.html#coercion",
     "title": "Working with Vectors",
     "section": "Coercion",
-    "text": "Coercion\nImplicit Coercion: Automatic change of data types to ensure atomic vectors. Changes follow a hierarchy.\nlogical &lt; integer &lt; double &lt; character"
+    "text": "Coercion\n\nImplicit Coercion: Automatic change of data types to ensure atomic vectors.\n\n\n\nc(1, \"dog\", TRUE)\n\n\n\n[1] \"1\"    \"dog\"  \"TRUE\"\n\n\n\n\n\n\nChanges follow a hierarchy.\nlogical &lt; integer &lt; double &lt; character"
   },
   {
     "objectID": "lectures/4-more-vectors/slides.html#coercion-1",
@@ -1834,7 +1834,7 @@
     "href": "lectures/4-more-vectors/slides.html#subsetting-by-index",
     "title": "Working with Vectors",
     "section": "Subsetting by Index",
-    "text": "Subsetting by Index\naka numeric subsetting\n\nchar_vec &lt;- c(\"bear\", \"owl\", \"squirrel\")\nchar_vec\n\n\n\n[1] \"bear\"     \"owl\"      \"squirrel\"\n\n\n\n\nchar_vec[2]\n\n\n\n[1] \"owl\"\n\n\n\n\n\nchar_vec[2:3] \n\n\n\n[1] \"owl\"      \"squirrel\""
+    "text": "Subsetting by Index\naka numeric subsetting\n\nchar_vec &lt;- c(\"bear\", \"owl\", \"squirrel\")\nchar_vec\n\n\n\n[1] \"bear\"     \"owl\"      \"squirrel\"\n\n\n\n\nchar_vec[2]\n\n\n\n[1] \"owl\"\n\n\n\n\n\nchar_vec[2:3] \n\n\n\n[1] \"owl\"      \"squirrel\"\n\n\n\n\n\nchar_vec[-2] \n\n\n\n[1] \"bear\"     \"squirrel\"\n\n\n\n\n\n\nRecall that R starts indexing at 1!"
   },
   {
     "objectID": "lectures/4-more-vectors/slides.html#subsetting-by-name",
@@ -1848,7 +1848,7 @@
     "href": "lectures/4-more-vectors/slides.html#subsetting-by-logicals",
     "title": "Working with Vectors",
     "section": "Subsetting by Logicals",
-    "text": "Subsetting by Logicals\naka logical subsetting\n\nchar_vec2[c(TRUE, FALSE, TRUE)]\n\n\n\n      oski        lux \n    \"bear\" \"squirrel\" \n\n\n\nNote: the logical vector should be of the same length."
+    "text": "Subsetting by Logicals\naka logical subsetting\n\nchar_vec2\n\n      oski       fiat        lux \n    \"bear\"      \"owl\" \"squirrel\" \n\n\n\n\n\n\nchar_vec2[c(TRUE, FALSE, TRUE)]\n\n\n\n      oski        lux \n    \"bear\" \"squirrel\" \n\n\n\n\nNote: the logical vector should be of the same length.\n\nchar_vec2[TRUE]\n\n\n\n      oski       fiat        lux \n    \"bear\"      \"owl\" \"squirrel\""
   },
   {
     "objectID": "lectures/4-more-vectors/slides.html#question-1",
@@ -1863,13 +1863,6 @@
     "title": "Working with Vectors",
     "section": "Change in place syntax",
     "text": "Change in place syntax\nYou can assign into a subsetted vector to change its contents in place.\n\nz &lt;- c(latte = 2, boba = 4, matcha = 6)\nz[c(TRUE, FALSE, TRUE)] &lt;- 12\nz\n\n\n\n latte   boba matcha \n    12      4     12 \n\n\n\n\nnames(z)\n\n\n\n[1] \"latte\"  \"boba\"   \"matcha\"\n\n\n\n\n\nnames(z) &lt;- c(\"A\", \"B\", \"C\")\nz\n\n\n\n A  B  C \n12  4 12"
-  },
-  {
-    "objectID": "lectures/4-more-vectors/slides.html#for-next-time",
-    "href": "lectures/4-more-vectors/slides.html#for-next-time",
-    "title": "Working with Vectors",
-    "section": "For next time",
-    "text": "For next time\n\nWork on problem sets.\nVisit office hours and group tutoring.\nHave a great weekend 😎"
   },
   {
     "objectID": "lectures/21-strings2/slides.html#agenda",
@@ -2098,7 +2091,7 @@
     "href": "index.html",
     "title": "STAT 133: Concepts in Computing with Data",
     "section": "",
-    "text": "Ed\n\n\nbCourses\n\n\nR-DataHub\n\n\n\n\n\n\n\n\n\n\n\n\nAnnouncements\n\n\n\nSee you on Wed 1/21.\nBTW: There is nothing due this first week.\n\n\n\n\n\n\n\nWeek 1\n\nWed 1/21\nThu 1/22\nFri 1/23\n\n\n\n\n\nDescription\nWelcome\nLab 1: slides\nIntroduction\n\n\n\n\nDue\n\n\n\n\n\n\n\n\n\nWeek 2\n\nMon 1/26\nWed 1/28\nThu 1/29\nFri 1/30\n\n\n\n\n\nDescription\nVectors\nWorking with Vectors\nLab 2: slides | PS1\nUnix Basics | Proj1\n\n\n\n\nDue\n \n \nPub1\n \n\n\n\n\n\n\n\n\n\nWeek 3\n\nMon 2/2\nWed 2/4\nThu 2/5\nFri 2/6\n\n\n\n\n\nDescription\nExtending Vectors\nLists\nLab 3: Quiz 1 | slides | PS2\nControl Flow\n\n\n\n\nDue\n \nPS1\nPub2\n \n\n\n\n\n\n\n\n\n\nWeek 4\n\nMon 2/9\nWed 2/11\nThu 2/12\nFri 2/13\n\n\n\n\n\nDescription\nFunctions\nFactors and Data Frames\nLab 4: slides | PS3\nData Wrangling I | Proj2\n\n\n\n\nDue\n \nPS2\nPub3\nProj1\n\n\n\n\n\n\n\n\n\nWeek 5\n\nMon 2/16\nWed 2/18\nThu 2/19\nFri 2/20\n\n\n\n\n\nDescription\nNo class\nData Wrangling II\nLab 5: Quiz 2 | slides | PS4\nImporting Tables\n\n\n\n\nDue\n \nPS3\nPub4\n \n\n\n\n\n\n\n\n\n\nWeek 6\n\nMon 2/23\nWed 2/25\nThu 2/26\nFri 2/27\n\n\n\n\n\nDescription\nDataviz I\nDataviz II\nLab 6: slides | PS5\nDataviz III | Proj3\n\n\n\n\nDue\n \nPS4\nPub5\nProj2\n\n\n\n\n\n\n\n\n\nWeek 7\n\nMon 3/2\nWed 3/4\nThu 3/5\nFri 3/6\n\n\n\n\n\nDescription\nJoins and Pivots\nExploratory EDA\nLab 7: Quiz 3 | slides | PS6\nExplanatory EDA\n\n\n\n\nDue\n \nPS5\nPub6\n \n\n\n\n\n\n\n\n\n\nWeek 8\n\nMon 3/9\nWed 3/11\nThu 3/12\nFri 3/13\n\n\n\n\n\nDescription\nStrings I\nStrings II\nLab 8: slides | PS7\nStrings III | Proj4\n\n\n\n\nDue\n \nPS6\nPub7\nProj3\n\n\n\n\n\n\n\n\n\nWeek 9\n\nMon 3/16\nWed 3/18\nThu 3/19\nFri 3/20\n\n\n\n\n\nDescription\nDates and Times I\nDates and Times II\nLab 9: Quiz 4 | slides | PS8\nGeospatial Data\n\n\n\n\nDue\n \nPS7\nPub8\n \n\n\n\n\n\n\n\n\n\nWeek 10\n\n3/23-3/27\n\n\n\n\n\nDescription\nSpring Recess\n\n\n\n\n\n\n\n\n\nWeek 11\n\nMon 3/30\nWed 4/1\nThu 4/2\nFri 4/3\n\n\n\n\n\nDescription\nStorm Tracks I\nLeaflet Maps\nLab 10: slides | PS9\nShapefiles | Proj5\n\n\n\n\nDue\n \nPS8\nPub9\nProj4\n\n\n\n\n\n\n\n\n\nWeek 12\n\nMon 4/6\nWed 4/8\nThu 4/9\nFri 4/10\n\n\n\n\n\nDescription\nChoropleth Maps\nRaster Data I\nLab 11: Quiz 5 | slides | PS10\nRaster Data II\n\n\n\n\nDue\n \nPS9\nPub10\n \n\n\n\n\n\n\n\n\n\nWeek 13\n\nMon 4/13\nWed 4/15\nThu 4/16\nFri 4/17\n\n\n\n\n\nDescription\nJSON Data\nAPIs\nLab 12: slides | PS11\nXML Data | Proj6\n\n\n\n\nDue\n \nPS10\nPub11\nProj5\n\n\n\n\n\n\n\n\n\nWeek 14\n\nMon 4/20\nWed 4/22\nThu 4/23\nFri 4/24\n\n\n\n\n\nDescription\nText Analysis 1\nText Analysis 2\nLab 13: Quiz 6 | slides | PS12\nText Analysis 3\n\n\n\n\nDue\n \nPS11\nPub12\n \n\n\n\n\n\n\n\n\n\nWeek 15\n\nMon 4/27\nWed 4/29\nThu 4/30\nFri 5/1\n\n\n\n\n\nDescription\nTBD\nTBD\nLab 14: slides\nClosing Lecture\n\n\n\n\nDue\n \nPS12\n \nProj6\n\n\n\n\n\n\n\n\n\nWeek 16\n\n5/4-5/8\n\n\n\n\n\nDescription\nRRR Week\n\n\n\n\n\n\n\n\n\nWeek 17\n\n5/11\n\n\n\n\n\nDescription\nFinal Exam, 7-10pm",
+    "text": "Ed\n\n\nbCourses\n\n\nR-DataHub\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2 Announcements\n\n\n\nBy now you should know how to open a new .qmd file, edit it, and render it into an HTML output file.\n\n\n\n\n\n\n\nWeek 1\n\nWed 1/21\nThu 1/22\nFri 1/23\n\n\n\n\n\nDescription\nWelcome\nLab 1: slides\nIntroduction\n\n\n\n\nDue\n\n\n\n\n\n\n\n\n\nWeek 2\n\nMon 1/26\nWed 1/28\nThu 1/29\nFri 1/30\n\n\n\n\n\nDescription\nVectors\nWorking with Vectors\nLab 2: slides | PS1\nUnix Basics | Proj1\n\n\n\n\nDue\n \n \nPub1\n \n\n\n\n\n\n\n\n\n\nWeek 3\n\nMon 2/2\nWed 2/4\nThu 2/5\nFri 2/6\n\n\n\n\n\nDescription\nExtending Vectors\nLists\nLab 3: Quiz 1 | slides | PS2\nControl Flow\n\n\n\n\nDue\n \nPS1\nPub2\n \n\n\n\n\n\n\n\n\n\nWeek 4\n\nMon 2/9\nWed 2/11\nThu 2/12\nFri 2/13\n\n\n\n\n\nDescription\nFunctions\nFactors and Data Frames\nLab 4: slides | PS3\nData Wrangling I | Proj2\n\n\n\n\nDue\n \nPS2\nPub3\nProj1\n\n\n\n\n\n\n\n\n\nWeek 5\n\nMon 2/16\nWed 2/18\nThu 2/19\nFri 2/20\n\n\n\n\n\nDescription\nNo class\nData Wrangling II\nLab 5: Quiz 2 | slides | PS4\nImporting Tables\n\n\n\n\nDue\n \nPS3\nPub4\n \n\n\n\n\n\n\n\n\n\nWeek 6\n\nMon 2/23\nWed 2/25\nThu 2/26\nFri 2/27\n\n\n\n\n\nDescription\nDataviz I\nDataviz II\nLab 6: slides | PS5\nDataviz III | Proj3\n\n\n\n\nDue\n \nPS4\nPub5\nProj2\n\n\n\n\n\n\n\n\n\nWeek 7\n\nMon 3/2\nWed 3/4\nThu 3/5\nFri 3/6\n\n\n\n\n\nDescription\nJoins and Pivots\nExploratory EDA\nLab 7: Quiz 3 | slides | PS6\nExplanatory EDA\n\n\n\n\nDue\n \nPS5\nPub6\n \n\n\n\n\n\n\n\n\n\nWeek 8\n\nMon 3/9\nWed 3/11\nThu 3/12\nFri 3/13\n\n\n\n\n\nDescription\nStrings I\nStrings II\nLab 8: slides | PS7\nStrings III | Proj4\n\n\n\n\nDue\n \nPS6\nPub7\nProj3\n\n\n\n\n\n\n\n\n\nWeek 9\n\nMon 3/16\nWed 3/18\nThu 3/19\nFri 3/20\n\n\n\n\n\nDescription\nDates and Times I\nDates and Times II\nLab 9: Quiz 4 | slides | PS8\nGeospatial Data\n\n\n\n\nDue\n \nPS7\nPub8\n \n\n\n\n\n\n\n\n\n\nWeek 10\n\n3/23-3/27\n\n\n\n\n\nDescription\nSpring Recess\n\n\n\n\n\n\n\n\n\nWeek 11\n\nMon 3/30\nWed 4/1\nThu 4/2\nFri 4/3\n\n\n\n\n\nDescription\nStorm Tracks I\nLeaflet Maps\nLab 10: slides | PS9\nShapefiles | Proj5\n\n\n\n\nDue\n \nPS8\nPub9\nProj4\n\n\n\n\n\n\n\n\n\nWeek 12\n\nMon 4/6\nWed 4/8\nThu 4/9\nFri 4/10\n\n\n\n\n\nDescription\nChoropleth Maps\nRaster Data I\nLab 11: Quiz 5 | slides | PS10\nRaster Data II\n\n\n\n\nDue\n \nPS9\nPub10\n \n\n\n\n\n\n\n\n\n\nWeek 13\n\nMon 4/13\nWed 4/15\nThu 4/16\nFri 4/17\n\n\n\n\n\nDescription\nJSON Data\nAPIs\nLab 12: slides | PS11\nXML Data | Proj6\n\n\n\n\nDue\n \nPS10\nPub11\nProj5\n\n\n\n\n\n\n\n\n\nWeek 14\n\nMon 4/20\nWed 4/22\nThu 4/23\nFri 4/24\n\n\n\n\n\nDescription\nText Analysis 1\nText Analysis 2\nLab 13: Quiz 6 | slides | PS12\nText Analysis 3\n\n\n\n\nDue\n \nPS11\nPub12\n \n\n\n\n\n\n\n\n\n\nWeek 15\n\nMon 4/27\nWed 4/29\nThu 4/30\nFri 5/1\n\n\n\n\n\nDescription\nTBD\nTBD\nLab 14: slides\nClosing Lecture\n\n\n\n\nDue\n \nPS12\n \nProj6\n\n\n\n\n\n\n\n\n\nWeek 16\n\n5/4-5/8\n\n\n\n\n\nDescription\nRRR Week\n\n\n\n\n\n\n\n\n\nWeek 17\n\n5/11\n\n\n\n\n\nDescription\nFinal Exam, 7-10pm",
     "crumbs": [
       "Home"
     ]
@@ -2112,6 +2105,139 @@
     "crumbs": [
       "Office Hours"
     ]
+  },
+  {
+    "objectID": "labs/lab2/slides.html#agenda",
+    "href": "labs/lab2/slides.html#agenda",
+    "title": "Lab 2",
+    "section": "Agenda",
+    "text": "Agenda\n\nUsing the Terminal and basic Unix commands\n\npwd, cd, ls\n\nReview: qmd files with code chunks\n\nR as a calculator\n\nQuartoPub\n\nSign up\n\n1st Quarto Publication\nProblem Set 1"
+  },
+  {
+    "objectID": "labs/lab2/slides.html#folder-stat133",
+    "href": "labs/lab2/slides.html#folder-stat133",
+    "title": "Lab 2",
+    "section": "Folder stat133/",
+    "text": "Folder stat133/\nSomewhere in your computer (e.g. Desktop, Documents) you should have the following folders and files:\n\n\n\n\n  stat133/\n    labs/\n        lab1/\n          lab1-first-last.qmd\n          lab1-first-last.html\n\n\n\n\n\nLet’s determine the following file paths to stat133/\n\nabsolute path to stat133/\nrelative path (from home directory) to stat133/"
+  },
+  {
+    "objectID": "labs/lab2/slides.html#section",
+    "href": "labs/lab2/slides.html#section",
+    "title": "Lab 2",
+    "section": "",
+    "text": "For example, assume I have the following file structure—starting at the root directory /\n\n\n\n\n  /\n    Users/\n      gaston/\n        Documents/\n          stat133/\n            labs/\n              lab1/\n\n\n\nNote:\nMy home directory is /Users/gaston which can be abbreviated as ~\n\n\n\n\n\nAbsolute path:\n\n/Users/gaston/Documents/stat133\n~/Documents/stat133\n\n\nRelative path (from home):\n\nDocuments/stat133"
+  },
+  {
+    "objectID": "labs/lab2/slides.html#terminal-in-ide",
+    "href": "labs/lab2/slides.html#terminal-in-ide",
+    "title": "Lab 2",
+    "section": "Terminal in IDE",
+    "text": "Terminal in IDE\n\nLaunch your IDE (Positron or RStuio)\nLocate the Terminal tab (next to the Console tab)\nClick on the Terminal\n\n\nWe use the Terminal to interact with the operating system.\nThe way we carry out this interaction is by typing commands, e.g.\n\npwd: print working directory\nls: list files\ncd: change directory\nmkdir: make directory"
+  },
+  {
+    "objectID": "labs/lab2/slides.html#section-1",
+    "href": "labs/lab2/slides.html#section-1",
+    "title": "Lab 2",
+    "section": "",
+    "text": "In your Terminal, type the following commands:\n\n\n\nTerminal\n\n# print working directory (in theory your Home directory)\npwd\n\n\n\n\n\n\n\nTerminal\n\n# list files in current directory\nls\n\n\n\n\n\n\n\nTerminal\n\n# change directory to the parent dir of stat133/\n# in my case it would be Documents (yours may vary)\ncd Documents"
+  },
+  {
+    "objectID": "labs/lab2/slides.html#section-2",
+    "href": "labs/lab2/slides.html#section-2",
+    "title": "Lab 2",
+    "section": "",
+    "text": "Assuming you are in the parent directory of stat133/\n\n\n\nTerminal\n\n# list contents\nls\n\n\n\n\n\n\n\nTerminal\n\n# change directory to your stat133 folder, and list contents\ncd stat133\nls\n\n\n\n\n\n\n\nTerminal\n\n# change directory to labs folder, and list contents\ncd labs\nls"
+  },
+  {
+    "objectID": "labs/lab2/slides.html#section-3",
+    "href": "labs/lab2/slides.html#section-3",
+    "title": "Lab 2",
+    "section": "",
+    "text": "Assuming you are in your labs/ folder\n\n\n\nTerminal\n\n# create a new folder lab2\nmkdir lab2\n\n\n\n\n\n\n\nTerminal\n\n# change directory to lab2\ncd lab2\n\n\n\n\n\n\n\nTerminal\n\n# create an empty qmd file \"demo-pub1.qmd\"\n# (to be used for your first Quarto demo publication)\ntouch demo-pub1.qmd"
+  },
+  {
+    "objectID": "labs/lab2/slides.html#quarto-markdown-qmd-files",
+    "href": "labs/lab2/slides.html#quarto-markdown-qmd-files",
+    "title": "Lab 2",
+    "section": "Quarto Markdown (qmd) files",
+    "text": "Quarto Markdown (qmd) files\n\nYAML header (i.e. front matter)\nNarrative using markdown elements, e.g.\n\nSections, subsections, etc\nItemized lists (bullets)\nTables\nImages\nHyperlinks\nETC\n\nWhat about code?"
+  },
+  {
+    "objectID": "labs/lab2/slides.html#open-your-demo-pub1.qmd-document",
+    "href": "labs/lab2/slides.html#open-your-demo-pub1.qmd-document",
+    "title": "Lab 2",
+    "section": "Open your demo-pub1.qmd document",
+    "text": "Open your demo-pub1.qmd document\nMake sure your qmd file has the following content (or something similar):\n\n\ndemo-pub1.qmd\n\n---\ntitle: \"Demo Publication 1\"\nauthor: \"Your Name\"\nformat: html\n---\n\n## Markdown Content\n\nThis is my first [Quarto Pub](https://quartopub.com/) demo.\n\n- Coffee\n- Tea\n- Soda\n\n![R logo](https://www.r-project.org/Rlogo.png)"
+  },
+  {
+    "objectID": "labs/lab2/slides.html#code-chunks-aka-code-cells",
+    "href": "labs/lab2/slides.html#code-chunks-aka-code-cells",
+    "title": "Lab 2",
+    "section": "Code Chunks (aka code cells)",
+    "text": "Code Chunks (aka code cells)\n```{r}\n\n```\n\n\nA code chunk is defined by:\n\n3 “opening” consecutive backticks\nimmediately followed by curly braces\n\nr inside curly braces (R code cell)\n\n3 “closing” consecutive backticks\nYou write R code inside a chunk"
+  },
+  {
+    "objectID": "labs/lab2/slides.html#r-code-chunks",
+    "href": "labs/lab2/slides.html#r-code-chunks",
+    "title": "Lab 2",
+    "section": "R Code Chunks",
+    "text": "R Code Chunks\n```{r}\n2 + 3\n```\n\n\n```{r}\nname &lt;- c(\"Leia\", \"Luke\", \"Han\")\n```\n\n\n```{r}\nseq(from = 1, to = 10, by = 2)\n```"
+  },
+  {
+    "objectID": "labs/lab2/slides.html#keyboard-shortcuts-to-insert-a-code-cell",
+    "href": "labs/lab2/slides.html#keyboard-shortcuts-to-insert-a-code-cell",
+    "title": "Lab 2",
+    "section": "Keyboard shortcuts to insert a code cell",
+    "text": "Keyboard shortcuts to insert a code cell\n\n\nPositron:\n\nMac: Cmd + Shift + I\nWindows: Crtl + Shift + I\n\n\nRStudio:\n\nMac: Cmd + Option + I\nWindows: Crtl + Alt + I\n\n\n\n\nDon’t be a code chunk miser (stingy)\nAvoid “monster” chunks with too many things in them\nBetter to use simpler chunks\n\neasier to understand\neasier to inspect\neasier to debug"
+  },
+  {
+    "objectID": "labs/lab2/slides.html#your-turn",
+    "href": "labs/lab2/slides.html#your-turn",
+    "title": "Lab 2",
+    "section": "Your Turn",
+    "text": "Your Turn\nInsert multiple code chunks in your qmd file to compute the following:\n\nArithmetic operations\nVectors using functions:\n\nc()\nseq()\nrep()\n\nVectorized operations: sqrt(), log()\nSummary functions: sum(), mean(), min(), max()\n\n\nPreview (or render) your file."
+  },
+  {
+    "objectID": "labs/lab2/slides.html#about-quarto-pub",
+    "href": "labs/lab2/slides.html#about-quarto-pub",
+    "title": "Lab 2",
+    "section": "About Quarto Pub",
+    "text": "About Quarto Pub\nQuarto Pub is a free publishing service for static content created with Quarto. Quarto Pub is ideal for blogs, course or project websites, books, presentations, and personal hobby sites.\n\n\nhttps://quartopub.com/"
+  },
+  {
+    "objectID": "labs/lab2/slides.html#quarto-pub-account-sign-up",
+    "href": "labs/lab2/slides.html#quarto-pub-account-sign-up",
+    "title": "Lab 2",
+    "section": "Quarto Pub Account: Sign Up",
+    "text": "Quarto Pub Account: Sign Up\n\n\n\n−+\n03:00\n\n\n\n\n\n\n\n\nSign up for a Quarto Pub account.\nRecommendation: choose a professional username.\n\na name you won’t be embarrased to show to a future employer.\n\nYou can use your berkeley.edu email address or other address."
+  },
+  {
+    "objectID": "labs/lab2/slides.html#publishing-steps",
+    "href": "labs/lab2/slides.html#publishing-steps",
+    "title": "Lab 2",
+    "section": "Publishing Steps",
+    "text": "Publishing Steps\nAssume I have a file called demo-pub1.qmd opened in Positron. To publish my qmd file to my QuartoPub account I follow these steps:\n\nGo to the Terminal tab.\n\nMake sure your working directory contains the qmd file.\n\nType command: quarto publish demo-pub1.qmd\nChoose provider Quarto Pub and press return (enter)\nPublish with default account (linked to my email address)\nOptionally: I can change the name of the document\nPress return (enter)\n\n\nOnce published, there will be an associated link (URL), something like: https://username.quarto.pub/demo-pub-1"
+  },
+  {
+    "objectID": "labs/lab2/slides.html#submission-to-bcourses",
+    "href": "labs/lab2/slides.html#submission-to-bcourses",
+    "title": "Lab 2",
+    "section": "Submission to bCourses",
+    "text": "Submission to bCourses\nSubmit the URL (link) of your published document to the corresponding assignment in bCourses.\nSee Assignments tab &gt; Quarto Publications &gt; Pub1"
+  },
+  {
+    "objectID": "labs/lab2/slides.html#pset-1",
+    "href": "labs/lab2/slides.html#pset-1",
+    "title": "Lab 2",
+    "section": "Pset 1",
+    "text": "Pset 1\nAvailable in bCourses:\nSee Assignments tab &gt; Problem Sets &gt; PS1\nYou’ll find 2 files:\n\nps1.html: instructions\nps1.qmd: template file to write your answers\n\n\nIn case of trouble: Go to Files tab, folder problem-sets, folder ps1, and download the qmd file.\nSometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome)."
+  },
+  {
+    "objectID": "labs/lab2/slides.html#pset-1-submission",
+    "href": "labs/lab2/slides.html#pset-1-submission",
+    "title": "Lab 2",
+    "section": "Pset 1 Submission",
+    "text": "Pset 1 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps1\nSubmission deadline: Wednesday 2/4 by 6PM.\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
   {
     "objectID": "labs/lab1/slides.html#meet-your-gsi",
@@ -2202,7 +2328,7 @@
     "href": "labs/lab1/slides.html#rendering-a-.qmd-file",
     "title": "Lab 1",
     "section": "Rendering a .qmd file",
-    "text": "Rendering a .qmd file\n\nClick the Render button.\nSave file in your lab1 folder.\nOutput file is an HTML document (assuming format: html)\nBTW: most assignments will require submission of their .qmd and .html files."
+    "text": "Rendering a .qmd file\n\nClick the Preview button. In RStudio is the Render button.\nSave file in your lab1 folder.\nOutput file is an HTML document (assuming format: html)\nBTW: most assignments will require submission of their .qmd and .html files."
   },
   {
     "objectID": "labs/lab1/slides.html#editing-a-.qmd-file",
@@ -2487,7 +2613,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"junior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"freshman\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -2781,7 +2907,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 30     Jordan Good… LAL   PG           75    215 October 2… US      3         \n2 1      James Harden LAC   PG           77    220 August 26… US      15        \n3 4      Moses Moody  GSW   SG           77    211 May 31, 2… US      3         \n4 77     Jamison Bat… TOR   SF           79    220 May 10, 2… US      R         \n5 35     Goga Bitadze ORL   C            83    250 July 20, … GE      5         \n6 22     Andrew Wigg… MIA   SF           78    197 February … CA      10        \n7 88     Patty Mills  LAC   PG           74    180 August 11… AU      15        \n8 55     Luka Garza   MIN   C            82    243 December … US      3         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 20     Colby Jones  SAC   SG           78    207 May 28, 2… US      1         \n2 5      Dejounte Mu… NOP   PG           76    180 September… US      7         \n3 34     Wendell Car… ORL   C            82    270 April 16,… US      6         \n4 7      Chris Livin… MIL   SF           78    220 October 1… US      1         \n5 3      Caris LeVert CLE   SF           79    205 August 25… US      8         \n6 30     Nae'Qwan To… CLE   PF           80    210 December … US      R         \n7 22     Lester QuiÃ… NOP   SG           77    208 November … US      2         \n8 8      OG Anunoby   NYK   PF           79    240 July 17, … GB      7         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -3785,85 +3911,57 @@
     "text": "Files from other programs\n\n\n\nType\nPackage\nFunction\n\n\n\n\nExcel\n“readxl”\nread_excel()\n\n\nSPSS\n“foreign”\nread.spss()\n\n\nSAS\n“foreign”\nread.ssd()\n\n\nSAS\n“foreign”\nread.xport()\n\n\nMatlab\n“R.matlab”\nreadMat()\n\n\nStata\n“foreign”\nread.dta()\n\n\nOctave\n“foreign”\nread.octave()\n\n\nMinitab\n“foreign”\nread.mtp()\n\n\nSystat\n“foreign”\nread.systat()"
   },
   {
-    "objectID": "lectures/3-atomic-vectors/slides.html#review",
-    "href": "lectures/3-atomic-vectors/slides.html#review",
-    "title": "Atomic Vectors",
-    "section": "Review",
-    "text": "Review\nLast time …"
-  },
-  {
     "objectID": "lectures/3-atomic-vectors/slides.html#announcements",
     "href": "lectures/3-atomic-vectors/slides.html#announcements",
     "title": "Atomic Vectors",
     "section": "Announcements",
-    "text": "Announcements\n\nWorking locally\nOffice Hours / Group Tutoring\nProblem Sets"
+    "text": "Announcements\n\nOffice Hours / Group Tutoring\nDSP accommodations ✉️\nQuarto Publication 1 (Thu 1/29 in lab)\nProblem Set 1 (available Thu 1/29, due Wed 2/4)"
   },
   {
-    "objectID": "lectures/3-atomic-vectors/slides.html#leias-data",
-    "href": "lectures/3-atomic-vectors/slides.html#leias-data",
+    "objectID": "lectures/3-atomic-vectors/slides.html#leias-data-objects",
+    "href": "lectures/3-atomic-vectors/slides.html#leias-data-objects",
     "title": "Atomic Vectors",
-    "section": "Leia’s data",
-    "text": "Leia’s data\n\n\n\n\n\n\n\n\n\n\n\nname &lt;- \"Leia\""
+    "section": "Leia’s data objects",
+    "text": "Leia’s data objects\n\n\n\n\n\n\n\n\n\n\n\nname &lt;- \"Leia\""
   },
   {
-    "objectID": "lectures/3-atomic-vectors/slides.html#leias-data-1",
-    "href": "lectures/3-atomic-vectors/slides.html#leias-data-1",
+    "objectID": "lectures/3-atomic-vectors/slides.html#leias-data-objects-1",
+    "href": "lectures/3-atomic-vectors/slides.html#leias-data-objects-1",
     "title": "Atomic Vectors",
-    "section": "Leia’s data",
-    "text": "Leia’s data\n\n\n\n\n\n\n\n\n\n\n\nname &lt;- \"Leia\"\n\ngender &lt;- \"female\""
+    "section": "Leia’s data objects",
+    "text": "Leia’s data objects\n\n\n\n\n\n\n\n\n\n\n\nname &lt;- \"Leia\"\n\ngender &lt;- \"female\""
   },
   {
-    "objectID": "lectures/3-atomic-vectors/slides.html#leias-data-2",
-    "href": "lectures/3-atomic-vectors/slides.html#leias-data-2",
+    "objectID": "lectures/3-atomic-vectors/slides.html#leias-data-objects-2",
+    "href": "lectures/3-atomic-vectors/slides.html#leias-data-objects-2",
     "title": "Atomic Vectors",
-    "section": "Leia’s data",
-    "text": "Leia’s data\n\n\n\n\n\n\n\n\n\n\n\nname &lt;- \"Leia\"\n\ngender &lt;- \"female\"\n\nheight &lt;- 1.50"
+    "section": "Leia’s data objects",
+    "text": "Leia’s data objects\n\n\n\n\n\n\n\n\n\n\n\nname &lt;- \"Leia\"\n\ngender &lt;- \"female\"\n\nheight &lt;- 1.50"
   },
   {
-    "objectID": "lectures/3-atomic-vectors/slides.html#leias-data-3",
-    "href": "lectures/3-atomic-vectors/slides.html#leias-data-3",
+    "objectID": "lectures/3-atomic-vectors/slides.html#leias-data-objects-3",
+    "href": "lectures/3-atomic-vectors/slides.html#leias-data-objects-3",
     "title": "Atomic Vectors",
-    "section": "Leia’s data",
-    "text": "Leia’s data\n\n\n\n\n\n\n\n\n\n\n\nname &lt;- \"Leia\"\n\ngender &lt;- \"female\"\n\nheight &lt;- 1.50\n\nforce &lt;- TRUE"
+    "section": "Leia’s data objects",
+    "text": "Leia’s data objects\n\n\n\n\n\n\n\n\n\n\n\nname &lt;- \"Leia\"\n\ngender &lt;- \"female\"\n\nheight &lt;- 1.50\n\nforce &lt;- TRUE"
   },
   {
     "objectID": "lectures/3-atomic-vectors/slides.html#data-types",
     "href": "lectures/3-atomic-vectors/slides.html#data-types",
     "title": "Atomic Vectors",
     "section": "Data Types",
-    "text": "Data Types\n\n\n\n# character (chr)\nname &lt;- \"Leia\"\n\n# character (chr)\ngender &lt;- \"female\"\n\n# logical (lgl)\nforce &lt;- TRUE\n\n\n\n\n\n\n# double (dbl)\nheight &lt;- 1.50\n\n# double (dbl)\nheight_cm &lt;- 150\n\n# integer (int)\nheight_cm2 &lt;- 150L"
+    "text": "Data Types\n\n\n\n# character (chr)\nname &lt;- \"Leia\"\n\n# character (chr)\ngender &lt;- \"female\"\n\n# logical (lgl)\nforce &lt;- TRUE\n\n\n\n# double (dbl)\nheight &lt;- 1.50\n\n# double (dbl)\nheight_cm &lt;- 150\n\n# integer (int)\nheight_cm2 &lt;- 150L\n\n\n\n\n\nBTW: All these objects are vectors."
   },
   {
     "objectID": "lectures/3-atomic-vectors/slides.html#vectors",
     "href": "lectures/3-atomic-vectors/slides.html#vectors",
     "title": "Atomic Vectors",
     "section": "Vectors",
-    "text": "Vectors\nTo create bigger vectors we use the combine function c()\n\nname &lt;- c(\"Leia\", \"Luke\", \"Han\")"
+    "text": "Vectors\nTo create “larger” vectors we use the combine function c()\n\n\nname &lt;- c(\"Leia\", \"Luke\", \"Han\")\nname\n\n\n\n[1] \"Leia\" \"Luke\" \"Han\" \n\n\n\n\n\ngender &lt;- c(\"female\", \"male\", \"male\")\ngender\n\n\n\n[1] \"female\" \"male\"   \"male\"  \n\n\n\n\n\nheight &lt;- c(1.50, 1.70, 1.80)\nheight\n\n\n\n[1] 1.5 1.7 1.8\n\n\n\n\n\nforce &lt;- c(TRUE, TRUE, FALSE)\nforce\n\n\n\n[1]  TRUE  TRUE FALSE"
   },
   {
     "objectID": "lectures/3-atomic-vectors/slides.html#vectors-1",
     "href": "lectures/3-atomic-vectors/slides.html#vectors-1",
-    "title": "Atomic Vectors",
-    "section": "Vectors",
-    "text": "Vectors\nTo create bigger vectors we use the combine function c()\n\nname &lt;- c(\"Leia\", \"Luke\", \"Han\")\n\ngender &lt;- c(\"female\", \"male\", \"male\")"
-  },
-  {
-    "objectID": "lectures/3-atomic-vectors/slides.html#vectors-2",
-    "href": "lectures/3-atomic-vectors/slides.html#vectors-2",
-    "title": "Atomic Vectors",
-    "section": "Vectors",
-    "text": "Vectors\nTo create bigger vectors we use the combine function c()\n\nname &lt;- c(\"Leia\", \"Luke\", \"Han\")\n\ngender &lt;- c(\"female\", \"male\", \"male\")\n\nheight &lt;- c(1.50, 1.75, 1.80)"
-  },
-  {
-    "objectID": "lectures/3-atomic-vectors/slides.html#vectors-3",
-    "href": "lectures/3-atomic-vectors/slides.html#vectors-3",
-    "title": "Atomic Vectors",
-    "section": "Vectors",
-    "text": "Vectors\nTo create bigger vectors we use the combine function c()\n\nname &lt;- c(\"Leia\", \"Luke\", \"Han\")\n\ngender &lt;- c(\"female\", \"male\", \"male\")\n\nheight &lt;- c(1.50, 1.75, 1.80)\n\nforce &lt;- c(TRUE, TRUE, FALSE)"
-  },
-  {
-    "objectID": "lectures/3-atomic-vectors/slides.html#vectors-4",
-    "href": "lectures/3-atomic-vectors/slides.html#vectors-4",
     "title": "Atomic Vectors",
     "section": "Vectors",
     "text": "Vectors\n\nCentral—and most basic—data structure in R\nOrdered set of elements (i.e. contiguous cells)\nCan be of any length (including zero)\nAtomic: elements of the same type\nElements can have names"
@@ -3873,7 +3971,7 @@
     "href": "lectures/3-atomic-vectors/slides.html#section-2",
     "title": "Atomic Vectors",
     "section": "",
-    "text": "name &lt;- c(\"Leia\", \"Luke\", \"Han\")\nname\n\n\n\n[1] \"Leia\" \"Luke\" \"Han\" \n\n\n\n\nlength(name)\n\n\n\n[1] 3\n\n\n\n\n\nheight &lt;- c(1.50, 1.75, 1.80)\nheight\n\n\n\n[1] 1.50 1.75 1.80\n\n\n\n\n\nnames(height) &lt;- name\nheight\n\n\n\nLeia Luke  Han \n1.50 1.75 1.80 \n\n\n\n\n\nweight_kg &lt;- c(\"Leia\" = 55, \"Luke\" = 75, \"Han\" = 85)\nweight_kg\n\n\n\nLeia Luke  Han \n  55   75   85"
+    "text": "name &lt;- c(\"Leia\", \"Luke\", \"Han\")\nname\n\n\n\n[1] \"Leia\" \"Luke\" \"Han\" \n\n\n\n\nlength(name)\n\n\n\n[1] 3\n\n\n\n\n\nheight &lt;- c(1.50, 1.70, 1.80)\nheight\n\n\n\n[1] 1.5 1.7 1.8\n\n\n\n\n\nnames(height) &lt;- name\nheight\n\n\n\nLeia Luke  Han \n 1.5  1.7  1.8 \n\n\n\n\n\nweight_kg &lt;- c(\"Leia\" = 55, \"Luke\" = 75, \"Han\" = 85)\nweight_kg\n\n\n\nLeia Luke  Han \n  55   75   85"
   },
   {
     "objectID": "lectures/3-atomic-vectors/slides.html#atomic-vectors",
@@ -3894,7 +3992,7 @@
     "href": "lectures/3-atomic-vectors/slides.html#a-comment-about-comments",
     "title": "Atomic Vectors",
     "section": "A comment about comments",
-    "text": "A comment about comments\nComment character: special character to skip evaluation of remaining characters on a line. R (and Python) use #.\n\n# create vector\nc(\"A\", \"C\", \"D\") # vector created!\n\n[1] \"A\" \"C\" \"D\"\n\n\nvs.\n\ncreate vector\nc(\"A\", \"C\", \"D\") vector created!\n\nError in parse(text = input): &lt;text&gt;:1:8: unexpected symbol\n1: create vector\n           ^"
+    "text": "A comment about comments\nComment character: special character to skip evaluation of remaining characters on a line. R (and Python) use #.\n\n# create vector\nc(\"A\", \"C\", \"D\") # vector created!\n\n\n\n[1] \"A\" \"C\" \"D\"\n\n\n\nvs.\n\ncreate vector\nc(\"A\", \"C\", \"D\") vector created!\n\n\n\nError in parse(text = input): &lt;text&gt;:1:8: unexpected symbol\n1: create vector\n           ^"
   },
   {
     "objectID": "lectures/3-atomic-vectors/slides.html#r-jargon-types-and-modes",
@@ -3908,14 +4006,35 @@
     "href": "lectures/3-atomic-vectors/slides.html#types-and-modes",
     "title": "Atomic Vectors",
     "section": "Types and Modes",
-    "text": "Types and Modes\n\n\n\n\n\n\n\n4 main types: logical, integer, double, character\n3 main modes: logical, numeric, character"
+    "text": "Types and Modes\n\n\n\n\n\n\n4 main types: logical, integer, double, character\n3 main modes: logical, numeric, character"
+  },
+  {
+    "objectID": "lectures/3-atomic-vectors/slides.html#section-3",
+    "href": "lectures/3-atomic-vectors/slides.html#section-3",
+    "title": "Atomic Vectors",
+    "section": "",
+    "text": "Name\nHouse\nSpells\n\n\n\n\nHarry\nGryffindor\n60\n\n\nBellatrix\nSlytherin\n75\n\n\nHermione\nGryffindor\n70\n\n\n\n\n\n\n\n\n\n−+\n01:00\n\n\n\nWhich command creates a valid vector Name?\n\nName &lt;- (Harry, Bellatrix, Hermione)\nName &lt;- c(Harry, Bellatrix, Hermione)\nName -&gt; c(\"Harry\", \"Bellatrix\", \"Hermione\")\nName &lt;- c(\"Harry\", \"Bellatrix\", \"Hermione\")"
+  },
+  {
+    "objectID": "lectures/3-atomic-vectors/slides.html#section-4",
+    "href": "lectures/3-atomic-vectors/slides.html#section-4",
+    "title": "Atomic Vectors",
+    "section": "",
+    "text": "Name\nHouse\nSpells\n\n\n\n\nHarry\nGryffindor\n60\n\n\nBellatrix\nSlytherin\n75\n\n\nHermione\nGryffindor\n70\n\n\n\n\n\n\n\n\n\n−+\n01:30\n\n\n\nWhat is the data type of the following vectors?\n\nspells1 &lt;- c(60, 75, 70)\nspells2 &lt;- c(60.0, 75.0, 70.0)\nspells3 &lt;- c(60L, 75L, 70L)\nspells3 &lt;- c(\"60\", \"75\", \"70\")"
+  },
+  {
+    "objectID": "lectures/3-atomic-vectors/slides.html#section-5",
+    "href": "lectures/3-atomic-vectors/slides.html#section-5",
+    "title": "Atomic Vectors",
+    "section": "",
+    "text": "−+\n01:30\n\n\n\nConsider the following vectors:\n\nHH &lt;- c(\"Harry\", \"Hermione\")\nSpells &lt;- c(60, 75, 70)\n\n\n\n\nWhat is the length of the following vectors?\n\nc(HH, \"Ron\")\nc(HH, c(\"Ron\", \"Luna\"))\nc(Spells, Spells)\nc(Spells, NULL)"
   },
   {
     "objectID": "lectures/3-atomic-vectors/slides.html#functions-to-create-vectors",
     "href": "lectures/3-atomic-vectors/slides.html#functions-to-create-vectors",
     "title": "Atomic Vectors",
     "section": "Functions to create vectors",
-    "text": "Functions to create vectors\nR has a large repertoire of functions to create a variety of vectors in different ways.\nWe’ve already seen the combine function c().\nFunctions to initialize “dummy” vectors:\n\nlogical(length = )\ninteger(length = )\ndouble(length = )\ncharacter(length = )\nvector(mode = , length = )"
+    "text": "Functions to create vectors\nR has a large repertoire of functions to create a variety of vectors.\nWe’ve already seen the combine function c().\n\n\n\nFunctions to initialize “dummy” vectors:\n\nlogical(length = )\ninteger(length = )\ndouble(length = )\ncharacter(length = )\nvector(mode = , length = )"
   },
   {
     "objectID": "lectures/3-atomic-vectors/slides.html#functions-to-initialize-dummy-vectors",
@@ -4237,7 +4356,7 @@
     "href": "lectures/5-unix-basics/slides.html#yesterdays-lab",
     "title": "Unix Basics",
     "section": "Yesterday’s Lab",
-    "text": "Yesterday’s Lab\n\nBasic Unix commands\nOpened QuartoPub account\nInstalled Quarto\nPublished a basic qmd file\nStarted PS1"
+    "text": "Yesterday’s Lab\n\nBasic Unix commands\nOpened QuartoPub account\nInstalled Quarto\nPublished a basic qmd file\nStarted PS1 (available on bCourses)"
   },
   {
     "objectID": "lectures/5-unix-basics/slides.html#review-of-quarto-commands",
