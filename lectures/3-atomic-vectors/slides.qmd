@@ -1,5 +1,6 @@
 ---
 title: "Atomic Vectors"
+subtitle: "R's building blocks"
 format: stat133slides-revealjs
 chalkboard: true
 ---

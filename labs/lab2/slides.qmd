@@ -46,6 +46,17 @@ Let's determine the following file paths to `stat133/`
 1) [absolute]{.mdlit} path to `stat133/`
 2) [relative]{.hilit} path (from home directory) to `stat133/`
 
+## Reminder: Special Symbols
+
+\
+
+| Symbol | Meaning                             |
+|--------|-------------------------------------|
+| `/`    | root directory (1st slash)          |
+| `A/B`  | A contains B (intermediate slash)   |
+| `~`    | home directory (i.e. `/home/user/`) |
+| `.`    | current directory                   |
+| `..`   | parent directory                    |
 
 ## 
 
@@ -81,16 +92,17 @@ My home directory is `/Users/gaston` which can be abbreviated as `~`
 
 :::: {.columns}
 ::: {.column .fragment width="60%"}
-[Absolute path:]{.mdlit}
+[Absolute paths:]{.mdlit}
 
 - `/Users/gaston/Documents/stat133`
 - `~/Documents/stat133`
 :::
 
 ::: {.column .fragment width="40%"}
-[Relative path (from home):]{.hilit}
+[Relative paths (from home):]{.hilit}
 
 - `Documents/stat133`
+- `./Documents/stat133`
 :::
 ::::
 
@@ -227,7 +239,7 @@ touch demo-pub1.qmd
 
 Make sure your `qmd` file has the following content (or something similar):
 
-```{.markdown filename="demo-pub1.qmd" code-line-numbers="false" }
+```{.markdown filename="demo-pub1.qmd" code-line-numbers="false"}
 ---
 title: "Demo Publication 1"
 author: "Your Name"
