@@ -2121,11 +2121,18 @@
     "text": "Folder stat133/\nSomewhere in your computer (e.g. Desktop, Documents) you should have the following folders and files:\n\n\n\n\n  stat133/\n    labs/\n        lab1/\n          lab1-first-last.qmd\n          lab1-first-last.html\n\n\n\n\n\nLet’s determine the following file paths to stat133/\n\nabsolute path to stat133/\nrelative path (from home directory) to stat133/"
   },
   {
+    "objectID": "labs/lab2/slides.html#reminder-special-symbols",
+    "href": "labs/lab2/slides.html#reminder-special-symbols",
+    "title": "Lab 2",
+    "section": "Reminder: Special Symbols",
+    "text": "Reminder: Special Symbols\n\n\n\n\n\nSymbol\nMeaning\n\n\n\n\n/\nroot directory (1st slash)\n\n\nA/B\nA contains B (intermediate slash)\n\n\n~\nhome directory (i.e. /home/user/)\n\n\n.\ncurrent directory\n\n\n..\nparent directory"
+  },
+  {
     "objectID": "labs/lab2/slides.html#section",
     "href": "labs/lab2/slides.html#section",
     "title": "Lab 2",
     "section": "",
-    "text": "For example, assume I have the following file structure—starting at the root directory /\n\n\n\n\n  /\n    Users/\n      gaston/\n        Documents/\n          stat133/\n            labs/\n              lab1/\n\n\n\nNote:\nMy home directory is /Users/gaston which can be abbreviated as ~\n\n\n\n\n\nAbsolute path:\n\n/Users/gaston/Documents/stat133\n~/Documents/stat133\n\n\nRelative path (from home):\n\nDocuments/stat133"
+    "text": "For example, assume I have the following file structure—starting at the root directory /\n\n\n\n\n  /\n    Users/\n      gaston/\n        Documents/\n          stat133/\n            labs/\n              lab1/\n\n\n\nNote:\nMy home directory is /Users/gaston which can be abbreviated as ~\n\n\n\n\n\nAbsolute paths:\n\n/Users/gaston/Documents/stat133\n~/Documents/stat133\n\n\nRelative paths (from home):\n\nDocuments/stat133\n./Documents/stat133"
   },
   {
     "objectID": "labs/lab2/slides.html#terminal-in-ide",
@@ -2613,7 +2620,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"freshman\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"sophomore\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -2907,7 +2914,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 20     Colby Jones  SAC   SG           78    207 May 28, 2… US      1         \n2 5      Dejounte Mu… NOP   PG           76    180 September… US      7         \n3 34     Wendell Car… ORL   C            82    270 April 16,… US      6         \n4 7      Chris Livin… MIL   SF           78    220 October 1… US      1         \n5 3      Caris LeVert CLE   SF           79    205 August 25… US      8         \n6 30     Nae'Qwan To… CLE   PF           80    210 December … US      R         \n7 22     Lester QuiÃ… NOP   SG           77    208 November … US      2         \n8 8      OG Anunoby   NYK   PF           79    240 July 17, … GB      7         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 25     Skal Labiss… SAC   PF           82    235 March 18,… HT      4         \n2 11     Kyrie Irving DAL   SG           74    195 March 23,… AU      13        \n3 25     P.J. Washin… DAL   PF           79    230 August 23… US      5         \n4 25     Isaiah Mobl… PHI   PF           80    238 September… US      2         \n5 35     PJ Dozier    MIN   SG           78    212 October 2… US      6         \n6 65     Alex Reese   PHI   PF           81    245 May 21, 1… US      R         \n7 12     Cole Swider  TOR   SF           82    220 May 8, 19… US      2         \n8 8      David Roddy  ATL   PF           77    255 March 27,… US      2         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
