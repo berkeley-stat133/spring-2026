@@ -2,6 +2,8 @@
 title: "Atomic Vectors"
 subtitle: "R's building blocks"
 format: stat133slides-revealjs
+revealjs-plugins:
+  - drop
 chalkboard: true
 ---
 
@@ -399,10 +401,10 @@ Consider the following vectors:
 What is the [length]{.bold-hilit} of the following vectors?
 
 ::: {.nonincremental}
-1) `c(HH, "Ron")`
-2) `c(HH, c("Ron", "Luna"))`
-3) `c(Spells, Spells)`
-4) `c(Spells, NULL)`
+1) `v1 <- c(HH, "Ron")`
+2) `v2 <- c(HH, c("Ron", "Luna"))`
+3) `v3 <- c(Spells, Spells)`
+4) `v4 <- c(Spells, NULL)`
 :::
 
 
