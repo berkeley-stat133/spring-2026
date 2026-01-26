@@ -2101,7 +2101,7 @@
     "href": "officehours.html",
     "title": "Office Hours",
     "section": "",
-    "text": "Office hours are subject to change. You can attend OH of any staff member. Append @berkeley.edu to all email addresses.\n\n\nInstructor: Gaston Sanchez gastonsanchez Office hours:  - Mon 1:30pm-2:30pm, Evans 309 - Tue 1:30pm-2:30pm, Evans 309\n\n\nGSI: Drew Galloro argg2159 Office hours: - Tue 3:00pm-5:00pm, Evans 434\n\n\nGSI: Clara Reckhorn clara_reckhorn Office hours:  - Day hh-hh, Evans TBD\n\n\nGSI: Will Torous wtorous Office hours:  - Mon 1:00pm-2:00pm, Evans 434 - Wed 12:30pm-1:30pm, Evans 434\n\n\nTutor: Carlota Blanco Office hours:  - Mon 10:10am-12:10pm, Evans TBD - Wed 10:10am-12:10pm, Evans TBD\n\n\nTutor: Montserrat Ibarra Office hours:  - Mon 2:00pm-4:00pm, Evans TBD - Fri 2:00pm-4:00pm, Evans TBD",
+    "text": "Office hours are subject to change. You can attend OH of any staff member. Append @berkeley.edu to all email addresses.\n\n\nInstructor: Gaston Sanchez gastonsanchez Office hours:  - Mon 1:30pm-2:30pm, Evans 309 - Tue 1:30pm-2:30pm, Evans 309\n\n\nGSI: Drew Galloro argg2159 Office hours: - Tue 3:00pm-5:00pm, Evans 434\n\n\nGSI: Clara Reckhorn clara_reckhorn Office hours:  - Day hh-hh, Evans TBD\n\n\nGSI: Will Torous wtorous Office hours:  - Mon 12:30pm-1:30pm, Evans 434 - Wed 12:30pm-1:30pm, Evans 434\n\n\nTutor: Carlota Blanco Office hours:  - Mon 10:10am-12:10pm, Evans TBD - Wed 10:10am-12:10pm, Evans TBD\n\n\nTutor: Montserrat Ibarra Office hours:  - Mon 2:00pm-4:00pm, Evans TBD - Fri 2:00pm-4:00pm, Evans TBD",
     "crumbs": [
       "Office Hours"
     ]
@@ -2914,7 +2914,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 25     Skal Labiss… SAC   PF           82    235 March 18,… HT      4         \n2 11     Kyrie Irving DAL   SG           74    195 March 23,… AU      13        \n3 25     P.J. Washin… DAL   PF           79    230 August 23… US      5         \n4 25     Isaiah Mobl… PHI   PF           80    238 September… US      2         \n5 35     PJ Dozier    MIN   SG           78    212 October 2… US      6         \n6 65     Alex Reese   PHI   PF           81    245 May 21, 1… US      R         \n7 12     Cole Swider  TOR   SF           82    220 May 8, 19… US      2         \n8 8      David Roddy  ATL   PF           77    255 March 27,… US      2         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 3      Anthony Dav… DAL   PF           82    253 March 11,… US      12        \n2 44     Jackson Rowe GSW   PF           78    210 January 4… CA      R         \n3 31     Tidjane Sal… CHO   PF           82    207 August 10… FR      R         \n4 40     Luke Kornet  BOS   C            85    250 July 15, … US      7         \n5 00     Bennedict M… IND   SF           77    210 June 19, … CA      2         \n6 14     Terance Mann ATL   SG           78    215 October 1… US      5         \n7 11     Bryce McGow… POR   SG           78    190 November … US      2         \n8 18     Mouhamed Gu… ATL   PF           83    210 November … SN      1         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -4034,7 +4034,7 @@
     "href": "lectures/3-atomic-vectors/slides.html#section-5",
     "title": "Atomic Vectors",
     "section": "",
-    "text": "−+\n01:30\n\n\n\nConsider the following vectors:\n\nHH &lt;- c(\"Harry\", \"Hermione\")\nSpells &lt;- c(60, 75, 70)\n\n\n\n\nWhat is the length of the following vectors?\n\nc(HH, \"Ron\")\nc(HH, c(\"Ron\", \"Luna\"))\nc(Spells, Spells)\nc(Spells, NULL)"
+    "text": "−+\n01:30\n\n\n\nConsider the following vectors:\n\nHH &lt;- c(\"Harry\", \"Hermione\")\nSpells &lt;- c(60, 75, 70)\n\n\n\n\nWhat is the length of the following vectors?\n\nv1 &lt;- c(HH, \"Ron\")\nv2 &lt;- c(HH, c(\"Ron\", \"Luna\"))\nv3 &lt;- c(Spells, Spells)\nv4 &lt;- c(Spells, NULL)"
   },
   {
     "objectID": "lectures/3-atomic-vectors/slides.html#functions-to-create-vectors",
