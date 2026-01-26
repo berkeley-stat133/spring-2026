@@ -376,7 +376,7 @@ What is the [data type]{.bold-hilit} of the following vectors?
 a) `spells1 <- c(60, 75, 70)`
 b) `spells2 <- c(60.0, 75.0, 70.0)`
 c) `spells3 <- c(60L, 75L, 70L)`
-d) `spells3 <- c("60", "75", "70")`
+d) `spells4 <- c("60", "75", "70")`
 :::
 
 
