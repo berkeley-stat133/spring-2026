@@ -2620,7 +2620,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"sophomore\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"senior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -2914,7 +2914,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 3      Anthony Dav… DAL   PF           82    253 March 11,… US      12        \n2 44     Jackson Rowe GSW   PF           78    210 January 4… CA      R         \n3 31     Tidjane Sal… CHO   PF           82    207 August 10… FR      R         \n4 40     Luke Kornet  BOS   C            85    250 July 15, … US      7         \n5 00     Bennedict M… IND   SF           77    210 June 19, … CA      2         \n6 14     Terance Mann ATL   SG           78    215 October 1… US      5         \n7 11     Bryce McGow… POR   SG           78    190 November … US      2         \n8 18     Mouhamed Gu… ATL   PF           83    210 November … SN      1         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 17     \"P.J. Tucke… NYK   SF           77    245 May 5, 19… US      13        \n2 5      \"De'Aaron F… SAC   PG           75    185 December … US      7         \n3 17     \"Dennis Sch… BRK   PG           73    175 September… DE      11        \n4 17     \"Karlo Matk… NOP   PF           82    231 March 30,… BA      R         \n5 35     \"Goga Bitad… ORL   C            83    250 July 20, … GE      5         \n6 22     \"Cason Wall… OKC   SG           75    195 November … US      1         \n7 1, 8   \"Ziaire Wil… BRK   SF           81    185 September… US      3         \n8 22     \"Jimmy Butl… MIA   PF           78    230 September… US      13        \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -4027,7 +4027,7 @@
     "href": "lectures/3-atomic-vectors/slides.html#section-4",
     "title": "Atomic Vectors",
     "section": "",
-    "text": "Name\nHouse\nSpells\n\n\n\n\nHarry\nGryffindor\n60\n\n\nBellatrix\nSlytherin\n75\n\n\nHermione\nGryffindor\n70\n\n\n\n\n\n\n\n\n\n−+\n01:30\n\n\n\nWhat is the data type of the following vectors?\n\nspells1 &lt;- c(60, 75, 70)\nspells2 &lt;- c(60.0, 75.0, 70.0)\nspells3 &lt;- c(60L, 75L, 70L)\nspells3 &lt;- c(\"60\", \"75\", \"70\")"
+    "text": "Name\nHouse\nSpells\n\n\n\n\nHarry\nGryffindor\n60\n\n\nBellatrix\nSlytherin\n75\n\n\nHermione\nGryffindor\n70\n\n\n\n\n\n\n\n\n\n−+\n01:30\n\n\n\nWhat is the data type of the following vectors?\n\nspells1 &lt;- c(60, 75, 70)\nspells2 &lt;- c(60.0, 75.0, 70.0)\nspells3 &lt;- c(60L, 75L, 70L)\nspells4 &lt;- c(\"60\", \"75\", \"70\")"
   },
   {
     "objectID": "lectures/3-atomic-vectors/slides.html#section-5",
