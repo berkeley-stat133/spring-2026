@@ -2101,7 +2101,7 @@
     "href": "officehours.html",
     "title": "Office Hours",
     "section": "",
-    "text": "Office hours are subject to change. You can attend OH of any staff member. Append @berkeley.edu to all email addresses.\n\n\nInstructor: Gaston Sanchez gastonsanchez Office hours:  - Mon 1:30pm-2:30pm, Evans 309 - Tue 1:30pm-2:30pm, Evans 309\n\n\nGSI: Drew Galloro argg2159 Office hours: - Tue 3:00pm-5:00pm, Evans 434\n\n\nGSI: Clara Reckhorn clara_reckhorn Office hours:  - Day hh-hh, Evans TBD\n\n\nGSI: Will Torous wtorous Office hours:  - Mon 12:30pm-1:30pm, Evans 434 - Wed 12:30pm-1:30pm, Evans 434\n\n\nTutor: Carlota Blanco Office hours:  - Mon 10:10am-12:10pm, Evans TBD - Wed 10:10am-12:10pm, Evans TBD\n\n\nTutor: Montserrat Ibarra Office hours:  - Mon 2:00pm-4:00pm, Evans TBD - Fri 2:00pm-4:00pm, Evans TBD",
+    "text": "Office hours are subject to change. You can attend OH of any staff member. Append @berkeley.edu to all email addresses.\n\n\nInstructor: Gaston Sanchez gastonsanchez Office hours:  - Mon 1:30pm-2:30pm, Evans 309 - Tue 1:30pm-2:30pm, Evans 309\n\n\nGSI: Drew Galloro argg2159 Office hours: - Tue 3:00pm-5:00pm, Evans 434\n\n\nGSI: Clara Reckhorn clara_reckhorn Office hours:  - Day hh-hh, Evans TBD\n\n\nGSI: Will Torous wtorous Office hours:  - Mon 12:30pm-1:30pm, Evans 434 - Wed 11:30am-12:30pm, Evans 434\n\n\nTutor: Carlota Blanco Office hours:  - Mon 10:10am-12:10pm, Evans TBD - Wed 10:10am-12:10pm, Evans TBD\n\n\nTutor: Montserrat Ibarra Office hours:  - Mon 2:00pm-4:00pm, Evans TBD - Fri 2:00pm-4:00pm, Evans TBD",
     "crumbs": [
       "Office Hours"
     ]
@@ -2620,7 +2620,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"sophomore\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"senior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -2914,7 +2914,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 11     Colin Castl… TOR   C            82    250 May 25, 2… US      1         \n2 33     Tre Jones    SAS   PG           73    185 January 8… US      4         \n3 25     P.J. Washin… DAL   PF           79    230 August 23… US      5         \n4 13     Bam Adebayo  MIA   C            81    255 July 18, … US      7         \n5 14     Terance Mann LAC   SG           78    215 October 1… US      5         \n6 23     LeBron James LAL   SF           81    250 December … US      21        \n7 8      Jared Rhoden TOR   SG           77    210 August 27… US      2         \n8 31     Alondes Wil… DET   SG           76    210 June 19, … US      2         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 25     Lester QuiÃ… PHI   SG           77    208 November … US      2         \n2 7      Shake Milton BRK   SG           77    205 September… US      6         \n3 4      Pacome Dadi… NYK   SG           81    210 July 27, … FR      R         \n4 12     De'Andre Hu… CLE   SF           79    221 December … US      5         \n5 10     Darius Garl… CLE   PG           73    192 January 2… US      5         \n6 4      De'Aaron Fox SAS   PG           75    185 December … US      7         \n7 77     Bones Hyland MIN   PG           74    169 September… US      3         \n8 23     Patrick Bal… LAC   SF           84    220 November … US      2         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
