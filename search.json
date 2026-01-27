@@ -2139,7 +2139,7 @@
     "href": "labs/lab2/slides.html#terminal-in-ide",
     "title": "Lab 2",
     "section": "Terminal in IDE",
-    "text": "Terminal in IDE\n\nLaunch your IDE (Positron or RStuio)\nLocate the Terminal tab (next to the Console tab)\nClick on the Terminal\n\n\nWe use the Terminal to interact with the operating system.\nThe way we carry out this interaction is by typing commands, e.g.\n\npwd: print working directory\nls: list files\ncd: change directory\nmkdir: make directory"
+    "text": "Terminal in IDE\n\nLaunch your IDE (Positron or RStudio)\nLocate the Terminal tab (next to the Console tab)\nClick on the Terminal\n\n\nWe use the Terminal to interact with the operating system.\nThe way we carry out this interaction is by typing commands, e.g.\n\npwd: print working directory\nls: list files\ncd: change directory\nmkdir: make directory"
   },
   {
     "objectID": "labs/lab2/slides.html#section-1",
@@ -2620,7 +2620,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"senior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"sophomore\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -2914,7 +2914,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 25     Lester QuiÃ… PHI   SG           77    208 November … US      2         \n2 7      Shake Milton BRK   SG           77    205 September… US      6         \n3 4      Pacome Dadi… NYK   SG           81    210 July 27, … FR      R         \n4 12     De'Andre Hu… CLE   SF           79    221 December … US      5         \n5 10     Darius Garl… CLE   PG           73    192 January 2… US      5         \n6 4      De'Aaron Fox SAS   PG           75    185 December … US      7         \n7 77     Bones Hyland MIN   PG           74    169 September… US      3         \n8 23     Patrick Bal… LAC   SF           84    220 November … US      2         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 21     Joel Embiid  PHI   C            84    280 March 16,… CM      8         \n2 2      Jonathan Mo… TOR   PF           81    225 October 2… US      R         \n3 8      Enrique Fre… IND   PF           81    220 July 29, … US      R         \n4 7      Joe Ingles   MIN   SF           80    220 October 2… AU      10        \n5 20     Emanuel Mil… CHI   PF           77    215 June 19, … CA      R         \n6 12     Taurean Pri… MIL   SF           78    218 March 22,… US      8         \n7 9      Terence Dav… SAC   SG           76    201 May 16, 1… US      4         \n8 12     Tobias Harr… DET   PF           80    226 July 15, … US      13        \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
