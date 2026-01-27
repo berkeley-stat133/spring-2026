@@ -111,7 +111,7 @@ My home directory is `/Users/gaston` which can be abbreviated as `~`
 
 ## Terminal in IDE
 
-1) Launch your IDE (Positron or RStuio)
+1) Launch your IDE (Positron or RStudio)
 
 2) Locate the [Terminal]{.bold-hilit} tab (next to the _Console_ tab)
 

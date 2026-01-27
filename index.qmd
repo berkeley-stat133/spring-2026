@@ -69,7 +69,7 @@ Lab 1: [slides](labs/lab1/slides.html)
 
 ::: {.column width="30%"}
 #### Description
-Vectors
+[Vectors](lectures/3-atomic-vectors/slides.html)
 
 Working with Vectors
 
