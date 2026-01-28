@@ -380,7 +380,7 @@ char_vec2[TRUE]
 
 ## Question
 
-Write down three methods to generate each vector from the vector `z`, one for each subsetting method.
+Write down two methods to generate each vector from the vector `z`, one for numeric subsetting, another for character subsetting.
 
 ```{r}
 z <- c(latte = 2, boba = 4, matcha = 6)
@@ -395,6 +395,15 @@ Vector 1:
 z[2:1]
 ```
 
+```{r}
+#| code-fold: true
+#| code-summary: "answer"
+#| eval: false
+z[c(2, 1)]
+z[2:1]
+z[c("boba", "latte")]
+```
+
 . . .
 
 Vector 2:
@@ -402,6 +411,15 @@ Vector 2:
 ```{r}
 #| echo: false
 z[c(3, 3)]
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: "answer"
+#| eval: false
+z[c(3, 3)]
+z[c("matcha", "matcha")]
+z[rep(3, times = 2)]
 ```
 
 ```{r}
