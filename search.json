@@ -2620,7 +2620,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"freshman\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"sophomore\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -2914,7 +2914,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 1      Colby Jones  WAS   SG           78    207 May 28, 2… US      1         \n2 15     Drew Eubanks UTA   C            82    245 February … US      6         \n3 34     Wendell Car… ORL   C            82    270 April 16,… US      6         \n4 7      Jaylen Brown BOS   SF           78    223 October 2… US      8         \n5 15     Jose Alvara… NOP   PG           72    179 April 12,… US      3         \n6 0      Aaron Holid… HOU   PG           72    185 September… US      6         \n7 2      Brandin Pod… GSW   SG           76    205 February … US      1         \n8 18     Chuma Okeke  PHI   PF           79    229 August 18… US      4         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 10     Darius Garl… CLE   PG           73    192 January 2… US      5         \n2 3      DaQuan Jeff… CHO   SG           77    222 August 30… US      5         \n3 12     Collin Gill… PHO   PG           73    195 June 25, … US      1         \n4 29     Daeqwon Plo… ATL   SG           76    216 August 29… US      R         \n5 24     Pat Connaug… MIL   SG           77    209 January 6… US      9         \n6 25     Ben Simmons  LAC   PG           82    240 July 20, … AU      6         \n7 14     Matas Buzel… CHI   SF           80    209 October 1… US      R         \n8 00     Ron Holland  DET   SF           80    206 July 7, 2… US      R         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -4384,42 +4384,63 @@
     "href": "lectures/5-unix-basics/slides.html#about-guis",
     "title": "Unix Basics",
     "section": "About GUIs",
-    "text": "About GUIs\n\nEasy to learn\nRely on visual displays\nCan be extremely useful\nHave improved the friendliness and usability of computers\nExcellent for:\n\nPhoto editing\nDocument Layout\nBrowsing the web\nGraphic design\nWatching movies\nPlaying Games"
+    "text": "About GUIs\n\nEasy to learn\nRely on visual displays\nHave improved the friendliness and usability of computers\nExcellent for:\n\nPhoto editing\nDocument Layout\nBrowsing the web\nGraphic design\nWatching movies\nPlaying Games"
+  },
+  {
+    "objectID": "lectures/5-unix-basics/slides.html#guis-trade-offs",
+    "href": "lectures/5-unix-basics/slides.html#guis-trade-offs",
+    "title": "Unix Basics",
+    "section": "GUIs Trade-offs",
+    "text": "GUIs Trade-offs\n\nThey are limiting\nThey don’t allow you to have more control over what your computer can do\nSome operations are labor intensive and repetitive\nYou use clicking & dragging with the cursor/finger, which reduces reproducibility"
   },
   {
     "objectID": "lectures/5-unix-basics/slides.html#section",
     "href": "lectures/5-unix-basics/slides.html#section",
     "title": "Unix Basics",
     "section": "",
-    "text": "Instead of a GUI, you can use a Command-Line Interface (CLI)"
+    "text": "Instead of a GUI, you can use a Command-Line Interface (CLI)\nThe command line is a text-based interface where you type commands and direct text-based input and output to the screen, to files, or to other programs."
   },
   {
     "objectID": "lectures/5-unix-basics/slides.html#clis",
     "href": "lectures/5-unix-basics/slides.html#clis",
     "title": "Unix Basics",
     "section": "CLIs",
-    "text": "CLIs\n\nCLI: Command Line Interface\nThe command-line is a text-based interface\nInstead of using a GUI we can use a CLI\nBy typing commands we perform tasks on the computer"
+    "text": "CLIs\n\nCLI: Command Line Interface\nThe command-line is a text-based interface\nInteracting with the computer via commands\nThe user issues commands in the form of text\nOne of the earliest ways of interacting with a computer"
   },
   {
     "objectID": "lectures/5-unix-basics/slides.html#about-the-kernel",
     "href": "lectures/5-unix-basics/slides.html#about-the-kernel",
     "title": "Unix Basics",
     "section": "About the Kernel",
-    "text": "About the Kernel\n\nThe Kernel is the core of the operating system in Unix\nIt takes care of allocating time and memory to programs\nIt does very fundamental root level management"
+    "text": "About the Kernel\n\n\n\n\n\n\n\n\n\nThe Kernel is the core of the operating system in Unix.\nIt takes care of allocating time and memory to programs.\nIt does very fundamental root level management."
   },
   {
     "objectID": "lectures/5-unix-basics/slides.html#about-the-shell",
     "href": "lectures/5-unix-basics/slides.html#about-the-shell",
     "title": "Unix Basics",
     "section": "About the Shell",
-    "text": "About the Shell\n\nThe Shell is the outer layer of the OS\nThat’s what we see when we open up a terminal window\nWe are working in the Shell\nIt interacts with the user and sends requests to the kernel\nThe Kernel sends results back to the Shell"
+    "text": "About the Shell\n\n\n\n\n\n\n\n\n\nThe Shell is the outer layer of the OS\nThe shell does 4 simple things:\n\ndisplays a prompt in the terminal window (waiting for commands)\nreads your command\nruns the command\nprints the output, if any, to the Terminal window"
   },
   {
-    "objectID": "lectures/5-unix-basics/slides.html#cli-and-terminal",
-    "href": "lectures/5-unix-basics/slides.html#cli-and-terminal",
+    "objectID": "lectures/5-unix-basics/slides.html#about-the-terminal",
+    "href": "lectures/5-unix-basics/slides.html#about-the-terminal",
     "title": "Unix Basics",
-    "section": "CLI and Terminal",
-    "text": "CLI and Terminal\nThe command line is a text-based interface where you type commands and direct text-based input and output to the screen, to files, or to other programs.\nThe Terminal (a.k.a. terminal emulator) is the program that opens a window and lets you interact with the shell.\nOften, people blur the distinction between the Terminal and the Shell."
+    "section": "About the Terminal",
+    "text": "About the Terminal\n\n\n\n\n\n\n\n\nThe Terminal (a.k.a. terminal emulator) is the program provides a text-based environment lets you interact with the shell:\n\nopen windows and tabs\nmanage shells\nresize windows\nchange colors in windows\nhandle copy-paste operations"
+  },
+  {
+    "objectID": "lectures/5-unix-basics/slides.html#demo-cli-advantages",
+    "href": "lectures/5-unix-basics/slides.html#demo-cli-advantages",
+    "title": "Unix Basics",
+    "section": "Demo (CLI advantages)",
+    "text": "Demo (CLI advantages)\nCount number of csv files\n\n\nanswer\nls *.csv | wc -l\n\n\n\nCount number of csv files with FREESTYLE in name\n\n\nanswer\nls *FREESTYLE*.csv | wc -l\n\n\n\n\nCount number of csv files with F-XXX-FREESTYLE in name\n\n\nanswer\nls F*FREESTYLE*.csv | wc -l"
+  },
+  {
+    "objectID": "lectures/5-unix-basics/slides.html#anatomy-of-shell-commands",
+    "href": "lectures/5-unix-basics/slides.html#anatomy-of-shell-commands",
+    "title": "Unix Basics",
+    "section": "Anatomy of Shell Commands",
+    "text": "Anatomy of Shell Commands"
   },
   {
     "objectID": "lectures/5-unix-basics/slides.html#anatomy-of-unix-commands",
@@ -4438,13 +4459,6 @@
   {
     "objectID": "lectures/5-unix-basics/slides.html#anatomy-of-unix-commands-2",
     "href": "lectures/5-unix-basics/slides.html#anatomy-of-unix-commands-2",
-    "title": "Unix Basics",
-    "section": "Anatomy of Unix Commands",
-    "text": "Anatomy of Unix Commands"
-  },
-  {
-    "objectID": "lectures/5-unix-basics/slides.html#anatomy-of-unix-commands-3",
-    "href": "lectures/5-unix-basics/slides.html#anatomy-of-unix-commands-3",
     "title": "Unix Basics",
     "section": "Anatomy of Unix Commands",
     "text": "Anatomy of Unix Commands"

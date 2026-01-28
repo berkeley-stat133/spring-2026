@@ -271,7 +271,6 @@ Gaston Sanchez
 <ul>
 <li class="fragment">Easy to learn</li>
 <li class="fragment">Rely on visual displays</li>
-<li class="fragment">Can be extremely useful</li>
 <li class="fragment">Have improved the friendliness and usability of computers</li>
 <li class="fragment">Excellent for:
 <ul>
@@ -284,19 +283,30 @@ Gaston Sanchez
 </ul></li>
 </ul>
 </section>
+<section id="guis-trade-offs" class="slide level2">
+<h2>GUIs Trade-offs</h2>
+<ul>
+<li class="fragment">They are limiting</li>
+<li class="fragment">They don’t allow you to have more control over what your computer can do</li>
+<li class="fragment">Some operations are labor intensive and repetitive</li>
+<li class="fragment">You use clicking &amp; dragging with the cursor/finger, which reduces reproducibility</li>
+</ul>
+</section>
 <section id="section" class="slide level2">
 <h2></h2>
 <p><br>
 </p>
 <h3 id="instead-of-a-gui-you-can-use-a-command-line-interface-cli">Instead of a GUI, you can use a Command-Line Interface (CLI)</h3>
+<p>The command line is a text-based interface where you type commands and direct text-based input and output to the screen, to files, or to other programs.</p>
 </section>
 <section id="clis" class="slide level2">
 <h2>CLIs</h2>
 <ul>
 <li class="fragment">CLI: Command Line Interface</li>
 <li class="fragment">The command-line is a text-based interface</li>
-<li class="fragment">Instead of using a GUI we can use a CLI</li>
-<li class="fragment">By typing commands we perform tasks on the computer</li>
+<li class="fragment">Interacting with the computer via commands</li>
+<li class="fragment">The user issues commands in the form of text</li>
+<li class="fragment">One of the earliest ways of interacting with a computer</li>
 </ul>
 </section>
 <section id="section-1" class="slide level2 nostretch">
@@ -309,35 +319,98 @@ Gaston Sanchez
 </section>
 <section id="about-the-kernel" class="slide level2">
 <h2>About the Kernel</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/terminal-shell.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div><div class="column fragment" style="width:50%;">
 <ul>
-<li class="fragment">The Kernel is the core of the operating system in Unix</li>
-<li class="fragment">It takes care of allocating time and memory to programs</li>
-<li class="fragment">It does very fundamental root level management</li>
+<li class="fragment">The Kernel is the core of the operating system in Unix.</li>
+<li class="fragment">It takes care of allocating time and memory to programs.</li>
+<li class="fragment">It does very fundamental root level management.</li>
 </ul>
+</div></div>
 </section>
 <section id="about-the-shell" class="slide level2">
 <h2>About the Shell</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/terminal-shell.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div><div class="column fragment" style="width:50%;">
 <ul>
 <li class="fragment">The Shell is the outer layer of the OS</li>
-<li class="fragment">That’s what we see when we open up a terminal window</li>
-<li class="fragment">We are working in the Shell</li>
-<li class="fragment">It interacts with the user and sends requests to the kernel</li>
-<li class="fragment">The Kernel sends results back to the Shell</li>
+<li class="fragment">The shell does 4 simple things:
+<ul>
+<li class="fragment">displays a prompt in the terminal window (waiting for commands)</li>
+<li class="fragment">reads your command</li>
+<li class="fragment">runs the command</li>
+<li class="fragment">prints the output, if any, to the Terminal window</li>
+</ul></li>
 </ul>
+</div></div>
 </section>
-<section id="cli-and-terminal" class="slide level2">
-<h2>CLI and Terminal</h2>
-<p>The command line is a text-based interface where you type commands and direct text-based input and output to the screen, to files, or to other programs.</p>
-<p>The <strong>Terminal</strong> (a.k.a. terminal emulator) is the program that opens a window and lets you interact with the shell.</p>
-<p>Often, people blur the distinction between the Terminal and the Shell.</p>
+<section id="about-the-terminal" class="slide level2">
+<h2>About the Terminal</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/terminal-shell.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<p>The <strong>Terminal</strong> (a.k.a. terminal emulator) is the program provides a text-based environment lets you interact with the shell:</p>
+<ul>
+<li class="fragment">open windows and tabs</li>
+<li class="fragment">manage shells</li>
+<li class="fragment">resize windows</li>
+<li class="fragment">change colors in windows</li>
+<li class="fragment">handle copy-paste operations</li>
+</ul>
+</div></div>
+</section>
+<section id="demo-cli-advantages" class="slide level2">
+<h2>Demo (CLI advantages)</h2>
+<p>Count number of <code>csv</code> files</p>
+<div class="cell">
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>ls <span class="sc">*</span>.csv <span class="sc">|</span> wc <span class="sc">-</span>l</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="fragment">
+<p>Count number of <code>csv</code> files with <code>FREESTYLE</code> in name</p>
+<div class="cell">
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>ls <span class="sc">*</span>FREESTYLE<span class="sc">*</span>.csv <span class="sc">|</span> wc <span class="sc">-</span>l</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div class="fragment">
+<p>Count number of <code>csv</code> files with <code>F-XXX-FREESTYLE</code> in name</p>
+<div class="cell">
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>ls F<span class="sc">*</span>FREESTYLE<span class="sc">*</span>.csv <span class="sc">|</span> wc <span class="sc">-</span>l</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
 </section></section>
 <section>
-<section id="unix-commands" class="title-slide slide level1 center">
-<h1>Unix Commands</h1>
+<section id="shell-commands" class="title-slide slide level1 center">
+<h1>Shell Commands</h1>
 
 </section>
-<section id="anatomy-of-unix-commands" class="slide level2 nostretch">
-<h2>Anatomy of Unix Commands</h2>
+<section id="anatomy-of-shell-commands" class="slide level2 nostretch">
+<h2>Anatomy of Shell Commands</h2>
 <p><br>
 </p>
 <div class="quarto-figure quarto-figure-center">
@@ -346,7 +419,7 @@ Gaston Sanchez
 </figure>
 </div>
 </section>
-<section id="anatomy-of-unix-commands-1" class="slide level2 nostretch">
+<section id="anatomy-of-unix-commands" class="slide level2 nostretch">
 <h2>Anatomy of Unix Commands</h2>
 <p><br>
 </p>
@@ -356,7 +429,7 @@ Gaston Sanchez
 </figure>
 </div>
 </section>
-<section id="anatomy-of-unix-commands-2" class="slide level2 nostretch">
+<section id="anatomy-of-unix-commands-1" class="slide level2 nostretch">
 <h2>Anatomy of Unix Commands</h2>
 <p><br>
 </p>
@@ -366,7 +439,7 @@ Gaston Sanchez
 </figure>
 </div>
 </section>
-<section id="anatomy-of-unix-commands-3" class="slide level2 nostretch">
+<section id="anatomy-of-unix-commands-2" class="slide level2 nostretch">
 <h2>Anatomy of Unix Commands</h2>
 <p><br>
 </p>
@@ -382,16 +455,16 @@ Gaston Sanchez
 <div class="code-with-filename-file">
 <pre><strong>Example 1</strong></pre>
 </div>
-<div class="sourceCode" id="cb4" data-filename="Example 1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># no options, no arguments</span></span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7" data-filename="Example 1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># no options, no arguments</span></span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Example 2</strong></pre>
 </div>
-<div class="sourceCode" id="cb5" data-filename="Example 2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># one option, no arguments</span></span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>ls -l</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8" data-filename="Example 2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># one option, no arguments</span></span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>ls -l</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -399,8 +472,8 @@ Gaston Sanchez
 <div class="code-with-filename-file">
 <pre><strong>Example 3</strong></pre>
 </div>
-<div class="sourceCode" id="cb6" data-filename="Example 3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># no options, one argument</span></span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>ls Documents/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9" data-filename="Example 3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># no options, one argument</span></span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>ls Documents/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -408,8 +481,8 @@ Gaston Sanchez
 <div class="code-with-filename-file">
 <pre><strong>Example 4</strong></pre>
 </div>
-<div class="sourceCode" id="cb7" data-filename="Example 4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># one option, one argument</span></span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>ls -l Documents/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10" data-filename="Example 4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># one option, one argument</span></span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>ls -l Documents/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -417,13 +490,25 @@ Gaston Sanchez
 <div class="code-with-filename-file">
 <pre><strong>Example 5</strong></pre>
 </div>
-<div class="sourceCode" id="cb8" data-filename="Example 5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># two options, one argument</span></span>
-<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>ls -la Documents/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11" data-filename="Example 5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># two options, one argument</span></span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>ls -la Documents/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-
-
 </div>
 </section></section>
+<section id="equivalent-commands" class="title-slide slide level1 center">
+<h1>Equivalent Commands</h1>
+<p>R equivalent of Shell commands:</p>
+<ul>
+<li class="fragment"><code>getwd()</code>: like <code>pwd</code> in Shell</li>
+<li class="fragment"><code>setwd()</code>: like <code>cd</code> in Shell</li>
+<li class="fragment"><code>list.files()</code> and <code>dir()</code>: like <code>ls</code> in Shell</li>
+<li class="fragment"><code>file.copy()</code>: like <code>cp</code> in Shell</li>
+<li class="fragment"><code>file.rename()</code>: like <code>mv</code> in Shell</li>
+<li class="fragment"><code>file.remove()</code>: like <code>rm</code> in Shell</li>
+</ul>
+
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../../site_libs/quarto-contrib/quarto-project/stat133/stat133slides/stat133-hex-num-logo.png" class="slide-logo"></p>
@@ -642,6 +727,44 @@ Gaston Sanchez
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
