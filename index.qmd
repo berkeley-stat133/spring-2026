@@ -71,7 +71,7 @@ Lab 1: [slides](labs/lab1/slides.html)
 #### Description
 [Vectors](lectures/3-atomic-vectors/slides.html)
 
-Working with Vectors
+[Working with Vectors](lectures/4-more-vectors/slides.html)
 
 Lab 2: slides | PS1
  

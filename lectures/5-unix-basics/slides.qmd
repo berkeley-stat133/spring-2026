@@ -51,7 +51,6 @@ the Operating System.
 
 - Easy to learn
 - Rely on visual displays
-- Can be extremely useful
 - Have improved the friendliness and usability of computers
 - Excellent for:
     + Photo editing
@@ -62,19 +61,30 @@ the Operating System.
     + Playing Games
 
 
+## GUIs Trade-offs
+
+- They are limiting
+- They don't allow you to have more control over what your computer can do
+- Some operations are labor intensive and repetitive
+- You use clicking & dragging with the cursor/finger, which reduces reproducibility
+
+
 ##
 
 \
 
 ### Instead of a GUI, you can use a Command-Line Interface (CLI)
 
+The command line is a text-based interface where you type commands and direct text-based input and output to the screen, to files, or to other programs.
+
 
 ## CLIs
 
 - CLI: Command Line Interface
 - The command-line is a text-based interface
-- Instead of using a GUI we can use a CLI
-- By typing commands we perform tasks on the computer
+- Interacting with the computer via commands
+- The user issues commands in the form of text
+- One of the earliest ways of interacting with a computer
 
 
 ## {.nostretch}
@@ -84,32 +94,93 @@ the Operating System.
 
 ## About the Kernel
 
-- The Kernel is the core of the operating system in Unix
-- It takes care of allocating time and memory to programs
-- It does very fundamental root level management
+:::: {.columns}
+::: {.column width="50%"}
+![](images/terminal-shell.png){width="70%" fig-align="center"}
+:::
+::: {.column .fragment width="50%"}
+- The Kernel is the core of the operating system in Unix.
+- It takes care of allocating time and memory to programs.
+- It does very fundamental root level management.
+:::
+::::
 
 
 ## About the Shell
 
+:::: {.columns}
+::: {.column width="50%"}
+![](images/terminal-shell.png){width="70%" fig-align="center"}
+:::
+::: {.column .fragment width="50%"}
 - The Shell is the outer layer of the OS
-- That's what we see when we open up a terminal window
-- We are working in the Shell
-- It interacts with the user and sends requests to the kernel
-- The Kernel sends results back to the Shell
+- The shell does 4 simple things:
+    + displays a prompt in the terminal window (waiting for commands)
+    + reads your command
+    + runs the command
+    + prints the output, if any, to the Terminal window
+:::
+::::
 
 
-## CLI and Terminal
+## About the Terminal
 
-The command line is a text-based interface where you type commands and direct text-based input and output to the screen, to files, or to other programs.
+:::: {.columns}
+::: {.column width="50%"}
+![](images/terminal-shell.png){width="70%" fig-align="center"}
+:::
+::: {.column .fragment width="50%"}
+The __Terminal__ (a.k.a. terminal emulator) is the program provides a text-based environment lets you interact with the shell:
 
-The __Terminal__ (a.k.a. terminal emulator) is the program that opens a window and lets you interact with the shell.
+- open windows and tabs
+- manage shells
+- resize windows
+- change colors in windows
+- handle copy-paste operations
+:::
+::::
 
-Often, people blur the distinction between the Terminal and the Shell.
+
+## Demo (CLI advantages)
+
+Count number of `csv` files
+
+```{r}
+#| code-fold: true
+#| code-summary: "answer"
+#| eval: false
+#| echo: true
+ls *.csv | wc -l
+```
+
+. . .
+
+Count number of `csv` files with `FREESTYLE` in name
+
+```{r}
+#| code-fold: true
+#| code-summary: "answer"
+#| eval: false
+#| echo: true
+ls *FREESTYLE*.csv | wc -l
+```
+
+. . .
+
+Count number of `csv` files with `F-XXX-FREESTYLE` in name
+
+```{r}
+#| code-fold: true
+#| code-summary: "answer"
+#| eval: false
+#| echo: true
+ls F*FREESTYLE*.csv | wc -l
+```
 
 
-# Unix Commands
+# Shell Commands
 
-## Anatomy of Unix Commands {.nostretch}
+## Anatomy of Shell Commands {.nostretch}
 
 \
 
@@ -171,3 +242,15 @@ ls -l Documents/
 # two options, one argument
 ls -la Documents/
 ```
+
+
+# Equivalent Commands
+
+R equivalent of Shell commands:
+
+- `getwd()`: like `pwd` in Shell
+- `setwd()`: like `cd` in Shell
+- `list.files()` and `dir()`: like `ls` in Shell
+- `file.copy()`: like `cp` in Shell
+- `file.rename()`: like `mv` in Shell
+- `file.remove()`: like `rm` in Shell
