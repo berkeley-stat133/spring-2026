@@ -73,7 +73,7 @@ Lab 1: [slides](labs/lab1/slides.html)
 
 [Working with Vectors](lectures/4-more-vectors/slides.html)
 
-Lab 2: slides | PS1
+Lab 2: [slides](labs/lab2/slides.html) | [PS1](https://bcourses.berkeley.edu/courses/1551809/assignments/9021125)
  
 Unix Basics | Proj1
 :::
