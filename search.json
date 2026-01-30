@@ -1855,7 +1855,14 @@
     "href": "lectures/4-more-vectors/slides.html#question-1",
     "title": "Working with Vectors",
     "section": "Question",
-    "text": "Question\nWrite down two methods to generate each vector from the vector z, one for numeric subsetting, another for character subsetting.\n\nz &lt;- c(latte = 2, boba = 4, matcha = 6)\n\n\nVector 1:\n\n\n boba latte \n    4     2 \n\n\n\n\nanswer\nz[c(2, 1)]\nz[2:1]\nz[c(\"boba\", \"latte\")]\n\n\n\n\nVector 2:\n\n\nmatcha matcha \n     6      6 \n\n\n\n\nanswer\nz[c(3, 3)]\nz[c(\"matcha\", \"matcha\")]\nz[rep(3, times = 2)]\n\n\n\n\n\n−+\n02:30"
+    "text": "Question\nWrite down two methods to generate each vector from the vector z, one for numeric subsetting, another for character subsetting.\n\nz &lt;- c(latte = 2, boba = 4, matcha = 6)\n\n\nVector 1:\n\n\n boba latte \n    4     2 \n\n\n\n\nanswer\nz[c(2, 1)]\nz[2:1]\nz[c(\"boba\", \"latte\")]\n\n\n\n\nVector 2:\n\n\nmatcha matcha \n     6      6 \n\n\n\n\nanswer\nz[c(3, 3)]\nz[rep(3, times = 2)]\nz[c(\"matcha\", \"matcha\")]\n\n\n\n\n\n−+\n02:30"
+  },
+  {
+    "objectID": "lectures/4-more-vectors/slides.html#question-2",
+    "href": "lectures/4-more-vectors/slides.html#question-2",
+    "title": "Working with Vectors",
+    "section": "Question",
+    "text": "Question\nConsider the following two vectors: x and y.\n\nx &lt;- c(2, 4, 6)\ny &lt;- c(\"a\", \"b\", \"c\")\n\nWhat is the output of the following R commands?\n\n\n\ny[x[-3][2]]\n\n\n\n\ny[x/x]\n\n\n\n\ny[as.logical(x)]\n\n\n\n\n−+\n02:00"
   },
   {
     "objectID": "lectures/4-more-vectors/slides.html#change-in-place-syntax",
@@ -2620,7 +2627,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"senior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"freshman\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -2914,7 +2921,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 30     Jay Huff     MEM   C            85    240 August 25… US      3         \n2 33     Leonard Mil… MIN   SF           82    220 November … CA      1         \n3 20     John Collins UTA   PF           81    226 September… US      7         \n4 9      Dillon Broo… HOU   SF           79    225 January 2… CA      7         \n5 10     Josh Green   CHO   SG           78    200 November … AU      4         \n6 21     Joel Embiid  PHI   C            84    280 March 16,… CM      8         \n7 34     Wendell Car… ORL   C            82    270 April 16,… US      6         \n8 12     Braxton Key  GSW   SF           79    225 February … US      3         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 1      Michael Por… DEN   SF           82    218 June 29, … US      5         \n2 4      Jared Butler WAS   PG           75    193 August 25… US      3         \n3 24     Cam Spencer  MEM   SG           75    205 April 6, … US      R         \n4 20     Emanuel Mil… CHI   PF           77    215 June 19, … CA      R         \n5 22     Kyle Filipo… UTA   C            83    250 November … US      R         \n6 13     Kevin Huert… CHI   SG           78    198 August 27… US      6         \n7 9      RJ Barrett   TOR   SF           78    214 June 14, … CA      5         \n8 17     Dennis Schr… BRK   PG           73    175 September… DE      11        \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
