@@ -418,14 +418,53 @@ z[c(3, 3)]
 #| code-summary: "answer"
 #| eval: false
 z[c(3, 3)]
-z[c("matcha", "matcha")]
 z[rep(3, times = 2)]
+z[c("matcha", "matcha")]
 ```
 
 ```{r}
 #| echo: false
 countdown::countdown(2.5, bottom = 0)
 ```
+
+
+## Question
+
+Consider the following two vectors: `x` and `y`.
+
+```{r}
+x <- c(2, 4, 6)
+y <- c("a", "b", "c")
+```
+
+What is the output of the following R commands?
+
+\
+
+```{r}
+#| eval: false
+y[x[-3][2]]
+```
+
+\
+
+```{r}
+#| eval: false
+y[x/x]
+```
+
+\
+
+```{r}
+#| eval: false
+y[as.logical(x)]
+```
+
+```{r}
+#| echo: false
+countdown::countdown(2, bottom = 0)
+```
+
 
 ## Change in place syntax
 

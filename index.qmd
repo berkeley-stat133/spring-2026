@@ -75,7 +75,7 @@ Lab 1: [slides](labs/lab1/slides.html)
 
 Lab 2: [slides](labs/lab2/slides.html) | [PS1](https://bcourses.berkeley.edu/courses/1551809/assignments/9021125)
  
-Unix Basics | Proj1
+[Unix Basics](lectures/5-unix-basics/slides.html) | [Proj1](https://bcourses.berkeley.edu/courses/1551809/assignments/9021606)
 :::
 
 ::: {.column width="50%"}
