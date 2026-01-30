@@ -8,12 +8,12 @@ __Lecture__: MWF 9am-10am in [Lewis Hall 100](https://www.berkeley.edu/map/lewis
 
 __Lab__:
 
-- Lab 101, Th 9am-11am, Evans 342 (GSI TBD)
-- Lab 102, Th 10am-12pm, Evans 340 (GSI TBD)
-- Lab 103, Th 11am-1pm, Evans 342 (GSI TBD)
-- Lab 104, Th 12pm-2pm, Evans 340 (GSI TBD)
-- Lab 105, Th 1pm-3pm, Evans 342 (GSI TBD)
-- Lab 106, Th 3pm-5pm, Evans 342 (GSI TBD)
+- Lab 101, Th 9am-11am, Evans 342 (GSI Drew)
+- Lab 102, Th 10am-12pm, Evans 340 (GSI Will)
+- Lab 103, Th 11am-1pm, Evans 342 (GSI Clara)
+- Lab 104, Th 12pm-2pm, Evans 340 (GSI Will)
+- Lab 105, Th 1pm-3pm, Evans 342 (GSI Clara)
+- Lab 106, Th 3pm-5pm, Evans 342 (GSI Drew)
 
 __Prerequisites__: None
 

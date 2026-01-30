@@ -141,6 +141,20 @@ The __Terminal__ (a.k.a. terminal emulator) is the program provides a text-based
 ::::
 
 
+# Demo (CLI advantages)
+
+## Some files in my computer
+
+:::: {.columns}
+::: {.column width="50%"}
+![](images/swimming-files1.png)
+:::
+::: {.column width="50%"}
+![](images/swimming-files2.png)
+:::
+::::
+
+
 ## Demo (CLI advantages)
 
 Count number of `csv` files

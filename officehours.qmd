@@ -11,7 +11,7 @@ Append `@berkeley.edu` to all email addresses.
 **Instructor:** Gaston Sanchez<br>
 `gastonsanchez`<br>
 Office hours: <br>
-- Mon 1:30pm-2:30pm, Evans 309<br>
+- Mon 5:00pm-6:00pm, Evans 309<br>
 - Tue 1:30pm-2:30pm, Evans 309<br>
 :::
 
@@ -49,8 +49,8 @@ Office hours: <br>
 ::: {.g-col-6}
 **Tutor**: Montserrat Ibarra<br>
 Office hours: <br>
-- Mon 2:00pm-4:00pm, Evans TBD<br>
-- Fri 2:00pm-4:00pm, Evans TBD
+- Mon 2:00pm-4:00pm, Evans 426<br>
+- Fri 2:00pm-4:00pm, Evans 434
 :::
 
 :::
