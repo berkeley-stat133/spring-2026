@@ -2080,7 +2080,7 @@
     "href": "info/about.html",
     "title": "About",
     "section": "",
-    "text": "Instructor: Gaston Sanchez\nLecture: MWF 9am-10am in Lewis Hall 100\nLab:\n\nLab 101, Th 9am-11am, Evans 342 (GSI TBD)\nLab 102, Th 10am-12pm, Evans 340 (GSI TBD)\nLab 103, Th 11am-1pm, Evans 342 (GSI TBD)\nLab 104, Th 12pm-2pm, Evans 340 (GSI TBD)\nLab 105, Th 1pm-3pm, Evans 342 (GSI TBD)\nLab 106, Th 3pm-5pm, Evans 342 (GSI TBD)\n\nPrerequisites: None\nRequirements: Internet connection and a computer\nCode #: 31203\nUnits: 3\nFinal Exam: Mon May-11th, 7pm-10pm, location TBD.\nDates: Jan-21 / May-01",
+    "text": "Instructor: Gaston Sanchez\nLecture: MWF 9am-10am in Lewis Hall 100\nLab:\n\nLab 101, Th 9am-11am, Evans 342 (GSI Drew)\nLab 102, Th 10am-12pm, Evans 340 (GSI Will)\nLab 103, Th 11am-1pm, Evans 342 (GSI Clara)\nLab 104, Th 12pm-2pm, Evans 340 (GSI Will)\nLab 105, Th 1pm-3pm, Evans 342 (GSI Clara)\nLab 106, Th 3pm-5pm, Evans 342 (GSI Drew)\n\nPrerequisites: None\nRequirements: Internet connection and a computer\nCode #: 31203\nUnits: 3\nFinal Exam: Mon May-11th, 7pm-10pm, location TBD.\nDates: Jan-21 / May-01",
     "crumbs": [
       "More",
       "About"
@@ -2101,7 +2101,7 @@
     "href": "officehours.html",
     "title": "Office Hours",
     "section": "",
-    "text": "Office hours are subject to change. You can attend OH of any staff member. Append @berkeley.edu to all email addresses.\n\n\nInstructor: Gaston Sanchez gastonsanchez Office hours:  - Mon 1:30pm-2:30pm, Evans 309 - Tue 1:30pm-2:30pm, Evans 309\n\n\nGSI: Drew Galloro argg2159 Office hours: - Tue 3:00pm-5:00pm, Evans 434\n\n\nGSI: Clara Reckhorn clara_reckhorn Office hours:  - Day hh-hh, Evans TBD\n\n\nGSI: Will Torous wtorous Office hours:  - Mon 12:30pm-1:30pm, Evans 434 - Wed 11:30am-12:30pm, Evans 434\n\n\nTutor: Carlota Blanco Office hours:  - Mon 10:10am-12:10pm, Evans 434 - Wed 10:10am-12:10pm, Evans 426\n\n\nTutor: Montserrat Ibarra Office hours:  - Mon 2:00pm-4:00pm, Evans TBD - Fri 2:00pm-4:00pm, Evans TBD",
+    "text": "Office hours are subject to change. You can attend OH of any staff member. Append @berkeley.edu to all email addresses.\n\n\nInstructor: Gaston Sanchez gastonsanchez Office hours:  - Mon 5:00pm-6:00pm, Evans 309 - Tue 1:30pm-2:30pm, Evans 309\n\n\nGSI: Drew Galloro argg2159 Office hours: - Tue 3:00pm-5:00pm, Evans 434\n\n\nGSI: Clara Reckhorn clara_reckhorn Office hours:  - Day hh-hh, Evans TBD\n\n\nGSI: Will Torous wtorous Office hours:  - Mon 12:30pm-1:30pm, Evans 434 - Wed 11:30am-12:30pm, Evans 434\n\n\nTutor: Carlota Blanco Office hours:  - Mon 10:10am-12:10pm, Evans 434 - Wed 10:10am-12:10pm, Evans 426\n\n\nTutor: Montserrat Ibarra Office hours:  - Mon 2:00pm-4:00pm, Evans 426 - Fri 2:00pm-4:00pm, Evans 434",
     "crumbs": [
       "Office Hours"
     ]
@@ -2914,7 +2914,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 1      \"Colby Jone… WAS   SG           78    207 May 28, 2… US      1         \n2 9      \"Dillon Bro… HOU   SF           79    225 January 2… CA      7         \n3 3      \"CJ McCollu… NOP   PG           75    190 September… US      11        \n4 11     \"Domantas S… SAC   C            82    240 May 3, 19… US      8         \n5 9      \"Dario Å ar… DEN   C            82    225 April 8, … HR      7         \n6 7      \"Killian Ha… BRK   PG           76    195 July 27, … US      4         \n7 77     \"Bones Hyla… MIN   PG           74    169 September… US      3         \n8 20     \"Day'Ron Sh… BRK   C            82    265 November … US      3         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 30     Jay Huff     MEM   C            85    240 August 25… US      3         \n2 33     Leonard Mil… MIN   SF           82    220 November … CA      1         \n3 20     John Collins UTA   PF           81    226 September… US      7         \n4 9      Dillon Broo… HOU   SF           79    225 January 2… CA      7         \n5 10     Josh Green   CHO   SG           78    200 November … AU      4         \n6 21     Joel Embiid  PHI   C            84    280 March 16,… CM      8         \n7 34     Wendell Car… ORL   C            82    270 April 16,… US      6         \n8 12     Braxton Key  GSW   SF           79    225 February … US      3         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -4429,8 +4429,15 @@
     "text": "About the Terminal\n\n\n\n\n\n\n\n\nThe Terminal (a.k.a. terminal emulator) is the program provides a text-based environment lets you interact with the shell:\n\nopen windows and tabs\nmanage shells\nresize windows\nchange colors in windows\nhandle copy-paste operations"
   },
   {
-    "objectID": "lectures/5-unix-basics/slides.html#demo-cli-advantages",
-    "href": "lectures/5-unix-basics/slides.html#demo-cli-advantages",
+    "objectID": "lectures/5-unix-basics/slides.html#some-files-in-my-computer",
+    "href": "lectures/5-unix-basics/slides.html#some-files-in-my-computer",
+    "title": "Unix Basics",
+    "section": "Some files in my computer",
+    "text": "Some files in my computer"
+  },
+  {
+    "objectID": "lectures/5-unix-basics/slides.html#demo-cli-advantages-1",
+    "href": "lectures/5-unix-basics/slides.html#demo-cli-advantages-1",
     "title": "Unix Basics",
     "section": "Demo (CLI advantages)",
     "text": "Demo (CLI advantages)\nCount number of csv files\n\n\nanswer\nls *.csv | wc -l\n\n\n\nCount number of csv files with FREESTYLE in name\n\n\nanswer\nls *FREESTYLE*.csv | wc -l\n\n\n\n\nCount number of csv files with F-XXX-FREESTYLE in name\n\n\nanswer\nls F*FREESTYLE*.csv | wc -l"
