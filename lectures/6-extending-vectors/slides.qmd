@@ -1,6 +1,9 @@
 ---
 title: "Extending Vectors"
+subtitle: "2-dimensional atomic objects"
 format: stat133slides-revealjs
+revealjs-plugins:
+  - drop
 chalkboard: true
 ---
 
@@ -70,7 +73,7 @@ A two-dimensional data structure for atomic data. Created with `matrix()`.
 
 ```{r}
 #| output-location: fragment
-mat1 <- matrix(data = c(1, 2, 3, 4), nrow = 2)
+mat1 <- matrix(data = c(1, 2, 3, 4), nrow = 2, ncol = 2)
 mat1
 ```
 
@@ -86,11 +89,64 @@ typeof(mat1)
 Note: defaults to fill the matrix by columns (`byrow = FALSE`)
 
 
+## Creating matrices with `matrix()`
+
+```{r}
+#| output-location: fragment
+mat1 <- matrix(data = c(1, 2, 3, 4), nrow = 2, ncol = 2)
+mat1
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+mat2 <- matrix(data = c(1, 2, 3, 4), nrow = 2)
+mat2
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+mat3 <- matrix(data = c(1, 2, 3, 4), ncol = 2)
+mat3
+```
+
+
+## Creating matrices with `matrix()`
+
+To fill the matrix by rows use `byrow = TRUE`
+
+```{r}
+#| output-location: fragment
+mat4 <- matrix(data = c(1, 2, 3, 4), nrow = 2, byrow = TRUE)
+mat
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+mat5 <- matrix(data = c(1, 2, 3, 4), ncol = 2, byrow = TRUE)
+mat
+```
+
+
 ## Matrices as Vectors
 
 ```{r}
 #| output-location: fragment
 vec <- 1:4
+vec
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
 dim(vec) <- c(2, 2)
 vec
 ```
@@ -181,7 +237,7 @@ mat2[1, ]
 
 Notes:
 
-- subsetting a matrix creates a vector
+- subsetting a matrix row creates a vector
 - empty subsetting vectors > all entries
 
 
@@ -200,6 +256,20 @@ mat
 ```{r}
 #| output-location: fragment
 mat["a", "ii"]
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+mat["a", ]
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+mat[ ,"ii"]
 ```
 
 
@@ -252,6 +322,106 @@ mat[mat_log]
 ```{r}
 #| echo: false
 countdown::countdown(1, bottom = 0)
+```
+
+
+# Matrices and Tables
+
+##
+
+| [Name]{.bold-hilit} | [Height]{.bold-hilit} | [Force]{.bold-hilit} |
+|------|------------|:------:|
+| Leia | 1.50 | TRUE |
+| Luke | 1.70 | TRUE |
+| Han  | 1.80 | FALSE |
+
+. . .
+
+Write code to create a matrix for the above data.
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+. . .
+
+```{r}
+Name <- c("Leia", "Luke", "Han")
+Height <- c(1.50, 1.70, 1.80)
+Force <- c(TRUE, TRUE, FALSE)
+
+M1 <- matrix(c(Name, Height, Force), nrow = 3)
+M1
+```
+
+
+##
+
+| [Name]{.bold-hilit} | [Height]{.bold-hilit} | [Force]{.bold-hilit} |
+|------|------------|:------:|
+| Leia | 1.50 | TRUE |
+| Luke | 1.70 | TRUE |
+| Han  | 1.80 | FALSE |
+
+Write code to create a matrix for the above data.
+
+```{r}
+#| output-location: fragment
+Name <- c("Leia", "Luke", "Han")
+Height <- c(1.50, 1.70, 1.80)
+Force <- c(TRUE, TRUE, FALSE)
+
+M1 <- matrix(c(Name, Height, Force), nrow = 3)
+colnames(M1) <- c("Name", "Height", "Force")
+M1
+```
+
+
+##
+
+| [Name]{.bold-hilit} | [Height]{.bold-hilit} | [Force]{.bold-hilit} |
+|------|------------|:------:|
+| Leia | 1.50 | TRUE |
+| Luke | 1.70 | TRUE |
+| Han  | 1.80 | FALSE |
+
+Write code to create a matrix for the above data.
+
+. . .
+
+```{r}
+#| output-location: fragment
+Name <- c("Leia", "Luke", "Han")
+Height <- c(1.50, 1.70, 1.80)
+Force <- c(TRUE, TRUE, FALSE)
+
+M2 <- cbind(Name, Height, Force) # column-bind
+M2
+```
+
+
+##
+
+| [Name]{.bold-hilit} | [Height]{.bold-hilit} | [Force]{.bold-hilit} |
+|------|------------|:------:|
+| Leia | 1.50 | TRUE |
+| Luke | 1.70 | TRUE |
+| Han  | 1.80 | FALSE |
+
+Write code to create a matrix for the above data.
+
+. . .
+
+```{r}
+#| output-location: fragment
+leia <- c("Leia", 1.50, TRUE)
+luke <- c("Luke", 1.70, TRUE)
+han <- c("Leia", 1.80, FALSE)
+
+M3 <- rbind(leia, luke, han) # row-bind
+colnames(M3) <- c("Name", "Height", "Force")
+M3
 ```
 
 

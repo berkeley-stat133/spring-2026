@@ -36,7 +36,7 @@ Suppose the color of a lightsaber can be either [green]{style="color:green; font
 ::: {.column width="10%"}
 :::
 
-::: {.column .fragment width="40%"}
+::: {.column width="40%"}
 [green]{style="color:green; font-weight: 900;"} light $\rightarrow$ Jedi
 :::
 
@@ -283,12 +283,16 @@ lights
 
 \
 
-```{r eval = FALSE}
-    if (lights == "green") {
-      sabers <- "Jedi"
-    }
+```{r}
+#| output-location: fragment
+if (lights == "green") {
+  sabers <- "Jedi"
+}
 ```
 
+. . . 
+
+😢
 
 ## Option 1
 

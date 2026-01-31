@@ -2,6 +2,8 @@
 title: "Lists"
 subtitle: The most flexible of structures
 format: stat133slides-revealjs
+revealjs-plugins:
+  - drop
 chalkboard: true
 ---
 
