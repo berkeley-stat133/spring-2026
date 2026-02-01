@@ -2,6 +2,8 @@
 title: "Control Flow"
 subtitle: "Choices and Iterations"
 format: stat133slides-revealjs
+revealjs-plugins:
+  - drop
 chalkboard: true
 ---
 

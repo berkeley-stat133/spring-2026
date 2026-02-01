@@ -2,6 +2,8 @@
 title: "Unix Basics"
 subtitle: "More housekeeping stuff"
 format: stat133slides-revealjs
+revealjs-plugins:
+  - drop
 chalkboard: true
 ---
 

@@ -20,9 +20,12 @@ title: "STAT 133: Concepts in Computing with Data"
 ::::
 
 ::: {.callout-tip icon="false"}
-## Week 2 Announcements
+## Week 3 Announcements
 
-By now you should know how to open a new `.qmd` file, edit it, and render it into an HTML output file.
+- [Problem Set 1]{.label-Homework} due Wed 2/4 by 6PM
+- [Quiz 1]{.label-Quiz} on Thu 2/5 (in lab)
+- [2nd Quarto Pub]{.label-Pub} on Thu 2/5 (also in lab)
+- [Project 1]{.label-Project} due Fri 2/13 by 6PM
 :::
 
 -----
