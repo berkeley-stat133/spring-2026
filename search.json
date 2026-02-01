@@ -2104,14 +2104,256 @@
     ]
   },
   {
-    "objectID": "officehours.html",
-    "href": "officehours.html",
-    "title": "Office Hours",
+    "objectID": "email.html",
+    "href": "email.html",
+    "title": "Communication via Email",
     "section": "",
-    "text": "Office hours are subject to change. You can attend OH of any staff member. Append @berkeley.edu to all email addresses.\n\n\nInstructor: Gaston Sanchez gastonsanchez Office hours:  - Mon 5:00pm-6:00pm, Evans 309 - Tue 1:30pm-2:30pm, Evans 309\n\n\nGSI: Drew Galloro argg2159 Office hours: - Tue 3:00pm-5:00pm, Evans 434\n\n\nGSI: Clara Reckhorn clara_reckhorn Office hours:  - Day hh-hh, Evans TBD\n\n\nGSI: Will Torous wtorous Office hours:  - Mon 12:30pm-1:30pm, Evans 434 - Wed 11:30am-12:30pm, Evans 434\n\n\nTutor: Carlota Blanco Office hours:  - Mon 10:10am-12:10pm, Evans 434 - Wed 10:10am-12:10pm, Evans 426\n\n\nTutor: Montserrat Ibarra Office hours:  - Mon 2:00pm-4:00pm, Evans 426 - Fri 2:00pm-4:00pm, Evans 434",
-    "crumbs": [
-      "Office Hours"
-    ]
+    "text": "Email: gastonsanchez@berkeley.edu\nYou should limit your emails to serious problems that cannot be addressed during office hours. The vast majority of questions can be answered during OH. Email should not be used for information that is readily available in course materials (syllabus, discussion forum, announcements, etc.) or from fellow students.\nI do not explain course material over email and will not respond to emails with such requests. Please use office hours, or discussion section, (or schedule another time to meet with the teaching staff if you have irreconcilable conflicts with the office hours)."
+  },
+  {
+    "objectID": "email.html#reading-and-responding-email",
+    "href": "email.html#reading-and-responding-email",
+    "title": "Communication via Email",
+    "section": "Reading and responding email",
+    "text": "Reading and responding email\nFor general emails, I will reply to general questions or concerns within 2 to 3 business days, Monday through Friday, during regular academic hours (9:00AM-5:00PM).\nPlease note that I do not read email between 5pm and 9am, or during the weekends. Likewise, I do not respond to emails on the weekend.\nex. If you send an email at 6pm on Friday night, you can expect that I will read it around 9am on Monday morning, and should likely receive a response by around 9am on Tuesday morning.\nIf, for any reason, I haven’t responded to your email after four business days, please email me again. I am human, and there are times when student emails fall through the cracks inadvertently.\nI prefer to have conversations in person rather than via email, thus allowing us to get to know each other better and fostering a more collegial learning atmosphere."
+  },
+  {
+    "objectID": "email.html#communicate-in-a-professional-manner",
+    "href": "email.html#communicate-in-a-professional-manner",
+    "title": "Communication via Email",
+    "section": "Communicate in a professional manner",
+    "text": "Communicate in a professional manner\nIf you believe your situation warrants an email, please feel free to send me a professional email. E-mail communication should be courteous and respectful in manner and tone. Please do not send e-mails that are curt or demanding.\nHere’s a short example of an unprofessional email. Let’s assume you missed an exam, for whatever reason. Do not write and say: “I missed an exam. When can I make it up?” Instead, explain why you have extenuating circumstances, and ask the teaching staff if they will allow you to make up the exam. Most likely you won’t be able to make it up, but at least you are asking in a professional way.\nIf you are unsure of how to write an email to me or any other professor, please consult this amusing blog post that gives you a useful template:\nhttps://medium.com/@lportwoodstacer/how-to-email-your-professor-without-being-annoying-af-cf64ae0e4087"
+  },
+  {
+    "objectID": "email.html#subject-line",
+    "href": "email.html#subject-line",
+    "title": "Communication via Email",
+    "section": "Subject line",
+    "text": "Subject line\nIf you wish for your email to make it into my inbox, do not leave the subject line blank. Instead, make sure the subject of your email contains the code course and a brief explanation of the nature of the email. For example: “Stat 133-Question about Homework” or “Stat 133-Request for Meeting”."
+  },
+  {
+    "objectID": "email.html#avoid-these-subjects",
+    "href": "email.html#avoid-these-subjects",
+    "title": "Communication via Email",
+    "section": "Avoid these subjects",
+    "text": "Avoid these subjects\n\nAvoid emailing me to explain why you missed or will miss class. I usually don’t need to know. If you think this is affecting your performance, then schedule a meeting with me.\nDo not email me to let me know you made a mistake in your submitted assignment. Please refer to the HW policies (see syllabus).\nDo not email me to ask for extra credit. Here’s why: https://marktomforde.com/academic/undergraduates/NoExtraCredit.html\nAbove all, do not email me to engage in grade grubbing. Here’s why: https://marktomforde.com/academic/undergraduates/GradeGrubbing.html"
+  },
+  {
+    "objectID": "email.html#scheduling-a-meeting",
+    "href": "email.html#scheduling-a-meeting",
+    "title": "Communication via Email",
+    "section": "Scheduling a meeting",
+    "text": "Scheduling a meeting\nIf you wish to schedule a meeting with me, your message should include at least two times when you would like to meet and a brief (one-two sentence) description of the reason for the meeting."
+  },
+  {
+    "objectID": "email.html#emails-regarding-letters-of-recommendation",
+    "href": "email.html#emails-regarding-letters-of-recommendation",
+    "title": "Communication via Email",
+    "section": "Emails regarding letters of recommendation",
+    "text": "Emails regarding letters of recommendation\nBefore you ask me to write you a letter of recommendation, please take a look at the following document: https://github.com/gastonstat/letter-of-rec"
+  },
+  {
+    "objectID": "ed-netiquette.html",
+    "href": "ed-netiquette.html",
+    "title": "Ed-Discussion Netiquette",
+    "section": "",
+    "text": "Unfortunately, we just don’t have enough human resources to have a dedicated Ed-Discussion moderator. We will do our best to monitor this tool once per day from Monday to Friday. Please note that we may not be able to monitor Ed during the evening nor weekend. That’s why we strongly encourage student participation on Ed-Discussion rather than answering right away (i.e. we want other students step up and answer questions).\nIn the past, some students have decided to use external discussion forums. When used responsibly and appropriately, we think that’s a great idea. But we have never endorsed their use, nor we have monitored, moderated or managed them, and we won’t do that this time.\nIn order to make Ed-Discussion a better resource for everyone, we’ve outlined some guidelines for you to follow when posting on this tool. Questions which follow these guidelines tend to have a higher chance of being answered!\n\nPlease adhere to the same standards of behavior online that you follow in real life.\nWe want to make sure that you are helping each other out, and having instructors give away the answers isn’t the most beneficial for your education either."
+  },
+  {
+    "objectID": "ed-netiquette.html#important-note",
+    "href": "ed-netiquette.html#important-note",
+    "title": "Ed-Discussion Netiquette",
+    "section": "",
+    "text": "Unfortunately, we just don’t have enough human resources to have a dedicated Ed-Discussion moderator. We will do our best to monitor this tool once per day from Monday to Friday. Please note that we may not be able to monitor Ed during the evening nor weekend. That’s why we strongly encourage student participation on Ed-Discussion rather than answering right away (i.e. we want other students step up and answer questions).\nIn the past, some students have decided to use external discussion forums. When used responsibly and appropriately, we think that’s a great idea. But we have never endorsed their use, nor we have monitored, moderated or managed them, and we won’t do that this time.\nIn order to make Ed-Discussion a better resource for everyone, we’ve outlined some guidelines for you to follow when posting on this tool. Questions which follow these guidelines tend to have a higher chance of being answered!\n\nPlease adhere to the same standards of behavior online that you follow in real life.\nWe want to make sure that you are helping each other out, and having instructors give away the answers isn’t the most beneficial for your education either."
+  },
+  {
+    "objectID": "ed-netiquette.html#keep-in-mind-common-rules-of-netiquette",
+    "href": "ed-netiquette.html#keep-in-mind-common-rules-of-netiquette",
+    "title": "Ed-Discussion Netiquette",
+    "section": "Keep in mind common rules of netiquette",
+    "text": "Keep in mind common rules of netiquette\n\nDon’t post irrelevant links, comments, thoughts or pictures.\nDon’t type in ALL CAPS! If you do it will look like you are screaming.\nDon’t write anything that sounds angry or sarcastic even as a joke, because without hearing your tone of voice, your peers might not realize you’re joking.\nAlways remember to say “please” and “thank you” when soliciting help from your classmates.\nRespect the opinion of your classmates. If you feel the need to disagree, do so respectfully and acknowledge the valid points in your classmate’s argument.\nRefrain from personal abuse. Don’t badmouth others or call them offensive words. You may express robust disagreement with what someone says, but don’t call them names.\nBe forgiving. If your classmate makes a mistake, don’t badger him or her for it. Just let it go.\nIf you reply to a question from a classmate, make sure your answer is accurate.\nBe brief. If you write a long dissertation in response to a simple question, it’s unlikely that anyone will spend the time to read through it all.\nRemember that your public posts are not anonymous. They can be read by your classmates.\nDon’t expect other people to do your homework for you. If you’re looking for technical help, for example, don’t ask questions you could easily answer yourself by reading the manual or help documentation provided with the software tools used in this course."
+  },
+  {
+    "objectID": "ed-netiquette.html#ask-lab-and-hw-questions-only-in-the-designated-lab-and-hw-posts",
+    "href": "ed-netiquette.html#ask-lab-and-hw-questions-only-in-the-designated-lab-and-hw-posts",
+    "title": "Ed-Discussion Netiquette",
+    "section": "Ask Lab and HW questions only in the designated Lab and HW posts",
+    "text": "Ask Lab and HW questions only in the designated Lab and HW posts\nWe’ve created individual posts for each type of assignment. Please ask questions, discuss problems, or help out in those posts only. Before asking a question, read through (or search) the whole thread to see if your question has been answered. Likewise, stay on topic."
+  },
+  {
+    "objectID": "ed-netiquette.html#do-not-post-answers-in-discussion-forums",
+    "href": "ed-netiquette.html#do-not-post-answers-in-discussion-forums",
+    "title": "Ed-Discussion Netiquette",
+    "section": "Do NOT post answers in discussion forums",
+    "text": "Do NOT post answers in discussion forums\nPlease don’t give away the answer on any discussion forum. You can explain things in a way that still lets other students figure out the essence of the problem on their own, but don’t spoil the problem. For example, don’t point to a useful stackoverflow or YouTube link that works out essentially what the problem is asking about.\nThat is not cool.\nPost such spoilers after the HW is due. That is totally fine. If you are not sure, post privately to instructors and then we’ll let you know."
+  },
+  {
+    "objectID": "ed-netiquette.html#ask-questions-about-assignments-only",
+    "href": "ed-netiquette.html#ask-questions-about-assignments-only",
+    "title": "Ed-Discussion Netiquette",
+    "section": "Ask questions about assignments only",
+    "text": "Ask questions about assignments only\nIf you have questions, comments, or other concerns that are not related to assignments, please email your GSI or the instructor. We want to keep the focus of bCourses tools for assignments in Stat 133."
+  },
+  {
+    "objectID": "ed-netiquette.html#try-to-make-posts-public",
+    "href": "ed-netiquette.html#try-to-make-posts-public",
+    "title": "Ed-Discussion Netiquette",
+    "section": "Try to make posts public",
+    "text": "Try to make posts public\nWhile not violating the preceding rules, try to make your questions public, because others might have the same question and we don’t need to answer them multiple times."
+  },
+  {
+    "objectID": "ed-netiquette.html#minute-test",
+    "href": "ed-netiquette.html#minute-test",
+    "title": "Ed-Discussion Netiquette",
+    "section": "3 minute-test",
+    "text": "3 minute-test\nIf you think your questions may take more than 3 or 5 minutes to answer, please come to office hours, or try to schedule a zoom meeting with the teaching staff."
+  },
+  {
+    "objectID": "ed-netiquette.html#we-are-not-pre-grading",
+    "href": "ed-netiquette.html#we-are-not-pre-grading",
+    "title": "Ed-Discussion Netiquette",
+    "section": "We are not pre-grading",
+    "text": "We are not pre-grading\nPlease do not post questions of the form:\n\n“Is this the correct solution to HW X problem Y?”\n“Would this receive full credit on HW X problem Y?”\n“Is this the right level of detail for HW X problem Y?”\n\nPlease do not ask instructors to check your homework in advance. We simply cannot check every student’s homework.\nFeel free to ask questions of clarification about a certain HW problem, or ask questions about the course content to achieve a deeper understanding, but at a certain point, you must apply your knowledge, give it your best shot, and submit your answers with confidence."
+  },
+  {
+    "objectID": "ed-netiquette.html#post-a-screenshot-of-any-resource-referenced",
+    "href": "ed-netiquette.html#post-a-screenshot-of-any-resource-referenced",
+    "title": "Ed-Discussion Netiquette",
+    "section": "Post a screenshot of any resource referenced",
+    "text": "Post a screenshot of any resource referenced\nYour question should be self-contained. The GSIs (and other responders) should not have to scan through PDFs or scripts to even figure out what the question is. Ask yourself: am I referring to some lecture /HW solution/discussion solution/etc?\nIf the answer is yes, post a screenshot of the relevant part. This can include your handwritten notes from the relevant lecture."
+  },
+  {
+    "objectID": "ed-netiquette.html#post-all-your-work",
+    "href": "ed-netiquette.html#post-all-your-work",
+    "title": "Ed-Discussion Netiquette",
+    "section": "Post all your work",
+    "text": "Post all your work\nDon’t post one line saying:\n\n“At step n, I get XYZ, and I’m now confused.”\nThis forces the GSIs to guess:\nWhat happened in steps 1, 2, …, n - 1?\n\nMost likely, the GSIs will guess wrong, and we run into a mess of followup questions trying to figure out what steps 1, 2, …, n - 1 were.\nInstead, post:\n\nStarting out, we have: ….\nThen, I do …, and I get …\nNext, I do …, and I get …\nNext, I do …, and I get …\nNow, I get $&%&#(, and this makes no sense.\nThen, the GSI can respond:\nThe mistake is at step 3, you’re not allowed to apply ABC to XYZ because …\n\nIn summary, when you do ask for help, include details of what attempts you’ve made to solve the problem. It will save time and also show people that you are making an effort to help yourself.\n\nWe reserve the right to delete any posts\nWe reserve the right to delete, move, or edit any posts, and even to make Ed-Discussion inactive, at any time, without previous notice.\nDiscussion resources can be a great tools if used appropriately, respectfully, and wisely. Take advantage of Ed, and make the most out of it."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#meet-your-gsi",
+    "href": "labs/lab1/slides.html#meet-your-gsi",
+    "title": "Lab 1",
+    "section": "Meet your GSI",
+    "text": "Meet your GSI\n\nIntroduce yourself to the clasas. You can talk about your:\n\nName\nMajor\nExperience\nFun fact"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#with-the-people-around-you",
+    "href": "labs/lab1/slides.html#with-the-people-around-you",
+    "title": "Lab 1",
+    "section": "With the people around you …",
+    "text": "With the people around you …\n\nTake a few minutes to share your:\n\n\n\nName\nMajor\nYear\nHometown\nWhich dog mood are you today?\n\n\n\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#ice-breakers",
+    "href": "labs/lab1/slides.html#ice-breakers",
+    "title": "Lab 1",
+    "section": "Ice Breakers",
+    "text": "Ice Breakers"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#course-website",
+    "href": "labs/lab1/slides.html#course-website",
+    "title": "Lab 1",
+    "section": "Course Website",
+    "text": "Course Website\nhttps://stat133.berkeley.edu/spring-2026"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#syllabus",
+    "href": "labs/lab1/slides.html#syllabus",
+    "title": "Lab 1",
+    "section": "Syllabus",
+    "text": "Syllabus\nPlease take some minutes to read the syllabus and jot down at least two questions that you have.\nhttps://stat133.berkeley.edu/spring-2026/syllabus.html\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#installation",
+    "href": "labs/lab1/slides.html#installation",
+    "title": "Lab 1",
+    "section": "Installation",
+    "text": "Installation\n\n\n\n−+\n03:00\n\n\n\n1) R  https://www.r-project.org/\n\n\n\n2) Positron  https://positron.posit.co/\n\n\n\n\n⚠️ 2b) If Positron fails, then RStudio  https://posit.co/download/rstudio-desktop/\n\n\n\n\n3) Windows users‼️: Git  https://git-scm.com/"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#directory-stat133",
+    "href": "labs/lab1/slides.html#directory-stat133",
+    "title": "Lab 1",
+    "section": "Directory stat133",
+    "text": "Directory stat133\nIn your computer, e.g. folder Desktop or Documents, please create a folder (i.e. directory) for this course.\n\n\n👍 Good Names:\n\nstat133\nSTAT133\nStat133\n\n\n👎 Bad Names (no blank spaces):\n\nstat 133\nSTAT 133\nStat 133\n\n\nThis will be a dedicated directory for all the work you’ll do in this course."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
+    "href": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
+    "title": "Lab 1",
+    "section": "First contact with Positron (or Rstudio)",
+    "text": "First contact with Positron (or Rstudio)\nDemo:\n\nOpen Positron\nUnderstanding workspace\nQuadrants or panes"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#explorer-positron",
+    "href": "labs/lab1/slides.html#explorer-positron",
+    "title": "Lab 1",
+    "section": "Explorer (Positron)",
+    "text": "Explorer (Positron)\nLet’s focus on the Explorer tab"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#explorer-positron-1",
+    "href": "labs/lab1/slides.html#explorer-positron-1",
+    "title": "Lab 1",
+    "section": "Explorer (Positron)",
+    "text": "Explorer (Positron)\nOpen your folder stat133"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#explorer-tab",
+    "href": "labs/lab1/slides.html#explorer-tab",
+    "title": "Lab 1",
+    "section": "Explorer tab",
+    "text": "Explorer tab\n\nLet’s focus on the Explorer tab\nUse it to find your folder stat133\nClick on stat133 (i.e. move inside this folder)\nClick on folder icon to create a labs folder\nClick on labs (i.e. move inside this folder)\nInside labs, create a folder lab1"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#first-contact-with-quarto-file",
+    "href": "labs/lab1/slides.html#first-contact-with-quarto-file",
+    "title": "Lab 1",
+    "section": "First contact with Quarto File",
+    "text": "First contact with Quarto File\n\nOpen a Quarto file (i.e. Quarto document)\nUnderstanding anatomy of basic quarto file\n\nYAML header\nNarrative elements\nCode chunks\n\nEdit YAML header:\n\ntitle: \"Lab 1\"\nauthor: \"First Last\""
+  },
+  {
+    "objectID": "labs/lab1/slides.html#rendering-a-.qmd-file",
+    "href": "labs/lab1/slides.html#rendering-a-.qmd-file",
+    "title": "Lab 1",
+    "section": "Rendering a .qmd file",
+    "text": "Rendering a .qmd file\n\nClick the Preview button. In RStudio is the Render button.\nSave file in your lab1 folder.\nOutput file is an HTML document (assuming format: html)\nBTW: most assignments will require submission of their .qmd and .html files."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#editing-a-.qmd-file",
+    "href": "labs/lab1/slides.html#editing-a-.qmd-file",
+    "title": "Lab 1",
+    "section": "Editing a .qmd file",
+    "text": "Editing a .qmd file\nEdit the content of your .qmd file to include the following content:\n\nMajor(s) and, if applicable, minor.\nHometown.\nFavorite song in the last 3 months.\nInsert a table (e.g. 3x3 table).\nInsert an image.\nInclude a quote.\n\n\nRender your quarto file again."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#submission-to-bcourses",
+    "href": "labs/lab1/slides.html#submission-to-bcourses",
+    "title": "Lab 1",
+    "section": "Submission to bCourses",
+    "text": "Submission to bCourses\nSubmit both your .qmd and .html files to bCourses under the lab1 assignment.\n\n\nThis is a “dummy” assignment: won’t be part of your grade; we just want to make sure everyone knows how and where to submit .qmd and .html files."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#so-far",
+    "href": "labs/lab1/slides.html#so-far",
+    "title": "Lab 1",
+    "section": "So far …",
+    "text": "So far …\n\nSoftware Installed\nDirectory, subdirectories, and files:\n\n  stat133/\n    labs/\n        lab1/\n          lab1-first-last.qmd\n          lab1-first-last.html\n\nLab1 .qmd and .html files submitted to bCourses"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#section-1",
+    "href": "labs/lab1/slides.html#section-1",
+    "title": "Lab 1",
+    "section": "",
+    "text": "File\nA named container that stores data—such as text, images, or programs—on a computer disk.\nThe file name usually ends in an extension (.txt, .png, .qmd) that indicates the format.\n\n\nDirectory (or Folder)\nA named container that stores a set of files or other folders.\nWe’ll write directories by appending a slash at the end: e.g., Documents/, stat133/, lab1/"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#in-case-of-trouble",
+    "href": "labs/lab1/slides.html#in-case-of-trouble",
+    "title": "Lab 1",
+    "section": "In case of trouble",
+    "text": "In case of trouble\nIf you experienced any issues today, for example:\n\ninstalling software\nrendering .qmd file\nsubmission to bCourses\ngot lost along the discussion\n\nthen please come to office hours!"
   },
   {
     "objectID": "labs/lab2/slides.html#agenda",
@@ -2254,256 +2496,28 @@
     "text": "Pset 1 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps1\nSubmission deadline: Wednesday 2/4 by 6PM.\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
   {
-    "objectID": "labs/lab1/slides.html#meet-your-gsi",
-    "href": "labs/lab1/slides.html#meet-your-gsi",
-    "title": "Lab 1",
-    "section": "Meet your GSI",
-    "text": "Meet your GSI\n\nIntroduce yourself to the clasas. You can talk about your:\n\nName\nMajor\nExperience\nFun fact"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#with-the-people-around-you",
-    "href": "labs/lab1/slides.html#with-the-people-around-you",
-    "title": "Lab 1",
-    "section": "With the people around you …",
-    "text": "With the people around you …\n\nTake a few minutes to share your:\n\n\n\nName\nMajor\nYear\nHometown\nWhich dog mood are you today?\n\n\n\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#ice-breakers",
-    "href": "labs/lab1/slides.html#ice-breakers",
-    "title": "Lab 1",
-    "section": "Ice Breakers",
-    "text": "Ice Breakers"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#course-website",
-    "href": "labs/lab1/slides.html#course-website",
-    "title": "Lab 1",
-    "section": "Course Website",
-    "text": "Course Website\nhttps://stat133.berkeley.edu/spring-2026"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#syllabus",
-    "href": "labs/lab1/slides.html#syllabus",
-    "title": "Lab 1",
-    "section": "Syllabus",
-    "text": "Syllabus\nPlease take some minutes to read the syllabus and jot down at least two questions that you have.\nhttps://stat133.berkeley.edu/spring-2026/syllabus.html\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#installation",
-    "href": "labs/lab1/slides.html#installation",
-    "title": "Lab 1",
-    "section": "Installation",
-    "text": "Installation\n\n\n\n−+\n03:00\n\n\n\n1) R  https://www.r-project.org/\n\n\n\n2) Positron  https://positron.posit.co/\n\n\n\n\n⚠️ 2b) If Positron fails, then RStudio  https://posit.co/download/rstudio-desktop/\n\n\n\n\n3) Windows users‼️: Git  https://git-scm.com/"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#directory-stat133",
-    "href": "labs/lab1/slides.html#directory-stat133",
-    "title": "Lab 1",
-    "section": "Directory stat133",
-    "text": "Directory stat133\nIn your computer, e.g. folder Desktop or Documents, please create a folder (i.e. directory) for this course.\n\n\n👍 Good Names:\n\nstat133\nSTAT133\nStat133\n\n\n👎 Bad Names (no blank spaces):\n\nstat 133\nSTAT 133\nStat 133\n\n\nThis will be a dedicated directory for all the work you’ll do in this course."
-  },
-  {
-    "objectID": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
-    "href": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
-    "title": "Lab 1",
-    "section": "First contact with Positron (or Rstudio)",
-    "text": "First contact with Positron (or Rstudio)\nDemo:\n\nOpen Positron\nUnderstanding workspace\nQuadrants or panes"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#explorer-positron",
-    "href": "labs/lab1/slides.html#explorer-positron",
-    "title": "Lab 1",
-    "section": "Explorer (Positron)",
-    "text": "Explorer (Positron)\nLet’s focus on the Explorer tab"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#explorer-positron-1",
-    "href": "labs/lab1/slides.html#explorer-positron-1",
-    "title": "Lab 1",
-    "section": "Explorer (Positron)",
-    "text": "Explorer (Positron)\nOpen your folder stat133"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#explorer-tab",
-    "href": "labs/lab1/slides.html#explorer-tab",
-    "title": "Lab 1",
-    "section": "Explorer tab",
-    "text": "Explorer tab\n\nLet’s focus on the Explorer tab\nUse it to find your folder stat133\nClick on stat133 (i.e. move inside this folder)\nClick on folder icon to create a labs folder\nClick on labs (i.e. move inside this folder)\nInside labs, create a folder lab1"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#first-contact-with-quarto-file",
-    "href": "labs/lab1/slides.html#first-contact-with-quarto-file",
-    "title": "Lab 1",
-    "section": "First contact with Quarto File",
-    "text": "First contact with Quarto File\n\nOpen a Quarto file (i.e. Quarto document)\nUnderstanding anatomy of basic quarto file\n\nYAML header\nNarrative elements\nCode chunks\n\nEdit YAML header:\n\ntitle: \"Lab 1\"\nauthor: \"First Last\""
-  },
-  {
-    "objectID": "labs/lab1/slides.html#rendering-a-.qmd-file",
-    "href": "labs/lab1/slides.html#rendering-a-.qmd-file",
-    "title": "Lab 1",
-    "section": "Rendering a .qmd file",
-    "text": "Rendering a .qmd file\n\nClick the Preview button. In RStudio is the Render button.\nSave file in your lab1 folder.\nOutput file is an HTML document (assuming format: html)\nBTW: most assignments will require submission of their .qmd and .html files."
-  },
-  {
-    "objectID": "labs/lab1/slides.html#editing-a-.qmd-file",
-    "href": "labs/lab1/slides.html#editing-a-.qmd-file",
-    "title": "Lab 1",
-    "section": "Editing a .qmd file",
-    "text": "Editing a .qmd file\nEdit the content of your .qmd file to include the following content:\n\nMajor(s) and, if applicable, minor.\nHometown.\nFavorite song in the last 3 months.\nInsert a table (e.g. 3x3 table).\nInsert an image.\nInclude a quote.\n\n\nRender your quarto file again."
-  },
-  {
-    "objectID": "labs/lab1/slides.html#submission-to-bcourses",
-    "href": "labs/lab1/slides.html#submission-to-bcourses",
-    "title": "Lab 1",
-    "section": "Submission to bCourses",
-    "text": "Submission to bCourses\nSubmit both your .qmd and .html files to bCourses under the lab1 assignment.\n\n\nThis is a “dummy” assignment: won’t be part of your grade; we just want to make sure everyone knows how and where to submit .qmd and .html files."
-  },
-  {
-    "objectID": "labs/lab1/slides.html#so-far",
-    "href": "labs/lab1/slides.html#so-far",
-    "title": "Lab 1",
-    "section": "So far …",
-    "text": "So far …\n\nSoftware Installed\nDirectory, subdirectories, and files:\n\n  stat133/\n    labs/\n        lab1/\n          lab1-first-last.qmd\n          lab1-first-last.html\n\nLab1 .qmd and .html files submitted to bCourses"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#section-1",
-    "href": "labs/lab1/slides.html#section-1",
-    "title": "Lab 1",
+    "objectID": "officehours.html",
+    "href": "officehours.html",
+    "title": "Office Hours",
     "section": "",
-    "text": "File\nA named container that stores data—such as text, images, or programs—on a computer disk.\nThe file name usually ends in an extension (.txt, .png, .qmd) that indicates the format.\n\n\nDirectory (or Folder)\nA named container that stores a set of files or other folders.\nWe’ll write directories by appending a slash at the end: e.g., Documents/, stat133/, lab1/"
+    "text": "Office hours are subject to change. You can attend OH of any staff member. Append @berkeley.edu to all email addresses.\n\n\nInstructor: Gaston Sanchez gastonsanchez Office hours:  - Mon 5:00pm-6:00pm, Evans 309 - Tue 1:30pm-2:30pm, Evans 309\n\n\nGSI: Drew Galloro argg2159 Office hours: - Tue 3:00pm-5:00pm, Evans 434\n\n\nGSI: Clara Reckhorn clara_reckhorn Office hours:  - Day hh-hh, Evans TBD\n\n\nGSI: Will Torous wtorous Office hours:  - Mon 12:30pm-1:30pm, Evans 434 - Wed 11:30am-12:30pm, Evans 434\n\n\nTutor: Carlota Blanco Office hours:  - Mon 10:10am-12:10pm, Evans 434 - Wed 10:10am-12:10pm, Evans 426\n\n\nTutor: Montserrat Ibarra Office hours:  - Mon 2:00pm-4:00pm, Evans 426 - Fri 2:00pm-4:00pm, Evans 434",
+    "crumbs": [
+      "Office Hours"
+    ]
   },
   {
-    "objectID": "labs/lab1/slides.html#in-case-of-trouble",
-    "href": "labs/lab1/slides.html#in-case-of-trouble",
-    "title": "Lab 1",
-    "section": "In case of trouble",
-    "text": "In case of trouble\nIf you experienced any issues today, for example:\n\ninstalling software\nrendering .qmd file\nsubmission to bCourses\ngot lost along the discussion\n\nthen please come to office hours!"
+    "objectID": "quiz/slides.html#before-the-quiz",
+    "href": "quiz/slides.html#before-the-quiz",
+    "title": "Quiz",
+    "section": "Before the Quiz",
+    "text": "Before the Quiz\n\nSpread out as much as possible.\n🚽 If you need to use the bathroom, this is the time to do it.\n🧹 Clear your desk of everything except a pen/pencil and your ID.\n🧢 Remove hats, hoods, and sunglasses (don’t hide your face please!)\n📱 All electronic devices (laptop, phone, airbuds, smart watch) should remain in your bag for the entire quiz period."
   },
   {
-    "objectID": "ed-netiquette.html",
-    "href": "ed-netiquette.html",
-    "title": "Ed-Discussion Netiquette",
-    "section": "",
-    "text": "Unfortunately, we just don’t have enough human resources to have a dedicated Ed-Discussion moderator. We will do our best to monitor this tool once per day from Monday to Friday. Please note that we may not be able to monitor Ed during the evening nor weekend. That’s why we strongly encourage student participation on Ed-Discussion rather than answering right away (i.e. we want other students step up and answer questions).\nIn the past, some students have decided to use external discussion forums. When used responsibly and appropriately, we think that’s a great idea. But we have never endorsed their use, nor we have monitored, moderated or managed them, and we won’t do that this time.\nIn order to make Ed-Discussion a better resource for everyone, we’ve outlined some guidelines for you to follow when posting on this tool. Questions which follow these guidelines tend to have a higher chance of being answered!\n\nPlease adhere to the same standards of behavior online that you follow in real life.\nWe want to make sure that you are helping each other out, and having instructors give away the answers isn’t the most beneficial for your education either."
-  },
-  {
-    "objectID": "ed-netiquette.html#important-note",
-    "href": "ed-netiquette.html#important-note",
-    "title": "Ed-Discussion Netiquette",
-    "section": "",
-    "text": "Unfortunately, we just don’t have enough human resources to have a dedicated Ed-Discussion moderator. We will do our best to monitor this tool once per day from Monday to Friday. Please note that we may not be able to monitor Ed during the evening nor weekend. That’s why we strongly encourage student participation on Ed-Discussion rather than answering right away (i.e. we want other students step up and answer questions).\nIn the past, some students have decided to use external discussion forums. When used responsibly and appropriately, we think that’s a great idea. But we have never endorsed their use, nor we have monitored, moderated or managed them, and we won’t do that this time.\nIn order to make Ed-Discussion a better resource for everyone, we’ve outlined some guidelines for you to follow when posting on this tool. Questions which follow these guidelines tend to have a higher chance of being answered!\n\nPlease adhere to the same standards of behavior online that you follow in real life.\nWe want to make sure that you are helping each other out, and having instructors give away the answers isn’t the most beneficial for your education either."
-  },
-  {
-    "objectID": "ed-netiquette.html#keep-in-mind-common-rules-of-netiquette",
-    "href": "ed-netiquette.html#keep-in-mind-common-rules-of-netiquette",
-    "title": "Ed-Discussion Netiquette",
-    "section": "Keep in mind common rules of netiquette",
-    "text": "Keep in mind common rules of netiquette\n\nDon’t post irrelevant links, comments, thoughts or pictures.\nDon’t type in ALL CAPS! If you do it will look like you are screaming.\nDon’t write anything that sounds angry or sarcastic even as a joke, because without hearing your tone of voice, your peers might not realize you’re joking.\nAlways remember to say “please” and “thank you” when soliciting help from your classmates.\nRespect the opinion of your classmates. If you feel the need to disagree, do so respectfully and acknowledge the valid points in your classmate’s argument.\nRefrain from personal abuse. Don’t badmouth others or call them offensive words. You may express robust disagreement with what someone says, but don’t call them names.\nBe forgiving. If your classmate makes a mistake, don’t badger him or her for it. Just let it go.\nIf you reply to a question from a classmate, make sure your answer is accurate.\nBe brief. If you write a long dissertation in response to a simple question, it’s unlikely that anyone will spend the time to read through it all.\nRemember that your public posts are not anonymous. They can be read by your classmates.\nDon’t expect other people to do your homework for you. If you’re looking for technical help, for example, don’t ask questions you could easily answer yourself by reading the manual or help documentation provided with the software tools used in this course."
-  },
-  {
-    "objectID": "ed-netiquette.html#ask-lab-and-hw-questions-only-in-the-designated-lab-and-hw-posts",
-    "href": "ed-netiquette.html#ask-lab-and-hw-questions-only-in-the-designated-lab-and-hw-posts",
-    "title": "Ed-Discussion Netiquette",
-    "section": "Ask Lab and HW questions only in the designated Lab and HW posts",
-    "text": "Ask Lab and HW questions only in the designated Lab and HW posts\nWe’ve created individual posts for each type of assignment. Please ask questions, discuss problems, or help out in those posts only. Before asking a question, read through (or search) the whole thread to see if your question has been answered. Likewise, stay on topic."
-  },
-  {
-    "objectID": "ed-netiquette.html#do-not-post-answers-in-discussion-forums",
-    "href": "ed-netiquette.html#do-not-post-answers-in-discussion-forums",
-    "title": "Ed-Discussion Netiquette",
-    "section": "Do NOT post answers in discussion forums",
-    "text": "Do NOT post answers in discussion forums\nPlease don’t give away the answer on any discussion forum. You can explain things in a way that still lets other students figure out the essence of the problem on their own, but don’t spoil the problem. For example, don’t point to a useful stackoverflow or YouTube link that works out essentially what the problem is asking about.\nThat is not cool.\nPost such spoilers after the HW is due. That is totally fine. If you are not sure, post privately to instructors and then we’ll let you know."
-  },
-  {
-    "objectID": "ed-netiquette.html#ask-questions-about-assignments-only",
-    "href": "ed-netiquette.html#ask-questions-about-assignments-only",
-    "title": "Ed-Discussion Netiquette",
-    "section": "Ask questions about assignments only",
-    "text": "Ask questions about assignments only\nIf you have questions, comments, or other concerns that are not related to assignments, please email your GSI or the instructor. We want to keep the focus of bCourses tools for assignments in Stat 133."
-  },
-  {
-    "objectID": "ed-netiquette.html#try-to-make-posts-public",
-    "href": "ed-netiquette.html#try-to-make-posts-public",
-    "title": "Ed-Discussion Netiquette",
-    "section": "Try to make posts public",
-    "text": "Try to make posts public\nWhile not violating the preceding rules, try to make your questions public, because others might have the same question and we don’t need to answer them multiple times."
-  },
-  {
-    "objectID": "ed-netiquette.html#minute-test",
-    "href": "ed-netiquette.html#minute-test",
-    "title": "Ed-Discussion Netiquette",
-    "section": "3 minute-test",
-    "text": "3 minute-test\nIf you think your questions may take more than 3 or 5 minutes to answer, please come to office hours, or try to schedule a zoom meeting with the teaching staff."
-  },
-  {
-    "objectID": "ed-netiquette.html#we-are-not-pre-grading",
-    "href": "ed-netiquette.html#we-are-not-pre-grading",
-    "title": "Ed-Discussion Netiquette",
-    "section": "We are not pre-grading",
-    "text": "We are not pre-grading\nPlease do not post questions of the form:\n\n“Is this the correct solution to HW X problem Y?”\n“Would this receive full credit on HW X problem Y?”\n“Is this the right level of detail for HW X problem Y?”\n\nPlease do not ask instructors to check your homework in advance. We simply cannot check every student’s homework.\nFeel free to ask questions of clarification about a certain HW problem, or ask questions about the course content to achieve a deeper understanding, but at a certain point, you must apply your knowledge, give it your best shot, and submit your answers with confidence."
-  },
-  {
-    "objectID": "ed-netiquette.html#post-a-screenshot-of-any-resource-referenced",
-    "href": "ed-netiquette.html#post-a-screenshot-of-any-resource-referenced",
-    "title": "Ed-Discussion Netiquette",
-    "section": "Post a screenshot of any resource referenced",
-    "text": "Post a screenshot of any resource referenced\nYour question should be self-contained. The GSIs (and other responders) should not have to scan through PDFs or scripts to even figure out what the question is. Ask yourself: am I referring to some lecture /HW solution/discussion solution/etc?\nIf the answer is yes, post a screenshot of the relevant part. This can include your handwritten notes from the relevant lecture."
-  },
-  {
-    "objectID": "ed-netiquette.html#post-all-your-work",
-    "href": "ed-netiquette.html#post-all-your-work",
-    "title": "Ed-Discussion Netiquette",
-    "section": "Post all your work",
-    "text": "Post all your work\nDon’t post one line saying:\n\n“At step n, I get XYZ, and I’m now confused.”\nThis forces the GSIs to guess:\nWhat happened in steps 1, 2, …, n - 1?\n\nMost likely, the GSIs will guess wrong, and we run into a mess of followup questions trying to figure out what steps 1, 2, …, n - 1 were.\nInstead, post:\n\nStarting out, we have: ….\nThen, I do …, and I get …\nNext, I do …, and I get …\nNext, I do …, and I get …\nNow, I get $&%&#(, and this makes no sense.\nThen, the GSI can respond:\nThe mistake is at step 3, you’re not allowed to apply ABC to XYZ because …\n\nIn summary, when you do ask for help, include details of what attempts you’ve made to solve the problem. It will save time and also show people that you are making an effort to help yourself.\n\nWe reserve the right to delete any posts\nWe reserve the right to delete, move, or edit any posts, and even to make Ed-Discussion inactive, at any time, without previous notice.\nDiscussion resources can be a great tools if used appropriately, respectfully, and wisely. Take advantage of Ed, and make the most out of it."
-  },
-  {
-    "objectID": "email.html",
-    "href": "email.html",
-    "title": "Communication via Email",
-    "section": "",
-    "text": "Email: gastonsanchez@berkeley.edu\nYou should limit your emails to serious problems that cannot be addressed during office hours. The vast majority of questions can be answered during OH. Email should not be used for information that is readily available in course materials (syllabus, discussion forum, announcements, etc.) or from fellow students.\nI do not explain course material over email and will not respond to emails with such requests. Please use office hours, or discussion section, (or schedule another time to meet with the teaching staff if you have irreconcilable conflicts with the office hours)."
-  },
-  {
-    "objectID": "email.html#reading-and-responding-email",
-    "href": "email.html#reading-and-responding-email",
-    "title": "Communication via Email",
-    "section": "Reading and responding email",
-    "text": "Reading and responding email\nFor general emails, I will reply to general questions or concerns within 2 to 3 business days, Monday through Friday, during regular academic hours (9:00AM-5:00PM).\nPlease note that I do not read email between 5pm and 9am, or during the weekends. Likewise, I do not respond to emails on the weekend.\nex. If you send an email at 6pm on Friday night, you can expect that I will read it around 9am on Monday morning, and should likely receive a response by around 9am on Tuesday morning.\nIf, for any reason, I haven’t responded to your email after four business days, please email me again. I am human, and there are times when student emails fall through the cracks inadvertently.\nI prefer to have conversations in person rather than via email, thus allowing us to get to know each other better and fostering a more collegial learning atmosphere."
-  },
-  {
-    "objectID": "email.html#communicate-in-a-professional-manner",
-    "href": "email.html#communicate-in-a-professional-manner",
-    "title": "Communication via Email",
-    "section": "Communicate in a professional manner",
-    "text": "Communicate in a professional manner\nIf you believe your situation warrants an email, please feel free to send me a professional email. E-mail communication should be courteous and respectful in manner and tone. Please do not send e-mails that are curt or demanding.\nHere’s a short example of an unprofessional email. Let’s assume you missed an exam, for whatever reason. Do not write and say: “I missed an exam. When can I make it up?” Instead, explain why you have extenuating circumstances, and ask the teaching staff if they will allow you to make up the exam. Most likely you won’t be able to make it up, but at least you are asking in a professional way.\nIf you are unsure of how to write an email to me or any other professor, please consult this amusing blog post that gives you a useful template:\nhttps://medium.com/@lportwoodstacer/how-to-email-your-professor-without-being-annoying-af-cf64ae0e4087"
-  },
-  {
-    "objectID": "email.html#subject-line",
-    "href": "email.html#subject-line",
-    "title": "Communication via Email",
-    "section": "Subject line",
-    "text": "Subject line\nIf you wish for your email to make it into my inbox, do not leave the subject line blank. Instead, make sure the subject of your email contains the code course and a brief explanation of the nature of the email. For example: “Stat 133-Question about Homework” or “Stat 133-Request for Meeting”."
-  },
-  {
-    "objectID": "email.html#avoid-these-subjects",
-    "href": "email.html#avoid-these-subjects",
-    "title": "Communication via Email",
-    "section": "Avoid these subjects",
-    "text": "Avoid these subjects\n\nAvoid emailing me to explain why you missed or will miss class. I usually don’t need to know. If you think this is affecting your performance, then schedule a meeting with me.\nDo not email me to let me know you made a mistake in your submitted assignment. Please refer to the HW policies (see syllabus).\nDo not email me to ask for extra credit. Here’s why: https://marktomforde.com/academic/undergraduates/NoExtraCredit.html\nAbove all, do not email me to engage in grade grubbing. Here’s why: https://marktomforde.com/academic/undergraduates/GradeGrubbing.html"
-  },
-  {
-    "objectID": "email.html#scheduling-a-meeting",
-    "href": "email.html#scheduling-a-meeting",
-    "title": "Communication via Email",
-    "section": "Scheduling a meeting",
-    "text": "Scheduling a meeting\nIf you wish to schedule a meeting with me, your message should include at least two times when you would like to meet and a brief (one-two sentence) description of the reason for the meeting."
-  },
-  {
-    "objectID": "email.html#emails-regarding-letters-of-recommendation",
-    "href": "email.html#emails-regarding-letters-of-recommendation",
-    "title": "Communication via Email",
-    "section": "Emails regarding letters of recommendation",
-    "text": "Emails regarding letters of recommendation\nBefore you ask me to write you a letter of recommendation, please take a look at the following document: https://github.com/gastonstat/letter-of-rec"
+    "objectID": "quiz/slides.html#quiz",
+    "href": "quiz/slides.html#quiz",
+    "title": "Quiz",
+    "section": "Quiz",
+    "text": "Quiz\n\n\n\n−+\n35:00\n\n\n\n\nPlease be quiet.\nWhen you get a quiz, do not begin until we tell you so.\nWrite your name and SID.\nKeep your eyes on your own quiz.\nNo bathroom breaks are allowed.\nIf you finish early, please hold on to your quiz and wait.\nWhen the timer ends, hold up your quiz in the air immediately and put your writing utensils down or risk a 0.\n\nGood luck! 🍀"
   },
   {
     "objectID": "info/faqs.html",
@@ -2921,7 +2935,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 00     Royce O'Nea… PHO   SF           78    226 June 5, 1… US      7         \n2 21     Spencer Jon… DEN   SF           79    225 June 14, … US      R         \n3 20     Jaylen Nowe… NOP   SG           76    201 July 9, 1… US      5         \n4 20     Colby Jones  SAC   SG           78    207 May 28, 2… US      1         \n5 55     Ariel Hukpo… NYK   C            84    246 April 11,… DE      R         \n6 8      Bub Carring… WAS   PG           76    190 July 21, … US      R         \n7 50     Jeremiah Ro… NOP   PF           81    240 November … US      3         \n8 14     Blake Wesley SAS   SG           76    190 March 16,… US      2         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 33     Nic Claxton  BRK   C            83    215 April 17,… US      5         \n2 55     Ariel Hukpo… NYK   C            84    246 April 11,… DE      R         \n3 33     Jaylen Sims  CHO   SG           78    210 December … US      R         \n4 18     Bismack Biy… SAS   C            80    255 August 28… CD      13        \n5 24     Kris Murray  POR   SF           80    218 August 19… US      1         \n6 32     Trayce Jack… GSW   C            81    245 February … US      1         \n7 2      Lonzo Ball   CHI   PG           77    190 October 2… US      5         \n8 27     Alex Len     LAL   C            84    250 June 16, … UA      11        \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
