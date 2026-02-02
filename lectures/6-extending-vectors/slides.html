@@ -268,7 +268,7 @@ Gaston Sanchez
 <p>Write down two ways to change-in-place the <code>FALSE</code> to <code>TRUE</code>, each using a different form of subsetting.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_cb40be32" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_58b1cb33" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
@@ -365,21 +365,25 @@ Gaston Sanchez
 <p>To fill the matrix by rows use <code>byrow = TRUE</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>mat4 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb18-2"><a></a>mat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-2"><a></a>mat4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'mat' not found</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2]
+[1,]    1    2
+[2,]    3    4</code></pre>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>mat5 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb20-2"><a></a>mat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-2"><a></a>mat5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'mat' not found</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2]
+[1,]    1    2
+[2,]    3    4</code></pre>
 </div>
 </div>
 </div>
@@ -433,7 +437,7 @@ Gaston Sanchez
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_6807aed1" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_2bb180ea" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -444,6 +448,9 @@ Gaston Sanchez
 <section id="matrix-subsetting" class="title-slide slide level1 center">
 <h1>Matrix Subsetting</h1>
 
+</section>
+<section id="subsetting-vectors-vs-matrices" class="slide level2">
+<h2>Subsetting vectors vs matrices</h2>
 </section>
 <section id="by-index" class="slide level2">
 <h2>By Index</h2>
@@ -628,7 +635,7 @@ b 2  4</code></pre>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_1ec12da3" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_fc0445dc" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -670,10 +677,10 @@ b 2  4</code></pre>
 </tbody>
 </table>
 <div class="fragment">
-<p>Write code to create a matrix for the above data.</p>
+<p>Write code to create a 3x3 matrix for the above data.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_a534bf92" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_6cd7b09e" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
@@ -725,7 +732,7 @@ b 2  4</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Write code to create a matrix for the above data.</p>
+<p>Write code to create a 3x3 matrix for the above data.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a>Name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Leia"</span>, <span class="st">"Luke"</span>, <span class="st">"Han"</span>)</span>
 <span id="cb60-2"><a></a>Height <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.50</span>, <span class="fl">1.70</span>, <span class="fl">1.80</span>)</span>
@@ -772,7 +779,7 @@ b 2  4</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Write code to create a matrix for the above data.</p>
+<p>Write code to create a 3x3 matrix for the above data.</p>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a></a>Name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Leia"</span>, <span class="st">"Luke"</span>, <span class="st">"Han"</span>)</span>
@@ -878,6 +885,19 @@ han  "Leia" "1.8"  "FALSE"</code></pre>
 <li class="fragment">Also Atomic</li>
 </ul>
 </div></div>
+</section>
+<section id="relevant-functions" class="slide level2">
+<h2>Relevant Functions</h2>
+<ul>
+<li><code>matrix()</code></li>
+<li><code>dim()</code></li>
+<li><code>nrow()</code></li>
+<li><code>ncol()</code></li>
+<li><code>rownames()</code></li>
+<li><code>colnames()</code></li>
+<li><code>cbind()</code></li>
+<li><code>rbind()</code></li>
+</ul>
 
 
 </section></section>

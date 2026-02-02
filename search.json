@@ -2230,132 +2230,6 @@
     "text": "Post all your work\nDon’t post one line saying:\n\n“At step n, I get XYZ, and I’m now confused.”\nThis forces the GSIs to guess:\nWhat happened in steps 1, 2, …, n - 1?\n\nMost likely, the GSIs will guess wrong, and we run into a mess of followup questions trying to figure out what steps 1, 2, …, n - 1 were.\nInstead, post:\n\nStarting out, we have: ….\nThen, I do …, and I get …\nNext, I do …, and I get …\nNext, I do …, and I get …\nNow, I get $&%&#(, and this makes no sense.\nThen, the GSI can respond:\nThe mistake is at step 3, you’re not allowed to apply ABC to XYZ because …\n\nIn summary, when you do ask for help, include details of what attempts you’ve made to solve the problem. It will save time and also show people that you are making an effort to help yourself.\n\nWe reserve the right to delete any posts\nWe reserve the right to delete, move, or edit any posts, and even to make Ed-Discussion inactive, at any time, without previous notice.\nDiscussion resources can be a great tools if used appropriately, respectfully, and wisely. Take advantage of Ed, and make the most out of it."
   },
   {
-    "objectID": "labs/lab1/slides.html#meet-your-gsi",
-    "href": "labs/lab1/slides.html#meet-your-gsi",
-    "title": "Lab 1",
-    "section": "Meet your GSI",
-    "text": "Meet your GSI\n\nIntroduce yourself to the clasas. You can talk about your:\n\nName\nMajor\nExperience\nFun fact"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#with-the-people-around-you",
-    "href": "labs/lab1/slides.html#with-the-people-around-you",
-    "title": "Lab 1",
-    "section": "With the people around you …",
-    "text": "With the people around you …\n\nTake a few minutes to share your:\n\n\n\nName\nMajor\nYear\nHometown\nWhich dog mood are you today?\n\n\n\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#ice-breakers",
-    "href": "labs/lab1/slides.html#ice-breakers",
-    "title": "Lab 1",
-    "section": "Ice Breakers",
-    "text": "Ice Breakers"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#course-website",
-    "href": "labs/lab1/slides.html#course-website",
-    "title": "Lab 1",
-    "section": "Course Website",
-    "text": "Course Website\nhttps://stat133.berkeley.edu/spring-2026"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#syllabus",
-    "href": "labs/lab1/slides.html#syllabus",
-    "title": "Lab 1",
-    "section": "Syllabus",
-    "text": "Syllabus\nPlease take some minutes to read the syllabus and jot down at least two questions that you have.\nhttps://stat133.berkeley.edu/spring-2026/syllabus.html\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#installation",
-    "href": "labs/lab1/slides.html#installation",
-    "title": "Lab 1",
-    "section": "Installation",
-    "text": "Installation\n\n\n\n−+\n03:00\n\n\n\n1) R  https://www.r-project.org/\n\n\n\n2) Positron  https://positron.posit.co/\n\n\n\n\n⚠️ 2b) If Positron fails, then RStudio  https://posit.co/download/rstudio-desktop/\n\n\n\n\n3) Windows users‼️: Git  https://git-scm.com/"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#directory-stat133",
-    "href": "labs/lab1/slides.html#directory-stat133",
-    "title": "Lab 1",
-    "section": "Directory stat133",
-    "text": "Directory stat133\nIn your computer, e.g. folder Desktop or Documents, please create a folder (i.e. directory) for this course.\n\n\n👍 Good Names:\n\nstat133\nSTAT133\nStat133\n\n\n👎 Bad Names (no blank spaces):\n\nstat 133\nSTAT 133\nStat 133\n\n\nThis will be a dedicated directory for all the work you’ll do in this course."
-  },
-  {
-    "objectID": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
-    "href": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
-    "title": "Lab 1",
-    "section": "First contact with Positron (or Rstudio)",
-    "text": "First contact with Positron (or Rstudio)\nDemo:\n\nOpen Positron\nUnderstanding workspace\nQuadrants or panes"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#explorer-positron",
-    "href": "labs/lab1/slides.html#explorer-positron",
-    "title": "Lab 1",
-    "section": "Explorer (Positron)",
-    "text": "Explorer (Positron)\nLet’s focus on the Explorer tab"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#explorer-positron-1",
-    "href": "labs/lab1/slides.html#explorer-positron-1",
-    "title": "Lab 1",
-    "section": "Explorer (Positron)",
-    "text": "Explorer (Positron)\nOpen your folder stat133"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#explorer-tab",
-    "href": "labs/lab1/slides.html#explorer-tab",
-    "title": "Lab 1",
-    "section": "Explorer tab",
-    "text": "Explorer tab\n\nLet’s focus on the Explorer tab\nUse it to find your folder stat133\nClick on stat133 (i.e. move inside this folder)\nClick on folder icon to create a labs folder\nClick on labs (i.e. move inside this folder)\nInside labs, create a folder lab1"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#first-contact-with-quarto-file",
-    "href": "labs/lab1/slides.html#first-contact-with-quarto-file",
-    "title": "Lab 1",
-    "section": "First contact with Quarto File",
-    "text": "First contact with Quarto File\n\nOpen a Quarto file (i.e. Quarto document)\nUnderstanding anatomy of basic quarto file\n\nYAML header\nNarrative elements\nCode chunks\n\nEdit YAML header:\n\ntitle: \"Lab 1\"\nauthor: \"First Last\""
-  },
-  {
-    "objectID": "labs/lab1/slides.html#rendering-a-.qmd-file",
-    "href": "labs/lab1/slides.html#rendering-a-.qmd-file",
-    "title": "Lab 1",
-    "section": "Rendering a .qmd file",
-    "text": "Rendering a .qmd file\n\nClick the Preview button. In RStudio is the Render button.\nSave file in your lab1 folder.\nOutput file is an HTML document (assuming format: html)\nBTW: most assignments will require submission of their .qmd and .html files."
-  },
-  {
-    "objectID": "labs/lab1/slides.html#editing-a-.qmd-file",
-    "href": "labs/lab1/slides.html#editing-a-.qmd-file",
-    "title": "Lab 1",
-    "section": "Editing a .qmd file",
-    "text": "Editing a .qmd file\nEdit the content of your .qmd file to include the following content:\n\nMajor(s) and, if applicable, minor.\nHometown.\nFavorite song in the last 3 months.\nInsert a table (e.g. 3x3 table).\nInsert an image.\nInclude a quote.\n\n\nRender your quarto file again."
-  },
-  {
-    "objectID": "labs/lab1/slides.html#submission-to-bcourses",
-    "href": "labs/lab1/slides.html#submission-to-bcourses",
-    "title": "Lab 1",
-    "section": "Submission to bCourses",
-    "text": "Submission to bCourses\nSubmit both your .qmd and .html files to bCourses under the lab1 assignment.\n\n\nThis is a “dummy” assignment: won’t be part of your grade; we just want to make sure everyone knows how and where to submit .qmd and .html files."
-  },
-  {
-    "objectID": "labs/lab1/slides.html#so-far",
-    "href": "labs/lab1/slides.html#so-far",
-    "title": "Lab 1",
-    "section": "So far …",
-    "text": "So far …\n\nSoftware Installed\nDirectory, subdirectories, and files:\n\n  stat133/\n    labs/\n        lab1/\n          lab1-first-last.qmd\n          lab1-first-last.html\n\nLab1 .qmd and .html files submitted to bCourses"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#section-1",
-    "href": "labs/lab1/slides.html#section-1",
-    "title": "Lab 1",
-    "section": "",
-    "text": "File\nA named container that stores data—such as text, images, or programs—on a computer disk.\nThe file name usually ends in an extension (.txt, .png, .qmd) that indicates the format.\n\n\nDirectory (or Folder)\nA named container that stores a set of files or other folders.\nWe’ll write directories by appending a slash at the end: e.g., Documents/, stat133/, lab1/"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#in-case-of-trouble",
-    "href": "labs/lab1/slides.html#in-case-of-trouble",
-    "title": "Lab 1",
-    "section": "In case of trouble",
-    "text": "In case of trouble\nIf you experienced any issues today, for example:\n\ninstalling software\nrendering .qmd file\nsubmission to bCourses\ngot lost along the discussion\n\nthen please come to office hours!"
-  },
-  {
     "objectID": "labs/lab2/slides.html#agenda",
     "href": "labs/lab2/slides.html#agenda",
     "title": "Lab 2",
@@ -2496,11 +2370,249 @@
     "text": "Pset 1 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps1\nSubmission deadline: Wednesday 2/4 by 6PM.\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
   {
+    "objectID": "labs/lab1/slides.html#meet-your-gsi",
+    "href": "labs/lab1/slides.html#meet-your-gsi",
+    "title": "Lab 1",
+    "section": "Meet your GSI",
+    "text": "Meet your GSI\n\nIntroduce yourself to the clasas. You can talk about your:\n\nName\nMajor\nExperience\nFun fact"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#with-the-people-around-you",
+    "href": "labs/lab1/slides.html#with-the-people-around-you",
+    "title": "Lab 1",
+    "section": "With the people around you …",
+    "text": "With the people around you …\n\nTake a few minutes to share your:\n\n\n\nName\nMajor\nYear\nHometown\nWhich dog mood are you today?\n\n\n\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#ice-breakers",
+    "href": "labs/lab1/slides.html#ice-breakers",
+    "title": "Lab 1",
+    "section": "Ice Breakers",
+    "text": "Ice Breakers"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#course-website",
+    "href": "labs/lab1/slides.html#course-website",
+    "title": "Lab 1",
+    "section": "Course Website",
+    "text": "Course Website\nhttps://stat133.berkeley.edu/spring-2026"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#syllabus",
+    "href": "labs/lab1/slides.html#syllabus",
+    "title": "Lab 1",
+    "section": "Syllabus",
+    "text": "Syllabus\nPlease take some minutes to read the syllabus and jot down at least two questions that you have.\nhttps://stat133.berkeley.edu/spring-2026/syllabus.html\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#installation",
+    "href": "labs/lab1/slides.html#installation",
+    "title": "Lab 1",
+    "section": "Installation",
+    "text": "Installation\n\n\n\n−+\n03:00\n\n\n\n1) R  https://www.r-project.org/\n\n\n\n2) Positron  https://positron.posit.co/\n\n\n\n\n⚠️ 2b) If Positron fails, then RStudio  https://posit.co/download/rstudio-desktop/\n\n\n\n\n3) Windows users‼️: Git  https://git-scm.com/"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#directory-stat133",
+    "href": "labs/lab1/slides.html#directory-stat133",
+    "title": "Lab 1",
+    "section": "Directory stat133",
+    "text": "Directory stat133\nIn your computer, e.g. folder Desktop or Documents, please create a folder (i.e. directory) for this course.\n\n\n👍 Good Names:\n\nstat133\nSTAT133\nStat133\n\n\n👎 Bad Names (no blank spaces):\n\nstat 133\nSTAT 133\nStat 133\n\n\nThis will be a dedicated directory for all the work you’ll do in this course."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
+    "href": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
+    "title": "Lab 1",
+    "section": "First contact with Positron (or Rstudio)",
+    "text": "First contact with Positron (or Rstudio)\nDemo:\n\nOpen Positron\nUnderstanding workspace\nQuadrants or panes"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#explorer-positron",
+    "href": "labs/lab1/slides.html#explorer-positron",
+    "title": "Lab 1",
+    "section": "Explorer (Positron)",
+    "text": "Explorer (Positron)\nLet’s focus on the Explorer tab"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#explorer-positron-1",
+    "href": "labs/lab1/slides.html#explorer-positron-1",
+    "title": "Lab 1",
+    "section": "Explorer (Positron)",
+    "text": "Explorer (Positron)\nOpen your folder stat133"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#explorer-tab",
+    "href": "labs/lab1/slides.html#explorer-tab",
+    "title": "Lab 1",
+    "section": "Explorer tab",
+    "text": "Explorer tab\n\nLet’s focus on the Explorer tab\nUse it to find your folder stat133\nClick on stat133 (i.e. move inside this folder)\nClick on folder icon to create a labs folder\nClick on labs (i.e. move inside this folder)\nInside labs, create a folder lab1"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#first-contact-with-quarto-file",
+    "href": "labs/lab1/slides.html#first-contact-with-quarto-file",
+    "title": "Lab 1",
+    "section": "First contact with Quarto File",
+    "text": "First contact with Quarto File\n\nOpen a Quarto file (i.e. Quarto document)\nUnderstanding anatomy of basic quarto file\n\nYAML header\nNarrative elements\nCode chunks\n\nEdit YAML header:\n\ntitle: \"Lab 1\"\nauthor: \"First Last\""
+  },
+  {
+    "objectID": "labs/lab1/slides.html#rendering-a-.qmd-file",
+    "href": "labs/lab1/slides.html#rendering-a-.qmd-file",
+    "title": "Lab 1",
+    "section": "Rendering a .qmd file",
+    "text": "Rendering a .qmd file\n\nClick the Preview button. In RStudio is the Render button.\nSave file in your lab1 folder.\nOutput file is an HTML document (assuming format: html)\nBTW: most assignments will require submission of their .qmd and .html files."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#editing-a-.qmd-file",
+    "href": "labs/lab1/slides.html#editing-a-.qmd-file",
+    "title": "Lab 1",
+    "section": "Editing a .qmd file",
+    "text": "Editing a .qmd file\nEdit the content of your .qmd file to include the following content:\n\nMajor(s) and, if applicable, minor.\nHometown.\nFavorite song in the last 3 months.\nInsert a table (e.g. 3x3 table).\nInsert an image.\nInclude a quote.\n\n\nRender your quarto file again."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#submission-to-bcourses",
+    "href": "labs/lab1/slides.html#submission-to-bcourses",
+    "title": "Lab 1",
+    "section": "Submission to bCourses",
+    "text": "Submission to bCourses\nSubmit both your .qmd and .html files to bCourses under the lab1 assignment.\n\n\nThis is a “dummy” assignment: won’t be part of your grade; we just want to make sure everyone knows how and where to submit .qmd and .html files."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#so-far",
+    "href": "labs/lab1/slides.html#so-far",
+    "title": "Lab 1",
+    "section": "So far …",
+    "text": "So far …\n\nSoftware Installed\nDirectory, subdirectories, and files:\n\n  stat133/\n    labs/\n        lab1/\n          lab1-first-last.qmd\n          lab1-first-last.html\n\nLab1 .qmd and .html files submitted to bCourses"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#section-1",
+    "href": "labs/lab1/slides.html#section-1",
+    "title": "Lab 1",
+    "section": "",
+    "text": "File\nA named container that stores data—such as text, images, or programs—on a computer disk.\nThe file name usually ends in an extension (.txt, .png, .qmd) that indicates the format.\n\n\nDirectory (or Folder)\nA named container that stores a set of files or other folders.\nWe’ll write directories by appending a slash at the end: e.g., Documents/, stat133/, lab1/"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#in-case-of-trouble",
+    "href": "labs/lab1/slides.html#in-case-of-trouble",
+    "title": "Lab 1",
+    "section": "In case of trouble",
+    "text": "In case of trouble\nIf you experienced any issues today, for example:\n\ninstalling software\nrendering .qmd file\nsubmission to bCourses\ngot lost along the discussion\n\nthen please come to office hours!"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#agenda",
+    "href": "labs/lab3/slides.html#agenda",
+    "title": "Lab 3",
+    "section": "Agenda",
+    "text": "Agenda\n\nUsing the Terminal and basic Unix commands\n\npwd, cd, ls\n\nReview: qmd files with code chunks\n\nR as a calculator\n\nQuartoPub\n\nSign up\n\n1st Quarto Publication\nProblem Set 1"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#folder-stat133",
+    "href": "labs/lab3/slides.html#folder-stat133",
+    "title": "Lab 3",
+    "section": "Folder stat133/",
+    "text": "Folder stat133/\n  stat133/\n    labs/\n        lab1/\n        lab2/\n    psets/\n        pset1/"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#terminal-in-ide",
+    "href": "labs/lab3/slides.html#terminal-in-ide",
+    "title": "Lab 3",
+    "section": "Terminal in IDE",
+    "text": "Terminal in IDE\n\nLaunch your IDE (Positron or RStudio)\nLaunch your Terminal (next to the Console tab)\ncd to your stat133/labs/ folder\ncreate a folder for this lab: mkdir lab3\ncd to lab3\n\n\n\n\nTerminal\n\n# create an empty qmd file \"demo-pub2.qmd\"\n# (to be used for your 2nd Quarto demo publication)\ntouch demo-pub2.qmd"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#open-your-demo-pub2.qmd-document",
+    "href": "labs/lab3/slides.html#open-your-demo-pub2.qmd-document",
+    "title": "Lab 3",
+    "section": "Open your demo-pub2.qmd document",
+    "text": "Open your demo-pub2.qmd document\nMake sure your qmd file has the following content (or something similar):\n\n\ndemo-pub2.qmd\n\n---\ntitle: \"Demo Publication 2\"\nauthor: \"Your Name\"\nformat: html\n---\n\n## Markdown Content\n\nThis is my first [Quarto Pub](https://quartopub.com/) demo.\n\n- Coffee\n- Tea\n- Soda\n\n![R logo](https://www.r-project.org/Rlogo.png)"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#reminder-code-chunks-aka-code-cells",
+    "href": "labs/lab3/slides.html#reminder-code-chunks-aka-code-cells",
+    "title": "Lab 3",
+    "section": "Reminder: Code Chunks (aka code cells)",
+    "text": "Reminder: Code Chunks (aka code cells)\n```{r}\n2 + 3\n```\n\n\n```{r}\nname &lt;- c(\"Leia\", \"Luke\", \"Han\")\n```\n\n\n```{r}\nseq(from = 1, to = 10, by = 2)\n```"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#figure-basics",
+    "href": "labs/lab3/slides.html#figure-basics",
+    "title": "Lab 3",
+    "section": "Figure Basics",
+    "text": "Figure Basics\n![](https://www.r-project.org/Rlogo.png)"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#figure-alignment",
+    "href": "labs/lab3/slides.html#figure-alignment",
+    "title": "Lab 3",
+    "section": "Figure Alignment",
+    "text": "Figure Alignment\n![](https://www.r-project.org/Rlogo.png){fig-align=\"center\"}\n\n\n\n\n\n\n\n\n\n\n\n\n![](https://www.r-project.org/Rlogo.png){fig-align=\"right\"}"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#figure-sizing",
+    "href": "labs/lab3/slides.html#figure-sizing",
+    "title": "Lab 3",
+    "section": "Figure Sizing",
+    "text": "Figure Sizing\n![](https://www.r-project.org/Rlogo.png){height=30%}"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#figure-layout",
+    "href": "labs/lab3/slides.html#figure-layout",
+    "title": "Lab 3",
+    "section": "Figure Layout",
+    "text": "Figure Layout\n::: {#fig-logos layout-ncol=2}\n![](https://www.r-project.org/Rlogo.png){#fig-logo1}\n\n![](https://www.r-project.org/Rlogo.png){#fig-logo2}\n\nR logos\n:::\n\n\n\n\n\n\n\n\n\n\n\n(a)\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 1: R logos"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#callout-note",
+    "href": "labs/lab3/slides.html#callout-note",
+    "title": "Lab 3",
+    "section": "Callout Note",
+    "text": "Callout Note\n::: {.callout-note}\nNote that there are five types of callouts, including:\n`note`, `warning`, `important`, `tip`, and `caution`.\n:::\n\n\n\n\n\n\n\n\n\nNote\n\n\nNote that there are five types of callouts, including: note, warning, important, tip, and caution."
+  },
+  {
+    "objectID": "labs/lab3/slides.html#callouts-tip-important",
+    "href": "labs/lab3/slides.html#callouts-tip-important",
+    "title": "Lab 3",
+    "section": "Callouts: Tip & Important",
+    "text": "Callouts: Tip & Important\n\n\n::: {.callout-tip}\n## Tip with Title\n\nExample with a title.\n:::\n\n\n\n\n\n\n\n\nTip with Title\n\n\nExample with a title.\n\n\n\n\n\n\n::: {.callout-important}\n## Important Note\n\nThis is an important callout.\n:::\n\n\n\n\n\n\n\n\nImportant Note\n\n\nThis is an important callout."
+  },
+  {
+    "objectID": "labs/lab3/slides.html#callouts-warning-caution",
+    "href": "labs/lab3/slides.html#callouts-warning-caution",
+    "title": "Lab 3",
+    "section": "Callouts: Warning & Caution",
+    "text": "Callouts: Warning & Caution\n\n\n::: {.callout-warning}\n## Comment\n\nThis is a warning.\n:::\n\n\n\n\n\n\n\n\nComment\n\n\nThis is a warning.\n\n\n\n\n\n\n::: {.callout-caution}\n## Comment\n\nProceed with caution.\n:::\n\n\n\n\n\n\n\n\nComment\n\n\nProceed with caution."
+  },
+  {
+    "objectID": "labs/lab3/slides.html#publishing-steps",
+    "href": "labs/lab3/slides.html#publishing-steps",
+    "title": "Lab 3",
+    "section": "Publishing Steps",
+    "text": "Publishing Steps\nAssume I have a file called demo-pub2.qmd opened in Positron. To publish my qmd file to my QuartoPub account I follow these steps:\n\nGo to the Terminal tab.\n\nMake sure your working directory contains the qmd file.\n\nType command: quarto publish demo-pub2.qmd\nChoose provider Quarto Pub and press return (enter)\nPublish with default account (linked to my email address)\nOptionally: you can change the name of the document\nPress return (enter)\n\n\nOnce published, there will be an associated link (URL), something like: https://username.quarto.pub/demo-pub-2"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#submission-to-bcourses",
+    "href": "labs/lab3/slides.html#submission-to-bcourses",
+    "title": "Lab 3",
+    "section": "Submission to bCourses",
+    "text": "Submission to bCourses\nSubmit the URL (link) of your published document to the corresponding assignment in bCourses.\nSee Assignments tab &gt; Quarto Publications &gt; Pub2"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#pset-2",
+    "href": "labs/lab3/slides.html#pset-2",
+    "title": "Lab 3",
+    "section": "Pset 2",
+    "text": "Pset 2\nAvailable in bCourses:\nSee Assignments tab &gt; Problem Sets &gt; PS2\nYou’ll find 2 files:\n\nps2.html: instructions\nps2.qmd: template file to write your answers\n\n\nIn case of trouble: Go to Files tab, folder problem-sets, folder ps2, and download the qmd file.\nSometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome)."
+  },
+  {
+    "objectID": "labs/lab3/slides.html#pset-2-submission",
+    "href": "labs/lab3/slides.html#pset-2-submission",
+    "title": "Lab 3",
+    "section": "Pset 2 Submission",
+    "text": "Pset 2 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps2\nSubmission deadline: Wednesday 2/4 by 6PM.\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
+  },
+  {
     "objectID": "officehours.html",
     "href": "officehours.html",
     "title": "Office Hours",
     "section": "",
-    "text": "Office hours are subject to change. You can attend OH of any staff member. Append @berkeley.edu to all email addresses.\n\n\nInstructor: Gaston Sanchez gastonsanchez Office hours:  - Mon 5:00pm-6:00pm, Evans 309 - Tue 1:30pm-2:30pm, Evans 309\n\n\nGSI: Drew Galloro argg2159 Office hours: - Tue 3:00pm-5:00pm, Evans 434\n\n\nGSI: Clara Reckhorn clara_reckhorn Office hours:  - Day hh-hh, Evans TBD\n\n\nGSI: Will Torous wtorous Office hours:  - Mon 12:30pm-1:30pm, Evans 434 - Wed 11:30am-12:30pm, Evans 434\n\n\nTutor: Carlota Blanco Office hours:  - Mon 10:10am-12:10pm, Evans 434 - Wed 10:10am-12:10pm, Evans 426\n\n\nTutor: Montserrat Ibarra Office hours:  - Mon 2:00pm-4:00pm, Evans 426 - Fri 2:00pm-4:00pm, Evans 434",
+    "text": "Office hours are subject to change. You can attend OH of any staff member. Append @berkeley.edu to all email addresses.\n\n\nInstructor: Gaston Sanchez gastonsanchez Office hours:  - Mon 5:00pm-6:00pm, Evans 309 - Tue 1:30pm-2:30pm, Evans 309\n\n\nGSI: Drew Galloro argg2159 Office hours: - Tue 3:00pm-5:00pm, Evans 434\n\n\nGSI: Clara Reckhorn clara_reckhorn Office hours:  - Tue 10am-12pm, Evans 434\n\n\nGSI: Will Torous wtorous Office hours:  - Mon 12:30pm-1:30pm, Evans 434 - Wed 11:30am-12:30pm, Evans 434\n\n\nTutor: Carlota Blanco Office hours:  - Mon 10:10am-12:10pm, Evans 434 - Wed 10:10am-12:10pm, Evans 426\n\n\nTutor: Montserrat Ibarra Office hours:  - Mon 2:00pm-4:00pm, Evans 426 - Fri 2:00pm-4:00pm, Evans 434",
     "crumbs": [
       "Office Hours"
     ]
@@ -2641,7 +2753,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"freshman\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"junior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -2935,7 +3047,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 33     Nic Claxton  BRK   C            83    215 April 17,… US      5         \n2 55     Ariel Hukpo… NYK   C            84    246 April 11,… DE      R         \n3 33     Jaylen Sims  CHO   SG           78    210 December … US      R         \n4 18     Bismack Biy… SAS   C            80    255 August 28… CD      13        \n5 24     Kris Murray  POR   SF           80    218 August 19… US      1         \n6 32     Trayce Jack… GSW   C            81    245 February … US      1         \n7 2      Lonzo Ball   CHI   PG           77    190 October 2… US      5         \n8 27     Alex Len     LAL   C            84    250 June 16, … UA      11        \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 4      Russell Wes… DEN   PG           76    200 November … US      16        \n2 25     Chris Bouch… TOR   PF           80    200 January 1… LC      7         \n3 5      Malik Beasl… DET   SG           76    187 November … US      8         \n4 88     Neemias Que… BOS   C            84    248 July 13, … PT      3         \n5 2      Lonzo Ball   CHI   PG           77    190 October 2… US      5         \n6 5      Paolo Banch… ORL   PF           82    250 November … US      2         \n7 8      Nick Smith … CHO   SG           74    185 April 18,… US      1         \n8 5      Vince Willi… MEM   SG           76    205 August 30… US      2         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -3166,7 +3278,7 @@
     "href": "lectures/6-extending-vectors/slides.html#creating-matrices-with-matrix-1",
     "title": "Extending Vectors",
     "section": "Creating matrices with matrix()",
-    "text": "Creating matrices with matrix()\nTo fill the matrix by rows use byrow = TRUE\n\nmat4 &lt;- matrix(data = c(1, 2, 3, 4), nrow = 2, byrow = TRUE)\nmat\n\n\n\nError: object 'mat' not found\n\n\n\n\nmat5 &lt;- matrix(data = c(1, 2, 3, 4), ncol = 2, byrow = TRUE)\nmat\n\n\n\nError: object 'mat' not found"
+    "text": "Creating matrices with matrix()\nTo fill the matrix by rows use byrow = TRUE\n\nmat4 &lt;- matrix(data = c(1, 2, 3, 4), nrow = 2, byrow = TRUE)\nmat4\n\n\n\n     [,1] [,2]\n[1,]    1    2\n[2,]    3    4\n\n\n\n\nmat5 &lt;- matrix(data = c(1, 2, 3, 4), ncol = 2, byrow = TRUE)\nmat5\n\n\n\n     [,1] [,2]\n[1,]    1    2\n[2,]    3    4"
   },
   {
     "objectID": "lectures/6-extending-vectors/slides.html#matrices-as-vectors",
@@ -3181,6 +3293,13 @@
     "title": "Extending Vectors",
     "section": "Question",
     "text": "Question\nUsing what you know about how vectors work, predict the outcome of the following:\n\nmatrix(c(1, 2, 3, 4), nrow = 2) *\n    matrix(c(1, 2, 3, 4), nrow = 2)\n\n\n\n\nmatrix(data = c(\"iz\", \"buzz\", \"poppy\"), nrow = 2)\n\n\n\n\nmatrix(c(TRUE, 3L, 1.0, FALSE), nrow = 2)\n\n\n\n\n−+\n02:00"
+  },
+  {
+    "objectID": "lectures/6-extending-vectors/slides.html#subsetting-vectors-vs-matrices",
+    "href": "lectures/6-extending-vectors/slides.html#subsetting-vectors-vs-matrices",
+    "title": "Extending Vectors",
+    "section": "Subsetting vectors vs matrices",
+    "text": "Subsetting vectors vs matrices"
   },
   {
     "objectID": "lectures/6-extending-vectors/slides.html#by-index",
@@ -3229,21 +3348,21 @@
     "href": "lectures/6-extending-vectors/slides.html#section",
     "title": "Extending Vectors",
     "section": "",
-    "text": "Name\nHeight\nForce\n\n\n\n\nLeia\n1.50\nTRUE\n\n\nLuke\n1.70\nTRUE\n\n\nHan\n1.80\nFALSE\n\n\n\n\nWrite code to create a matrix for the above data.\n\n\n\n−+\n01:30\n\n\n\n\n\n\nName &lt;- c(\"Leia\", \"Luke\", \"Han\")\nHeight &lt;- c(1.50, 1.70, 1.80)\nForce &lt;- c(TRUE, TRUE, FALSE)\n\nM1 &lt;- matrix(c(Name, Height, Force), nrow = 3)\nM1\n\n     [,1]   [,2]  [,3]   \n[1,] \"Leia\" \"1.5\" \"TRUE\" \n[2,] \"Luke\" \"1.7\" \"TRUE\" \n[3,] \"Han\"  \"1.8\" \"FALSE\""
+    "text": "Name\nHeight\nForce\n\n\n\n\nLeia\n1.50\nTRUE\n\n\nLuke\n1.70\nTRUE\n\n\nHan\n1.80\nFALSE\n\n\n\n\nWrite code to create a 3x3 matrix for the above data.\n\n\n\n−+\n01:30\n\n\n\n\n\n\nName &lt;- c(\"Leia\", \"Luke\", \"Han\")\nHeight &lt;- c(1.50, 1.70, 1.80)\nForce &lt;- c(TRUE, TRUE, FALSE)\n\nM1 &lt;- matrix(c(Name, Height, Force), nrow = 3)\nM1\n\n     [,1]   [,2]  [,3]   \n[1,] \"Leia\" \"1.5\" \"TRUE\" \n[2,] \"Luke\" \"1.7\" \"TRUE\" \n[3,] \"Han\"  \"1.8\" \"FALSE\""
   },
   {
     "objectID": "lectures/6-extending-vectors/slides.html#section-1",
     "href": "lectures/6-extending-vectors/slides.html#section-1",
     "title": "Extending Vectors",
     "section": "",
-    "text": "Name\nHeight\nForce\n\n\n\n\nLeia\n1.50\nTRUE\n\n\nLuke\n1.70\nTRUE\n\n\nHan\n1.80\nFALSE\n\n\n\nWrite code to create a matrix for the above data.\n\nName &lt;- c(\"Leia\", \"Luke\", \"Han\")\nHeight &lt;- c(1.50, 1.70, 1.80)\nForce &lt;- c(TRUE, TRUE, FALSE)\n\nM1 &lt;- matrix(c(Name, Height, Force), nrow = 3)\ncolnames(M1) &lt;- c(\"Name\", \"Height\", \"Force\")\nM1\n\n\n\n     Name   Height Force  \n[1,] \"Leia\" \"1.5\"  \"TRUE\" \n[2,] \"Luke\" \"1.7\"  \"TRUE\" \n[3,] \"Han\"  \"1.8\"  \"FALSE\""
+    "text": "Name\nHeight\nForce\n\n\n\n\nLeia\n1.50\nTRUE\n\n\nLuke\n1.70\nTRUE\n\n\nHan\n1.80\nFALSE\n\n\n\nWrite code to create a 3x3 matrix for the above data.\n\nName &lt;- c(\"Leia\", \"Luke\", \"Han\")\nHeight &lt;- c(1.50, 1.70, 1.80)\nForce &lt;- c(TRUE, TRUE, FALSE)\n\nM1 &lt;- matrix(c(Name, Height, Force), nrow = 3)\ncolnames(M1) &lt;- c(\"Name\", \"Height\", \"Force\")\nM1\n\n\n\n     Name   Height Force  \n[1,] \"Leia\" \"1.5\"  \"TRUE\" \n[2,] \"Luke\" \"1.7\"  \"TRUE\" \n[3,] \"Han\"  \"1.8\"  \"FALSE\""
   },
   {
     "objectID": "lectures/6-extending-vectors/slides.html#section-2",
     "href": "lectures/6-extending-vectors/slides.html#section-2",
     "title": "Extending Vectors",
     "section": "",
-    "text": "Name\nHeight\nForce\n\n\n\n\nLeia\n1.50\nTRUE\n\n\nLuke\n1.70\nTRUE\n\n\nHan\n1.80\nFALSE\n\n\n\nWrite code to create a matrix for the above data.\n\n\nName &lt;- c(\"Leia\", \"Luke\", \"Han\")\nHeight &lt;- c(1.50, 1.70, 1.80)\nForce &lt;- c(TRUE, TRUE, FALSE)\n\nM2 &lt;- cbind(Name, Height, Force) # column-bind\nM2\n\n\n\n     Name   Height Force  \n[1,] \"Leia\" \"1.5\"  \"TRUE\" \n[2,] \"Luke\" \"1.7\"  \"TRUE\" \n[3,] \"Han\"  \"1.8\"  \"FALSE\""
+    "text": "Name\nHeight\nForce\n\n\n\n\nLeia\n1.50\nTRUE\n\n\nLuke\n1.70\nTRUE\n\n\nHan\n1.80\nFALSE\n\n\n\nWrite code to create a 3x3 matrix for the above data.\n\n\nName &lt;- c(\"Leia\", \"Luke\", \"Han\")\nHeight &lt;- c(1.50, 1.70, 1.80)\nForce &lt;- c(TRUE, TRUE, FALSE)\n\nM2 &lt;- cbind(Name, Height, Force) # column-bind\nM2\n\n\n\n     Name   Height Force  \n[1,] \"Leia\" \"1.5\"  \"TRUE\" \n[2,] \"Luke\" \"1.7\"  \"TRUE\" \n[3,] \"Han\"  \"1.8\"  \"FALSE\""
   },
   {
     "objectID": "lectures/6-extending-vectors/slides.html#section-3",
@@ -3258,6 +3377,13 @@
     "title": "Extending Vectors",
     "section": "",
     "text": "Vectors\n\nCentral data structure in R\n\nVectorization\nVector Recycling\n\nOrdered set of elements\n\nSubsetting with []\n\nAtomic: elements of the same type\n\nType coercion\n\n\n\n\n\nMatrices\n\nA vector with dimension info\n\nVectorization\nVector Recycling\n\nOrdered set of elements\n\nSubsetting with [vec_ind] or [row,col]\n\nAlso Atomic"
+  },
+  {
+    "objectID": "lectures/6-extending-vectors/slides.html#relevant-functions",
+    "href": "lectures/6-extending-vectors/slides.html#relevant-functions",
+    "title": "Extending Vectors",
+    "section": "Relevant Functions",
+    "text": "Relevant Functions\n\nmatrix()\ndim()\nnrow()\nncol()\nrownames()\ncolnames()\ncbind()\nrbind()"
   },
   {
     "objectID": "lectures/2-intro/slides.html#yesterdays-lab",
