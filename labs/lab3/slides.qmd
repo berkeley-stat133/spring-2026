@@ -1,0 +1,335 @@
+---
+title: "Lab 3"
+subtitle: "Vectors and Matrices"
+author: "STAT 133"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+## Agenda
+
+- Using the Terminal and basic Unix commands
+    + `pwd`, `cd`, `ls`
+- Review: `qmd` files with [code chunks]{.bold-hilit}
+    + R as a calculator
+- QuartoPub
+    + Sign up
+- 1st Quarto Publication
+- Problem Set 1
+
+
+## Folder `stat133/`
+
+```{.markdown code-line-numbers="false"}
+  stat133/
+    labs/
+        lab1/
+        lab2/
+    psets/
+        pset1/
+```
+
+
+## Terminal in IDE
+
+1) Launch your IDE (Positron or RStudio)
+
+2) Launch your [Terminal]{.bold-hilit} (next to the _Console_ tab)
+
+3) `cd` to your `stat133/labs/` folder
+
+4) create a folder for this lab: `mkdir lab3`
+
+5) `cd` to `lab3`
+
+. . .
+
+```{.markdown filename="Terminal" code-line-numbers="false"}
+# create an empty qmd file "demo-pub2.qmd"
+# (to be used for your 2nd Quarto demo publication)
+touch demo-pub2.qmd
+```
+
+
+## Open your `demo-pub2.qmd` document {.smaller}
+
+Make sure your `qmd` file has the following content (or something similar):
+
+```{.markdown filename="demo-pub2.qmd" code-line-numbers="false"}
+---
+title: "Demo Publication 2"
+author: "Your Name"
+format: html
+---
+
+## Markdown Content
+
+This is my first [Quarto Pub](https://quartopub.com/) demo.
+
+- Coffee
+- Tea
+- Soda
+
+![R logo](https://www.r-project.org/Rlogo.png)
+```
+
+
+## Reminder: Code Chunks (_aka_ code cells)
+
+```{{r}}
+2 + 3
+```
+
+\
+
+```{{r}}
+name <- c("Leia", "Luke", "Han")
+```
+
+\
+
+```{{r}}
+seq(from = 1, to = 10, by = 2)
+```
+
+
+# Figures
+
+## Figure Basics
+
+```{.markdown code-line-numbers="false"}
+![](https://www.r-project.org/Rlogo.png)
+```
+
+. . .
+
+\
+
+![](https://www.r-project.org/Rlogo.png)
+
+
+## Figure Alignment
+
+```{.markdown code-line-numbers="false"}
+![](https://www.r-project.org/Rlogo.png){fig-align="center"}
+```
+
+. . .
+
+\
+
+![](https://www.r-project.org/Rlogo.png){fig-align="center"}
+
+\
+
+. . .
+
+```{.markdown code-line-numbers="false"}
+![](https://www.r-project.org/Rlogo.png){fig-align="right"}
+```
+
+. . .
+
+\
+
+![](https://www.r-project.org/Rlogo.png){fig-align="right"}
+
+
+## Figure Sizing {.nostretch}
+
+```{.markdown code-line-numbers="false"}
+![](https://www.r-project.org/Rlogo.png){height=30%}
+```
+
+. . .
+
+\
+
+![](https://www.r-project.org/Rlogo.png){width=30%}
+
+
+## Figure Layout
+
+```{.markdown code-line-numbers="false"}
+::: {#fig-logos layout-ncol=2}
+![](https://www.r-project.org/Rlogo.png){#fig-logo1}
+
+![](https://www.r-project.org/Rlogo.png){#fig-logo2}
+
+R logos
+:::
+```
+
+::: {#fig-logos layout-ncol=2}
+![](https://www.r-project.org/Rlogo.png){#fig-logo1}
+
+![](https://www.r-project.org/Rlogo.png){#fig-logo2}
+
+R logos
+:::
+
+
+# Callout Blocks
+
+## Callout Note
+
+```{.markdown code-line-numbers="false"}
+::: {.callout-note}
+Note that there are five types of callouts, including:
+`note`, `warning`, `important`, `tip`, and `caution`.
+:::
+```
+
+. . .
+
+\
+
+::: {.callout-note}
+Note that there are five types of callouts, including:
+`note`, `warning`, `important`, `tip`, and `caution`.
+:::
+
+
+## Callouts: Tip & Important
+
+:::: {.columns}
+::: {.column width="46%"}
+```{.markdown code-line-numbers="false"}
+::: {.callout-tip}
+## Tip with Title
+
+Example with a title.
+:::
+```
+
+\
+
+::: {.callout-tip}
+## Tip with Title
+
+Example with a title.
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="46%"}
+```{.markdown code-line-numbers="false"}
+::: {.callout-important}
+## Important Note
+
+This is an important callout.
+:::
+```
+
+\
+
+::: {.callout-important}
+## Important Note
+
+This is an important callout.
+:::
+:::
+::::
+
+
+## Callouts: Warning & Caution
+
+:::: {.columns}
+::: {.column width="46%"}
+```{.markdown code-line-numbers="false"}
+::: {.callout-warning}
+## Comment
+
+This is a warning.
+:::
+```
+
+\
+
+::: {.callout-warning}
+## Comment
+
+This is a warning.
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="46%"}
+```{.markdown code-line-numbers="false"}
+::: {.callout-caution}
+## Comment
+
+Proceed with caution.
+:::
+```
+
+\
+
+::: {.callout-caution}
+## Comment
+
+Proceed with caution.
+:::
+:::
+::::
+
+
+# Quarto Pub
+
+## Publishing Steps
+
+Assume I have a file called `demo-pub2.qmd` opened in Positron. To publish my `qmd` file to my QuartoPub account I follow these steps:
+
+1) Go to the __Terminal__ tab.
+    + Make sure your working directory contains the qmd file.
+2) Type command: `quarto publish demo-pub2.qmd`
+3) Choose provider [Quarto Pub]{.bold-hilit} and press return (enter)
+4) Publish with default account (linked to my email address)
+5) Optionally: you can change the name of the document
+6) Press return (enter)
+
+. . .
+
+Once published, there will be an associated link (URL), something like:
+<https://username.quarto.pub/demo-pub-2>
+
+
+## Submission to bCourses
+
+Submit the URL (link) of your published document to the corresponding assignment in bCourses.
+
+See [Assignments tab > Quarto Publications > Pub2]{.bold-hilit}
+
+
+# Problem Set 2
+
+## Pset 2
+
+Available in bCourses:
+
+See [Assignments tab > Problem Sets > PS2]{.bold-hilit}
+
+You'll find 2 files:
+
+- `ps2.html`: instructions
+
+- `ps2.qmd`: template file to write your answers
+
+. . .
+
+In case of trouble: Go to Files tab, folder `problem-sets`, folder `ps2`, and download the `qmd` file.
+
+Sometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome).
+
+
+## Pset 2 Submission
+
+- Submit your `qmd` and `html` files to bCourses.
+- Use assignment problem set __ps2__
+- Submission deadline: Wednesday 2/4 by 6PM.
+- Graded credit / no-credit
+- Credit for evidence of earnest engagement (just don't submit a blank or empty template file)
