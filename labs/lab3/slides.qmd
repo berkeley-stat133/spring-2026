@@ -48,6 +48,8 @@ countdown::countdown(35, top = 0)
 Good luck! 🍀
 
 
+# Lab 3 - QuartoPub
+
 ## Folder `stat133/`
 
 ```{.markdown code-line-numbers="false"}
@@ -360,6 +362,6 @@ Sometimes Safari blocks or denies you access. If this is the case you may want t
 
 - Submit your `qmd` and `html` files to bCourses.
 - Use assignment problem set __ps2__
-- Submission deadline: Wednesday 2/4 by 6PM.
+- Submission deadline: Wednesday 2/11 by 6PM.
 - Graded credit / no-credit
 - Credit for evidence of earnest engagement (just don't submit a blank or empty template file)
