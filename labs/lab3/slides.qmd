@@ -1,5 +1,5 @@
 ---
-title: "Lab 3"
+title: "Quiz and Lab 3"
 subtitle: "Vectors and Matrices"
 author: "STAT 133"
 format: stat133slides-revealjs
@@ -8,14 +8,44 @@ chalkboard: true
 
 ## Agenda
 
+- Quiz 1
 - Using the Terminal and basic Unix commands
     + `pwd`, `cd`, `ls`
 - Review: `qmd` files with [code chunks]{.bold-hilit}
     + R as a calculator
 - QuartoPub
     + Sign up
-- 1st Quarto Publication
-- Problem Set 1
+- 2nd Quarto Publication
+- Problem Set 2
+
+## Before the Quiz
+
+::: {.nonincremental}
+1.  Spread out as much as possible.
+2.  🚽 If you need to use the bathroom, this is the time to do it.
+2.  🧹 Clear your desk of everything except a pen/pencil and your ID.
+3.  🧢 Remove hats, hoods, and sunglasses (don't hide your face please!)
+4.  📱 All electronic devices (laptop, phone, airbuds, smart watch) should remain in your bag for the entire quiz period.
+:::
+
+
+## Quiz
+
+```{r}
+countdown::countdown(35, top = 0)
+```
+
+::: {.nonincremental}
+1.  Please be quiet.
+2.  When you get a quiz, do not begin until we tell you so.
+3.  Write your name and SID.
+4.  Keep your eyes on your own quiz.
+5.  No bathroom breaks are allowed.
+6.  If you finish early, please hold on to your quiz and wait.
+7. When the timer ends, hold up your quiz in the air immediately and put your writing utensils down or risk a 0.
+:::
+
+Good luck! 🍀
 
 
 ## Folder `stat133/`
