@@ -22,6 +22,7 @@ chalkboard: true
 - Functions can take arguments (inputs) and return values (outputs)
 - Example:
 ```{r}
+#| eval: false
 add <- function(x, y) {
   return(x + y)
 }
@@ -33,6 +34,7 @@ print(result)  # Output: 8
 - Used for conditional execution of code blocks
 - Syntax:
 ```{r}
+#| eval: false
 if (condition) {
   # code to execute if condition is TRUE
 } else {
@@ -42,6 +44,7 @@ if (condition) {
 
 ## Example of If Else
 ```{r}
+#| eval: false
 check_number <- function(num) {
   if (num > 0) {
     return("Positive")
@@ -60,6 +63,7 @@ print(check_number(0))   # Output: "Zero"
 - Used to iterate over a sequence (like a vector or list)
 - Syntax:
 ```{r}
+#| eval: false
 for (variable in sequence) {
   # code to execute for each element in sequence
 }
@@ -67,6 +71,7 @@ for (variable in sequence) {
 
 ## Example of For Loop
 ```{r}
+#| eval: false
 sum_vector <- function(vec) {
   total <- 0
   for (num in vec) {
@@ -146,6 +151,7 @@ format: revealjs
 Code is added the same way as in regular `qmd` files, using code chunks.
 
 ```{r}
+#| eval: false
 # Example code chunk
 x <- 10
 y <- 20
@@ -162,7 +168,8 @@ format: revealjs:
 Explore more themes on the [Quarto Website](https://quarto.org/docs/presentations/revealjs/themes.html)
 
 ## Line highlighting
-```{r code-line-numbers="1"}
+```{r}
+#| eval: false
 # Example function to calculate square
 square <- function(x) {
   return(x^2)
