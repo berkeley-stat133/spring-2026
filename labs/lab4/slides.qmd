@@ -82,6 +82,7 @@ sum_vector <- function(vec) {
 print(sum_vector(c(1, 2, 3, 4, 5)))  # Output: 15
 ```
 
+
 ## Quarto Slides
 - Quarto allows you to create slides using markdown syntax
 - Use `#` or `##` to separate slides
