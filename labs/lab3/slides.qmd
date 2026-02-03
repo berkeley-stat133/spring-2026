@@ -9,12 +9,10 @@ chalkboard: true
 ## Agenda
 
 - Quiz 1
-- Using the Terminal and basic Unix commands
-    + `pwd`, `cd`, `ls`
-- Review: `qmd` files with [code chunks]{.bold-hilit}
-    + R as a calculator
-- QuartoPub
-    + Sign up
+- Quarto Elements:
+    + Figures
+    + Callout blocks
+    + Themes
 - 2nd Quarto Publication
 - Problem Set 2
 
@@ -40,7 +38,7 @@ countdown::countdown(35, top = 0)
 2.  When you get a quiz, do not begin until we tell you so.
 3.  Write your name and SID.
 4.  Keep your eyes on your own quiz.
-5.  No bathroom breaks are allowed.
+5.  Only one person allowed to use the bathroom at a time.
 6.  If you finish early, please hold on to your quiz and wait.
 7. When the timer ends, hold up your quiz in the air immediately and put your writing utensils down or risk a 0.
 :::
@@ -51,6 +49,8 @@ Good luck! 🍀
 # Lab 3 - QuartoPub
 
 ## Folder `stat133/`
+
+By now, your `stat133` folder should look like this:
 
 ```{.markdown code-line-numbers="false"}
   stat133/
@@ -91,18 +91,16 @@ Make sure your `qmd` file has the following content (or something similar):
 ---
 title: "Demo Publication 2"
 author: "Your Name"
-format: html
+format: 
+  html:
+    theme: cosmo
 ---
 
 ## Markdown Content
 
-This is my first [Quarto Pub](https://quartopub.com/) demo.
+This is my second [Quarto Pub](https://quartopub.com/) demo.
 
-- Coffee
-- Tea
-- Soda
-
-![R logo](https://www.r-project.org/Rlogo.png)
+> "If life gives you lemons, make lemonade."
 ```
 
 
@@ -138,6 +136,12 @@ seq(from = 1, to = 10, by = 2)
 \
 
 ![](https://www.r-project.org/Rlogo.png)
+
+. . .
+
+\
+
+<https://quarto.org/docs/authoring/figures.html>
 
 
 ## Figure Alignment
@@ -308,6 +312,57 @@ Proceed with caution.
 :::
 :::
 ::::
+
+
+# HTML Themes
+
+## HTML Theming
+
+Quarto includes 25 themes from the [Bootswatch](https://bootswatch.com/) project:
+
+<https://quarto.org/docs/output-formats/html-themes.html>
+
+\
+
+Some examples:
+
+::: {.nonincremental}
+- [cerulean](https://bootswatch.com/cerulean/)
+- [cosmo](https://bootswatch.com/cosmo/)
+- [darkly](https://bootswatch.com/darkly/)
+- [solar](https://bootswatch.com/solar/)
+- [united](https://bootswatch.com/united/)
+:::
+
+
+## HTML Theming
+
+To use a theme for your HTML document, update the [format]{.bold-hilit} in the YAML header 
+
+```{.markdown filename="demo-pub2.qmd" code-line-numbers="false"}
+---
+title: "Demo Publication 2"
+author: "Your Name"
+format: 
+  html:
+    theme: cosmo
+---
+```
+
+## HTML Theming: example
+
+```{.markdown filename="demo-pub2.qmd" code-line-numbers="false"}
+---
+title: "Demo Publication 2"
+author: "Your Name"
+format: 
+  html:
+    fontsize: 1.1em
+    theme: 
+      light: flatly
+      dark: darkly
+---
+```
 
 
 # Quarto Pub

@@ -27,7 +27,7 @@ countdown::countdown(35, top = 0)
 2.  When you get a quiz, do not begin until we tell you so.
 3.  Write your name and SID.
 4.  Keep your eyes on your own quiz.
-5.  No bathroom breaks are allowed.
+5.  Only one person allowed to use the bathroom at a time.
 6.  If you finish early, please hold on to your quiz and wait.
 7. When the timer ends, hold up your quiz in the air immediately and put your writing utensils down or risk a 0.
 :::

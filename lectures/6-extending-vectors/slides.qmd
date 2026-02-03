@@ -121,7 +121,7 @@ To fill the matrix by rows use `byrow = TRUE`
 ```{r}
 #| output-location: fragment
 mat4 <- matrix(data = c(1, 2, 3, 4), nrow = 2, byrow = TRUE)
-mat
+mat4
 ```
 
 . . .
@@ -129,7 +129,7 @@ mat
 ```{r}
 #| output-location: fragment
 mat5 <- matrix(data = c(1, 2, 3, 4), ncol = 2, byrow = TRUE)
-mat
+mat5
 ```
 
 
@@ -187,6 +187,9 @@ countdown::countdown(2, bottom = 0)
 
 
 # Matrix Subsetting
+
+## Subsetting vectors vs matrices
+
 
 ## By Index
 
@@ -337,7 +340,7 @@ countdown::countdown(1, bottom = 0)
 
 . . .
 
-Write code to create a matrix for the above data.
+Write code to create a 3x3 matrix for the above data.
 
 ```{r}
 #| echo: false
@@ -364,7 +367,7 @@ M1
 | Luke | 1.70 | TRUE |
 | Han  | 1.80 | FALSE |
 
-Write code to create a matrix for the above data.
+Write code to create a 3x3 matrix for the above data.
 
 ```{r}
 #| output-location: fragment
@@ -386,7 +389,7 @@ M1
 | Luke | 1.70 | TRUE |
 | Han  | 1.80 | FALSE |
 
-Write code to create a matrix for the above data.
+Write code to create a 3x3 matrix for the above data.
 
 . . .
 
@@ -454,3 +457,17 @@ M3
 - Also Atomic
 :::
 :::::
+
+
+## Relevant Functions
+
+::: {.nonincremental}
+- `matrix()`
+- `dim()`
+- `nrow()`
+- `ncol()`
+- `rownames()`
+- `colnames()`
+- `cbind()`
+- `rbind()`
+:::

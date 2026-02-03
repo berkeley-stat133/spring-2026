@@ -111,7 +111,7 @@ Lab 2: [slides](labs/lab2/slides.html) | [PS1](https://bcourses.berkeley.edu/cou
 
 ::: {.column width="30%"}
 #### Description
-Extending Vectors
+[Extending Vectors](lectures/6-extending-vectors/slides.html)
 
 Lists
 
