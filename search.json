@@ -2230,6 +2230,279 @@
     "text": "Post all your work\nDon’t post one line saying:\n\n“At step n, I get XYZ, and I’m now confused.”\nThis forces the GSIs to guess:\nWhat happened in steps 1, 2, …, n - 1?\n\nMost likely, the GSIs will guess wrong, and we run into a mess of followup questions trying to figure out what steps 1, 2, …, n - 1 were.\nInstead, post:\n\nStarting out, we have: ….\nThen, I do …, and I get …\nNext, I do …, and I get …\nNext, I do …, and I get …\nNow, I get $&%&#(, and this makes no sense.\nThen, the GSI can respond:\nThe mistake is at step 3, you’re not allowed to apply ABC to XYZ because …\n\nIn summary, when you do ask for help, include details of what attempts you’ve made to solve the problem. It will save time and also show people that you are making an effort to help yourself.\n\nWe reserve the right to delete any posts\nWe reserve the right to delete, move, or edit any posts, and even to make Ed-Discussion inactive, at any time, without previous notice.\nDiscussion resources can be a great tools if used appropriately, respectfully, and wisely. Take advantage of Ed, and make the most out of it."
   },
   {
+    "objectID": "labs/lab3/slides.html#agenda",
+    "href": "labs/lab3/slides.html#agenda",
+    "title": "Quiz and Lab 3",
+    "section": "Agenda",
+    "text": "Agenda\n\nQuiz 1\nQuarto Elements:\n\nFigures\nCallout blocks\nThemes\n\n2nd Quarto Publication\nProblem Set 2"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#before-the-quiz",
+    "href": "labs/lab3/slides.html#before-the-quiz",
+    "title": "Quiz and Lab 3",
+    "section": "Before the Quiz",
+    "text": "Before the Quiz\n\nSpread out as much as possible.\n🚽 If you need to use the bathroom, this is the time to do it.\n🧹 Clear your desk of everything except a pen/pencil and your ID.\n🧢 Remove hats, hoods, and sunglasses (don’t hide your face please!)\n📱 All electronic devices (laptop, phone, airbuds, smart watch) should remain in your bag for the entire quiz period."
+  },
+  {
+    "objectID": "labs/lab3/slides.html#quiz",
+    "href": "labs/lab3/slides.html#quiz",
+    "title": "Quiz and Lab 3",
+    "section": "Quiz",
+    "text": "Quiz\n\n\n\n−+\n35:00\n\n\n\n\nPlease be quiet.\nWhen you get a quiz, do not begin until we tell you so.\nWrite your name and SID.\nKeep your eyes on your own quiz.\nOnly one person allowed to use the bathroom at a time.\nIf you finish early, please hold on to your quiz and wait.\nWhen the timer ends, hold up your quiz in the air immediately and put your writing utensils down or risk a 0.\n\nGood luck! 🍀"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#folder-stat133",
+    "href": "labs/lab3/slides.html#folder-stat133",
+    "title": "Quiz and Lab 3",
+    "section": "Folder stat133/",
+    "text": "Folder stat133/\nBy now, your stat133 folder should look like this:\n  stat133/\n    labs/\n        lab1/\n        lab2/\n    psets/\n        pset1/"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#terminal-in-ide",
+    "href": "labs/lab3/slides.html#terminal-in-ide",
+    "title": "Quiz and Lab 3",
+    "section": "Terminal in IDE",
+    "text": "Terminal in IDE\n\nLaunch your IDE (Positron or RStudio)\nLaunch your Terminal (next to the Console tab)\ncd to your stat133/labs/ folder\ncreate a folder for this lab: mkdir lab3\ncd to lab3\n\n\n\n\nTerminal\n\n# create an empty qmd file \"demo-pub2.qmd\"\n# (to be used for your 2nd Quarto demo publication)\ntouch demo-pub2.qmd"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#open-your-demo-pub2.qmd-document",
+    "href": "labs/lab3/slides.html#open-your-demo-pub2.qmd-document",
+    "title": "Quiz and Lab 3",
+    "section": "Open your demo-pub2.qmd document",
+    "text": "Open your demo-pub2.qmd document\nMake sure your qmd file has the following content (or something similar):\n\n\ndemo-pub2.qmd\n\n---\ntitle: \"Demo Publication 2\"\nauthor: \"Your Name\"\nformat: \n  html:\n    theme: cosmo\n---\n\n## Markdown Content\n\nThis is my second [Quarto Pub](https://quartopub.com/) demo.\n\n&gt; \"If life gives you lemons, make lemonade.\""
+  },
+  {
+    "objectID": "labs/lab3/slides.html#reminder-code-chunks-aka-code-cells",
+    "href": "labs/lab3/slides.html#reminder-code-chunks-aka-code-cells",
+    "title": "Quiz and Lab 3",
+    "section": "Reminder: Code Chunks (aka code cells)",
+    "text": "Reminder: Code Chunks (aka code cells)\n```{r}\n2 + 3\n```\n\n\n```{r}\nname &lt;- c(\"Leia\", \"Luke\", \"Han\")\n```\n\n\n```{r}\nseq(from = 1, to = 10, by = 2)\n```"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#figure-basics",
+    "href": "labs/lab3/slides.html#figure-basics",
+    "title": "Quiz and Lab 3",
+    "section": "Figure Basics",
+    "text": "Figure Basics\n![](https://www.r-project.org/Rlogo.png)\n\n\n\n\n\n\n\n\nhttps://quarto.org/docs/authoring/figures.html"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#figure-alignment",
+    "href": "labs/lab3/slides.html#figure-alignment",
+    "title": "Quiz and Lab 3",
+    "section": "Figure Alignment",
+    "text": "Figure Alignment\n![](https://www.r-project.org/Rlogo.png){fig-align=\"center\"}\n\n\n\n\n\n\n\n\n\n\n\n\n![](https://www.r-project.org/Rlogo.png){fig-align=\"right\"}"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#figure-sizing",
+    "href": "labs/lab3/slides.html#figure-sizing",
+    "title": "Quiz and Lab 3",
+    "section": "Figure Sizing",
+    "text": "Figure Sizing\n![](https://www.r-project.org/Rlogo.png){height=30%}"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#figure-layout",
+    "href": "labs/lab3/slides.html#figure-layout",
+    "title": "Quiz and Lab 3",
+    "section": "Figure Layout",
+    "text": "Figure Layout\n::: {#fig-logos layout-ncol=2}\n![](https://www.r-project.org/Rlogo.png){#fig-logo1}\n\n![](https://www.r-project.org/Rlogo.png){#fig-logo2}\n\nR logos\n:::\n\n\n\n\n\n\n\n\n\n\n\n(a)\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 1: R logos"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#callout-note",
+    "href": "labs/lab3/slides.html#callout-note",
+    "title": "Quiz and Lab 3",
+    "section": "Callout Note",
+    "text": "Callout Note\n::: {.callout-note}\nNote that there are five types of callouts, including:\n`note`, `warning`, `important`, `tip`, and `caution`.\n:::\n\n\n\n\n\n\n\n\n\nNote\n\n\nNote that there are five types of callouts, including: note, warning, important, tip, and caution."
+  },
+  {
+    "objectID": "labs/lab3/slides.html#callouts-tip-important",
+    "href": "labs/lab3/slides.html#callouts-tip-important",
+    "title": "Quiz and Lab 3",
+    "section": "Callouts: Tip & Important",
+    "text": "Callouts: Tip & Important\n\n\n::: {.callout-tip}\n## Tip with Title\n\nExample with a title.\n:::\n\n\n\n\n\n\n\n\nTip with Title\n\n\nExample with a title.\n\n\n\n\n\n\n::: {.callout-important}\n## Important Note\n\nThis is an important callout.\n:::\n\n\n\n\n\n\n\n\nImportant Note\n\n\nThis is an important callout."
+  },
+  {
+    "objectID": "labs/lab3/slides.html#callouts-warning-caution",
+    "href": "labs/lab3/slides.html#callouts-warning-caution",
+    "title": "Quiz and Lab 3",
+    "section": "Callouts: Warning & Caution",
+    "text": "Callouts: Warning & Caution\n\n\n::: {.callout-warning}\n## Comment\n\nThis is a warning.\n:::\n\n\n\n\n\n\n\n\nComment\n\n\nThis is a warning.\n\n\n\n\n\n\n::: {.callout-caution}\n## Comment\n\nProceed with caution.\n:::\n\n\n\n\n\n\n\n\nComment\n\n\nProceed with caution."
+  },
+  {
+    "objectID": "labs/lab3/slides.html#html-theming",
+    "href": "labs/lab3/slides.html#html-theming",
+    "title": "Quiz and Lab 3",
+    "section": "HTML Theming",
+    "text": "HTML Theming\nQuarto includes 25 themes from the Bootswatch project:\nhttps://quarto.org/docs/output-formats/html-themes.html\n\n\nSome examples:\n\ncerulean\ncosmo\ndarkly\nsolar\nunited"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#html-theming-1",
+    "href": "labs/lab3/slides.html#html-theming-1",
+    "title": "Quiz and Lab 3",
+    "section": "HTML Theming",
+    "text": "HTML Theming\nTo use a theme for your HTML document, update the format in the YAML header\n\n\ndemo-pub2.qmd\n\n---\ntitle: \"Demo Publication 2\"\nauthor: \"Your Name\"\nformat: \n  html:\n    theme: cosmo\n---"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#html-theming-example",
+    "href": "labs/lab3/slides.html#html-theming-example",
+    "title": "Quiz and Lab 3",
+    "section": "HTML Theming: example",
+    "text": "HTML Theming: example\n\n\ndemo-pub2.qmd\n\n---\ntitle: \"Demo Publication 2\"\nauthor: \"Your Name\"\nformat: \n  html:\n    fontsize: 1.1em\n    theme: \n      light: flatly\n      dark: darkly\n---"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#publishing-steps",
+    "href": "labs/lab3/slides.html#publishing-steps",
+    "title": "Quiz and Lab 3",
+    "section": "Publishing Steps",
+    "text": "Publishing Steps\nAssume I have a file called demo-pub2.qmd opened in Positron. To publish my qmd file to my QuartoPub account I follow these steps:\n\nGo to the Terminal tab.\n\nMake sure your working directory contains the qmd file.\n\nType command: quarto publish demo-pub2.qmd\nChoose provider Quarto Pub and press return (enter)\nPublish with default account (linked to my email address)\nOptionally: you can change the name of the document\nPress return (enter)\n\n\nOnce published, there will be an associated link (URL), something like: https://username.quarto.pub/demo-pub-2"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#submission-to-bcourses",
+    "href": "labs/lab3/slides.html#submission-to-bcourses",
+    "title": "Quiz and Lab 3",
+    "section": "Submission to bCourses",
+    "text": "Submission to bCourses\nSubmit the URL (link) of your published document to the corresponding assignment in bCourses.\nSee Assignments tab &gt; Quarto Publications &gt; Pub2"
+  },
+  {
+    "objectID": "labs/lab3/slides.html#pset-2",
+    "href": "labs/lab3/slides.html#pset-2",
+    "title": "Quiz and Lab 3",
+    "section": "Pset 2",
+    "text": "Pset 2\nAvailable in bCourses:\nSee Assignments tab &gt; Problem Sets &gt; PS2\nYou’ll find 2 files:\n\nps2.html: instructions\nps2.qmd: template file to write your answers\n\n\nIn case of trouble: Go to Files tab, folder problem-sets, folder ps2, and download the qmd file.\nSometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome)."
+  },
+  {
+    "objectID": "labs/lab3/slides.html#pset-2-submission",
+    "href": "labs/lab3/slides.html#pset-2-submission",
+    "title": "Quiz and Lab 3",
+    "section": "Pset 2 Submission",
+    "text": "Pset 2 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps2\nSubmission deadline: Wednesday 2/11 by 6PM.\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#meet-your-gsi",
+    "href": "labs/lab1/slides.html#meet-your-gsi",
+    "title": "Lab 1",
+    "section": "Meet your GSI",
+    "text": "Meet your GSI\n\nIntroduce yourself to the clasas. You can talk about your:\n\nName\nMajor\nExperience\nFun fact"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#with-the-people-around-you",
+    "href": "labs/lab1/slides.html#with-the-people-around-you",
+    "title": "Lab 1",
+    "section": "With the people around you …",
+    "text": "With the people around you …\n\nTake a few minutes to share your:\n\n\n\nName\nMajor\nYear\nHometown\nWhich dog mood are you today?\n\n\n\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#ice-breakers",
+    "href": "labs/lab1/slides.html#ice-breakers",
+    "title": "Lab 1",
+    "section": "Ice Breakers",
+    "text": "Ice Breakers"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#course-website",
+    "href": "labs/lab1/slides.html#course-website",
+    "title": "Lab 1",
+    "section": "Course Website",
+    "text": "Course Website\nhttps://stat133.berkeley.edu/spring-2026"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#syllabus",
+    "href": "labs/lab1/slides.html#syllabus",
+    "title": "Lab 1",
+    "section": "Syllabus",
+    "text": "Syllabus\nPlease take some minutes to read the syllabus and jot down at least two questions that you have.\nhttps://stat133.berkeley.edu/spring-2026/syllabus.html\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#installation",
+    "href": "labs/lab1/slides.html#installation",
+    "title": "Lab 1",
+    "section": "Installation",
+    "text": "Installation\n\n\n\n−+\n03:00\n\n\n\n1) R  https://www.r-project.org/\n\n\n\n2) Positron  https://positron.posit.co/\n\n\n\n\n⚠️ 2b) If Positron fails, then RStudio  https://posit.co/download/rstudio-desktop/\n\n\n\n\n3) Windows users‼️: Git  https://git-scm.com/"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#directory-stat133",
+    "href": "labs/lab1/slides.html#directory-stat133",
+    "title": "Lab 1",
+    "section": "Directory stat133",
+    "text": "Directory stat133\nIn your computer, e.g. folder Desktop or Documents, please create a folder (i.e. directory) for this course.\n\n\n👍 Good Names:\n\nstat133\nSTAT133\nStat133\n\n\n👎 Bad Names (no blank spaces):\n\nstat 133\nSTAT 133\nStat 133\n\n\nThis will be a dedicated directory for all the work you’ll do in this course."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
+    "href": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
+    "title": "Lab 1",
+    "section": "First contact with Positron (or Rstudio)",
+    "text": "First contact with Positron (or Rstudio)\nDemo:\n\nOpen Positron\nUnderstanding workspace\nQuadrants or panes"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#explorer-positron",
+    "href": "labs/lab1/slides.html#explorer-positron",
+    "title": "Lab 1",
+    "section": "Explorer (Positron)",
+    "text": "Explorer (Positron)\nLet’s focus on the Explorer tab"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#explorer-positron-1",
+    "href": "labs/lab1/slides.html#explorer-positron-1",
+    "title": "Lab 1",
+    "section": "Explorer (Positron)",
+    "text": "Explorer (Positron)\nOpen your folder stat133"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#explorer-tab",
+    "href": "labs/lab1/slides.html#explorer-tab",
+    "title": "Lab 1",
+    "section": "Explorer tab",
+    "text": "Explorer tab\n\nLet’s focus on the Explorer tab\nUse it to find your folder stat133\nClick on stat133 (i.e. move inside this folder)\nClick on folder icon to create a labs folder\nClick on labs (i.e. move inside this folder)\nInside labs, create a folder lab1"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#first-contact-with-quarto-file",
+    "href": "labs/lab1/slides.html#first-contact-with-quarto-file",
+    "title": "Lab 1",
+    "section": "First contact with Quarto File",
+    "text": "First contact with Quarto File\n\nOpen a Quarto file (i.e. Quarto document)\nUnderstanding anatomy of basic quarto file\n\nYAML header\nNarrative elements\nCode chunks\n\nEdit YAML header:\n\ntitle: \"Lab 1\"\nauthor: \"First Last\""
+  },
+  {
+    "objectID": "labs/lab1/slides.html#rendering-a-.qmd-file",
+    "href": "labs/lab1/slides.html#rendering-a-.qmd-file",
+    "title": "Lab 1",
+    "section": "Rendering a .qmd file",
+    "text": "Rendering a .qmd file\n\nClick the Preview button. In RStudio is the Render button.\nSave file in your lab1 folder.\nOutput file is an HTML document (assuming format: html)\nBTW: most assignments will require submission of their .qmd and .html files."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#editing-a-.qmd-file",
+    "href": "labs/lab1/slides.html#editing-a-.qmd-file",
+    "title": "Lab 1",
+    "section": "Editing a .qmd file",
+    "text": "Editing a .qmd file\nEdit the content of your .qmd file to include the following content:\n\nMajor(s) and, if applicable, minor.\nHometown.\nFavorite song in the last 3 months.\nInsert a table (e.g. 3x3 table).\nInsert an image.\nInclude a quote.\n\n\nRender your quarto file again."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#submission-to-bcourses",
+    "href": "labs/lab1/slides.html#submission-to-bcourses",
+    "title": "Lab 1",
+    "section": "Submission to bCourses",
+    "text": "Submission to bCourses\nSubmit both your .qmd and .html files to bCourses under the lab1 assignment.\n\n\nThis is a “dummy” assignment: won’t be part of your grade; we just want to make sure everyone knows how and where to submit .qmd and .html files."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#so-far",
+    "href": "labs/lab1/slides.html#so-far",
+    "title": "Lab 1",
+    "section": "So far …",
+    "text": "So far …\n\nSoftware Installed\nDirectory, subdirectories, and files:\n\n  stat133/\n    labs/\n        lab1/\n          lab1-first-last.qmd\n          lab1-first-last.html\n\nLab1 .qmd and .html files submitted to bCourses"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#section-1",
+    "href": "labs/lab1/slides.html#section-1",
+    "title": "Lab 1",
+    "section": "",
+    "text": "File\nA named container that stores data—such as text, images, or programs—on a computer disk.\nThe file name usually ends in an extension (.txt, .png, .qmd) that indicates the format.\n\n\nDirectory (or Folder)\nA named container that stores a set of files or other folders.\nWe’ll write directories by appending a slash at the end: e.g., Documents/, stat133/, lab1/"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#in-case-of-trouble",
+    "href": "labs/lab1/slides.html#in-case-of-trouble",
+    "title": "Lab 1",
+    "section": "In case of trouble",
+    "text": "In case of trouble\nIf you experienced any issues today, for example:\n\ninstalling software\nrendering .qmd file\nsubmission to bCourses\ngot lost along the discussion\n\nthen please come to office hours!"
+  },
+  {
     "objectID": "labs/lab2/slides.html#agenda",
     "href": "labs/lab2/slides.html#agenda",
     "title": "Lab 2",
@@ -2370,242 +2643,144 @@
     "text": "Pset 1 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps1\nSubmission deadline: Wednesday 2/4 by 6PM.\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
   {
-    "objectID": "labs/lab1/slides.html#meet-your-gsi",
-    "href": "labs/lab1/slides.html#meet-your-gsi",
-    "title": "Lab 1",
-    "section": "Meet your GSI",
-    "text": "Meet your GSI\n\nIntroduce yourself to the clasas. You can talk about your:\n\nName\nMajor\nExperience\nFun fact"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#with-the-people-around-you",
-    "href": "labs/lab1/slides.html#with-the-people-around-you",
-    "title": "Lab 1",
-    "section": "With the people around you …",
-    "text": "With the people around you …\n\nTake a few minutes to share your:\n\n\n\nName\nMajor\nYear\nHometown\nWhich dog mood are you today?\n\n\n\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#ice-breakers",
-    "href": "labs/lab1/slides.html#ice-breakers",
-    "title": "Lab 1",
-    "section": "Ice Breakers",
-    "text": "Ice Breakers"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#course-website",
-    "href": "labs/lab1/slides.html#course-website",
-    "title": "Lab 1",
-    "section": "Course Website",
-    "text": "Course Website\nhttps://stat133.berkeley.edu/spring-2026"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#syllabus",
-    "href": "labs/lab1/slides.html#syllabus",
-    "title": "Lab 1",
-    "section": "Syllabus",
-    "text": "Syllabus\nPlease take some minutes to read the syllabus and jot down at least two questions that you have.\nhttps://stat133.berkeley.edu/spring-2026/syllabus.html\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#installation",
-    "href": "labs/lab1/slides.html#installation",
-    "title": "Lab 1",
-    "section": "Installation",
-    "text": "Installation\n\n\n\n−+\n03:00\n\n\n\n1) R  https://www.r-project.org/\n\n\n\n2) Positron  https://positron.posit.co/\n\n\n\n\n⚠️ 2b) If Positron fails, then RStudio  https://posit.co/download/rstudio-desktop/\n\n\n\n\n3) Windows users‼️: Git  https://git-scm.com/"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#directory-stat133",
-    "href": "labs/lab1/slides.html#directory-stat133",
-    "title": "Lab 1",
-    "section": "Directory stat133",
-    "text": "Directory stat133\nIn your computer, e.g. folder Desktop or Documents, please create a folder (i.e. directory) for this course.\n\n\n👍 Good Names:\n\nstat133\nSTAT133\nStat133\n\n\n👎 Bad Names (no blank spaces):\n\nstat 133\nSTAT 133\nStat 133\n\n\nThis will be a dedicated directory for all the work you’ll do in this course."
-  },
-  {
-    "objectID": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
-    "href": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
-    "title": "Lab 1",
-    "section": "First contact with Positron (or Rstudio)",
-    "text": "First contact with Positron (or Rstudio)\nDemo:\n\nOpen Positron\nUnderstanding workspace\nQuadrants or panes"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#explorer-positron",
-    "href": "labs/lab1/slides.html#explorer-positron",
-    "title": "Lab 1",
-    "section": "Explorer (Positron)",
-    "text": "Explorer (Positron)\nLet’s focus on the Explorer tab"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#explorer-positron-1",
-    "href": "labs/lab1/slides.html#explorer-positron-1",
-    "title": "Lab 1",
-    "section": "Explorer (Positron)",
-    "text": "Explorer (Positron)\nOpen your folder stat133"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#explorer-tab",
-    "href": "labs/lab1/slides.html#explorer-tab",
-    "title": "Lab 1",
-    "section": "Explorer tab",
-    "text": "Explorer tab\n\nLet’s focus on the Explorer tab\nUse it to find your folder stat133\nClick on stat133 (i.e. move inside this folder)\nClick on folder icon to create a labs folder\nClick on labs (i.e. move inside this folder)\nInside labs, create a folder lab1"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#first-contact-with-quarto-file",
-    "href": "labs/lab1/slides.html#first-contact-with-quarto-file",
-    "title": "Lab 1",
-    "section": "First contact with Quarto File",
-    "text": "First contact with Quarto File\n\nOpen a Quarto file (i.e. Quarto document)\nUnderstanding anatomy of basic quarto file\n\nYAML header\nNarrative elements\nCode chunks\n\nEdit YAML header:\n\ntitle: \"Lab 1\"\nauthor: \"First Last\""
-  },
-  {
-    "objectID": "labs/lab1/slides.html#rendering-a-.qmd-file",
-    "href": "labs/lab1/slides.html#rendering-a-.qmd-file",
-    "title": "Lab 1",
-    "section": "Rendering a .qmd file",
-    "text": "Rendering a .qmd file\n\nClick the Preview button. In RStudio is the Render button.\nSave file in your lab1 folder.\nOutput file is an HTML document (assuming format: html)\nBTW: most assignments will require submission of their .qmd and .html files."
-  },
-  {
-    "objectID": "labs/lab1/slides.html#editing-a-.qmd-file",
-    "href": "labs/lab1/slides.html#editing-a-.qmd-file",
-    "title": "Lab 1",
-    "section": "Editing a .qmd file",
-    "text": "Editing a .qmd file\nEdit the content of your .qmd file to include the following content:\n\nMajor(s) and, if applicable, minor.\nHometown.\nFavorite song in the last 3 months.\nInsert a table (e.g. 3x3 table).\nInsert an image.\nInclude a quote.\n\n\nRender your quarto file again."
-  },
-  {
-    "objectID": "labs/lab1/slides.html#submission-to-bcourses",
-    "href": "labs/lab1/slides.html#submission-to-bcourses",
-    "title": "Lab 1",
-    "section": "Submission to bCourses",
-    "text": "Submission to bCourses\nSubmit both your .qmd and .html files to bCourses under the lab1 assignment.\n\n\nThis is a “dummy” assignment: won’t be part of your grade; we just want to make sure everyone knows how and where to submit .qmd and .html files."
-  },
-  {
-    "objectID": "labs/lab1/slides.html#so-far",
-    "href": "labs/lab1/slides.html#so-far",
-    "title": "Lab 1",
-    "section": "So far …",
-    "text": "So far …\n\nSoftware Installed\nDirectory, subdirectories, and files:\n\n  stat133/\n    labs/\n        lab1/\n          lab1-first-last.qmd\n          lab1-first-last.html\n\nLab1 .qmd and .html files submitted to bCourses"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#section-1",
-    "href": "labs/lab1/slides.html#section-1",
-    "title": "Lab 1",
-    "section": "",
-    "text": "File\nA named container that stores data—such as text, images, or programs—on a computer disk.\nThe file name usually ends in an extension (.txt, .png, .qmd) that indicates the format.\n\n\nDirectory (or Folder)\nA named container that stores a set of files or other folders.\nWe’ll write directories by appending a slash at the end: e.g., Documents/, stat133/, lab1/"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#in-case-of-trouble",
-    "href": "labs/lab1/slides.html#in-case-of-trouble",
-    "title": "Lab 1",
-    "section": "In case of trouble",
-    "text": "In case of trouble\nIf you experienced any issues today, for example:\n\ninstalling software\nrendering .qmd file\nsubmission to bCourses\ngot lost along the discussion\n\nthen please come to office hours!"
-  },
-  {
-    "objectID": "labs/lab3/slides.html#agenda",
-    "href": "labs/lab3/slides.html#agenda",
-    "title": "Lab 3",
+    "objectID": "labs/lab4/slides.html#agenda",
+    "href": "labs/lab4/slides.html#agenda",
+    "title": "Lab 4",
     "section": "Agenda",
-    "text": "Agenda\n\nUsing the Terminal and basic Unix commands\n\npwd, cd, ls\n\nReview: qmd files with code chunks\n\nR as a calculator\n\nQuartoPub\n\nSign up\n\n1st Quarto Publication\nProblem Set 1"
+    "text": "Agenda\n\nReview: Basics of functions\nIf else statements, for loops\nQuarto Slides\n\nCreate your first slides\n\nQuartoPub\n\nSign up\n\n3rd Quarto Publication\nProblem Set 3"
   },
   {
-    "objectID": "labs/lab3/slides.html#folder-stat133",
-    "href": "labs/lab3/slides.html#folder-stat133",
-    "title": "Lab 3",
-    "section": "Folder stat133/",
-    "text": "Folder stat133/\n  stat133/\n    labs/\n        lab1/\n        lab2/\n    psets/\n        pset1/"
+    "objectID": "labs/lab4/slides.html#review-basics-of-functions",
+    "href": "labs/lab4/slides.html#review-basics-of-functions",
+    "title": "Lab 4",
+    "section": "Review: Basics of Functions",
+    "text": "Review: Basics of Functions\n\nFunctions are defined using the function() command\nFunctions can take arguments (inputs) and return values (outputs)\nExample:"
   },
   {
-    "objectID": "labs/lab3/slides.html#terminal-in-ide",
-    "href": "labs/lab3/slides.html#terminal-in-ide",
-    "title": "Lab 3",
+    "objectID": "labs/lab4/slides.html#if-else-statements",
+    "href": "labs/lab4/slides.html#if-else-statements",
+    "title": "Lab 4",
+    "section": "If Else Statements",
+    "text": "If Else Statements\n\nUsed for conditional execution of code blocks\nSyntax:"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#example-of-if-else",
+    "href": "labs/lab4/slides.html#example-of-if-else",
+    "title": "Lab 4",
+    "section": "Example of If Else",
+    "text": "Example of If Else"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#for-loops",
+    "href": "labs/lab4/slides.html#for-loops",
+    "title": "Lab 4",
+    "section": "For Loops",
+    "text": "For Loops\n\nUsed to iterate over a sequence (like a vector or list)\nSyntax:"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#example-of-for-loop",
+    "href": "labs/lab4/slides.html#example-of-for-loop",
+    "title": "Lab 4",
+    "section": "Example of For Loop",
+    "text": "Example of For Loop"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#quarto-slides",
+    "href": "labs/lab4/slides.html#quarto-slides",
+    "title": "Lab 4",
+    "section": "Quarto Slides",
+    "text": "Quarto Slides\n\nQuarto allows you to create slides using markdown syntax\nUse # or ## to separate slides\nExample:\n\n# Slide Title Main Heading\nContent of the slide goes here.\n## Next Slide - Subheading\nMore content here."
+  },
+  {
+    "objectID": "labs/lab4/slides.html#what-can-slides-contain",
+    "href": "labs/lab4/slides.html#what-can-slides-contain",
+    "title": "Lab 4",
+    "section": "What can slides contain?",
+    "text": "What can slides contain?\n\nText\nCode chunks\nFigures\n\nWe use Quarto for slides in STAT 133!"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#like-last-week-folder-stat133",
+    "href": "labs/lab4/slides.html#like-last-week-folder-stat133",
+    "title": "Lab 4",
+    "section": "Like last week: Folder stat133/",
+    "text": "Like last week: Folder stat133/\n  stat133/\n    labs/\n        lab1/\n        lab2/\n        lab3/\n    psets/\n        pset1/\n        pset2/"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#terminal-in-ide",
+    "href": "labs/lab4/slides.html#terminal-in-ide",
+    "title": "Lab 4",
     "section": "Terminal in IDE",
-    "text": "Terminal in IDE\n\nLaunch your IDE (Positron or RStudio)\nLaunch your Terminal (next to the Console tab)\ncd to your stat133/labs/ folder\ncreate a folder for this lab: mkdir lab3\ncd to lab3\n\n\n\n\nTerminal\n\n# create an empty qmd file \"demo-pub2.qmd\"\n# (to be used for your 2nd Quarto demo publication)\ntouch demo-pub2.qmd"
+    "text": "Terminal in IDE\n\nLaunch your IDE (Positron or RStudio)\nLaunch your Terminal (next to the Console tab)\ncd to your stat133/labs/ folder\ncreate a folder for this lab: mkdir lab4\ncd to lab4\n\n\n\n\nTerminal\n\n# create an empty qmd file \"demo-pub3.qmd\"\n# (to be used for your 2nd Quarto demo publication)\ntouch demo-pub3.qmd"
   },
   {
-    "objectID": "labs/lab3/slides.html#open-your-demo-pub2.qmd-document",
-    "href": "labs/lab3/slides.html#open-your-demo-pub2.qmd-document",
-    "title": "Lab 3",
-    "section": "Open your demo-pub2.qmd document",
-    "text": "Open your demo-pub2.qmd document\nMake sure your qmd file has the following content (or something similar):\n\n\ndemo-pub2.qmd\n\n---\ntitle: \"Demo Publication 2\"\nauthor: \"Your Name\"\nformat: html\n---\n\n## Markdown Content\n\nThis is my first [Quarto Pub](https://quartopub.com/) demo.\n\n- Coffee\n- Tea\n- Soda\n\n![R logo](https://www.r-project.org/Rlogo.png)"
+    "objectID": "labs/lab4/slides.html#open-your-demo-pub3.qmd-document",
+    "href": "labs/lab4/slides.html#open-your-demo-pub3.qmd-document",
+    "title": "Lab 4",
+    "section": "Open your demo-pub3.qmd document",
+    "text": "Open your demo-pub3.qmd document\nMake sure your qmd file has the following content (or something similar):\n\n\ndemo-pub2.qmd\n\n---\ntitle: \"Demo Publication 3\"\nsubtitle: \"First Contact with Quarto Slides\"\nauthor: \"Your Name\"\nformat: revealjs\n---"
   },
   {
-    "objectID": "labs/lab3/slides.html#reminder-code-chunks-aka-code-cells",
-    "href": "labs/lab3/slides.html#reminder-code-chunks-aka-code-cells",
-    "title": "Lab 3",
-    "section": "Reminder: Code Chunks (aka code cells)",
-    "text": "Reminder: Code Chunks (aka code cells)\n```{r}\n2 + 3\n```\n\n\n```{r}\nname &lt;- c(\"Leia\", \"Luke\", \"Han\")\n```\n\n\n```{r}\nseq(from = 1, to = 10, by = 2)\n```"
+    "objectID": "labs/lab4/slides.html#adding-code",
+    "href": "labs/lab4/slides.html#adding-code",
+    "title": "Lab 4",
+    "section": "Adding code:",
+    "text": "Adding code:\nCode is added the same way as in regular qmd files, using code chunks."
   },
   {
-    "objectID": "labs/lab3/slides.html#figure-basics",
-    "href": "labs/lab3/slides.html#figure-basics",
-    "title": "Lab 3",
-    "section": "Figure Basics",
-    "text": "Figure Basics\n![](https://www.r-project.org/Rlogo.png)"
+    "objectID": "labs/lab4/slides.html#slide-themes",
+    "href": "labs/lab4/slides.html#slide-themes",
+    "title": "Lab 4",
+    "section": "Slide Themes",
+    "text": "Slide Themes\nExample:\nformat: revealjs:\n  theme: solarized\nExplore more themes on the Quarto Website"
   },
   {
-    "objectID": "labs/lab3/slides.html#figure-alignment",
-    "href": "labs/lab3/slides.html#figure-alignment",
-    "title": "Lab 3",
-    "section": "Figure Alignment",
-    "text": "Figure Alignment\n![](https://www.r-project.org/Rlogo.png){fig-align=\"center\"}\n\n\n\n\n\n\n\n\n\n\n\n\n![](https://www.r-project.org/Rlogo.png){fig-align=\"right\"}"
+    "objectID": "labs/lab4/slides.html#line-highlighting",
+    "href": "labs/lab4/slides.html#line-highlighting",
+    "title": "Lab 4",
+    "section": "Line highlighting",
+    "text": "Line highlighting"
   },
   {
-    "objectID": "labs/lab3/slides.html#figure-sizing",
-    "href": "labs/lab3/slides.html#figure-sizing",
-    "title": "Lab 3",
-    "section": "Figure Sizing",
-    "text": "Figure Sizing\n![](https://www.r-project.org/Rlogo.png){height=30%}"
+    "objectID": "labs/lab4/slides.html#adding-slide-backgrounds",
+    "href": "labs/lab4/slides.html#adding-slide-backgrounds",
+    "title": "Lab 4",
+    "section": "Adding Slide Backgrounds",
+    "text": "Adding Slide Backgrounds\nSingle color:\n## Slide Title {background-color=\"aquamarine\"}\nGradient:\n## Slide Title {background-gradient=\"linear-gradient(to bottom, #283b95, #17b2c3)\"}\n## Slide Title {background-gradient=\"radial-gradient(#283b95, #17b2c3)\"}"
   },
   {
-    "objectID": "labs/lab3/slides.html#figure-layout",
-    "href": "labs/lab3/slides.html#figure-layout",
-    "title": "Lab 3",
-    "section": "Figure Layout",
-    "text": "Figure Layout\n::: {#fig-logos layout-ncol=2}\n![](https://www.r-project.org/Rlogo.png){#fig-logo1}\n\n![](https://www.r-project.org/Rlogo.png){#fig-logo2}\n\nR logos\n:::\n\n\n\n\n\n\n\n\n\n\n\n(a)\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 1: R logos"
+    "objectID": "labs/lab4/slides.html#requirements",
+    "href": "labs/lab4/slides.html#requirements",
+    "title": "Lab 4",
+    "section": "Requirements:",
+    "text": "Requirements:\nYour slides must contain: - Title slide with a link to Quarto - A function, for loop, and if else statement - A highlighted line of code - A theme - A slide background (color or gradient) - An image"
   },
   {
-    "objectID": "labs/lab3/slides.html#callout-note",
-    "href": "labs/lab3/slides.html#callout-note",
-    "title": "Lab 3",
-    "section": "Callout Note",
-    "text": "Callout Note\n::: {.callout-note}\nNote that there are five types of callouts, including:\n`note`, `warning`, `important`, `tip`, and `caution`.\n:::\n\n\n\n\n\n\n\n\n\nNote\n\n\nNote that there are five types of callouts, including: note, warning, important, tip, and caution."
-  },
-  {
-    "objectID": "labs/lab3/slides.html#callouts-tip-important",
-    "href": "labs/lab3/slides.html#callouts-tip-important",
-    "title": "Lab 3",
-    "section": "Callouts: Tip & Important",
-    "text": "Callouts: Tip & Important\n\n\n::: {.callout-tip}\n## Tip with Title\n\nExample with a title.\n:::\n\n\n\n\n\n\n\n\nTip with Title\n\n\nExample with a title.\n\n\n\n\n\n\n::: {.callout-important}\n## Important Note\n\nThis is an important callout.\n:::\n\n\n\n\n\n\n\n\nImportant Note\n\n\nThis is an important callout."
-  },
-  {
-    "objectID": "labs/lab3/slides.html#callouts-warning-caution",
-    "href": "labs/lab3/slides.html#callouts-warning-caution",
-    "title": "Lab 3",
-    "section": "Callouts: Warning & Caution",
-    "text": "Callouts: Warning & Caution\n\n\n::: {.callout-warning}\n## Comment\n\nThis is a warning.\n:::\n\n\n\n\n\n\n\n\nComment\n\n\nThis is a warning.\n\n\n\n\n\n\n::: {.callout-caution}\n## Comment\n\nProceed with caution.\n:::\n\n\n\n\n\n\n\n\nComment\n\n\nProceed with caution."
-  },
-  {
-    "objectID": "labs/lab3/slides.html#publishing-steps",
-    "href": "labs/lab3/slides.html#publishing-steps",
-    "title": "Lab 3",
+    "objectID": "labs/lab4/slides.html#publishing-steps",
+    "href": "labs/lab4/slides.html#publishing-steps",
+    "title": "Lab 4",
     "section": "Publishing Steps",
-    "text": "Publishing Steps\nAssume I have a file called demo-pub2.qmd opened in Positron. To publish my qmd file to my QuartoPub account I follow these steps:\n\nGo to the Terminal tab.\n\nMake sure your working directory contains the qmd file.\n\nType command: quarto publish demo-pub2.qmd\nChoose provider Quarto Pub and press return (enter)\nPublish with default account (linked to my email address)\nOptionally: you can change the name of the document\nPress return (enter)\n\n\nOnce published, there will be an associated link (URL), something like: https://username.quarto.pub/demo-pub-2"
+    "text": "Publishing Steps\nAssume I have a file called demo-pub3.qmd opened in Positron. To publish my qmd file to my QuartoPub account I follow these steps:\n\nGo to the Terminal tab.\n\nMake sure your working directory contains the qmd file.\n\nType command: quarto publish demo-pub3.qmd\nChoose provider Quarto Pub and press return (enter)\nPublish with default account (linked to my email address)\nOptionally: you can change the name of the document\nPress return (enter)\n\n\nOnce published, there will be an associated link (URL), something like: https://username.quarto.pub/demo-pub-3"
   },
   {
-    "objectID": "labs/lab3/slides.html#submission-to-bcourses",
-    "href": "labs/lab3/slides.html#submission-to-bcourses",
-    "title": "Lab 3",
+    "objectID": "labs/lab4/slides.html#submission-to-bcourses",
+    "href": "labs/lab4/slides.html#submission-to-bcourses",
+    "title": "Lab 4",
     "section": "Submission to bCourses",
-    "text": "Submission to bCourses\nSubmit the URL (link) of your published document to the corresponding assignment in bCourses.\nSee Assignments tab &gt; Quarto Publications &gt; Pub2"
+    "text": "Submission to bCourses\nSubmit the URL (link) of your published document to the corresponding assignment in bCourses.\nSee Assignments tab &gt; Quarto Publications &gt; Pub3"
   },
   {
-    "objectID": "labs/lab3/slides.html#pset-2",
-    "href": "labs/lab3/slides.html#pset-2",
-    "title": "Lab 3",
-    "section": "Pset 2",
-    "text": "Pset 2\nAvailable in bCourses:\nSee Assignments tab &gt; Problem Sets &gt; PS2\nYou’ll find 2 files:\n\nps2.html: instructions\nps2.qmd: template file to write your answers\n\n\nIn case of trouble: Go to Files tab, folder problem-sets, folder ps2, and download the qmd file.\nSometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome)."
+    "objectID": "labs/lab4/slides.html#pset-3",
+    "href": "labs/lab4/slides.html#pset-3",
+    "title": "Lab 4",
+    "section": "Pset 3",
+    "text": "Pset 3\nAvailable in bCourses:\nSee Assignments tab &gt; Problem Sets &gt; PS3\nYou’ll find 2 files:\n\nps3.html: instructions\nps3.qmd: template file to write your answers\n\n\nIn case of trouble: Go to Files tab, folder problem-sets, folder ps3, and download the qmd file.\nSometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome)."
   },
   {
-    "objectID": "labs/lab3/slides.html#pset-2-submission",
-    "href": "labs/lab3/slides.html#pset-2-submission",
-    "title": "Lab 3",
-    "section": "Pset 2 Submission",
-    "text": "Pset 2 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps2\nSubmission deadline: Wednesday 2/4 by 6PM.\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
+    "objectID": "labs/lab4/slides.html#pset-3-submission",
+    "href": "labs/lab4/slides.html#pset-3-submission",
+    "title": "Lab 4",
+    "section": "Pset 3 Submission",
+    "text": "Pset 3 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps3\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
   {
     "objectID": "officehours.html",
@@ -2629,7 +2804,7 @@
     "href": "quiz/slides.html#quiz",
     "title": "Quiz",
     "section": "Quiz",
-    "text": "Quiz\n\n\n\n−+\n35:00\n\n\n\n\nPlease be quiet.\nWhen you get a quiz, do not begin until we tell you so.\nWrite your name and SID.\nKeep your eyes on your own quiz.\nNo bathroom breaks are allowed.\nIf you finish early, please hold on to your quiz and wait.\nWhen the timer ends, hold up your quiz in the air immediately and put your writing utensils down or risk a 0.\n\nGood luck! 🍀"
+    "text": "Quiz\n\n\n\n−+\n35:00\n\n\n\n\nPlease be quiet.\nWhen you get a quiz, do not begin until we tell you so.\nWrite your name and SID.\nKeep your eyes on your own quiz.\nOnly one person allowed to use the bathroom at a time.\nIf you finish early, please hold on to your quiz and wait.\nWhen the timer ends, hold up your quiz in the air immediately and put your writing utensils down or risk a 0.\n\nGood luck! 🍀"
   },
   {
     "objectID": "info/faqs.html",
@@ -2753,7 +2928,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"sophomore\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"freshman\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -3047,7 +3222,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 99     Yuri Collins GSW   PG           72    190 March 7, … US      R         \n2 15     Jalen Bridg… PHO   SF           79    225 May 14, 2… US      R         \n3 24     Corey Kispe… WAS   SF           78    224 March 3, … US      3         \n4 32     Karl-Anthon… NYK   C            84    248 November … US      9         \n5 5      Jevon Carter CHI   PG           72    200 September… US      6         \n6 10     Josh Green   CHO   SG           78    200 November … AU      4         \n7 8      De'Anthony … GSW   SG           74    200 May 28, 1… US      6         \n8 5      Mark Willia… CHO   C            85    240 December … US      2         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 14     Zach Edey    MEM   C            87    305 May 14, 2… CA      R         \n2 20     Kyle Anders… MIA   SF           80    230 September… US      10        \n3 34     Oscar Tshie… UTA   C            80    255 November … CD      1         \n4 35     Pete Nance   MIL   PF           81    225 February … US      1         \n5 8      Paul George  PHI   PF           80    220 May 2, 19… US      14        \n6 61     Pat Spencer  GSW   PG           74    205 July 4, 1… US      1         \n7 7      Damion Baugh CHO   SG           76    194 August 3,… US      R         \n8 0      Keldon John… SAS   SF           78    220 October 1… US      5         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
