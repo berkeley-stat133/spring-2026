@@ -1862,7 +1862,7 @@
     "href": "lectures/4-more-vectors/slides.html#question-2",
     "title": "Working with Vectors",
     "section": "Question",
-    "text": "Question\nConsider the following two vectors: x and y.\n\nx &lt;- c(2, 4, 6)\ny &lt;- c(\"a\", \"b\", \"c\")\n\nWhat is the output of the following R commands?\n\n\n\ny[x[-3][2]]\n\n\n\n\ny[x/x]\n\n\n\n\ny[as.logical(x)]\n\n\n\n\n−+\n02:00"
+    "text": "Question\nConsider the following two vectors: x and y.\n\nx &lt;- c(2, 4, 6)\ny &lt;- c(\"a\", \"b\", \"c\")\n\nWhat is the output of the following R commands?\n\n\n\ny[x[-3][1]]\n\n\n\n\ny[x/x]\n\n\n\n\ny[as.logical(x)]\n\n\n\n\n−+\n02:00"
   },
   {
     "objectID": "lectures/4-more-vectors/slides.html#change-in-place-syntax",
@@ -2928,7 +2928,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"freshman\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"junior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -3222,7 +3222,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 14     Zach Edey    MEM   C            87    305 May 14, 2… CA      R         \n2 20     Kyle Anders… MIA   SF           80    230 September… US      10        \n3 34     Oscar Tshie… UTA   C            80    255 November … CD      1         \n4 35     Pete Nance   MIL   PF           81    225 February … US      1         \n5 8      Paul George  PHI   PF           80    220 May 2, 19… US      14        \n6 61     Pat Spencer  GSW   PG           74    205 July 4, 1… US      1         \n7 7      Damion Baugh CHO   SG           76    194 August 3,… US      R         \n8 0      Keldon John… SAS   SF           78    220 October 1… US      5         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 99     Yuri Collins GSW   PG           72    190 March 7, … US      R         \n2 55     Ariel Hukpo… NYK   C            84    246 April 11,… DE      R         \n3 22     Talen Horto… CHI   SG           76    234 November … US      5         \n4 0      Dominick Ba… ATL   PF           81    215 May 26, 2… US      2         \n5 22     Jimmy Butler MIA   PF           78    230 September… US      13        \n6 9      Ausar Thomp… DET   SF           79    205 January 3… US      1         \n7 5      Mark Willia… CHO   C            85    240 December … US      2         \n8 20     Jericho Sims NYK   C            82    250 October 2… US      3         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
