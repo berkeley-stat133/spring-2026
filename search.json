@@ -1687,7 +1687,7 @@
     "href": "lectures/7-lists/slides.html#subsetting-with-1",
     "title": "Lists",
     "section": "Subsetting with []",
-    "text": "Subsetting with []\n[] extracts elements of a vector (atomic or non-atomic) using a subsetting (atomic) vector.\n\nAtomic vectors and matrices return atomic vectors\nLists returns lists\n\n\n\nx &lt;- list(1:3, \"a\", 4:6)\nx[1]\n\n\n\n[[1]]\n[1] 1 2 3\n\n\n\n\n\nx[2:3]\n\n\n\n[[1]]\n[1] \"a\"\n\n[[2]]\n[1] 4 5 6"
+    "text": "Subsetting with []\n[] extracts elements of a vector (atomic or non-atomic) using a subsetting (atomic) vector.\n\nAtomic vectors and matrices return atomic vectors\nLists return lists\n\n\n\nx &lt;- list(1:3, \"a\", 4:6)\nx[1]\n\n\n\n[[1]]\n[1] 1 2 3\n\n\n\n\n\nx[2:3]\n\n\n\n[[1]]\n[1] \"a\"\n\n[[2]]\n[1] 4 5 6"
   },
   {
     "objectID": "lectures/7-lists/slides.html#yes-you-can-name-elements-of-a-list",
@@ -2928,7 +2928,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"junior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"senior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -3222,7 +3222,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 99     Yuri Collins GSW   PG           72    190 March 7, … US      R         \n2 55     Ariel Hukpo… NYK   C            84    246 April 11,… DE      R         \n3 22     Talen Horto… CHI   SG           76    234 November … US      5         \n4 0      Dominick Ba… ATL   PF           81    215 May 26, 2… US      2         \n5 22     Jimmy Butler MIA   PF           78    230 September… US      13        \n6 9      Ausar Thomp… DET   SF           79    205 January 3… US      1         \n7 5      Mark Willia… CHO   C            85    240 December … US      2         \n8 20     Jericho Sims NYK   C            82    250 October 2… US      3         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 0      Jayson Tatum BOS   PF           80    210 March 3, … US      7         \n2 5      Dyson Danie… ATL   SG           79    199 March 17,… AU      2         \n3 15     Reed Sheppa… HOU   PG           74    185 June 24, … US      R         \n4 15     Alex Reese   OKC   PF           81    245 May 21, 1… US      R         \n5 00     Ron Holland  DET   SF           80    206 July 7, 2… US      R         \n6 7      Buddy Hield  GSW   SG           76    220 December … BS      8         \n7 7      Jalen Smith  CHI   C            80    215 March 16,… US      4         \n8 3      Jaden McDan… MIN   PF           81    185 September… US      4         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
