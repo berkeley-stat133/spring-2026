@@ -113,7 +113,7 @@ Lab 2: [slides](labs/lab2/slides.html) | [PS1](https://bcourses.berkeley.edu/cou
 #### Description
 [Extending Vectors](lectures/6-extending-vectors/slides.html)
 
-Lists
+[Lists](lectures/7-lists/slides.html)
 
 Lab 3: [__Quiz 1__]{.label-Quiz} | slides | PS2 
 

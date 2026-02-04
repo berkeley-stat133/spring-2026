@@ -126,7 +126,7 @@ mat
 
 - Atomic vectors and matrices return atomic vectors
 
-- Lists returns lists
+- Lists return lists
 
 . . .
 
