@@ -115,7 +115,7 @@ Lab 2: [slides](labs/lab2/slides.html) | [PS1](https://bcourses.berkeley.edu/cou
 
 [Lists](lectures/7-lists/slides.html)
 
-Lab 3: [__Quiz 1__]{.label-Quiz} | slides | PS2 
+Lab 3: [__Quiz 1__]{.label-Quiz} | [slides](labs/lab3/slides.html) | [PS2](https://bcourses.berkeley.edu/courses/1551809/assignments/9021126)
 
 Control Flow
 :::
