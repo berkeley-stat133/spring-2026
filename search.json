@@ -2858,7 +2858,7 @@
     "href": "lectures/8-control-flow/slides.html#jedi-or-sith-based-on-color-of-lightsaber-1",
     "title": "Control Flow",
     "section": "Jedi or Sith based on color of Lightsaber",
-    "text": "Jedi or Sith based on color of Lightsaber\n\n\nSuppose the color of a lightsaber can be either green or red.\n\n\n\nTask: decide the kind of saber based on the color of the light:\n\n\n\n\nlight == \"green\" \\(\\ \\Rightarrow \\ \\) saber &lt;- \"Jedi\"\n\n\n\n\nlight == \"red\" \\(\\ \\Rightarrow \\ \\) saber &lt;- \"Sith\""
+    "text": "Jedi or Sith based on color of Lightsaber\n\n\nSuppose the color of a lightsaber can be either green or red.\n\n\nTask: decide the kind of saber based on the color of the light:\n\n\n\nlight == \"green\" \\(\\ \\Rightarrow \\ \\) saber &lt;- \"Jedi\"\n\n\n\n\nlight == \"red\" \\(\\ \\Rightarrow \\ \\) saber &lt;- \"Sith\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#jedi-or-sith-based-on-color-of-lightsaber-2",
@@ -2907,7 +2907,7 @@
     "href": "lectures/8-control-flow/slides.html#simplified-if",
     "title": "Control Flow",
     "section": "Simplified If",
-    "text": "Simplified If\nIf we only care about the if part:\n\nif (condition) {\n  # what to do if condition is TRUE\n}"
+    "text": "Simplified If\nIf we only care about the if part:\n\nif (condition) {\n  # what to do if condition is TRUE\n}\n\n\n\n\nR does this behind the scenes:\nif (condition) {\n  # what to do if condition is TRUE\n} else {\n  NULL\n}"
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#nested-ifs",
@@ -2917,18 +2917,32 @@
     "text": "Nested if’s\nYou can chain multiple if-else’s\n\n\nlight &lt;- \"purple\"\n\nif (light == \"green\") {\n  saber &lt;- \"Jedi\"\n} else if (light == \"red\") {\n  saber &lt;- \"Sith\"\n} else {\n  saber &lt;- \"Dathomir\"\n}\n\nsaber\n\n\n\n[1] \"Dathomir\""
   },
   {
-    "objectID": "lectures/8-control-flow/slides.html#college-years",
-    "href": "lectures/8-control-flow/slides.html#college-years",
+    "objectID": "lectures/8-control-flow/slides.html#place-and-medals",
+    "href": "lectures/8-control-flow/slides.html#place-and-medals",
     "title": "Control Flow",
-    "section": "College Years",
-    "text": "College Years\n\n\n\nYear\nName\n\n\n\n\n1\nFreshman\n\n\n2\nSophomore\n\n\n3\nJunior\n\n\n4\nSenior\n\n\n\n\nQuestion\nGiven an object year &lt;- sample(1:4, size = 1), write a decision tree in R using nested if-else statements to determine its corresponding name\n\n\n\n−+\n02:00"
+    "section": "Place and Medals",
+    "text": "Place and Medals\n\n\n\nplace\nmedal\n\n\n\n\n1\nGold\n\n\n2\nSilver\n\n\n3\nBronze\n\n\n\n\nQuestion\nGiven an object place &lt;- sample(1:3, size = 1), write nested if-else statements to determine its corresponding medal\n\n\n\n−+\n01:30"
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#section",
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n[1] \"freshman\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"silver\""
+  },
+  {
+    "objectID": "lectures/8-control-flow/slides.html#college-years",
+    "href": "lectures/8-control-flow/slides.html#college-years",
+    "title": "Control Flow",
+    "section": "College Years",
+    "text": "College Years\n\n\n\nyear\nname\n\n\n\n\n1\nFreshman\n\n\n2\nSophomore\n\n\n3\nJunior\n\n\n4\nSenior\n\n\n\n\nQuestion\nGiven an object year &lt;- sample(1:4, size = 1), write nested if-else statements to determine its corresponding name\n\n\n\n−+\n02:00"
+  },
+  {
+    "objectID": "lectures/8-control-flow/slides.html#section-1",
+    "href": "lectures/8-control-flow/slides.html#section-1",
+    "title": "Control Flow",
+    "section": "",
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"junior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -2968,6 +2982,13 @@
   {
     "objectID": "lectures/8-control-flow/slides.html#motivation-example-4",
     "href": "lectures/8-control-flow/slides.html#motivation-example-4",
+    "title": "Control Flow",
+    "section": "Motivation Example",
+    "text": "Motivation Example"
+  },
+  {
+    "objectID": "lectures/8-control-flow/slides.html#motivation-example-5",
+    "href": "lectures/8-control-flow/slides.html#motivation-example-5",
     "title": "Control Flow",
     "section": "Motivation Example",
     "text": "Motivation Example"
@@ -3222,7 +3243,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 17     Dennis Schr… BRK   PG           73    175 September… DE      11        \n2 5      Jarace Walk… IND   PF           79    235 September… US      1         \n3 10     RayJ Dennis  IND   PG           73    180 March 30,… US      R         \n4 7      Kel'el Ware  MIA   C            84    230 April 20,… US      R         \n5 88     Alex Ducas   OKC   SG           79    220 December … AU      R         \n6 14     Wendell Moo… DET   SG           77    215 September… US      2         \n7 24     Cam Thomas   BRK   SG           75    210 October 1… JP      3         \n8 21     Emoni Bates  CLE   SF           81    202 January 2… US      1         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 45     David Roddy  PHI   PF           77    255 March 27,… US      2         \n2 14     Ja'Kobe Wal… TOR   SG           76    180 September… US      R         \n3 11     Payton Prit… BOS   PG           73    195 January 2… US      4         \n4 2      Jock Landale HOU   C            83    255 October 2… AU      3         \n5 9      Terence Dav… SAC   SG           76    201 May 16, 1… US      4         \n6 3      D.J. Carton  TOR   SG           74    200 August 5,… US      1         \n7 32     Aaron Gordon DEN   PF           80    235 September… US      10        \n8 41     Quincy Oliv… LAL   PG           74    201 May 27, 2… US      R         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",

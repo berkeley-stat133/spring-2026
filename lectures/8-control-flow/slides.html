@@ -261,9 +261,7 @@ Gaston Sanchez
 <p>Suppose the color of a lightsaber can be either <span style="color:green; font-weight: 900;">green</span> or <span style="color:red; font-weight: 900;">red</span>.</p>
 <p><br>
 </p>
-<div class="fragment">
-<p>Task: decide the kind of <code>saber</code> based on the color of the <code>light</code>:</p>
-</div>
+<p><span class="mdlit">Task:</span> decide the kind of <code>saber</code> based on the color of the <code>light</code>:</p>
 <div class="fragment">
 <p><br>
 </p>
@@ -280,9 +278,6 @@ Gaston Sanchez
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb1-1" class="hljs-ln-code"><a></a>light <span class="ot">&lt;-</span> <span class="st">"green"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell fragment">
-
-</div>
 </section>
 <section id="jedi-or-sith-based-on-color-of-lightsaber-3" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Jedi or Sith based on color of Lightsaber</h2>
@@ -292,9 +287,6 @@ Gaston Sanchez
 <span id="cb2-3" class="hljs-ln-code"><a></a><span class="cf">if</span> (light <span class="sc">==</span> <span class="st">"green"</span>) {</span>
 <span id="cb2-4" class="hljs-ln-code"><a></a>  saber <span class="ot">&lt;-</span> <span class="st">"Jedi"</span></span>
 <span id="cb2-5" class="hljs-ln-code"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment">
-
 </div>
 </section>
 <section id="jedi-or-sith-based-on-color-of-lightsaber-4" class="slide level2">
@@ -307,9 +299,6 @@ Gaston Sanchez
 <span id="cb3-5"><a></a>} <span class="cf">else</span> {</span>
 <span id="cb3-6"><a></a>  saber <span class="ot">&lt;-</span> <span class="st">"Sith"</span></span>
 <span id="cb3-7"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment">
-
 </div>
 </section>
 <section id="jedi-or-sith-based-on-color-of-lightsaber-5" class="slide level2">
@@ -368,23 +357,33 @@ Gaston Sanchez
 <span id="cb9-2"><a></a>  <span class="co"># what to do if condition is TRUE</span></span>
 <span id="cb9-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="fragment">
+<p><br>
+</p>
+<p>R does this behind the scenes:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="cf">if</span> (condition) {</span>
+<span id="cb10-2"><a></a>  <span class="co"># what to do if condition is TRUE</span></span>
+<span id="cb10-3"><a></a>} <span class="cf">else</span> {</span>
+<span id="cb10-4"><a></a>  <span class="cn">NULL</span></span>
+<span id="cb10-5"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="nested-ifs" class="slide level2">
 <h2>Nested if’s</h2>
 <p>You can chain multiple if-else’s</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>light <span class="ot">&lt;-</span> <span class="st">"purple"</span></span>
-<span id="cb10-2"><a></a></span>
-<span id="cb10-3"><a></a><span class="cf">if</span> (light <span class="sc">==</span> <span class="st">"green"</span>) {</span>
-<span id="cb10-4"><a></a>  saber <span class="ot">&lt;-</span> <span class="st">"Jedi"</span></span>
-<span id="cb10-5"><a></a>} <span class="cf">else</span> <span class="cf">if</span> (light <span class="sc">==</span> <span class="st">"red"</span>) {</span>
-<span id="cb10-6"><a></a>  saber <span class="ot">&lt;-</span> <span class="st">"Sith"</span></span>
-<span id="cb10-7"><a></a>} <span class="cf">else</span> {</span>
-<span id="cb10-8"><a></a>  saber <span class="ot">&lt;-</span> <span class="st">"Dathomir"</span></span>
-<span id="cb10-9"><a></a>}</span>
-<span id="cb10-10"><a></a></span>
-<span id="cb10-11"><a></a>saber</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>light <span class="ot">&lt;-</span> <span class="st">"purple"</span></span>
+<span id="cb11-2"><a></a></span>
+<span id="cb11-3"><a></a><span class="cf">if</span> (light <span class="sc">==</span> <span class="st">"green"</span>) {</span>
+<span id="cb11-4"><a></a>  saber <span class="ot">&lt;-</span> <span class="st">"Jedi"</span></span>
+<span id="cb11-5"><a></a>} <span class="cf">else</span> <span class="cf">if</span> (light <span class="sc">==</span> <span class="st">"red"</span>) {</span>
+<span id="cb11-6"><a></a>  saber <span class="ot">&lt;-</span> <span class="st">"Sith"</span></span>
+<span id="cb11-7"><a></a>} <span class="cf">else</span> {</span>
+<span id="cb11-8"><a></a>  saber <span class="ot">&lt;-</span> <span class="st">"Dathomir"</span></span>
+<span id="cb11-9"><a></a>}</span>
+<span id="cb11-10"><a></a></span>
+<span id="cb11-11"><a></a>saber</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -393,13 +392,71 @@ Gaston Sanchez
 </div>
 </div>
 </section>
+<section id="place-and-medals" class="slide level2">
+<h2>Place and Medals</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="bold-hilit">place</span></th>
+<th><span class="bold-hilit">medal</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td>Gold</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td>Silver</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td>Bronze</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<h3 id="question">Question</h3>
+<p>Given an object <code>place &lt;- sample(1:3, size = 1)</code>, write nested if-else statements to determine its corresponding <code>medal</code></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_10ed3e48" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>place <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb13-2"><a></a></span>
+<span id="cb13-3"><a></a><span class="cf">if</span> (place <span class="sc">==</span> <span class="dv">1</span>) {</span>
+<span id="cb13-4"><a></a>  medal <span class="ot">&lt;-</span> <span class="st">"gold"</span></span>
+<span id="cb13-5"><a></a>} <span class="cf">else</span> <span class="cf">if</span> (place <span class="sc">==</span> <span class="dv">2</span>) {</span>
+<span id="cb13-6"><a></a>  medal <span class="ot">&lt;-</span> <span class="st">"silver"</span></span>
+<span id="cb13-7"><a></a>} <span class="cf">else</span> {</span>
+<span id="cb13-8"><a></a>  medal <span class="ot">&lt;-</span> <span class="st">"bronze"</span></span>
+<span id="cb13-9"><a></a>}</span>
+<span id="cb13-10"><a></a></span>
+<span id="cb13-11"><a></a>medal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "silver"</code></pre>
+</div>
+</div>
+</section>
 <section id="college-years" class="slide level2">
 <h2>College Years</h2>
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th style="text-align: center;">Year</th>
-<th>Name</th>
+<th style="text-align: center;"><span class="bold-hilit">year</span></th>
+<th><span class="bold-hilit">name</span></th>
 </tr>
 </thead>
 <tbody>
@@ -422,11 +479,11 @@ Gaston Sanchez
 </tbody>
 </table>
 <div class="fragment">
-<h3 id="question">Question</h3>
-<p>Given an object <code>year &lt;- sample(1:4, size = 1)</code>, write a decision tree in R using nested if-else statements to determine its corresponding <code>name</code></p>
+<h3 id="question-1">Question</h3>
+<p>Given an object <code>year &lt;- sample(1:4, size = 1)</code>, write nested if-else statements to determine its corresponding <code>name</code></p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_8cbaa179" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_823fe8cc" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -434,24 +491,26 @@ Gaston Sanchez
 </div>
 </div>
 </section>
-<section id="section" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>year <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
-<span id="cb12-2"><a></a></span>
-<span id="cb12-3"><a></a><span class="cf">if</span> (year <span class="sc">==</span> <span class="dv">1</span>) {</span>
-<span id="cb12-4"><a></a>  name <span class="ot">&lt;-</span> <span class="st">"freshman"</span></span>
-<span id="cb12-5"><a></a>} <span class="cf">else</span> <span class="cf">if</span> (year <span class="sc">==</span> <span class="dv">2</span>) {</span>
-<span id="cb12-6"><a></a>  name <span class="ot">&lt;-</span> <span class="st">"sophomore"</span></span>
-<span id="cb12-7"><a></a>} <span class="cf">else</span> <span class="cf">if</span> (year <span class="sc">==</span> <span class="dv">3</span>) {</span>
-<span id="cb12-8"><a></a>  name <span class="ot">&lt;-</span> <span class="st">"junior"</span></span>
-<span id="cb12-9"><a></a>} <span class="cf">else</span> {</span>
-<span id="cb12-10"><a></a>  name <span class="ot">&lt;-</span> <span class="st">"senior"</span></span>
-<span id="cb12-11"><a></a>}</span>
-<span id="cb12-12"><a></a></span>
-<span id="cb12-13"><a></a>name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>year <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb15-2"><a></a></span>
+<span id="cb15-3"><a></a><span class="cf">if</span> (year <span class="sc">==</span> <span class="dv">1</span>) {</span>
+<span id="cb15-4"><a></a>  name <span class="ot">&lt;-</span> <span class="st">"freshman"</span></span>
+<span id="cb15-5"><a></a>} <span class="cf">else</span> <span class="cf">if</span> (year <span class="sc">==</span> <span class="dv">2</span>) {</span>
+<span id="cb15-6"><a></a>  name <span class="ot">&lt;-</span> <span class="st">"sophomore"</span></span>
+<span id="cb15-7"><a></a>} <span class="cf">else</span> <span class="cf">if</span> (year <span class="sc">==</span> <span class="dv">3</span>) {</span>
+<span id="cb15-8"><a></a>  name <span class="ot">&lt;-</span> <span class="st">"junior"</span></span>
+<span id="cb15-9"><a></a>} <span class="cf">else</span> {</span>
+<span id="cb15-10"><a></a>  name <span class="ot">&lt;-</span> <span class="st">"senior"</span></span>
+<span id="cb15-11"><a></a>}</span>
+<span id="cb15-12"><a></a></span>
+<span id="cb15-13"><a></a>name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "freshman"</code></pre>
+<pre><code>[1] "junior"</code></pre>
 </div>
 </div>
 </section></section>
@@ -469,7 +528,7 @@ Gaston Sanchez
 <h2>Motivation Example</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/for-loop1.png" class="quarto-figure quarto-figure-center" style="width:75.0%"></p>
+<p><img data-src="images/for-loop0.png" class="quarto-figure quarto-figure-center" style="width:75.0%"></p>
 </figure>
 </div>
 </section>
@@ -477,7 +536,7 @@ Gaston Sanchez
 <h2>Motivation Example</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/for-loop2.png" class="quarto-figure quarto-figure-center" style="width:75.0%"></p>
+<p><img data-src="images/for-loop1.png" class="quarto-figure quarto-figure-center" style="width:75.0%"></p>
 </figure>
 </div>
 </section>
@@ -485,7 +544,7 @@ Gaston Sanchez
 <h2>Motivation Example</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/for-loop3.png" class="quarto-figure quarto-figure-center" style="width:75.0%"></p>
+<p><img data-src="images/for-loop2.png" class="quarto-figure quarto-figure-center" style="width:75.0%"></p>
 </figure>
 </div>
 </section>
@@ -493,11 +552,19 @@ Gaston Sanchez
 <h2>Motivation Example</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/for-loop4.png" class="quarto-figure quarto-figure-center" style="width:75.0%"></p>
+<p><img data-src="images/for-loop3.png" class="quarto-figure quarto-figure-center" style="width:75.0%"></p>
 </figure>
 </div>
 </section>
 <section id="motivation-example-4" class="slide level2 nostretch">
+<h2>Motivation Example</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/for-loop4.png" class="quarto-figure quarto-figure-center" style="width:75.0%"></p>
+</figure>
+</div>
+</section>
+<section id="motivation-example-5" class="slide level2 nostretch">
 <h2>Motivation Example</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -507,9 +574,9 @@ Gaston Sanchez
 </section>
 <section id="for-loops" class="slide level2">
 <h2>For loops</h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="cf">for</span> (item <span class="cf">in</span> vector) {</span>
-<span id="cb14-2"><a></a>  perform_action</span>
-<span id="cb14-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="cf">for</span> (item <span class="cf">in</span> vector) {</span>
+<span id="cb17-2"><a></a>  perform_action</span>
+<span id="cb17-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section id="iterated-choices" class="title-slide slide level1 center">
@@ -520,10 +587,10 @@ Gaston Sanchez
 <h2>What if <code>lights</code> has multiple elements?</h2>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">set.seed</span>(<span class="dv">133</span>)</span>
-<span id="cb15-2"><a></a>green_red <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"green"</span>, <span class="st">"red"</span>)</span>
-<span id="cb15-3"><a></a>lights <span class="ot">&lt;-</span> <span class="fu">sample</span>(green_red, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb15-4"><a></a>lights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">set.seed</span>(<span class="dv">133</span>)</span>
+<span id="cb18-2"><a></a>green_red <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"green"</span>, <span class="st">"red"</span>)</span>
+<span id="cb18-3"><a></a>lights <span class="ot">&lt;-</span> <span class="fu">sample</span>(green_red, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-4"><a></a>lights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -535,9 +602,9 @@ Gaston Sanchez
 <p><br>
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="cf">if</span> (lights <span class="sc">==</span> <span class="st">"green"</span>) {</span>
-<span id="cb17-2"><a></a>  sabers <span class="ot">&lt;-</span> <span class="st">"Jedi"</span></span>
-<span id="cb17-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="cf">if</span> (lights <span class="sc">==</span> <span class="st">"green"</span>) {</span>
+<span id="cb20-2"><a></a>  sabers <span class="ot">&lt;-</span> <span class="st">"Jedi"</span></span>
+<span id="cb20-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-error">
@@ -552,15 +619,15 @@ Gaston Sanchez
 <section id="option-1" class="slide level2">
 <h2>Option 1</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>lights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>lights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "green" "red"   "red"  </code></pre>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>sabers <span class="ot">&lt;-</span> <span class="fu">character</span>(<span class="at">length =</span> <span class="dv">3</span>)</span>
-<span id="cb21-2"><a></a>sabers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>sabers <span class="ot">&lt;-</span> <span class="fu">character</span>(<span class="at">length =</span> <span class="dv">3</span>)</span>
+<span id="cb24-2"><a></a>sabers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -570,15 +637,15 @@ Gaston Sanchez
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(lights)) {</span>
-<span id="cb23-2"><a></a>  <span class="cf">if</span> (lights[i] <span class="sc">==</span> <span class="st">"green"</span>) {</span>
-<span id="cb23-3"><a></a>    sabers[i] <span class="ot">&lt;-</span> <span class="st">"Jedi"</span></span>
-<span id="cb23-4"><a></a>  } <span class="cf">else</span> {</span>
-<span id="cb23-5"><a></a>    sabers[i] <span class="ot">&lt;-</span> <span class="st">"Sith"</span></span>
-<span id="cb23-6"><a></a>  }</span>
-<span id="cb23-7"><a></a>}</span>
-<span id="cb23-8"><a></a></span>
-<span id="cb23-9"><a></a>sabers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(lights)) {</span>
+<span id="cb26-2"><a></a>  <span class="cf">if</span> (lights[i] <span class="sc">==</span> <span class="st">"green"</span>) {</span>
+<span id="cb26-3"><a></a>    sabers[i] <span class="ot">&lt;-</span> <span class="st">"Jedi"</span></span>
+<span id="cb26-4"><a></a>  } <span class="cf">else</span> {</span>
+<span id="cb26-5"><a></a>    sabers[i] <span class="ot">&lt;-</span> <span class="st">"Sith"</span></span>
+<span id="cb26-6"><a></a>  }</span>
+<span id="cb26-7"><a></a>}</span>
+<span id="cb26-8"><a></a></span>
+<span id="cb26-9"><a></a>sabers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -590,15 +657,15 @@ Gaston Sanchez
 <section id="option-2" class="slide level2">
 <h2>Option 2</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>lights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>lights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "green" "red"   "red"  </code></pre>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>sabers <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">""</span>, <span class="dv">3</span>)</span>
-<span id="cb27-2"><a></a>sabers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>sabers <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">""</span>, <span class="dv">3</span>)</span>
+<span id="cb30-2"><a></a>sabers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -608,15 +675,15 @@ Gaston Sanchez
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(lights)) {</span>
-<span id="cb29-2"><a></a>  <span class="cf">if</span> (lights[i] <span class="sc">==</span> <span class="st">"green"</span>) {</span>
-<span id="cb29-3"><a></a>    sabers[i] <span class="ot">&lt;-</span> <span class="st">"Jedi"</span></span>
-<span id="cb29-4"><a></a>  } <span class="cf">else</span> {</span>
-<span id="cb29-5"><a></a>    sabers[i] <span class="ot">&lt;-</span> <span class="st">"Sith"</span></span>
-<span id="cb29-6"><a></a>  }</span>
-<span id="cb29-7"><a></a>}</span>
-<span id="cb29-8"><a></a></span>
-<span id="cb29-9"><a></a>sabers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(lights)) {</span>
+<span id="cb32-2"><a></a>  <span class="cf">if</span> (lights[i] <span class="sc">==</span> <span class="st">"green"</span>) {</span>
+<span id="cb32-3"><a></a>    sabers[i] <span class="ot">&lt;-</span> <span class="st">"Jedi"</span></span>
+<span id="cb32-4"><a></a>  } <span class="cf">else</span> {</span>
+<span id="cb32-5"><a></a>    sabers[i] <span class="ot">&lt;-</span> <span class="st">"Sith"</span></span>
+<span id="cb32-6"><a></a>  }</span>
+<span id="cb32-7"><a></a>}</span>
+<span id="cb32-8"><a></a></span>
+<span id="cb32-9"><a></a>sabers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -628,15 +695,15 @@ Gaston Sanchez
 <section id="option-3" class="slide level2">
 <h2>Option 3</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>lights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>lights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "green" "red"   "red"  </code></pre>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>sabers <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">"Sith"</span>, <span class="dv">3</span>)</span>
-<span id="cb33-2"><a></a>sabers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>sabers <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">"Sith"</span>, <span class="dv">3</span>)</span>
+<span id="cb36-2"><a></a>sabers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -646,13 +713,13 @@ Gaston Sanchez
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(lights)) {</span>
-<span id="cb35-2"><a></a>  <span class="cf">if</span> (lights[i] <span class="sc">==</span> <span class="st">"green"</span>) {</span>
-<span id="cb35-3"><a></a>    sabers[i] <span class="ot">&lt;-</span> <span class="st">"Jedi"</span></span>
-<span id="cb35-4"><a></a>  }</span>
-<span id="cb35-5"><a></a>}</span>
-<span id="cb35-6"><a></a></span>
-<span id="cb35-7"><a></a>sabers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(lights)) {</span>
+<span id="cb38-2"><a></a>  <span class="cf">if</span> (lights[i] <span class="sc">==</span> <span class="st">"green"</span>) {</span>
+<span id="cb38-3"><a></a>    sabers[i] <span class="ot">&lt;-</span> <span class="st">"Jedi"</span></span>
+<span id="cb38-4"><a></a>  }</span>
+<span id="cb38-5"><a></a>}</span>
+<span id="cb38-6"><a></a></span>
+<span id="cb38-7"><a></a>sabers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -666,7 +733,7 @@ Gaston Sanchez
 <p><code>ifelse()</code>: A vectorized if-else statement.</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>lights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>lights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -678,7 +745,7 @@ Gaston Sanchez
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">ifelse</span>(lights <span class="sc">==</span> <span class="st">"green"</span>, <span class="at">yes =</span> <span class="st">"Jedi"</span>, <span class="at">no =</span> <span class="st">"Sith"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a><span class="fu">ifelse</span>(lights <span class="sc">==</span> <span class="st">"green"</span>, <span class="at">yes =</span> <span class="st">"Jedi"</span>, <span class="at">no =</span> <span class="st">"Sith"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
