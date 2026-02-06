@@ -53,5 +53,15 @@ Office hours: <br>
 - Fri 2:00pm-4:00pm, Evans 434
 :::
 
+
+::: {.g-col-6}
+**Tutor:** Austin Faille<br>
+Office hours: <br>
+- Tue 1:00pm-3:00pm, [Zoom](https://edstem.org/us/courses/92259/discussion/7606772)<br>
+:::
+
+::: {.g-col-6}
+:::
+
 :::
 
