@@ -117,7 +117,7 @@ Lab 2: [slides](labs/lab2/slides.html) | [PS1](https://bcourses.berkeley.edu/cou
 
 Lab 3: [__Quiz 1__]{.label-Quiz} | [slides](labs/lab3/slides.html) | [PS2](https://bcourses.berkeley.edu/courses/1551809/assignments/9021126)
 
-Control Flow
+[Control Flow](lectures/8-control-flow/slides.html)
 :::
 
 ::: {.column width="50%"}
