@@ -49,6 +49,8 @@ colSums(mat)
 
 How could I compute this without `colSums()`?
 
+. . .
+
 ```{r}
 #| output-location: fragment
 c(sum(mat[, 1]), sum(mat[, 2]))

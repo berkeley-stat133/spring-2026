@@ -16,7 +16,7 @@ Imagine you collect University ID number and major from 5 friends:
 
 ```{r}
 uid <- c("3850278", "5869204", "4728112", "3829651", "3859278")
-maj <- c("statistics", "economics", "statistics", "data", "economics")
+maj <- c("STAT", "ECON", "STAT", "DATA", "ECON")
 ```
 
 ::: {.nonincremental}
@@ -57,7 +57,11 @@ A data structure for storing categorical data.
 
 . . .
 
-Stores the values in an integer vector and adds a levels attribute to map integers to character strings. Created with `factor()`.
+Created with `factor()`.
+
+. . .
+
+Stores the values in an integer vector and adds a levels attribute to map integers to character strings. 
 
 . . .
 
@@ -71,10 +75,21 @@ maj
 ##
 
 ```{r}
+maj <- factor(x = c("STAT", "ECON", "STAT", "DATA", "ECON"))
+maj
+```
+
+. . .
+
+\
+
+```{r}
 as.integer(maj)
 ```
 
 . . .
+
+\
 
 ```{r}
 c(maj, 2L)
@@ -228,27 +243,27 @@ summary(mat)
 . . .
 
 ```{r}
-#| output-location: fragment
-songs <- factor(c("Golden by Huntrix", "Stay with me", "4me4u", "Golden by Huntrix"))
-distances <- c(2000, 800, 100, 10)
+name <- c("Leia", "Luke", "Han")
+gender <- factor(c("female", "male", "male"))
+height <- c(150, 170, 180)
 ```
 
 . . .
 
-__Question:__ What was the song and distance of the second index card?
+__Question:__ What is the gender and height of the second individual?
 
 . . .
 
 ```{r}
 #| output-location: fragment
-songs[2]
+gender[2]
 ```
 
 . . .
 
 ```{r}
 #| output-location: fragment
-distances[2]
+height[2]
 ```
 
 . . .
@@ -262,18 +277,25 @@ distances[2]
 
 ```{r}
 #| output-location: fragment
-mat <- matrix(c(songs, distances), ncol = 2)
+mat <- matrix(c(name, gender, height), ncol = 3)
+mat
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
 mat[2,]
 ```
 
 . . .
 
-__Task:__ Summarize the distribution of songs and distances.
+__Task:__ Summarize the distribution of gender and height.
 
 
 ```{r}
 #| output-location: fragment
-summary(mat)
+summary(mat[ ,2:3])
 ```
 
 
@@ -283,29 +305,29 @@ summary(mat)
 
 ```{r}
 #| output-location: fragment
-lst <- list("songs" = songs, "distances" = distances)
-summary(lst[["songs"]])
+lst <- list("name" = name, "gender" = gender, "height" = height)
+summary(lst[["gender"]])
 ```
 
 . . .
 
 ```{r}
 #| output-location: fragment
-summary(lst[["distances"]])
+summary(lst[["height"]])
 ```
 
 . . .
 
 ```{r}
 #| output-location: fragment
-lst[["songs"]][2]
+lst[["gender"]][2]
 ```
 
 . . .
 
 ```{r}
 #| output-location: fragment
-lst[["distances"]][2]
+lst[["height"]][2]
 ```
 
 . . .
@@ -327,11 +349,12 @@ A __data frame__ is a named list of vectors of the same length.  Created with `d
 ```{r}
 #| output-location: fragment
 star_wars <- data.frame(
-    name = c("Anakin", "Padme", "Luke", "Leia"),
-    gender = c("male", "female", "male", "female"),
-    height = c(1.88, 1.65, 1.72, 1.50),
-    weight = c(84, 45, 77, 49)
+  name = c("Anakin", "Padme", "Luke", "Leia"),
+  gender = c("male", "female", "male", "female"),
+  height = c(1.88, 1.65, 1.70, 1.50),
+  weight = c(84, 45, 77, 49)
 )
+
 star_wars
 ```
 
@@ -371,6 +394,8 @@ class(star_wars)
 
 ## Other useful functions for Data Frames
 
+- `colnames()`: equivalent to `names()`
+- `rownames()`: equivalent to `row.names()`
 - `summary()`: summary of each column
 - `str()`: structure
 - `head()`: first `n` rows
@@ -414,30 +439,6 @@ Data frames can be subset in 2 ways:
     + `dat[]`
     + `dat[[]]`
     + `dat$`
-
-
-## The Evoluation of the Data Frame
-
-::: {.columns}
-::: {.column width="30%"}
-- 1990: Data Frame (R) {.fragment fragment-index="1"}
-- 2009: Pandas DF (Py) {.fragment fragment-index="2"}
-- 2016: Tibble (R) {.fragment fragment-index="3"}
-- 2020: Polars (R/Py) {.fragment fragment-index="4"}
-:::
-
-::: {.column width="70%"}
-::: {.r-stack}
-![](images/data-frame1-R.png){.fragment fragment-index="1" width=400}
-
-![](images/data-frame2-py.png){.fragment fragment-index="2" width=400}
-
-![](images/data-frame3-tibble.png){.fragment fragment-index="3" width=400}
-
-![](images/data-frame4-polars.png){.fragment fragment-index="4" width=400}
-:::
-:::
-:::
 
 
 ## The Evoluation of the Data Frame

@@ -215,8 +215,22 @@ countdown::countdown(2, bottom = 0)
 > The simple form of the forward pipe inserts the left-hand 
 > side as the first argument in the right-hand side call.
 
+. . .
+
+```{r}
+summary(factor(c("owl", "fox", "owl")))
+```
+
+. . .
+
 ```{r}
 factor(c("owl", "fox", "owl")) |> summary()
+```
+
+. . .
+
+```{r}
+c("owl", "fox", "owl") |> factor() |> summary()
 ```
 
 
@@ -251,7 +265,7 @@ Flag the rows of a dataframe as belong to a group defined by a factor. For use i
 ```{r}
 #| output-location: fragment
 wizards |>
-    group_by(house)
+  group_by(house)
 ```
 
 

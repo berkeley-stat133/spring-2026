@@ -28,7 +28,7 @@ Using base R data frame subsetting, create from `wizards` ...
 
 1) The vector of heights.
 2) A data frame that contains only the characters shorter than 1.70.
-3) A data frame that contains the four original cols plus the one with the height in inches.
+3) A data frame that contains the four original columns plus the one with the height in inches.
 4) The average height of characters from Gryffindor.
 
 ```{r}
@@ -220,6 +220,8 @@ It provides a consistent set of "verbs" or functions designed to simplify common
 - `mutate()`
 
 - `arrange()`
+
+- `count()`
 
 - `summarize()`
 
@@ -602,6 +604,28 @@ wizards
 ```{r}
 #| output-location: fragment
 arrange(wizards, house, height)
+```
+
+
+## `count()`
+
+. . .
+
+Count the unique values of one or more variables
+
+. . .
+
+```{r}
+wizards
+```
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+count(wizards, house)
 ```
 
 
