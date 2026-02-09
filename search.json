@@ -14,7 +14,7 @@
     "href": "lectures/11-data-wrangling1/slides.html#section",
     "title": "Data Warngling I",
     "section": "",
-    "text": "wizards &lt;- data.frame(\n  name = c(\"Harry\", \"Bellatrix\", \"Hermione\", \"Draco\"),\n  house = c(\"Gryffindor\", \"Slytherin\", \"Gryffindor\",  \"Slytherin\"),\n  height = c(1.78, 1.57, 1.65, 1.75),\n  spells = c(60, 75, 70, 55)\n)\n\nUsing base R data frame subsetting, create from wizards …\n\nThe vector of heights.\nA data frame that contains only the characters shorter than 1.70.\nA data frame that contains the four original cols plus the one with the height in inches.\nThe average height of characters from Gryffindor.\n\n\n\n\n−+\n02:30"
+    "text": "wizards &lt;- data.frame(\n  name = c(\"Harry\", \"Bellatrix\", \"Hermione\", \"Draco\"),\n  house = c(\"Gryffindor\", \"Slytherin\", \"Gryffindor\",  \"Slytherin\"),\n  height = c(1.78, 1.57, 1.65, 1.75),\n  spells = c(60, 75, 70, 55)\n)\n\nUsing base R data frame subsetting, create from wizards …\n\nThe vector of heights.\nA data frame that contains only the characters shorter than 1.70.\nA data frame that contains the four original columns plus the one with the height in inches.\nThe average height of characters from Gryffindor.\n\n\n\n\n−+\n02:30"
   },
   {
     "objectID": "lectures/11-data-wrangling1/slides.html#boardwork",
@@ -77,7 +77,7 @@
     "href": "lectures/11-data-wrangling1/slides.html#dplyr-verbs",
     "title": "Data Warngling I",
     "section": "dplyr verbs",
-    "text": "dplyr verbs\n\n\n\nslice()\nselect()\nfilter()\nmutate()\narrange()\nsummarize()\ngroup_by()\n\n\n\nAll of these have a data frame as the first argument.\n\n\n\n\nAll of these produce a data frame as output.\n\n\n\n\nWithin the function, you can simply refer to columns names unquoted."
+    "text": "dplyr verbs\n\n\n\nslice()\nselect()\nfilter()\nmutate()\narrange()\ncount()\nsummarize()\ngroup_by()\n\n\n\nAll of these have a data frame as the first argument.\n\n\n\n\nAll of these produce a data frame as output.\n\n\n\n\nWithin the function, you can simply refer to columns names unquoted."
   },
   {
     "objectID": "lectures/11-data-wrangling1/slides.html#our-example-data-set",
@@ -213,6 +213,13 @@
     "text": "arrange()\nSort the rows of a data frame by the values of variables.\n\nwizards\n\n       name      house height spells\n1     Harry Gryffindor   1.78     60\n2 Bellatrix  Slytherin   1.57     75\n3  Hermione Gryffindor   1.65     70\n4     Draco  Slytherin   1.75     55\n\n\n\n\n\n\narrange(wizards, house, height)\n\n\n\n       name      house height spells\n1  Hermione Gryffindor   1.65     70\n2     Harry Gryffindor   1.78     60\n3 Bellatrix  Slytherin   1.57     75\n4     Draco  Slytherin   1.75     55"
   },
   {
+    "objectID": "lectures/11-data-wrangling1/slides.html#count",
+    "href": "lectures/11-data-wrangling1/slides.html#count",
+    "title": "Data Warngling I",
+    "section": "count()",
+    "text": "count()\n\nCount the unique values of one or more variables\n\n\n\nwizards\n\n       name      house height spells\n1     Harry Gryffindor   1.78     60\n2 Bellatrix  Slytherin   1.57     75\n3  Hermione Gryffindor   1.65     70\n4     Draco  Slytherin   1.75     55\n\n\n\n\n\n\n\ncount(wizards, house)\n\n\n\n       house n\n1 Gryffindor 2\n2  Slytherin 2"
+  },
+  {
     "objectID": "lectures/11-data-wrangling1/slides.html#summarize",
     "href": "lectures/11-data-wrangling1/slides.html#summarize",
     "title": "Data Warngling I",
@@ -343,7 +350,7 @@
     "href": "lectures/12-data-wrangling2/slides.html#works-everywhere",
     "title": "Data Warngling II",
     "section": "|> works everywhere",
-    "text": "|&gt; works everywhere\n\nR now provides a simple native forward pipe syntax |&gt;. The simple form of the forward pipe inserts the left-hand side as the first argument in the right-hand side call.\n\n\nfactor(c(\"owl\", \"fox\", \"owl\")) |&gt; summary()\n\nfox owl \n  1   2"
+    "text": "|&gt; works everywhere\n\nR now provides a simple native forward pipe syntax |&gt;. The simple form of the forward pipe inserts the left-hand side as the first argument in the right-hand side call.\n\n\n\nsummary(factor(c(\"owl\", \"fox\", \"owl\")))\n\nfox owl \n  1   2 \n\n\n\n\n\nfactor(c(\"owl\", \"fox\", \"owl\")) |&gt; summary()\n\nfox owl \n  1   2 \n\n\n\n\n\nc(\"owl\", \"fox\", \"owl\") |&gt; factor() |&gt; summary()\n\nfox owl \n  1   2"
   },
   {
     "objectID": "lectures/12-data-wrangling2/slides.html#section-2",
@@ -357,7 +364,7 @@
     "href": "lectures/12-data-wrangling2/slides.html#group_by",
     "title": "Data Warngling II",
     "section": "group_by()",
-    "text": "group_by()\nFlag the rows of a dataframe as belong to a group defined by a factor. For use in downstream operations.\n\n\nwizards |&gt;\n    group_by(house)\n\n\n\n# A tibble: 4 × 4\n# Groups:   house [2]\n  name      house      height spells\n  &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;\n1 Harry     Gryffindor   1.78     60\n2 Bellatrix Slytherin    1.57     75\n3 Hermione  Gryffindor   1.65     70\n4 Draco     Slytherin    1.75     55"
+    "text": "group_by()\nFlag the rows of a dataframe as belong to a group defined by a factor. For use in downstream operations.\n\n\nwizards |&gt;\n  group_by(house)\n\n\n\n# A tibble: 4 × 4\n# Groups:   house [2]\n  name      house      height spells\n  &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;\n1 Harry     Gryffindor   1.78     60\n2 Bellatrix Slytherin    1.57     75\n3 Hermione  Gryffindor   1.65     70\n4 Draco     Slytherin    1.75     55"
   },
   {
     "objectID": "lectures/12-data-wrangling2/slides.html#group_by-1",
@@ -1225,7 +1232,7 @@
     "href": "lectures/10-factors/slides.html#while-youre-waiting",
     "title": "Factors and Data Frames",
     "section": "While you’re waiting",
-    "text": "While you’re waiting\nImagine you collect University ID number and major from 5 friends:\n\nuid &lt;- c(\"3850278\", \"5869204\", \"4728112\", \"3829651\", \"3859278\")\nmaj &lt;- c(\"statistics\", \"economics\", \"statistics\", \"data\", \"economics\")\n\n\nConceptually, in what ways is the data in these two vectors similar? In what ways is it different?\nImagine instead you asked 100 friends. For each vector, can you think of a more efficient way for the computer to store that data?"
+    "text": "While you’re waiting\nImagine you collect University ID number and major from 5 friends:\n\nuid &lt;- c(\"3850278\", \"5869204\", \"4728112\", \"3829651\", \"3859278\")\nmaj &lt;- c(\"STAT\", \"ECON\", \"STAT\", \"DATA\", \"ECON\")\n\n\nConceptually, in what ways is the data in these two vectors similar? In what ways is it different?\nImagine instead you asked 100 friends. For each vector, can you think of a more efficient way for the computer to store that data?"
   },
   {
     "objectID": "lectures/10-factors/slides.html#agenda",
@@ -1246,14 +1253,14 @@
     "href": "lectures/10-factors/slides.html#factors-1",
     "title": "Factors and Data Frames",
     "section": "Factors",
-    "text": "Factors\nA data structure for storing categorical data.\n\nStores the values in an integer vector and adds a levels attribute to map integers to character strings. Created with factor().\n\n\n\nmaj &lt;- factor(x = c(\"STAT\", \"ECON\", \"STAT\", \"DATA\", \"ECON\"))\nmaj\n\n\n\n[1] STAT ECON STAT DATA ECON\nLevels: DATA ECON STAT"
+    "text": "Factors\nA data structure for storing categorical data.\n\nCreated with factor().\n\n\nStores the values in an integer vector and adds a levels attribute to map integers to character strings.\n\n\n\nmaj &lt;- factor(x = c(\"STAT\", \"ECON\", \"STAT\", \"DATA\", \"ECON\"))\nmaj\n\n\n\n[1] STAT ECON STAT DATA ECON\nLevels: DATA ECON STAT"
   },
   {
     "objectID": "lectures/10-factors/slides.html#section",
     "href": "lectures/10-factors/slides.html#section",
     "title": "Factors and Data Frames",
     "section": "",
-    "text": "as.integer(maj)\n\n[1] 3 2 3 1 2\n\n\n\n\nc(maj, 2L)\n\n[1] 3 2 3 1 2 2"
+    "text": "maj &lt;- factor(x = c(\"STAT\", \"ECON\", \"STAT\", \"DATA\", \"ECON\"))\nmaj\n\n[1] STAT ECON STAT DATA ECON\nLevels: DATA ECON STAT\n\n\n\n\n\n\nas.integer(maj)\n\n[1] 3 2 3 1 2\n\n\n\n\n\n\n\nc(maj, 2L)\n\n[1] 3 2 3 1 2 2"
   },
   {
     "objectID": "lectures/10-factors/slides.html#attributes",
@@ -1302,21 +1309,21 @@
     "href": "lectures/10-factors/slides.html#the-limitation-of-atomic-vectors",
     "title": "Factors and Data Frames",
     "section": "The Limitation of Atomic Vectors",
-    "text": "The Limitation of Atomic Vectors\n\n\nsongs &lt;- factor(c(\"Golden by Huntrix\", \"Stay with me\", \"4me4u\", \"Golden by Huntrix\"))\ndistances &lt;- c(2000, 800, 100, 10)\n\n\n\n\n\n\nQuestion: What was the song and distance of the second index card?\n\n\n\nsongs[2]\n\n\n\n[1] Stay with me\nLevels: 4me4u Golden by Huntrix Stay with me\n\n\n\n\n\ndistances[2]\n\n\n\n[1] 800\n\n\n\n\n😬 This is brittle!"
+    "text": "The Limitation of Atomic Vectors\n\n\nname &lt;- c(\"Leia\", \"Luke\", \"Han\")\ngender &lt;- factor(c(\"female\", \"male\", \"male\"))\nheight &lt;- c(150, 170, 180)\n\n\n\nQuestion: What is the gender and height of the second individual?\n\n\n\ngender[2]\n\n\n\n[1] male\nLevels: female male\n\n\n\n\n\nheight[2]\n\n\n\n[1] 170\n\n\n\n\n😬 This is brittle!"
   },
   {
     "objectID": "lectures/10-factors/slides.html#the-limitation-of-matrices",
     "href": "lectures/10-factors/slides.html#the-limitation-of-matrices",
     "title": "Factors and Data Frames",
     "section": "The Limitation of Matrices",
-    "text": "The Limitation of Matrices\n\n\nmat &lt;- matrix(c(songs, distances), ncol = 2)\nmat[2,]\n\n\n\n[1]   3 800\n\n\n\n\nTask: Summarize the distribution of songs and distances.\n\nsummary(mat)\n\n\n\n       V1             V2        \n Min.   :1.00   Min.   :  10.0  \n 1st Qu.:1.75   1st Qu.:  77.5  \n Median :2.00   Median : 450.0  \n Mean   :2.00   Mean   : 727.5  \n 3rd Qu.:2.25   3rd Qu.:1100.0  \n Max.   :3.00   Max.   :2000.0"
+    "text": "The Limitation of Matrices\n\n\nmat &lt;- matrix(c(name, gender, height), ncol = 3)\nmat\n\n\n\n     [,1]   [,2] [,3] \n[1,] \"Leia\" \"1\"  \"150\"\n[2,] \"Luke\" \"2\"  \"170\"\n[3,] \"Han\"  \"2\"  \"180\"\n\n\n\n\n\nmat[2,]\n\n\n\n[1] \"Luke\" \"2\"    \"170\" \n\n\n\n\nTask: Summarize the distribution of gender and height.\n\nsummary(mat[ ,2:3])\n\n\n\n      V1                 V2           \n Length:3           Length:3          \n Class :character   Class :character  \n Mode  :character   Mode  :character"
   },
   {
     "objectID": "lectures/10-factors/slides.html#the-limitation-of-lists",
     "href": "lectures/10-factors/slides.html#the-limitation-of-lists",
     "title": "Factors and Data Frames",
     "section": "The Limitation of Lists",
-    "text": "The Limitation of Lists\n\n\nlst &lt;- list(\"songs\" = songs, \"distances\" = distances)\nsummary(lst[[\"songs\"]])\n\n\n\n            4me4u Golden by Huntrix      Stay with me \n                1                 2                 1 \n\n\n\n\n\nsummary(lst[[\"distances\"]])\n\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   10.0    77.5   450.0   727.5  1100.0  2000.0 \n\n\n\n\n\nlst[[\"songs\"]][2]\n\n\n\n[1] Stay with me\nLevels: 4me4u Golden by Huntrix Stay with me\n\n\n\n\n\nlst[[\"distances\"]][2]\n\n\n\n[1] 800\n\n\n\n\n🤯 Too complicated to subset."
+    "text": "The Limitation of Lists\n\n\nlst &lt;- list(\"name\" = name, \"gender\" = gender, \"height\" = height)\nsummary(lst[[\"gender\"]])\n\n\n\nfemale   male \n     1      2 \n\n\n\n\n\nsummary(lst[[\"height\"]])\n\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  150.0   160.0   170.0   166.7   175.0   180.0 \n\n\n\n\n\nlst[[\"gender\"]][2]\n\n\n\n[1] male\nLevels: female male\n\n\n\n\n\nlst[[\"height\"]][2]\n\n\n\n[1] 170\n\n\n\n\n🤯 Too complicated to subset."
   },
   {
     "objectID": "lectures/10-factors/slides.html#data-structures-in-r-recap",
@@ -1330,7 +1337,7 @@
     "href": "lectures/10-factors/slides.html#data-frame",
     "title": "Factors and Data Frames",
     "section": "Data Frame",
-    "text": "Data Frame\nA data frame is a named list of vectors of the same length. Created with data.frame().\n\n\nstar_wars &lt;- data.frame(\n    name = c(\"Anakin\", \"Padme\", \"Luke\", \"Leia\"),\n    gender = c(\"male\", \"female\", \"male\", \"female\"),\n    height = c(1.88, 1.65, 1.72, 1.50),\n    weight = c(84, 45, 77, 49)\n)\nstar_wars\n\n\n\n    name gender height weight\n1 Anakin   male   1.88     84\n2  Padme female   1.65     45\n3   Luke   male   1.72     77\n4   Leia female   1.50     49"
+    "text": "Data Frame\nA data frame is a named list of vectors of the same length. Created with data.frame().\n\n\nstar_wars &lt;- data.frame(\n  name = c(\"Anakin\", \"Padme\", \"Luke\", \"Leia\"),\n  gender = c(\"male\", \"female\", \"male\", \"female\"),\n  height = c(1.88, 1.65, 1.70, 1.50),\n  weight = c(84, 45, 77, 49)\n)\n\nstar_wars\n\n\n\n    name gender height weight\n1 Anakin   male   1.88     84\n2  Padme female   1.65     45\n3   Luke   male   1.70     77\n4   Leia female   1.50     49"
   },
   {
     "objectID": "lectures/10-factors/slides.html#data-frame-cont.",
@@ -1351,14 +1358,14 @@
     "href": "lectures/10-factors/slides.html#other-useful-functions-for-data-frames",
     "title": "Factors and Data Frames",
     "section": "Other useful functions for Data Frames",
-    "text": "Other useful functions for Data Frames\n\nsummary(): summary of each column\nstr(): structure\nhead(): first n rows\ntail(): last n rows\ndim(): dimensions\nncol(): number of columns\nnrow(): number of rows"
+    "text": "Other useful functions for Data Frames\n\ncolnames(): equivalent to names()\nrownames(): equivalent to row.names()\nsummary(): summary of each column\nstr(): structure\nhead(): first n rows\ntail(): last n rows\ndim(): dimensions\nncol(): number of columns\nnrow(): number of rows"
   },
   {
     "objectID": "lectures/10-factors/slides.html#question",
     "href": "lectures/10-factors/slides.html#question",
     "title": "Factors and Data Frames",
     "section": "Question",
-    "text": "Question\n\n\n    name gender height weight\n1 Anakin   male   1.88     84\n2  Padme female   1.65     45\n3   Luke   male   1.72     77\n4   Leia female   1.50     49\n\n\nUsing what you know about matrix and list subsetting, write code to subset from star_wars …\n\nThe data frame containing only height and weight.\nThe character vector gender.\nThe data frame containing only the last row.\nThe value 1.88\n\n\n\n\n−+\n02:30"
+    "text": "Question\n\n\n    name gender height weight\n1 Anakin   male   1.88     84\n2  Padme female   1.65     45\n3   Luke   male   1.70     77\n4   Leia female   1.50     49\n\n\nUsing what you know about matrix and list subsetting, write code to subset from star_wars …\n\nThe data frame containing only height and weight.\nThe character vector gender.\nThe data frame containing only the last row.\nThe value 1.88\n\n\n\n\n−+\n02:30"
   },
   {
     "objectID": "lectures/10-factors/slides.html#subsetting-data-frames",
@@ -1372,13 +1379,6 @@
     "href": "lectures/10-factors/slides.html#the-evoluation-of-the-data-frame",
     "title": "Factors and Data Frames",
     "section": "The Evoluation of the Data Frame",
-    "text": "The Evoluation of the Data Frame\n\n\n\n1990: Data Frame (R) {.fragment fragment-index=“1”}\n2009: Pandas DF (Py) {.fragment fragment-index=“2”}\n2016: Tibble (R) {.fragment fragment-index=“3”}\n2020: Polars (R/Py) {.fragment fragment-index=“4”}"
-  },
-  {
-    "objectID": "lectures/10-factors/slides.html#the-evoluation-of-the-data-frame-1",
-    "href": "lectures/10-factors/slides.html#the-evoluation-of-the-data-frame-1",
-    "title": "Factors and Data Frames",
-    "section": "The Evoluation of the Data Frame",
     "text": "The Evoluation of the Data Frame"
   },
   {
@@ -1386,7 +1386,7 @@
     "href": "lectures/10-factors/slides.html#tibbles",
     "title": "Factors and Data Frames",
     "section": "Tibbles",
-    "text": "Tibbles\nAn updated version of a data frame with convenient behaviors.\n\n\nlibrary(tibble)\nstar_wars_tbl &lt;- as_tibble(star_wars)\nstar_wars_tbl\n\n\n\n# A tibble: 4 × 4\n  name   gender height weight\n  &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;\n1 Anakin male     1.88     84\n2 Padme  female   1.65     45\n3 Luke   male     1.72     77\n4 Leia   female   1.5      49"
+    "text": "Tibbles\nAn updated version of a data frame with convenient behaviors.\n\n\nlibrary(tibble)\nstar_wars_tbl &lt;- as_tibble(star_wars)\nstar_wars_tbl\n\n\n\n# A tibble: 4 × 4\n  name   gender height weight\n  &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;\n1 Anakin male     1.88     84\n2 Padme  female   1.65     45\n3 Luke   male     1.7      77\n4 Leia   female   1.5      49"
   },
   {
     "objectID": "lectures/10-factors/slides.html#tibbles-1",
@@ -1568,14 +1568,14 @@
     "href": "lectures/9-functions/slides.html#ex.-colsums",
     "title": "Functions",
     "section": "Ex. colSums()",
-    "text": "Ex. colSums()\n\n\nmat &lt;- matrix(1:4, nrow = 2)\nmat\n\n\n\n     [,1] [,2]\n[1,]    1    3\n[2,]    2    4\n\n\n\n\n\ncolSums(mat)\n\n\n\n[1] 3 7\n\n\n\n\nHow could I compute this without colSums()?\n\nc(sum(mat[, 1]), sum(mat[, 2]))\n\n\n\n[1] 3 7"
+    "text": "Ex. colSums()\n\n\nmat &lt;- matrix(1:4, nrow = 2)\nmat\n\n\n\n     [,1] [,2]\n[1,]    1    3\n[2,]    2    4\n\n\n\n\n\ncolSums(mat)\n\n\n\n[1] 3 7\n\n\n\n\nHow could I compute this without colSums()?\n\n\n\nc(sum(mat[, 1]), sum(mat[, 2]))\n\n\n\n[1] 3 7"
   },
   {
     "objectID": "lectures/9-functions/slides.html#section",
     "href": "lectures/9-functions/slides.html#section",
     "title": "Functions",
     "section": "",
-    "text": "I could generalize with a for-loop\n\ncolsum_vec &lt;- rep(0, ncol(mat))\n\nfor (coln in 1:ncol(mat)) {\n  colsum_vec[coln] &lt;- sum(mat[, coln])\n}\n\ncolsum_vec\n\n\n\n[1] 3 7"
+    "text": "I could generalize with a for-loop\n\n\ncolsum_vec &lt;- rep(0, ncol(mat))\n\nfor (coln in 1:ncol(mat)) {\n  colsum_vec[coln] &lt;- sum(mat[, coln])\n}\n\ncolsum_vec\n\n\n\n[1] 3 7"
   },
   {
     "objectID": "lectures/9-functions/slides.html#why-use-colsums-instead",
@@ -1631,7 +1631,7 @@
     "href": "lectures/9-functions/slides.html#example-1-roll-a-die-3",
     "title": "Functions",
     "section": "Example 1: Roll a Die",
-    "text": "Example 1: Roll a Die\nTask: return a numeric vector with the result of rolling a fair six-sided die.\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  sample(x = 1:n_sides, size = n_rolls)\n}\n\nQuestion: Modify this function so it can\nwork for arbitrary n-sided dice\nreturn more than 1 roll of the die"
+    "text": "Example 1: Roll a Die\nTask: return a numeric vector with the result of rolling a fair six-sided die.\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\nQuestion: Modify this function so it can\nwork for arbitrary n-sided dice\nreturn more than 1 roll of the die"
   },
   {
     "objectID": "lectures/9-functions/slides.html#why-write-functions",
@@ -1639,6 +1639,27 @@
     "title": "Functions",
     "section": "Why write functions?",
     "text": "Why write functions?\n\nMake your code more readable\nDon’t Repeat Yourself (DRY)\nFocus on the variables, not the constants\nEasier to test, update"
+  },
+  {
+    "objectID": "lectures/9-functions/slides.html#error-messages-with-stop",
+    "href": "lectures/9-functions/slides.html#error-messages-with-stop",
+    "title": "Functions",
+    "section": "Error Messages with stop()",
+    "text": "Error Messages with stop()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    stop(\"invalid value n_sides\")\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nError in roll_die(n_sides = -3, n_rolls = 2): invalid value n_sides"
+  },
+  {
+    "objectID": "lectures/9-functions/slides.html#error-messages-with-stop-1",
+    "href": "lectures/9-functions/slides.html#error-messages-with-stop-1",
+    "title": "Functions",
+    "section": "Error Messages with stop()",
+    "text": "Error Messages with stop()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    stop(\"invalid value n_sides\")\n  }\n  if (n_rolls &lt;= 0) {\n    stop(\"invalid value n_rolls\")\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = 3, n_rolls = 0)\n\n\n\nError in roll_die(n_sides = 3, n_rolls = 0): invalid value n_rolls"
+  },
+  {
+    "objectID": "lectures/9-functions/slides.html#warning-messages-with-warning",
+    "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
+    "title": "Functions",
+    "section": "Warning Messages with warning()",
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 6 5"
   },
   {
     "objectID": "lectures/7-lists/slides.html#discuss-with-a-neighbor",
@@ -2098,7 +2119,7 @@
     "href": "index.html",
     "title": "STAT 133: Concepts in Computing with Data",
     "section": "",
-    "text": "Ed\n\n\nbCourses\n\n\nR-DataHub\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4 Announcements\n\n\n\n\nProblem Set 2 due Wed 2/11 by 6PM\n3rd Quarto Pub on Thu 2/12 (also in lab)\nProject 1 due Fri 2/13 by 6PM\n\n\n\n\n\n\n\n\nWeek 1\n\nWed 1/21\nThu 1/22\nFri 1/23\n\n\n\n\n\nDescription\nWelcome\nLab 1: slides\nIntroduction\n\n\n\n\nDue\n\n\n\n\n\n\n\n\n\nWeek 2\n\nMon 1/26\nWed 1/28\nThu 1/29\nFri 1/30\n\n\n\n\n\nDescription\nVectors\nWorking with Vectors\nLab 2: slides | PS1\nUnix Basics | Proj1\n\n\n\n\nDue\n \n \nPub1\n \n\n\n\n\n\n\n\n\n\nWeek 3\n\nMon 2/2\nWed 2/4\nThu 2/5\nFri 2/6\n\n\n\n\n\nDescription\nExtending Vectors\nLists\nLab 3: Quiz 1 | slides | PS2\nControl Flow\n\n\n\n\nDue\n \nPS1\nPub2\n \n\n\n\n\n\n\n\n\n\nWeek 4\n\nMon 2/9\nWed 2/11\nThu 2/12\nFri 2/13\n\n\n\n\n\nDescription\nFunctions\nFactors and Data Frames\nLab 4: slides | PS3\nData Wrangling I | Proj2\n\n\n\n\nDue\n \nPS2\nPub3\nProj1\n\n\n\n\n\n\n\n\n\nWeek 5\n\nMon 2/16\nWed 2/18\nThu 2/19\nFri 2/20\n\n\n\n\n\nDescription\nNo class\nData Wrangling II\nLab 5: Quiz 2 | slides | PS4\nImporting Tables\n\n\n\n\nDue\n \nPS3\nPub4\n \n\n\n\n\n\n\n\n\n\nWeek 6\n\nMon 2/23\nWed 2/25\nThu 2/26\nFri 2/27\n\n\n\n\n\nDescription\nDataviz I\nDataviz II\nLab 6: slides | PS5\nDataviz III | Proj3\n\n\n\n\nDue\n \nPS4\nPub5\nProj2\n\n\n\n\n\n\n\n\n\nWeek 7\n\nMon 3/2\nWed 3/4\nThu 3/5\nFri 3/6\n\n\n\n\n\nDescription\nJoins and Pivots\nExploratory EDA\nLab 7: Quiz 3 | slides | PS6\nExplanatory EDA\n\n\n\n\nDue\n \nPS5\nPub6\n \n\n\n\n\n\n\n\n\n\nWeek 8\n\nMon 3/9\nWed 3/11\nThu 3/12\nFri 3/13\n\n\n\n\n\nDescription\nStrings I\nStrings II\nLab 8: slides | PS7\nStrings III | Proj4\n\n\n\n\nDue\n \nPS6\nPub7\nProj3\n\n\n\n\n\n\n\n\n\nWeek 9\n\nMon 3/16\nWed 3/18\nThu 3/19\nFri 3/20\n\n\n\n\n\nDescription\nDates and Times I\nDates and Times II\nLab 9: Quiz 4 | slides | PS8\nGeospatial Data\n\n\n\n\nDue\n \nPS7\nPub8\n \n\n\n\n\n\n\n\n\n\nWeek 10\n\n3/23-3/27\n\n\n\n\n\nDescription\nSpring Recess\n\n\n\n\n\n\n\n\n\nWeek 11\n\nMon 3/30\nWed 4/1\nThu 4/2\nFri 4/3\n\n\n\n\n\nDescription\nStorm Tracks I\nLeaflet Maps\nLab 10: slides | PS9\nShapefiles | Proj5\n\n\n\n\nDue\n \nPS8\nPub9\nProj4\n\n\n\n\n\n\n\n\n\nWeek 12\n\nMon 4/6\nWed 4/8\nThu 4/9\nFri 4/10\n\n\n\n\n\nDescription\nChoropleth Maps\nRaster Data I\nLab 11: Quiz 5 | slides | PS10\nRaster Data II\n\n\n\n\nDue\n \nPS9\nPub10\n \n\n\n\n\n\n\n\n\n\nWeek 13\n\nMon 4/13\nWed 4/15\nThu 4/16\nFri 4/17\n\n\n\n\n\nDescription\nJSON Data\nAPIs\nLab 12: slides | PS11\nXML Data | Proj6\n\n\n\n\nDue\n \nPS10\nPub11\nProj5\n\n\n\n\n\n\n\n\n\nWeek 14\n\nMon 4/20\nWed 4/22\nThu 4/23\nFri 4/24\n\n\n\n\n\nDescription\nText Analysis 1\nText Analysis 2\nLab 13: Quiz 6 | slides | PS12\nText Analysis 3\n\n\n\n\nDue\n \nPS11\nPub12\n \n\n\n\n\n\n\n\n\n\nWeek 15\n\nMon 4/27\nWed 4/29\nThu 4/30\nFri 5/1\n\n\n\n\n\nDescription\nTBD\nTBD\nLab 14: slides\nClosing Lecture\n\n\n\n\nDue\n \nPS12\n \nProj6\n\n\n\n\n\n\n\n\n\nWeek 16\n\n5/4-5/8\n\n\n\n\n\nDescription\nRRR Week\n\n\n\n\n\n\n\n\n\nWeek 17\n\n5/11\n\n\n\n\n\nDescription\nFinal Exam, 7-10pm",
+    "text": "Ed\n\n\nbCourses\n\n\nR-DataHub\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4 Announcements\n\n\n\n\nProblem Set 2 due Wed 2/11 by 6PM\n3rd Quarto Pub on Thu 2/12 (in lab)\nProject 1 due Fri 2/13 by 6PM\n\n\n\n\n\n\n\n\nWeek 1\n\nWed 1/21\nThu 1/22\nFri 1/23\n\n\n\n\n\nDescription\nWelcome\nLab 1: slides\nIntroduction\n\n\n\n\nDue\n\n\n\n\n\n\n\n\n\nWeek 2\n\nMon 1/26\nWed 1/28\nThu 1/29\nFri 1/30\n\n\n\n\n\nDescription\nVectors\nWorking with Vectors\nLab 2: slides | PS1\nUnix Basics | Proj1\n\n\n\n\nDue\n \n \nPub1\n \n\n\n\n\n\n\n\n\n\nWeek 3\n\nMon 2/2\nWed 2/4\nThu 2/5\nFri 2/6\n\n\n\n\n\nDescription\nExtending Vectors\nLists\nLab 3: Quiz 1 | slides | PS2\nControl Flow\n\n\n\n\nDue\n \nPS1\nPub2\n \n\n\n\n\n\n\n\n\n\nWeek 4\n\nMon 2/9\nWed 2/11\nThu 2/12\nFri 2/13\n\n\n\n\n\nDescription\nFunctions\nFactors and Data Frames\nLab 4: slides | PS3\nData Wrangling I | Proj2\n\n\n\n\nDue\n \nPS2\nPub3\nProj1\n\n\n\n\n\n\n\n\n\nWeek 5\n\nMon 2/16\nWed 2/18\nThu 2/19\nFri 2/20\n\n\n\n\n\nDescription\nNo class\nData Wrangling II\nLab 5: Quiz 2 | slides | PS4\nImporting Tables\n\n\n\n\nDue\n \nPS3\nPub4\n \n\n\n\n\n\n\n\n\n\nWeek 6\n\nMon 2/23\nWed 2/25\nThu 2/26\nFri 2/27\n\n\n\n\n\nDescription\nDataviz I\nDataviz II\nLab 6: slides | PS5\nDataviz III | Proj3\n\n\n\n\nDue\n \nPS4\nPub5\nProj2\n\n\n\n\n\n\n\n\n\nWeek 7\n\nMon 3/2\nWed 3/4\nThu 3/5\nFri 3/6\n\n\n\n\n\nDescription\nJoins and Pivots\nExploratory EDA\nLab 7: Quiz 3 | slides | PS6\nExplanatory EDA\n\n\n\n\nDue\n \nPS5\nPub6\n \n\n\n\n\n\n\n\n\n\nWeek 8\n\nMon 3/9\nWed 3/11\nThu 3/12\nFri 3/13\n\n\n\n\n\nDescription\nStrings I\nStrings II\nLab 8: slides | PS7\nStrings III | Proj4\n\n\n\n\nDue\n \nPS6\nPub7\nProj3\n\n\n\n\n\n\n\n\n\nWeek 9\n\nMon 3/16\nWed 3/18\nThu 3/19\nFri 3/20\n\n\n\n\n\nDescription\nDates and Times I\nDates and Times II\nLab 9: Quiz 4 | slides | PS8\nGeospatial Data\n\n\n\n\nDue\n \nPS7\nPub8\n \n\n\n\n\n\n\n\n\n\nWeek 10\n\n3/23-3/27\n\n\n\n\n\nDescription\nSpring Recess\n\n\n\n\n\n\n\n\n\nWeek 11\n\nMon 3/30\nWed 4/1\nThu 4/2\nFri 4/3\n\n\n\n\n\nDescription\nStorm Tracks I\nLeaflet Maps\nLab 10: slides | PS9\nShapefiles | Proj5\n\n\n\n\nDue\n \nPS8\nPub9\nProj4\n\n\n\n\n\n\n\n\n\nWeek 12\n\nMon 4/6\nWed 4/8\nThu 4/9\nFri 4/10\n\n\n\n\n\nDescription\nChoropleth Maps\nRaster Data I\nLab 11: Quiz 5 | slides | PS10\nRaster Data II\n\n\n\n\nDue\n \nPS9\nPub10\n \n\n\n\n\n\n\n\n\n\nWeek 13\n\nMon 4/13\nWed 4/15\nThu 4/16\nFri 4/17\n\n\n\n\n\nDescription\nJSON Data\nAPIs\nLab 12: slides | PS11\nXML Data | Proj6\n\n\n\n\nDue\n \nPS10\nPub11\nProj5\n\n\n\n\n\n\n\n\n\nWeek 14\n\nMon 4/20\nWed 4/22\nThu 4/23\nFri 4/24\n\n\n\n\n\nDescription\nText Analysis 1\nText Analysis 2\nLab 13: Quiz 6 | slides | PS12\nText Analysis 3\n\n\n\n\nDue\n \nPS11\nPub12\n \n\n\n\n\n\n\n\n\n\nWeek 15\n\nMon 4/27\nWed 4/29\nThu 4/30\nFri 5/1\n\n\n\n\n\nDescription\nTBD\nTBD\nLab 14: slides\nClosing Lecture\n\n\n\n\nDue\n \nPS12\n \nProj6\n\n\n\n\n\n\n\n\n\nWeek 16\n\n5/4-5/8\n\n\n\n\n\nDescription\nRRR Week\n\n\n\n\n\n\n\n\n\nWeek 17\n\n5/11\n\n\n\n\n\nDescription\nFinal Exam, 7-10pm",
     "crumbs": [
       "Home"
     ]
@@ -2928,7 +2949,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"bronze\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"silver\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -2942,7 +2963,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"junior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"freshman\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -3243,7 +3264,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 23     Jamal Shead  TOR   PG           73    200 June 24, … US      R         \n2 0      Miles Bridg… CHO   PF           79    225 March 21,… US      5         \n3 1      Devin Booker PHO   SG           77    206 October 3… US      9         \n4 8      Jae'Sean Ta… HOU   SF           76    230 October 2… US      4         \n5 20     Georges Nia… ATL   PF           78    230 June 17, … US      8         \n6 22     Devin Carter SAC   PG           74    195 March 18,… US      R         \n7 35     Marvin Bagl… MEM   PF           82    235 March 14,… US      6         \n8 33     Myles Turner IND   C            83    250 March 24,… US      9         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 77     Jamison Bat… TOR   SF           79    220 May 10, 2… US      R         \n2 40     Ivica Zubac  LAC   C            84    240 March 18,… BA      8         \n3 4      Tristen New… IND   SG           77    190 April 26,… US      R         \n4 13     Torrey Craig CHI   SF           77    221 December … US      7         \n5 88     Markieff Mo… DAL   PF           81    245 September… US      13        \n6 41     Kelly Olynyk TOR   C            84    240 April 19,… CA      11        \n7 4      Scottie Bar… TOR   PF           80    237 August 1,… US      3         \n8 7      Gabe Vincent LAL   PG           74    200 June 14, … US      5         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
