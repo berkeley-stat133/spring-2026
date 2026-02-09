@@ -1666,7 +1666,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 5 6"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 3 4"
   },
   {
     "objectID": "lectures/7-lists/slides.html#discuss-with-a-neighbor",
@@ -2956,7 +2956,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"bronze\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"silver\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -2970,7 +2970,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"senior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"sophomore\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -3271,7 +3271,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 20     Alex Sarr    WAS   C            84    205 April 26,… FR      R         \n2 25     Dalen Terry  CHI   SG           78    195 July 12, … US      2         \n3 13     Kelly Olynyk NOP   C            84    240 April 19,… CA      11        \n4 32     Dean Wade    CLE   PF           81    228 November … US      5         \n5 45     Keon Johnson BRK   SG           77    185 March 10,… US      3         \n6 29     Daeqwon Plo… ATL   SG           76    216 August 29… US      R         \n7 8      Bub Carring… WAS   PG           76    190 July 21, … US      R         \n8 0      Gary Payton… GSW   SG           74    195 December … US      8         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 21     Daniel Gaff… DAL   C            82    265 October 1… US      5         \n2 1      LaMelo Ball  CHO   PG           79    180 August 22… US      4         \n3 21     Tyus Jones   PHO   PG           72    196 May 10, 1… US      9         \n4 1      Jaden Hardy  DAL   SG           75    198 July 5, 2… US      2         \n5 3      Josh Giddey  CHI   PG           79    216 October 1… AU      3         \n6 2      Collin Sext… UTA   SG           75    190 January 4… US      6         \n7 11     Brook Lopez  MIL   C            85    282 April 1, … US      16        \n8 2      Josh Okogie  PHO   SG           76    213 September… NG      6         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
