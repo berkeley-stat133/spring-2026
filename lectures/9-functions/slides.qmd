@@ -8,6 +8,22 @@ chalkboard: true
 knitr::opts_chunk$set(echo = TRUE, error = TRUE)
 ```
 
+
+## While you're waiting ...
+
+__Question__: What will the following code return?
+
+```{r eval = FALSE}
+expr <- {
+  x <- 1
+  y <- 2
+  z <- c(x, y)
+}
+
+expr
+```
+
+
 ## While you're waiting ...
 
 __Question__: What will the following code return?
