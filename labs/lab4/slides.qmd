@@ -8,43 +8,49 @@ chalkboard: true
 
 ## Agenda
 
-- Review: Basics of functions
-- If else statements, for loops
-- Quarto Slides
-    + Create your first slides
-- QuartoPub
-    + Sign up
-- 3rd Quarto Publication
-- Problem Set 3
+-   Review: Basics of functions, if-else statements, for loops
+-   Quarto Slides
+    -   How can we format slides?
+    -   Create your first slides
+-   3rd Quarto Publication
+-   Problem Set 3
 
 ## Review: Basics of Functions
-- Functions are defined using the `function()` command
-- Functions can take arguments (inputs) and return values (outputs)
-- Example:
-```{r}
-#| eval: false
+
+::: nonincremental
+-   Functions are defined using the `function()` command
+-   Functions can take arguments (inputs) and return values (outputs)
+-   Example:
+
+``` r
 add <- function(x, y) {
-  return(x + y)
+  sum <- x + y
+  return(sum)
 }
 result <- add(3, 5)
-print(result)  # Output: 8
+# Output: 8
 ```
+:::
 
-## If Else Statements
-- Used for conditional execution of code blocks
-- Syntax:
-```{r}
-#| eval: false
+## Review: If Else Statements
+
+::: nonincremental
+-   Used for conditional execution of code blocks
+-   Syntax:
+
+``` r
 if (condition) {
   # code to execute if condition is TRUE
 } else {
   # code to execute if condition is FALSE
 }
 ```
+:::
 
-## Example of If Else
-```{r}
-#| eval: false
+## Review: Example of If Else
+
+::: nonincremental
+``` r
 check_number <- function(num) {
   if (num > 0) {
     return("Positive")
@@ -54,24 +60,28 @@ check_number <- function(num) {
     return("Zero")
   }
 }
-print(check_number(10))  # Output: "Positive"
-print(check_number(-5))  # Output: "Negative"
-print(check_number(0))   # Output: "Zero"
+check_number(10)  # Output: "Positive"
+check_number(-5)  # Output: "Negative"
+check_number(0)   # Output: "Zero"
 ```
+:::
 
-## For Loops
-- Used to iterate over a sequence (like a vector or list)
-- Syntax:
-```{r}
-#| eval: false
+## Review: For Loops
+
+::: nonincremental
+-   Used to iterate over a sequence (like a vector or list)
+-   Syntax:
+
+``` r
 for (variable in sequence) {
   # code to execute for each element in sequence
 }
 ```
+:::
 
 ## Example of For Loop
-```{r}
-#| eval: false
+
+``` r
 sum_vector <- function(vec) {
   total <- 0
   for (num in vec) {
@@ -79,31 +89,164 @@ sum_vector <- function(vec) {
   }
   return(total)
 }
-print(sum_vector(c(1, 2, 3, 4, 5)))  # Output: 15
+sum_vector(c(1, 2, 3, 4, 5))  # Output: 15
 ```
 
+# Quarto Slides
 
-## Quarto Slides
-- Quarto allows you to create slides using markdown syntax
-- Use `#` or `##` to separate slides
-- Example:
-```{.markdown code-line-numbers="false"}
-# Slide Title Main Heading
-Content of the slide goes here.
-## Next Slide - Subheading
-More content here.
-```
+## What can we do with slides?
 
-## What can slides contain?
-- Text
-- Code chunks
-- Figures
+As with our .qmd documents from last labs:
+
+-   Text
+-   Code chunks
+-   Figures
 
 We use Quarto for slides in STAT 133!
 
+## Also:
+-   Line highlighting
+-   Slide backgrounds and gradients
+-   Themes
+-   Transitions
+
+### And much more!
+Find the complete documentation [here.](https://quarto.org/docs/presentations/revealjs/)
+
+
+## YAML Heading of a Slide Document
+
+``` {.markdown filename="demo-pub2.qmd" code-line-numbers="false"}
+---
+title: "Demo Publication 3"
+subtitle: "First Contact with Quarto Slides"
+author: "Your Name"
+format: revealjs
+---
+```
+
+## Formatting Slides
+::: nonincremental
+-   Quarto allows you to create slides using markdown syntax
+-   Use `#` or `##` to separate slides
+-   Example:
+
+``` {.markdown code-line-numbers="false"}
+# Slide 1 - Main Heading
+Content of the slide goes here.
+## Slide 2 - Smaller Heading
+More content here.
+### Slide 2 - Sub-subheading
+```
+
+In slides, it will look like...
+:::
+
+# Slide 1 - Main Heading
+
+## Slide 2 - Smaller Heading
+
+### Slide 2 - Sub-subheading
+
+
+
+
+## Adding code:
+
+Code is added the same way as in regular `qmd` files, using code chunks.
+
+``` r
+# Example code chunk
+x <- 10
+y <- 20
+sum <- x + y
+```
+
+## Line highlighting {.smaller}
+This code chunk: \
+![](images/linehighlighting.png)
+
+
+Creates this highlighting:
+``` {.r code-line-numbers="3-4"}
+# Example function to calculate square
+square <- function(x) {
+  return(x^2)
+}
+```
+
+### How the line numbers work
+
+"2": highlights line 2\
+
+"3-4": highlights lines 3 through 4\
+
+## Adding Slide Backgrounds - Single Color
+
+![](images/aquamarine.png)
+
+## Adding Slide Backgrounds - Gradient 
+
+![](images/gradient.png)
+
+## Transitions - Globally
+
+[Available types of transitions](https://quarto.org/docs/presentations/revealjs/advanced.html#slide-transitions)
+
+Here’s how you would set the global transition style for both slides and backgrounds:
+
+``` {.markdown filename="demo-pub2.qmd" code-line-numbers="false"}
+---
+title: "Demo Publication 3"
+subtitle: "First Contact with Quarto Slides"
+author: "Your Name"
+format:
+  revealjs:
+    transition: slide
+    background-transition: fade
+---
+```
+
+## Transitions - Slide by Slide
+You can also specify the transition and/or transition-speed for an individual slide:
+
+``` {.markdown code-line-numbers="false"}
+## Slide Title {transition="fade" transition-speed="fast"}
+```
+\
+
+You can also specify separate in and out transitions, for example:
+``` {.markdown code-line-numbers="false"}
+## Slide Title {transition="fade-in slide-out"}
+```
+
+
+# Quarto Pub
+
+## Requirements: {.smaller}
+
+:::{.nonincremental}
+
+Your slides must contain:
+
+-   Title slide
+
+-   A function, for loop, and if else statement
+
+-   A highlighted line of code
+
+-   A theme
+
+-   Slide backgrounds (color and gradient)
+
+-   At least one figure (can be a web image or a local image)
+
+-   At least one transition
+:::
+
 ## Like last week: Folder `stat133/`
 
-```{.markdown code-line-numbers="false"}
+``` {.markdown code-line-numbers="false"}
   stat133/
     labs/
         lab1/
@@ -114,116 +257,47 @@ We use Quarto for slides in STAT 133!
         pset2/
 ```
 
-
 ## Terminal in IDE
 
-1) Launch your IDE (Positron or RStudio)
+1)  Launch your IDE (Positron or RStudio)
 
-2) Launch your [Terminal]{.bold-hilit} (next to the _Console_ tab)
+2)  Launch your [Terminal]{.bold-hilit} (next to the *Console* tab)
 
-3) `cd` to your `stat133/labs/` folder
+3)  `cd` to your `stat133/labs/` folder
 
-4) create a folder for this lab: `mkdir lab4`
+4)  create a folder for this lab: `mkdir lab4`
 
-5) `cd` to `lab4`
+5)  `cd` to `lab4`
 
 . . .
 
-```{.markdown filename="Terminal" code-line-numbers="false"}
+``` {.markdown filename="Terminal" code-line-numbers="false"}
 # create an empty qmd file "demo-pub3.qmd"
 # (to be used for your 2nd Quarto demo publication)
 touch demo-pub3.qmd
 ```
 
-## Open your `demo-pub3.qmd` document {.smaller}
-
-Make sure your `qmd` file has the following content (or something similar):
-
-```{.markdown filename="demo-pub2.qmd" code-line-numbers="false"}
----
-title: "Demo Publication 3"
-subtitle: "First Contact with Quarto Slides"
-author: "Your Name"
-format: revealjs
----
-```
-
-## Adding code:
-Code is added the same way as in regular `qmd` files, using code chunks.
-
-```{r}
-#| eval: false
-# Example code chunk
-x <- 10
-y <- 20
-sum <- x + y
-```
-
-## Slide Themes
-
-Example:
-```{.markdown code-line-numbers="false"}
-format: revealjs:
-  theme: solarized
-```
-Explore more themes on the [Quarto Website](https://quarto.org/docs/presentations/revealjs/themes.html)
-
-## Line highlighting
-```{r}
-#| eval: false
-# Example function to calculate square
-square <- function(x) {
-  return(x^2)
-}
-```
-
-## Adding Slide Backgrounds {.smaller}
-
-Single color:
-```{.markdown code-line-numbers="false"}
-## Slide Title {background-color="aquamarine"}
-```
-Gradient:
-```{.markdown code-line-numbers="false"}
-## Slide Title {background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)"}
-## Slide Title {background-gradient="radial-gradient(#283b95, #17b2c3)"}
-```
-
-# Quarto Pub
-
-## Requirements:
-Your slides must contain:
-- Title slide with a link to [Quarto](https://quarto.org/)
-- A function, for loop, and if else statement
-- A highlighted line of code
-- A theme
-- A slide background (color or gradient)
-- An image
-
 ## Publishing Steps
 
 Assume I have a file called `demo-pub3.qmd` opened in Positron. To publish my `qmd` file to my QuartoPub account I follow these steps:
 
-1) Go to the __Terminal__ tab.
-    + Make sure your working directory contains the qmd file.
-2) Type command: `quarto publish demo-pub3.qmd`
-3) Choose provider [Quarto Pub]{.bold-hilit} and press return (enter)
-4) Publish with default account (linked to my email address)
-5) Optionally: you can change the name of the document
-6) Press return (enter)
+1)  Go to the **Terminal** tab.
+    -   Make sure your working directory contains the qmd file.
+2)  Type command: `quarto publish demo-pub3.qmd`
+3)  Choose provider [Quarto Pub]{.bold-hilit} and press return (enter)
+4)  Publish with default account (linked to my email address)
+5)  Optionally: you can change the name of the document
+6)  Press return (enter)
 
 . . .
 
-Once published, there will be an associated link (URL), something like:
-<https://username.quarto.pub/demo-pub-3>
-
+Once published, there will be an associated link (URL), something like: <https://username.quarto.pub/demo-pub-3>
 
 ## Submission to bCourses
 
 Submit the URL (link) of your published document to the corresponding assignment in bCourses.
 
-See [Assignments tab > Quarto Publications > Pub3]{.bold-hilit}
-
+See [Assignments tab \> Quarto Publications \> Pub3]{.bold-hilit}
 
 # Problem Set 3
 
@@ -231,13 +305,13 @@ See [Assignments tab > Quarto Publications > Pub3]{.bold-hilit}
 
 Available in bCourses:
 
-See [Assignments tab > Problem Sets > PS3]{.bold-hilit}
+See [Assignments tab \> Problem Sets \> PS3]{.bold-hilit}
 
 You'll find 2 files:
 
-- `ps3.html`: instructions
+-   `ps3.html`: instructions
 
-- `ps3.qmd`: template file to write your answers
+-   `ps3.qmd`: template file to write your answers
 
 . . .
 
@@ -245,14 +319,9 @@ In case of trouble: Go to Files tab, folder `problem-sets`, folder `ps3`, and do
 
 Sometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome).
 
-
 ## Pset 3 Submission
 
-- Submit your `qmd` and `html` files to bCourses.
-- Use assignment problem set __ps3__
-- Graded credit / no-credit
-- Credit for evidence of earnest engagement (just don't submit a blank or empty template file)
-
-
-
-
+-   Submit your `qmd` and `html` files to bCourses.
+-   Use assignment problem set **ps3**
+-   Graded credit / no-credit
+-   Credit for evidence of earnest engagement (just don't submit a blank or empty template file)
