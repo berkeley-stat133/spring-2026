@@ -220,15 +220,11 @@ STAT 133
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ul>
-<li class="fragment">Review: Basics of functions</li>
-<li class="fragment">If else statements, for loops</li>
+<li class="fragment">Review: Basics of functions, if-else statements, for loops</li>
 <li class="fragment">Quarto Slides
 <ul>
+<li class="fragment">How can we format slides?</li>
 <li class="fragment">Create your first slides</li>
-</ul></li>
-<li class="fragment">QuartoPub
-<ul>
-<li class="fragment">Sign up</li>
 </ul></li>
 <li class="fragment">3rd Quarto Publication</li>
 <li class="fragment">Problem Set 3</li>
@@ -237,45 +233,73 @@ STAT 133
 <section id="review-basics-of-functions" class="slide level2">
 <h2>Review: Basics of Functions</h2>
 <ul>
-<li class="fragment">Functions are defined using the <code>function()</code> command</li>
-<li class="fragment">Functions can take arguments (inputs) and return values (outputs)</li>
-<li class="fragment">Example:</li>
+<li>Functions are defined using the <code>function()</code> command</li>
+<li>Functions can take arguments (inputs) and return values (outputs)</li>
+<li>Example:</li>
 </ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb1-2"><a></a>  sum <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span>
+<span id="cb1-3"><a></a>  <span class="fu">return</span>(sum)</span>
+<span id="cb1-4"><a></a>}</span>
+<span id="cb1-5"><a></a>result <span class="ot">&lt;-</span> <span class="fu">add</span>(<span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb1-6"><a></a><span class="co"># Output: 8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="if-else-statements" class="slide level2">
-<h2>If Else Statements</h2>
+<section id="review-if-else-statements" class="slide level2">
+<h2>Review: If Else Statements</h2>
 <ul>
-<li class="fragment">Used for conditional execution of code blocks</li>
-<li class="fragment">Syntax:</li>
+<li>Used for conditional execution of code blocks</li>
+<li>Syntax:</li>
 </ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="cf">if</span> (condition) {</span>
+<span id="cb2-2"><a></a>  <span class="co"># code to execute if condition is TRUE</span></span>
+<span id="cb2-3"><a></a>} <span class="cf">else</span> {</span>
+<span id="cb2-4"><a></a>  <span class="co"># code to execute if condition is FALSE</span></span>
+<span id="cb2-5"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="example-of-if-else" class="slide level2">
-<h2>Example of If Else</h2>
+<section id="review-example-of-if-else" class="slide level2">
+<h2>Review: Example of If Else</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>check_number <span class="ot">&lt;-</span> <span class="cf">function</span>(num) {</span>
+<span id="cb3-2"><a></a>  <span class="cf">if</span> (num <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb3-3"><a></a>    <span class="fu">return</span>(<span class="st">"Positive"</span>)</span>
+<span id="cb3-4"><a></a>  } <span class="cf">else</span> <span class="cf">if</span> (num <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
+<span id="cb3-5"><a></a>    <span class="fu">return</span>(<span class="st">"Negative"</span>)</span>
+<span id="cb3-6"><a></a>  } <span class="cf">else</span> {</span>
+<span id="cb3-7"><a></a>    <span class="fu">return</span>(<span class="st">"Zero"</span>)</span>
+<span id="cb3-8"><a></a>  }</span>
+<span id="cb3-9"><a></a>}</span>
+<span id="cb3-10"><a></a><span class="fu">check_number</span>(<span class="dv">10</span>)  <span class="co"># Output: "Positive"</span></span>
+<span id="cb3-11"><a></a><span class="fu">check_number</span>(<span class="sc">-</span><span class="dv">5</span>)  <span class="co"># Output: "Negative"</span></span>
+<span id="cb3-12"><a></a><span class="fu">check_number</span>(<span class="dv">0</span>)   <span class="co"># Output: "Zero"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="for-loops" class="slide level2">
-<h2>For Loops</h2>
+<section id="review-for-loops" class="slide level2">
+<h2>Review: For Loops</h2>
 <ul>
-<li class="fragment">Used to iterate over a sequence (like a vector or list)</li>
-<li class="fragment">Syntax:</li>
+<li>Used to iterate over a sequence (like a vector or list)</li>
+<li>Syntax:</li>
 </ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="cf">for</span> (variable <span class="cf">in</span> sequence) {</span>
+<span id="cb4-2"><a></a>  <span class="co"># code to execute for each element in sequence</span></span>
+<span id="cb4-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="example-of-for-loop" class="slide level2">
 <h2>Example of For Loop</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>sum_vector <span class="ot">&lt;-</span> <span class="cf">function</span>(vec) {</span>
+<span id="cb5-2"><a></a>  total <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb5-3"><a></a>  <span class="cf">for</span> (num <span class="cf">in</span> vec) {</span>
+<span id="cb5-4"><a></a>    total <span class="ot">&lt;-</span> total <span class="sc">+</span> num</span>
+<span id="cb5-5"><a></a>  }</span>
+<span id="cb5-6"><a></a>  <span class="fu">return</span>(total)</span>
+<span id="cb5-7"><a></a>}</span>
+<span id="cb5-8"><a></a><span class="fu">sum_vector</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>))  <span class="co"># Output: 15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="quarto-slides" class="slide level2">
-<h2>Quarto Slides</h2>
-<ul>
-<li class="fragment">Quarto allows you to create slides using markdown syntax</li>
-<li class="fragment">Use <code>#</code> or <code>##</code> to separate slides</li>
-<li class="fragment">Example:</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># Slide Title Main Heading</span></span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>Content of the slide goes here.</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Next Slide - Subheading</span></span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>More content here.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section>
+<section id="quarto-slides" class="title-slide slide level1 center">
+<h1>Quarto Slides</h1>
+
 </section>
-<section id="what-can-slides-contain" class="slide level2">
-<h2>What can slides contain?</h2>
+<section id="what-can-we-do-with-slides" class="slide level2">
+<h2>What can we do with slides?</h2>
+<p>As with our .qmd documents from last labs:</p>
 <ul>
 <li class="fragment">Text</li>
 <li class="fragment">Code chunks</li>
@@ -283,16 +307,141 @@ STAT 133
 </ul>
 <p>We use Quarto for slides in STAT 133!</p>
 </section>
+<section id="also" class="slide level2">
+<h2>Also:</h2>
+<ul>
+<li class="fragment">Line highlighting</li>
+<li class="fragment">Slide backgrounds and gradients</li>
+<li class="fragment">Themes</li>
+<li class="fragment">Transitions</li>
+</ul>
+<h3 id="and-much-more">And much more!</h3>
+<p>Find the complete documentation <a href="https://quarto.org/docs/presentations/revealjs/">here.</a></p>
+</section>
+<section id="yaml-heading-of-a-slide-document" class="slide level2">
+<h2>YAML Heading of a Slide Document</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>demo-pub2.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb6" data-filename="demo-pub2.qmd"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Demo Publication 3"</span></span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "First Contact with Quarto Slides"</span></span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Your Name"</span></span>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> revealjs</span></span>
+<span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="formatting-slides" class="slide level2">
+<h2>Formatting Slides</h2>
+<ul>
+<li>Quarto allows you to create slides using markdown syntax</li>
+<li>Use <code>#</code> or <code>##</code> to separate slides</li>
+<li>Example:</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># Slide 1 - Main Heading</span></span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>Content of the slide goes here.</span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Slide 2 - Smaller Heading</span></span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>More content here.</span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">### Slide 2 - Sub-subheading</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In slides, it will look like…</p>
+</section></section>
+<section>
+<section id="slide-1---main-heading" class="title-slide slide level1 center">
+<h1>Slide 1 - Main Heading</h1>
+
+</section>
+<section id="slide-2---smaller-heading" class="slide level2">
+<h2>Slide 2 - Smaller Heading</h2>
+<h3 id="slide-2---sub-subheading">Slide 2 - Sub-subheading</h3>
+</section>
+<section id="adding-code" class="slide level2">
+<h2>Adding code:</h2>
+<p>Code is added the same way as in regular <code>qmd</code> files, using code chunks.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># Example code chunk</span></span>
+<span id="cb8-2"><a></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb8-3"><a></a>y <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb8-4"><a></a>sum <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="line-highlighting" class="slide level2 smaller">
+<h2>Line highlighting</h2>
+<p>This code chunk:<br>
+<img data-src="images/linehighlighting.png"></p>
+<p>Creates this highlighting:</p>
+<div class="sourceCode" id="cb9" data-code-line-numbers="3-4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># Example function to calculate square</span></span>
+<span id="cb9-2"><a></a>square <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb9-3"><a></a>  <span class="fu">return</span>(x<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb9-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="how-the-line-numbers-work">How the line numbers work</h3>
+<p>“2”: highlights line 2<br>
+</p>
+<p>“3-4”: highlights lines 3 through 4<br>
+</p>
+</section>
+<section id="adding-slide-backgrounds---single-color" class="slide level2">
+<h2>Adding Slide Backgrounds - Single Color</h2>
+
+<img data-src="images/aquamarine.png" class="r-stretch"></section>
+<section id="adding-slide-backgrounds---gradient" class="slide level2">
+<h2>Adding Slide Backgrounds - Gradient</h2>
+
+<img data-src="images/gradient.png" class="r-stretch"></section>
+<section id="transitions---globally" class="slide level2">
+<h2>Transitions - Globally</h2>
+<p><a href="https://quarto.org/docs/presentations/revealjs/advanced.html#slide-transitions">Available types of transitions</a></p>
+<p>Here’s how you would set the global transition style for both slides and backgrounds:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>demo-pub2.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb10" data-filename="demo-pub2.qmd"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Demo Publication 3"</span></span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "First Contact with Quarto Slides"</span></span>
+<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Your Name"</span></span>
+<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">  revealjs:</span></span>
+<span id="cb10-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">    transition: slide</span></span>
+<span id="cb10-8"><a aria-hidden="true" tabindex="-1"></a><span class="co">    background-transition: fade</span></span>
+<span id="cb10-9"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="transitions---slide-by-slide" class="slide level2">
+<h2>Transitions - Slide by Slide</h2>
+<p>You can also specify the transition and/or transition-speed for an individual slide:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Slide Title {transition="fade" transition-speed="fast"}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br>
+</p>
+<p>You can also specify separate in and out transitions, for example:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Slide Title {transition="fade-in slide-out"}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section>
+<section id="quarto-pub" class="title-slide slide level1 center">
+<h1>Quarto Pub</h1>
+
+</section>
+<section id="requirements" class="slide level2 smaller">
+<h2>Requirements:</h2>
+<p>Your slides must contain:</p>
+<ul>
+<li><p>Title slide</p></li>
+<li><p>A function, for loop, and if else statement</p></li>
+<li><p>A highlighted line of code</p></li>
+<li><p>A theme</p></li>
+<li><p>Slide backgrounds (color and gradient)</p></li>
+<li><p>At least one figure (can be a web image or a local image)</p></li>
+<li><p>At least one transition</p></li>
+</ul>
+</section>
 <section id="like-last-week-folder-stat133" class="slide level2">
 <h2>Like last week: Folder <code>stat133/</code></h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>  stat133/</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    labs/</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>        lab1/</span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>        lab2/</span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>        lab3/</span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>    psets/</span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>        pset1/</span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>        pset2/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>  stat133/</span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a>    labs/</span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a>        lab1/</span>
+<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a>        lab2/</span>
+<span id="cb13-5"><a aria-hidden="true" tabindex="-1"></a>        lab3/</span>
+<span id="cb13-6"><a aria-hidden="true" tabindex="-1"></a>    psets/</span>
+<span id="cb13-7"><a aria-hidden="true" tabindex="-1"></a>        pset1/</span>
+<span id="cb13-8"><a aria-hidden="true" tabindex="-1"></a>        pset2/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="terminal-in-ide" class="slide level2">
 <h2>Terminal in IDE</h2>
@@ -308,57 +457,11 @@ STAT 133
 <div class="code-with-filename-file">
 <pre><strong>Terminal</strong></pre>
 </div>
-<div class="sourceCode" id="cb3" data-filename="Terminal"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># create an empty qmd file "demo-pub3.qmd"</span></span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># (to be used for your 2nd Quarto demo publication)</span></span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>touch demo-pub3.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14" data-filename="Terminal"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># create an empty qmd file "demo-pub3.qmd"</span></span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu"># (to be used for your 2nd Quarto demo publication)</span></span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>touch demo-pub3.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</section>
-<section id="open-your-demo-pub3.qmd-document" class="slide level2 smaller">
-<h2>Open your <code>demo-pub3.qmd</code> document</h2>
-<p>Make sure your <code>qmd</code> file has the following content (or something similar):</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>demo-pub2.qmd</strong></pre>
-</div>
-<div class="sourceCode" id="cb4" data-filename="demo-pub2.qmd"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Demo Publication 3"</span></span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "First Contact with Quarto Slides"</span></span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Your Name"</span></span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> revealjs</span></span>
-<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="adding-code" class="slide level2">
-<h2>Adding code:</h2>
-<p>Code is added the same way as in regular <code>qmd</code> files, using code chunks.</p>
-</section>
-<section id="slide-themes" class="slide level2">
-<h2>Slide Themes</h2>
-<p>Example:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> revealjs:</span></span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>  theme: solarized</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Explore more themes on the <a href="https://quarto.org/docs/presentations/revealjs/themes.html">Quarto Website</a></p>
-</section>
-<section id="line-highlighting" class="slide level2">
-<h2>Line highlighting</h2>
-</section>
-<section id="adding-slide-backgrounds" class="slide level2 smaller">
-<h2>Adding Slide Backgrounds</h2>
-<p>Single color:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Slide Title {background-color="aquamarine"}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Gradient:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Slide Title {background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)"}</span></span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Slide Title {background-gradient="radial-gradient(#283b95, #17b2c3)"}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section>
-<section id="quarto-pub" class="title-slide slide level1 center">
-<h1>Quarto Pub</h1>
-
-</section>
-<section id="requirements" class="slide level2">
-<h2>Requirements:</h2>
-<p>Your slides must contain: - Title slide with a link to <a href="https://quarto.org/">Quarto</a> - A function, for loop, and if else statement - A highlighted line of code - A theme - A slide background (color or gradient) - An image</p>
 </section>
 <section id="publishing-steps" class="slide level2">
 <h2>Publishing Steps</h2>
@@ -631,44 +734,6 @@ STAT 133
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

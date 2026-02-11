@@ -1232,7 +1232,7 @@
     "href": "lectures/10-factors/slides.html#while-youre-waiting",
     "title": "Factors and Data Frames",
     "section": "While you’re waiting",
-    "text": "While you’re waiting\nImagine you collect University ID number and major from 5 friends:\n\nuid &lt;- c(\"3850278\", \"5869204\", \"4728112\", \"3829651\", \"3859278\")\nmaj &lt;- c(\"STAT\", \"ECON\", \"STAT\", \"DATA\", \"ECON\")\n\n\nConceptually, in what ways is the data in these two vectors similar? In what ways is it different?\nImagine instead you asked 100 friends. For each vector, can you think of a more efficient way for the computer to store that data?"
+    "text": "While you’re waiting\nImagine you collect University ID number and major from 5 friends:\n\nuid &lt;- c(\"3850278\", \"5869204\", \"4728112\", \"3829651\", \"3859278\")\nmaj &lt;- c(\"STAT\", \"ECON\", \"STAT\", \"DATA\", \"ECON\")\n\n\n\n\nConceptually, in what ways is the data in these two vectors similar? In what ways is it different?\nImagine instead you asked 100 friends. For each vector, can you think of a more efficient way for the computer to store that data?"
   },
   {
     "objectID": "lectures/10-factors/slides.html#agenda",
@@ -1246,7 +1246,7 @@
     "href": "lectures/10-factors/slides.html#while-youre-waiting-1",
     "title": "Factors and Data Frames",
     "section": "While you’re waiting",
-    "text": "While you’re waiting\nImagine you collect University ID number and major from 5 friends:\n\nuid &lt;- c(\"3850278\", \"5869204\", \"4728112\", \"3829651\", \"3859278\")\nmaj &lt;- c(\"STAT\", \"ECON\", \"STAT\", \"DATA\", \"ECON\")\n\n\nConceptually, in what ways is the data in these two vectors similar? In what ways is it different?\nImagine instead you asked 100 friends. For each vector, can you think of a more efficient way for the computer to store that data?"
+    "text": "While you’re waiting\nImagine you collect University ID number and major from 5 friends:\n\nuid &lt;- c(\"3850278\", \"5869204\", \"4728112\", \"3829651\", \"3859278\")\nmaj &lt;- c(\"STAT\", \"ECON\", \"STAT\", \"DATA\", \"ECON\")\n\n\n\n\nConceptually, in what ways is the data in these two vectors similar? In what ways is it different?\nImagine instead you asked 100 friends. For each vector, can you think of a more efficient way for the computer to store that data?"
   },
   {
     "objectID": "lectures/10-factors/slides.html#factors-1",
@@ -1260,21 +1260,28 @@
     "href": "lectures/10-factors/slides.html#section",
     "title": "Factors and Data Frames",
     "section": "",
-    "text": "maj &lt;- factor(x = c(\"STAT\", \"ECON\", \"STAT\", \"DATA\", \"ECON\"))\nmaj\n\n[1] STAT ECON STAT DATA ECON\nLevels: DATA ECON STAT\n\n\n\n\n\n\nas.integer(maj)\n\n[1] 3 2 3 1 2\n\n\n\n\n\n\n\nc(maj, 2L)\n\n[1] 3 2 3 1 2 2"
+    "text": "maj &lt;- factor(x = c(\"STAT\", \"ECON\", \"STAT\", \"DATA\", \"ECON\"))\nmaj\n\n[1] STAT ECON STAT DATA ECON\nLevels: DATA ECON STAT\n\n\n\n\n\n\nas.integer(maj)\n\n[1] 3 2 3 1 2\n\n\n\n\n\n\n\nclass(maj)\n\n[1] \"factor\""
   },
   {
     "objectID": "lectures/10-factors/slides.html#attributes",
     "href": "lectures/10-factors/slides.html#attributes",
     "title": "Factors and Data Frames",
     "section": "Attributes",
-    "text": "Attributes\nObjects built on top of simpler data structures can have attributes. A factor’s attributes include its class and levels.\n\n\nclass(maj)\n\n\n\n[1] \"factor\"\n\n\n\n\n\n\n\nlevels(maj)\n\n\n\n[1] \"DATA\" \"ECON\" \"STAT\""
+    "text": "Attributes\nObjects built on top of simpler data structures can have attributes. A factor’s attributes include its class and levels.\n\n\nattributes(maj)\n\n\n\n$levels\n[1] \"DATA\" \"ECON\" \"STAT\"\n\n$class\n[1] \"factor\"\n\n\n\n\n\n\n\nlevels(maj)\n\n\n\n[1] \"DATA\" \"ECON\" \"STAT\""
+  },
+  {
+    "objectID": "lectures/10-factors/slides.html#treat-factors-like-vectors",
+    "href": "lectures/10-factors/slides.html#treat-factors-like-vectors",
+    "title": "Factors and Data Frames",
+    "section": "Treat factors like vectors",
+    "text": "Treat factors like vectors\n\nmaj\n\n[1] STAT ECON STAT DATA ECON\nLevels: DATA ECON STAT\n\n\n\n\nlength(maj)\n\n[1] 5\n\n\n\n\n\nmaj[1]\n\n[1] STAT\nLevels: DATA ECON STAT\n\n\n\n\n\nmaj[-2]\n\n[1] STAT STAT DATA ECON\nLevels: DATA ECON STAT"
   },
   {
     "objectID": "lectures/10-factors/slides.html#setting-levels",
     "href": "lectures/10-factors/slides.html#setting-levels",
     "title": "Factors and Data Frames",
     "section": "Setting Levels",
-    "text": "Setting Levels\nQuickly change all of the values with a particular level.\n\n\nlevels(maj) &lt;- c(\"DATA\", \"ECON\", \"STATISTICS\")\nmaj\n\n\n\n[1] STATISTICS ECON       STATISTICS DATA       ECON      \nLevels: DATA ECON STATISTICS\n\n\n\n\nAdd a level even if it’s not observed.\n\n\n\nlevels(maj) &lt;- c(\"DATA\", \"ECON\", \"STATISTICS\", \"BIO\")\nmaj\n\n\n\n[1] STATISTICS ECON       STATISTICS DATA       ECON      \nLevels: DATA ECON STATISTICS BIO"
+    "text": "Setting Levels\nQuickly change all of the values with a particular level.\n\nmaj\n\n[1] STAT ECON STAT DATA ECON\nLevels: DATA ECON STAT\n\n\n\n\n\n\nlevels(maj) &lt;- c(\"DATA\", \"ECON\", \"STATISTICS\")\nmaj\n\n\n\n[1] STATISTICS ECON       STATISTICS DATA       ECON      \nLevels: DATA ECON STATISTICS\n\n\n\n\nAdd a level even if it’s not observed.\n\n\n\nlevels(maj) &lt;- c(\"DATA\", \"ECON\", \"STATISTICS\", \"BIO\")\nmaj\n\n\n\n[1] STATISTICS ECON       STATISTICS DATA       ECON      \nLevels: DATA ECON STATISTICS BIO"
   },
   {
     "objectID": "lectures/10-factors/slides.html#taking-advantage-of-class",
@@ -1666,7 +1673,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 3 4"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 2 4"
   },
   {
     "objectID": "lectures/7-lists/slides.html#discuss-with-a-neighbor",
@@ -2675,56 +2682,126 @@
     "href": "labs/lab4/slides.html#agenda",
     "title": "Lab 4",
     "section": "Agenda",
-    "text": "Agenda\n\nReview: Basics of functions\nIf else statements, for loops\nQuarto Slides\n\nCreate your first slides\n\nQuartoPub\n\nSign up\n\n3rd Quarto Publication\nProblem Set 3"
+    "text": "Agenda\n\nReview: Basics of functions, if-else statements, for loops\nQuarto Slides\n\nHow can we format slides?\nCreate your first slides\n\n3rd Quarto Publication\nProblem Set 3"
   },
   {
     "objectID": "labs/lab4/slides.html#review-basics-of-functions",
     "href": "labs/lab4/slides.html#review-basics-of-functions",
     "title": "Lab 4",
     "section": "Review: Basics of Functions",
-    "text": "Review: Basics of Functions\n\nFunctions are defined using the function() command\nFunctions can take arguments (inputs) and return values (outputs)\nExample:"
+    "text": "Review: Basics of Functions\n\nFunctions are defined using the function() command\nFunctions can take arguments (inputs) and return values (outputs)\nExample:\n\nadd &lt;- function(x, y) {\n  sum &lt;- x + y\n  return(sum)\n}\nresult &lt;- add(3, 5)\n# Output: 8"
   },
   {
-    "objectID": "labs/lab4/slides.html#if-else-statements",
-    "href": "labs/lab4/slides.html#if-else-statements",
+    "objectID": "labs/lab4/slides.html#review-if-else-statements",
+    "href": "labs/lab4/slides.html#review-if-else-statements",
     "title": "Lab 4",
-    "section": "If Else Statements",
-    "text": "If Else Statements\n\nUsed for conditional execution of code blocks\nSyntax:"
+    "section": "Review: If Else Statements",
+    "text": "Review: If Else Statements\n\nUsed for conditional execution of code blocks\nSyntax:\n\nif (condition) {\n  # code to execute if condition is TRUE\n} else {\n  # code to execute if condition is FALSE\n}"
   },
   {
-    "objectID": "labs/lab4/slides.html#example-of-if-else",
-    "href": "labs/lab4/slides.html#example-of-if-else",
+    "objectID": "labs/lab4/slides.html#review-example-of-if-else",
+    "href": "labs/lab4/slides.html#review-example-of-if-else",
     "title": "Lab 4",
-    "section": "Example of If Else",
-    "text": "Example of If Else"
+    "section": "Review: Example of If Else",
+    "text": "Review: Example of If Else\ncheck_number &lt;- function(num) {\n  if (num &gt; 0) {\n    return(\"Positive\")\n  } else if (num &lt; 0) {\n    return(\"Negative\")\n  } else {\n    return(\"Zero\")\n  }\n}\ncheck_number(10)  # Output: \"Positive\"\ncheck_number(-5)  # Output: \"Negative\"\ncheck_number(0)   # Output: \"Zero\""
   },
   {
-    "objectID": "labs/lab4/slides.html#for-loops",
-    "href": "labs/lab4/slides.html#for-loops",
+    "objectID": "labs/lab4/slides.html#review-for-loops",
+    "href": "labs/lab4/slides.html#review-for-loops",
     "title": "Lab 4",
-    "section": "For Loops",
-    "text": "For Loops\n\nUsed to iterate over a sequence (like a vector or list)\nSyntax:"
+    "section": "Review: For Loops",
+    "text": "Review: For Loops\n\nUsed to iterate over a sequence (like a vector or list)\nSyntax:\n\nfor (variable in sequence) {\n  # code to execute for each element in sequence\n}"
   },
   {
     "objectID": "labs/lab4/slides.html#example-of-for-loop",
     "href": "labs/lab4/slides.html#example-of-for-loop",
     "title": "Lab 4",
     "section": "Example of For Loop",
-    "text": "Example of For Loop"
+    "text": "Example of For Loop\nsum_vector &lt;- function(vec) {\n  total &lt;- 0\n  for (num in vec) {\n    total &lt;- total + num\n  }\n  return(total)\n}\nsum_vector(c(1, 2, 3, 4, 5))  # Output: 15"
   },
   {
-    "objectID": "labs/lab4/slides.html#quarto-slides",
-    "href": "labs/lab4/slides.html#quarto-slides",
+    "objectID": "labs/lab4/slides.html#what-can-we-do-with-slides",
+    "href": "labs/lab4/slides.html#what-can-we-do-with-slides",
     "title": "Lab 4",
-    "section": "Quarto Slides",
-    "text": "Quarto Slides\n\nQuarto allows you to create slides using markdown syntax\nUse # or ## to separate slides\nExample:\n\n# Slide Title Main Heading\nContent of the slide goes here.\n## Next Slide - Subheading\nMore content here."
+    "section": "What can we do with slides?",
+    "text": "What can we do with slides?\nAs with our .qmd documents from last labs:\n\nText\nCode chunks\nFigures\n\nWe use Quarto for slides in STAT 133!"
   },
   {
-    "objectID": "labs/lab4/slides.html#what-can-slides-contain",
-    "href": "labs/lab4/slides.html#what-can-slides-contain",
+    "objectID": "labs/lab4/slides.html#also",
+    "href": "labs/lab4/slides.html#also",
     "title": "Lab 4",
-    "section": "What can slides contain?",
-    "text": "What can slides contain?\n\nText\nCode chunks\nFigures\n\nWe use Quarto for slides in STAT 133!"
+    "section": "Also:",
+    "text": "Also:\n\nLine highlighting\nSlide backgrounds and gradients\nThemes\nTransitions\n\nAnd much more!\nFind the complete documentation here."
+  },
+  {
+    "objectID": "labs/lab4/slides.html#yaml-heading-of-a-slide-document",
+    "href": "labs/lab4/slides.html#yaml-heading-of-a-slide-document",
+    "title": "Lab 4",
+    "section": "YAML Heading of a Slide Document",
+    "text": "YAML Heading of a Slide Document\n\n\ndemo-pub2.qmd\n\n---\ntitle: \"Demo Publication 3\"\nsubtitle: \"First Contact with Quarto Slides\"\nauthor: \"Your Name\"\nformat: revealjs\n---"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#formatting-slides",
+    "href": "labs/lab4/slides.html#formatting-slides",
+    "title": "Lab 4",
+    "section": "Formatting Slides",
+    "text": "Formatting Slides\n\nQuarto allows you to create slides using markdown syntax\nUse # or ## to separate slides\nExample:\n\n# Slide 1 - Main Heading\nContent of the slide goes here.\n## Slide 2 - Smaller Heading\nMore content here.\n### Slide 2 - Sub-subheading\nIn slides, it will look like…"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#slide-2---smaller-heading",
+    "href": "labs/lab4/slides.html#slide-2---smaller-heading",
+    "title": "Lab 4",
+    "section": "Slide 2 - Smaller Heading",
+    "text": "Slide 2 - Smaller Heading\nSlide 2 - Sub-subheading"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#adding-code",
+    "href": "labs/lab4/slides.html#adding-code",
+    "title": "Lab 4",
+    "section": "Adding code:",
+    "text": "Adding code:\nCode is added the same way as in regular qmd files, using code chunks.\n# Example code chunk\nx &lt;- 10\ny &lt;- 20\nsum &lt;- x + y"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#line-highlighting",
+    "href": "labs/lab4/slides.html#line-highlighting",
+    "title": "Lab 4",
+    "section": "Line highlighting",
+    "text": "Line highlighting\nThis code chunk:\n\nCreates this highlighting:\n# Example function to calculate square\nsquare &lt;- function(x) {\n  return(x^2)\n}\nHow the line numbers work\n“2”: highlights line 2\n\n“3-4”: highlights lines 3 through 4"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#adding-slide-backgrounds---single-color",
+    "href": "labs/lab4/slides.html#adding-slide-backgrounds---single-color",
+    "title": "Lab 4",
+    "section": "Adding Slide Backgrounds - Single Color",
+    "text": "Adding Slide Backgrounds - Single Color"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#adding-slide-backgrounds---gradient",
+    "href": "labs/lab4/slides.html#adding-slide-backgrounds---gradient",
+    "title": "Lab 4",
+    "section": "Adding Slide Backgrounds - Gradient",
+    "text": "Adding Slide Backgrounds - Gradient"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#transitions---globally",
+    "href": "labs/lab4/slides.html#transitions---globally",
+    "title": "Lab 4",
+    "section": "Transitions - Globally",
+    "text": "Transitions - Globally\nAvailable types of transitions\nHere’s how you would set the global transition style for both slides and backgrounds:\n\n\ndemo-pub2.qmd\n\n---\ntitle: \"Demo Publication 3\"\nsubtitle: \"First Contact with Quarto Slides\"\nauthor: \"Your Name\"\nformat:\n  revealjs:\n    transition: slide\n    background-transition: fade\n---"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#transitions---slide-by-slide",
+    "href": "labs/lab4/slides.html#transitions---slide-by-slide",
+    "title": "Lab 4",
+    "section": "Transitions - Slide by Slide",
+    "text": "Transitions - Slide by Slide\nYou can also specify the transition and/or transition-speed for an individual slide:\n## Slide Title {transition=\"fade\" transition-speed=\"fast\"}\n\n\nYou can also specify separate in and out transitions, for example:\n## Slide Title {transition=\"fade-in slide-out\"}"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#requirements",
+    "href": "labs/lab4/slides.html#requirements",
+    "title": "Lab 4",
+    "section": "Requirements:",
+    "text": "Requirements:\nYour slides must contain:\n\nTitle slide\nA function, for loop, and if else statement\nA highlighted line of code\nA theme\nSlide backgrounds (color and gradient)\nAt least one figure (can be a web image or a local image)\nAt least one transition"
   },
   {
     "objectID": "labs/lab4/slides.html#like-last-week-folder-stat133",
@@ -2739,48 +2816,6 @@
     "title": "Lab 4",
     "section": "Terminal in IDE",
     "text": "Terminal in IDE\n\nLaunch your IDE (Positron or RStudio)\nLaunch your Terminal (next to the Console tab)\ncd to your stat133/labs/ folder\ncreate a folder for this lab: mkdir lab4\ncd to lab4\n\n\n\n\nTerminal\n\n# create an empty qmd file \"demo-pub3.qmd\"\n# (to be used for your 2nd Quarto demo publication)\ntouch demo-pub3.qmd"
-  },
-  {
-    "objectID": "labs/lab4/slides.html#open-your-demo-pub3.qmd-document",
-    "href": "labs/lab4/slides.html#open-your-demo-pub3.qmd-document",
-    "title": "Lab 4",
-    "section": "Open your demo-pub3.qmd document",
-    "text": "Open your demo-pub3.qmd document\nMake sure your qmd file has the following content (or something similar):\n\n\ndemo-pub2.qmd\n\n---\ntitle: \"Demo Publication 3\"\nsubtitle: \"First Contact with Quarto Slides\"\nauthor: \"Your Name\"\nformat: revealjs\n---"
-  },
-  {
-    "objectID": "labs/lab4/slides.html#adding-code",
-    "href": "labs/lab4/slides.html#adding-code",
-    "title": "Lab 4",
-    "section": "Adding code:",
-    "text": "Adding code:\nCode is added the same way as in regular qmd files, using code chunks."
-  },
-  {
-    "objectID": "labs/lab4/slides.html#slide-themes",
-    "href": "labs/lab4/slides.html#slide-themes",
-    "title": "Lab 4",
-    "section": "Slide Themes",
-    "text": "Slide Themes\nExample:\nformat: revealjs:\n  theme: solarized\nExplore more themes on the Quarto Website"
-  },
-  {
-    "objectID": "labs/lab4/slides.html#line-highlighting",
-    "href": "labs/lab4/slides.html#line-highlighting",
-    "title": "Lab 4",
-    "section": "Line highlighting",
-    "text": "Line highlighting"
-  },
-  {
-    "objectID": "labs/lab4/slides.html#adding-slide-backgrounds",
-    "href": "labs/lab4/slides.html#adding-slide-backgrounds",
-    "title": "Lab 4",
-    "section": "Adding Slide Backgrounds",
-    "text": "Adding Slide Backgrounds\nSingle color:\n## Slide Title {background-color=\"aquamarine\"}\nGradient:\n## Slide Title {background-gradient=\"linear-gradient(to bottom, #283b95, #17b2c3)\"}\n## Slide Title {background-gradient=\"radial-gradient(#283b95, #17b2c3)\"}"
-  },
-  {
-    "objectID": "labs/lab4/slides.html#requirements",
-    "href": "labs/lab4/slides.html#requirements",
-    "title": "Lab 4",
-    "section": "Requirements:",
-    "text": "Requirements:\nYour slides must contain: - Title slide with a link to Quarto - A function, for loop, and if else statement - A highlighted line of code - A theme - A slide background (color or gradient) - An image"
   },
   {
     "objectID": "labs/lab4/slides.html#publishing-steps",
@@ -2956,7 +2991,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"silver\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"gold\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -2970,7 +3005,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"sophomore\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"junior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -3271,7 +3306,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 21     Daniel Gaff… DAL   C            82    265 October 1… US      5         \n2 1      LaMelo Ball  CHO   PG           79    180 August 22… US      4         \n3 21     Tyus Jones   PHO   PG           72    196 May 10, 1… US      9         \n4 1      Jaden Hardy  DAL   SG           75    198 July 5, 2… US      2         \n5 3      Josh Giddey  CHI   PG           79    216 October 1… AU      3         \n6 2      Collin Sext… UTA   SG           75    190 January 4… US      6         \n7 11     Brook Lopez  MIL   C            85    282 April 1, … US      16        \n8 2      Josh Okogie  PHO   SG           76    213 September… NG      6         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 9      Nickeil Ale… MIN   SG           77    205 September… CA      5         \n2 13     Isaiah Coll… UTA   PG           76    210 October 8… US      R         \n3 33     Tre Jones    SAS   PG           73    185 January 8… US      4         \n4 22     Richaun Hol… WAS   PF           81    235 October 1… US      9         \n5 55     Derrick Jon… LAC   SF           78    210 February … US      8         \n6 45     Donovan Mit… CLE   SG           74    215 September… US      7         \n7 7      Cam Whitmore HOU   SF           78    230 July 8, 2… US      1         \n8 55     Isaiah Hart… OKC   C            84    250 May 5, 19… US      6         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
