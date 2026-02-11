@@ -150,7 +150,7 @@ Lab 3: [__Quiz 1__]{.label-Quiz} | [slides](labs/lab3/slides.html) | [PS2](https
 #### Description
 [Functions](lectures/9-functions/slides.html)
 
-Factors and Data Frames 
+[Factors and Data Frames](lectures/10-factors/slides.html)
 
 Lab 4: slides | PS3
 
