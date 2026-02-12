@@ -1673,7 +1673,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 2 4"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 6 1"
   },
   {
     "objectID": "lectures/7-lists/slides.html#discuss-with-a-neighbor",
@@ -2682,7 +2682,7 @@
     "href": "labs/lab4/slides.html#agenda",
     "title": "Lab 4",
     "section": "Agenda",
-    "text": "Agenda\n\nReview: Basics of functions, if-else statements, for loops\nQuarto Slides\n\nHow can we format slides?\nCreate your first slides\n\n3rd Quarto Publication\nProblem Set 3"
+    "text": "Agenda\n\nReview: Basics of functions, if-else statements, for loops\nQuarto Slides\n\nHow can we make slides?\nCreate your first slides\n\n3rd Quarto Publication\nProblem Set 3"
   },
   {
     "objectID": "labs/lab4/slides.html#review-basics-of-functions",
@@ -2703,7 +2703,7 @@
     "href": "labs/lab4/slides.html#review-example-of-if-else",
     "title": "Lab 4",
     "section": "Review: Example of If Else",
-    "text": "Review: Example of If Else\ncheck_number &lt;- function(num) {\n  if (num &gt; 0) {\n    return(\"Positive\")\n  } else if (num &lt; 0) {\n    return(\"Negative\")\n  } else {\n    return(\"Zero\")\n  }\n}\ncheck_number(10)  # Output: \"Positive\"\ncheck_number(-5)  # Output: \"Negative\"\ncheck_number(0)   # Output: \"Zero\""
+    "text": "Review: Example of If Else\nlight &lt;- \"green\"\n\nif (light == \"green\") {\n  saber &lt;- \"Jedi\"\n} else {\n  saber &lt;- \"Sith\"\n}\n\nsaber"
   },
   {
     "objectID": "labs/lab4/slides.html#review-for-loops",
@@ -2731,21 +2731,21 @@
     "href": "labs/lab4/slides.html#also",
     "title": "Lab 4",
     "section": "Also:",
-    "text": "Also:\n\nLine highlighting\nSlide backgrounds and gradients\nThemes\nTransitions\n\nAnd much more!\nFind the complete documentation here."
+    "text": "Also:\n\nIn-line code\nCode folding\nSlide backgrounds and gradients\nBulleted lists and incremental bullets\n\nAnd much more!\nQuarto Documentation"
   },
   {
     "objectID": "labs/lab4/slides.html#yaml-heading-of-a-slide-document",
     "href": "labs/lab4/slides.html#yaml-heading-of-a-slide-document",
     "title": "Lab 4",
     "section": "YAML Heading of a Slide Document",
-    "text": "YAML Heading of a Slide Document\n\n\ndemo-pub2.qmd\n\n---\ntitle: \"Demo Publication 3\"\nsubtitle: \"First Contact with Quarto Slides\"\nauthor: \"Your Name\"\nformat: revealjs\n---"
+    "text": "YAML Heading of a Slide Document\nIf QuartoPub not working, embed-resources to true to make sure all resources are included in the published document.\n\n\ndemo-pub2.qmd\n\n---\ntitle: \"Demo Publication 3\"\nsubtitle: \"First Contact with Quarto Slides\"\nauthor: \"Your Name\"\nformat: \n  revealjs:\n    embed-resources: true\n---"
   },
   {
     "objectID": "labs/lab4/slides.html#formatting-slides",
     "href": "labs/lab4/slides.html#formatting-slides",
     "title": "Lab 4",
     "section": "Formatting Slides",
-    "text": "Formatting Slides\n\nQuarto allows you to create slides using markdown syntax\nUse # or ## to separate slides\nExample:\n\n# Slide 1 - Main Heading\nContent of the slide goes here.\n## Slide 2 - Smaller Heading\nMore content here.\n### Slide 2 - Sub-subheading\nIn slides, it will look like…"
+    "text": "Formatting Slides\n\nQuarto allows you to create slides using markdown syntax\nUse # or ## to separate slides\nExample:\n\n# Slide 1 - Main Heading\nContent of the slide goes here.\n\n## Slide 2 - Smaller Heading\nMore content here.\n\n### Slide 2 - Sub-subheading"
   },
   {
     "objectID": "labs/lab4/slides.html#slide-2---smaller-heading",
@@ -2758,22 +2758,43 @@
     "objectID": "labs/lab4/slides.html#adding-code",
     "href": "labs/lab4/slides.html#adding-code",
     "title": "Lab 4",
-    "section": "Adding code:",
-    "text": "Adding code:\nCode is added the same way as in regular qmd files, using code chunks.\n# Example code chunk\nx &lt;- 10\ny &lt;- 20\nsum &lt;- x + y"
+    "section": "Adding code",
+    "text": "Adding code\nCode is added the same way as in regular qmd files, using code chunks.\n\n# Example code chunk\nx &lt;- 10\ny &lt;- 20\nsum &lt;- x + y\n\nBut we can also do a lot more with code chunks in slides, such as…"
   },
   {
-    "objectID": "labs/lab4/slides.html#line-highlighting",
-    "href": "labs/lab4/slides.html#line-highlighting",
+    "objectID": "labs/lab4/slides.html#echo-true",
+    "href": "labs/lab4/slides.html#echo-true",
     "title": "Lab 4",
-    "section": "Line highlighting",
-    "text": "Line highlighting\nThis code chunk:\n\nCreates this highlighting:\n# Example function to calculate square\nsquare &lt;- function(x) {\n  return(x^2)\n}\nHow the line numbers work\n“2”: highlights line 2\n\n“3-4”: highlights lines 3 through 4"
+    "section": "Echo True",
+    "text": "Echo True\nBy default, code chunks in slides will show the code but not the output. You can control this behavior using the echo option.\n\n\n# This code will be shown in the slide\nx &lt;- 10\ny &lt;- 20\nsum &lt;- x + y"
   },
   {
-    "objectID": "labs/lab4/slides.html#adding-slide-backgrounds---single-color",
-    "href": "labs/lab4/slides.html#adding-slide-backgrounds---single-color",
+    "objectID": "labs/lab4/slides.html#in-line-code",
+    "href": "labs/lab4/slides.html#in-line-code",
     "title": "Lab 4",
-    "section": "Adding Slide Backgrounds - Single Color",
-    "text": "Adding Slide Backgrounds - Single Color"
+    "section": "In-line code",
+    "text": "In-line code\nYou can also include in-line code using backticks:\n\n\nTalk to a partner: what would these lines output?"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#in-line-code-1",
+    "href": "labs/lab4/slides.html#in-line-code-1",
+    "title": "Lab 4",
+    "section": "In-line code",
+    "text": "In-line code\nThis code outputs:\n\nThe sum of x and y is x + y.\nThe sum of x and y is 30.\n\nUseful for:\n- showing code without running it\n- showing formulas or calculations without needing a full code chunk"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#code-folding",
+    "href": "labs/lab4/slides.html#code-folding",
+    "title": "Lab 4",
+    "section": "Code Folding",
+    "text": "Code Folding\nYou can fold code chunks to hide them by default and allow the audience to expand them if they want to see the code.\nIn YAML header:\n---\ntitle: \"Demo Publication 3\"\nsubtitle: \"First Contact with Quarto Slides\"\nauthor: \"Your Name\"\nformat: \n  revealjs:\n    code-fold: true\n    embed-resources: true\n---"
+  },
+  {
+    "objectID": "labs/lab4/slides.html#code-folding-1",
+    "href": "labs/lab4/slides.html#code-folding-1",
+    "title": "Lab 4",
+    "section": "Code Folding",
+    "text": "Code Folding\nIn each code block that you want to fold:"
   },
   {
     "objectID": "labs/lab4/slides.html#adding-slide-backgrounds---gradient",
@@ -2783,25 +2804,25 @@
     "text": "Adding Slide Backgrounds - Gradient"
   },
   {
-    "objectID": "labs/lab4/slides.html#transitions---globally",
-    "href": "labs/lab4/slides.html#transitions---globally",
+    "objectID": "labs/lab4/slides.html#transitions-by-slide",
+    "href": "labs/lab4/slides.html#transitions-by-slide",
     "title": "Lab 4",
-    "section": "Transitions - Globally",
-    "text": "Transitions - Globally\nAvailable types of transitions\nHere’s how you would set the global transition style for both slides and backgrounds:\n\n\ndemo-pub2.qmd\n\n---\ntitle: \"Demo Publication 3\"\nsubtitle: \"First Contact with Quarto Slides\"\nauthor: \"Your Name\"\nformat:\n  revealjs:\n    transition: slide\n    background-transition: fade\n---"
+    "section": "Transitions by Slide",
+    "text": "Transitions by Slide\nYou can specify the transition and/or transition-speed for an individual slide:\n## Slide Title {transition=\"fade\" transition-speed=\"fast\"}\n\n\nYou can also specify separate in and out transitions, for example:\n## Slide Title {transition=\"fade-in slide-out\"}"
   },
   {
-    "objectID": "labs/lab4/slides.html#transitions---slide-by-slide",
-    "href": "labs/lab4/slides.html#transitions---slide-by-slide",
+    "objectID": "labs/lab4/slides.html#incremental-bullets-1",
+    "href": "labs/lab4/slides.html#incremental-bullets-1",
     "title": "Lab 4",
-    "section": "Transitions - Slide by Slide",
-    "text": "Transitions - Slide by Slide\nYou can also specify the transition and/or transition-speed for an individual slide:\n## Slide Title {transition=\"fade\" transition-speed=\"fast\"}\n\n\nYou can also specify separate in and out transitions, for example:\n## Slide Title {transition=\"fade-in slide-out\"}"
+    "section": "Incremental Bullets",
+    "text": "Incremental Bullets\n\nFirst bullet\nSecond bullet\nThird bullet\n\nThese are helpful to reveal information step by step, keeping the attention on the current point being discussed."
   },
   {
     "objectID": "labs/lab4/slides.html#requirements",
     "href": "labs/lab4/slides.html#requirements",
     "title": "Lab 4",
     "section": "Requirements:",
-    "text": "Requirements:\nYour slides must contain:\n\nTitle slide\nA function, for loop, and if else statement\nA highlighted line of code\nA theme\nSlide backgrounds (color and gradient)\nAt least one figure (can be a web image or a local image)\nAt least one transition"
+    "text": "Requirements:\n\n\nYour slides must contain:\n\nTitle slide\nAt least one figure (web image or a local image)\nSlide backgrounds (color and gradient)\nAt least one incremental feature\nUse in-line code and code folding features\nA function that decides the college of the student depending on its mascot (Bear = UC Berkeley, Tree = Stanford) using an if-else statement"
   },
   {
     "objectID": "labs/lab4/slides.html#like-last-week-folder-stat133",
@@ -3005,7 +3026,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"junior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"freshman\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -3306,7 +3327,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 9      Nickeil Ale… MIN   SG           77    205 September… CA      5         \n2 13     Isaiah Coll… UTA   PG           76    210 October 8… US      R         \n3 33     Tre Jones    SAS   PG           73    185 January 8… US      4         \n4 22     Richaun Hol… WAS   PF           81    235 October 1… US      9         \n5 55     Derrick Jon… LAC   SF           78    210 February … US      8         \n6 45     Donovan Mit… CLE   SG           74    215 September… US      7         \n7 7      Cam Whitmore HOU   SF           78    230 July 8, 2… US      1         \n8 55     Isaiah Hart… OKC   C            84    250 May 5, 19… US      6         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 5      \"Sam Merril… CLE   SG           76    205 May 15, 1… US      4         \n2 23     \"Lauri Mark… UTA   PF           85    240 May 22, 1… FI      7         \n3 23     \"Draymond G… GSW   PF           78    230 March 4, … US      12        \n4 14     \"MarJon Bea… NYK   SF           79    199 October 1… US      2         \n5 4      \"Nick Richa… CHO   C            83    245 November … JM      4         \n6 16     \"Lonnie Wal… PHI   SG           76    204 December … US      6         \n7 0      \"Donte DiVi… MIN   SG           76    203 January 3… US      6         \n8 9      \"Nikola VuÄ… CHI   C            81    260 October 2… CH      13        \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
