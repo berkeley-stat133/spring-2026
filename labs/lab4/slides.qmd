@@ -3,14 +3,13 @@ title: "Lab 4"
 subtitle: "Basics of Functions"
 author: "STAT 133"
 format: stat133slides-revealjs
-chalkboard: true
 ---
 
 ## Agenda
 
 -   Review: Basics of functions, if-else statements, for loops
 -   Quarto Slides
-    -   How can we format slides?
+    -   How can we make slides?
     -   Create your first slides
 -   3rd Quarto Publication
 -   Problem Set 3
@@ -51,18 +50,15 @@ if (condition) {
 
 ::: nonincremental
 ``` r
-check_number <- function(num) {
-  if (num > 0) {
-    return("Positive")
-  } else if (num < 0) {
-    return("Negative")
-  } else {
-    return("Zero")
-  }
+light <- "green"
+
+if (light == "green") {
+  saber <- "Jedi"
+} else {
+  saber <- "Sith"
 }
-check_number(10)  # Output: "Positive"
-check_number(-5)  # Output: "Negative"
-check_number(0)   # Output: "Zero"
+
+saber
 ```
 :::
 
@@ -105,23 +101,26 @@ As with our .qmd documents from last labs:
 We use Quarto for slides in STAT 133!
 
 ## Also:
--   Line highlighting
+-   In-line code
+-   Code folding
 -   Slide backgrounds and gradients
--   Themes
--   Transitions
+-   Bulleted lists and incremental bullets
 
 ### And much more!
-Find the complete documentation [here.](https://quarto.org/docs/presentations/revealjs/)
+[Quarto Documentation](https://quarto.org/docs/presentations/revealjs/)
 
 
 ## YAML Heading of a Slide Document
+If QuartoPub not working, embed-resources to true to make sure all resources are included in the published document.
 
 ``` {.markdown filename="demo-pub2.qmd" code-line-numbers="false"}
 ---
 title: "Demo Publication 3"
 subtitle: "First Contact with Quarto Slides"
 author: "Your Name"
-format: revealjs
+format: 
+  revealjs:
+    embed-resources: true
 ---
 ```
 
@@ -134,12 +133,13 @@ format: revealjs
 ``` {.markdown code-line-numbers="false"}
 # Slide 1 - Main Heading
 Content of the slide goes here.
+
 ## Slide 2 - Smaller Heading
 More content here.
+
 ### Slide 2 - Sub-subheading
 ```
 
-In slides, it will look like...
 :::
 
 # Slide 1 - Main Heading
@@ -151,37 +151,85 @@ In slides, it will look like...
 
 
 
-## Adding code:
+## Adding code
 
 Code is added the same way as in regular `qmd` files, using code chunks.
-
+\
 ``` r
 # Example code chunk
 x <- 10
 y <- 20
 sum <- x + y
 ```
+\
+But we can also do a lot more with code chunks in slides, such as...
 
-## Line highlighting {.smaller}
-This code chunk: \
-![](images/linehighlighting.png)
+## Echo True
+By default, code chunks in slides will show the code but not the output. You can control this behavior using the `echo` option.
 
+![](images/echotrue.png)
 
-Creates this highlighting:
-``` {.r code-line-numbers="3-4"}
-# Example function to calculate square
-square <- function(x) {
-  return(x^2)
-}
+``` {r}
+#| echo: true
+# This code will be shown in the slide
+x <- 10
+y <- 20
+sum <- x + y
 ```
 
-### How the line numbers work
+## In-line code
+You can also include in-line code using backticks: \
+![](images/inline.png)
+\
 
-"2": highlights line 2\
+Talk to a partner: what would these lines output?
 
-"3-4": highlights lines 3 through 4\
+## In-line code
+This code outputs: \
+\
+The sum of `x` and `y` is `x + y`. \
+The sum of `x` and `y` is `r x + y`.
+\
+\
+**Useful for:** \
+- showing code without running it \
+- showing formulas or calculations without needing a full code chunk
 
-## Adding Slide Backgrounds - Single Color
+## Code Folding
+You can fold code chunks to hide them by default and allow the audience to expand them if they want to see the code.
+
+In YAML header:
+
+``` {.markdown code-line-numbers="false"}
+---
+title: "Demo Publication 3"
+subtitle: "First Contact with Quarto Slides"
+author: "Your Name"
+format: 
+  revealjs:
+    code-fold: true
+    embed-resources: true
+---
+```
+
+## Code Folding
+In each code block that you want to fold:
+
+![](images/code_fold.png){width=50px}
+
+``` {r}
+#| code-fold: true
+# This code will be hidden by default
+x <- 10
+y <- 20
+sum <- x + y
+```
+
+
+# Backgrounds
+Another formatting option is to add backgrounds to your slides. You can use either a single color or a gradient.
+
+# Adding Slide Backgrounds - Single Color
 
 ![](images/aquamarine.png)
 
@@ -189,26 +237,9 @@ square <- function(x) {
 
 ![](images/gradient.png)
 
-## Transitions - Globally
 
-[Available types of transitions](https://quarto.org/docs/presentations/revealjs/advanced.html#slide-transitions)
-
-Here’s how you would set the global transition style for both slides and backgrounds:
-
-``` {.markdown filename="demo-pub2.qmd" code-line-numbers="false"}
----
-title: "Demo Publication 3"
-subtitle: "First Contact with Quarto Slides"
-author: "Your Name"
-format:
-  revealjs:
-    transition: slide
-    background-transition: fade
----
-```
-
-## Transitions - Slide by Slide
-You can also specify the transition and/or transition-speed for an individual slide:
+## Transitions by Slide
+You can specify the transition and/or transition-speed for an individual slide:
 
 ``` {.markdown code-line-numbers="false"}
 ## Slide Title {transition="fade" transition-speed="fast"}
@@ -220,6 +251,23 @@ You can also specify separate in and out transitions, for example:
 ## Slide Title {transition="fade-in slide-out"}
 ```
 
+# Incremental Bullets {.smaller}
+Last week: used `:::` to create columns. This week: use `:::` to create incremental bullets.
+``` {.markdown code-line-numbers="false"}
+::: {.incremental}
+-   First bullet
+-   Second bullet
+-   Third bullet
+:::
+```
+
+## Incremental Bullets
+-   First bullet
+-   Second bullet
+-   Third bullet
+
+These are helpful to reveal information step by step, keeping the attention on the current point being discussed.
+
 
 # Quarto Pub
 
@@ -227,22 +275,37 @@ You can also specify separate in and out transitions, for example:
 
 :::{.nonincremental}
 
+::: {.columns}
+::: {.column width="65%"}
+
 Your slides must contain:
 
 -   Title slide
 
--   A function, for loop, and if else statement
-
--   A highlighted line of code
-
--   A theme
+-   At least one figure (web image or a local image)
 
 -   Slide backgrounds (color and gradient)
 
--   At least one figure (can be a web image or a local image)
+-   At least one incremental feature
 
--   At least one transition
+-   Use in-line code and code folding features
+
+-   A function that decides the college of the student depending on its mascot (Bear = UC Berkeley, Tree = Stanford) using an if-else statement
+
 :::
+::: {.column width="30%"}
+
+![Stanford Tree](images/tree.png){width=200px fig-align="right"} \
+![Cal Bear](images/bear.png){width=200px fig-align="right"}
+
+:::
+:::
+<!-- end columns -->
+
+
+:::
+
+
 
 ## Like last week: Folder `stat133/`
 
