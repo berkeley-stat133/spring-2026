@@ -154,7 +154,7 @@ Lab 3: [__Quiz 1__]{.label-Quiz} | [slides](labs/lab3/slides.html) | [PS2](https
 
 Lab 4: [slides](labs/lab4/slides.html) | [PS3](https://bcourses.berkeley.edu/courses/1551809/assignments/9021596)
 
-Data Wrangling I | Proj2
+[Data Wrangling I](lectures/11-data-wrangling1/slides.html) | [Proj2](https://bcourses.berkeley.edu/courses/1551809/assignments/9021607)
 :::
 
 ::: {.column width="50%"}

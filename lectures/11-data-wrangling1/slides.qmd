@@ -2,6 +2,8 @@
 title: "Data Warngling I"
 subtitle: "Manipulating data frames with `dplyr`"
 format: stat133slides-revealjs
+revealjs-plugins:
+  - drop
 chalkboard: true
 ---
 
