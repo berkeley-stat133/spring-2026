@@ -2,6 +2,8 @@
 title: "Importing Tables"
 subtitle: "Reading data in R"
 format: stat133slides-revealjs
+revealjs-plugins:
+  - drop
 chalkboard: true
 ---
 
@@ -229,8 +231,6 @@ Luke male 1.70
 Han male 1.80
 ```
 
-. . .
-
 - The first line is not that relevant.
 - The subsequent lines (2-4) ARE important.
 - The data in each line consists of:
@@ -307,6 +307,17 @@ w
 ```
 :::
 ::::
+
+
+## About `scan()`
+
+- `scan()` is R's main [low-level]{.mdlit} function to read in data values.
+- It imports data either into a __vector__ or a __list__ (argument `what`).
+- `scan()` expects to read "white-space" delimited input fields by default.
+- You can change the field separator with `sep`.
+- In practice, you won't be using `scan()` that much, instead you'll use [high-level]{.hilit} functions---which depend on `scan()`.
+- But now you know about its basic usage.
+- See `?scan` for more information.
 
 
 ##
@@ -397,22 +408,11 @@ df
 ```
 
 
-## About `scan()`
-
-- `scan()` is R's main [low-level]{.mdlit} function to read in data values.
-- It imports data either into a __vector__ or a __list__ (argument `what`).
-- `scan()` expects to read "white-space" delimited input fields by default.
-- You can change the field separator with `sep`.
-- In practice, you won't be using `scan()` that much, instead you'll use [high-level]{.mdlit} functions---which depend on `scan()`.
-- But now you know about its basic usage.
-- See `?scan` for more information.
-
-
 # Reading a File
 
-## Reading a file, line-by-line
+## Reading a text file, line-by-line
 
-The standard recipe to read the content of a file follows these steps:
+Most software programs follow a standard recipe to read the content of a text file:
 
 1) Establish a [connection]{.hilit} (or stream source) with the desired file.
 
@@ -426,7 +426,7 @@ The standard recipe to read the content of a file follows these steps:
 
 . . .
 
-- In R, pretty much all functions to import data take care of all these steps.
+- In R, pretty much all functions to import data tables take care of all these steps.
 
 - Most of the time you will be specifying [arguments related to step 4]{.mdlit} to tell R 
 details about the parsing and data conversion.
