@@ -1,0 +1,3567 @@
+"year","county","make","model","fuel_type","sales"
+2023,"Alameda","Alfa Romeo","Tonale","PHEV",2
+2023,"Alameda","Audi","Q4 e-tron","Electric",141
+2023,"Alameda","Audi","Q4 e-tron Sportback","Electric",31
+2023,"Alameda","Audi","Q5","PHEV",43
+2023,"Alameda","Audi","Q8 e-tron","Electric",72
+2023,"Alameda","Audi","Q8 e-tron Sportback","Electric",20
+2023,"Alameda","Audi","RS e-tron GT","Electric",7
+2023,"Alameda","Audi","SQ8 e-tron Sportback","Electric",1
+2023,"Alameda","Audi","e-tron","Electric",18
+2023,"Alameda","Audi","e-tron GT","Electric",18
+2023,"Alameda","Audi","e-tron S","Electric",4
+2023,"Alameda","Audi","e-tron S Sportback","Electric",1
+2023,"Alameda","Audi","e-tron Sportback","Electric",5
+2023,"Alameda","BMW","3 Series","PHEV",57
+2023,"Alameda","BMW","5 Series","PHEV",56
+2023,"Alameda","BMW","7 Series","PHEV",1
+2023,"Alameda","BMW","X5","PHEV",203
+2023,"Alameda","BMW","XM","PHEV",4
+2023,"Alameda","BMW","i4","Electric",460
+2023,"Alameda","BMW","i5","Electric",8
+2023,"Alameda","BMW","i7","Electric",20
+2023,"Alameda","BMW","iX","Electric",237
+2023,"Alameda","Cadillac","LYRIQ","Electric",65
+2023,"Alameda","Chevrolet","Blazer EV","Electric",1
+2023,"Alameda","Chevrolet","Bolt EUV","Electric",804
+2023,"Alameda","Chevrolet","Bolt EV","Electric",405
+2023,"Alameda","Chrysler","Pacifica Hybrid","PHEV",40
+2023,"Alameda","Chrysler","Pacifica Plug-In Hybrid","PHEV",91
+2023,"Alameda","Dodge","Hornet","PHEV",1
+2023,"Alameda","Ferrari","296 GTB","PHEV",2
+2023,"Alameda","Fisker","Ocean","Electric",41
+2023,"Alameda","Ford","E-Transit","Electric",19
+2023,"Alameda","Ford","Escape Plug-In Hybrid","PHEV",60
+2023,"Alameda","Ford","F-150 Lightning","Electric",152
+2023,"Alameda","Ford","Mustang Mach-E","Electric",707
+2023,"Alameda","GMC","HUMMER EV","Electric",4
+2023,"Alameda","Genesis","Electrified G80","Electric",2
+2023,"Alameda","Genesis","Electrified GV70","Electric",14
+2023,"Alameda","Genesis","GV60","Electric",37
+2023,"Alameda","Hyundai","IONIQ 5","Electric",483
+2023,"Alameda","Hyundai","IONIQ 6","Electric",165
+2023,"Alameda","Hyundai","KONA Electric","Electric",235
+2023,"Alameda","Hyundai","NEXO","Hydrogen",13
+2023,"Alameda","Hyundai","SANTA FE Plug-In Hybrid","PHEV",40
+2023,"Alameda","Hyundai","TUCSON Plug-in Hybrid","PHEV",73
+2023,"Alameda","Jaguar","I-PACE","Electric",1
+2023,"Alameda","Jeep","Grand Cherokee","PHEV",73
+2023,"Alameda","Jeep","Wrangler","PHEV",220
+2023,"Alameda","Jeep","Wrangler Unlimited","PHEV",13
+2023,"Alameda","Kia","EV6","Electric",187
+2023,"Alameda","Kia","EV9","Electric",3
+2023,"Alameda","Kia","Niro EV","Electric",385
+2023,"Alameda","Kia","Niro Plug-In Hybrid","PHEV",39
+2023,"Alameda","Kia","Sorento Plug-In Hybrid","PHEV",36
+2023,"Alameda","Kia","Sportage Plug-In Hybrid","PHEV",82
+2023,"Alameda","Land Rover","Range Rover","PHEV",1
+2023,"Alameda","Land Rover","Range Rover Sport","PHEV",2
+2023,"Alameda","Lexus","NX 450h+","PHEV",104
+2023,"Alameda","Lexus","RX 450h+","PHEV",7
+2023,"Alameda","Lexus","RZ 450e","Electric",66
+2023,"Alameda","Lincoln","Aviator","PHEV",8
+2023,"Alameda","Lincoln","Corsair","PHEV",9
+2023,"Alameda","Lucid","Air","Electric",138
+2023,"Alameda","MINI","Countryman Plug-in Hybrid","PHEV",9
+2023,"Alameda","MINI","Hardtop 2 Door","Electric",58
+2023,"Alameda","Mazda","CX-90 PHEV","PHEV",96
+2023,"Alameda","Mazda","MX-30 EV","Electric",5
+2023,"Alameda","McLaren","Artura","PHEV",2
+2023,"Alameda","Mercedes-Benz","EQB","Electric",256
+2023,"Alameda","Mercedes-Benz","EQE","Electric",293
+2023,"Alameda","Mercedes-Benz","EQS","Electric",210
+2023,"Alameda","Mercedes-Benz","GLE","PHEV",21
+2023,"Alameda","Mercedes-Benz","S-Class","PHEV",1
+2023,"Alameda","Mitsubishi","Outlander PHEV","PHEV",49
+2023,"Alameda","Nissan","Ariya","Electric",158
+2023,"Alameda","Nissan","LEAF","Electric",115
+2023,"Alameda","Polestar","2","Electric",69
+2023,"Alameda","Porsche","Cayenne","PHEV",2
+2023,"Alameda","Porsche","Panamera","PHEV",2
+2023,"Alameda","Porsche","Taycan","Electric",84
+2023,"Alameda","Rivian","EDV 500","Electric",12
+2023,"Alameda","Rivian","EDV 700","Electric",75
+2023,"Alameda","Rivian","R1S","Electric",399
+2023,"Alameda","Rivian","R1T","Electric",155
+2023,"Alameda","Subaru","Crosstrek","PHEV",26
+2023,"Alameda","Tesla","Model 3","Electric",4285
+2023,"Alameda","Tesla","Model S","Electric",230
+2023,"Alameda","Tesla","Model X","Electric",687
+2023,"Alameda","Tesla","Model Y","Electric",9597
+2023,"Alameda","Toyota","Mirai","Hydrogen",115
+2023,"Alameda","Toyota","Prius Prime","PHEV",155
+2023,"Alameda","Toyota","RAV4 Prime","PHEV",339
+2023,"Alameda","Toyota/Subaru","bZ4X/Solterra","Electric",277
+2023,"Alameda","VinFast","VF8","Electric",8
+2023,"Alameda","Volkswagen","ID.4","Electric",885
+2023,"Alameda","Volvo","C40 Recharge","Electric",80
+2023,"Alameda","Volvo","S60 Recharge","PHEV",13
+2023,"Alameda","Volvo","S90 Recharge","PHEV",1
+2023,"Alameda","Volvo","V60 Recharge","PHEV",4
+2023,"Alameda","Volvo","XC40 Recharge","Electric",109
+2023,"Alameda","Volvo","XC60 Recharge","PHEV",59
+2023,"Alameda","Volvo","XC90 Recharge","PHEV",110
+2023,"Alpine","Kia","Niro EV","Electric",1
+2023,"Alpine","Rivian","R1S","Electric",1
+2023,"Alpine","Subaru","Crosstrek","PHEV",1
+2023,"Alpine","Tesla","Model 3","Electric",1
+2023,"Alpine","Tesla","Model Y","Electric",2
+2023,"Amador","Audi","e-tron","Electric",1
+2023,"Amador","BMW","i4","Electric",1
+2023,"Amador","Chevrolet","Bolt EUV","Electric",4
+2023,"Amador","Chevrolet","Bolt EV","Electric",5
+2023,"Amador","Chrysler","Pacifica Plug-In Hybrid","PHEV",2
+2023,"Amador","Ford","F-150 Lightning","Electric",3
+2023,"Amador","Ford","Mustang Mach-E","Electric",2
+2023,"Amador","Hyundai","IONIQ 5","Electric",2
+2023,"Amador","Hyundai","IONIQ 6","Electric",1
+2023,"Amador","Hyundai","TUCSON Plug-in Hybrid","PHEV",1
+2023,"Amador","Jeep","Grand Cherokee","PHEV",2
+2023,"Amador","Jeep","Wrangler","PHEV",4
+2023,"Amador","Kia","EV6","Electric",1
+2023,"Amador","Kia","Niro Plug-In Hybrid","PHEV",1
+2023,"Amador","Kia","Sorento Plug-In Hybrid","PHEV",2
+2023,"Amador","Kia","Sportage Plug-In Hybrid","PHEV",2
+2023,"Amador","Lexus","NX 450h+","PHEV",1
+2023,"Amador","Mazda","CX-90 PHEV","PHEV",1
+2023,"Amador","Mercedes-Benz","EQS","Electric",1
+2023,"Amador","Mitsubishi","Outlander PHEV","PHEV",1
+2023,"Amador","Nissan","Ariya","Electric",2
+2023,"Amador","Polestar","2","Electric",1
+2023,"Amador","Porsche","Taycan","Electric",1
+2023,"Amador","Rivian","R1S","Electric",1
+2023,"Amador","Rivian","R1T","Electric",1
+2023,"Amador","Tesla","Model 3","Electric",19
+2023,"Amador","Tesla","Model S","Electric",1
+2023,"Amador","Tesla","Model X","Electric",1
+2023,"Amador","Tesla","Model Y","Electric",27
+2023,"Amador","Toyota","RAV4 Prime","PHEV",2
+2023,"Amador","Toyota/Subaru","bZ4X/Solterra","Electric",6
+2023,"Amador","Volkswagen","ID.4","Electric",4
+2023,"Amador","Volvo","S60 Recharge","PHEV",1
+2023,"Butte","Audi","Q4 e-tron","Electric",2
+2023,"Butte","Audi","Q5","PHEV",2
+2023,"Butte","Audi","Q8 e-tron Sportback","Electric",2
+2023,"Butte","BMW","3 Series","PHEV",1
+2023,"Butte","BMW","5 Series","PHEV",1
+2023,"Butte","BMW","X5","PHEV",14
+2023,"Butte","BMW","XM","PHEV",3
+2023,"Butte","BMW","i4","Electric",3
+2023,"Butte","BMW","i7","Electric",1
+2023,"Butte","BMW","iX","Electric",1
+2023,"Butte","Cadillac","LYRIQ","Electric",3
+2023,"Butte","Chevrolet","Bolt EUV","Electric",13
+2023,"Butte","Chevrolet","Bolt EV","Electric",8
+2023,"Butte","Chrysler","Pacifica Plug-In Hybrid","PHEV",3
+2023,"Butte","Dodge","Hornet","PHEV",1
+2023,"Butte","Ferrari","SF90 Spider","PHEV",1
+2023,"Butte","Ford","E-Transit","Electric",1
+2023,"Butte","Ford","Escape Plug-In Hybrid","PHEV",4
+2023,"Butte","Ford","F-150 Lightning","Electric",13
+2023,"Butte","Ford","Mustang Mach-E","Electric",15
+2023,"Butte","GMC","HUMMER EV","Electric",1
+2023,"Butte","Hyundai","IONIQ 5","Electric",17
+2023,"Butte","Hyundai","IONIQ 6","Electric",11
+2023,"Butte","Hyundai","KONA Electric","Electric",9
+2023,"Butte","Hyundai","SANTA FE Plug-In Hybrid","PHEV",9
+2023,"Butte","Hyundai","TUCSON Plug-in Hybrid","PHEV",11
+2023,"Butte","Jeep","Grand Cherokee","PHEV",4
+2023,"Butte","Jeep","Wrangler","PHEV",15
+2023,"Butte","Kia","EV6","Electric",6
+2023,"Butte","Kia","EV9","Electric",1
+2023,"Butte","Kia","Niro Plug-In Hybrid","PHEV",2
+2023,"Butte","Kia","Sorento Plug-In Hybrid","PHEV",2
+2023,"Butte","Kia","Sportage Plug-In Hybrid","PHEV",2
+2023,"Butte","Lexus","NX 450h+","PHEV",2
+2023,"Butte","Lexus","RX 450h+","PHEV",1
+2023,"Butte","Lexus","RZ 450e","Electric",1
+2023,"Butte","Lincoln","Aviator","PHEV",1
+2023,"Butte","MINI","Hardtop 2 Door","Electric",2
+2023,"Butte","Mazda","CX-90 PHEV","PHEV",3
+2023,"Butte","Mercedes-Benz","GLE","PHEV",2
+2023,"Butte","Mitsubishi","Outlander PHEV","PHEV",3
+2023,"Butte","Nissan","Ariya","Electric",3
+2023,"Butte","Nissan","LEAF","Electric",2
+2023,"Butte","Porsche","Taycan","Electric",1
+2023,"Butte","Rivian","R1S","Electric",12
+2023,"Butte","Rivian","R1T","Electric",8
+2023,"Butte","Subaru","Crosstrek","PHEV",1
+2023,"Butte","Tesla","Model 3","Electric",96
+2023,"Butte","Tesla","Model S","Electric",4
+2023,"Butte","Tesla","Model X","Electric",14
+2023,"Butte","Tesla","Model Y","Electric",150
+2023,"Butte","Toyota","Prius Prime","PHEV",8
+2023,"Butte","Toyota","RAV4 Prime","PHEV",21
+2023,"Butte","Toyota/Subaru","bZ4X/Solterra","Electric",10
+2023,"Butte","Volkswagen","ID.4","Electric",31
+2023,"Butte","Volvo","C40 Recharge","Electric",1
+2023,"Butte","Volvo","XC40 Recharge","Electric",4
+2023,"Butte","Volvo","XC60 Recharge","PHEV",8
+2023,"Butte","Volvo","XC90 Recharge","PHEV",5
+2023,"Calaveras","Audi","Q5","PHEV",1
+2023,"Calaveras","Audi","Q8 e-tron Sportback","Electric",1
+2023,"Calaveras","BMW","3 Series","PHEV",1
+2023,"Calaveras","BMW","X5","PHEV",1
+2023,"Calaveras","BMW","i4","Electric",2
+2023,"Calaveras","BMW","i7","Electric",1
+2023,"Calaveras","BMW","iX","Electric",1
+2023,"Calaveras","Cadillac","LYRIQ","Electric",1
+2023,"Calaveras","Chevrolet","Bolt EUV","Electric",9
+2023,"Calaveras","Chevrolet","Bolt EV","Electric",3
+2023,"Calaveras","Chrysler","Pacifica Hybrid","PHEV",1
+2023,"Calaveras","Chrysler","Pacifica Plug-In Hybrid","PHEV",2
+2023,"Calaveras","Fisker","Ocean","Electric",1
+2023,"Calaveras","Ford","F-150 Lightning","Electric",9
+2023,"Calaveras","Ford","Mustang Mach-E","Electric",8
+2023,"Calaveras","Hyundai","IONIQ 5","Electric",4
+2023,"Calaveras","Hyundai","IONIQ 6","Electric",1
+2023,"Calaveras","Hyundai","SANTA FE Plug-In Hybrid","PHEV",1
+2023,"Calaveras","Hyundai","TUCSON Plug-in Hybrid","PHEV",1
+2023,"Calaveras","Jeep","Grand Cherokee","PHEV",4
+2023,"Calaveras","Jeep","Wrangler","PHEV",14
+2023,"Calaveras","Kia","EV6","Electric",1
+2023,"Calaveras","Kia","Niro EV","Electric",1
+2023,"Calaveras","Kia","Niro Plug-In Hybrid","PHEV",2
+2023,"Calaveras","Kia","Sportage Plug-In Hybrid","PHEV",3
+2023,"Calaveras","Lexus","NX 450h+","PHEV",3
+2023,"Calaveras","Lexus","RZ 450e","Electric",1
+2023,"Calaveras","Lucid","Air","Electric",1
+2023,"Calaveras","MINI","Hardtop 2 Door","Electric",1
+2023,"Calaveras","Mazda","CX-90 PHEV","PHEV",1
+2023,"Calaveras","Mercedes-Benz","EQB","Electric",3
+2023,"Calaveras","Mercedes-Benz","EQE","Electric",1
+2023,"Calaveras","Mercedes-Benz","EQS","Electric",1
+2023,"Calaveras","Mitsubishi","Outlander PHEV","PHEV",1
+2023,"Calaveras","Rivian","R1S","Electric",4
+2023,"Calaveras","Rivian","R1T","Electric",3
+2023,"Calaveras","Subaru","Crosstrek","PHEV",1
+2023,"Calaveras","Tesla","Model 3","Electric",19
+2023,"Calaveras","Tesla","Model S","Electric",2
+2023,"Calaveras","Tesla","Model X","Electric",3
+2023,"Calaveras","Tesla","Model Y","Electric",32
+2023,"Calaveras","Toyota","Prius Prime","PHEV",1
+2023,"Calaveras","Toyota","RAV4 Prime","PHEV",4
+2023,"Calaveras","Toyota/Subaru","bZ4X/Solterra","Electric",4
+2023,"Calaveras","Volkswagen","ID.4","Electric",2
+2023,"Colusa","BMW","i4","Electric",1
+2023,"Colusa","Chevrolet","Bolt EUV","Electric",1
+2023,"Colusa","Ford","F-150 Lightning","Electric",3
+2023,"Colusa","Ford","Mustang Mach-E","Electric",2
+2023,"Colusa","GMC","HUMMER EV","Electric",1
+2023,"Colusa","Hyundai","IONIQ 5","Electric",1
+2023,"Colusa","Kia","EV6","Electric",1
+2023,"Colusa","Lexus","NX 450h+","PHEV",1
+2023,"Colusa","Rivian","R1S","Electric",1
+2023,"Colusa","Rivian","R1T","Electric",1
+2023,"Colusa","Tesla","Model 3","Electric",5
+2023,"Colusa","Tesla","Model Y","Electric",8
+2023,"Colusa","Toyota","Prius Prime","PHEV",1
+2023,"Colusa","Toyota/Subaru","bZ4X/Solterra","Electric",1
+2023,"Contra Costa","Alfa Romeo","Tonale","PHEV",2
+2023,"Contra Costa","Audi","Q4 e-tron","Electric",96
+2023,"Contra Costa","Audi","Q4 e-tron Sportback","Electric",21
+2023,"Contra Costa","Audi","Q5","PHEV",33
+2023,"Contra Costa","Audi","Q8 e-tron","Electric",69
+2023,"Contra Costa","Audi","Q8 e-tron Sportback","Electric",12
+2023,"Contra Costa","Audi","RS e-tron GT","Electric",9
+2023,"Contra Costa","Audi","e-tron","Electric",15
+2023,"Contra Costa","Audi","e-tron GT","Electric",20
+2023,"Contra Costa","Audi","e-tron S","Electric",3
+2023,"Contra Costa","Audi","e-tron S Sportback","Electric",1
+2023,"Contra Costa","Audi","e-tron Sportback","Electric",11
+2023,"Contra Costa","BMW","3 Series","PHEV",46
+2023,"Contra Costa","BMW","5 Series","PHEV",19
+2023,"Contra Costa","BMW","7 Series","PHEV",4
+2023,"Contra Costa","BMW","X5","PHEV",146
+2023,"Contra Costa","BMW","XM","PHEV",4
+2023,"Contra Costa","BMW","i4","Electric",299
+2023,"Contra Costa","BMW","i5","Electric",17
+2023,"Contra Costa","BMW","i7","Electric",13
+2023,"Contra Costa","BMW","iX","Electric",143
+2023,"Contra Costa","Cadillac","LYRIQ","Electric",60
+2023,"Contra Costa","Chevrolet","Blazer EV","Electric",1
+2023,"Contra Costa","Chevrolet","Bolt EUV","Electric",394
+2023,"Contra Costa","Chevrolet","Bolt EV","Electric",158
+2023,"Contra Costa","Chrysler","Pacifica Hybrid","PHEV",27
+2023,"Contra Costa","Chrysler","Pacifica Plug-In Hybrid","PHEV",61
+2023,"Contra Costa","Dodge","Hornet","PHEV",1
+2023,"Contra Costa","Ferrari","296 GTB","PHEV",2
+2023,"Contra Costa","Ferrari","296 GTS","PHEV",1
+2023,"Contra Costa","Ferrari","SF90 Spider","PHEV",1
+2023,"Contra Costa","Ferrari","SF90 Stradale","PHEV",2
+2023,"Contra Costa","Fisker","Ocean","Electric",58
+2023,"Contra Costa","Ford","E-Transit","Electric",15
+2023,"Contra Costa","Ford","Escape Plug-In Hybrid","PHEV",40
+2023,"Contra Costa","Ford","F-150 Lightning","Electric",145
+2023,"Contra Costa","Ford","Mustang Mach-E","Electric",405
+2023,"Contra Costa","GMC","HUMMER EV","Electric",6
+2023,"Contra Costa","Genesis","Electrified G80","Electric",3
+2023,"Contra Costa","Genesis","Electrified GV70","Electric",10
+2023,"Contra Costa","Genesis","GV60","Electric",14
+2023,"Contra Costa","Hyundai","IONIQ 5","Electric",284
+2023,"Contra Costa","Hyundai","IONIQ 6","Electric",99
+2023,"Contra Costa","Hyundai","KONA Electric","Electric",57
+2023,"Contra Costa","Hyundai","NEXO","Hydrogen",9
+2023,"Contra Costa","Hyundai","SANTA FE Plug-In Hybrid","PHEV",35
+2023,"Contra Costa","Hyundai","TUCSON Plug-in Hybrid","PHEV",48
+2023,"Contra Costa","Jaguar","I-PACE","Electric",2
+2023,"Contra Costa","Jeep","Grand Cherokee","PHEV",106
+2023,"Contra Costa","Jeep","Wrangler","PHEV",239
+2023,"Contra Costa","Jeep","Wrangler Unlimited","PHEV",5
+2023,"Contra Costa","Kia","EV6","Electric",107
+2023,"Contra Costa","Kia","EV9","Electric",4
+2023,"Contra Costa","Kia","Niro EV","Electric",40
+2023,"Contra Costa","Kia","Niro Plug-In Hybrid","PHEV",30
+2023,"Contra Costa","Kia","Sorento Plug-In Hybrid","PHEV",29
+2023,"Contra Costa","Kia","Sportage Plug-In Hybrid","PHEV",47
+2023,"Contra Costa","Land Rover","Range Rover Sport","PHEV",3
+2023,"Contra Costa","Lexus","NX 450h+","PHEV",98
+2023,"Contra Costa","Lexus","RX 450h+","PHEV",11
+2023,"Contra Costa","Lexus","RZ 450e","Electric",53
+2023,"Contra Costa","Lincoln","Aviator","PHEV",5
+2023,"Contra Costa","Lincoln","Corsair","PHEV",5
+2023,"Contra Costa","Lucid","Air","Electric",40
+2023,"Contra Costa","MINI","Countryman Plug-in Hybrid","PHEV",3
+2023,"Contra Costa","MINI","Hardtop 2 Door","Electric",29
+2023,"Contra Costa","Mazda","CX-90 PHEV","PHEV",62
+2023,"Contra Costa","Mazda","MX-30 EV","Electric",1
+2023,"Contra Costa","McLaren","Artura","PHEV",2
+2023,"Contra Costa","Mercedes-Benz","EQB","Electric",191
+2023,"Contra Costa","Mercedes-Benz","EQE","Electric",241
+2023,"Contra Costa","Mercedes-Benz","EQS","Electric",223
+2023,"Contra Costa","Mercedes-Benz","GLE","PHEV",21
+2023,"Contra Costa","Mitsubishi","Outlander PHEV","PHEV",25
+2023,"Contra Costa","Nissan","Ariya","Electric",105
+2023,"Contra Costa","Nissan","LEAF","Electric",74
+2023,"Contra Costa","Polestar","2","Electric",31
+2023,"Contra Costa","Porsche","Cayenne","PHEV",7
+2023,"Contra Costa","Porsche","Panamera","PHEV",2
+2023,"Contra Costa","Porsche","Taycan","Electric",69
+2023,"Contra Costa","Rivian","EDV 500","Electric",9
+2023,"Contra Costa","Rivian","EDV 700","Electric",22
+2023,"Contra Costa","Rivian","R1S","Electric",334
+2023,"Contra Costa","Rivian","R1T","Electric",108
+2023,"Contra Costa","Subaru","Crosstrek","PHEV",19
+2023,"Contra Costa","Tesla","Model 3","Electric",2556
+2023,"Contra Costa","Tesla","Model S","Electric",188
+2023,"Contra Costa","Tesla","Model X","Electric",420
+2023,"Contra Costa","Tesla","Model Y","Electric",5260
+2023,"Contra Costa","Toyota","Mirai","Hydrogen",71
+2023,"Contra Costa","Toyota","Prius Prime","PHEV",105
+2023,"Contra Costa","Toyota","RAV4 Prime","PHEV",213
+2023,"Contra Costa","Toyota/Subaru","bZ4X/Solterra","Electric",205
+2023,"Contra Costa","VinFast","VF8","Electric",12
+2023,"Contra Costa","Volkswagen","ID.4","Electric",528
+2023,"Contra Costa","Volvo","C40 Recharge","Electric",41
+2023,"Contra Costa","Volvo","S60 Recharge","PHEV",15
+2023,"Contra Costa","Volvo","V60 Recharge","PHEV",6
+2023,"Contra Costa","Volvo","XC40 Recharge","Electric",72
+2023,"Contra Costa","Volvo","XC60 Recharge","PHEV",49
+2023,"Contra Costa","Volvo","XC90 Recharge","PHEV",87
+2023,"Del Norte","BMW","iX","Electric",1
+2023,"Del Norte","Chevrolet","Bolt EUV","Electric",1
+2023,"Del Norte","Chevrolet","Bolt EV","Electric",4
+2023,"Del Norte","Chrysler","Pacifica Plug-In Hybrid","PHEV",2
+2023,"Del Norte","Ford","F-150 Lightning","Electric",2
+2023,"Del Norte","Jeep","Wrangler","PHEV",2
+2023,"Del Norte","Kia","EV6","Electric",1
+2023,"Del Norte","Mitsubishi","Outlander PHEV","PHEV",1
+2023,"Del Norte","Nissan","LEAF","Electric",1
+2023,"Del Norte","Rivian","R1S","Electric",1
+2023,"Del Norte","Rivian","R1T","Electric",1
+2023,"Del Norte","Tesla","Model 3","Electric",1
+2023,"Del Norte","Tesla","Model Y","Electric",5
+2023,"Del Norte","Toyota","Prius Prime","PHEV",2
+2023,"Del Norte","Toyota","RAV4 Prime","PHEV",4
+2023,"Del Norte","Toyota/Subaru","bZ4X/Solterra","Electric",1
+2023,"Del Norte","Volvo","XC90 Recharge","PHEV",1
+2023,"El Dorado","Audi","Q4 e-tron","Electric",9
+2023,"El Dorado","Audi","Q4 e-tron Sportback","Electric",5
+2023,"El Dorado","Audi","Q5","PHEV",2
+2023,"El Dorado","Audi","Q8 e-tron","Electric",5
+2023,"El Dorado","Audi","Q8 e-tron Sportback","Electric",1
+2023,"El Dorado","Audi","e-tron","Electric",3
+2023,"El Dorado","Audi","e-tron GT","Electric",2
+2023,"El Dorado","BMW","3 Series","PHEV",2
+2023,"El Dorado","BMW","5 Series","PHEV",2
+2023,"El Dorado","BMW","X5","PHEV",20
+2023,"El Dorado","BMW","i4","Electric",24
+2023,"El Dorado","BMW","i7","Electric",1
+2023,"El Dorado","BMW","iX","Electric",12
+2023,"El Dorado","Cadillac","LYRIQ","Electric",3
+2023,"El Dorado","Chevrolet","Bolt EUV","Electric",33
+2023,"El Dorado","Chevrolet","Bolt EV","Electric",15
+2023,"El Dorado","Chrysler","Pacifica Hybrid","PHEV",3
+2023,"El Dorado","Chrysler","Pacifica Plug-In Hybrid","PHEV",10
+2023,"El Dorado","Dodge","Hornet","PHEV",1
+2023,"El Dorado","Fisker","Ocean","Electric",1
+2023,"El Dorado","Ford","E-Transit","Electric",2
+2023,"El Dorado","Ford","Escape Plug-In Hybrid","PHEV",3
+2023,"El Dorado","Ford","F-150 Lightning","Electric",33
+2023,"El Dorado","Ford","Mustang Mach-E","Electric",42
+2023,"El Dorado","Genesis","Electrified GV70","Electric",1
+2023,"El Dorado","Genesis","GV60","Electric",2
+2023,"El Dorado","Hyundai","IONIQ 5","Electric",23
+2023,"El Dorado","Hyundai","IONIQ 6","Electric",4
+2023,"El Dorado","Hyundai","KONA Electric","Electric",4
+2023,"El Dorado","Hyundai","SANTA FE Plug-In Hybrid","PHEV",11
+2023,"El Dorado","Hyundai","TUCSON Plug-in Hybrid","PHEV",11
+2023,"El Dorado","Jeep","Grand Cherokee","PHEV",24
+2023,"El Dorado","Jeep","Wrangler","PHEV",40
+2023,"El Dorado","Jeep","Wrangler Unlimited","PHEV",1
+2023,"El Dorado","Kia","EV6","Electric",16
+2023,"El Dorado","Kia","Niro EV","Electric",5
+2023,"El Dorado","Kia","Niro Plug-In Hybrid","PHEV",2
+2023,"El Dorado","Kia","Sorento Plug-In Hybrid","PHEV",9
+2023,"El Dorado","Kia","Sportage Plug-In Hybrid","PHEV",9
+2023,"El Dorado","Lexus","NX 450h+","PHEV",7
+2023,"El Dorado","Lexus","RX 450h+","PHEV",1
+2023,"El Dorado","Lexus","RZ 450e","Electric",6
+2023,"El Dorado","Lincoln","Aviator","PHEV",3
+2023,"El Dorado","Lincoln","Corsair","PHEV",1
+2023,"El Dorado","Lucid","Air","Electric",6
+2023,"El Dorado","Mazda","CX-90 PHEV","PHEV",5
+2023,"El Dorado","McLaren","Artura","PHEV",1
+2023,"El Dorado","Mercedes-Benz","EQB","Electric",17
+2023,"El Dorado","Mercedes-Benz","EQE","Electric",17
+2023,"El Dorado","Mercedes-Benz","EQS","Electric",30
+2023,"El Dorado","Mercedes-Benz","GLE","PHEV",1
+2023,"El Dorado","Nissan","Ariya","Electric",4
+2023,"El Dorado","Nissan","LEAF","Electric",3
+2023,"El Dorado","Polestar","2","Electric",2
+2023,"El Dorado","Porsche","Cayenne","PHEV",2
+2023,"El Dorado","Porsche","Taycan","Electric",2
+2023,"El Dorado","Rivian","R1S","Electric",60
+2023,"El Dorado","Rivian","R1T","Electric",28
+2023,"El Dorado","Subaru","Crosstrek","PHEV",1
+2023,"El Dorado","Tesla","Model 3","Electric",215
+2023,"El Dorado","Tesla","Model S","Electric",23
+2023,"El Dorado","Tesla","Model X","Electric",50
+2023,"El Dorado","Tesla","Model Y","Electric",465
+2023,"El Dorado","Toyota","Prius Prime","PHEV",12
+2023,"El Dorado","Toyota","RAV4 Prime","PHEV",29
+2023,"El Dorado","Toyota/Subaru","bZ4X/Solterra","Electric",33
+2023,"El Dorado","Volkswagen","ID.4","Electric",28
+2023,"El Dorado","Volvo","C40 Recharge","Electric",2
+2023,"El Dorado","Volvo","V60 Recharge","PHEV",1
+2023,"El Dorado","Volvo","XC40 Recharge","Electric",4
+2023,"El Dorado","Volvo","XC60 Recharge","PHEV",2
+2023,"El Dorado","Volvo","XC90 Recharge","PHEV",8
+2023,"Fresno","Alfa Romeo","Tonale","PHEV",1
+2023,"Fresno","Audi","Q4 e-tron","Electric",18
+2023,"Fresno","Audi","Q4 e-tron Sportback","Electric",1
+2023,"Fresno","Audi","Q5","PHEV",3
+2023,"Fresno","Audi","Q8 e-tron","Electric",13
+2023,"Fresno","Audi","Q8 e-tron Sportback","Electric",6
+2023,"Fresno","Audi","RS e-tron GT","Electric",2
+2023,"Fresno","Audi","e-tron","Electric",3
+2023,"Fresno","Audi","e-tron GT","Electric",2
+2023,"Fresno","Audi","e-tron S Sportback","Electric",1
+2023,"Fresno","Audi","e-tron Sportback","Electric",3
+2023,"Fresno","BMW","3 Series","PHEV",11
+2023,"Fresno","BMW","5 Series","PHEV",14
+2023,"Fresno","BMW","7 Series","PHEV",1
+2023,"Fresno","BMW","X5","PHEV",31
+2023,"Fresno","BMW","XM","PHEV",9
+2023,"Fresno","BMW","i4","Electric",66
+2023,"Fresno","BMW","i5","Electric",2
+2023,"Fresno","BMW","i7","Electric",9
+2023,"Fresno","BMW","iX","Electric",52
+2023,"Fresno","Bentley","Flying Spur","PHEV",2
+2023,"Fresno","Cadillac","LYRIQ","Electric",21
+2023,"Fresno","Chevrolet","Bolt EUV","Electric",129
+2023,"Fresno","Chevrolet","Bolt EV","Electric",45
+2023,"Fresno","Chrysler","Pacifica Hybrid","PHEV",17
+2023,"Fresno","Chrysler","Pacifica Plug-In Hybrid","PHEV",16
+2023,"Fresno","Ferrari","SF90 Spider","PHEV",1
+2023,"Fresno","Fisker","Ocean","Electric",6
+2023,"Fresno","Ford","E-Transit","Electric",11
+2023,"Fresno","Ford","Escape Plug-In Hybrid","PHEV",4
+2023,"Fresno","Ford","F-150 Lightning","Electric",54
+2023,"Fresno","Ford","Mustang Mach-E","Electric",66
+2023,"Fresno","GMC","HUMMER EV","Electric",3
+2023,"Fresno","Genesis","Electrified G80","Electric",2
+2023,"Fresno","Genesis","Electrified GV70","Electric",3
+2023,"Fresno","Genesis","GV60","Electric",1
+2023,"Fresno","Hyundai","IONIQ 5","Electric",60
+2023,"Fresno","Hyundai","IONIQ 6","Electric",52
+2023,"Fresno","Hyundai","KONA Electric","Electric",17
+2023,"Fresno","Hyundai","SANTA FE Plug-In Hybrid","PHEV",13
+2023,"Fresno","Hyundai","TUCSON Plug-in Hybrid","PHEV",14
+2023,"Fresno","Jeep","Grand Cherokee","PHEV",53
+2023,"Fresno","Jeep","Wrangler","PHEV",112
+2023,"Fresno","Jeep","Wrangler Unlimited","PHEV",1
+2023,"Fresno","Kia","EV6","Electric",26
+2023,"Fresno","Kia","Niro EV","Electric",20
+2023,"Fresno","Kia","Niro Plug-In Hybrid","PHEV",15
+2023,"Fresno","Kia","Sorento Plug-In Hybrid","PHEV",18
+2023,"Fresno","Kia","Sportage Plug-In Hybrid","PHEV",27
+2023,"Fresno","Land Rover","Range Rover","PHEV",1
+2023,"Fresno","Lexus","NX 450h+","PHEV",30
+2023,"Fresno","Lexus","RX 450h+","PHEV",4
+2023,"Fresno","Lexus","RZ 450e","Electric",11
+2023,"Fresno","Lincoln","Aviator","PHEV",1
+2023,"Fresno","Lincoln","Corsair","PHEV",2
+2023,"Fresno","Lucid","Air","Electric",7
+2023,"Fresno","MINI","Countryman Plug-in Hybrid","PHEV",1
+2023,"Fresno","MINI","Hardtop 2 Door","Electric",2
+2023,"Fresno","Mazda","CX-90 PHEV","PHEV",24
+2023,"Fresno","Mazda","MX-30 EV","Electric",1
+2023,"Fresno","McLaren","Artura","PHEV",2
+2023,"Fresno","Mercedes-Benz","EQB","Electric",20
+2023,"Fresno","Mercedes-Benz","EQE","Electric",30
+2023,"Fresno","Mercedes-Benz","EQS","Electric",31
+2023,"Fresno","Mercedes-Benz","GLE","PHEV",2
+2023,"Fresno","Mitsubishi","Outlander PHEV","PHEV",14
+2023,"Fresno","Nissan","Ariya","Electric",51
+2023,"Fresno","Nissan","LEAF","Electric",13
+2023,"Fresno","Polestar","2","Electric",1
+2023,"Fresno","Porsche","Cayenne","PHEV",1
+2023,"Fresno","Porsche","Taycan","Electric",12
+2023,"Fresno","Rivian","R1S","Electric",67
+2023,"Fresno","Rivian","R1T","Electric",33
+2023,"Fresno","Subaru","Crosstrek","PHEV",2
+2023,"Fresno","Tesla","Model 3","Electric",886
+2023,"Fresno","Tesla","Model S","Electric",42
+2023,"Fresno","Tesla","Model X","Electric",82
+2023,"Fresno","Tesla","Model Y","Electric",1250
+2023,"Fresno","Toyota","Mirai","Hydrogen",5
+2023,"Fresno","Toyota","Prius Prime","PHEV",40
+2023,"Fresno","Toyota","RAV4 Prime","PHEV",84
+2023,"Fresno","Toyota/Subaru","bZ4X/Solterra","Electric",51
+2023,"Fresno","Volkswagen","ID.4","Electric",67
+2023,"Fresno","Volvo","C40 Recharge","Electric",7
+2023,"Fresno","Volvo","S60 Recharge","PHEV",1
+2023,"Fresno","Volvo","XC40 Recharge","Electric",5
+2023,"Fresno","Volvo","XC60 Recharge","PHEV",2
+2023,"Fresno","Volvo","XC90 Recharge","PHEV",11
+2023,"Glenn","BMW","X5","PHEV",1
+2023,"Glenn","Chevrolet","Bolt EV","Electric",1
+2023,"Glenn","Chrysler","Pacifica Hybrid","PHEV",1
+2023,"Glenn","Ford","F-150 Lightning","Electric",1
+2023,"Glenn","Hyundai","IONIQ 5","Electric",1
+2023,"Glenn","Hyundai","SANTA FE Plug-In Hybrid","PHEV",1
+2023,"Glenn","Hyundai","TUCSON Plug-in Hybrid","PHEV",1
+2023,"Glenn","Jeep","Wrangler","PHEV",4
+2023,"Glenn","Mitsubishi","Outlander PHEV","PHEV",2
+2023,"Glenn","Rivian","R1T","Electric",1
+2023,"Glenn","Subaru","Crosstrek","PHEV",1
+2023,"Glenn","Tesla","Model 3","Electric",13
+2023,"Glenn","Tesla","Model S","Electric",2
+2023,"Glenn","Tesla","Model Y","Electric",6
+2023,"Glenn","Toyota","RAV4 Prime","PHEV",2
+2023,"Glenn","Volkswagen","ID.4","Electric",1
+2023,"Glenn","Volvo","C40 Recharge","Electric",1
+2023,"Humboldt","Audi","Q5","PHEV",2
+2023,"Humboldt","Audi","e-tron Sportback","Electric",1
+2023,"Humboldt","BMW","3 Series","PHEV",3
+2023,"Humboldt","BMW","5 Series","PHEV",1
+2023,"Humboldt","BMW","X5","PHEV",2
+2023,"Humboldt","BMW","XM","PHEV",1
+2023,"Humboldt","BMW","i4","Electric",4
+2023,"Humboldt","BMW","iX","Electric",7
+2023,"Humboldt","Chevrolet","Bolt EUV","Electric",15
+2023,"Humboldt","Chevrolet","Bolt EV","Electric",21
+2023,"Humboldt","Chrysler","Pacifica Hybrid","PHEV",1
+2023,"Humboldt","Chrysler","Pacifica Plug-In Hybrid","PHEV",1
+2023,"Humboldt","Ford","E-Transit","Electric",5
+2023,"Humboldt","Ford","Escape Plug-In Hybrid","PHEV",5
+2023,"Humboldt","Ford","F-150 Lightning","Electric",13
+2023,"Humboldt","Ford","Mustang Mach-E","Electric",2
+2023,"Humboldt","Hyundai","IONIQ 5","Electric",10
+2023,"Humboldt","Hyundai","IONIQ 6","Electric",5
+2023,"Humboldt","Hyundai","KONA Electric","Electric",6
+2023,"Humboldt","Hyundai","SANTA FE Plug-In Hybrid","PHEV",3
+2023,"Humboldt","Hyundai","TUCSON Plug-in Hybrid","PHEV",6
+2023,"Humboldt","Jeep","Grand Cherokee","PHEV",3
+2023,"Humboldt","Jeep","Wrangler","PHEV",2
+2023,"Humboldt","Jeep","Wrangler Unlimited","PHEV",1
+2023,"Humboldt","Kia","EV6","Electric",9
+2023,"Humboldt","Kia","Niro EV","Electric",1
+2023,"Humboldt","Kia","Niro Plug-In Hybrid","PHEV",5
+2023,"Humboldt","Kia","Sorento Plug-In Hybrid","PHEV",5
+2023,"Humboldt","Kia","Sportage Plug-In Hybrid","PHEV",2
+2023,"Humboldt","Lexus","NX 450h+","PHEV",1
+2023,"Humboldt","Mercedes-Benz","EQB","Electric",1
+2023,"Humboldt","Mitsubishi","Outlander PHEV","PHEV",2
+2023,"Humboldt","Nissan","Ariya","Electric",12
+2023,"Humboldt","Nissan","LEAF","Electric",4
+2023,"Humboldt","Polestar","2","Electric",4
+2023,"Humboldt","Rivian","R1S","Electric",5
+2023,"Humboldt","Rivian","R1T","Electric",10
+2023,"Humboldt","Subaru","Crosstrek","PHEV",4
+2023,"Humboldt","Tesla","Model 3","Electric",27
+2023,"Humboldt","Tesla","Model S","Electric",1
+2023,"Humboldt","Tesla","Model X","Electric",6
+2023,"Humboldt","Tesla","Model Y","Electric",61
+2023,"Humboldt","Toyota","Prius Prime","PHEV",13
+2023,"Humboldt","Toyota","RAV4 Prime","PHEV",46
+2023,"Humboldt","Toyota/Subaru","bZ4X/Solterra","Electric",9
+2023,"Humboldt","Volkswagen","ID.4","Electric",6
+2023,"Humboldt","Volvo","XC60 Recharge","PHEV",1
+2023,"Humboldt","Volvo","XC90 Recharge","PHEV",3
+2023,"Imperial","Alfa Romeo","Tonale","PHEV",1
+2023,"Imperial","Audi","Q4 e-tron","Electric",1
+2023,"Imperial","Audi","e-tron GT","Electric",1
+2023,"Imperial","BMW","3 Series","PHEV",3
+2023,"Imperial","BMW","5 Series","PHEV",1
+2023,"Imperial","BMW","X5","PHEV",4
+2023,"Imperial","BMW","XM","PHEV",1
+2023,"Imperial","BMW","i4","Electric",3
+2023,"Imperial","BMW","i7","Electric",1
+2023,"Imperial","Chevrolet","Bolt EUV","Electric",13
+2023,"Imperial","Chevrolet","Bolt EV","Electric",4
+2023,"Imperial","Chrysler","Pacifica Hybrid","PHEV",2
+2023,"Imperial","Chrysler","Pacifica Plug-In Hybrid","PHEV",1
+2023,"Imperial","Fisker","Ocean","Electric",1
+2023,"Imperial","Ford","E-Transit","Electric",1
+2023,"Imperial","Ford","Escape Plug-In Hybrid","PHEV",1
+2023,"Imperial","Ford","F-150 Lightning","Electric",9
+2023,"Imperial","Ford","Mustang Mach-E","Electric",12
+2023,"Imperial","GMC","HUMMER EV","Electric",1
+2023,"Imperial","Hyundai","IONIQ 5","Electric",9
+2023,"Imperial","Hyundai","IONIQ 6","Electric",13
+2023,"Imperial","Hyundai","KONA Electric","Electric",1
+2023,"Imperial","Hyundai","SANTA FE Plug-In Hybrid","PHEV",11
+2023,"Imperial","Jeep","Grand Cherokee","PHEV",25
+2023,"Imperial","Jeep","Wrangler","PHEV",63
+2023,"Imperial","Jeep","Wrangler Unlimited","PHEV",2
+2023,"Imperial","Kia","EV6","Electric",12
+2023,"Imperial","Kia","Niro EV","Electric",2
+2023,"Imperial","Kia","Niro Plug-In Hybrid","PHEV",2
+2023,"Imperial","Kia","Sorento Plug-In Hybrid","PHEV",1
+2023,"Imperial","Kia","Sportage Plug-In Hybrid","PHEV",6
+2023,"Imperial","Lexus","NX 450h+","PHEV",2
+2023,"Imperial","Lexus","RZ 450e","Electric",1
+2023,"Imperial","Mercedes-Benz","EQB","Electric",2
+2023,"Imperial","Mercedes-Benz","EQE","Electric",2
+2023,"Imperial","Mercedes-Benz","EQS","Electric",2
+2023,"Imperial","Nissan","Ariya","Electric",4
+2023,"Imperial","Nissan","LEAF","Electric",4
+2023,"Imperial","Polestar","2","Electric",1
+2023,"Imperial","Rivian","R1S","Electric",1
+2023,"Imperial","Rivian","R1T","Electric",3
+2023,"Imperial","Subaru","Crosstrek","PHEV",1
+2023,"Imperial","Tesla","Model 3","Electric",70
+2023,"Imperial","Tesla","Model S","Electric",5
+2023,"Imperial","Tesla","Model X","Electric",3
+2023,"Imperial","Tesla","Model Y","Electric",66
+2023,"Imperial","Toyota","Prius Prime","PHEV",13
+2023,"Imperial","Toyota","RAV4 Prime","PHEV",12
+2023,"Imperial","Toyota/Subaru","bZ4X/Solterra","Electric",7
+2023,"Imperial","Volkswagen","ID.4","Electric",13
+2023,"Imperial","Volvo","S60 Recharge","PHEV",1
+2023,"Imperial","Volvo","XC90 Recharge","PHEV",4
+2023,"Inyo","BMW","X5","PHEV",1
+2023,"Inyo","Chevrolet","Bolt EUV","Electric",1
+2023,"Inyo","Chevrolet","Bolt EV","Electric",2
+2023,"Inyo","Hyundai","IONIQ 6","Electric",1
+2023,"Inyo","Hyundai","TUCSON Plug-in Hybrid","PHEV",2
+2023,"Inyo","Jeep","Wrangler","PHEV",3
+2023,"Inyo","Nissan","Ariya","Electric",1
+2023,"Inyo","Rivian","R1S","Electric",1
+2023,"Inyo","Rivian","R1T","Electric",1
+2023,"Inyo","Tesla","Model 3","Electric",3
+2023,"Inyo","Tesla","Model X","Electric",2
+2023,"Inyo","Tesla","Model Y","Electric",19
+2023,"Inyo","Toyota","Prius Prime","PHEV",1
+2023,"Inyo","Toyota","RAV4 Prime","PHEV",9
+2023,"Inyo","Volkswagen","ID.4","Electric",1
+2023,"Inyo","Volvo","XC90 Recharge","PHEV",1
+2023,"Kern","Audi","Q4 e-tron","Electric",13
+2023,"Kern","Audi","Q4 e-tron Sportback","Electric",3
+2023,"Kern","Audi","Q5","PHEV",7
+2023,"Kern","Audi","Q8 e-tron","Electric",6
+2023,"Kern","Audi","e-tron","Electric",4
+2023,"Kern","Audi","e-tron GT","Electric",4
+2023,"Kern","BMW","3 Series","PHEV",15
+2023,"Kern","BMW","5 Series","PHEV",9
+2023,"Kern","BMW","X5","PHEV",32
+2023,"Kern","BMW","XM","PHEV",4
+2023,"Kern","BMW","i4","Electric",51
+2023,"Kern","BMW","i7","Electric",5
+2023,"Kern","BMW","iX","Electric",28
+2023,"Kern","Cadillac","LYRIQ","Electric",14
+2023,"Kern","Chevrolet","Blazer EV","Electric",1
+2023,"Kern","Chevrolet","Bolt EUV","Electric",105
+2023,"Kern","Chevrolet","Bolt EV","Electric",35
+2023,"Kern","Chrysler","Pacifica Hybrid","PHEV",6
+2023,"Kern","Chrysler","Pacifica Plug-In Hybrid","PHEV",13
+2023,"Kern","Fisker","Ocean","Electric",5
+2023,"Kern","Ford","E-Transit","Electric",11
+2023,"Kern","Ford","Escape Plug-In Hybrid","PHEV",11
+2023,"Kern","Ford","F-150 Lightning","Electric",64
+2023,"Kern","Ford","Mustang Mach-E","Electric",60
+2023,"Kern","GMC","HUMMER EV","Electric",2
+2023,"Kern","Genesis","Electrified G80","Electric",1
+2023,"Kern","Genesis","Electrified GV70","Electric",4
+2023,"Kern","Genesis","GV60","Electric",1
+2023,"Kern","Hyundai","IONIQ 5","Electric",48
+2023,"Kern","Hyundai","IONIQ 6","Electric",49
+2023,"Kern","Hyundai","KONA Electric","Electric",15
+2023,"Kern","Hyundai","SANTA FE Plug-In Hybrid","PHEV",15
+2023,"Kern","Hyundai","TUCSON Plug-in Hybrid","PHEV",25
+2023,"Kern","Jeep","Grand Cherokee","PHEV",71
+2023,"Kern","Jeep","Wrangler","PHEV",192
+2023,"Kern","Jeep","Wrangler Unlimited","PHEV",2
+2023,"Kern","Kia","EV6","Electric",30
+2023,"Kern","Kia","Niro EV","Electric",4
+2023,"Kern","Kia","Niro Plug-In Hybrid","PHEV",10
+2023,"Kern","Kia","Sorento Plug-In Hybrid","PHEV",8
+2023,"Kern","Kia","Sportage Plug-In Hybrid","PHEV",18
+2023,"Kern","Lexus","NX 450h+","PHEV",21
+2023,"Kern","Lexus","RX 450h+","PHEV",5
+2023,"Kern","Lexus","RZ 450e","Electric",20
+2023,"Kern","Lincoln","Aviator","PHEV",7
+2023,"Kern","Lincoln","Corsair","PHEV",4
+2023,"Kern","Lucid","Air","Electric",6
+2023,"Kern","MINI","Hardtop 2 Door","Electric",2
+2023,"Kern","Mazda","CX-90 PHEV","PHEV",38
+2023,"Kern","Mazda","MX-30 EV","Electric",2
+2023,"Kern","McLaren","Artura","PHEV",2
+2023,"Kern","Mercedes-Benz","EQB","Electric",18
+2023,"Kern","Mercedes-Benz","EQE","Electric",28
+2023,"Kern","Mercedes-Benz","EQS","Electric",42
+2023,"Kern","Mercedes-Benz","GLE","PHEV",8
+2023,"Kern","Mitsubishi","Outlander PHEV","PHEV",17
+2023,"Kern","Nissan","Ariya","Electric",11
+2023,"Kern","Nissan","LEAF","Electric",4
+2023,"Kern","Porsche","Cayenne","PHEV",6
+2023,"Kern","Porsche","Panamera","PHEV",1
+2023,"Kern","Porsche","Taycan","Electric",2
+2023,"Kern","Rivian","R1S","Electric",28
+2023,"Kern","Rivian","R1T","Electric",10
+2023,"Kern","Subaru","Crosstrek","PHEV",2
+2023,"Kern","Tesla","Model 3","Electric",535
+2023,"Kern","Tesla","Model S","Electric",34
+2023,"Kern","Tesla","Model X","Electric",58
+2023,"Kern","Tesla","Model Y","Electric",751
+2023,"Kern","Toyota","Mirai","Hydrogen",6
+2023,"Kern","Toyota","Prius Prime","PHEV",29
+2023,"Kern","Toyota","RAV4 Prime","PHEV",65
+2023,"Kern","Toyota/Subaru","bZ4X/Solterra","Electric",45
+2023,"Kern","VinFast","VF8","Electric",2
+2023,"Kern","Volkswagen","ID.4","Electric",76
+2023,"Kern","Volvo","C40 Recharge","Electric",3
+2023,"Kern","Volvo","S60 Recharge","PHEV",1
+2023,"Kern","Volvo","V60 Recharge","PHEV",1
+2023,"Kern","Volvo","XC40 Recharge","Electric",4
+2023,"Kern","Volvo","XC60 Recharge","PHEV",6
+2023,"Kern","Volvo","XC90 Recharge","PHEV",5
+2023,"Kings","Audi","Q4 e-tron","Electric",1
+2023,"Kings","Audi","Q4 e-tron Sportback","Electric",1
+2023,"Kings","Audi","RS e-tron GT","Electric",1
+2023,"Kings","Audi","e-tron GT","Electric",1
+2023,"Kings","BMW","X5","PHEV",5
+2023,"Kings","BMW","i4","Electric",6
+2023,"Kings","BMW","iX","Electric",1
+2023,"Kings","Cadillac","LYRIQ","Electric",4
+2023,"Kings","Chevrolet","Blazer EV","Electric",2
+2023,"Kings","Chevrolet","Bolt EUV","Electric",8
+2023,"Kings","Chevrolet","Bolt EV","Electric",2
+2023,"Kings","Chrysler","Pacifica Plug-In Hybrid","PHEV",3
+2023,"Kings","Dodge","Hornet","PHEV",1
+2023,"Kings","Ford","E-Transit","Electric",2
+2023,"Kings","Ford","F-150 Lightning","Electric",2
+2023,"Kings","Ford","Mustang Mach-E","Electric",10
+2023,"Kings","GMC","HUMMER EV","Electric",1
+2023,"Kings","Hyundai","IONIQ 5","Electric",7
+2023,"Kings","Hyundai","IONIQ 6","Electric",7
+2023,"Kings","Hyundai","KONA Electric","Electric",5
+2023,"Kings","Hyundai","SANTA FE Plug-In Hybrid","PHEV",4
+2023,"Kings","Jeep","Grand Cherokee","PHEV",2
+2023,"Kings","Jeep","Wrangler","PHEV",13
+2023,"Kings","Kia","EV6","Electric",1
+2023,"Kings","Kia","Niro EV","Electric",1
+2023,"Kings","Kia","Sorento Plug-In Hybrid","PHEV",2
+2023,"Kings","Kia","Sportage Plug-In Hybrid","PHEV",1
+2023,"Kings","Lexus","NX 450h+","PHEV",1
+2023,"Kings","Lexus","RZ 450e","Electric",2
+2023,"Kings","Mazda","CX-90 PHEV","PHEV",3
+2023,"Kings","Mercedes-Benz","EQB","Electric",1
+2023,"Kings","Mercedes-Benz","EQS","Electric",1
+2023,"Kings","Mitsubishi","Outlander PHEV","PHEV",1
+2023,"Kings","Nissan","Ariya","Electric",3
+2023,"Kings","Rivian","R1S","Electric",1
+2023,"Kings","Rivian","R1T","Electric",3
+2023,"Kings","Tesla","Model 3","Electric",71
+2023,"Kings","Tesla","Model S","Electric",1
+2023,"Kings","Tesla","Model X","Electric",4
+2023,"Kings","Tesla","Model Y","Electric",86
+2023,"Kings","Toyota","Prius Prime","PHEV",8
+2023,"Kings","Toyota","RAV4 Prime","PHEV",16
+2023,"Kings","Toyota/Subaru","bZ4X/Solterra","Electric",6
+2023,"Kings","Volkswagen","ID.4","Electric",6
+2023,"Kings","Volvo","C40 Recharge","Electric",1
+2023,"Kings","Volvo","S60 Recharge","PHEV",1
+2023,"Kings","Volvo","XC40 Recharge","Electric",1
+2023,"Lake","Audi","Q5","PHEV",1
+2023,"Lake","Audi","e-tron GT","Electric",1
+2023,"Lake","BMW","X5","PHEV",1
+2023,"Lake","BMW","i4","Electric",1
+2023,"Lake","BMW","iX","Electric",1
+2023,"Lake","Cadillac","LYRIQ","Electric",1
+2023,"Lake","Chevrolet","Bolt EUV","Electric",15
+2023,"Lake","Chevrolet","Bolt EV","Electric",4
+2023,"Lake","Chrysler","Pacifica Hybrid","PHEV",1
+2023,"Lake","Chrysler","Pacifica Plug-In Hybrid","PHEV",1
+2023,"Lake","Fisker","Ocean","Electric",1
+2023,"Lake","Ford","Escape Plug-In Hybrid","PHEV",1
+2023,"Lake","Ford","F-150 Lightning","Electric",2
+2023,"Lake","Ford","Mustang Mach-E","Electric",3
+2023,"Lake","Hyundai","IONIQ 5","Electric",3
+2023,"Lake","Hyundai","KONA Electric","Electric",2
+2023,"Lake","Hyundai","TUCSON Plug-in Hybrid","PHEV",1
+2023,"Lake","Jeep","Grand Cherokee","PHEV",2
+2023,"Lake","Jeep","Wrangler","PHEV",1
+2023,"Lake","Kia","EV6","Electric",1
+2023,"Lake","Kia","Sorento Plug-In Hybrid","PHEV",1
+2023,"Lake","Kia","Sportage Plug-In Hybrid","PHEV",1
+2023,"Lake","Lexus","RX 450h+","PHEV",1
+2023,"Lake","Lincoln","Aviator","PHEV",1
+2023,"Lake","Lucid","Air","Electric",2
+2023,"Lake","Mercedes-Benz","EQS","Electric",2
+2023,"Lake","Mercedes-Benz","GLE","PHEV",1
+2023,"Lake","Mitsubishi","Outlander PHEV","PHEV",1
+2023,"Lake","Nissan","Ariya","Electric",2
+2023,"Lake","Rivian","R1S","Electric",5
+2023,"Lake","Rivian","R1T","Electric",2
+2023,"Lake","Subaru","Crosstrek","PHEV",1
+2023,"Lake","Tesla","Model 3","Electric",17
+2023,"Lake","Tesla","Model S","Electric",3
+2023,"Lake","Tesla","Model X","Electric",1
+2023,"Lake","Tesla","Model Y","Electric",35
+2023,"Lake","Toyota","Prius Prime","PHEV",1
+2023,"Lake","Toyota","RAV4 Prime","PHEV",3
+2023,"Lake","Toyota/Subaru","bZ4X/Solterra","Electric",7
+2023,"Lake","Volkswagen","ID.4","Electric",9
+2023,"Lake","Volvo","XC40 Recharge","Electric",1
+2023,"Lake","Volvo","XC60 Recharge","PHEV",3
+2023,"Lassen","BMW","3 Series","PHEV",1
+2023,"Lassen","BMW","X5","PHEV",1
+2023,"Lassen","Ford","F-150 Lightning","Electric",2
+2023,"Lassen","Jeep","Grand Cherokee","PHEV",1
+2023,"Lassen","Jeep","Wrangler","PHEV",4
+2023,"Lassen","Kia","Sportage Plug-In Hybrid","PHEV",1
+2023,"Lassen","Rivian","R1T","Electric",2
+2023,"Lassen","Tesla","Model 3","Electric",2
+2023,"Lassen","Tesla","Model Y","Electric",2
+2023,"Lassen","Toyota","Prius Prime","PHEV",2
+2023,"Lassen","Toyota","RAV4 Prime","PHEV",1
+2023,"Lassen","Toyota/Subaru","bZ4X/Solterra","Electric",1
+2023,"Los Angeles","Alfa Romeo","Tonale","PHEV",154
+2023,"Los Angeles","Audi","Q4 e-tron","Electric",945
+2023,"Los Angeles","Audi","Q4 e-tron Sportback","Electric",284
+2023,"Los Angeles","Audi","Q5","PHEV",383
+2023,"Los Angeles","Audi","Q8 e-tron","Electric",776
+2023,"Los Angeles","Audi","Q8 e-tron Sportback","Electric",198
+2023,"Los Angeles","Audi","RS e-tron GT","Electric",69
+2023,"Los Angeles","Audi","SQ8 e-tron","Electric",2
+2023,"Los Angeles","Audi","SQ8 e-tron Sportback","Electric",2
+2023,"Los Angeles","Audi","e-tron","Electric",230
+2023,"Los Angeles","Audi","e-tron GT","Electric",270
+2023,"Los Angeles","Audi","e-tron S","Electric",30
+2023,"Los Angeles","Audi","e-tron S Sportback","Electric",18
+2023,"Los Angeles","Audi","e-tron Sportback","Electric",90
+2023,"Los Angeles","BMW","3 Series","PHEV",474
+2023,"Los Angeles","BMW","5 Series","PHEV",575
+2023,"Los Angeles","BMW","7 Series","PHEV",9
+2023,"Los Angeles","BMW","X5","PHEV",825
+2023,"Los Angeles","BMW","XM","PHEV",141
+2023,"Los Angeles","BMW","i4","Electric",2407
+2023,"Los Angeles","BMW","i5","Electric",147
+2023,"Los Angeles","BMW","i7","Electric",515
+2023,"Los Angeles","BMW","iX","Electric",1512
+2023,"Los Angeles","Bentley","Bentayga","PHEV",7
+2023,"Los Angeles","Bentley","Flying Spur","PHEV",11
+2023,"Los Angeles","BrightDrop","Zevo 600","Electric",14
+2023,"Los Angeles","Cadillac","LYRIQ","Electric",363
+2023,"Los Angeles","Chevrolet","Blazer EV","Electric",11
+2023,"Los Angeles","Chevrolet","Bolt EUV","Electric",2880
+2023,"Los Angeles","Chevrolet","Bolt EV","Electric",2189
+2023,"Los Angeles","Chevrolet","Silverado EV","Electric",43
+2023,"Los Angeles","Chrysler","Pacifica Hybrid","PHEV",145
+2023,"Los Angeles","Chrysler","Pacifica Plug-In Hybrid","PHEV",2025
+2023,"Los Angeles","Dodge","Hornet","PHEV",35
+2023,"Los Angeles","Ferrari","296 GTB","PHEV",22
+2023,"Los Angeles","Ferrari","296 GTS","PHEV",4
+2023,"Los Angeles","Ferrari","SF90 Spider","PHEV",15
+2023,"Los Angeles","Ferrari","SF90 Stradale","PHEV",12
+2023,"Los Angeles","Fisker","Ocean","Electric",256
+2023,"Los Angeles","Ford","E-Transit","Electric",250
+2023,"Los Angeles","Ford","Escape Plug-In Hybrid","PHEV",190
+2023,"Los Angeles","Ford","F-150 Lightning","Electric",698
+2023,"Los Angeles","Ford","Mustang Mach-E","Electric",3696
+2023,"Los Angeles","GMC","HUMMER EV","Electric",23
+2023,"Los Angeles","Genesis","Electrified G80","Electric",25
+2023,"Los Angeles","Genesis","Electrified GV70","Electric",93
+2023,"Los Angeles","Genesis","GV60","Electric",320
+2023,"Los Angeles","Hyundai","IONIQ 5","Electric",3015
+2023,"Los Angeles","Hyundai","IONIQ 6","Electric",1066
+2023,"Los Angeles","Hyundai","KONA Electric","Electric",792
+2023,"Los Angeles","Hyundai","NEXO","Hydrogen",66
+2023,"Los Angeles","Hyundai","SANTA FE Plug-In Hybrid","PHEV",297
+2023,"Los Angeles","Hyundai","TUCSON Plug-in Hybrid","PHEV",366
+2023,"Los Angeles","Jaguar","I-PACE","Electric",15
+2023,"Los Angeles","Jeep","Grand Cherokee","PHEV",1425
+2023,"Los Angeles","Jeep","Wrangler","PHEV",6479
+2023,"Los Angeles","Jeep","Wrangler Unlimited","PHEV",33
+2023,"Los Angeles","Kia","EV6","Electric",1092
+2023,"Los Angeles","Kia","EV9","Electric",31
+2023,"Los Angeles","Kia","Niro EV","Electric",1522
+2023,"Los Angeles","Kia","Niro Plug-In Hybrid","PHEV",407
+2023,"Los Angeles","Kia","Sorento Plug-In Hybrid","PHEV",153
+2023,"Los Angeles","Kia","Sportage Plug-In Hybrid","PHEV",411
+2023,"Los Angeles","Land Rover","Range Rover","PHEV",18
+2023,"Los Angeles","Land Rover","Range Rover Sport","PHEV",14
+2023,"Los Angeles","Lexus","NX 450h+","PHEV",848
+2023,"Los Angeles","Lexus","RX 450h+","PHEV",67
+2023,"Los Angeles","Lexus","RZ 450e","Electric",743
+2023,"Los Angeles","Lincoln","Aviator","PHEV",71
+2023,"Los Angeles","Lincoln","Corsair","PHEV",41
+2023,"Los Angeles","Lucid","Air","Electric",253
+2023,"Los Angeles","MINI","Countryman Plug-in Hybrid","PHEV",39
+2023,"Los Angeles","MINI","Hardtop 2 Door","Electric",273
+2023,"Los Angeles","Mazda","CX-90 PHEV","PHEV",343
+2023,"Los Angeles","Mazda","MX-30 EV","Electric",16
+2023,"Los Angeles","McLaren","Artura","PHEV",18
+2023,"Los Angeles","Mercedes-Benz","EQB","Electric",1549
+2023,"Los Angeles","Mercedes-Benz","EQE","Electric",1988
+2023,"Los Angeles","Mercedes-Benz","EQS","Electric",2955
+2023,"Los Angeles","Mercedes-Benz","GLE","PHEV",133
+2023,"Los Angeles","Mercedes-Benz","S-Class","PHEV",54
+2023,"Los Angeles","Mitsubishi","Outlander PHEV","PHEV",425
+2023,"Los Angeles","Nissan","Ariya","Electric",640
+2023,"Los Angeles","Nissan","LEAF","Electric",371
+2023,"Los Angeles","Polestar","2","Electric",1578
+2023,"Los Angeles","Porsche","Cayenne","PHEV",83
+2023,"Los Angeles","Porsche","Panamera","PHEV",44
+2023,"Los Angeles","Porsche","Taycan","Electric",972
+2023,"Los Angeles","Rivian","EDV 700","Electric",7
+2023,"Los Angeles","Rivian","R1S","Electric",1366
+2023,"Los Angeles","Rivian","R1T","Electric",566
+2023,"Los Angeles","Rolls-Royce","Spectre","Electric",8
+2023,"Los Angeles","Subaru","Crosstrek","PHEV",87
+2023,"Los Angeles","Tesla","Cybertruck","Electric",5
+2023,"Los Angeles","Tesla","Model 3","Electric",22371
+2023,"Los Angeles","Tesla","Model S","Electric",1151
+2023,"Los Angeles","Tesla","Model X","Electric",2622
+2023,"Los Angeles","Tesla","Model Y","Electric",31223
+2023,"Los Angeles","Toyota","Mirai","Hydrogen",1303
+2023,"Los Angeles","Toyota","Prius Prime","PHEV",923
+2023,"Los Angeles","Toyota","RAV4 Prime","PHEV",1736
+2023,"Los Angeles","Toyota/Subaru","bZ4X/Solterra","Electric",1629
+2023,"Los Angeles","VinFast","VF8","Electric",270
+2023,"Los Angeles","Volkswagen","ID.4","Electric",3177
+2023,"Los Angeles","Volvo","C40 Recharge","Electric",537
+2023,"Los Angeles","Volvo","S60 Recharge","PHEV",89
+2023,"Los Angeles","Volvo","S90 Recharge","PHEV",2
+2023,"Los Angeles","Volvo","V60 Recharge","PHEV",22
+2023,"Los Angeles","Volvo","XC40 Recharge","Electric",443
+2023,"Los Angeles","Volvo","XC60 Recharge","PHEV",353
+2023,"Los Angeles","Volvo","XC90 Recharge","PHEV",772
+2023,"Madera","Audi","Q4 e-tron","Electric",3
+2023,"Madera","Audi","Q4 e-tron Sportback","Electric",1
+2023,"Madera","Audi","Q5","PHEV",2
+2023,"Madera","Audi","Q8 e-tron","Electric",1
+2023,"Madera","Audi","e-tron GT","Electric",1
+2023,"Madera","BMW","3 Series","PHEV",1
+2023,"Madera","BMW","X5","PHEV",3
+2023,"Madera","BMW","XM","PHEV",1
+2023,"Madera","BMW","i4","Electric",7
+2023,"Madera","BMW","iX","Electric",1
+2023,"Madera","Chevrolet","Blazer EV","Electric",1
+2023,"Madera","Chevrolet","Bolt EUV","Electric",12
+2023,"Madera","Chevrolet","Bolt EV","Electric",7
+2023,"Madera","Chrysler","Pacifica Hybrid","PHEV",4
+2023,"Madera","Chrysler","Pacifica Plug-In Hybrid","PHEV",1
+2023,"Madera","Fisker","Ocean","Electric",1
+2023,"Madera","Ford","Escape Plug-In Hybrid","PHEV",2
+2023,"Madera","Ford","F-150 Lightning","Electric",8
+2023,"Madera","Ford","Mustang Mach-E","Electric",18
+2023,"Madera","GMC","HUMMER EV","Electric",1
+2023,"Madera","Hyundai","IONIQ 5","Electric",5
+2023,"Madera","Hyundai","IONIQ 6","Electric",11
+2023,"Madera","Hyundai","KONA Electric","Electric",3
+2023,"Madera","Hyundai","TUCSON Plug-in Hybrid","PHEV",2
+2023,"Madera","Jeep","Grand Cherokee","PHEV",3
+2023,"Madera","Jeep","Wrangler","PHEV",17
+2023,"Madera","Kia","EV6","Electric",1
+2023,"Madera","Kia","Niro EV","Electric",1
+2023,"Madera","Kia","Niro Plug-In Hybrid","PHEV",2
+2023,"Madera","Kia","Sorento Plug-In Hybrid","PHEV",1
+2023,"Madera","Kia","Sportage Plug-In Hybrid","PHEV",3
+2023,"Madera","Lexus","NX 450h+","PHEV",2
+2023,"Madera","Lexus","RZ 450e","Electric",4
+2023,"Madera","Lucid","Air","Electric",1
+2023,"Madera","McLaren","Artura","PHEV",1
+2023,"Madera","Mercedes-Benz","EQB","Electric",1
+2023,"Madera","Mercedes-Benz","EQE","Electric",2
+2023,"Madera","Mercedes-Benz","EQS","Electric",1
+2023,"Madera","Mercedes-Benz","GLE","PHEV",2
+2023,"Madera","Mitsubishi","Outlander PHEV","PHEV",4
+2023,"Madera","Nissan","Ariya","Electric",6
+2023,"Madera","Nissan","LEAF","Electric",3
+2023,"Madera","Polestar","2","Electric",1
+2023,"Madera","Porsche","Panamera","PHEV",1
+2023,"Madera","Rivian","R1S","Electric",4
+2023,"Madera","Rivian","R1T","Electric",5
+2023,"Madera","Tesla","Model 3","Electric",108
+2023,"Madera","Tesla","Model S","Electric",6
+2023,"Madera","Tesla","Model X","Electric",9
+2023,"Madera","Tesla","Model Y","Electric",125
+2023,"Madera","Toyota","Prius Prime","PHEV",2
+2023,"Madera","Toyota","RAV4 Prime","PHEV",16
+2023,"Madera","Toyota/Subaru","bZ4X/Solterra","Electric",8
+2023,"Madera","Volkswagen","ID.4","Electric",9
+2023,"Madera","Volvo","XC90 Recharge","PHEV",1
+2023,"Marin","Audi","Q4 e-tron","Electric",65
+2023,"Marin","Audi","Q4 e-tron Sportback","Electric",16
+2023,"Marin","Audi","Q5","PHEV",30
+2023,"Marin","Audi","Q8 e-tron","Electric",44
+2023,"Marin","Audi","Q8 e-tron Sportback","Electric",10
+2023,"Marin","Audi","RS e-tron GT","Electric",8
+2023,"Marin","Audi","e-tron","Electric",11
+2023,"Marin","Audi","e-tron GT","Electric",10
+2023,"Marin","Audi","e-tron S","Electric",1
+2023,"Marin","Audi","e-tron Sportback","Electric",8
+2023,"Marin","BMW","3 Series","PHEV",21
+2023,"Marin","BMW","5 Series","PHEV",16
+2023,"Marin","BMW","X5","PHEV",85
+2023,"Marin","BMW","XM","PHEV",2
+2023,"Marin","BMW","i4","Electric",144
+2023,"Marin","BMW","i5","Electric",3
+2023,"Marin","BMW","i7","Electric",1
+2023,"Marin","BMW","iX","Electric",90
+2023,"Marin","Cadillac","LYRIQ","Electric",11
+2023,"Marin","Chevrolet","Bolt EUV","Electric",105
+2023,"Marin","Chevrolet","Bolt EV","Electric",88
+2023,"Marin","Chrysler","Pacifica Hybrid","PHEV",4
+2023,"Marin","Chrysler","Pacifica Plug-In Hybrid","PHEV",13
+2023,"Marin","Ferrari","296 GTB","PHEV",3
+2023,"Marin","Ferrari","SF90 Spider","PHEV",1
+2023,"Marin","Ferrari","SF90 Stradale","PHEV",1
+2023,"Marin","Fisker","Ocean","Electric",19
+2023,"Marin","Ford","E-Transit","Electric",8
+2023,"Marin","Ford","Escape Plug-In Hybrid","PHEV",8
+2023,"Marin","Ford","F-150 Lightning","Electric",41
+2023,"Marin","Ford","Mustang Mach-E","Electric",92
+2023,"Marin","Genesis","Electrified GV70","Electric",6
+2023,"Marin","Genesis","GV60","Electric",7
+2023,"Marin","Hyundai","IONIQ 5","Electric",74
+2023,"Marin","Hyundai","IONIQ 6","Electric",20
+2023,"Marin","Hyundai","KONA Electric","Electric",19
+2023,"Marin","Hyundai","NEXO","Hydrogen",2
+2023,"Marin","Hyundai","SANTA FE Plug-In Hybrid","PHEV",7
+2023,"Marin","Hyundai","TUCSON Plug-in Hybrid","PHEV",15
+2023,"Marin","Jaguar","I-PACE","Electric",2
+2023,"Marin","Jeep","Grand Cherokee","PHEV",29
+2023,"Marin","Jeep","Wrangler","PHEV",74
+2023,"Marin","Jeep","Wrangler Unlimited","PHEV",1
+2023,"Marin","Kia","EV6","Electric",53
+2023,"Marin","Kia","Niro EV","Electric",32
+2023,"Marin","Kia","Niro Plug-In Hybrid","PHEV",9
+2023,"Marin","Kia","Sorento Plug-In Hybrid","PHEV",18
+2023,"Marin","Kia","Sportage Plug-In Hybrid","PHEV",20
+2023,"Marin","Land Rover","Range Rover","PHEV",2
+2023,"Marin","Lexus","NX 450h+","PHEV",42
+2023,"Marin","Lexus","RX 450h+","PHEV",3
+2023,"Marin","Lexus","RZ 450e","Electric",18
+2023,"Marin","Lincoln","Aviator","PHEV",3
+2023,"Marin","Lincoln","Corsair","PHEV",5
+2023,"Marin","Lucid","Air","Electric",25
+2023,"Marin","MINI","Countryman Plug-in Hybrid","PHEV",1
+2023,"Marin","MINI","Hardtop 2 Door","Electric",12
+2023,"Marin","Mazda","CX-90 PHEV","PHEV",24
+2023,"Marin","Mercedes-Benz","EQB","Electric",21
+2023,"Marin","Mercedes-Benz","EQE","Electric",35
+2023,"Marin","Mercedes-Benz","EQS","Electric",49
+2023,"Marin","Mercedes-Benz","S-Class","PHEV",1
+2023,"Marin","Mitsubishi","Outlander PHEV","PHEV",5
+2023,"Marin","Nissan","Ariya","Electric",11
+2023,"Marin","Nissan","LEAF","Electric",16
+2023,"Marin","Polestar","2","Electric",49
+2023,"Marin","Porsche","Cayenne","PHEV",4
+2023,"Marin","Porsche","Panamera","PHEV",3
+2023,"Marin","Porsche","Taycan","Electric",44
+2023,"Marin","Rivian","R1S","Electric",207
+2023,"Marin","Rivian","R1T","Electric",71
+2023,"Marin","Subaru","Crosstrek","PHEV",6
+2023,"Marin","Tesla","Model 3","Electric",532
+2023,"Marin","Tesla","Model S","Electric",49
+2023,"Marin","Tesla","Model X","Electric",77
+2023,"Marin","Tesla","Model Y","Electric",1074
+2023,"Marin","Toyota","Mirai","Hydrogen",8
+2023,"Marin","Toyota","Prius Prime","PHEV",27
+2023,"Marin","Toyota","RAV4 Prime","PHEV",80
+2023,"Marin","Toyota/Subaru","bZ4X/Solterra","Electric",52
+2023,"Marin","VinFast","VF8","Electric",6
+2023,"Marin","Volkswagen","ID.4","Electric",274
+2023,"Marin","Volvo","C40 Recharge","Electric",33
+2023,"Marin","Volvo","S60 Recharge","PHEV",8
+2023,"Marin","Volvo","V60 Recharge","PHEV",7
+2023,"Marin","Volvo","XC40 Recharge","Electric",43
+2023,"Marin","Volvo","XC60 Recharge","PHEV",49
+2023,"Marin","Volvo","XC90 Recharge","PHEV",81
+2023,"Mariposa","Audi","Q4 e-tron","Electric",1
+2023,"Mariposa","BMW","i4","Electric",1
+2023,"Mariposa","Chevrolet","Bolt EV","Electric",3
+2023,"Mariposa","Chrysler","Pacifica Plug-In Hybrid","PHEV",2
+2023,"Mariposa","Ford","F-150 Lightning","Electric",3
+2023,"Mariposa","Hyundai","IONIQ 5","Electric",3
+2023,"Mariposa","Hyundai","TUCSON Plug-in Hybrid","PHEV",1
+2023,"Mariposa","Jeep","Wrangler","PHEV",2
+2023,"Mariposa","Kia","Niro Plug-In Hybrid","PHEV",1
+2023,"Mariposa","Kia","Sportage Plug-In Hybrid","PHEV",1
+2023,"Mariposa","Rivian","R1S","Electric",1
+2023,"Mariposa","Tesla","Model 3","Electric",6
+2023,"Mariposa","Tesla","Model Y","Electric",9
+2023,"Mariposa","Toyota","RAV4 Prime","PHEV",2
+2023,"Mariposa","Toyota/Subaru","bZ4X/Solterra","Electric",1
+2023,"Mariposa","Volkswagen","ID.4","Electric",1
+2023,"Mariposa","Volvo","S60 Recharge","PHEV",1
+2023,"Mariposa","Volvo","XC40 Recharge","Electric",2
+2023,"Mendocino","Audi","Q5","PHEV",3
+2023,"Mendocino","BMW","X5","PHEV",3
+2023,"Mendocino","BMW","XM","PHEV",1
+2023,"Mendocino","BMW","i4","Electric",3
+2023,"Mendocino","BMW","iX","Electric",1
+2023,"Mendocino","Chevrolet","Blazer EV","Electric",1
+2023,"Mendocino","Chevrolet","Bolt EUV","Electric",24
+2023,"Mendocino","Chevrolet","Bolt EV","Electric",11
+2023,"Mendocino","Ford","E-Transit","Electric",2
+2023,"Mendocino","Ford","F-150 Lightning","Electric",20
+2023,"Mendocino","Ford","Mustang Mach-E","Electric",9
+2023,"Mendocino","Genesis","GV60","Electric",2
+2023,"Mendocino","Hyundai","IONIQ 5","Electric",8
+2023,"Mendocino","Hyundai","IONIQ 6","Electric",2
+2023,"Mendocino","Hyundai","KONA Electric","Electric",3
+2023,"Mendocino","Hyundai","TUCSON Plug-in Hybrid","PHEV",4
+2023,"Mendocino","Jeep","Grand Cherokee","PHEV",4
+2023,"Mendocino","Jeep","Wrangler","PHEV",3
+2023,"Mendocino","Jeep","Wrangler Unlimited","PHEV",1
+2023,"Mendocino","Kia","EV6","Electric",3
+2023,"Mendocino","Kia","Niro EV","Electric",1
+2023,"Mendocino","Kia","Niro Plug-In Hybrid","PHEV",4
+2023,"Mendocino","Lexus","NX 450h+","PHEV",2
+2023,"Mendocino","Mazda","CX-90 PHEV","PHEV",3
+2023,"Mendocino","Mercedes-Benz","EQB","Electric",2
+2023,"Mendocino","Mercedes-Benz","EQS","Electric",1
+2023,"Mendocino","Nissan","Ariya","Electric",3
+2023,"Mendocino","Nissan","LEAF","Electric",4
+2023,"Mendocino","Polestar","2","Electric",1
+2023,"Mendocino","Rivian","R1S","Electric",3
+2023,"Mendocino","Rivian","R1T","Electric",5
+2023,"Mendocino","Subaru","Crosstrek","PHEV",1
+2023,"Mendocino","Tesla","Model 3","Electric",33
+2023,"Mendocino","Tesla","Model X","Electric",3
+2023,"Mendocino","Tesla","Model Y","Electric",57
+2023,"Mendocino","Toyota","Prius Prime","PHEV",3
+2023,"Mendocino","Toyota","RAV4 Prime","PHEV",16
+2023,"Mendocino","Toyota/Subaru","bZ4X/Solterra","Electric",7
+2023,"Mendocino","Volkswagen","ID.4","Electric",17
+2023,"Mendocino","Volvo","C40 Recharge","Electric",2
+2023,"Mendocino","Volvo","S60 Recharge","PHEV",1
+2023,"Mendocino","Volvo","XC60 Recharge","PHEV",2
+2023,"Mendocino","Volvo","XC90 Recharge","PHEV",4
+2023,"Merced","Audi","Q4 e-tron","Electric",3
+2023,"Merced","BMW","3 Series","PHEV",1
+2023,"Merced","BMW","X5","PHEV",4
+2023,"Merced","BMW","i4","Electric",9
+2023,"Merced","BMW","i7","Electric",2
+2023,"Merced","BMW","iX","Electric",1
+2023,"Merced","Cadillac","LYRIQ","Electric",5
+2023,"Merced","Chevrolet","Bolt EUV","Electric",25
+2023,"Merced","Chevrolet","Bolt EV","Electric",10
+2023,"Merced","Chrysler","Pacifica Hybrid","PHEV",1
+2023,"Merced","Chrysler","Pacifica Plug-In Hybrid","PHEV",2
+2023,"Merced","Fisker","Ocean","Electric",3
+2023,"Merced","Ford","Escape Plug-In Hybrid","PHEV",2
+2023,"Merced","Ford","F-150 Lightning","Electric",24
+2023,"Merced","Ford","Mustang Mach-E","Electric",28
+2023,"Merced","GMC","HUMMER EV","Electric",1
+2023,"Merced","Hyundai","IONIQ 5","Electric",11
+2023,"Merced","Hyundai","IONIQ 6","Electric",1
+2023,"Merced","Hyundai","KONA Electric","Electric",6
+2023,"Merced","Hyundai","SANTA FE Plug-In Hybrid","PHEV",5
+2023,"Merced","Hyundai","TUCSON Plug-in Hybrid","PHEV",3
+2023,"Merced","Jeep","Grand Cherokee","PHEV",5
+2023,"Merced","Jeep","Wrangler","PHEV",34
+2023,"Merced","Kia","EV6","Electric",11
+2023,"Merced","Kia","Niro EV","Electric",4
+2023,"Merced","Kia","Niro Plug-In Hybrid","PHEV",2
+2023,"Merced","Kia","Sorento Plug-In Hybrid","PHEV",7
+2023,"Merced","Kia","Sportage Plug-In Hybrid","PHEV",4
+2023,"Merced","Lexus","NX 450h+","PHEV",4
+2023,"Merced","Lexus","RZ 450e","Electric",2
+2023,"Merced","Lucid","Air","Electric",1
+2023,"Merced","MINI","Hardtop 2 Door","Electric",1
+2023,"Merced","Mazda","CX-90 PHEV","PHEV",1
+2023,"Merced","McLaren","Artura","PHEV",1
+2023,"Merced","Mercedes-Benz","EQB","Electric",6
+2023,"Merced","Mercedes-Benz","EQE","Electric",3
+2023,"Merced","Mercedes-Benz","EQS","Electric",4
+2023,"Merced","Mitsubishi","Outlander PHEV","PHEV",3
+2023,"Merced","Nissan","Ariya","Electric",3
+2023,"Merced","Polestar","2","Electric",1
+2023,"Merced","Rivian","R1S","Electric",4
+2023,"Merced","Rivian","R1T","Electric",7
+2023,"Merced","Tesla","Model 3","Electric",182
+2023,"Merced","Tesla","Model S","Electric",4
+2023,"Merced","Tesla","Model X","Electric",8
+2023,"Merced","Tesla","Model Y","Electric",209
+2023,"Merced","Toyota","Prius Prime","PHEV",8
+2023,"Merced","Toyota","RAV4 Prime","PHEV",20
+2023,"Merced","Toyota/Subaru","bZ4X/Solterra","Electric",18
+2023,"Merced","Volkswagen","ID.4","Electric",21
+2023,"Merced","Volvo","C40 Recharge","Electric",1
+2023,"Merced","Volvo","S60 Recharge","PHEV",1
+2023,"Merced","Volvo","XC90 Recharge","PHEV",2
+2023,"Modoc","Chevrolet","Bolt EV","Electric",1
+2023,"Modoc","Jeep","Wrangler","PHEV",1
+2023,"Modoc","Rivian","R1T","Electric",1
+2023,"Mono","Audi","Q8 e-tron","Electric",1
+2023,"Mono","BMW","X5","PHEV",1
+2023,"Mono","BMW","i4","Electric",1
+2023,"Mono","BMW","iX","Electric",1
+2023,"Mono","Chevrolet","Bolt EV","Electric",2
+2023,"Mono","Ford","F-150 Lightning","Electric",1
+2023,"Mono","Jeep","Grand Cherokee","PHEV",4
+2023,"Mono","Jeep","Wrangler","PHEV",3
+2023,"Mono","Kia","EV6","Electric",1
+2023,"Mono","Kia","Sportage Plug-In Hybrid","PHEV",1
+2023,"Mono","Mercedes-Benz","EQB","Electric",1
+2023,"Mono","Rivian","R1S","Electric",5
+2023,"Mono","Rivian","R1T","Electric",4
+2023,"Mono","Tesla","Model 3","Electric",2
+2023,"Mono","Tesla","Model Y","Electric",7
+2023,"Mono","Toyota","Prius Prime","PHEV",1
+2023,"Mono","Toyota","RAV4 Prime","PHEV",16
+2023,"Mono","Toyota/Subaru","bZ4X/Solterra","Electric",1
+2023,"Mono","Volkswagen","ID.4","Electric",1
+2023,"Mono","Volvo","XC60 Recharge","PHEV",1
+2023,"Monterey","Alfa Romeo","Tonale","PHEV",1
+2023,"Monterey","Audi","Q4 e-tron","Electric",19
+2023,"Monterey","Audi","Q4 e-tron Sportback","Electric",5
+2023,"Monterey","Audi","Q5","PHEV",10
+2023,"Monterey","Audi","Q8 e-tron","Electric",9
+2023,"Monterey","Audi","Q8 e-tron Sportback","Electric",5
+2023,"Monterey","Audi","RS e-tron GT","Electric",1
+2023,"Monterey","Audi","e-tron","Electric",4
+2023,"Monterey","Audi","e-tron GT","Electric",3
+2023,"Monterey","Audi","e-tron S Sportback","Electric",1
+2023,"Monterey","Audi","e-tron Sportback","Electric",2
+2023,"Monterey","BMW","3 Series","PHEV",2
+2023,"Monterey","BMW","5 Series","PHEV",11
+2023,"Monterey","BMW","X5","PHEV",29
+2023,"Monterey","BMW","XM","PHEV",2
+2023,"Monterey","BMW","i4","Electric",38
+2023,"Monterey","BMW","i7","Electric",1
+2023,"Monterey","BMW","iX","Electric",23
+2023,"Monterey","Cadillac","LYRIQ","Electric",11
+2023,"Monterey","Chevrolet","Bolt EUV","Electric",75
+2023,"Monterey","Chevrolet","Bolt EV","Electric",35
+2023,"Monterey","Chrysler","Pacifica Hybrid","PHEV",3
+2023,"Monterey","Chrysler","Pacifica Plug-In Hybrid","PHEV",17
+2023,"Monterey","Dodge","Hornet","PHEV",2
+2023,"Monterey","Fisker","Ocean","Electric",9
+2023,"Monterey","Ford","E-Transit","Electric",5
+2023,"Monterey","Ford","Escape Plug-In Hybrid","PHEV",4
+2023,"Monterey","Ford","F-150 Lightning","Electric",36
+2023,"Monterey","Ford","Mustang Mach-E","Electric",66
+2023,"Monterey","GMC","HUMMER EV","Electric",1
+2023,"Monterey","Genesis","GV60","Electric",3
+2023,"Monterey","Hyundai","IONIQ 5","Electric",59
+2023,"Monterey","Hyundai","IONIQ 6","Electric",17
+2023,"Monterey","Hyundai","KONA Electric","Electric",14
+2023,"Monterey","Hyundai","SANTA FE Plug-In Hybrid","PHEV",8
+2023,"Monterey","Hyundai","TUCSON Plug-in Hybrid","PHEV",8
+2023,"Monterey","Jaguar","I-PACE","Electric",2
+2023,"Monterey","Jeep","Grand Cherokee","PHEV",27
+2023,"Monterey","Jeep","Wrangler","PHEV",46
+2023,"Monterey","Jeep","Wrangler Unlimited","PHEV",1
+2023,"Monterey","Kia","EV6","Electric",15
+2023,"Monterey","Kia","Niro EV","Electric",5
+2023,"Monterey","Kia","Niro Plug-In Hybrid","PHEV",4
+2023,"Monterey","Kia","Sorento Plug-In Hybrid","PHEV",9
+2023,"Monterey","Kia","Sportage Plug-In Hybrid","PHEV",6
+2023,"Monterey","Land Rover","Range Rover","PHEV",2
+2023,"Monterey","Land Rover","Range Rover Sport","PHEV",1
+2023,"Monterey","Lexus","NX 450h+","PHEV",14
+2023,"Monterey","Lexus","RX 450h+","PHEV",4
+2023,"Monterey","Lexus","RZ 450e","Electric",11
+2023,"Monterey","Lincoln","Aviator","PHEV",2
+2023,"Monterey","Lincoln","Corsair","PHEV",1
+2023,"Monterey","Lucid","Air","Electric",4
+2023,"Monterey","MINI","Countryman Plug-in Hybrid","PHEV",1
+2023,"Monterey","MINI","Hardtop 2 Door","Electric",6
+2023,"Monterey","Mazda","CX-90 PHEV","PHEV",10
+2023,"Monterey","Mercedes-Benz","EQB","Electric",11
+2023,"Monterey","Mercedes-Benz","EQE","Electric",12
+2023,"Monterey","Mercedes-Benz","EQS","Electric",13
+2023,"Monterey","Mercedes-Benz","GLE","PHEV",5
+2023,"Monterey","Mercedes-Benz","S-Class","PHEV",1
+2023,"Monterey","Mitsubishi","Outlander PHEV","PHEV",2
+2023,"Monterey","Nissan","Ariya","Electric",12
+2023,"Monterey","Nissan","LEAF","Electric",7
+2023,"Monterey","Polestar","2","Electric",4
+2023,"Monterey","Porsche","Cayenne","PHEV",4
+2023,"Monterey","Porsche","Panamera","PHEV",1
+2023,"Monterey","Porsche","Taycan","Electric",7
+2023,"Monterey","Rivian","R1S","Electric",27
+2023,"Monterey","Rivian","R1T","Electric",24
+2023,"Monterey","Subaru","Crosstrek","PHEV",3
+2023,"Monterey","Tesla","Model 3","Electric",361
+2023,"Monterey","Tesla","Model S","Electric",24
+2023,"Monterey","Tesla","Model X","Electric",29
+2023,"Monterey","Tesla","Model Y","Electric",560
+2023,"Monterey","Toyota","Mirai","Hydrogen",1
+2023,"Monterey","Toyota","Prius Prime","PHEV",23
+2023,"Monterey","Toyota","RAV4 Prime","PHEV",64
+2023,"Monterey","Toyota/Subaru","bZ4X/Solterra","Electric",45
+2023,"Monterey","VinFast","VF8","Electric",2
+2023,"Monterey","Volkswagen","ID.4","Electric",85
+2023,"Monterey","Volvo","C40 Recharge","Electric",5
+2023,"Monterey","Volvo","S60 Recharge","PHEV",2
+2023,"Monterey","Volvo","V60 Recharge","PHEV",1
+2023,"Monterey","Volvo","XC40 Recharge","Electric",8
+2023,"Monterey","Volvo","XC60 Recharge","PHEV",12
+2023,"Monterey","Volvo","XC90 Recharge","PHEV",11
+2023,"Napa","Alfa Romeo","Tonale","PHEV",1
+2023,"Napa","Audi","Q4 e-tron","Electric",8
+2023,"Napa","Audi","Q4 e-tron Sportback","Electric",3
+2023,"Napa","Audi","Q5","PHEV",5
+2023,"Napa","Audi","Q8 e-tron","Electric",7
+2023,"Napa","Audi","Q8 e-tron Sportback","Electric",2
+2023,"Napa","Audi","RS e-tron GT","Electric",1
+2023,"Napa","Audi","e-tron","Electric",1
+2023,"Napa","Audi","e-tron S","Electric",1
+2023,"Napa","Audi","e-tron Sportback","Electric",1
+2023,"Napa","BMW","3 Series","PHEV",5
+2023,"Napa","BMW","5 Series","PHEV",4
+2023,"Napa","BMW","X5","PHEV",15
+2023,"Napa","BMW","i4","Electric",29
+2023,"Napa","BMW","i5","Electric",1
+2023,"Napa","BMW","i7","Electric",1
+2023,"Napa","BMW","iX","Electric",20
+2023,"Napa","Cadillac","LYRIQ","Electric",3
+2023,"Napa","Chevrolet","Bolt EUV","Electric",34
+2023,"Napa","Chevrolet","Bolt EV","Electric",17
+2023,"Napa","Chrysler","Pacifica Hybrid","PHEV",1
+2023,"Napa","Chrysler","Pacifica Plug-In Hybrid","PHEV",4
+2023,"Napa","Ferrari","296 GTB","PHEV",1
+2023,"Napa","Fisker","Ocean","Electric",9
+2023,"Napa","Ford","E-Transit","Electric",3
+2023,"Napa","Ford","Escape Plug-In Hybrid","PHEV",3
+2023,"Napa","Ford","F-150 Lightning","Electric",46
+2023,"Napa","Ford","Mustang Mach-E","Electric",36
+2023,"Napa","Genesis","GV60","Electric",3
+2023,"Napa","Hyundai","IONIQ 5","Electric",22
+2023,"Napa","Hyundai","IONIQ 6","Electric",11
+2023,"Napa","Hyundai","KONA Electric","Electric",2
+2023,"Napa","Hyundai","SANTA FE Plug-In Hybrid","PHEV",3
+2023,"Napa","Hyundai","TUCSON Plug-in Hybrid","PHEV",7
+2023,"Napa","Jeep","Grand Cherokee","PHEV",8
+2023,"Napa","Jeep","Wrangler","PHEV",27
+2023,"Napa","Jeep","Wrangler Unlimited","PHEV",3
+2023,"Napa","Kia","EV6","Electric",10
+2023,"Napa","Kia","Niro EV","Electric",4
+2023,"Napa","Kia","Niro Plug-In Hybrid","PHEV",5
+2023,"Napa","Kia","Sorento Plug-In Hybrid","PHEV",1
+2023,"Napa","Kia","Sportage Plug-In Hybrid","PHEV",2
+2023,"Napa","Lexus","NX 450h+","PHEV",8
+2023,"Napa","Lexus","RZ 450e","Electric",7
+2023,"Napa","Lincoln","Aviator","PHEV",1
+2023,"Napa","Lincoln","Corsair","PHEV",2
+2023,"Napa","Lucid","Air","Electric",8
+2023,"Napa","MINI","Hardtop 2 Door","Electric",9
+2023,"Napa","Mazda","CX-90 PHEV","PHEV",4
+2023,"Napa","McLaren","Artura","PHEV",1
+2023,"Napa","Mercedes-Benz","EQB","Electric",10
+2023,"Napa","Mercedes-Benz","EQE","Electric",11
+2023,"Napa","Mercedes-Benz","EQS","Electric",21
+2023,"Napa","Mercedes-Benz","GLE","PHEV",1
+2023,"Napa","Mercedes-Benz","S-Class","PHEV",1
+2023,"Napa","Nissan","Ariya","Electric",16
+2023,"Napa","Nissan","LEAF","Electric",8
+2023,"Napa","Polestar","2","Electric",1
+2023,"Napa","Porsche","Cayenne","PHEV",3
+2023,"Napa","Porsche","Panamera","PHEV",2
+2023,"Napa","Porsche","Taycan","Electric",8
+2023,"Napa","Rivian","EDV 500","Electric",28
+2023,"Napa","Rivian","EDV 700","Electric",23
+2023,"Napa","Rivian","R1S","Electric",46
+2023,"Napa","Rivian","R1T","Electric",25
+2023,"Napa","Subaru","Crosstrek","PHEV",1
+2023,"Napa","Tesla","Model 3","Electric",185
+2023,"Napa","Tesla","Model S","Electric",17
+2023,"Napa","Tesla","Model X","Electric",28
+2023,"Napa","Tesla","Model Y","Electric",349
+2023,"Napa","Toyota","Mirai","Hydrogen",1
+2023,"Napa","Toyota","Prius Prime","PHEV",14
+2023,"Napa","Toyota","RAV4 Prime","PHEV",24
+2023,"Napa","Toyota/Subaru","bZ4X/Solterra","Electric",25
+2023,"Napa","Volkswagen","ID.4","Electric",47
+2023,"Napa","Volvo","C40 Recharge","Electric",4
+2023,"Napa","Volvo","S60 Recharge","PHEV",3
+2023,"Napa","Volvo","V60 Recharge","PHEV",1
+2023,"Napa","Volvo","XC40 Recharge","Electric",9
+2023,"Napa","Volvo","XC60 Recharge","PHEV",8
+2023,"Napa","Volvo","XC90 Recharge","PHEV",14
+2023,"Nevada","Audi","Q4 e-tron","Electric",6
+2023,"Nevada","Audi","Q4 e-tron Sportback","Electric",2
+2023,"Nevada","Audi","Q5","PHEV",1
+2023,"Nevada","Audi","Q8 e-tron","Electric",5
+2023,"Nevada","Audi","Q8 e-tron Sportback","Electric",2
+2023,"Nevada","Audi","RS e-tron GT","Electric",1
+2023,"Nevada","Audi","e-tron Sportback","Electric",1
+2023,"Nevada","BMW","5 Series","PHEV",1
+2023,"Nevada","BMW","X5","PHEV",5
+2023,"Nevada","BMW","i4","Electric",2
+2023,"Nevada","BMW","iX","Electric",7
+2023,"Nevada","Cadillac","LYRIQ","Electric",1
+2023,"Nevada","Chevrolet","Bolt EUV","Electric",8
+2023,"Nevada","Chevrolet","Bolt EV","Electric",11
+2023,"Nevada","Chrysler","Pacifica Plug-In Hybrid","PHEV",1
+2023,"Nevada","Fisker","Ocean","Electric",1
+2023,"Nevada","Ford","E-Transit","Electric",1
+2023,"Nevada","Ford","F-150 Lightning","Electric",20
+2023,"Nevada","Ford","Mustang Mach-E","Electric",9
+2023,"Nevada","Genesis","GV60","Electric",1
+2023,"Nevada","Hyundai","IONIQ 5","Electric",17
+2023,"Nevada","Hyundai","IONIQ 6","Electric",2
+2023,"Nevada","Hyundai","SANTA FE Plug-In Hybrid","PHEV",3
+2023,"Nevada","Hyundai","TUCSON Plug-in Hybrid","PHEV",7
+2023,"Nevada","Jeep","Grand Cherokee","PHEV",5
+2023,"Nevada","Jeep","Wrangler","PHEV",11
+2023,"Nevada","Kia","EV6","Electric",7
+2023,"Nevada","Kia","Sorento Plug-In Hybrid","PHEV",2
+2023,"Nevada","Kia","Sportage Plug-In Hybrid","PHEV",9
+2023,"Nevada","Lexus","NX 450h+","PHEV",4
+2023,"Nevada","Lexus","RX 450h+","PHEV",1
+2023,"Nevada","MINI","Hardtop 2 Door","Electric",2
+2023,"Nevada","Mazda","CX-90 PHEV","PHEV",5
+2023,"Nevada","Mercedes-Benz","EQB","Electric",2
+2023,"Nevada","Mercedes-Benz","GLE","PHEV",1
+2023,"Nevada","Mitsubishi","Outlander PHEV","PHEV",3
+2023,"Nevada","Nissan","Ariya","Electric",2
+2023,"Nevada","Porsche","Taycan","Electric",2
+2023,"Nevada","Rivian","R1S","Electric",36
+2023,"Nevada","Rivian","R1T","Electric",33
+2023,"Nevada","Subaru","Crosstrek","PHEV",1
+2023,"Nevada","Tesla","Model 3","Electric",39
+2023,"Nevada","Tesla","Model S","Electric",5
+2023,"Nevada","Tesla","Model X","Electric",10
+2023,"Nevada","Tesla","Model Y","Electric",151
+2023,"Nevada","Toyota","Mirai","Hydrogen",1
+2023,"Nevada","Toyota","Prius Prime","PHEV",4
+2023,"Nevada","Toyota","RAV4 Prime","PHEV",19
+2023,"Nevada","Toyota/Subaru","bZ4X/Solterra","Electric",14
+2023,"Nevada","VinFast","VF8","Electric",1
+2023,"Nevada","Volkswagen","ID.4","Electric",22
+2023,"Nevada","Volvo","XC40 Recharge","Electric",3
+2023,"Nevada","Volvo","XC60 Recharge","PHEV",4
+2023,"Nevada","Volvo","XC90 Recharge","PHEV",4
+2023,"Orange","Alfa Romeo","Tonale","PHEV",21
+2023,"Orange","Audi","Q4 e-tron","Electric",360
+2023,"Orange","Audi","Q4 e-tron Sportback","Electric",110
+2023,"Orange","Audi","Q5","PHEV",120
+2023,"Orange","Audi","Q8 e-tron","Electric",317
+2023,"Orange","Audi","Q8 e-tron Sportback","Electric",76
+2023,"Orange","Audi","RS e-tron GT","Electric",30
+2023,"Orange","Audi","SQ8 e-tron","Electric",1
+2023,"Orange","Audi","SQ8 e-tron Sportback","Electric",2
+2023,"Orange","Audi","e-tron","Electric",94
+2023,"Orange","Audi","e-tron GT","Electric",122
+2023,"Orange","Audi","e-tron S","Electric",8
+2023,"Orange","Audi","e-tron S Sportback","Electric",6
+2023,"Orange","Audi","e-tron Sportback","Electric",25
+2023,"Orange","BMW","3 Series","PHEV",199
+2023,"Orange","BMW","5 Series","PHEV",198
+2023,"Orange","BMW","7 Series","PHEV",4
+2023,"Orange","BMW","X5","PHEV",466
+2023,"Orange","BMW","XM","PHEV",45
+2023,"Orange","BMW","i4","Electric",917
+2023,"Orange","BMW","i5","Electric",60
+2023,"Orange","BMW","i7","Electric",120
+2023,"Orange","BMW","iX","Electric",665
+2023,"Orange","Bentley","Bentayga","PHEV",11
+2023,"Orange","Bentley","Flying Spur","PHEV",4
+2023,"Orange","Cadillac","LYRIQ","Electric",165
+2023,"Orange","Chevrolet","Blazer EV","Electric",5
+2023,"Orange","Chevrolet","Bolt EUV","Electric",828
+2023,"Orange","Chevrolet","Bolt EV","Electric",346
+2023,"Orange","Chrysler","Pacifica Hybrid","PHEV",78
+2023,"Orange","Chrysler","Pacifica Plug-In Hybrid","PHEV",148
+2023,"Orange","Dodge","Hornet","PHEV",5
+2023,"Orange","Ferrari","296 GTB","PHEV",14
+2023,"Orange","Ferrari","296 GTS","PHEV",3
+2023,"Orange","Ferrari","SF90 Spider","PHEV",6
+2023,"Orange","Ferrari","SF90 Stradale","PHEV",13
+2023,"Orange","Fisker","Ocean","Electric",137
+2023,"Orange","Ford","E-Transit","Electric",48
+2023,"Orange","Ford","Escape Plug-In Hybrid","PHEV",80
+2023,"Orange","Ford","F-150 Lightning","Electric",380
+2023,"Orange","Ford","Mustang Mach-E","Electric",950
+2023,"Orange","GMC","HUMMER EV","Electric",14
+2023,"Orange","Genesis","Electrified G80","Electric",20
+2023,"Orange","Genesis","Electrified GV70","Electric",114
+2023,"Orange","Genesis","GV60","Electric",165
+2023,"Orange","Hyundai","IONIQ 5","Electric",1183
+2023,"Orange","Hyundai","IONIQ 6","Electric",645
+2023,"Orange","Hyundai","KONA Electric","Electric",318
+2023,"Orange","Hyundai","NEXO","Hydrogen",41
+2023,"Orange","Hyundai","SANTA FE Plug-In Hybrid","PHEV",200
+2023,"Orange","Hyundai","TUCSON Plug-in Hybrid","PHEV",313
+2023,"Orange","Jaguar","I-PACE","Electric",4
+2023,"Orange","Jeep","Grand Cherokee","PHEV",382
+2023,"Orange","Jeep","Wrangler","PHEV",785
+2023,"Orange","Jeep","Wrangler Unlimited","PHEV",28
+2023,"Orange","Karma","GS-6","PHEV",3
+2023,"Orange","Kia","EV6","Electric",371
+2023,"Orange","Kia","EV9","Electric",19
+2023,"Orange","Kia","Niro EV","Electric",235
+2023,"Orange","Kia","Niro Plug-In Hybrid","PHEV",138
+2023,"Orange","Kia","Sorento Plug-In Hybrid","PHEV",98
+2023,"Orange","Kia","Sportage Plug-In Hybrid","PHEV",218
+2023,"Orange","Land Rover","Range Rover","PHEV",7
+2023,"Orange","Land Rover","Range Rover Sport","PHEV",5
+2023,"Orange","Lexus","NX 450h+","PHEV",299
+2023,"Orange","Lexus","RX 450h+","PHEV",34
+2023,"Orange","Lexus","RZ 450e","Electric",247
+2023,"Orange","Lincoln","Aviator","PHEV",25
+2023,"Orange","Lincoln","Corsair","PHEV",24
+2023,"Orange","Lucid","Air","Electric",66
+2023,"Orange","MINI","Countryman Plug-in Hybrid","PHEV",16
+2023,"Orange","MINI","Hardtop 2 Door","Electric",87
+2023,"Orange","Mazda","CX-90 PHEV","PHEV",281
+2023,"Orange","Mazda","MX-30 EV","Electric",38
+2023,"Orange","McLaren","Artura","PHEV",13
+2023,"Orange","Mercedes-Benz","EQB","Electric",605
+2023,"Orange","Mercedes-Benz","EQE","Electric",906
+2023,"Orange","Mercedes-Benz","EQS","Electric",1158
+2023,"Orange","Mercedes-Benz","GLE","PHEV",57
+2023,"Orange","Mercedes-Benz","S-Class","PHEV",27
+2023,"Orange","Mitsubishi","Outlander PHEV","PHEV",40
+2023,"Orange","Nissan","Ariya","Electric",396
+2023,"Orange","Nissan","LEAF","Electric",209
+2023,"Orange","Polestar","2","Electric",76
+2023,"Orange","Porsche","Cayenne","PHEV",28
+2023,"Orange","Porsche","Panamera","PHEV",25
+2023,"Orange","Porsche","Taycan","Electric",333
+2023,"Orange","Rivian","EDV 500","Electric",1
+2023,"Orange","Rivian","EDV 700","Electric",114
+2023,"Orange","Rivian","R1S","Electric",1140
+2023,"Orange","Rivian","R1T","Electric",384
+2023,"Orange","Rolls-Royce","Spectre","Electric",2
+2023,"Orange","Subaru","Crosstrek","PHEV",30
+2023,"Orange","Tesla","Model 3","Electric",10252
+2023,"Orange","Tesla","Model S","Electric",649
+2023,"Orange","Tesla","Model X","Electric",1765
+2023,"Orange","Tesla","Model Y","Electric",18262
+2023,"Orange","Toyota","Mirai","Hydrogen",519
+2023,"Orange","Toyota","Prius Prime","PHEV",347
+2023,"Orange","Toyota","RAV4 Prime","PHEV",849
+2023,"Orange","Toyota/Subaru","bZ4X/Solterra","Electric",464
+2023,"Orange","VinFast","VF8","Electric",41
+2023,"Orange","Volkswagen","ID.4","Electric",1340
+2023,"Orange","Volvo","C40 Recharge","Electric",134
+2023,"Orange","Volvo","S60 Recharge","PHEV",27
+2023,"Orange","Volvo","S90 Recharge","PHEV",3
+2023,"Orange","Volvo","V60 Recharge","PHEV",14
+2023,"Orange","Volvo","XC40 Recharge","Electric",115
+2023,"Orange","Volvo","XC60 Recharge","PHEV",118
+2023,"Orange","Volvo","XC90 Recharge","PHEV",257
+2023,"Out Of State","Alfa Romeo","Tonale","PHEV",3
+2023,"Out Of State","Audi","Q4 e-tron","Electric",4
+2023,"Out Of State","Audi","Q4 e-tron Sportback","Electric",1
+2023,"Out Of State","Audi","Q5","PHEV",7
+2023,"Out Of State","Audi","Q8 e-tron","Electric",6
+2023,"Out Of State","Audi","Q8 e-tron Sportback","Electric",2
+2023,"Out Of State","Audi","RS e-tron GT","Electric",1
+2023,"Out Of State","Audi","e-tron","Electric",2
+2023,"Out Of State","Audi","e-tron GT","Electric",1
+2023,"Out Of State","Audi","e-tron S Sportback","Electric",1
+2023,"Out Of State","Audi","e-tron Sportback","Electric",5
+2023,"Out Of State","BMW","3 Series","PHEV",45
+2023,"Out Of State","BMW","5 Series","PHEV",38
+2023,"Out Of State","BMW","X5","PHEV",35
+2023,"Out Of State","BMW","XM","PHEV",3
+2023,"Out Of State","BMW","i4","Electric",136
+2023,"Out Of State","BMW","i7","Electric",2
+2023,"Out Of State","BMW","iX","Electric",29
+2023,"Out Of State","BrightDrop","Zevo 600","Electric",388
+2023,"Out Of State","Cadillac","LYRIQ","Electric",4
+2023,"Out Of State","Chevrolet","Bolt EUV","Electric",138
+2023,"Out Of State","Chevrolet","Bolt EV","Electric",224
+2023,"Out Of State","Chevrolet","Silverado EV","Electric",2
+2023,"Out Of State","Chrysler","Pacifica Hybrid","PHEV",6
+2023,"Out Of State","Chrysler","Pacifica Plug-In Hybrid","PHEV",2107
+2023,"Out Of State","Ferrari","296 GTB","PHEV",1
+2023,"Out Of State","Ferrari","SF90 Spider","PHEV",2
+2023,"Out Of State","Ferrari","SF90 Stradale","PHEV",4
+2023,"Out Of State","Fisker","Ocean","Electric",1
+2023,"Out Of State","Ford","E-Transit","Electric",318
+2023,"Out Of State","Ford","Escape Plug-In Hybrid","PHEV",115
+2023,"Out Of State","Ford","F-150 Lightning","Electric",195
+2023,"Out Of State","Ford","Mustang Mach-E","Electric",178
+2023,"Out Of State","GMC","HUMMER EV","Electric",2
+2023,"Out Of State","Genesis","Electrified GV70","Electric",2
+2023,"Out Of State","Genesis","GV60","Electric",3
+2023,"Out Of State","Hyundai","IONIQ 5","Electric",20
+2023,"Out Of State","Hyundai","IONIQ 6","Electric",7
+2023,"Out Of State","Hyundai","KONA Electric","Electric",141
+2023,"Out Of State","Hyundai","NEXO","Hydrogen",12
+2023,"Out Of State","Hyundai","SANTA FE Plug-In Hybrid","PHEV",93
+2023,"Out Of State","Hyundai","TUCSON Plug-in Hybrid","PHEV",83
+2023,"Out Of State","Jeep","Grand Cherokee","PHEV",759
+2023,"Out Of State","Jeep","Wrangler","PHEV",847
+2023,"Out Of State","Kia","EV6","Electric",13
+2023,"Out Of State","Kia","Niro EV","Electric",167
+2023,"Out Of State","Kia","Niro Plug-In Hybrid","PHEV",2
+2023,"Out Of State","Kia","Sorento Plug-In Hybrid","PHEV",4
+2023,"Out Of State","Kia","Sportage Plug-In Hybrid","PHEV",6
+2023,"Out Of State","Land Rover","Range Rover","PHEV",1
+2023,"Out Of State","Lexus","NX 450h+","PHEV",21
+2023,"Out Of State","Lexus","RX 450h+","PHEV",1
+2023,"Out Of State","Lexus","RZ 450e","Electric",14
+2023,"Out Of State","Lincoln","Aviator","PHEV",3
+2023,"Out Of State","Lincoln","Corsair","PHEV",2
+2023,"Out Of State","Lucid","Air","Electric",17
+2023,"Out Of State","Mazda","CX-90 PHEV","PHEV",3
+2023,"Out Of State","Mercedes-Benz","EQB","Electric",7
+2023,"Out Of State","Mercedes-Benz","EQE","Electric",31
+2023,"Out Of State","Mercedes-Benz","EQS","Electric",34
+2023,"Out Of State","Mercedes-Benz","GLE","PHEV",1
+2023,"Out Of State","Mercedes-Benz","S-Class","PHEV",1
+2023,"Out Of State","Mitsubishi","Outlander PHEV","PHEV",7
+2023,"Out Of State","Nissan","Ariya","Electric",14
+2023,"Out Of State","Nissan","LEAF","Electric",101
+2023,"Out Of State","Polestar","2","Electric",5
+2023,"Out Of State","Porsche","Cayenne","PHEV",3
+2023,"Out Of State","Porsche","Taycan","Electric",6
+2023,"Out Of State","Rivian","EDV 500","Electric",1
+2023,"Out Of State","Rivian","EDV 700","Electric",4
+2023,"Out Of State","Rivian","R1S","Electric",49
+2023,"Out Of State","Rivian","R1T","Electric",36
+2023,"Out Of State","Subaru","Crosstrek","PHEV",9
+2023,"Out Of State","Tesla","Model 3","Electric",978
+2023,"Out Of State","Tesla","Model S","Electric",3
+2023,"Out Of State","Tesla","Model X","Electric",30
+2023,"Out Of State","Tesla","Model Y","Electric",274
+2023,"Out Of State","Toyota","Mirai","Hydrogen",2
+2023,"Out Of State","Toyota","Prius Prime","PHEV",39
+2023,"Out Of State","Toyota","RAV4 Prime","PHEV",87
+2023,"Out Of State","Toyota/Subaru","bZ4X/Solterra","Electric",40
+2023,"Out Of State","VinFast","VF8","Electric",1
+2023,"Out Of State","Volkswagen","ID.4","Electric",41
+2023,"Out Of State","Volvo","C40 Recharge","Electric",76
+2023,"Out Of State","Volvo","S60 Recharge","PHEV",25
+2023,"Out Of State","Volvo","V60 Recharge","PHEV",1
+2023,"Out Of State","Volvo","XC40 Recharge","Electric",98
+2023,"Out Of State","Volvo","XC60 Recharge","PHEV",20
+2023,"Out Of State","Volvo","XC90 Recharge","PHEV",19
+2023,"Placer","Audi","Q4 e-tron","Electric",33
+2023,"Placer","Audi","Q4 e-tron Sportback","Electric",3
+2023,"Placer","Audi","Q5","PHEV",19
+2023,"Placer","Audi","Q8 e-tron","Electric",27
+2023,"Placer","Audi","Q8 e-tron Sportback","Electric",7
+2023,"Placer","Audi","RS e-tron GT","Electric",4
+2023,"Placer","Audi","e-tron","Electric",18
+2023,"Placer","Audi","e-tron GT","Electric",4
+2023,"Placer","Audi","e-tron S","Electric",1
+2023,"Placer","Audi","e-tron Sportback","Electric",4
+2023,"Placer","BMW","3 Series","PHEV",8
+2023,"Placer","BMW","5 Series","PHEV",16
+2023,"Placer","BMW","X5","PHEV",54
+2023,"Placer","BMW","XM","PHEV",2
+2023,"Placer","BMW","i4","Electric",75
+2023,"Placer","BMW","i7","Electric",2
+2023,"Placer","BMW","iX","Electric",33
+2023,"Placer","Cadillac","LYRIQ","Electric",18
+2023,"Placer","Chevrolet","Bolt EUV","Electric",91
+2023,"Placer","Chevrolet","Bolt EV","Electric",62
+2023,"Placer","Chrysler","Pacifica Hybrid","PHEV",8
+2023,"Placer","Chrysler","Pacifica Plug-In Hybrid","PHEV",14
+2023,"Placer","Dodge","Hornet","PHEV",1
+2023,"Placer","Ferrari","SF90 Spider","PHEV",1
+2023,"Placer","Ferrari","SF90 Stradale","PHEV",2
+2023,"Placer","Fisker","Ocean","Electric",19
+2023,"Placer","Ford","E-Transit","Electric",8
+2023,"Placer","Ford","Escape Plug-In Hybrid","PHEV",8
+2023,"Placer","Ford","F-150 Lightning","Electric",78
+2023,"Placer","Ford","Mustang Mach-E","Electric",82
+2023,"Placer","GMC","HUMMER EV","Electric",2
+2023,"Placer","Genesis","Electrified GV70","Electric",1
+2023,"Placer","Genesis","GV60","Electric",3
+2023,"Placer","Hyundai","IONIQ 5","Electric",64
+2023,"Placer","Hyundai","IONIQ 6","Electric",17
+2023,"Placer","Hyundai","KONA Electric","Electric",14
+2023,"Placer","Hyundai","NEXO","Hydrogen",1
+2023,"Placer","Hyundai","SANTA FE Plug-In Hybrid","PHEV",38
+2023,"Placer","Hyundai","TUCSON Plug-in Hybrid","PHEV",29
+2023,"Placer","Jeep","Grand Cherokee","PHEV",49
+2023,"Placer","Jeep","Wrangler","PHEV",70
+2023,"Placer","Jeep","Wrangler Unlimited","PHEV",1
+2023,"Placer","Kia","EV6","Electric",41
+2023,"Placer","Kia","EV9","Electric",3
+2023,"Placer","Kia","Niro EV","Electric",23
+2023,"Placer","Kia","Niro Plug-In Hybrid","PHEV",8
+2023,"Placer","Kia","Sorento Plug-In Hybrid","PHEV",21
+2023,"Placer","Kia","Sportage Plug-In Hybrid","PHEV",27
+2023,"Placer","Land Rover","Range Rover","PHEV",1
+2023,"Placer","Land Rover","Range Rover Sport","PHEV",2
+2023,"Placer","Lexus","NX 450h+","PHEV",24
+2023,"Placer","Lexus","RX 450h+","PHEV",1
+2023,"Placer","Lexus","RZ 450e","Electric",20
+2023,"Placer","Lincoln","Aviator","PHEV",3
+2023,"Placer","Lincoln","Corsair","PHEV",5
+2023,"Placer","Lucid","Air","Electric",15
+2023,"Placer","MINI","Countryman Plug-in Hybrid","PHEV",1
+2023,"Placer","MINI","Hardtop 2 Door","Electric",6
+2023,"Placer","Mazda","CX-90 PHEV","PHEV",35
+2023,"Placer","Mazda","MX-30 EV","Electric",1
+2023,"Placer","Mercedes-Benz","EQB","Electric",33
+2023,"Placer","Mercedes-Benz","EQE","Electric",39
+2023,"Placer","Mercedes-Benz","EQS","Electric",46
+2023,"Placer","Mercedes-Benz","GLE","PHEV",5
+2023,"Placer","Mercedes-Benz","S-Class","PHEV",1
+2023,"Placer","Mitsubishi","Outlander PHEV","PHEV",3
+2023,"Placer","Nissan","Ariya","Electric",22
+2023,"Placer","Nissan","LEAF","Electric",13
+2023,"Placer","Polestar","2","Electric",3
+2023,"Placer","Porsche","Cayenne","PHEV",1
+2023,"Placer","Porsche","Taycan","Electric",17
+2023,"Placer","Rivian","R1S","Electric",115
+2023,"Placer","Rivian","R1T","Electric",55
+2023,"Placer","Subaru","Crosstrek","PHEV",6
+2023,"Placer","Tesla","Model 3","Electric",786
+2023,"Placer","Tesla","Model S","Electric",53
+2023,"Placer","Tesla","Model X","Electric",80
+2023,"Placer","Tesla","Model Y","Electric",1634
+2023,"Placer","Toyota","Mirai","Hydrogen",15
+2023,"Placer","Toyota","Prius Prime","PHEV",40
+2023,"Placer","Toyota","RAV4 Prime","PHEV",81
+2023,"Placer","Toyota/Subaru","bZ4X/Solterra","Electric",78
+2023,"Placer","VinFast","VF8","Electric",4
+2023,"Placer","Volkswagen","ID.4","Electric",97
+2023,"Placer","Volvo","C40 Recharge","Electric",6
+2023,"Placer","Volvo","S60 Recharge","PHEV",1
+2023,"Placer","Volvo","XC40 Recharge","Electric",10
+2023,"Placer","Volvo","XC60 Recharge","PHEV",10
+2023,"Placer","Volvo","XC90 Recharge","PHEV",22
+2023,"Plumas","Audi","Q4 e-tron","Electric",1
+2023,"Plumas","BMW","X5","PHEV",1
+2023,"Plumas","BMW","i4","Electric",1
+2023,"Plumas","Chevrolet","Bolt EUV","Electric",1
+2023,"Plumas","Ford","F-150 Lightning","Electric",2
+2023,"Plumas","Ford","Mustang Mach-E","Electric",1
+2023,"Plumas","Hyundai","TUCSON Plug-in Hybrid","PHEV",1
+2023,"Plumas","Jeep","Wrangler","PHEV",1
+2023,"Plumas","Kia","Niro Plug-In Hybrid","PHEV",1
+2023,"Plumas","Tesla","Model 3","Electric",5
+2023,"Plumas","Tesla","Model S","Electric",1
+2023,"Plumas","Tesla","Model Y","Electric",9
+2023,"Plumas","Toyota","RAV4 Prime","PHEV",1
+2023,"Plumas","Toyota/Subaru","bZ4X/Solterra","Electric",1
+2023,"Plumas","Volkswagen","ID.4","Electric",2
+2023,"Plumas","Volvo","C40 Recharge","Electric",1
+2023,"Plumas","Volvo","XC40 Recharge","Electric",1
+2023,"Plumas","Volvo","XC60 Recharge","PHEV",2
+2023,"Riverside","Alfa Romeo","Tonale","PHEV",7
+2023,"Riverside","Audi","Q4 e-tron","Electric",117
+2023,"Riverside","Audi","Q4 e-tron Sportback","Electric",34
+2023,"Riverside","Audi","Q5","PHEV",20
+2023,"Riverside","Audi","Q8 e-tron","Electric",68
+2023,"Riverside","Audi","Q8 e-tron Sportback","Electric",21
+2023,"Riverside","Audi","RS e-tron GT","Electric",3
+2023,"Riverside","Audi","e-tron","Electric",27
+2023,"Riverside","Audi","e-tron GT","Electric",33
+2023,"Riverside","Audi","e-tron S","Electric",3
+2023,"Riverside","Audi","e-tron S Sportback","Electric",5
+2023,"Riverside","Audi","e-tron Sportback","Electric",14
+2023,"Riverside","BMW","3 Series","PHEV",69
+2023,"Riverside","BMW","5 Series","PHEV",63
+2023,"Riverside","BMW","7 Series","PHEV",4
+2023,"Riverside","BMW","X5","PHEV",135
+2023,"Riverside","BMW","XM","PHEV",24
+2023,"Riverside","BMW","i4","Electric",411
+2023,"Riverside","BMW","i5","Electric",17
+2023,"Riverside","BMW","i7","Electric",42
+2023,"Riverside","BMW","iX","Electric",221
+2023,"Riverside","Bentley","Bentayga","PHEV",1
+2023,"Riverside","Bentley","Flying Spur","PHEV",5
+2023,"Riverside","Cadillac","LYRIQ","Electric",158
+2023,"Riverside","Chevrolet","Blazer EV","Electric",3
+2023,"Riverside","Chevrolet","Bolt EUV","Electric",479
+2023,"Riverside","Chevrolet","Bolt EV","Electric",129
+2023,"Riverside","Chrysler","Pacifica Hybrid","PHEV",28
+2023,"Riverside","Chrysler","Pacifica Plug-In Hybrid","PHEV",92
+2023,"Riverside","Dodge","Hornet","PHEV",7
+2023,"Riverside","Ferrari","296 GTB","PHEV",2
+2023,"Riverside","Ferrari","SF90 Stradale","PHEV",1
+2023,"Riverside","Fisker","Ocean","Electric",46
+2023,"Riverside","Ford","E-Transit","Electric",20
+2023,"Riverside","Ford","Escape Plug-In Hybrid","PHEV",31
+2023,"Riverside","Ford","F-150 Lightning","Electric",208
+2023,"Riverside","Ford","Mustang Mach-E","Electric",556
+2023,"Riverside","GMC","HUMMER EV","Electric",2
+2023,"Riverside","Genesis","Electrified G80","Electric",4
+2023,"Riverside","Genesis","Electrified GV70","Electric",24
+2023,"Riverside","Genesis","GV60","Electric",63
+2023,"Riverside","Hyundai","IONIQ 5","Electric",397
+2023,"Riverside","Hyundai","IONIQ 6","Electric",345
+2023,"Riverside","Hyundai","KONA Electric","Electric",120
+2023,"Riverside","Hyundai","NEXO","Hydrogen",3
+2023,"Riverside","Hyundai","SANTA FE Plug-In Hybrid","PHEV",77
+2023,"Riverside","Hyundai","TUCSON Plug-in Hybrid","PHEV",91
+2023,"Riverside","Jaguar","I-PACE","Electric",3
+2023,"Riverside","Jeep","Grand Cherokee","PHEV",225
+2023,"Riverside","Jeep","Wrangler","PHEV",740
+2023,"Riverside","Jeep","Wrangler Unlimited","PHEV",25
+2023,"Riverside","Kia","EV6","Electric",206
+2023,"Riverside","Kia","EV9","Electric",4
+2023,"Riverside","Kia","Niro EV","Electric",92
+2023,"Riverside","Kia","Niro Plug-In Hybrid","PHEV",86
+2023,"Riverside","Kia","Sorento Plug-In Hybrid","PHEV",61
+2023,"Riverside","Kia","Sportage Plug-In Hybrid","PHEV",123
+2023,"Riverside","Land Rover","Range Rover","PHEV",1
+2023,"Riverside","Land Rover","Range Rover Sport","PHEV",1
+2023,"Riverside","Lexus","NX 450h+","PHEV",118
+2023,"Riverside","Lexus","RX 450h+","PHEV",8
+2023,"Riverside","Lexus","RZ 450e","Electric",126
+2023,"Riverside","Lincoln","Aviator","PHEV",11
+2023,"Riverside","Lincoln","Corsair","PHEV",12
+2023,"Riverside","Lucid","Air","Electric",11
+2023,"Riverside","MINI","Hardtop 2 Door","Electric",26
+2023,"Riverside","Mazda","CX-90 PHEV","PHEV",109
+2023,"Riverside","Mazda","MX-30 EV","Electric",3
+2023,"Riverside","McLaren","Artura","PHEV",4
+2023,"Riverside","Mercedes-Benz","EQB","Electric",186
+2023,"Riverside","Mercedes-Benz","EQE","Electric",246
+2023,"Riverside","Mercedes-Benz","EQS","Electric",240
+2023,"Riverside","Mercedes-Benz","GLE","PHEV",20
+2023,"Riverside","Mercedes-Benz","S-Class","PHEV",4
+2023,"Riverside","Mitsubishi","Outlander PHEV","PHEV",24
+2023,"Riverside","Nissan","Ariya","Electric",134
+2023,"Riverside","Nissan","LEAF","Electric",56
+2023,"Riverside","Polestar","2","Electric",21
+2023,"Riverside","Porsche","Cayenne","PHEV",9
+2023,"Riverside","Porsche","Panamera","PHEV",8
+2023,"Riverside","Porsche","Taycan","Electric",79
+2023,"Riverside","Rivian","EDV 700","Electric",50
+2023,"Riverside","Rivian","R1S","Electric",188
+2023,"Riverside","Rivian","R1T","Electric",64
+2023,"Riverside","Rolls-Royce","Spectre","Electric",1
+2023,"Riverside","Subaru","Crosstrek","PHEV",6
+2023,"Riverside","Tesla","Model 3","Electric",4101
+2023,"Riverside","Tesla","Model S","Electric",196
+2023,"Riverside","Tesla","Model X","Electric",345
+2023,"Riverside","Tesla","Model Y","Electric",5826
+2023,"Riverside","Toyota","Mirai","Hydrogen",140
+2023,"Riverside","Toyota","Prius Prime","PHEV",215
+2023,"Riverside","Toyota","RAV4 Prime","PHEV",382
+2023,"Riverside","Toyota/Subaru","bZ4X/Solterra","Electric",347
+2023,"Riverside","VinFast","VF8","Electric",9
+2023,"Riverside","Volkswagen","ID.4","Electric",599
+2023,"Riverside","Volvo","C40 Recharge","Electric",40
+2023,"Riverside","Volvo","S60 Recharge","PHEV",6
+2023,"Riverside","Volvo","V60 Recharge","PHEV",1
+2023,"Riverside","Volvo","XC40 Recharge","Electric",38
+2023,"Riverside","Volvo","XC60 Recharge","PHEV",37
+2023,"Riverside","Volvo","XC90 Recharge","PHEV",56
+2023,"Sacramento","Alfa Romeo","Tonale","PHEV",1
+2023,"Sacramento","Audi","Q4 e-tron","Electric",67
+2023,"Sacramento","Audi","Q4 e-tron Sportback","Electric",15
+2023,"Sacramento","Audi","Q5","PHEV",20
+2023,"Sacramento","Audi","Q8 e-tron","Electric",34
+2023,"Sacramento","Audi","Q8 e-tron Sportback","Electric",13
+2023,"Sacramento","Audi","RS e-tron GT","Electric",2
+2023,"Sacramento","Audi","e-tron","Electric",13
+2023,"Sacramento","Audi","e-tron GT","Electric",12
+2023,"Sacramento","Audi","e-tron S","Electric",1
+2023,"Sacramento","Audi","e-tron S Sportback","Electric",2
+2023,"Sacramento","Audi","e-tron Sportback","Electric",2
+2023,"Sacramento","BMW","3 Series","PHEV",24
+2023,"Sacramento","BMW","5 Series","PHEV",17
+2023,"Sacramento","BMW","7 Series","PHEV",3
+2023,"Sacramento","BMW","X5","PHEV",79
+2023,"Sacramento","BMW","XM","PHEV",4
+2023,"Sacramento","BMW","i4","Electric",206
+2023,"Sacramento","BMW","i5","Electric",6
+2023,"Sacramento","BMW","i7","Electric",6
+2023,"Sacramento","BMW","iX","Electric",73
+2023,"Sacramento","Cadillac","LYRIQ","Electric",46
+2023,"Sacramento","Chevrolet","Bolt EUV","Electric",331
+2023,"Sacramento","Chevrolet","Bolt EV","Electric",202
+2023,"Sacramento","Chevrolet","Silverado EV","Electric",1
+2023,"Sacramento","Chrysler","Pacifica Hybrid","PHEV",14
+2023,"Sacramento","Chrysler","Pacifica Plug-In Hybrid","PHEV",53
+2023,"Sacramento","Dodge","Hornet","PHEV",3
+2023,"Sacramento","Ferrari","SF90 Stradale","PHEV",1
+2023,"Sacramento","Fisker","Ocean","Electric",30
+2023,"Sacramento","Ford","E-Transit","Electric",13
+2023,"Sacramento","Ford","Escape Plug-In Hybrid","PHEV",25
+2023,"Sacramento","Ford","F-150 Lightning","Electric",125
+2023,"Sacramento","Ford","Mustang Mach-E","Electric",265
+2023,"Sacramento","GMC","HUMMER EV","Electric",2
+2023,"Sacramento","Genesis","Electrified GV70","Electric",3
+2023,"Sacramento","Genesis","GV60","Electric",7
+2023,"Sacramento","Hyundai","IONIQ 5","Electric",212
+2023,"Sacramento","Hyundai","IONIQ 6","Electric",75
+2023,"Sacramento","Hyundai","KONA Electric","Electric",45
+2023,"Sacramento","Hyundai","NEXO","Hydrogen",8
+2023,"Sacramento","Hyundai","SANTA FE Plug-In Hybrid","PHEV",51
+2023,"Sacramento","Hyundai","TUCSON Plug-in Hybrid","PHEV",45
+2023,"Sacramento","Jaguar","I-PACE","Electric",1
+2023,"Sacramento","Jeep","Grand Cherokee","PHEV",92
+2023,"Sacramento","Jeep","Wrangler","PHEV",160
+2023,"Sacramento","Jeep","Wrangler Unlimited","PHEV",8
+2023,"Sacramento","Kia","EV6","Electric",93
+2023,"Sacramento","Kia","EV9","Electric",6
+2023,"Sacramento","Kia","Niro EV","Electric",51
+2023,"Sacramento","Kia","Niro Plug-In Hybrid","PHEV",34
+2023,"Sacramento","Kia","Sorento Plug-In Hybrid","PHEV",35
+2023,"Sacramento","Kia","Sportage Plug-In Hybrid","PHEV",76
+2023,"Sacramento","Land Rover","Range Rover","PHEV",1
+2023,"Sacramento","Land Rover","Range Rover Sport","PHEV",2
+2023,"Sacramento","Lexus","NX 450h+","PHEV",44
+2023,"Sacramento","Lexus","RX 450h+","PHEV",8
+2023,"Sacramento","Lexus","RZ 450e","Electric",38
+2023,"Sacramento","Lincoln","Aviator","PHEV",7
+2023,"Sacramento","Lincoln","Corsair","PHEV",4
+2023,"Sacramento","Lucid","Air","Electric",20
+2023,"Sacramento","MINI","Countryman Plug-in Hybrid","PHEV",4
+2023,"Sacramento","MINI","Hardtop 2 Door","Electric",33
+2023,"Sacramento","Mazda","CX-90 PHEV","PHEV",94
+2023,"Sacramento","Mazda","MX-30 EV","Electric",5
+2023,"Sacramento","McLaren","Artura","PHEV",1
+2023,"Sacramento","Mercedes-Benz","EQB","Electric",82
+2023,"Sacramento","Mercedes-Benz","EQE","Electric",83
+2023,"Sacramento","Mercedes-Benz","EQS","Electric",85
+2023,"Sacramento","Mercedes-Benz","GLE","PHEV",7
+2023,"Sacramento","Mercedes-Benz","S-Class","PHEV",2
+2023,"Sacramento","Mitsubishi","Outlander PHEV","PHEV",15
+2023,"Sacramento","Nissan","Ariya","Electric",92
+2023,"Sacramento","Nissan","LEAF","Electric",72
+2023,"Sacramento","Polestar","2","Electric",12
+2023,"Sacramento","Porsche","Cayenne","PHEV",5
+2023,"Sacramento","Porsche","Panamera","PHEV",2
+2023,"Sacramento","Porsche","Taycan","Electric",16
+2023,"Sacramento","Rivian","R1S","Electric",161
+2023,"Sacramento","Rivian","R1T","Electric",75
+2023,"Sacramento","Subaru","Crosstrek","PHEV",16
+2023,"Sacramento","Tesla","Model 3","Electric",2406
+2023,"Sacramento","Tesla","Model S","Electric",98
+2023,"Sacramento","Tesla","Model X","Electric",195
+2023,"Sacramento","Tesla","Model Y","Electric",4516
+2023,"Sacramento","Toyota","Mirai","Hydrogen",54
+2023,"Sacramento","Toyota","Prius Prime","PHEV",158
+2023,"Sacramento","Toyota","RAV4 Prime","PHEV",177
+2023,"Sacramento","Toyota/Subaru","bZ4X/Solterra","Electric",215
+2023,"Sacramento","VinFast","VF8","Electric",4
+2023,"Sacramento","Volkswagen","ID.4","Electric",441
+2023,"Sacramento","Volvo","C40 Recharge","Electric",19
+2023,"Sacramento","Volvo","S60 Recharge","PHEV",2
+2023,"Sacramento","Volvo","V60 Recharge","PHEV",3
+2023,"Sacramento","Volvo","XC40 Recharge","Electric",12
+2023,"Sacramento","Volvo","XC60 Recharge","PHEV",28
+2023,"Sacramento","Volvo","XC90 Recharge","PHEV",48
+2023,"San Benito","Audi","Q4 e-tron","Electric",2
+2023,"San Benito","Audi","Q8 e-tron Sportback","Electric",2
+2023,"San Benito","BMW","7 Series","PHEV",1
+2023,"San Benito","BMW","X5","PHEV",3
+2023,"San Benito","BMW","i4","Electric",6
+2023,"San Benito","BMW","i5","Electric",2
+2023,"San Benito","BMW","iX","Electric",2
+2023,"San Benito","Cadillac","LYRIQ","Electric",2
+2023,"San Benito","Chevrolet","Bolt EUV","Electric",21
+2023,"San Benito","Chevrolet","Bolt EV","Electric",12
+2023,"San Benito","Fisker","Ocean","Electric",2
+2023,"San Benito","Ford","Escape Plug-In Hybrid","PHEV",3
+2023,"San Benito","Ford","F-150 Lightning","Electric",12
+2023,"San Benito","Ford","Mustang Mach-E","Electric",20
+2023,"San Benito","Hyundai","IONIQ 5","Electric",9
+2023,"San Benito","Hyundai","IONIQ 6","Electric",5
+2023,"San Benito","Hyundai","KONA Electric","Electric",2
+2023,"San Benito","Hyundai","SANTA FE Plug-In Hybrid","PHEV",2
+2023,"San Benito","Hyundai","TUCSON Plug-in Hybrid","PHEV",2
+2023,"San Benito","Jaguar","I-PACE","Electric",1
+2023,"San Benito","Jeep","Grand Cherokee","PHEV",5
+2023,"San Benito","Jeep","Wrangler","PHEV",12
+2023,"San Benito","Kia","EV6","Electric",2
+2023,"San Benito","Kia","Niro EV","Electric",1
+2023,"San Benito","Kia","Niro Plug-In Hybrid","PHEV",2
+2023,"San Benito","Kia","Sorento Plug-In Hybrid","PHEV",1
+2023,"San Benito","Lexus","NX 450h+","PHEV",1
+2023,"San Benito","Lincoln","Corsair","PHEV",1
+2023,"San Benito","Lucid","Air","Electric",1
+2023,"San Benito","Mercedes-Benz","EQB","Electric",2
+2023,"San Benito","Mercedes-Benz","EQE","Electric",2
+2023,"San Benito","Mitsubishi","Outlander PHEV","PHEV",1
+2023,"San Benito","Nissan","Ariya","Electric",2
+2023,"San Benito","Porsche","Panamera","PHEV",1
+2023,"San Benito","Porsche","Taycan","Electric",1
+2023,"San Benito","Rivian","R1S","Electric",3
+2023,"San Benito","Rivian","R1T","Electric",3
+2023,"San Benito","Tesla","Model 3","Electric",86
+2023,"San Benito","Tesla","Model S","Electric",3
+2023,"San Benito","Tesla","Model X","Electric",4
+2023,"San Benito","Tesla","Model Y","Electric",154
+2023,"San Benito","Toyota","Prius Prime","PHEV",5
+2023,"San Benito","Toyota","RAV4 Prime","PHEV",3
+2023,"San Benito","Toyota/Subaru","bZ4X/Solterra","Electric",10
+2023,"San Benito","Volkswagen","ID.4","Electric",11
+2023,"San Benito","Volvo","XC90 Recharge","PHEV",3
+2023,"San Bernardino","Alfa Romeo","Tonale","PHEV",6
+2023,"San Bernardino","Audi","Q4 e-tron","Electric",72
+2023,"San Bernardino","Audi","Q4 e-tron Sportback","Electric",29
+2023,"San Bernardino","Audi","Q5","PHEV",25
+2023,"San Bernardino","Audi","Q8 e-tron","Electric",40
+2023,"San Bernardino","Audi","Q8 e-tron Sportback","Electric",9
+2023,"San Bernardino","Audi","RS e-tron GT","Electric",1
+2023,"San Bernardino","Audi","e-tron","Electric",11
+2023,"San Bernardino","Audi","e-tron GT","Electric",21
+2023,"San Bernardino","Audi","e-tron S","Electric",2
+2023,"San Bernardino","Audi","e-tron S Sportback","Electric",1
+2023,"San Bernardino","Audi","e-tron Sportback","Electric",2
+2023,"San Bernardino","BMW","3 Series","PHEV",26
+2023,"San Bernardino","BMW","5 Series","PHEV",45
+2023,"San Bernardino","BMW","7 Series","PHEV",2
+2023,"San Bernardino","BMW","X5","PHEV",82
+2023,"San Bernardino","BMW","XM","PHEV",8
+2023,"San Bernardino","BMW","i4","Electric",289
+2023,"San Bernardino","BMW","i5","Electric",15
+2023,"San Bernardino","BMW","i7","Electric",33
+2023,"San Bernardino","BMW","iX","Electric",213
+2023,"San Bernardino","Cadillac","LYRIQ","Electric",50
+2023,"San Bernardino","Chevrolet","Blazer EV","Electric",3
+2023,"San Bernardino","Chevrolet","Bolt EUV","Electric",299
+2023,"San Bernardino","Chevrolet","Bolt EV","Electric",123
+2023,"San Bernardino","Chrysler","Pacifica Hybrid","PHEV",29
+2023,"San Bernardino","Chrysler","Pacifica Plug-In Hybrid","PHEV",70
+2023,"San Bernardino","Dodge","Hornet","PHEV",2
+2023,"San Bernardino","Ferrari","296 GTB","PHEV",1
+2023,"San Bernardino","Fisker","Ocean","Electric",32
+2023,"San Bernardino","Ford","E-Transit","Electric",30
+2023,"San Bernardino","Ford","Escape Plug-In Hybrid","PHEV",25
+2023,"San Bernardino","Ford","F-150 Lightning","Electric",167
+2023,"San Bernardino","Ford","Mustang Mach-E","Electric",405
+2023,"San Bernardino","GMC","HUMMER EV","Electric",7
+2023,"San Bernardino","Genesis","Electrified G80","Electric",2
+2023,"San Bernardino","Genesis","Electrified GV70","Electric",11
+2023,"San Bernardino","Genesis","GV60","Electric",26
+2023,"San Bernardino","Hyundai","IONIQ 5","Electric",263
+2023,"San Bernardino","Hyundai","IONIQ 6","Electric",222
+2023,"San Bernardino","Hyundai","KONA Electric","Electric",92
+2023,"San Bernardino","Hyundai","NEXO","Hydrogen",3
+2023,"San Bernardino","Hyundai","SANTA FE Plug-In Hybrid","PHEV",40
+2023,"San Bernardino","Hyundai","TUCSON Plug-in Hybrid","PHEV",44
+2023,"San Bernardino","Jeep","Grand Cherokee","PHEV",178
+2023,"San Bernardino","Jeep","Wrangler","PHEV",614
+2023,"San Bernardino","Jeep","Wrangler Unlimited","PHEV",17
+2023,"San Bernardino","Karma","GS-6","PHEV",1
+2023,"San Bernardino","Kia","EV6","Electric",112
+2023,"San Bernardino","Kia","EV9","Electric",6
+2023,"San Bernardino","Kia","Niro EV","Electric",26
+2023,"San Bernardino","Kia","Niro Plug-In Hybrid","PHEV",56
+2023,"San Bernardino","Kia","Sorento Plug-In Hybrid","PHEV",28
+2023,"San Bernardino","Kia","Sportage Plug-In Hybrid","PHEV",99
+2023,"San Bernardino","Land Rover","Range Rover","PHEV",2
+2023,"San Bernardino","Lexus","NX 450h+","PHEV",90
+2023,"San Bernardino","Lexus","RX 450h+","PHEV",4
+2023,"San Bernardino","Lexus","RZ 450e","Electric",100
+2023,"San Bernardino","Lincoln","Aviator","PHEV",6
+2023,"San Bernardino","Lincoln","Corsair","PHEV",4
+2023,"San Bernardino","Lucid","Air","Electric",13
+2023,"San Bernardino","MINI","Countryman Plug-in Hybrid","PHEV",4
+2023,"San Bernardino","MINI","Hardtop 2 Door","Electric",17
+2023,"San Bernardino","Mazda","CX-90 PHEV","PHEV",71
+2023,"San Bernardino","Mazda","MX-30 EV","Electric",4
+2023,"San Bernardino","McLaren","Artura","PHEV",2
+2023,"San Bernardino","Mercedes-Benz","EQB","Electric",229
+2023,"San Bernardino","Mercedes-Benz","EQE","Electric",268
+2023,"San Bernardino","Mercedes-Benz","EQS","Electric",246
+2023,"San Bernardino","Mercedes-Benz","GLE","PHEV",20
+2023,"San Bernardino","Mercedes-Benz","S-Class","PHEV",7
+2023,"San Bernardino","Mitsubishi","Outlander PHEV","PHEV",22
+2023,"San Bernardino","Nissan","Ariya","Electric",84
+2023,"San Bernardino","Nissan","LEAF","Electric",53
+2023,"San Bernardino","Polestar","2","Electric",7
+2023,"San Bernardino","Porsche","Cayenne","PHEV",4
+2023,"San Bernardino","Porsche","Panamera","PHEV",9
+2023,"San Bernardino","Porsche","Taycan","Electric",54
+2023,"San Bernardino","Rivian","R1S","Electric",120
+2023,"San Bernardino","Rivian","R1T","Electric",62
+2023,"San Bernardino","Subaru","Crosstrek","PHEV",10
+2023,"San Bernardino","Tesla","Model 3","Electric",3474
+2023,"San Bernardino","Tesla","Model S","Electric",125
+2023,"San Bernardino","Tesla","Model X","Electric",388
+2023,"San Bernardino","Tesla","Model Y","Electric",5113
+2023,"San Bernardino","Toyota","Mirai","Hydrogen",86
+2023,"San Bernardino","Toyota","Prius Prime","PHEV",203
+2023,"San Bernardino","Toyota","RAV4 Prime","PHEV",366
+2023,"San Bernardino","Toyota/Subaru","bZ4X/Solterra","Electric",218
+2023,"San Bernardino","VinFast","VF8","Electric",3
+2023,"San Bernardino","Volkswagen","ID.4","Electric",336
+2023,"San Bernardino","Volvo","C40 Recharge","Electric",21
+2023,"San Bernardino","Volvo","S60 Recharge","PHEV",4
+2023,"San Bernardino","Volvo","S90 Recharge","PHEV",1
+2023,"San Bernardino","Volvo","V60 Recharge","PHEV",2
+2023,"San Bernardino","Volvo","XC40 Recharge","Electric",15
+2023,"San Bernardino","Volvo","XC60 Recharge","PHEV",15
+2023,"San Bernardino","Volvo","XC90 Recharge","PHEV",28
+2023,"San Diego","Alfa Romeo","Tonale","PHEV",25
+2023,"San Diego","Audi","Q4 e-tron","Electric",211
+2023,"San Diego","Audi","Q4 e-tron Sportback","Electric",62
+2023,"San Diego","Audi","Q5","PHEV",86
+2023,"San Diego","Audi","Q8 e-tron","Electric",140
+2023,"San Diego","Audi","Q8 e-tron Sportback","Electric",49
+2023,"San Diego","Audi","RS e-tron GT","Electric",18
+2023,"San Diego","Audi","e-tron","Electric",55
+2023,"San Diego","Audi","e-tron GT","Electric",40
+2023,"San Diego","Audi","e-tron S","Electric",7
+2023,"San Diego","Audi","e-tron S Sportback","Electric",4
+2023,"San Diego","Audi","e-tron Sportback","Electric",23
+2023,"San Diego","BMW","3 Series","PHEV",160
+2023,"San Diego","BMW","5 Series","PHEV",91
+2023,"San Diego","BMW","7 Series","PHEV",2
+2023,"San Diego","BMW","X5","PHEV",340
+2023,"San Diego","BMW","XM","PHEV",20
+2023,"San Diego","BMW","i4","Electric",839
+2023,"San Diego","BMW","i5","Electric",35
+2023,"San Diego","BMW","i7","Electric",69
+2023,"San Diego","BMW","iX","Electric",362
+2023,"San Diego","Bentley","Bentayga","PHEV",2
+2023,"San Diego","Bentley","Flying Spur","PHEV",2
+2023,"San Diego","Cadillac","LYRIQ","Electric",122
+2023,"San Diego","Chevrolet","Blazer EV","Electric",2
+2023,"San Diego","Chevrolet","Bolt EUV","Electric",1091
+2023,"San Diego","Chevrolet","Bolt EV","Electric",438
+2023,"San Diego","Chrysler","Pacifica Hybrid","PHEV",85
+2023,"San Diego","Chrysler","Pacifica Plug-In Hybrid","PHEV",191
+2023,"San Diego","Dodge","Hornet","PHEV",5
+2023,"San Diego","Ferrari","296 GTB","PHEV",6
+2023,"San Diego","Ferrari","SF90 Spider","PHEV",2
+2023,"San Diego","Ferrari","SF90 Stradale","PHEV",6
+2023,"San Diego","Fisker","Ocean","Electric",144
+2023,"San Diego","Ford","E-Transit","Electric",99
+2023,"San Diego","Ford","Escape Plug-In Hybrid","PHEV",105
+2023,"San Diego","Ford","F-150 Lightning","Electric",414
+2023,"San Diego","Ford","Mustang Mach-E","Electric",1401
+2023,"San Diego","GMC","HUMMER EV","Electric",7
+2023,"San Diego","Genesis","Electrified G80","Electric",3
+2023,"San Diego","Genesis","Electrified GV70","Electric",27
+2023,"San Diego","Genesis","GV60","Electric",78
+2023,"San Diego","Hyundai","IONIQ 5","Electric",886
+2023,"San Diego","Hyundai","IONIQ 6","Electric",373
+2023,"San Diego","Hyundai","KONA Electric","Electric",199
+2023,"San Diego","Hyundai","NEXO","Hydrogen",25
+2023,"San Diego","Hyundai","SANTA FE Plug-In Hybrid","PHEV",129
+2023,"San Diego","Hyundai","TUCSON Plug-in Hybrid","PHEV",147
+2023,"San Diego","Jaguar","I-PACE","Electric",8
+2023,"San Diego","Jeep","Grand Cherokee","PHEV",346
+2023,"San Diego","Jeep","Wrangler","PHEV",1064
+2023,"San Diego","Jeep","Wrangler Unlimited","PHEV",28
+2023,"San Diego","Kia","EV6","Electric",402
+2023,"San Diego","Kia","EV9","Electric",15
+2023,"San Diego","Kia","Niro EV","Electric",380
+2023,"San Diego","Kia","Niro Plug-In Hybrid","PHEV",145
+2023,"San Diego","Kia","Sorento Plug-In Hybrid","PHEV",110
+2023,"San Diego","Kia","Sportage Plug-In Hybrid","PHEV",177
+2023,"San Diego","Land Rover","Range Rover","PHEV",5
+2023,"San Diego","Land Rover","Range Rover Sport","PHEV",3
+2023,"San Diego","Lexus","NX 450h+","PHEV",244
+2023,"San Diego","Lexus","RX 450h+","PHEV",28
+2023,"San Diego","Lexus","RZ 450e","Electric",153
+2023,"San Diego","Lincoln","Aviator","PHEV",14
+2023,"San Diego","Lincoln","Corsair","PHEV",19
+2023,"San Diego","Lucid","Air","Electric",49
+2023,"San Diego","MINI","Countryman Plug-in Hybrid","PHEV",13
+2023,"San Diego","MINI","Hardtop 2 Door","Electric",76
+2023,"San Diego","Mazda","CX-90 PHEV","PHEV",145
+2023,"San Diego","Mazda","MX-30 EV","Electric",7
+2023,"San Diego","McLaren","Artura","PHEV",3
+2023,"San Diego","Mercedes-Benz","EQB","Electric",317
+2023,"San Diego","Mercedes-Benz","EQE","Electric",275
+2023,"San Diego","Mercedes-Benz","EQS","Electric",343
+2023,"San Diego","Mercedes-Benz","GLE","PHEV",40
+2023,"San Diego","Mercedes-Benz","S-Class","PHEV",6
+2023,"San Diego","Mitsubishi","Outlander PHEV","PHEV",81
+2023,"San Diego","Nissan","Ariya","Electric",282
+2023,"San Diego","Nissan","LEAF","Electric",128
+2023,"San Diego","Polestar","2","Electric",301
+2023,"San Diego","Porsche","Cayenne","PHEV",16
+2023,"San Diego","Porsche","Panamera","PHEV",12
+2023,"San Diego","Porsche","Taycan","Electric",187
+2023,"San Diego","Rivian","EDV 500","Electric",6
+2023,"San Diego","Rivian","EDV 700","Electric",92
+2023,"San Diego","Rivian","R1S","Electric",784
+2023,"San Diego","Rivian","R1T","Electric",342
+2023,"San Diego","Rolls-Royce","Spectre","Electric",1
+2023,"San Diego","Subaru","Crosstrek","PHEV",37
+2023,"San Diego","Tesla","Model 3","Electric",7160
+2023,"San Diego","Tesla","Model S","Electric",380
+2023,"San Diego","Tesla","Model X","Electric",693
+2023,"San Diego","Tesla","Model Y","Electric",11322
+2023,"San Diego","Toyota","Mirai","Hydrogen",118
+2023,"San Diego","Toyota","Prius Prime","PHEV",279
+2023,"San Diego","Toyota","RAV4 Prime","PHEV",763
+2023,"San Diego","Toyota/Subaru","bZ4X/Solterra","Electric",551
+2023,"San Diego","VinFast","VF8","Electric",16
+2023,"San Diego","Volkswagen","ID.4","Electric",1018
+2023,"San Diego","Volvo","C40 Recharge","Electric",130
+2023,"San Diego","Volvo","S60 Recharge","PHEV",17
+2023,"San Diego","Volvo","S90 Recharge","PHEV",1
+2023,"San Diego","Volvo","V60 Recharge","PHEV",5
+2023,"San Diego","Volvo","XC40 Recharge","Electric",128
+2023,"San Diego","Volvo","XC60 Recharge","PHEV",122
+2023,"San Diego","Volvo","XC90 Recharge","PHEV",273
+2023,"San Francisco","Alfa Romeo","Tonale","PHEV",5
+2023,"San Francisco","Audi","Q4 e-tron","Electric",116
+2023,"San Francisco","Audi","Q4 e-tron Sportback","Electric",36
+2023,"San Francisco","Audi","Q5","PHEV",44
+2023,"San Francisco","Audi","Q8 e-tron","Electric",52
+2023,"San Francisco","Audi","Q8 e-tron Sportback","Electric",13
+2023,"San Francisco","Audi","RS e-tron GT","Electric",8
+2023,"San Francisco","Audi","SQ8 e-tron","Electric",1
+2023,"San Francisco","Audi","e-tron","Electric",20
+2023,"San Francisco","Audi","e-tron GT","Electric",7
+2023,"San Francisco","Audi","e-tron S","Electric",2
+2023,"San Francisco","Audi","e-tron S Sportback","Electric",1
+2023,"San Francisco","Audi","e-tron Sportback","Electric",1
+2023,"San Francisco","BMW","3 Series","PHEV",47
+2023,"San Francisco","BMW","5 Series","PHEV",19
+2023,"San Francisco","BMW","X5","PHEV",119
+2023,"San Francisco","BMW","XM","PHEV",5
+2023,"San Francisco","BMW","i4","Electric",259
+2023,"San Francisco","BMW","i5","Electric",12
+2023,"San Francisco","BMW","i7","Electric",7
+2023,"San Francisco","BMW","iX","Electric",119
+2023,"San Francisco","Cadillac","LYRIQ","Electric",9
+2023,"San Francisco","Chevrolet","Bolt EUV","Electric",328
+2023,"San Francisco","Chevrolet","Bolt EV","Electric",243
+2023,"San Francisco","Chrysler","Pacifica Hybrid","PHEV",9
+2023,"San Francisco","Chrysler","Pacifica Plug-In Hybrid","PHEV",21
+2023,"San Francisco","Dodge","Hornet","PHEV",1
+2023,"San Francisco","Ferrari","296 GTB","PHEV",2
+2023,"San Francisco","Ferrari","SF90 Spider","PHEV",2
+2023,"San Francisco","Ferrari","SF90 Stradale","PHEV",1
+2023,"San Francisco","Fisker","Ocean","Electric",27
+2023,"San Francisco","Ford","E-Transit","Electric",45
+2023,"San Francisco","Ford","Escape Plug-In Hybrid","PHEV",35
+2023,"San Francisco","Ford","F-150 Lightning","Electric",36
+2023,"San Francisco","Ford","Mustang Mach-E","Electric",123
+2023,"San Francisco","GMC","HUMMER EV","Electric",1
+2023,"San Francisco","Genesis","Electrified G80","Electric",1
+2023,"San Francisco","Genesis","Electrified GV70","Electric",10
+2023,"San Francisco","Genesis","GV60","Electric",29
+2023,"San Francisco","Hyundai","IONIQ 5","Electric",190
+2023,"San Francisco","Hyundai","IONIQ 6","Electric",52
+2023,"San Francisco","Hyundai","KONA Electric","Electric",739
+2023,"San Francisco","Hyundai","SANTA FE Plug-In Hybrid","PHEV",11
+2023,"San Francisco","Hyundai","TUCSON Plug-in Hybrid","PHEV",19
+2023,"San Francisco","Jaguar","I-PACE","Electric",1
+2023,"San Francisco","Jeep","Grand Cherokee","PHEV",39
+2023,"San Francisco","Jeep","Wrangler","PHEV",79
+2023,"San Francisco","Jeep","Wrangler Unlimited","PHEV",2
+2023,"San Francisco","Kia","EV6","Electric",49
+2023,"San Francisco","Kia","EV9","Electric",1
+2023,"San Francisco","Kia","Niro EV","Electric",38
+2023,"San Francisco","Kia","Niro Plug-In Hybrid","PHEV",28
+2023,"San Francisco","Kia","Sorento Plug-In Hybrid","PHEV",13
+2023,"San Francisco","Kia","Sportage Plug-In Hybrid","PHEV",25
+2023,"San Francisco","Land Rover","Range Rover","PHEV",1
+2023,"San Francisco","Land Rover","Range Rover Sport","PHEV",2
+2023,"San Francisco","Lexus","NX 450h+","PHEV",60
+2023,"San Francisco","Lexus","RX 450h+","PHEV",4
+2023,"San Francisco","Lexus","RZ 450e","Electric",31
+2023,"San Francisco","Lincoln","Aviator","PHEV",1
+2023,"San Francisco","Lincoln","Corsair","PHEV",1
+2023,"San Francisco","Lucid","Air","Electric",24
+2023,"San Francisco","MINI","Countryman Plug-in Hybrid","PHEV",8
+2023,"San Francisco","MINI","Hardtop 2 Door","Electric",45
+2023,"San Francisco","Mazda","CX-90 PHEV","PHEV",22
+2023,"San Francisco","Mazda","MX-30 EV","Electric",1
+2023,"San Francisco","McLaren","Artura","PHEV",1
+2023,"San Francisco","Mercedes-Benz","EQB","Electric",106
+2023,"San Francisco","Mercedes-Benz","EQE","Electric",133
+2023,"San Francisco","Mercedes-Benz","EQS","Electric",80
+2023,"San Francisco","Mercedes-Benz","GLE","PHEV",17
+2023,"San Francisco","Mercedes-Benz","S-Class","PHEV",2
+2023,"San Francisco","Mitsubishi","Outlander PHEV","PHEV",22
+2023,"San Francisco","Nissan","Ariya","Electric",24
+2023,"San Francisco","Nissan","LEAF","Electric",24
+2023,"San Francisco","Polestar","2","Electric",63
+2023,"San Francisco","Porsche","Cayenne","PHEV",15
+2023,"San Francisco","Porsche","Panamera","PHEV",3
+2023,"San Francisco","Porsche","Taycan","Electric",56
+2023,"San Francisco","Rivian","R1S","Electric",179
+2023,"San Francisco","Rivian","R1T","Electric",67
+2023,"San Francisco","Subaru","Crosstrek","PHEV",19
+2023,"San Francisco","Tesla","Model 3","Electric",1565
+2023,"San Francisco","Tesla","Model S","Electric",87
+2023,"San Francisco","Tesla","Model X","Electric",175
+2023,"San Francisco","Tesla","Model Y","Electric",3245
+2023,"San Francisco","Toyota","Mirai","Hydrogen",45
+2023,"San Francisco","Toyota","Prius Prime","PHEV",89
+2023,"San Francisco","Toyota","RAV4 Prime","PHEV",222
+2023,"San Francisco","Toyota/Subaru","bZ4X/Solterra","Electric",85
+2023,"San Francisco","VinFast","VF8","Electric",6
+2023,"San Francisco","Volkswagen","ID.4","Electric",263
+2023,"San Francisco","Volvo","C40 Recharge","Electric",39
+2023,"San Francisco","Volvo","S60 Recharge","PHEV",10
+2023,"San Francisco","Volvo","V60 Recharge","PHEV",10
+2023,"San Francisco","Volvo","XC40 Recharge","Electric",79
+2023,"San Francisco","Volvo","XC60 Recharge","PHEV",67
+2023,"San Francisco","Volvo","XC90 Recharge","PHEV",109
+2023,"San Joaquin","Alfa Romeo","Tonale","PHEV",1
+2023,"San Joaquin","Audi","Q4 e-tron","Electric",16
+2023,"San Joaquin","Audi","Q4 e-tron Sportback","Electric",7
+2023,"San Joaquin","Audi","Q5","PHEV",4
+2023,"San Joaquin","Audi","Q8 e-tron","Electric",11
+2023,"San Joaquin","Audi","Q8 e-tron Sportback","Electric",3
+2023,"San Joaquin","Audi","RS e-tron GT","Electric",1
+2023,"San Joaquin","Audi","e-tron","Electric",4
+2023,"San Joaquin","Audi","e-tron GT","Electric",1
+2023,"San Joaquin","Audi","e-tron S Sportback","Electric",2
+2023,"San Joaquin","Audi","e-tron Sportback","Electric",4
+2023,"San Joaquin","BMW","3 Series","PHEV",7
+2023,"San Joaquin","BMW","5 Series","PHEV",8
+2023,"San Joaquin","BMW","X5","PHEV",26
+2023,"San Joaquin","BMW","XM","PHEV",4
+2023,"San Joaquin","BMW","i4","Electric",63
+2023,"San Joaquin","BMW","i7","Electric",4
+2023,"San Joaquin","BMW","iX","Electric",35
+2023,"San Joaquin","Cadillac","LYRIQ","Electric",26
+2023,"San Joaquin","Chevrolet","Bolt EUV","Electric",171
+2023,"San Joaquin","Chevrolet","Bolt EV","Electric",69
+2023,"San Joaquin","Chrysler","Pacifica Hybrid","PHEV",12
+2023,"San Joaquin","Chrysler","Pacifica Plug-In Hybrid","PHEV",26
+2023,"San Joaquin","Dodge","Hornet","PHEV",1
+2023,"San Joaquin","Ferrari","296 GTB","PHEV",1
+2023,"San Joaquin","Fisker","Ocean","Electric",12
+2023,"San Joaquin","Ford","E-Transit","Electric",6
+2023,"San Joaquin","Ford","Escape Plug-In Hybrid","PHEV",5
+2023,"San Joaquin","Ford","F-150 Lightning","Electric",54
+2023,"San Joaquin","Ford","Mustang Mach-E","Electric",135
+2023,"San Joaquin","Genesis","Electrified GV70","Electric",2
+2023,"San Joaquin","Genesis","GV60","Electric",4
+2023,"San Joaquin","Hyundai","IONIQ 5","Electric",53
+2023,"San Joaquin","Hyundai","IONIQ 6","Electric",45
+2023,"San Joaquin","Hyundai","KONA Electric","Electric",22
+2023,"San Joaquin","Hyundai","SANTA FE Plug-In Hybrid","PHEV",15
+2023,"San Joaquin","Hyundai","TUCSON Plug-in Hybrid","PHEV",19
+2023,"San Joaquin","Jeep","Grand Cherokee","PHEV",28
+2023,"San Joaquin","Jeep","Wrangler","PHEV",109
+2023,"San Joaquin","Jeep","Wrangler Unlimited","PHEV",3
+2023,"San Joaquin","Kia","EV6","Electric",42
+2023,"San Joaquin","Kia","EV9","Electric",2
+2023,"San Joaquin","Kia","Niro EV","Electric",17
+2023,"San Joaquin","Kia","Niro Plug-In Hybrid","PHEV",9
+2023,"San Joaquin","Kia","Sorento Plug-In Hybrid","PHEV",15
+2023,"San Joaquin","Kia","Sportage Plug-In Hybrid","PHEV",15
+2023,"San Joaquin","Lexus","NX 450h+","PHEV",12
+2023,"San Joaquin","Lexus","RX 450h+","PHEV",2
+2023,"San Joaquin","Lexus","RZ 450e","Electric",16
+2023,"San Joaquin","Lincoln","Aviator","PHEV",1
+2023,"San Joaquin","Lincoln","Corsair","PHEV",3
+2023,"San Joaquin","Lucid","Air","Electric",7
+2023,"San Joaquin","MINI","Countryman Plug-in Hybrid","PHEV",2
+2023,"San Joaquin","MINI","Hardtop 2 Door","Electric",3
+2023,"San Joaquin","Mazda","CX-90 PHEV","PHEV",30
+2023,"San Joaquin","Mercedes-Benz","EQB","Electric",32
+2023,"San Joaquin","Mercedes-Benz","EQE","Electric",45
+2023,"San Joaquin","Mercedes-Benz","EQS","Electric",38
+2023,"San Joaquin","Mercedes-Benz","GLE","PHEV",2
+2023,"San Joaquin","Mitsubishi","Outlander PHEV","PHEV",7
+2023,"San Joaquin","Nissan","Ariya","Electric",38
+2023,"San Joaquin","Nissan","LEAF","Electric",19
+2023,"San Joaquin","Polestar","2","Electric",3
+2023,"San Joaquin","Porsche","Cayenne","PHEV",1
+2023,"San Joaquin","Porsche","Panamera","PHEV",1
+2023,"San Joaquin","Porsche","Taycan","Electric",4
+2023,"San Joaquin","Rivian","R1S","Electric",60
+2023,"San Joaquin","Rivian","R1T","Electric",21
+2023,"San Joaquin","Subaru","Crosstrek","PHEV",3
+2023,"San Joaquin","Tesla","Model 3","Electric",1503
+2023,"San Joaquin","Tesla","Model S","Electric",47
+2023,"San Joaquin","Tesla","Model X","Electric",138
+2023,"San Joaquin","Tesla","Model Y","Electric",2843
+2023,"San Joaquin","Toyota","Mirai","Hydrogen",18
+2023,"San Joaquin","Toyota","Prius Prime","PHEV",40
+2023,"San Joaquin","Toyota","RAV4 Prime","PHEV",57
+2023,"San Joaquin","Toyota/Subaru","bZ4X/Solterra","Electric",70
+2023,"San Joaquin","VinFast","VF8","Electric",1
+2023,"San Joaquin","Volkswagen","ID.4","Electric",134
+2023,"San Joaquin","Volvo","C40 Recharge","Electric",4
+2023,"San Joaquin","Volvo","S60 Recharge","PHEV",1
+2023,"San Joaquin","Volvo","XC40 Recharge","Electric",3
+2023,"San Joaquin","Volvo","XC60 Recharge","PHEV",7
+2023,"San Joaquin","Volvo","XC90 Recharge","PHEV",8
+2023,"San Luis Obispo","Alfa Romeo","Tonale","PHEV",1
+2023,"San Luis Obispo","Audi","Q4 e-tron","Electric",3
+2023,"San Luis Obispo","Audi","Q4 e-tron Sportback","Electric",3
+2023,"San Luis Obispo","Audi","Q5","PHEV",2
+2023,"San Luis Obispo","Audi","Q8 e-tron","Electric",4
+2023,"San Luis Obispo","Audi","Q8 e-tron Sportback","Electric",1
+2023,"San Luis Obispo","Audi","e-tron","Electric",1
+2023,"San Luis Obispo","Audi","e-tron GT","Electric",1
+2023,"San Luis Obispo","BMW","3 Series","PHEV",11
+2023,"San Luis Obispo","BMW","5 Series","PHEV",7
+2023,"San Luis Obispo","BMW","X5","PHEV",30
+2023,"San Luis Obispo","BMW","XM","PHEV",3
+2023,"San Luis Obispo","BMW","i4","Electric",41
+2023,"San Luis Obispo","BMW","i5","Electric",2
+2023,"San Luis Obispo","BMW","i7","Electric",2
+2023,"San Luis Obispo","BMW","iX","Electric",23
+2023,"San Luis Obispo","Chevrolet","Blazer EV","Electric",1
+2023,"San Luis Obispo","Chevrolet","Bolt EUV","Electric",124
+2023,"San Luis Obispo","Chevrolet","Bolt EV","Electric",55
+2023,"San Luis Obispo","Chrysler","Pacifica Hybrid","PHEV",5
+2023,"San Luis Obispo","Chrysler","Pacifica Plug-In Hybrid","PHEV",16
+2023,"San Luis Obispo","Fisker","Ocean","Electric",8
+2023,"San Luis Obispo","Ford","E-Transit","Electric",13
+2023,"San Luis Obispo","Ford","Escape Plug-In Hybrid","PHEV",6
+2023,"San Luis Obispo","Ford","F-150 Lightning","Electric",72
+2023,"San Luis Obispo","Ford","Mustang Mach-E","Electric",60
+2023,"San Luis Obispo","GMC","HUMMER EV","Electric",2
+2023,"San Luis Obispo","Genesis","Electrified GV70","Electric",1
+2023,"San Luis Obispo","Genesis","GV60","Electric",3
+2023,"San Luis Obispo","Hyundai","IONIQ 5","Electric",61
+2023,"San Luis Obispo","Hyundai","IONIQ 6","Electric",22
+2023,"San Luis Obispo","Hyundai","KONA Electric","Electric",9
+2023,"San Luis Obispo","Hyundai","SANTA FE Plug-In Hybrid","PHEV",17
+2023,"San Luis Obispo","Hyundai","TUCSON Plug-in Hybrid","PHEV",23
+2023,"San Luis Obispo","Jaguar","I-PACE","Electric",1
+2023,"San Luis Obispo","Jeep","Grand Cherokee","PHEV",23
+2023,"San Luis Obispo","Jeep","Wrangler","PHEV",40
+2023,"San Luis Obispo","Kia","EV6","Electric",24
+2023,"San Luis Obispo","Kia","Niro EV","Electric",11
+2023,"San Luis Obispo","Kia","Niro Plug-In Hybrid","PHEV",9
+2023,"San Luis Obispo","Kia","Sorento Plug-In Hybrid","PHEV",7
+2023,"San Luis Obispo","Kia","Sportage Plug-In Hybrid","PHEV",10
+2023,"San Luis Obispo","Land Rover","Range Rover","PHEV",1
+2023,"San Luis Obispo","Lexus","NX 450h+","PHEV",13
+2023,"San Luis Obispo","Lexus","RZ 450e","Electric",3
+2023,"San Luis Obispo","Lincoln","Aviator","PHEV",1
+2023,"San Luis Obispo","Lucid","Air","Electric",4
+2023,"San Luis Obispo","MINI","Hardtop 2 Door","Electric",1
+2023,"San Luis Obispo","Mazda","CX-90 PHEV","PHEV",4
+2023,"San Luis Obispo","Mercedes-Benz","EQB","Electric",13
+2023,"San Luis Obispo","Mercedes-Benz","EQE","Electric",8
+2023,"San Luis Obispo","Mercedes-Benz","EQS","Electric",25
+2023,"San Luis Obispo","Mercedes-Benz","GLE","PHEV",6
+2023,"San Luis Obispo","Mitsubishi","Outlander PHEV","PHEV",1
+2023,"San Luis Obispo","Nissan","Ariya","Electric",7
+2023,"San Luis Obispo","Nissan","LEAF","Electric",6
+2023,"San Luis Obispo","Polestar","2","Electric",6
+2023,"San Luis Obispo","Porsche","Cayenne","PHEV",2
+2023,"San Luis Obispo","Porsche","Panamera","PHEV",3
+2023,"San Luis Obispo","Porsche","Taycan","Electric",4
+2023,"San Luis Obispo","Rivian","R1S","Electric",65
+2023,"San Luis Obispo","Rivian","R1T","Electric",29
+2023,"San Luis Obispo","Subaru","Crosstrek","PHEV",5
+2023,"San Luis Obispo","Tesla","Model 3","Electric",275
+2023,"San Luis Obispo","Tesla","Model S","Electric",28
+2023,"San Luis Obispo","Tesla","Model X","Electric",36
+2023,"San Luis Obispo","Tesla","Model Y","Electric",525
+2023,"San Luis Obispo","Toyota","Prius Prime","PHEV",32
+2023,"San Luis Obispo","Toyota","RAV4 Prime","PHEV",76
+2023,"San Luis Obispo","Toyota/Subaru","bZ4X/Solterra","Electric",40
+2023,"San Luis Obispo","Volkswagen","ID.4","Electric",57
+2023,"San Luis Obispo","Volvo","C40 Recharge","Electric",2
+2023,"San Luis Obispo","Volvo","S60 Recharge","PHEV",2
+2023,"San Luis Obispo","Volvo","V60 Recharge","PHEV",2
+2023,"San Luis Obispo","Volvo","XC40 Recharge","Electric",2
+2023,"San Luis Obispo","Volvo","XC60 Recharge","PHEV",23
+2023,"San Luis Obispo","Volvo","XC90 Recharge","PHEV",23
+2023,"San Mateo","Alfa Romeo","Tonale","PHEV",3
+2023,"San Mateo","Audi","Q4 e-tron","Electric",111
+2023,"San Mateo","Audi","Q4 e-tron Sportback","Electric",36
+2023,"San Mateo","Audi","Q5","PHEV",34
+2023,"San Mateo","Audi","Q8 e-tron","Electric",59
+2023,"San Mateo","Audi","Q8 e-tron Sportback","Electric",16
+2023,"San Mateo","Audi","RS e-tron GT","Electric",5
+2023,"San Mateo","Audi","e-tron","Electric",22
+2023,"San Mateo","Audi","e-tron GT","Electric",18
+2023,"San Mateo","Audi","e-tron S","Electric",4
+2023,"San Mateo","Audi","e-tron S Sportback","Electric",2
+2023,"San Mateo","Audi","e-tron Sportback","Electric",8
+2023,"San Mateo","BMW","3 Series","PHEV",42
+2023,"San Mateo","BMW","5 Series","PHEV",27
+2023,"San Mateo","BMW","7 Series","PHEV",3
+2023,"San Mateo","BMW","X5","PHEV",152
+2023,"San Mateo","BMW","XM","PHEV",5
+2023,"San Mateo","BMW","i4","Electric",307
+2023,"San Mateo","BMW","i5","Electric",10
+2023,"San Mateo","BMW","i7","Electric",10
+2023,"San Mateo","BMW","iX","Electric",135
+2023,"San Mateo","Cadillac","LYRIQ","Electric",16
+2023,"San Mateo","Chevrolet","Bolt EUV","Electric",870
+2023,"San Mateo","Chevrolet","Bolt EV","Electric",1260
+2023,"San Mateo","Chevrolet","Silverado EV","Electric",12
+2023,"San Mateo","Chrysler","Pacifica Hybrid","PHEV",13
+2023,"San Mateo","Chrysler","Pacifica Plug-In Hybrid","PHEV",314
+2023,"San Mateo","Dodge","Hornet","PHEV",1
+2023,"San Mateo","Ferrari","296 GTB","PHEV",6
+2023,"San Mateo","Ferrari","296 GTS","PHEV",1
+2023,"San Mateo","Ferrari","SF90 Spider","PHEV",2
+2023,"San Mateo","Ferrari","SF90 Stradale","PHEV",3
+2023,"San Mateo","Fisker","Ocean","Electric",29
+2023,"San Mateo","Ford","E-Transit","Electric",14
+2023,"San Mateo","Ford","Escape Plug-In Hybrid","PHEV",15
+2023,"San Mateo","Ford","F-150 Lightning","Electric",110
+2023,"San Mateo","Ford","Mustang Mach-E","Electric",241
+2023,"San Mateo","Genesis","Electrified G80","Electric",3
+2023,"San Mateo","Genesis","Electrified GV70","Electric",14
+2023,"San Mateo","Genesis","GV60","Electric",30
+2023,"San Mateo","Hyundai","IONIQ 5","Electric",265
+2023,"San Mateo","Hyundai","IONIQ 6","Electric",66
+2023,"San Mateo","Hyundai","KONA Electric","Electric",70
+2023,"San Mateo","Hyundai","NEXO","Hydrogen",8
+2023,"San Mateo","Hyundai","SANTA FE Plug-In Hybrid","PHEV",23
+2023,"San Mateo","Hyundai","TUCSON Plug-in Hybrid","PHEV",34
+2023,"San Mateo","Jaguar","I-PACE","Electric",1
+2023,"San Mateo","Jeep","Grand Cherokee","PHEV",59
+2023,"San Mateo","Jeep","Wrangler","PHEV",346
+2023,"San Mateo","Jeep","Wrangler Unlimited","PHEV",3
+2023,"San Mateo","Kia","EV6","Electric",424
+2023,"San Mateo","Kia","Niro EV","Electric",706
+2023,"San Mateo","Kia","Niro Plug-In Hybrid","PHEV",17
+2023,"San Mateo","Kia","Sorento Plug-In Hybrid","PHEV",19
+2023,"San Mateo","Kia","Sportage Plug-In Hybrid","PHEV",41
+2023,"San Mateo","Land Rover","Range Rover","PHEV",1
+2023,"San Mateo","Land Rover","Range Rover Sport","PHEV",1
+2023,"San Mateo","Lexus","NX 450h+","PHEV",88
+2023,"San Mateo","Lexus","RX 450h+","PHEV",9
+2023,"San Mateo","Lexus","RZ 450e","Electric",52
+2023,"San Mateo","Lincoln","Aviator","PHEV",1
+2023,"San Mateo","Lincoln","Corsair","PHEV",1
+2023,"San Mateo","Lucid","Air","Electric",45
+2023,"San Mateo","MINI","Countryman Plug-in Hybrid","PHEV",6
+2023,"San Mateo","MINI","Hardtop 2 Door","Electric",34
+2023,"San Mateo","Mazda","CX-90 PHEV","PHEV",42
+2023,"San Mateo","Mazda","MX-30 EV","Electric",1
+2023,"San Mateo","McLaren","Artura","PHEV",5
+2023,"San Mateo","Mercedes-Benz","EQB","Electric",165
+2023,"San Mateo","Mercedes-Benz","EQE","Electric",245
+2023,"San Mateo","Mercedes-Benz","EQS","Electric",157
+2023,"San Mateo","Mercedes-Benz","GLE","PHEV",14
+2023,"San Mateo","Mercedes-Benz","S-Class","PHEV",2
+2023,"San Mateo","Mitsubishi","Outlander PHEV","PHEV",21
+2023,"San Mateo","Nissan","Ariya","Electric",59
+2023,"San Mateo","Nissan","LEAF","Electric",48
+2023,"San Mateo","Polestar","2","Electric",572
+2023,"San Mateo","Porsche","Cayenne","PHEV",13
+2023,"San Mateo","Porsche","Panamera","PHEV",3
+2023,"San Mateo","Porsche","Taycan","Electric",100
+2023,"San Mateo","Rivian","R1S","Electric",359
+2023,"San Mateo","Rivian","R1T","Electric",162
+2023,"San Mateo","Subaru","Crosstrek","PHEV",13
+2023,"San Mateo","Tesla","Model 3","Electric",2301
+2023,"San Mateo","Tesla","Model S","Electric",177
+2023,"San Mateo","Tesla","Model X","Electric",367
+2023,"San Mateo","Tesla","Model Y","Electric",3991
+2023,"San Mateo","Toyota","Mirai","Hydrogen",23
+2023,"San Mateo","Toyota","Prius Prime","PHEV",88
+2023,"San Mateo","Toyota","RAV4 Prime","PHEV",201
+2023,"San Mateo","Toyota/Subaru","bZ4X/Solterra","Electric",215
+2023,"San Mateo","VinFast","VF8","Electric",8
+2023,"San Mateo","Volkswagen","ID.4","Electric",377
+2023,"San Mateo","Volvo","C40 Recharge","Electric",104
+2023,"San Mateo","Volvo","S60 Recharge","PHEV",11
+2023,"San Mateo","Volvo","V60 Recharge","PHEV",5
+2023,"San Mateo","Volvo","XC40 Recharge","Electric",66
+2023,"San Mateo","Volvo","XC60 Recharge","PHEV",55
+2023,"San Mateo","Volvo","XC90 Recharge","PHEV",88
+2023,"Santa Barbara","Alfa Romeo","Tonale","PHEV",1
+2023,"Santa Barbara","Audi","Q4 e-tron","Electric",21
+2023,"Santa Barbara","Audi","Q4 e-tron Sportback","Electric",4
+2023,"Santa Barbara","Audi","Q5","PHEV",15
+2023,"Santa Barbara","Audi","Q8 e-tron","Electric",11
+2023,"Santa Barbara","Audi","Q8 e-tron Sportback","Electric",2
+2023,"Santa Barbara","Audi","RS e-tron GT","Electric",1
+2023,"Santa Barbara","Audi","SQ8 e-tron","Electric",1
+2023,"Santa Barbara","Audi","SQ8 e-tron Sportback","Electric",1
+2023,"Santa Barbara","Audi","e-tron","Electric",5
+2023,"Santa Barbara","Audi","e-tron GT","Electric",7
+2023,"Santa Barbara","Audi","e-tron S","Electric",1
+2023,"Santa Barbara","BMW","3 Series","PHEV",8
+2023,"Santa Barbara","BMW","5 Series","PHEV",7
+2023,"Santa Barbara","BMW","X5","PHEV",54
+2023,"Santa Barbara","BMW","XM","PHEV",3
+2023,"Santa Barbara","BMW","i4","Electric",59
+2023,"Santa Barbara","BMW","i5","Electric",2
+2023,"Santa Barbara","BMW","i7","Electric",2
+2023,"Santa Barbara","BMW","iX","Electric",33
+2023,"Santa Barbara","Cadillac","LYRIQ","Electric",2
+2023,"Santa Barbara","Chevrolet","Blazer EV","Electric",1
+2023,"Santa Barbara","Chevrolet","Bolt EUV","Electric",131
+2023,"Santa Barbara","Chevrolet","Bolt EV","Electric",56
+2023,"Santa Barbara","Chrysler","Pacifica Hybrid","PHEV",7
+2023,"Santa Barbara","Chrysler","Pacifica Plug-In Hybrid","PHEV",26
+2023,"Santa Barbara","Ferrari","296 GTB","PHEV",2
+2023,"Santa Barbara","Ferrari","SF90 Spider","PHEV",2
+2023,"Santa Barbara","Fisker","Ocean","Electric",8
+2023,"Santa Barbara","Ford","E-Transit","Electric",30
+2023,"Santa Barbara","Ford","Escape Plug-In Hybrid","PHEV",18
+2023,"Santa Barbara","Ford","F-150 Lightning","Electric",68
+2023,"Santa Barbara","Ford","Mustang Mach-E","Electric",74
+2023,"Santa Barbara","Genesis","Electrified GV70","Electric",2
+2023,"Santa Barbara","Genesis","GV60","Electric",4
+2023,"Santa Barbara","Hyundai","IONIQ 5","Electric",51
+2023,"Santa Barbara","Hyundai","IONIQ 6","Electric",17
+2023,"Santa Barbara","Hyundai","KONA Electric","Electric",6
+2023,"Santa Barbara","Hyundai","NEXO","Hydrogen",3
+2023,"Santa Barbara","Hyundai","SANTA FE Plug-In Hybrid","PHEV",12
+2023,"Santa Barbara","Hyundai","TUCSON Plug-in Hybrid","PHEV",9
+2023,"Santa Barbara","Jeep","Grand Cherokee","PHEV",41
+2023,"Santa Barbara","Jeep","Wrangler","PHEV",98
+2023,"Santa Barbara","Jeep","Wrangler Unlimited","PHEV",8
+2023,"Santa Barbara","Kia","EV6","Electric",18
+2023,"Santa Barbara","Kia","EV9","Electric",1
+2023,"Santa Barbara","Kia","Niro EV","Electric",7
+2023,"Santa Barbara","Kia","Niro Plug-In Hybrid","PHEV",14
+2023,"Santa Barbara","Kia","Sorento Plug-In Hybrid","PHEV",6
+2023,"Santa Barbara","Kia","Sportage Plug-In Hybrid","PHEV",8
+2023,"Santa Barbara","Land Rover","Range Rover Sport","PHEV",2
+2023,"Santa Barbara","Lexus","NX 450h+","PHEV",28
+2023,"Santa Barbara","Lexus","RX 450h+","PHEV",2
+2023,"Santa Barbara","Lexus","RZ 450e","Electric",18
+2023,"Santa Barbara","Lincoln","Aviator","PHEV",3
+2023,"Santa Barbara","Lucid","Air","Electric",5
+2023,"Santa Barbara","MINI","Countryman Plug-in Hybrid","PHEV",3
+2023,"Santa Barbara","MINI","Hardtop 2 Door","Electric",7
+2023,"Santa Barbara","Mazda","CX-90 PHEV","PHEV",9
+2023,"Santa Barbara","Mazda","MX-30 EV","Electric",2
+2023,"Santa Barbara","McLaren","Artura","PHEV",1
+2023,"Santa Barbara","Mercedes-Benz","EQB","Electric",18
+2023,"Santa Barbara","Mercedes-Benz","EQE","Electric",19
+2023,"Santa Barbara","Mercedes-Benz","EQS","Electric",23
+2023,"Santa Barbara","Mercedes-Benz","GLE","PHEV",5
+2023,"Santa Barbara","Mercedes-Benz","S-Class","PHEV",2
+2023,"Santa Barbara","Mitsubishi","Outlander PHEV","PHEV",4
+2023,"Santa Barbara","Nissan","Ariya","Electric",16
+2023,"Santa Barbara","Nissan","LEAF","Electric",54
+2023,"Santa Barbara","Polestar","2","Electric",3
+2023,"Santa Barbara","Porsche","Cayenne","PHEV",3
+2023,"Santa Barbara","Porsche","Panamera","PHEV",3
+2023,"Santa Barbara","Porsche","Taycan","Electric",23
+2023,"Santa Barbara","Rivian","R1S","Electric",89
+2023,"Santa Barbara","Rivian","R1T","Electric",43
+2023,"Santa Barbara","Subaru","Crosstrek","PHEV",6
+2023,"Santa Barbara","Tesla","Model 3","Electric",501
+2023,"Santa Barbara","Tesla","Model S","Electric",32
+2023,"Santa Barbara","Tesla","Model X","Electric",56
+2023,"Santa Barbara","Tesla","Model Y","Electric",746
+2023,"Santa Barbara","Toyota","Mirai","Hydrogen",9
+2023,"Santa Barbara","Toyota","Prius Prime","PHEV",41
+2023,"Santa Barbara","Toyota","RAV4 Prime","PHEV",81
+2023,"Santa Barbara","Toyota/Subaru","bZ4X/Solterra","Electric",35
+2023,"Santa Barbara","VinFast","VF8","Electric",1
+2023,"Santa Barbara","Volkswagen","ID.4","Electric",96
+2023,"Santa Barbara","Volvo","C40 Recharge","Electric",4
+2023,"Santa Barbara","Volvo","S60 Recharge","PHEV",2
+2023,"Santa Barbara","Volvo","V60 Recharge","PHEV",1
+2023,"Santa Barbara","Volvo","XC40 Recharge","Electric",5
+2023,"Santa Barbara","Volvo","XC60 Recharge","PHEV",15
+2023,"Santa Barbara","Volvo","XC90 Recharge","PHEV",26
+2023,"Santa Clara","Alfa Romeo","Tonale","PHEV",3
+2023,"Santa Clara","Audi","Q4 e-tron","Electric",241
+2023,"Santa Clara","Audi","Q4 e-tron Sportback","Electric",42
+2023,"Santa Clara","Audi","Q5","PHEV",78
+2023,"Santa Clara","Audi","Q8 e-tron","Electric",118
+2023,"Santa Clara","Audi","Q8 e-tron Sportback","Electric",32
+2023,"Santa Clara","Audi","RS e-tron GT","Electric",13
+2023,"Santa Clara","Audi","e-tron","Electric",39
+2023,"Santa Clara","Audi","e-tron GT","Electric",37
+2023,"Santa Clara","Audi","e-tron S","Electric",6
+2023,"Santa Clara","Audi","e-tron S Sportback","Electric",1
+2023,"Santa Clara","Audi","e-tron Sportback","Electric",17
+2023,"Santa Clara","BMW","3 Series","PHEV",120
+2023,"Santa Clara","BMW","5 Series","PHEV",111
+2023,"Santa Clara","BMW","7 Series","PHEV",1
+2023,"Santa Clara","BMW","X5","PHEV",405
+2023,"Santa Clara","BMW","XM","PHEV",9
+2023,"Santa Clara","BMW","i4","Electric",833
+2023,"Santa Clara","BMW","i5","Electric",31
+2023,"Santa Clara","BMW","i7","Electric",35
+2023,"Santa Clara","BMW","iX","Electric",359
+2023,"Santa Clara","Bentley","Bentayga","PHEV",2
+2023,"Santa Clara","BrightDrop","Zevo 600","Electric",1
+2023,"Santa Clara","Cadillac","LYRIQ","Electric",73
+2023,"Santa Clara","Chevrolet","Blazer EV","Electric",3
+2023,"Santa Clara","Chevrolet","Bolt EUV","Electric",1003
+2023,"Santa Clara","Chevrolet","Bolt EV","Electric",452
+2023,"Santa Clara","Chrysler","Pacifica Hybrid","PHEV",61
+2023,"Santa Clara","Chrysler","Pacifica Plug-In Hybrid","PHEV",131
+2023,"Santa Clara","Ferrari","296 GTB","PHEV",6
+2023,"Santa Clara","Ferrari","SF90 Spider","PHEV",2
+2023,"Santa Clara","Ferrari","SF90 Stradale","PHEV",6
+2023,"Santa Clara","Fisker","Ocean","Electric",77
+2023,"Santa Clara","Ford","E-Transit","Electric",45
+2023,"Santa Clara","Ford","Escape Plug-In Hybrid","PHEV",47
+2023,"Santa Clara","Ford","F-150 Lightning","Electric",240
+2023,"Santa Clara","Ford","Mustang Mach-E","Electric",772
+2023,"Santa Clara","GMC","HUMMER EV","Electric",1
+2023,"Santa Clara","Genesis","Electrified G80","Electric",1
+2023,"Santa Clara","Genesis","Electrified GV70","Electric",19
+2023,"Santa Clara","Genesis","GV60","Electric",76
+2023,"Santa Clara","Hyundai","IONIQ 5","Electric",709
+2023,"Santa Clara","Hyundai","IONIQ 6","Electric",257
+2023,"Santa Clara","Hyundai","KONA Electric","Electric",104
+2023,"Santa Clara","Hyundai","NEXO","Hydrogen",40
+2023,"Santa Clara","Hyundai","SANTA FE Plug-In Hybrid","PHEV",63
+2023,"Santa Clara","Hyundai","TUCSON Plug-in Hybrid","PHEV",93
+2023,"Santa Clara","Jaguar","I-PACE","Electric",168
+2023,"Santa Clara","Jeep","Grand Cherokee","PHEV",128
+2023,"Santa Clara","Jeep","Wrangler","PHEV",315
+2023,"Santa Clara","Jeep","Wrangler Unlimited","PHEV",11
+2023,"Santa Clara","Kia","EV6","Electric",242
+2023,"Santa Clara","Kia","EV9","Electric",8
+2023,"Santa Clara","Kia","Niro EV","Electric",96
+2023,"Santa Clara","Kia","Niro Plug-In Hybrid","PHEV",44
+2023,"Santa Clara","Kia","Sorento Plug-In Hybrid","PHEV",36
+2023,"Santa Clara","Kia","Sportage Plug-In Hybrid","PHEV",61
+2023,"Santa Clara","Land Rover","Range Rover","PHEV",4
+2023,"Santa Clara","Land Rover","Range Rover Sport","PHEV",2
+2023,"Santa Clara","Lexus","NX 450h+","PHEV",189
+2023,"Santa Clara","Lexus","RX 450h+","PHEV",14
+2023,"Santa Clara","Lexus","RZ 450e","Electric",108
+2023,"Santa Clara","Lincoln","Aviator","PHEV",8
+2023,"Santa Clara","Lincoln","Corsair","PHEV",17
+2023,"Santa Clara","Lucid","Air","Electric",155
+2023,"Santa Clara","MINI","Countryman Plug-in Hybrid","PHEV",6
+2023,"Santa Clara","MINI","Hardtop 2 Door","Electric",70
+2023,"Santa Clara","Mazda","CX-90 PHEV","PHEV",99
+2023,"Santa Clara","Mazda","MX-30 EV","Electric",8
+2023,"Santa Clara","McLaren","Artura","PHEV",10
+2023,"Santa Clara","Mercedes-Benz","EQB","Electric",203
+2023,"Santa Clara","Mercedes-Benz","EQE","Electric",353
+2023,"Santa Clara","Mercedes-Benz","EQS","Electric",319
+2023,"Santa Clara","Mercedes-Benz","GLE","PHEV",48
+2023,"Santa Clara","Mercedes-Benz","S-Class","PHEV",5
+2023,"Santa Clara","Mitsubishi","Outlander PHEV","PHEV",66
+2023,"Santa Clara","Nissan","Ariya","Electric",231
+2023,"Santa Clara","Nissan","LEAF","Electric",204
+2023,"Santa Clara","Polestar","2","Electric",123
+2023,"Santa Clara","Porsche","Cayenne","PHEV",11
+2023,"Santa Clara","Porsche","Panamera","PHEV",6
+2023,"Santa Clara","Porsche","Taycan","Electric",190
+2023,"Santa Clara","Rivian","EDV 500","Electric",28
+2023,"Santa Clara","Rivian","EDV 700","Electric",102
+2023,"Santa Clara","Rivian","R1S","Electric",673
+2023,"Santa Clara","Rivian","R1T","Electric",302
+2023,"Santa Clara","Subaru","Crosstrek","PHEV",32
+2023,"Santa Clara","Tesla","Cybertruck","Electric",4
+2023,"Santa Clara","Tesla","Model 3","Electric",7638
+2023,"Santa Clara","Tesla","Model S","Electric",446
+2023,"Santa Clara","Tesla","Model X","Electric",1121
+2023,"Santa Clara","Tesla","Model Y","Electric",14995
+2023,"Santa Clara","Toyota","Mirai","Hydrogen",271
+2023,"Santa Clara","Toyota","Prius Prime","PHEV",212
+2023,"Santa Clara","Toyota","RAV4 Prime","PHEV",403
+2023,"Santa Clara","Toyota/Subaru","bZ4X/Solterra","Electric",236
+2023,"Santa Clara","VinFast","VF8","Electric",41
+2023,"Santa Clara","Volkswagen","ID.4","Electric",939
+2023,"Santa Clara","Volvo","C40 Recharge","Electric",87
+2023,"Santa Clara","Volvo","S60 Recharge","PHEV",25
+2023,"Santa Clara","Volvo","V60 Recharge","PHEV",6
+2023,"Santa Clara","Volvo","XC40 Recharge","Electric",108
+2023,"Santa Clara","Volvo","XC60 Recharge","PHEV",92
+2023,"Santa Clara","Volvo","XC90 Recharge","PHEV",146
+2023,"Santa Cruz","Alfa Romeo","Tonale","PHEV",1
+2023,"Santa Cruz","Audi","Q4 e-tron","Electric",23
+2023,"Santa Cruz","Audi","Q4 e-tron Sportback","Electric",3
+2023,"Santa Cruz","Audi","Q5","PHEV",8
+2023,"Santa Cruz","Audi","Q8 e-tron","Electric",4
+2023,"Santa Cruz","Audi","Q8 e-tron Sportback","Electric",3
+2023,"Santa Cruz","Audi","e-tron","Electric",3
+2023,"Santa Cruz","Audi","e-tron GT","Electric",4
+2023,"Santa Cruz","Audi","e-tron Sportback","Electric",1
+2023,"Santa Cruz","BMW","3 Series","PHEV",2
+2023,"Santa Cruz","BMW","X5","PHEV",13
+2023,"Santa Cruz","BMW","i4","Electric",34
+2023,"Santa Cruz","BMW","iX","Electric",15
+2023,"Santa Cruz","Cadillac","LYRIQ","Electric",9
+2023,"Santa Cruz","Chevrolet","Bolt EUV","Electric",158
+2023,"Santa Cruz","Chevrolet","Bolt EV","Electric",75
+2023,"Santa Cruz","Chrysler","Pacifica Hybrid","PHEV",4
+2023,"Santa Cruz","Chrysler","Pacifica Plug-In Hybrid","PHEV",9
+2023,"Santa Cruz","Dodge","Hornet","PHEV",1
+2023,"Santa Cruz","Fisker","Ocean","Electric",6
+2023,"Santa Cruz","Ford","E-Transit","Electric",4
+2023,"Santa Cruz","Ford","Escape Plug-In Hybrid","PHEV",6
+2023,"Santa Cruz","Ford","F-150 Lightning","Electric",67
+2023,"Santa Cruz","Ford","Mustang Mach-E","Electric",66
+2023,"Santa Cruz","Genesis","Electrified GV70","Electric",1
+2023,"Santa Cruz","Genesis","GV60","Electric",4
+2023,"Santa Cruz","Hyundai","IONIQ 5","Electric",61
+2023,"Santa Cruz","Hyundai","IONIQ 6","Electric",8
+2023,"Santa Cruz","Hyundai","KONA Electric","Electric",10
+2023,"Santa Cruz","Hyundai","SANTA FE Plug-In Hybrid","PHEV",7
+2023,"Santa Cruz","Hyundai","TUCSON Plug-in Hybrid","PHEV",6
+2023,"Santa Cruz","Jaguar","I-PACE","Electric",2
+2023,"Santa Cruz","Jeep","Grand Cherokee","PHEV",18
+2023,"Santa Cruz","Jeep","Wrangler","PHEV",38
+2023,"Santa Cruz","Jeep","Wrangler Unlimited","PHEV",1
+2023,"Santa Cruz","Kia","EV6","Electric",23
+2023,"Santa Cruz","Kia","EV9","Electric",1
+2023,"Santa Cruz","Kia","Niro EV","Electric",9
+2023,"Santa Cruz","Kia","Niro Plug-In Hybrid","PHEV",6
+2023,"Santa Cruz","Kia","Sorento Plug-In Hybrid","PHEV",5
+2023,"Santa Cruz","Kia","Sportage Plug-In Hybrid","PHEV",11
+2023,"Santa Cruz","Lexus","NX 450h+","PHEV",15
+2023,"Santa Cruz","Lexus","RX 450h+","PHEV",2
+2023,"Santa Cruz","Lexus","RZ 450e","Electric",2
+2023,"Santa Cruz","Lincoln","Aviator","PHEV",1
+2023,"Santa Cruz","Lincoln","Corsair","PHEV",1
+2023,"Santa Cruz","Lucid","Air","Electric",6
+2023,"Santa Cruz","MINI","Hardtop 2 Door","Electric",6
+2023,"Santa Cruz","Mazda","CX-90 PHEV","PHEV",8
+2023,"Santa Cruz","Mercedes-Benz","EQB","Electric",6
+2023,"Santa Cruz","Mercedes-Benz","EQE","Electric",9
+2023,"Santa Cruz","Mercedes-Benz","EQS","Electric",6
+2023,"Santa Cruz","Mitsubishi","Outlander PHEV","PHEV",7
+2023,"Santa Cruz","Nissan","Ariya","Electric",14
+2023,"Santa Cruz","Nissan","LEAF","Electric",9
+2023,"Santa Cruz","Polestar","2","Electric",7
+2023,"Santa Cruz","Porsche","Taycan","Electric",3
+2023,"Santa Cruz","Rivian","R1S","Electric",77
+2023,"Santa Cruz","Rivian","R1T","Electric",59
+2023,"Santa Cruz","Subaru","Crosstrek","PHEV",6
+2023,"Santa Cruz","Tesla","Cybertruck","Electric",1
+2023,"Santa Cruz","Tesla","Model 3","Electric",262
+2023,"Santa Cruz","Tesla","Model S","Electric",21
+2023,"Santa Cruz","Tesla","Model X","Electric",29
+2023,"Santa Cruz","Tesla","Model Y","Electric",441
+2023,"Santa Cruz","Toyota","Mirai","Hydrogen",1
+2023,"Santa Cruz","Toyota","Prius Prime","PHEV",34
+2023,"Santa Cruz","Toyota","RAV4 Prime","PHEV",92
+2023,"Santa Cruz","Toyota/Subaru","bZ4X/Solterra","Electric",51
+2023,"Santa Cruz","Volkswagen","ID.4","Electric",88
+2023,"Santa Cruz","Volvo","C40 Recharge","Electric",4
+2023,"Santa Cruz","Volvo","S60 Recharge","PHEV",1
+2023,"Santa Cruz","Volvo","XC40 Recharge","Electric",18
+2023,"Santa Cruz","Volvo","XC60 Recharge","PHEV",7
+2023,"Santa Cruz","Volvo","XC90 Recharge","PHEV",10
+2023,"Shasta","Audi","Q5","PHEV",1
+2023,"Shasta","Audi","Q8 e-tron","Electric",1
+2023,"Shasta","BMW","5 Series","PHEV",1
+2023,"Shasta","BMW","X5","PHEV",11
+2023,"Shasta","BMW","i4","Electric",1
+2023,"Shasta","BMW","iX","Electric",3
+2023,"Shasta","Cadillac","LYRIQ","Electric",2
+2023,"Shasta","Chevrolet","Bolt EUV","Electric",20
+2023,"Shasta","Chevrolet","Bolt EV","Electric",9
+2023,"Shasta","Chrysler","Pacifica Plug-In Hybrid","PHEV",5
+2023,"Shasta","Ford","Escape Plug-In Hybrid","PHEV",3
+2023,"Shasta","Ford","F-150 Lightning","Electric",12
+2023,"Shasta","Ford","Mustang Mach-E","Electric",14
+2023,"Shasta","GMC","HUMMER EV","Electric",1
+2023,"Shasta","Hyundai","IONIQ 5","Electric",7
+2023,"Shasta","Hyundai","IONIQ 6","Electric",2
+2023,"Shasta","Hyundai","KONA Electric","Electric",1
+2023,"Shasta","Hyundai","TUCSON Plug-in Hybrid","PHEV",3
+2023,"Shasta","Jaguar","I-PACE","Electric",1
+2023,"Shasta","Jeep","Grand Cherokee","PHEV",6
+2023,"Shasta","Jeep","Wrangler","PHEV",13
+2023,"Shasta","Kia","EV6","Electric",15
+2023,"Shasta","Kia","Niro EV","Electric",2
+2023,"Shasta","Kia","Niro Plug-In Hybrid","PHEV",12
+2023,"Shasta","Kia","Sorento Plug-In Hybrid","PHEV",1
+2023,"Shasta","Kia","Sportage Plug-In Hybrid","PHEV",10
+2023,"Shasta","Lexus","NX 450h+","PHEV",5
+2023,"Shasta","Lexus","RX 450h+","PHEV",1
+2023,"Shasta","Lincoln","Aviator","PHEV",1
+2023,"Shasta","Lincoln","Corsair","PHEV",1
+2023,"Shasta","MINI","Countryman Plug-in Hybrid","PHEV",1
+2023,"Shasta","Mazda","CX-90 PHEV","PHEV",2
+2023,"Shasta","Mercedes-Benz","EQE","Electric",1
+2023,"Shasta","Mercedes-Benz","EQS","Electric",5
+2023,"Shasta","Mitsubishi","Outlander PHEV","PHEV",2
+2023,"Shasta","Nissan","Ariya","Electric",6
+2023,"Shasta","Nissan","LEAF","Electric",3
+2023,"Shasta","Polestar","2","Electric",1
+2023,"Shasta","Rivian","R1S","Electric",6
+2023,"Shasta","Rivian","R1T","Electric",2
+2023,"Shasta","Subaru","Crosstrek","PHEV",1
+2023,"Shasta","Tesla","Model 3","Electric",65
+2023,"Shasta","Tesla","Model S","Electric",7
+2023,"Shasta","Tesla","Model X","Electric",7
+2023,"Shasta","Tesla","Model Y","Electric",124
+2023,"Shasta","Toyota","Mirai","Hydrogen",1
+2023,"Shasta","Toyota","Prius Prime","PHEV",7
+2023,"Shasta","Toyota","RAV4 Prime","PHEV",17
+2023,"Shasta","Toyota/Subaru","bZ4X/Solterra","Electric",31
+2023,"Shasta","Volkswagen","ID.4","Electric",13
+2023,"Shasta","Volvo","C40 Recharge","Electric",1
+2023,"Shasta","Volvo","S60 Recharge","PHEV",2
+2023,"Shasta","Volvo","XC40 Recharge","Electric",1
+2023,"Shasta","Volvo","XC60 Recharge","PHEV",1
+2023,"Shasta","Volvo","XC90 Recharge","PHEV",1
+2023,"Sierra","Lexus","NX 450h+","PHEV",1
+2023,"Sierra","Tesla","Model Y","Electric",1
+2023,"Sierra","Volvo","XC40 Recharge","Electric",1
+2023,"Siskiyou","Audi","RS e-tron GT","Electric",1
+2023,"Siskiyou","BMW","X5","PHEV",2
+2023,"Siskiyou","Chevrolet","Bolt EV","Electric",2
+2023,"Siskiyou","Ford","F-150 Lightning","Electric",5
+2023,"Siskiyou","Ford","Mustang Mach-E","Electric",2
+2023,"Siskiyou","Hyundai","IONIQ 5","Electric",1
+2023,"Siskiyou","Jeep","Grand Cherokee","PHEV",1
+2023,"Siskiyou","Jeep","Wrangler","PHEV",4
+2023,"Siskiyou","Kia","Sorento Plug-In Hybrid","PHEV",2
+2023,"Siskiyou","Kia","Sportage Plug-In Hybrid","PHEV",2
+2023,"Siskiyou","Mitsubishi","Outlander PHEV","PHEV",1
+2023,"Siskiyou","Rivian","R1S","Electric",1
+2023,"Siskiyou","Tesla","Model 3","Electric",1
+2023,"Siskiyou","Tesla","Model S","Electric",1
+2023,"Siskiyou","Tesla","Model X","Electric",2
+2023,"Siskiyou","Tesla","Model Y","Electric",17
+2023,"Siskiyou","Toyota","Prius Prime","PHEV",1
+2023,"Siskiyou","Toyota","RAV4 Prime","PHEV",7
+2023,"Siskiyou","Toyota/Subaru","bZ4X/Solterra","Electric",3
+2023,"Siskiyou","Volkswagen","ID.4","Electric",4
+2023,"Siskiyou","Volvo","C40 Recharge","Electric",1
+2023,"Siskiyou","Volvo","XC90 Recharge","PHEV",1
+2023,"Solano","Audi","Q4 e-tron","Electric",17
+2023,"Solano","Audi","Q4 e-tron Sportback","Electric",4
+2023,"Solano","Audi","Q5","PHEV",6
+2023,"Solano","Audi","Q8 e-tron","Electric",6
+2023,"Solano","Audi","Q8 e-tron Sportback","Electric",3
+2023,"Solano","Audi","e-tron","Electric",3
+2023,"Solano","Audi","e-tron GT","Electric",3
+2023,"Solano","Audi","e-tron S","Electric",1
+2023,"Solano","Audi","e-tron Sportback","Electric",2
+2023,"Solano","BMW","3 Series","PHEV",10
+2023,"Solano","BMW","5 Series","PHEV",4
+2023,"Solano","BMW","X5","PHEV",21
+2023,"Solano","BMW","XM","PHEV",1
+2023,"Solano","BMW","i4","Electric",97
+2023,"Solano","BMW","i5","Electric",1
+2023,"Solano","BMW","i7","Electric",7
+2023,"Solano","BMW","iX","Electric",17
+2023,"Solano","Cadillac","LYRIQ","Electric",14
+2023,"Solano","Chevrolet","Blazer EV","Electric",2
+2023,"Solano","Chevrolet","Bolt EUV","Electric",101
+2023,"Solano","Chevrolet","Bolt EV","Electric",38
+2023,"Solano","Chrysler","Pacifica Hybrid","PHEV",8
+2023,"Solano","Chrysler","Pacifica Plug-In Hybrid","PHEV",8
+2023,"Solano","Ferrari","SF90 Stradale","PHEV",1
+2023,"Solano","Fisker","Ocean","Electric",5
+2023,"Solano","Ford","E-Transit","Electric",6
+2023,"Solano","Ford","Escape Plug-In Hybrid","PHEV",9
+2023,"Solano","Ford","F-150 Lightning","Electric",49
+2023,"Solano","Ford","Mustang Mach-E","Electric",113
+2023,"Solano","GMC","HUMMER EV","Electric",2
+2023,"Solano","Genesis","Electrified GV70","Electric",1
+2023,"Solano","Genesis","GV60","Electric",2
+2023,"Solano","Hyundai","IONIQ 5","Electric",61
+2023,"Solano","Hyundai","IONIQ 6","Electric",16
+2023,"Solano","Hyundai","KONA Electric","Electric",19
+2023,"Solano","Hyundai","NEXO","Hydrogen",1
+2023,"Solano","Hyundai","SANTA FE Plug-In Hybrid","PHEV",9
+2023,"Solano","Hyundai","TUCSON Plug-in Hybrid","PHEV",9
+2023,"Solano","Jeep","Grand Cherokee","PHEV",22
+2023,"Solano","Jeep","Wrangler","PHEV",68
+2023,"Solano","Jeep","Wrangler Unlimited","PHEV",2
+2023,"Solano","Kia","EV6","Electric",35
+2023,"Solano","Kia","Niro EV","Electric",5
+2023,"Solano","Kia","Niro Plug-In Hybrid","PHEV",12
+2023,"Solano","Kia","Sorento Plug-In Hybrid","PHEV",8
+2023,"Solano","Kia","Sportage Plug-In Hybrid","PHEV",16
+2023,"Solano","Lexus","NX 450h+","PHEV",17
+2023,"Solano","Lexus","RX 450h+","PHEV",4
+2023,"Solano","Lexus","RZ 450e","Electric",15
+2023,"Solano","Lincoln","Aviator","PHEV",2
+2023,"Solano","Lincoln","Corsair","PHEV",2
+2023,"Solano","Lucid","Air","Electric",6
+2023,"Solano","MINI","Countryman Plug-in Hybrid","PHEV",1
+2023,"Solano","MINI","Hardtop 2 Door","Electric",7
+2023,"Solano","Mazda","CX-90 PHEV","PHEV",18
+2023,"Solano","Mazda","MX-30 EV","Electric",2
+2023,"Solano","Mercedes-Benz","EQB","Electric",39
+2023,"Solano","Mercedes-Benz","EQE","Electric",34
+2023,"Solano","Mercedes-Benz","EQS","Electric",27
+2023,"Solano","Mercedes-Benz","GLE","PHEV",2
+2023,"Solano","Mitsubishi","Outlander PHEV","PHEV",5
+2023,"Solano","Nissan","Ariya","Electric",45
+2023,"Solano","Nissan","LEAF","Electric",17
+2023,"Solano","Polestar","2","Electric",3
+2023,"Solano","Porsche","Taycan","Electric",7
+2023,"Solano","Rivian","R1S","Electric",33
+2023,"Solano","Rivian","R1T","Electric",7
+2023,"Solano","Subaru","Crosstrek","PHEV",3
+2023,"Solano","Tesla","Model 3","Electric",714
+2023,"Solano","Tesla","Model S","Electric",28
+2023,"Solano","Tesla","Model X","Electric",55
+2023,"Solano","Tesla","Model Y","Electric",1078
+2023,"Solano","Toyota","Mirai","Hydrogen",11
+2023,"Solano","Toyota","Prius Prime","PHEV",35
+2023,"Solano","Toyota","RAV4 Prime","PHEV",53
+2023,"Solano","Toyota/Subaru","bZ4X/Solterra","Electric",64
+2023,"Solano","VinFast","VF8","Electric",3
+2023,"Solano","Volkswagen","ID.4","Electric",135
+2023,"Solano","Volvo","C40 Recharge","Electric",7
+2023,"Solano","Volvo","S60 Recharge","PHEV",3
+2023,"Solano","Volvo","V60 Recharge","PHEV",1
+2023,"Solano","Volvo","XC40 Recharge","Electric",2
+2023,"Solano","Volvo","XC60 Recharge","PHEV",1
+2023,"Solano","Volvo","XC90 Recharge","PHEV",7
+2023,"Sonoma","Alfa Romeo","Tonale","PHEV",1
+2023,"Sonoma","Audi","Q4 e-tron","Electric",23
+2023,"Sonoma","Audi","Q4 e-tron Sportback","Electric",6
+2023,"Sonoma","Audi","Q5","PHEV",10
+2023,"Sonoma","Audi","Q8 e-tron","Electric",13
+2023,"Sonoma","Audi","Q8 e-tron Sportback","Electric",4
+2023,"Sonoma","Audi","RS e-tron GT","Electric",2
+2023,"Sonoma","Audi","e-tron","Electric",6
+2023,"Sonoma","Audi","e-tron GT","Electric",2
+2023,"Sonoma","Audi","e-tron Sportback","Electric",3
+2023,"Sonoma","BMW","3 Series","PHEV",6
+2023,"Sonoma","BMW","5 Series","PHEV",6
+2023,"Sonoma","BMW","X5","PHEV",63
+2023,"Sonoma","BMW","i4","Electric",85
+2023,"Sonoma","BMW","i5","Electric",3
+2023,"Sonoma","BMW","i7","Electric",5
+2023,"Sonoma","BMW","iX","Electric",50
+2023,"Sonoma","Cadillac","LYRIQ","Electric",13
+2023,"Sonoma","Chevrolet","Blazer EV","Electric",1
+2023,"Sonoma","Chevrolet","Bolt EUV","Electric",193
+2023,"Sonoma","Chevrolet","Bolt EV","Electric",112
+2023,"Sonoma","Chrysler","Pacifica Hybrid","PHEV",2
+2023,"Sonoma","Chrysler","Pacifica Plug-In Hybrid","PHEV",15
+2023,"Sonoma","Dodge","Hornet","PHEV",1
+2023,"Sonoma","Ferrari","SF90 Spider","PHEV",1
+2023,"Sonoma","Fisker","Ocean","Electric",11
+2023,"Sonoma","Ford","E-Transit","Electric",17
+2023,"Sonoma","Ford","Escape Plug-In Hybrid","PHEV",4
+2023,"Sonoma","Ford","F-150 Lightning","Electric",103
+2023,"Sonoma","Ford","Mustang Mach-E","Electric",122
+2023,"Sonoma","Genesis","Electrified G80","Electric",1
+2023,"Sonoma","Genesis","Electrified GV70","Electric",5
+2023,"Sonoma","Genesis","GV60","Electric",21
+2023,"Sonoma","Hyundai","IONIQ 5","Electric",137
+2023,"Sonoma","Hyundai","IONIQ 6","Electric",44
+2023,"Sonoma","Hyundai","KONA Electric","Electric",30
+2023,"Sonoma","Hyundai","SANTA FE Plug-In Hybrid","PHEV",18
+2023,"Sonoma","Hyundai","TUCSON Plug-in Hybrid","PHEV",36
+2023,"Sonoma","Jaguar","I-PACE","Electric",1
+2023,"Sonoma","Jeep","Grand Cherokee","PHEV",33
+2023,"Sonoma","Jeep","Wrangler","PHEV",42
+2023,"Sonoma","Jeep","Wrangler Unlimited","PHEV",2
+2023,"Sonoma","Kia","EV6","Electric",44
+2023,"Sonoma","Kia","Niro EV","Electric",31
+2023,"Sonoma","Kia","Niro Plug-In Hybrid","PHEV",8
+2023,"Sonoma","Kia","Sorento Plug-In Hybrid","PHEV",9
+2023,"Sonoma","Kia","Sportage Plug-In Hybrid","PHEV",14
+2023,"Sonoma","Land Rover","Range Rover Sport","PHEV",1
+2023,"Sonoma","Lexus","NX 450h+","PHEV",17
+2023,"Sonoma","Lexus","RX 450h+","PHEV",1
+2023,"Sonoma","Lexus","RZ 450e","Electric",15
+2023,"Sonoma","Lincoln","Aviator","PHEV",5
+2023,"Sonoma","Lincoln","Corsair","PHEV",1
+2023,"Sonoma","Lucid","Air","Electric",5
+2023,"Sonoma","MINI","Countryman Plug-in Hybrid","PHEV",3
+2023,"Sonoma","MINI","Hardtop 2 Door","Electric",10
+2023,"Sonoma","Mazda","CX-90 PHEV","PHEV",3
+2023,"Sonoma","Mercedes-Benz","EQB","Electric",18
+2023,"Sonoma","Mercedes-Benz","EQE","Electric",31
+2023,"Sonoma","Mercedes-Benz","EQS","Electric",20
+2023,"Sonoma","Mercedes-Benz","GLE","PHEV",5
+2023,"Sonoma","Mitsubishi","Outlander PHEV","PHEV",9
+2023,"Sonoma","Nissan","Ariya","Electric",41
+2023,"Sonoma","Nissan","LEAF","Electric",37
+2023,"Sonoma","Polestar","2","Electric",17
+2023,"Sonoma","Porsche","Cayenne","PHEV",2
+2023,"Sonoma","Porsche","Taycan","Electric",8
+2023,"Sonoma","Rivian","R1S","Electric",96
+2023,"Sonoma","Rivian","R1T","Electric",70
+2023,"Sonoma","Subaru","Crosstrek","PHEV",15
+2023,"Sonoma","Tesla","Model 3","Electric",536
+2023,"Sonoma","Tesla","Model S","Electric",35
+2023,"Sonoma","Tesla","Model X","Electric",46
+2023,"Sonoma","Tesla","Model Y","Electric",955
+2023,"Sonoma","Toyota","Mirai","Hydrogen",3
+2023,"Sonoma","Toyota","Prius Prime","PHEV",53
+2023,"Sonoma","Toyota","RAV4 Prime","PHEV",115
+2023,"Sonoma","Toyota/Subaru","bZ4X/Solterra","Electric",87
+2023,"Sonoma","VinFast","VF8","Electric",2
+2023,"Sonoma","Volkswagen","ID.4","Electric",285
+2023,"Sonoma","Volvo","C40 Recharge","Electric",17
+2023,"Sonoma","Volvo","S60 Recharge","PHEV",3
+2023,"Sonoma","Volvo","V60 Recharge","PHEV",1
+2023,"Sonoma","Volvo","XC40 Recharge","Electric",22
+2023,"Sonoma","Volvo","XC60 Recharge","PHEV",23
+2023,"Sonoma","Volvo","XC90 Recharge","PHEV",32
+2023,"Stanislaus","Alfa Romeo","Tonale","PHEV",1
+2023,"Stanislaus","Audi","Q4 e-tron","Electric",6
+2023,"Stanislaus","Audi","Q4 e-tron Sportback","Electric",2
+2023,"Stanislaus","Audi","Q8 e-tron Sportback","Electric",1
+2023,"Stanislaus","Audi","RS e-tron GT","Electric",1
+2023,"Stanislaus","Audi","e-tron","Electric",3
+2023,"Stanislaus","Audi","e-tron GT","Electric",1
+2023,"Stanislaus","Audi","e-tron Sportback","Electric",2
+2023,"Stanislaus","BMW","3 Series","PHEV",5
+2023,"Stanislaus","BMW","5 Series","PHEV",8
+2023,"Stanislaus","BMW","X5","PHEV",27
+2023,"Stanislaus","BMW","XM","PHEV",2
+2023,"Stanislaus","BMW","i4","Electric",32
+2023,"Stanislaus","BMW","iX","Electric",18
+2023,"Stanislaus","Cadillac","LYRIQ","Electric",11
+2023,"Stanislaus","Chevrolet","Bolt EUV","Electric",65
+2023,"Stanislaus","Chevrolet","Bolt EV","Electric",23
+2023,"Stanislaus","Chrysler","Pacifica Hybrid","PHEV",7
+2023,"Stanislaus","Chrysler","Pacifica Plug-In Hybrid","PHEV",9
+2023,"Stanislaus","Fisker","Ocean","Electric",4
+2023,"Stanislaus","Ford","E-Transit","Electric",5
+2023,"Stanislaus","Ford","Escape Plug-In Hybrid","PHEV",4
+2023,"Stanislaus","Ford","F-150 Lightning","Electric",46
+2023,"Stanislaus","Ford","Mustang Mach-E","Electric",61
+2023,"Stanislaus","GMC","HUMMER EV","Electric",2
+2023,"Stanislaus","Genesis","GV60","Electric",1
+2023,"Stanislaus","Hyundai","IONIQ 5","Electric",33
+2023,"Stanislaus","Hyundai","IONIQ 6","Electric",19
+2023,"Stanislaus","Hyundai","KONA Electric","Electric",11
+2023,"Stanislaus","Hyundai","SANTA FE Plug-In Hybrid","PHEV",10
+2023,"Stanislaus","Hyundai","TUCSON Plug-in Hybrid","PHEV",10
+2023,"Stanislaus","Jeep","Grand Cherokee","PHEV",23
+2023,"Stanislaus","Jeep","Wrangler","PHEV",65
+2023,"Stanislaus","Kia","EV6","Electric",24
+2023,"Stanislaus","Kia","EV9","Electric",2
+2023,"Stanislaus","Kia","Niro EV","Electric",9
+2023,"Stanislaus","Kia","Niro Plug-In Hybrid","PHEV",6
+2023,"Stanislaus","Kia","Sorento Plug-In Hybrid","PHEV",14
+2023,"Stanislaus","Kia","Sportage Plug-In Hybrid","PHEV",15
+2023,"Stanislaus","Lexus","NX 450h+","PHEV",17
+2023,"Stanislaus","Lexus","RX 450h+","PHEV",4
+2023,"Stanislaus","Lexus","RZ 450e","Electric",17
+2023,"Stanislaus","Lincoln","Aviator","PHEV",2
+2023,"Stanislaus","Lincoln","Corsair","PHEV",1
+2023,"Stanislaus","Lucid","Air","Electric",3
+2023,"Stanislaus","MINI","Hardtop 2 Door","Electric",1
+2023,"Stanislaus","Mazda","CX-90 PHEV","PHEV",13
+2023,"Stanislaus","McLaren","Artura","PHEV",1
+2023,"Stanislaus","Mercedes-Benz","EQB","Electric",12
+2023,"Stanislaus","Mercedes-Benz","EQE","Electric",12
+2023,"Stanislaus","Mercedes-Benz","EQS","Electric",13
+2023,"Stanislaus","Mercedes-Benz","GLE","PHEV",4
+2023,"Stanislaus","Mercedes-Benz","S-Class","PHEV",1
+2023,"Stanislaus","Mitsubishi","Outlander PHEV","PHEV",2
+2023,"Stanislaus","Nissan","Ariya","Electric",12
+2023,"Stanislaus","Nissan","LEAF","Electric",3
+2023,"Stanislaus","Polestar","2","Electric",1
+2023,"Stanislaus","Porsche","Taycan","Electric",2
+2023,"Stanislaus","Rivian","R1S","Electric",22
+2023,"Stanislaus","Rivian","R1T","Electric",10
+2023,"Stanislaus","Subaru","Crosstrek","PHEV",3
+2023,"Stanislaus","Tesla","Model 3","Electric",477
+2023,"Stanislaus","Tesla","Model S","Electric",16
+2023,"Stanislaus","Tesla","Model X","Electric",36
+2023,"Stanislaus","Tesla","Model Y","Electric",587
+2023,"Stanislaus","Toyota","Mirai","Hydrogen",2
+2023,"Stanislaus","Toyota","Prius Prime","PHEV",18
+2023,"Stanislaus","Toyota","RAV4 Prime","PHEV",31
+2023,"Stanislaus","Toyota/Subaru","bZ4X/Solterra","Electric",49
+2023,"Stanislaus","Volkswagen","ID.4","Electric",61
+2023,"Stanislaus","Volvo","C40 Recharge","Electric",2
+2023,"Stanislaus","Volvo","XC40 Recharge","Electric",2
+2023,"Stanislaus","Volvo","XC60 Recharge","PHEV",2
+2023,"Stanislaus","Volvo","XC90 Recharge","PHEV",3
+2023,"Sutter","Audi","Q4 e-tron","Electric",4
+2023,"Sutter","Audi","Q4 e-tron Sportback","Electric",1
+2023,"Sutter","Audi","Q8 e-tron","Electric",1
+2023,"Sutter","BMW","3 Series","PHEV",2
+2023,"Sutter","BMW","5 Series","PHEV",1
+2023,"Sutter","BMW","i4","Electric",9
+2023,"Sutter","BMW","iX","Electric",1
+2023,"Sutter","Cadillac","LYRIQ","Electric",1
+2023,"Sutter","Chevrolet","Bolt EUV","Electric",4
+2023,"Sutter","Chrysler","Pacifica Plug-In Hybrid","PHEV",1
+2023,"Sutter","Fisker","Ocean","Electric",1
+2023,"Sutter","Ford","E-Transit","Electric",1
+2023,"Sutter","Ford","Escape Plug-In Hybrid","PHEV",1
+2023,"Sutter","Ford","F-150 Lightning","Electric",11
+2023,"Sutter","Ford","Mustang Mach-E","Electric",5
+2023,"Sutter","Hyundai","IONIQ 5","Electric",3
+2023,"Sutter","Hyundai","IONIQ 6","Electric",1
+2023,"Sutter","Hyundai","KONA Electric","Electric",1
+2023,"Sutter","Hyundai","TUCSON Plug-in Hybrid","PHEV",1
+2023,"Sutter","Jeep","Grand Cherokee","PHEV",5
+2023,"Sutter","Jeep","Wrangler","PHEV",14
+2023,"Sutter","Kia","EV6","Electric",4
+2023,"Sutter","Kia","Niro EV","Electric",1
+2023,"Sutter","Kia","Sorento Plug-In Hybrid","PHEV",1
+2023,"Sutter","Kia","Sportage Plug-In Hybrid","PHEV",5
+2023,"Sutter","Lexus","NX 450h+","PHEV",5
+2023,"Sutter","Lincoln","Aviator","PHEV",1
+2023,"Sutter","MINI","Hardtop 2 Door","Electric",1
+2023,"Sutter","Mazda","CX-90 PHEV","PHEV",2
+2023,"Sutter","Mercedes-Benz","EQB","Electric",3
+2023,"Sutter","Mercedes-Benz","EQS","Electric",2
+2023,"Sutter","Mercedes-Benz","GLE","PHEV",1
+2023,"Sutter","Mitsubishi","Outlander PHEV","PHEV",1
+2023,"Sutter","Nissan","Ariya","Electric",1
+2023,"Sutter","Porsche","Taycan","Electric",4
+2023,"Sutter","Rivian","R1S","Electric",3
+2023,"Sutter","Rivian","R1T","Electric",2
+2023,"Sutter","Tesla","Model 3","Electric",65
+2023,"Sutter","Tesla","Model S","Electric",3
+2023,"Sutter","Tesla","Model X","Electric",10
+2023,"Sutter","Tesla","Model Y","Electric",109
+2023,"Sutter","Toyota","Prius Prime","PHEV",2
+2023,"Sutter","Toyota","RAV4 Prime","PHEV",5
+2023,"Sutter","Toyota/Subaru","bZ4X/Solterra","Electric",4
+2023,"Sutter","Volkswagen","ID.4","Electric",3
+2023,"Sutter","Volvo","XC60 Recharge","PHEV",1
+2023,"Tehama","Chevrolet","Bolt EUV","Electric",1
+2023,"Tehama","Chevrolet","Bolt EV","Electric",3
+2023,"Tehama","Chrysler","Pacifica Plug-In Hybrid","PHEV",1
+2023,"Tehama","Ford","E-Transit","Electric",1
+2023,"Tehama","Ford","Escape Plug-In Hybrid","PHEV",1
+2023,"Tehama","Ford","F-150 Lightning","Electric",4
+2023,"Tehama","Ford","Mustang Mach-E","Electric",1
+2023,"Tehama","Hyundai","SANTA FE Plug-In Hybrid","PHEV",3
+2023,"Tehama","Hyundai","TUCSON Plug-in Hybrid","PHEV",1
+2023,"Tehama","Jeep","Grand Cherokee","PHEV",2
+2023,"Tehama","Jeep","Wrangler","PHEV",1
+2023,"Tehama","Kia","EV6","Electric",5
+2023,"Tehama","Kia","Niro EV","Electric",2
+2023,"Tehama","Kia","Niro Plug-In Hybrid","PHEV",3
+2023,"Tehama","Kia","Sorento Plug-In Hybrid","PHEV",1
+2023,"Tehama","Kia","Sportage Plug-In Hybrid","PHEV",2
+2023,"Tehama","Lucid","Air","Electric",1
+2023,"Tehama","Mazda","CX-90 PHEV","PHEV",1
+2023,"Tehama","Mitsubishi","Outlander PHEV","PHEV",1
+2023,"Tehama","Nissan","LEAF","Electric",1
+2023,"Tehama","Porsche","Taycan","Electric",1
+2023,"Tehama","Rivian","R1S","Electric",2
+2023,"Tehama","Rivian","R1T","Electric",1
+2023,"Tehama","Tesla","Model 3","Electric",33
+2023,"Tehama","Tesla","Model S","Electric",2
+2023,"Tehama","Tesla","Model X","Electric",3
+2023,"Tehama","Tesla","Model Y","Electric",25
+2023,"Tehama","Toyota","Prius Prime","PHEV",1
+2023,"Tehama","Toyota","RAV4 Prime","PHEV",3
+2023,"Tehama","Toyota/Subaru","bZ4X/Solterra","Electric",1
+2023,"Tehama","Volkswagen","ID.4","Electric",1
+2023,"Trinity","Chevrolet","Bolt EV","Electric",3
+2023,"Trinity","Hyundai","KONA Electric","Electric",1
+2023,"Trinity","Jeep","Wrangler","PHEV",1
+2023,"Trinity","Kia","EV6","Electric",1
+2023,"Trinity","Kia","Sportage Plug-In Hybrid","PHEV",1
+2023,"Trinity","Mitsubishi","Outlander PHEV","PHEV",1
+2023,"Trinity","Rivian","R1T","Electric",1
+2023,"Trinity","Tesla","Model 3","Electric",1
+2023,"Trinity","Tesla","Model Y","Electric",4
+2023,"Trinity","Toyota","RAV4 Prime","PHEV",1
+2023,"Trinity","Toyota/Subaru","bZ4X/Solterra","Electric",1
+2023,"Tulare","Audi","Q4 e-tron","Electric",3
+2023,"Tulare","Audi","Q5","PHEV",1
+2023,"Tulare","Audi","e-tron GT","Electric",2
+2023,"Tulare","BMW","3 Series","PHEV",5
+2023,"Tulare","BMW","5 Series","PHEV",4
+2023,"Tulare","BMW","X5","PHEV",10
+2023,"Tulare","BMW","i4","Electric",23
+2023,"Tulare","BMW","i5","Electric",1
+2023,"Tulare","BMW","iX","Electric",12
+2023,"Tulare","Cadillac","LYRIQ","Electric",7
+2023,"Tulare","Chevrolet","Blazer EV","Electric",1
+2023,"Tulare","Chevrolet","Bolt EUV","Electric",22
+2023,"Tulare","Chevrolet","Bolt EV","Electric",8
+2023,"Tulare","Chrysler","Pacifica Hybrid","PHEV",2
+2023,"Tulare","Chrysler","Pacifica Plug-In Hybrid","PHEV",3
+2023,"Tulare","Fisker","Ocean","Electric",2
+2023,"Tulare","Ford","E-Transit","Electric",1
+2023,"Tulare","Ford","Escape Plug-In Hybrid","PHEV",2
+2023,"Tulare","Ford","F-150 Lightning","Electric",17
+2023,"Tulare","Ford","Mustang Mach-E","Electric",32
+2023,"Tulare","Genesis","GV60","Electric",1
+2023,"Tulare","Hyundai","IONIQ 5","Electric",23
+2023,"Tulare","Hyundai","IONIQ 6","Electric",15
+2023,"Tulare","Hyundai","KONA Electric","Electric",13
+2023,"Tulare","Hyundai","SANTA FE Plug-In Hybrid","PHEV",7
+2023,"Tulare","Hyundai","TUCSON Plug-in Hybrid","PHEV",10
+2023,"Tulare","Jeep","Grand Cherokee","PHEV",32
+2023,"Tulare","Jeep","Wrangler","PHEV",64
+2023,"Tulare","Jeep","Wrangler Unlimited","PHEV",1
+2023,"Tulare","Kia","EV6","Electric",18
+2023,"Tulare","Kia","Niro EV","Electric",6
+2023,"Tulare","Kia","Niro Plug-In Hybrid","PHEV",5
+2023,"Tulare","Kia","Sorento Plug-In Hybrid","PHEV",1
+2023,"Tulare","Kia","Sportage Plug-In Hybrid","PHEV",5
+2023,"Tulare","Lexus","NX 450h+","PHEV",6
+2023,"Tulare","Lexus","RZ 450e","Electric",1
+2023,"Tulare","Lucid","Air","Electric",1
+2023,"Tulare","Mazda","CX-90 PHEV","PHEV",7
+2023,"Tulare","Mercedes-Benz","EQB","Electric",1
+2023,"Tulare","Mercedes-Benz","EQE","Electric",4
+2023,"Tulare","Mercedes-Benz","EQS","Electric",6
+2023,"Tulare","Mercedes-Benz","GLE","PHEV",1
+2023,"Tulare","Mitsubishi","Outlander PHEV","PHEV",1
+2023,"Tulare","Nissan","Ariya","Electric",7
+2023,"Tulare","Nissan","LEAF","Electric",2
+2023,"Tulare","Polestar","2","Electric",1
+2023,"Tulare","Porsche","Panamera","PHEV",2
+2023,"Tulare","Porsche","Taycan","Electric",1
+2023,"Tulare","Rivian","R1S","Electric",10
+2023,"Tulare","Rivian","R1T","Electric",6
+2023,"Tulare","Tesla","Model 3","Electric",207
+2023,"Tulare","Tesla","Model S","Electric",9
+2023,"Tulare","Tesla","Model X","Electric",21
+2023,"Tulare","Tesla","Model Y","Electric",248
+2023,"Tulare","Toyota","Mirai","Hydrogen",1
+2023,"Tulare","Toyota","Prius Prime","PHEV",14
+2023,"Tulare","Toyota","RAV4 Prime","PHEV",31
+2023,"Tulare","Toyota/Subaru","bZ4X/Solterra","Electric",14
+2023,"Tulare","VinFast","VF8","Electric",1
+2023,"Tulare","Volkswagen","ID.4","Electric",8
+2023,"Tulare","Volvo","C40 Recharge","Electric",3
+2023,"Tulare","Volvo","XC40 Recharge","Electric",1
+2023,"Tulare","Volvo","XC60 Recharge","PHEV",1
+2023,"Tulare","Volvo","XC90 Recharge","PHEV",4
+2023,"Tuolumne","Audi","e-tron Sportback","Electric",1
+2023,"Tuolumne","BMW","5 Series","PHEV",1
+2023,"Tuolumne","BMW","X5","PHEV",3
+2023,"Tuolumne","BMW","i4","Electric",5
+2023,"Tuolumne","BMW","iX","Electric",1
+2023,"Tuolumne","Cadillac","LYRIQ","Electric",1
+2023,"Tuolumne","Chevrolet","Bolt EUV","Electric",12
+2023,"Tuolumne","Chevrolet","Bolt EV","Electric",1
+2023,"Tuolumne","Ford","F-150 Lightning","Electric",8
+2023,"Tuolumne","Ford","Mustang Mach-E","Electric",4
+2023,"Tuolumne","Hyundai","IONIQ 5","Electric",2
+2023,"Tuolumne","Hyundai","IONIQ 6","Electric",3
+2023,"Tuolumne","Hyundai","KONA Electric","Electric",1
+2023,"Tuolumne","Hyundai","SANTA FE Plug-In Hybrid","PHEV",1
+2023,"Tuolumne","Hyundai","TUCSON Plug-in Hybrid","PHEV",1
+2023,"Tuolumne","Jeep","Grand Cherokee","PHEV",4
+2023,"Tuolumne","Jeep","Wrangler","PHEV",10
+2023,"Tuolumne","Kia","EV6","Electric",2
+2023,"Tuolumne","Kia","Sorento Plug-In Hybrid","PHEV",1
+2023,"Tuolumne","Lexus","NX 450h+","PHEV",2
+2023,"Tuolumne","Lexus","RZ 450e","Electric",1
+2023,"Tuolumne","MINI","Hardtop 2 Door","Electric",1
+2023,"Tuolumne","Mazda","CX-90 PHEV","PHEV",3
+2023,"Tuolumne","Mercedes-Benz","EQB","Electric",1
+2023,"Tuolumne","Mercedes-Benz","EQE","Electric",1
+2023,"Tuolumne","Mercedes-Benz","EQS","Electric",1
+2023,"Tuolumne","Mitsubishi","Outlander PHEV","PHEV",1
+2023,"Tuolumne","Nissan","Ariya","Electric",1
+2023,"Tuolumne","Rivian","R1S","Electric",3
+2023,"Tuolumne","Rivian","R1T","Electric",7
+2023,"Tuolumne","Tesla","Model 3","Electric",22
+2023,"Tuolumne","Tesla","Model S","Electric",3
+2023,"Tuolumne","Tesla","Model X","Electric",2
+2023,"Tuolumne","Tesla","Model Y","Electric",45
+2023,"Tuolumne","Toyota","Prius Prime","PHEV",1
+2023,"Tuolumne","Toyota","RAV4 Prime","PHEV",8
+2023,"Tuolumne","Toyota/Subaru","bZ4X/Solterra","Electric",2
+2023,"Tuolumne","Volkswagen","ID.4","Electric",7
+2023,"Ventura","Alfa Romeo","Tonale","PHEV",2
+2023,"Ventura","Audi","Q4 e-tron","Electric",58
+2023,"Ventura","Audi","Q4 e-tron Sportback","Electric",14
+2023,"Ventura","Audi","Q5","PHEV",22
+2023,"Ventura","Audi","Q8 e-tron","Electric",50
+2023,"Ventura","Audi","Q8 e-tron Sportback","Electric",6
+2023,"Ventura","Audi","RS e-tron GT","Electric",6
+2023,"Ventura","Audi","e-tron","Electric",15
+2023,"Ventura","Audi","e-tron GT","Electric",20
+2023,"Ventura","Audi","e-tron S","Electric",2
+2023,"Ventura","Audi","e-tron Sportback","Electric",9
+2023,"Ventura","BMW","3 Series","PHEV",56
+2023,"Ventura","BMW","5 Series","PHEV",42
+2023,"Ventura","BMW","X5","PHEV",96
+2023,"Ventura","BMW","XM","PHEV",50
+2023,"Ventura","BMW","i4","Electric",179
+2023,"Ventura","BMW","i5","Electric",25
+2023,"Ventura","BMW","i7","Electric",35
+2023,"Ventura","BMW","iX","Electric",117
+2023,"Ventura","Cadillac","LYRIQ","Electric",41
+2023,"Ventura","Chevrolet","Blazer EV","Electric",3
+2023,"Ventura","Chevrolet","Bolt EUV","Electric",265
+2023,"Ventura","Chevrolet","Bolt EV","Electric",96
+2023,"Ventura","Chrysler","Pacifica Hybrid","PHEV",17
+2023,"Ventura","Chrysler","Pacifica Plug-In Hybrid","PHEV",65
+2023,"Ventura","Dodge","Hornet","PHEV",2
+2023,"Ventura","Ferrari","296 GTB","PHEV",1
+2023,"Ventura","Ferrari","296 GTS","PHEV",1
+2023,"Ventura","Ferrari","SF90 Stradale","PHEV",1
+2023,"Ventura","Fisker","Ocean","Electric",26
+2023,"Ventura","Ford","E-Transit","Electric",18
+2023,"Ventura","Ford","Escape Plug-In Hybrid","PHEV",24
+2023,"Ventura","Ford","F-150 Lightning","Electric",104
+2023,"Ventura","Ford","Mustang Mach-E","Electric",267
+2023,"Ventura","GMC","HUMMER EV","Electric",1
+2023,"Ventura","Genesis","Electrified G80","Electric",3
+2023,"Ventura","Genesis","Electrified GV70","Electric",17
+2023,"Ventura","Genesis","GV60","Electric",38
+2023,"Ventura","Hyundai","IONIQ 5","Electric",149
+2023,"Ventura","Hyundai","IONIQ 6","Electric",74
+2023,"Ventura","Hyundai","KONA Electric","Electric",31
+2023,"Ventura","Hyundai","NEXO","Hydrogen",4
+2023,"Ventura","Hyundai","SANTA FE Plug-In Hybrid","PHEV",17
+2023,"Ventura","Hyundai","TUCSON Plug-in Hybrid","PHEV",47
+2023,"Ventura","Jaguar","I-PACE","Electric",1
+2023,"Ventura","Jeep","Grand Cherokee","PHEV",94
+2023,"Ventura","Jeep","Wrangler","PHEV",256
+2023,"Ventura","Jeep","Wrangler Unlimited","PHEV",4
+2023,"Ventura","Kia","EV6","Electric",87
+2023,"Ventura","Kia","EV9","Electric",5
+2023,"Ventura","Kia","Niro EV","Electric",53
+2023,"Ventura","Kia","Niro Plug-In Hybrid","PHEV",35
+2023,"Ventura","Kia","Sorento Plug-In Hybrid","PHEV",20
+2023,"Ventura","Kia","Sportage Plug-In Hybrid","PHEV",41
+2023,"Ventura","Land Rover","Range Rover","PHEV",1
+2023,"Ventura","Lexus","NX 450h+","PHEV",73
+2023,"Ventura","Lexus","RX 450h+","PHEV",6
+2023,"Ventura","Lexus","RZ 450e","Electric",56
+2023,"Ventura","Lincoln","Aviator","PHEV",6
+2023,"Ventura","Lincoln","Corsair","PHEV",5
+2023,"Ventura","Lucid","Air","Electric",15
+2023,"Ventura","MINI","Countryman Plug-in Hybrid","PHEV",3
+2023,"Ventura","MINI","Hardtop 2 Door","Electric",20
+2023,"Ventura","Mazda","CX-90 PHEV","PHEV",37
+2023,"Ventura","Mazda","MX-30 EV","Electric",2
+2023,"Ventura","Mercedes-Benz","EQB","Electric",80
+2023,"Ventura","Mercedes-Benz","EQE","Electric",87
+2023,"Ventura","Mercedes-Benz","EQS","Electric",99
+2023,"Ventura","Mercedes-Benz","GLE","PHEV",8
+2023,"Ventura","Mercedes-Benz","S-Class","PHEV",4
+2023,"Ventura","Mitsubishi","Outlander PHEV","PHEV",12
+2023,"Ventura","Nissan","Ariya","Electric",63
+2023,"Ventura","Nissan","LEAF","Electric",21
+2023,"Ventura","Polestar","2","Electric",11
+2023,"Ventura","Porsche","Cayenne","PHEV",9
+2023,"Ventura","Porsche","Panamera","PHEV",2
+2023,"Ventura","Porsche","Taycan","Electric",59
+2023,"Ventura","Rivian","R1S","Electric",160
+2023,"Ventura","Rivian","R1T","Electric",68
+2023,"Ventura","Subaru","Crosstrek","PHEV",10
+2023,"Ventura","Tesla","Cybertruck","Electric",2
+2023,"Ventura","Tesla","Model 3","Electric",1691
+2023,"Ventura","Tesla","Model S","Electric",130
+2023,"Ventura","Tesla","Model X","Electric",203
+2023,"Ventura","Tesla","Model Y","Electric",2650
+2023,"Ventura","Toyota","Mirai","Hydrogen",34
+2023,"Ventura","Toyota","Prius Prime","PHEV",69
+2023,"Ventura","Toyota","RAV4 Prime","PHEV",155
+2023,"Ventura","Toyota/Subaru","bZ4X/Solterra","Electric",142
+2023,"Ventura","VinFast","VF8","Electric",3
+2023,"Ventura","Volkswagen","ID.4","Electric",297
+2023,"Ventura","Volvo","C40 Recharge","Electric",38
+2023,"Ventura","Volvo","S60 Recharge","PHEV",7
+2023,"Ventura","Volvo","V60 Recharge","PHEV",3
+2023,"Ventura","Volvo","XC40 Recharge","Electric",23
+2023,"Ventura","Volvo","XC60 Recharge","PHEV",34
+2023,"Ventura","Volvo","XC90 Recharge","PHEV",50
+2023,"Yolo","Audi","Q4 e-tron","Electric",12
+2023,"Yolo","Audi","Q4 e-tron Sportback","Electric",7
+2023,"Yolo","Audi","Q5","PHEV",3
+2023,"Yolo","Audi","Q8 e-tron","Electric",4
+2023,"Yolo","Audi","Q8 e-tron Sportback","Electric",1
+2023,"Yolo","Audi","e-tron","Electric",1
+2023,"Yolo","Audi","e-tron Sportback","Electric",1
+2023,"Yolo","BMW","3 Series","PHEV",6
+2023,"Yolo","BMW","5 Series","PHEV",2
+2023,"Yolo","BMW","X5","PHEV",7
+2023,"Yolo","BMW","i4","Electric",27
+2023,"Yolo","BMW","i7","Electric",2
+2023,"Yolo","BMW","iX","Electric",3
+2023,"Yolo","Cadillac","LYRIQ","Electric",2
+2023,"Yolo","Chevrolet","Bolt EUV","Electric",96
+2023,"Yolo","Chevrolet","Bolt EV","Electric",46
+2023,"Yolo","Chevrolet","Silverado EV","Electric",6
+2023,"Yolo","Chrysler","Pacifica Hybrid","PHEV",2
+2023,"Yolo","Chrysler","Pacifica Plug-In Hybrid","PHEV",7
+2023,"Yolo","Dodge","Hornet","PHEV",13
+2023,"Yolo","Fisker","Ocean","Electric",3
+2023,"Yolo","Ford","E-Transit","Electric",9
+2023,"Yolo","Ford","Escape Plug-In Hybrid","PHEV",11
+2023,"Yolo","Ford","F-150 Lightning","Electric",44
+2023,"Yolo","Ford","Mustang Mach-E","Electric",50
+2023,"Yolo","Hyundai","IONIQ 5","Electric",47
+2023,"Yolo","Hyundai","IONIQ 6","Electric",13
+2023,"Yolo","Hyundai","KONA Electric","Electric",3
+2023,"Yolo","Hyundai","NEXO","Hydrogen",1
+2023,"Yolo","Hyundai","SANTA FE Plug-In Hybrid","PHEV",9
+2023,"Yolo","Hyundai","TUCSON Plug-in Hybrid","PHEV",10
+2023,"Yolo","Jeep","Grand Cherokee","PHEV",13
+2023,"Yolo","Jeep","Wrangler","PHEV",24
+2023,"Yolo","Kia","EV6","Electric",12
+2023,"Yolo","Kia","Niro EV","Electric",4
+2023,"Yolo","Kia","Niro Plug-In Hybrid","PHEV",7
+2023,"Yolo","Kia","Sorento Plug-In Hybrid","PHEV",5
+2023,"Yolo","Kia","Sportage Plug-In Hybrid","PHEV",12
+2023,"Yolo","Lexus","NX 450h+","PHEV",11
+2023,"Yolo","Lexus","RX 450h+","PHEV",1
+2023,"Yolo","Lexus","RZ 450e","Electric",3
+2023,"Yolo","Lincoln","Aviator","PHEV",1
+2023,"Yolo","Lucid","Air","Electric",5
+2023,"Yolo","MINI","Countryman Plug-in Hybrid","PHEV",2
+2023,"Yolo","MINI","Hardtop 2 Door","Electric",4
+2023,"Yolo","Mazda","CX-90 PHEV","PHEV",13
+2023,"Yolo","Mercedes-Benz","EQB","Electric",11
+2023,"Yolo","Mercedes-Benz","EQE","Electric",7
+2023,"Yolo","Mercedes-Benz","EQS","Electric",4
+2023,"Yolo","Mitsubishi","Outlander PHEV","PHEV",1
+2023,"Yolo","Nissan","Ariya","Electric",10
+2023,"Yolo","Nissan","LEAF","Electric",12
+2023,"Yolo","Polestar","2","Electric",1
+2023,"Yolo","Rivian","EDV 700","Electric",2
+2023,"Yolo","Rivian","R1S","Electric",36
+2023,"Yolo","Rivian","R1T","Electric",13
+2023,"Yolo","Subaru","Crosstrek","PHEV",2
+2023,"Yolo","Tesla","Model 3","Electric",294
+2023,"Yolo","Tesla","Model S","Electric",19
+2023,"Yolo","Tesla","Model X","Electric",19
+2023,"Yolo","Tesla","Model Y","Electric",488
+2023,"Yolo","Toyota","Mirai","Hydrogen",13
+2023,"Yolo","Toyota","Prius Prime","PHEV",25
+2023,"Yolo","Toyota","RAV4 Prime","PHEV",40
+2023,"Yolo","Toyota/Subaru","bZ4X/Solterra","Electric",22
+2023,"Yolo","Volkswagen","ID.4","Electric",65
+2023,"Yolo","Volvo","C40 Recharge","Electric",4
+2023,"Yolo","Volvo","S60 Recharge","PHEV",2
+2023,"Yolo","Volvo","V60 Recharge","PHEV",2
+2023,"Yolo","Volvo","XC40 Recharge","Electric",5
+2023,"Yolo","Volvo","XC60 Recharge","PHEV",6
+2023,"Yolo","Volvo","XC90 Recharge","PHEV",7
+2023,"Yuba","Audi","Q4 e-tron","Electric",1
+2023,"Yuba","Audi","Q5","PHEV",1
+2023,"Yuba","Audi","e-tron Sportback","Electric",2
+2023,"Yuba","BMW","3 Series","PHEV",1
+2023,"Yuba","BMW","i4","Electric",4
+2023,"Yuba","Cadillac","LYRIQ","Electric",3
+2023,"Yuba","Chevrolet","Bolt EUV","Electric",13
+2023,"Yuba","Chevrolet","Bolt EV","Electric",1
+2023,"Yuba","Chrysler","Pacifica Hybrid","PHEV",2
+2023,"Yuba","Chrysler","Pacifica Plug-In Hybrid","PHEV",1
+2023,"Yuba","Ford","F-150 Lightning","Electric",5
+2023,"Yuba","Ford","Mustang Mach-E","Electric",11
+2023,"Yuba","Hyundai","IONIQ 5","Electric",5
+2023,"Yuba","Hyundai","KONA Electric","Electric",2
+2023,"Yuba","Hyundai","TUCSON Plug-in Hybrid","PHEV",1
+2023,"Yuba","Jeep","Grand Cherokee","PHEV",4
+2023,"Yuba","Jeep","Wrangler","PHEV",6
+2023,"Yuba","Kia","EV6","Electric",5
+2023,"Yuba","Kia","Niro Plug-In Hybrid","PHEV",2
+2023,"Yuba","Kia","Sportage Plug-In Hybrid","PHEV",1
+2023,"Yuba","MINI","Hardtop 2 Door","Electric",1
+2023,"Yuba","Mazda","CX-90 PHEV","PHEV",3
+2023,"Yuba","Mercedes-Benz","EQB","Electric",3
+2023,"Yuba","Mercedes-Benz","EQE","Electric",1
+2023,"Yuba","Mercedes-Benz","EQS","Electric",1
+2023,"Yuba","Mitsubishi","Outlander PHEV","PHEV",1
+2023,"Yuba","Rivian","R1T","Electric",3
+2023,"Yuba","Tesla","Model 3","Electric",42
+2023,"Yuba","Tesla","Model S","Electric",1
+2023,"Yuba","Tesla","Model X","Electric",1
+2023,"Yuba","Tesla","Model Y","Electric",85
+2023,"Yuba","Toyota","Prius Prime","PHEV",3
+2023,"Yuba","Toyota","RAV4 Prime","PHEV",8
+2023,"Yuba","Toyota/Subaru","bZ4X/Solterra","Electric",11
+2023,"Yuba","Volkswagen","ID.4","Electric",4
+2023,"Yuba","Volvo","XC90 Recharge","PHEV",1

@@ -1,0 +1,116 @@
+---
+title: "Lab 5"
+subtitle: "Importing Dataframes"
+author: "Clara Reckhorn"
+format: html
+---
+
+# Data Read In
+
+```{r}
+ev_sales <- read.csv("data/ev-sales.csv")
+
+head(ev_sales)
+```
+
+## Our goal:
+We want to know about EV sales in California in 2023 by model and by county.
+
+## To do so, first need to understand our dataframe.
+Talk to a partner and answer the following questions:
+- How many rows and columns are in the dataframe?
+- What do the columns and rows represent?
+- What are the data types of each column?
+
+## Each row:
+- Represents a county and year by model of EV sold in CA and how many were sold.
+
+## For me:
+changing names of cols
+
+```{r}
+colnames(ev_sales) <- c("year", "quarter", "county", "fuel_type", "make", "model", "sales")
+```
+
+
+## Each column:
+- `year`: the year of the sales
+- `quarter`: the quarter of the year when the sales were recorded
+- `county`: the county in California where the EVs were sold
+- `make`: the make/brand of the EV sold 
+- `model`: the model of the EV sold
+- `FUEL_TYPE`: the type of fuel used by the EV (e.g., electric, hybrid)
+- `sales`: the number of EVs sold in that county for that make and model in that year
+
+We aren't interested in the quarter, so we can group by each other column and drop the quarter column.
+
+```{r}
+library(tidyverse)
+
+ev_sales <- ev_sales |>
+  group_by(year, county, make, model, fuel_type) |>
+  summarise(
+    sales = sum(`sales`, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+```
+
+Now each row is year and county by make and model of EV sold in CA and how many were sold.
+
+We are only interested in 2023, so we can filter the dataframe to only include rows where the year is 2023.
+
+```{r}
+ev_sales <- ev_sales |>
+  filter(year == 2023)
+```
+
+
+```{r}
+# save the cleaned dataframe as a csv file
+write.csv(ev_sales, "data/ev-sales-cleaned.csv", row.names = FALSE)
+```
+
+
+## Using dplyr tools, 
+- Which CA county has the most EV sales in 2023?
+
+```{r}
+county_max_sales <- ev_sales |>
+  group_by(county) |>
+  summarise(total_sales = sum(sales)) |>
+  arrange(desc(total_sales)) |>
+  slice_head(n = 1)
+```
+
+- Which CA county has the least EV sales in 2023?
+
+```{r}
+county_min_sales <- ev_sales |>
+  group_by(county) |>
+  summarise(total_sales = sum(sales)) |>
+  arrange(total_sales) |>
+  slice_head(n = 1)
+```
+
+- What model of EV is the most popular in CA in 2023?
+
+```{r}
+popular_model <- ev_sales |>
+  group_by(model) |>
+  summarise(total_sales = sum(sales)) |>
+  arrange(desc(total_sales)) |>
+  slice_head(n = 1)
+```
+
+- What model of EV is the least popular in CA in 2023?
+
+```{r}
+least_popular_model <- ev_sales |>
+  group_by(model) |>
+  summarise(total_sales = sum(sales)) |>
+  arrange(total_sales) |>
+  slice_head(n = 1)
+```
+
+

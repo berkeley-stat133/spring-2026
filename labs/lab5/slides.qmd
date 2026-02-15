@@ -1,0 +1,307 @@
+---
+title: "Lab 5"
+subtitle: "Importing Dataframes and GitHub"
+author: "STAT 133"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+## Agenda
+
+-   Review: Dataframe Manipulations
+-   Quarto Slides
+    -   How can we format slides?
+-   4th Quarto Publication
+-   Problem Set 4
+
+# Review: What is dplyr?
+
+\
+
+> A package in the tidyverse that provides a set of functions for data manipulation and transformation in R
+
+## dplyr Functions
+
+![](images/dplyr.png){height="500px" fig-align="center"}
+
+## dplyr Functions
+
+-   `mutate()`: add/change/calculate new variables (columns)
+-   `select()`: select, choose variables (columns) based on their names
+-   `filter()`: filters, chooses observations (rows) based on their values
+-   `summarise()`: resume, reduce multiple values to a single summary value
+-   `arrange()`: order, changes the order of rows based on their values
+-   `group_by()`: groups, performs data operations on groups defined by variables
+
+## Example: dplyr Functions
+
+Let's use the `penguins` dataset from the `palmerpenguins` package to see how these functions work in practice. 
+\
+\
+```{r}
+#| echo: true
+library(tidyverse)
+library(palmerpenguins)
+
+head(penguins)
+```
+
+## Example: dplyr Functions
+To find the penguin species with the highest average body mass, we can use a combination of functions from `dplyr`:
+\
+\
+```{r}
+#| echo: true
+# Species with highest average body mass
+penguins |> 
+    group_by(species) |>
+    summarise(mean_body_mass = mean(body_mass_g, na.rm = TRUE)) |>
+    arrange(desc(mean_body_mass)) |>
+    slice_head(n = 1)
+```
+
+## Example: dplyr Functions
+Now for lowest average body mass:
+\
+\
+```{r}
+#| echo: true
+# Species with lowest average body mass
+penguins |> 
+    group_by(species) |>
+    summarise(mean_body_mass = mean(body_mass_g, na.rm = TRUE)) |>
+    arrange(mean_body_mass) |>
+    slice_head(n = 1)
+```
+
+# Quarto Slides
+
+Last week we learned how to create slides and include code.\
+\
+This week, we add some new skills to present information:\
+- Line highlighting\
+- Global Transitions\
+- Introducing data
+
+## Code Line Highlighting
+
+How can you draw attention to specific lines of code in slides?\
+\
+
+``` {.r code-line-numbers="3-4"}
+# Example function to calculate square
+square <- function(x) {
+  return(x^2)
+}
+```
+
+## Code Line Highlighting
+
+![](images/linehighlighting.png)
+
+"2": highlights line 2\
+
+"3-4": highlights lines 3 through 4\
+
+## Global Formatting
+
+You can set global formatting options for your slides in the YAML header.\
+
+Last week:
+
+``` {.markdown filename="demo-pub2.qmd" code-line-numbers="false"}
+---
+title: "Demo Publication 3"
+subtitle: "First Contact with Quarto Slides"
+author: "Your Name"
+format:
+  revealjs:
+    code-folding: true
+    echo: true
+    embed-resources: true
+---
+```
+
+## Transitions - Globally
+
+To set a global transition,
+
+``` {.markdown filename="demo-pub3.qmd" code-line-numbers="false"}
+---
+title: "Demo Publication 3"
+subtitle: "First Contact with Quarto Slides"
+author: "Your Name"
+format:
+  revealjs:
+    transition: slide
+    background-transition: fade
+---
+```
+
+[Available types of transitions](https://quarto.org/docs/presentations/revealjs/advanced.html#slide-transitions)
+
+# Introducing Data
+
+To add coding content to your slides, you can read in a `.csv` file.
+\
+\
+Find this data `ev-sales-cleaned.csv` in BCourses under pub4 and read it in to your slides.
+```{r}
+#| echo: true
+ev_sales <- read.csv("data/ev-sales-cleaned.csv")
+
+head(ev_sales)
+```
+
+## First steps - Understand the table  
+
+***Talk to a partner and answer the following questions:***
+
+\
+- How many rows and columns are in the dataframe?\
+- What do the columns and rows represent?\
+- What are the data types of each column?\
+- What year does the data cover?\
+
+```{r}
+#| echo: false
+countdown::countdown(3, bottom = 0)
+```
+
+## Each column:
+- `year`: the year of the sales (only covers 2023)
+- `county`: the county in California where the EVs were sold
+- `make`: the make/brand of the EV sold 
+- `model`: the model of the EV sold
+- `fuel_type`: the type of fuel used by the EV (electric, hybrid, etc)
+- `sales`: the number of EVs sold in that county for that make and model in that year
+
+
+# Quarto Pub
+
+## Pub4
+
+You are an intern for the **California Energy Commission** which is invested in the charging infrastructure and technologies that are helping to drive the transition to clean, zero-emission electric vehicles throughout the state.
+
+\
+
+> Your task: Create a presentation to share with the public about the current state of electric vehicle (EV) adoption in California.
+
+\
+
+![](images/CAenergy.png){height="100px" fig-align="center"}
+
+## Pub4 Note
+
+Assume that your published slides will be seen by a boss or team-lead.   Ensure your presentation is:\
+- well organized\
+- easy to read and understand\
+- professionally presented
+
+## Pub4 Requirements {.smaller}
+
+:::{.nonincremental}
+
+-   A title slide with the title of your presentation and your name.
+-   Provide an overview of the current state of EV adoption in California, with key statistics:
+    -   County with the highest number of electric vehicles
+    -   County with the lowest number of electric vehicles
+    -   Most popular model of electric vehicle
+    -   Least popular model of electric vehicle
+-   Use ***at least 3*** the formatting techniques we've learned so far, such as:
+    -   Line highlighting
+    -   Slide backgrounds
+    -   Global transitions
+    -   Code folding
+:::
+
+```{r}
+#| echo: false
+countdown::countdown(15, bottom = 0)
+```
+
+## Like last week: Folder `stat133/`
+
+``` {.markdown code-line-numbers="false"}
+  stat133/
+    labs/
+        lab1/
+        lab2/
+        lab3/
+        lab4
+    psets/
+        pset1/
+        pset2/
+        pset3/
+```
+
+## Terminal in IDE
+
+1)  Launch your IDE (Positron or RStudio)
+
+2)  Launch your [Terminal]{.bold-hilit} (next to the *Console* tab)
+
+3)  `cd` to your `stat133/labs/` folder
+
+4)  create a folder for this lab: `mkdir lab5`
+
+5)  `cd` to `lab5`
+
+. . .
+
+``` {.markdown filename="Terminal" code-line-numbers="false"}
+# create an empty qmd file "demo-pub4.qmd"
+touch demo-pub4.qmd
+```
+
+## Publishing Steps
+
+Assume I have a file called `demo-pub4.qmd` opened in Positron. To publish my `qmd` file to my QuartoPub account I follow these steps:
+
+1)  Go to the **Terminal** tab.
+    -   Make sure your working directory contains the qmd file.
+2)  Type command: `quarto publish demo-pub4.qmd`
+3)  Choose provider [Quarto Pub]{.bold-hilit} and press return (enter)
+4)  Publish with default account (linked to my email address)
+5)  Optionally: you can change the name of the document
+6)  Press return (enter)
+
+. . .
+
+Once published, there will be an associated link (URL), something like: <https://username.quarto.pub/demo-pub-4>
+
+## Submission to bCourses
+
+Submit the URL (link) of your published document to the corresponding assignment in bCourses.
+
+See [Assignments tab \> Quarto Publications \> Pub4]{.bold-hilit}
+
+# Problem Set 4
+
+## Pset 4
+
+Available in bCourses:
+
+See [Assignments tab \> Problem Sets \> PS4]{.bold-hilit}
+
+You'll find 2 files:
+
+-   `ps4.html`: instructions
+
+-   `ps4.qmd`: template file to write your answers
+
+. . .
+
+In case of trouble: Go to Files tab, folder `problem-sets`, folder `ps4`, and download the `qmd` file.
+
+Sometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome).
+
+## Pset 4 Submission
+
+-   Submit your `qmd` and `html` files to bCourses.
+-   Use assignment problem set **ps4**
+-   Graded credit / no-credit
+-   Credit for evidence of earnest engagement (just don't submit a blank or empty template file)
+
+
+
