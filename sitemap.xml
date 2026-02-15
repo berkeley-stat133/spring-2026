@@ -54,7 +54,7 @@
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/syllabus.html</loc>
-    <lastmod>2026-01-20T02:05:10.203Z</lastmod>
+    <lastmod>2026-02-14T22:15:30.776Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/info/about.html</loc>
@@ -77,12 +77,16 @@
     <lastmod>2026-02-03T04:02:20.789Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab5/slides.html</loc>
-    <lastmod>2026-02-11T16:55:12.168Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab5/data-cleaning.html</loc>
+    <lastmod>2026-02-15T01:20:01.414Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/labs/lab1/slides.html</loc>
     <lastmod>2026-01-25T17:54:06.880Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab5/slides.html</loc>
+    <lastmod>2026-02-15T01:20:01.423Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/labs/lab2/slides.html</loc>
@@ -134,7 +138,7 @@
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/13-importing-tables/slides.html</loc>
-    <lastmod>2025-12-31T04:30:54.438Z</lastmod>
+    <lastmod>2026-02-14T17:54:04.147Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/3-atomic-vectors/slides.html</loc>

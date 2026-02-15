@@ -1673,7 +1673,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 3 1"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 6 5"
   },
   {
     "objectID": "lectures/7-lists/slides.html#discuss-with-a-neighbor",
@@ -2112,7 +2112,7 @@
     "href": "syllabus.html#policies",
     "title": "Syllabus",
     "section": "Policies",
-    "text": "Policies\n\nLate Work\nRigorously completing the publications, problem sets and projects is for your own benefit. Since we grade them credit / no credit, no late work is accepted. Note that you can receive full credit for an assignment that is not complete as long as we see evidence of earnest engagment (please don’t just submit a blank or empty template file).\n\n\nCollaboration policy\nOn problem sets and projects, we strongly encourage collaboration between students. One of the best ways to learn is to talk things through with someone else. At the same time, these are your best opportunity to practice and learn, so be cautious not to lean to heavily on the understanding of a peer when working through your assignments.\n\n\nAI policy\nPlease be thoughtful when using AI tools for your schoolwork. Doing so on problem sets and projects robs you of a valuable opportunity to learn and undermines your performance on exams. At the same time, they can be helpful in providing feedback on your writing.\nAt the end of the course—time permitting—we’ll bring in AI tools for coding and learn how to use them. They’re very powerful, but you need firm mental models of the way code works before you’re able to use them well. For that reason, we suggest you refrain from using them until they’re introduced in class.\n\n\nAccomodations for students with disabilities\nSTAT 133 is a course that is designed to allow all students to succeed. If you have letters of accommodation from the Disabled Students’ Program, please share them with your instructor as soon as possible, and we will work out the necessary arrangements.\n\n\nStaying healthy\nMaintaining your health and that of the Berkeley community is of primary importance, so if you are feeling ill or have been exposed to illness, whether it’s COVID-19 or something else, please do not come to class. You’re encouraged to reach out to fellow students to discuss the class materials or stop by group tutoring or office hours to chat with a tutor or the instructor.",
+    "text": "Policies\n\nLate Work\nRigorously completing the publications, problem sets and projects is for your own benefit. Since we grade them credit / no credit, no late work is accepted. Note that you can receive full credit for an assignment that is not complete as long as we see evidence of earnest engagement (please don’t just submit a blank or empty template file).\n\n\nCollaboration policy\nOn problem sets and projects, we strongly encourage collaboration between students. One of the best ways to learn is to talk things through with someone else. At the same time, these are your best opportunity to practice and learn, so be cautious not to lean to heavily on the understanding of a peer when working through your assignments.\n\n\nAI policy\nPlease be thoughtful when using AI tools for your schoolwork. Doing so on problem sets and projects robs you of a valuable opportunity to learn and undermines your performance on exams. At the same time, they can be helpful in providing feedback on your writing.\nAt the end of the course—time permitting—we’ll bring in AI tools for coding and learn how to use them. They’re very powerful, but you need firm mental models of the way code works before you’re able to use them well. For that reason, we suggest you refrain from using them until they’re introduced in class.\n\n\nAccomodations for students with disabilities\nSTAT 133 is a course that is designed to allow all students to succeed. If you have letters of accommodation from the Disabled Students’ Program, please share them with your instructor as soon as possible, and we will work out the necessary arrangements.\n\n\nStaying healthy\nMaintaining your health and that of the Berkeley community is of primary importance, so if you are feeling ill or have been exposed to illness, whether it’s COVID-19 or something else, please do not come to class. You’re encouraged to reach out to fellow students to discuss the class materials or stop by group tutoring or office hours to chat with a tutor or the instructor.",
     "crumbs": [
       "Syllabus"
     ]
@@ -2412,6 +2412,55 @@
     "text": "Pset 2 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps2\nSubmission deadline: Wednesday 2/11 by 6PM.\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
   {
+    "objectID": "labs/lab5/data-cleaning.html",
+    "href": "labs/lab5/data-cleaning.html",
+    "title": "Lab 5",
+    "section": "",
+    "text": "ev_sales &lt;- read.csv(\"data/ev-sales.csv\")\n\nhead(ev_sales)\n\n  Data.Year Quarter        COUNTY FUEL_TYPE  MAKE    MODEL Number.of.Vehicles\n1      2008       3       Alameda  Electric Tesla Roadster                  1\n2      2008       3 San Francisco  Electric Tesla Roadster                  1\n3      2008       3     San Mateo  Electric Tesla Roadster                  3\n4      2008       3   Santa Clara  Electric Tesla Roadster                  4\n5      2008       3        Sonoma  Electric Tesla Roadster                  1\n6      2008       4       Alameda  Electric Tesla Roadster                  5\n\n\n\n\nWe want to know about EV sales in California in 2023 by model and by county.\n\n\n\nTalk to a partner and answer the following questions: - How many rows and columns are in the dataframe? - What do the columns and rows represent? - What are the data types of each column?\n\n\n\n\nRepresents a county and year by model of EV sold in CA and how many were sold.\n\n\n\n\nchanging names of cols\n\ncolnames(ev_sales) &lt;- c(\"year\", \"quarter\", \"county\", \"fuel_type\", \"make\", \"model\", \"sales\")\n\n\n\n\n\nyear: the year of the sales\nquarter: the quarter of the year when the sales were recorded\ncounty: the county in California where the EVs were sold\nmake: the make/brand of the EV sold\nmodel: the model of the EV sold\nFUEL_TYPE: the type of fuel used by the EV (e.g., electric, hybrid)\nsales: the number of EVs sold in that county for that make and model in that year\n\nWe aren’t interested in the quarter, so we can group by each other column and drop the quarter column.\n\nlibrary(tidyverse)\n\nWarning: package 'readr' was built under R version 4.5.2\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.6\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nev_sales &lt;- ev_sales |&gt;\n  group_by(year, county, make, model, fuel_type) |&gt;\n  summarise(\n    sales = sum(`sales`, na.rm = TRUE),\n    .groups = \"drop\"\n  )\n\nNow each row is year and county by make and model of EV sold in CA and how many were sold.\nWe are only interested in 2023, so we can filter the dataframe to only include rows where the year is 2023.\n\nev_sales &lt;- ev_sales |&gt;\n  filter(year == 2023)\n\n\n# save the cleaned dataframe as a csv file\nwrite.csv(ev_sales, \"data/ev-sales-cleaned.csv\", row.names = FALSE)\n\n\n\n\n\nWhich CA county has the most EV sales in 2023?\n\n\ncounty_max_sales &lt;- ev_sales |&gt;\n  group_by(county) |&gt;\n  summarise(total_sales = sum(sales)) |&gt;\n  arrange(desc(total_sales)) |&gt;\n  slice_head(n = 1)\n\n\nWhich CA county has the least EV sales in 2023?\n\n\ncounty_min_sales &lt;- ev_sales |&gt;\n  group_by(county) |&gt;\n  summarise(total_sales = sum(sales)) |&gt;\n  arrange(total_sales) |&gt;\n  slice_head(n = 1)\n\n\nWhat model of EV is the most popular in CA in 2023?\n\n\npopular_model &lt;- ev_sales |&gt;\n  group_by(model) |&gt;\n  summarise(total_sales = sum(sales)) |&gt;\n  arrange(desc(total_sales)) |&gt;\n  slice_head(n = 1)\n\n\nWhat model of EV is the least popular in CA in 2023?\n\n\nleast_popular_model &lt;- ev_sales |&gt;\n  group_by(model) |&gt;\n  summarise(total_sales = sum(sales)) |&gt;\n  arrange(total_sales) |&gt;\n  slice_head(n = 1)"
+  },
+  {
+    "objectID": "labs/lab5/data-cleaning.html#our-goal",
+    "href": "labs/lab5/data-cleaning.html#our-goal",
+    "title": "Lab 5",
+    "section": "",
+    "text": "We want to know about EV sales in California in 2023 by model and by county."
+  },
+  {
+    "objectID": "labs/lab5/data-cleaning.html#to-do-so-first-need-to-understand-our-dataframe.",
+    "href": "labs/lab5/data-cleaning.html#to-do-so-first-need-to-understand-our-dataframe.",
+    "title": "Lab 5",
+    "section": "",
+    "text": "Talk to a partner and answer the following questions: - How many rows and columns are in the dataframe? - What do the columns and rows represent? - What are the data types of each column?"
+  },
+  {
+    "objectID": "labs/lab5/data-cleaning.html#each-row",
+    "href": "labs/lab5/data-cleaning.html#each-row",
+    "title": "Lab 5",
+    "section": "",
+    "text": "Represents a county and year by model of EV sold in CA and how many were sold."
+  },
+  {
+    "objectID": "labs/lab5/data-cleaning.html#for-me",
+    "href": "labs/lab5/data-cleaning.html#for-me",
+    "title": "Lab 5",
+    "section": "",
+    "text": "changing names of cols\n\ncolnames(ev_sales) &lt;- c(\"year\", \"quarter\", \"county\", \"fuel_type\", \"make\", \"model\", \"sales\")"
+  },
+  {
+    "objectID": "labs/lab5/data-cleaning.html#each-column",
+    "href": "labs/lab5/data-cleaning.html#each-column",
+    "title": "Lab 5",
+    "section": "",
+    "text": "year: the year of the sales\nquarter: the quarter of the year when the sales were recorded\ncounty: the county in California where the EVs were sold\nmake: the make/brand of the EV sold\nmodel: the model of the EV sold\nFUEL_TYPE: the type of fuel used by the EV (e.g., electric, hybrid)\nsales: the number of EVs sold in that county for that make and model in that year\n\nWe aren’t interested in the quarter, so we can group by each other column and drop the quarter column.\n\nlibrary(tidyverse)\n\nWarning: package 'readr' was built under R version 4.5.2\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.6\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nev_sales &lt;- ev_sales |&gt;\n  group_by(year, county, make, model, fuel_type) |&gt;\n  summarise(\n    sales = sum(`sales`, na.rm = TRUE),\n    .groups = \"drop\"\n  )\n\nNow each row is year and county by make and model of EV sold in CA and how many were sold.\nWe are only interested in 2023, so we can filter the dataframe to only include rows where the year is 2023.\n\nev_sales &lt;- ev_sales |&gt;\n  filter(year == 2023)\n\n\n# save the cleaned dataframe as a csv file\nwrite.csv(ev_sales, \"data/ev-sales-cleaned.csv\", row.names = FALSE)"
+  },
+  {
+    "objectID": "labs/lab5/data-cleaning.html#using-dplyr-tools",
+    "href": "labs/lab5/data-cleaning.html#using-dplyr-tools",
+    "title": "Lab 5",
+    "section": "",
+    "text": "Which CA county has the most EV sales in 2023?\n\n\ncounty_max_sales &lt;- ev_sales |&gt;\n  group_by(county) |&gt;\n  summarise(total_sales = sum(sales)) |&gt;\n  arrange(desc(total_sales)) |&gt;\n  slice_head(n = 1)\n\n\nWhich CA county has the least EV sales in 2023?\n\n\ncounty_min_sales &lt;- ev_sales |&gt;\n  group_by(county) |&gt;\n  summarise(total_sales = sum(sales)) |&gt;\n  arrange(total_sales) |&gt;\n  slice_head(n = 1)\n\n\nWhat model of EV is the most popular in CA in 2023?\n\n\npopular_model &lt;- ev_sales |&gt;\n  group_by(model) |&gt;\n  summarise(total_sales = sum(sales)) |&gt;\n  arrange(desc(total_sales)) |&gt;\n  slice_head(n = 1)\n\n\nWhat model of EV is the least popular in CA in 2023?\n\n\nleast_popular_model &lt;- ev_sales |&gt;\n  group_by(model) |&gt;\n  summarise(total_sales = sum(sales)) |&gt;\n  arrange(total_sales) |&gt;\n  slice_head(n = 1)"
+  },
+  {
     "objectID": "labs/lab1/slides.html#meet-your-gsi",
     "href": "labs/lab1/slides.html#meet-your-gsi",
     "title": "Lab 1",
@@ -2536,6 +2585,153 @@
     "title": "Lab 1",
     "section": "In case of trouble",
     "text": "In case of trouble\nIf you experienced any issues today, for example:\n\ninstalling software\nrendering .qmd file\nsubmission to bCourses\ngot lost along the discussion\n\nthen please come to office hours!"
+  },
+  {
+    "objectID": "labs/lab5/slides.html#agenda",
+    "href": "labs/lab5/slides.html#agenda",
+    "title": "Lab 5",
+    "section": "Agenda",
+    "text": "Agenda\n\nReview: Dataframe Manipulations\nQuarto Slides\n\nHow can we format slides?\n\n4th Quarto Publication\nProblem Set 4"
+  },
+  {
+    "objectID": "labs/lab5/slides.html#dplyr-functions",
+    "href": "labs/lab5/slides.html#dplyr-functions",
+    "title": "Lab 5",
+    "section": "dplyr Functions",
+    "text": "dplyr Functions"
+  },
+  {
+    "objectID": "labs/lab5/slides.html#dplyr-functions-1",
+    "href": "labs/lab5/slides.html#dplyr-functions-1",
+    "title": "Lab 5",
+    "section": "dplyr Functions",
+    "text": "dplyr Functions\n\nmutate(): add/change/calculate new variables (columns)\nselect(): select, choose variables (columns) based on their names\nfilter(): filters, chooses observations (rows) based on their values\nsummarise(): resume, reduce multiple values to a single summary value\narrange(): order, changes the order of rows based on their values\ngroup_by(): groups, performs data operations on groups defined by variables"
+  },
+  {
+    "objectID": "labs/lab5/slides.html#example-dplyr-functions",
+    "href": "labs/lab5/slides.html#example-dplyr-functions",
+    "title": "Lab 5",
+    "section": "Example: dplyr Functions",
+    "text": "Example: dplyr Functions\nLet’s use the penguins dataset from the palmerpenguins package to see how these functions work in practice.\n\n\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\nhead(penguins)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+  },
+  {
+    "objectID": "labs/lab5/slides.html#example-dplyr-functions-1",
+    "href": "labs/lab5/slides.html#example-dplyr-functions-1",
+    "title": "Lab 5",
+    "section": "Example: dplyr Functions",
+    "text": "Example: dplyr Functions\nTo find the penguin species with the highest average body mass, we can use a combination of functions from dplyr:\n\n\n\n# Species with highest average body mass\npenguins |&gt; \n    group_by(species) |&gt;\n    summarise(mean_body_mass = mean(body_mass_g, na.rm = TRUE)) |&gt;\n    arrange(desc(mean_body_mass)) |&gt;\n    slice_head(n = 1)\n\n# A tibble: 1 × 2\n  species mean_body_mass\n  &lt;fct&gt;            &lt;dbl&gt;\n1 Gentoo           5076."
+  },
+  {
+    "objectID": "labs/lab5/slides.html#example-dplyr-functions-2",
+    "href": "labs/lab5/slides.html#example-dplyr-functions-2",
+    "title": "Lab 5",
+    "section": "Example: dplyr Functions",
+    "text": "Example: dplyr Functions\nNow for lowest average body mass:\n\n\n\n# Species with lowest average body mass\npenguins |&gt; \n    group_by(species) |&gt;\n    summarise(mean_body_mass = mean(body_mass_g, na.rm = TRUE)) |&gt;\n    arrange(mean_body_mass) |&gt;\n    slice_head(n = 1)\n\n# A tibble: 1 × 2\n  species mean_body_mass\n  &lt;fct&gt;            &lt;dbl&gt;\n1 Adelie           3701."
+  },
+  {
+    "objectID": "labs/lab5/slides.html#code-line-highlighting",
+    "href": "labs/lab5/slides.html#code-line-highlighting",
+    "title": "Lab 5",
+    "section": "Code Line Highlighting",
+    "text": "Code Line Highlighting\nHow can you draw attention to specific lines of code in slides?\n\n\n# Example function to calculate square\nsquare &lt;- function(x) {\n  return(x^2)\n}"
+  },
+  {
+    "objectID": "labs/lab5/slides.html#code-line-highlighting-1",
+    "href": "labs/lab5/slides.html#code-line-highlighting-1",
+    "title": "Lab 5",
+    "section": "Code Line Highlighting",
+    "text": "Code Line Highlighting\n\n“2”: highlights line 2\n\n“3-4”: highlights lines 3 through 4"
+  },
+  {
+    "objectID": "labs/lab5/slides.html#global-formatting",
+    "href": "labs/lab5/slides.html#global-formatting",
+    "title": "Lab 5",
+    "section": "Global Formatting",
+    "text": "Global Formatting\nYou can set global formatting options for your slides in the YAML header.\n\nLast week:\n\n\ndemo-pub2.qmd\n\n---\ntitle: \"Demo Publication 3\"\nsubtitle: \"First Contact with Quarto Slides\"\nauthor: \"Your Name\"\nformat:\n  revealjs:\n    code-folding: true\n    echo: true\n    embed-resources: true\n---"
+  },
+  {
+    "objectID": "labs/lab5/slides.html#transitions---globally",
+    "href": "labs/lab5/slides.html#transitions---globally",
+    "title": "Lab 5",
+    "section": "Transitions - Globally",
+    "text": "Transitions - Globally\nTo set a global transition,\n\n\ndemo-pub3.qmd\n\n---\ntitle: \"Demo Publication 3\"\nsubtitle: \"First Contact with Quarto Slides\"\nauthor: \"Your Name\"\nformat:\n  revealjs:\n    transition: slide\n    background-transition: fade\n---\n\nAvailable types of transitions"
+  },
+  {
+    "objectID": "labs/lab5/slides.html#first-steps---understand-the-table",
+    "href": "labs/lab5/slides.html#first-steps---understand-the-table",
+    "title": "Lab 5",
+    "section": "First steps - Understand the table",
+    "text": "First steps - Understand the table\nTalk to a partner and answer the following questions:\n\n- How many rows and columns are in the dataframe?\n- What do the columns and rows represent?\n- What are the data types of each column?\n- What year does the data cover?\n\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "labs/lab5/slides.html#each-column",
+    "href": "labs/lab5/slides.html#each-column",
+    "title": "Lab 5",
+    "section": "Each column:",
+    "text": "Each column:\n\nyear: the year of the sales (only covers 2023)\ncounty: the county in California where the EVs were sold\nmake: the make/brand of the EV sold\nmodel: the model of the EV sold\nfuel_type: the type of fuel used by the EV (electric, hybrid, etc)\nsales: the number of EVs sold in that county for that make and model in that year"
+  },
+  {
+    "objectID": "labs/lab5/slides.html#pub4",
+    "href": "labs/lab5/slides.html#pub4",
+    "title": "Lab 5",
+    "section": "Pub4",
+    "text": "Pub4\nYou are an intern for the California Energy Commission which is invested in the charging infrastructure and technologies that are helping to drive the transition to clean, zero-emission electric vehicles throughout the state.\n\n\n\nYour task: Create a presentation to share with the public about the current state of electric vehicle (EV) adoption in California."
+  },
+  {
+    "objectID": "labs/lab5/slides.html#pub4-note",
+    "href": "labs/lab5/slides.html#pub4-note",
+    "title": "Lab 5",
+    "section": "Pub4 Note",
+    "text": "Pub4 Note\nAssume that your published slides will be seen by a boss or team-lead.   Ensure your presentation is:\n- well organized\n- easy to read and understand\n- professionally presented"
+  },
+  {
+    "objectID": "labs/lab5/slides.html#pub4-requirements",
+    "href": "labs/lab5/slides.html#pub4-requirements",
+    "title": "Lab 5",
+    "section": "Pub4 Requirements",
+    "text": "Pub4 Requirements\n\nA title slide with the title of your presentation and your name.\nProvide an overview of the current state of EV adoption in California, with key statistics:\n\nCounty with the highest number of electric vehicles\nCounty with the lowest number of electric vehicles\nMost popular model of electric vehicle\nLeast popular model of electric vehicle\n\nUse at least 3 the formatting techniques we’ve learned so far, such as:\n\nLine highlighting\nSlide backgrounds\nGlobal transitions\nCode folding\n\n\n\n\n\n−+\n15:00"
+  },
+  {
+    "objectID": "labs/lab5/slides.html#like-last-week-folder-stat133",
+    "href": "labs/lab5/slides.html#like-last-week-folder-stat133",
+    "title": "Lab 5",
+    "section": "Like last week: Folder stat133/",
+    "text": "Like last week: Folder stat133/\n  stat133/\n    labs/\n        lab1/\n        lab2/\n        lab3/\n        lab4\n    psets/\n        pset1/\n        pset2/\n        pset3/"
+  },
+  {
+    "objectID": "labs/lab5/slides.html#terminal-in-ide",
+    "href": "labs/lab5/slides.html#terminal-in-ide",
+    "title": "Lab 5",
+    "section": "Terminal in IDE",
+    "text": "Terminal in IDE\n\nLaunch your IDE (Positron or RStudio)\nLaunch your Terminal (next to the Console tab)\ncd to your stat133/labs/ folder\ncreate a folder for this lab: mkdir lab5\ncd to lab5\n\n\n\n\nTerminal\n\n# create an empty qmd file \"demo-pub4.qmd\"\ntouch demo-pub4.qmd"
+  },
+  {
+    "objectID": "labs/lab5/slides.html#publishing-steps",
+    "href": "labs/lab5/slides.html#publishing-steps",
+    "title": "Lab 5",
+    "section": "Publishing Steps",
+    "text": "Publishing Steps\nAssume I have a file called demo-pub4.qmd opened in Positron. To publish my qmd file to my QuartoPub account I follow these steps:\n\nGo to the Terminal tab.\n\nMake sure your working directory contains the qmd file.\n\nType command: quarto publish demo-pub4.qmd\nChoose provider Quarto Pub and press return (enter)\nPublish with default account (linked to my email address)\nOptionally: you can change the name of the document\nPress return (enter)\n\n\nOnce published, there will be an associated link (URL), something like: https://username.quarto.pub/demo-pub-4"
+  },
+  {
+    "objectID": "labs/lab5/slides.html#submission-to-bcourses",
+    "href": "labs/lab5/slides.html#submission-to-bcourses",
+    "title": "Lab 5",
+    "section": "Submission to bCourses",
+    "text": "Submission to bCourses\nSubmit the URL (link) of your published document to the corresponding assignment in bCourses.\nSee Assignments tab &gt; Quarto Publications &gt; Pub4"
+  },
+  {
+    "objectID": "labs/lab5/slides.html#pset-4",
+    "href": "labs/lab5/slides.html#pset-4",
+    "title": "Lab 5",
+    "section": "Pset 4",
+    "text": "Pset 4\nAvailable in bCourses:\nSee Assignments tab &gt; Problem Sets &gt; PS4\nYou’ll find 2 files:\n\nps4.html: instructions\nps4.qmd: template file to write your answers\n\n\nIn case of trouble: Go to Files tab, folder problem-sets, folder ps4, and download the qmd file.\nSometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome)."
+  },
+  {
+    "objectID": "labs/lab5/slides.html#pset-4-submission",
+    "href": "labs/lab5/slides.html#pset-4-submission",
+    "title": "Lab 5",
+    "section": "Pset 4 Submission",
+    "text": "Pset 4 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps4\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
   {
     "objectID": "labs/lab2/slides.html#agenda",
@@ -3012,7 +3208,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"bronze\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"gold\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -3026,7 +3222,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"senior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"freshman\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -3327,7 +3523,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 9      Jerami Grant POR   PF           79    213 March 12,… US      10        \n2 22     Pete Nance   PHI   C            81    225 February … US      1         \n3 31     Thomas Brya… MIA   C            81    248 July 31, … US      7         \n4 23     Tre Mann     CHO   PG           76    178 February … US      3         \n5 17     Jalen Hood-… PHI   SG           77    210 June 19, … US      1         \n6 18     Chuma Okeke  PHI   PF           79    229 August 18… US      4         \n7 20     Georges Nia… CLE   PF           78    230 June 17, … US      8         \n8 33     Nicolas Bat… LAC   PF           79    230 December … FR      16        \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 20     JD Davison   BOS   PG           73    195 October 3… US      2         \n2 21     Spencer Jon… DEN   SF           79    225 June 14, … US      R         \n3 3      Jordan McLa… SAC   PG           71    185 April 9, … US      5         \n4 5      Kevon Looney GSW   C            81    222 February … US      9         \n5 88     Patty Mills  LAC   PG           74    180 August 11… AU      15        \n6 9      Ausar Thomp… DET   SF           79    205 January 3… US      1         \n7 5      Jarace Walk… IND   PF           79    235 September… US      1         \n8 0      Malik Monk   SAC   SG           75    200 February … US      7         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -4195,7 +4391,7 @@
     "href": "lectures/13-importing-tables/slides.html#section-3",
     "title": "Importing Tables",
     "section": "",
-    "text": "Consider yet another file named file4.txt\n\n\n\nfile4.txt\n\nFIRST LINE\nLeia female 1.50\nLuke male 1.70\nHan male 1.80\n\n\n\n\nThe first line is not that relevant.\nThe subsequent lines (2-4) ARE important.\nThe data in each line consists of:\n\nname\ngender\nheight"
+    "text": "Consider yet another file named file4.txt\n\n\n\nfile4.txt\n\nFIRST LINE\nLeia female 1.50\nLuke male 1.70\nHan male 1.80\n\n\nThe first line is not that relevant.\nThe subsequent lines (2-4) ARE important.\nThe data in each line consists of:\n\nname\ngender\nheight"
   },
   {
     "objectID": "lectures/13-importing-tables/slides.html#section-4",
@@ -4210,6 +4406,13 @@
     "title": "Importing Tables",
     "section": "",
     "text": "Another way to use scan() to import file4.txt in R:\n\n\n\n\nfile4.txt\n\nFIRST LINE\nLeia female 1.50\nLuke male 1.70\nHan male 1.80\n\n\n\n\n\nw &lt;- scan(\n  file = \"file4.txt\", \n  skip = 1,\n  what = list(\n    name = character(), \n    gender = character(), \n    height = double()))\n\nw\n\n\n\n$name\n[1] \"Leia\" \"Luke\" \"Han\" \n\n$gender\n[1] \"female\" \"male\"   \"male\"  \n\n$height\n[1] 1.5 1.7 1.8"
+  },
+  {
+    "objectID": "lectures/13-importing-tables/slides.html#about-scan",
+    "href": "lectures/13-importing-tables/slides.html#about-scan",
+    "title": "Importing Tables",
+    "section": "About scan()",
+    "text": "About scan()\n\nscan() is R’s main low-level function to read in data values.\nIt imports data either into a vector or a list (argument what).\nscan() expects to read “white-space” delimited input fields by default.\nYou can change the field separator with sep.\nIn practice, you won’t be using scan() that much, instead you’ll use high-level functions—which depend on scan().\nBut now you know about its basic usage.\nSee ?scan for more information."
   },
   {
     "objectID": "lectures/13-importing-tables/slides.html#section-6",
@@ -4233,18 +4436,11 @@
     "text": "values.txt\n\n10 20\n30 40\n50 60\n70 80\n\n\nAs a data.frame\n\n# step 1\nvals &lt;- scan(file = \"values.txt\", what = list(x=numeric(), y=numeric()))\nvals\n\n\n\n$x\n[1] 10 30 50 70\n\n$y\n[1] 20 40 60 80\n\n\n\n\n\n# step 2\ndf &lt;- data.frame(vals)\ndf\n\n\n\n   x  y\n1 10 20\n2 30 40\n3 50 60\n4 70 80"
   },
   {
-    "objectID": "lectures/13-importing-tables/slides.html#about-scan",
-    "href": "lectures/13-importing-tables/slides.html#about-scan",
+    "objectID": "lectures/13-importing-tables/slides.html#reading-a-text-file-line-by-line",
+    "href": "lectures/13-importing-tables/slides.html#reading-a-text-file-line-by-line",
     "title": "Importing Tables",
-    "section": "About scan()",
-    "text": "About scan()\n\nscan() is R’s main low-level function to read in data values.\nIt imports data either into a vector or a list (argument what).\nscan() expects to read “white-space” delimited input fields by default.\nYou can change the field separator with sep.\nIn practice, you won’t be using scan() that much, instead you’ll use high-level functions—which depend on scan().\nBut now you know about its basic usage.\nSee ?scan for more information."
-  },
-  {
-    "objectID": "lectures/13-importing-tables/slides.html#reading-a-file-line-by-line",
-    "href": "lectures/13-importing-tables/slides.html#reading-a-file-line-by-line",
-    "title": "Importing Tables",
-    "section": "Reading a file, line-by-line",
-    "text": "Reading a file, line-by-line\nThe standard recipe to read the content of a file follows these steps:\n\nEstablish a connection (or stream source) with the desired file.\nOpen the desired file in read mode.\nRead each line, and check whether the end-of-file has been reached.\nParse and convert raw string into individual data points.\nClose the connection to the file.\n\n\n\nIn R, pretty much all functions to import data take care of all these steps.\nMost of the time you will be specifying arguments related to step 4 to tell R details about the parsing and data conversion."
+    "section": "Reading a text file, line-by-line",
+    "text": "Reading a text file, line-by-line\nMost software programs follow a standard recipe to read the content of a text file:\n\nEstablish a connection (or stream source) with the desired file.\nOpen the desired file in read mode.\nRead each line, and check whether the end-of-file has been reached.\nParse and convert raw string into individual data points.\nClose the connection to the file.\n\n\n\nIn R, pretty much all functions to import data tables take care of all these steps.\nMost of the time you will be specifying arguments related to step 4 to tell R details about the parsing and data conversion."
   },
   {
     "objectID": "lectures/13-importing-tables/slides.html#data-reading-functions-in-base-r",

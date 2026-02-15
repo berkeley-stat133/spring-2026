@@ -111,6 +111,7 @@
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-drop/drop-runtime.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -248,7 +249,7 @@ Gaston Sanchez
 <p>What kind of R object would you use to store/handle this data set?</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_ae055ac4" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_b4b88f2e" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -451,8 +452,6 @@ Gaston Sanchez
 <span id="cb21-3"><a></a>Luke male 1.70</span>
 <span id="cb21-4"><a></a>Han male 1.80</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div class="fragment">
 <ul>
 <li class="fragment">The first line is not that relevant.</li>
 <li class="fragment">The subsequent lines (2-4) ARE important.</li>
@@ -549,6 +548,18 @@ $height
 </div>
 </div></div>
 </section>
+<section id="about-scan" class="slide level2">
+<h2>About <code>scan()</code></h2>
+<ul>
+<li class="fragment"><code>scan()</code> is R’s main <span class="mdlit">low-level</span> function to read in data values.</li>
+<li class="fragment">It imports data either into a <strong>vector</strong> or a <strong>list</strong> (argument <code>what</code>).</li>
+<li class="fragment"><code>scan()</code> expects to read “white-space” delimited input fields by default.</li>
+<li class="fragment">You can change the field separator with <code>sep</code>.</li>
+<li class="fragment">In practice, you won’t be using <code>scan()</code> that much, instead you’ll use <span class="hilit">high-level</span> functions—which depend on <code>scan()</code>.</li>
+<li class="fragment">But now you know about its basic usage.</li>
+<li class="fragment">See <code>?scan</code> for more information.</li>
+</ul>
+</section>
 <section id="section-6" class="slide level2">
 <h2></h2>
 <p>File <code>values.txt</code></p>
@@ -573,7 +584,7 @@ $height
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_4e7cdfa8" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_947832b2" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -666,27 +677,15 @@ $y
 </div>
 </div>
 </div>
-</section>
-<section id="about-scan" class="slide level2">
-<h2>About <code>scan()</code></h2>
-<ul>
-<li class="fragment"><code>scan()</code> is R’s main <span class="mdlit">low-level</span> function to read in data values.</li>
-<li class="fragment">It imports data either into a <strong>vector</strong> or a <strong>list</strong> (argument <code>what</code>).</li>
-<li class="fragment"><code>scan()</code> expects to read “white-space” delimited input fields by default.</li>
-<li class="fragment">You can change the field separator with <code>sep</code>.</li>
-<li class="fragment">In practice, you won’t be using <code>scan()</code> that much, instead you’ll use <span class="mdlit">high-level</span> functions—which depend on <code>scan()</code>.</li>
-<li class="fragment">But now you know about its basic usage.</li>
-<li class="fragment">See <code>?scan</code> for more information.</li>
-</ul>
 </section></section>
 <section>
 <section id="reading-a-file" class="title-slide slide level1 center">
 <h1>Reading a File</h1>
 
 </section>
-<section id="reading-a-file-line-by-line" class="slide level2">
-<h2>Reading a file, line-by-line</h2>
-<p>The standard recipe to read the content of a file follows these steps:</p>
+<section id="reading-a-text-file-line-by-line" class="slide level2">
+<h2>Reading a text file, line-by-line</h2>
+<p>Most software programs follow a standard recipe to read the content of a text file:</p>
 <ol type="1">
 <li class="fragment"><p>Establish a <span class="hilit">connection</span> (or stream source) with the desired file.</p></li>
 <li class="fragment"><p>Open the desired file in <span class="hilit">read mode</span>.</p></li>
@@ -696,7 +695,7 @@ $y
 </ol>
 <div class="fragment">
 <ul>
-<li class="fragment"><p>In R, pretty much all functions to import data take care of all these steps.</p></li>
+<li class="fragment"><p>In R, pretty much all functions to import data tables take care of all these steps.</p></li>
 <li class="fragment"><p>Most of the time you will be specifying <span class="mdlit">arguments related to step 4</span> to tell R details about the parsing and data conversion.</p></li>
 </ul>
 </div>
@@ -1379,6 +1378,7 @@ $y
   <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-drop/drop-runtime.js"></script>
   <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -1402,6 +1402,7 @@ $y
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
 'chalkboard': {"buttons":true},
+'drop': {"button":true,"shortcut":"`","engine":"webr","webr":{"packages":[]},"pyodide":{"packages":[]}},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -1572,7 +1573,7 @@ $y
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealDrop, QuartoSupport,
 
           RevealMath,
           RevealNotes,
