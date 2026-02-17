@@ -163,6 +163,56 @@ wizards |>
 :::
 
 
+## `|>` works everywhere
+
+> R now provides a simple native forward pipe syntax |>. 
+> The simple form of the forward pipe inserts the left-hand 
+> side as the first argument in the right-hand side call.
+
+. . .
+
+```{r}
+summary(factor(c("owl", "fox", "owl")))
+```
+
+. . .
+
+```{r}
+factor(c("owl", "fox", "owl")) |> summary()
+```
+
+. . .
+
+```{r}
+c("owl", "fox", "owl") |> factor() |> summary()
+```
+
+
+##
+
+```{r}
+wizards
+```
+
+\
+```{r}
+#| eval: false
+wizards |> # A #<<
+    filter(house == "Gryffindor",
+           name %in% c("Harry", "Hermione")) |> # B #<<
+    select(height, spells) |> # C #<<
+    summarize(mean(height), sd(height),
+              mean(spells), sd(spells)) # D #<<
+```
+
+[Question:]{.mdlit} What are the dimensions of the data frame at each stage of the pipe: A, B, C, and D?
+
+```{r}
+#| echo: false
+countdown::countdown(2, bottom = 0)
+```
+
+
 ## Understanding your pipeline
 
 It's good practice to understand the output of each line by breaking the pipe.
@@ -189,51 +239,6 @@ wizards |>
 ```
 :::
 :::
-
-
-##
-
-```{r}
-#| eval: false
-wizards |> # A #<<
-    filter(house == "Gryffindor",
-           name %in% c("Harry", "Hermione")) |> # B #<<
-    select(height, spells) |> # C #<<
-    summarize(mean(height), sd(height),
-              mean(spells), sd(spells)) # D #<<
-```
-
-[Question:]{.mdlit} What are the dimensions of the data frame at each stage of the pipe: A, B, C, and D?
-
-```{r}
-#| echo: false
-countdown::countdown(2, bottom = 0)
-```
-
-
-## `|>` works everywhere
-
-> R now provides a simple native forward pipe syntax |>. 
-> The simple form of the forward pipe inserts the left-hand 
-> side as the first argument in the right-hand side call.
-
-. . .
-
-```{r}
-summary(factor(c("owl", "fox", "owl")))
-```
-
-. . .
-
-```{r}
-factor(c("owl", "fox", "owl")) |> summary()
-```
-
-. . .
-
-```{r}
-c("owl", "fox", "owl") |> factor() |> summary()
-```
 
 
 # Grouped Operations
