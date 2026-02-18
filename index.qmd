@@ -188,7 +188,7 @@ Lab 4: [slides](labs/lab4/slides.html) | [PS3](https://bcourses.berkeley.edu/cou
 #### Description
 [No class]{.label-None}
 
-Data Wrangling II
+[Data Wrangling II](lectures/12-data-wrangling2/slides.html)
 
 Lab 5: [__Quiz 2__]{.label-Quiz} | slides | PS4
 
