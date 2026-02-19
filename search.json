@@ -1673,7 +1673,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 6 3"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 2 1"
   },
   {
     "objectID": "lectures/7-lists/slides.html#discuss-with-a-neighbor",
@@ -2587,149 +2587,156 @@
     "text": "In case of trouble\nIf you experienced any issues today, for example:\n\ninstalling software\nrendering .qmd file\nsubmission to bCourses\ngot lost along the discussion\n\nthen please come to office hours!"
   },
   {
-    "objectID": "labs/lab5/slides.html#agenda",
-    "href": "labs/lab5/slides.html#agenda",
-    "title": "Lab 5",
-    "section": "Agenda",
-    "text": "Agenda\n\nReview: Dataframe Manipulations\nQuarto Slides\n\nHow can we format slides?\n\n4th Quarto Publication\nProblem Set 4"
+    "objectID": "labs/lab5/slides.html#before-the-quiz-1",
+    "href": "labs/lab5/slides.html#before-the-quiz-1",
+    "title": "Quiz 2 and Lab 5",
+    "section": "Before the Quiz",
+    "text": "Before the Quiz\n\nSpread out as much as possible.\n🚽 If you need to use the bathroom, this is the time to do it.\n🧹 Clear your desk of everything except a pen/pencil and your ID.\n🧢 Remove hats, hoods, and sunglasses (don’t hide your face please!)\n📱 All electronic devices (laptop, phone, airbuds, smart watch) should remain in your bag for the entire quiz period."
+  },
+  {
+    "objectID": "labs/lab5/slides.html#quiz",
+    "href": "labs/lab5/slides.html#quiz",
+    "title": "Quiz 2 and Lab 5",
+    "section": "Quiz",
+    "text": "Quiz\n\n\n\n−+\n35:00\n\n\n\n\nPlease be quiet.\nWhen you get a quiz, do not begin until we tell you so.\nWrite your name and SID.\nKeep your eyes on your own quiz.\nOnly one person allowed to use the bathroom at a time.\nIf you finish early, please hold on to your quiz and wait.\nWhen the timer ends, hold up your quiz in the air immediately and put your writing utensils down or risk a 0.\n\nGood luck! 🍀"
   },
   {
     "objectID": "labs/lab5/slides.html#dplyr-functions",
     "href": "labs/lab5/slides.html#dplyr-functions",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "dplyr Functions",
     "text": "dplyr Functions"
   },
   {
     "objectID": "labs/lab5/slides.html#dplyr-functions-1",
     "href": "labs/lab5/slides.html#dplyr-functions-1",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "dplyr Functions",
     "text": "dplyr Functions\n\nmutate(): add/change/calculate new variables (columns)\nselect(): select, choose variables (columns) based on their names\nfilter(): filters, chooses observations (rows) based on their values\nsummarise(): resume, reduce multiple values to a single summary value\narrange(): order, changes the order of rows based on their values\ngroup_by(): groups, performs data operations on groups defined by variables"
   },
   {
     "objectID": "labs/lab5/slides.html#example-dplyr-functions",
     "href": "labs/lab5/slides.html#example-dplyr-functions",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "Example: dplyr Functions",
     "text": "Example: dplyr Functions\nLet’s use the penguins dataset from the palmerpenguins package to see how these functions work in practice.\n\n\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\nhead(penguins)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
   },
   {
     "objectID": "labs/lab5/slides.html#example-dplyr-functions-1",
     "href": "labs/lab5/slides.html#example-dplyr-functions-1",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "Example: dplyr Functions",
     "text": "Example: dplyr Functions\nTo find the penguin species with the highest average body mass, we can use a combination of functions from dplyr:\n\n\n\n# Species with highest average body mass\npenguins |&gt; \n    group_by(species) |&gt;\n    summarise(mean_body_mass = mean(body_mass_g, na.rm = TRUE)) |&gt;\n    arrange(desc(mean_body_mass)) |&gt;\n    slice_head(n = 1)\n\n# A tibble: 1 × 2\n  species mean_body_mass\n  &lt;fct&gt;            &lt;dbl&gt;\n1 Gentoo           5076."
   },
   {
     "objectID": "labs/lab5/slides.html#example-dplyr-functions-2",
     "href": "labs/lab5/slides.html#example-dplyr-functions-2",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "Example: dplyr Functions",
     "text": "Example: dplyr Functions\nNow for lowest average body mass:\n\n\n\n# Species with lowest average body mass\npenguins |&gt; \n    group_by(species) |&gt;\n    summarise(mean_body_mass = mean(body_mass_g, na.rm = TRUE)) |&gt;\n    arrange(mean_body_mass) |&gt;\n    slice_head(n = 1)\n\n# A tibble: 1 × 2\n  species mean_body_mass\n  &lt;fct&gt;            &lt;dbl&gt;\n1 Adelie           3701."
   },
   {
     "objectID": "labs/lab5/slides.html#code-line-highlighting",
     "href": "labs/lab5/slides.html#code-line-highlighting",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "Code Line Highlighting",
     "text": "Code Line Highlighting\nHow can you draw attention to specific lines of code in slides?\n\n\n# Example function to calculate square\nsquare &lt;- function(x) {\n  return(x^2)\n}"
   },
   {
     "objectID": "labs/lab5/slides.html#code-line-highlighting-1",
     "href": "labs/lab5/slides.html#code-line-highlighting-1",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "Code Line Highlighting",
     "text": "Code Line Highlighting\n\n“2”: highlights line 2\n\n“3-4”: highlights lines 3 through 4"
   },
   {
     "objectID": "labs/lab5/slides.html#global-formatting",
     "href": "labs/lab5/slides.html#global-formatting",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "Global Formatting",
     "text": "Global Formatting\nYou can set global formatting options for your slides in the YAML header.\n\nLast week:\n\n\ndemo-pub2.qmd\n\n---\ntitle: \"Demo Publication 3\"\nsubtitle: \"First Contact with Quarto Slides\"\nauthor: \"Your Name\"\nformat:\n  revealjs:\n    code-folding: true\n    echo: true\n    embed-resources: true\n---"
   },
   {
     "objectID": "labs/lab5/slides.html#transitions---globally",
     "href": "labs/lab5/slides.html#transitions---globally",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "Transitions - Globally",
-    "text": "Transitions - Globally\nTo set a global transition,\n\n\ndemo-pub3.qmd\n\n---\ntitle: \"Demo Publication 3\"\nsubtitle: \"First Contact with Quarto Slides\"\nauthor: \"Your Name\"\nformat:\n  revealjs:\n    transition: slide\n    background-transition: fade\n---\n\nAvailable types of transitions"
+    "text": "Transitions - Globally\nTo set a global transition,\n\n\ndemo-pub3.qmd\n\n---\ntitle: \"Demo Publication 3\"\nsubtitle: \"First Contact with Quarto Slides\"\nauthor: \"Your Name\"\nformat:\n  revealjs:\n    transition: slide\n    background-transition: fade\n---\n\nFind more transition types on the Quarto Website"
   },
   {
     "objectID": "labs/lab5/slides.html#first-steps---understand-the-table",
     "href": "labs/lab5/slides.html#first-steps---understand-the-table",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "First steps - Understand the table",
-    "text": "First steps - Understand the table\nTalk to a partner and answer the following questions:\n\n- How many rows and columns are in the dataframe?\n- What do the columns and rows represent?\n- What are the data types of each column?\n- What year does the data cover?\n\n\n\n\n−+\n03:00"
+    "text": "First steps - Understand the table\n\nhead(ev_sales)\n\n  year  county       make               model fuel_type sales\n1 2023 Alameda Alfa Romeo              Tonale      PHEV     2\n2 2023 Alameda       Audi           Q4 e-tron  Electric   141\n3 2023 Alameda       Audi Q4 e-tron Sportback  Electric    31\n4 2023 Alameda       Audi                  Q5      PHEV    43\n5 2023 Alameda       Audi           Q8 e-tron  Electric    72\n6 2023 Alameda       Audi Q8 e-tron Sportback  Electric    20\n\n\nTalk to a partner and answer the following questions:\n\nHow many rows and columns are in the dataframe?\n\nWhat do the columns and rows represent?\n\nWhat are the data types of each column?\n\nWhat year does the data cover?\n\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "labs/lab5/slides.html#each-column",
     "href": "labs/lab5/slides.html#each-column",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "Each column:",
     "text": "Each column:\n\nyear: the year of the sales (only covers 2023)\ncounty: the county in California where the EVs were sold\nmake: the make/brand of the EV sold\nmodel: the model of the EV sold\nfuel_type: the type of fuel used by the EV (electric, hybrid, etc)\nsales: the number of EVs sold in that county for that make and model in that year"
   },
   {
     "objectID": "labs/lab5/slides.html#pub4",
     "href": "labs/lab5/slides.html#pub4",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "Pub4",
     "text": "Pub4\nYou are an intern for the California Energy Commission which is invested in the charging infrastructure and technologies that are helping to drive the transition to clean, zero-emission electric vehicles throughout the state.\n\n\n\nYour task: Create a presentation to share with the public about the current state of electric vehicle (EV) adoption in California."
   },
   {
     "objectID": "labs/lab5/slides.html#pub4-note",
     "href": "labs/lab5/slides.html#pub4-note",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "Pub4 Note",
-    "text": "Pub4 Note\nAssume that your published slides will be seen by a boss or team-lead.   Ensure your presentation is:\n- well organized\n- easy to read and understand\n- professionally presented"
+    "text": "Pub4 Note\nAssume that your published slides will be seen by a boss or team-lead.  \n\nEnsure your presentation is:\n- well organized\n- easy to read and understand\n- professionally presented"
   },
   {
     "objectID": "labs/lab5/slides.html#pub4-requirements",
     "href": "labs/lab5/slides.html#pub4-requirements",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "Pub4 Requirements",
-    "text": "Pub4 Requirements\n\nA title slide with the title of your presentation and your name.\nProvide an overview of the current state of EV adoption in California, with key statistics:\n\nCounty with the highest number of electric vehicles\nCounty with the lowest number of electric vehicles\nMost popular model of electric vehicle\nLeast popular model of electric vehicle\n\nUse at least 3 the formatting techniques we’ve learned so far, such as:\n\nLine highlighting\nSlide backgrounds\nGlobal transitions\nCode folding\n\n\n\n\n\n−+\n15:00"
+    "text": "Pub4 Requirements\n\nA title slide with the title of your presentation and your name.\nProvide an overview of the current state of EV adoption in California, with key statistics:\n\nCounty with the highest number of electric vehicles\nCounty with the lowest number of electric vehicles\nMost popular model of electric vehicle\nLeast popular model of electric vehicle\n\nUse at least 3 of the formatting techniques we’ve learned so far (line highlighting, slide backgrounds, global transitions, code folding, etc.)\n\n\n\n\n−+\n15:00"
   },
   {
     "objectID": "labs/lab5/slides.html#like-last-week-folder-stat133",
     "href": "labs/lab5/slides.html#like-last-week-folder-stat133",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "Like last week: Folder stat133/",
     "text": "Like last week: Folder stat133/\n  stat133/\n    labs/\n        lab1/\n        lab2/\n        lab3/\n        lab4\n    psets/\n        pset1/\n        pset2/\n        pset3/"
   },
   {
     "objectID": "labs/lab5/slides.html#terminal-in-ide",
     "href": "labs/lab5/slides.html#terminal-in-ide",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "Terminal in IDE",
     "text": "Terminal in IDE\n\nLaunch your IDE (Positron or RStudio)\nLaunch your Terminal (next to the Console tab)\ncd to your stat133/labs/ folder\ncreate a folder for this lab: mkdir lab5\ncd to lab5\n\n\n\n\nTerminal\n\n# create an empty qmd file \"demo-pub4.qmd\"\ntouch demo-pub4.qmd"
   },
   {
     "objectID": "labs/lab5/slides.html#publishing-steps",
     "href": "labs/lab5/slides.html#publishing-steps",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "Publishing Steps",
     "text": "Publishing Steps\nAssume I have a file called demo-pub4.qmd opened in Positron. To publish my qmd file to my QuartoPub account I follow these steps:\n\nGo to the Terminal tab.\n\nMake sure your working directory contains the qmd file.\n\nType command: quarto publish demo-pub4.qmd\nChoose provider Quarto Pub and press return (enter)\nPublish with default account (linked to my email address)\nOptionally: you can change the name of the document\nPress return (enter)\n\n\nOnce published, there will be an associated link (URL), something like: https://username.quarto.pub/demo-pub-4"
   },
   {
     "objectID": "labs/lab5/slides.html#submission-to-bcourses",
     "href": "labs/lab5/slides.html#submission-to-bcourses",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "Submission to bCourses",
     "text": "Submission to bCourses\nSubmit the URL (link) of your published document to the corresponding assignment in bCourses.\nSee Assignments tab &gt; Quarto Publications &gt; Pub4"
   },
   {
     "objectID": "labs/lab5/slides.html#pset-4",
     "href": "labs/lab5/slides.html#pset-4",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "Pset 4",
     "text": "Pset 4\nAvailable in bCourses:\nSee Assignments tab &gt; Problem Sets &gt; PS4\nYou’ll find 2 files:\n\nps4.html: instructions\nps4.qmd: template file to write your answers\n\n\nIn case of trouble: Go to Files tab, folder problem-sets, folder ps4, and download the qmd file.\nSometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome)."
   },
   {
     "objectID": "labs/lab5/slides.html#pset-4-submission",
     "href": "labs/lab5/slides.html#pset-4-submission",
-    "title": "Lab 5",
+    "title": "Quiz 2 and Lab 5",
     "section": "Pset 4 Submission",
     "text": "Pset 4 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps4\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
@@ -3523,7 +3530,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 5      Paolo Banch… ORL   PF           82    250 November … US      2         \n2 2      Collin Sext… UTA   SG           75    190 January 4… US      6         \n3 36     Phillip Whe… PHI   PF           80    185 April 23,… US      R         \n4 0      MarJon Beau… LAC   SF           79    199 October 1… US      2         \n5 32     Trayce Jack… GSW   C            81    245 February … US      1         \n6 25     Micah Potter UTA   C            81    248 April 6, … US      3         \n7 1      Michael Por… DEN   SF           82    218 June 29, … US      5         \n8 17     Malevy Leons OKC   SF           81    210 September… NL      R         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 15     Liam Robbins MIL   C            84    250 July 12, … US      R         \n2 36     Marcus Smart MEM   PG           75    220 March 6, … US      10        \n3 4      Russell Wes… DEN   PG           76    200 November … US      16        \n4 21     Adama Sanogo CHI   C            81    245 February … ML      1         \n5 9      Moses Brown  DAL   C            86    258 October 1… US      5         \n6 35     Isaac Okoro  CLE   SG           76    225 January 2… US      4         \n7 11     Bruce Brown  TOR   PG           76    202 August 15… US      6         \n8 23     Aaron Nesmi… IND   SF           77    215 October 1… US      4         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
