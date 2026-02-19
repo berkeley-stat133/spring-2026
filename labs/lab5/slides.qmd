@@ -1,18 +1,57 @@
 ---
-title: "Lab 5"
-subtitle: "Importing Dataframes and GitHub"
+title: "Quiz 2 and Lab 5"
+subtitle: "Importing Dataframes"
 author: "STAT 133"
 format: stat133slides-revealjs
 chalkboard: true
 ---
 
-## Agenda
+# Agenda
 
+-   Quiz 2
 -   Review: Dataframe Manipulations
 -   Quarto Slides
     -   How can we format slides?
 -   4th Quarto Publication
--   Problem Set 4
+
+# Before the Quiz
+::: {.callout-important}
+A note on academic integrity:
+:::
+
+\
+Cheating is **100% not tolerated**. Talking with other individuals during the quiz, using your phone for any reason, looking at others' answers, etc. will result in a violation of the Academic Integrity Pledge. We reserve the right to give a 0 to anyone seen cheating. 
+
+## Before the Quiz
+
+::: {.nonincremental}
+1.  Spread out as much as possible.
+2.  🚽 If you need to use the bathroom, this is the time to do it.
+2.  🧹 Clear your desk of everything except a pen/pencil and your ID.
+3.  🧢 Remove hats, hoods, and sunglasses (don't hide your face please!)
+4.  📱 All electronic devices (laptop, phone, airbuds, smart watch) should remain in your bag for the entire quiz period.
+:::
+
+
+## Quiz
+
+```{r}
+countdown::countdown(35, top = 0)
+```
+
+::: {.nonincremental}
+1.  Please be quiet.
+2.  When you get a quiz, do not begin until we tell you so.
+3.  Write your name and SID.
+4.  Keep your eyes on your own quiz.
+5.  Only one person allowed to use the bathroom at a time.
+6.  If you finish early, please hold on to your quiz and wait.
+7. When the timer ends, hold up your quiz in the air immediately and put your writing utensils down or risk a 0.
+:::
+
+Good luck! 🍀
+
+# Lab 5
 
 # Review: What is dplyr?
 
@@ -138,26 +177,28 @@ format:
 ---
 ```
 
-[Available types of transitions](https://quarto.org/docs/presentations/revealjs/advanced.html#slide-transitions)
+Find more transition types on the [Quarto Website](https://quarto.org/docs/presentations/revealjs/advanced.html#slide-transitions)
 
 # Introducing Data
 
 To add coding content to your slides, you can read in a `.csv` file.
 \
 \
-Find this data `ev-sales-cleaned.csv` in BCourses under pub4 and read it in to your slides.
+Use your terminal to create a `demo-pub4.qmd` file in your `stat133` folder. Find this data `ev-sales-cleaned.csv` in BCourses under pub4 and read it in to your `.qmd` slides file.
 ```{r}
 #| echo: true
 ev_sales <- read.csv("data/ev-sales-cleaned.csv")
-
-head(ev_sales)
 ```
 
 ## First steps - Understand the table  
 
-***Talk to a partner and answer the following questions:***
+```{r}
+#| echo: true
+head(ev_sales)
+```
 
-\
+### Talk to a partner and answer the following questions:
+
 - How many rows and columns are in the dataframe?\
 - What do the columns and rows represent?\
 - What are the data types of each column?\
@@ -193,7 +234,10 @@ You are an intern for the **California Energy Commission** which is invested in 
 
 ## Pub4 Note
 
-Assume that your published slides will be seen by a boss or team-lead.   Ensure your presentation is:\
+Assume that your published slides will be seen by a boss or team-lead.   
+\
+\
+Ensure your presentation is:\
 - well organized\
 - easy to read and understand\
 - professionally presented
@@ -208,11 +252,7 @@ Assume that your published slides will be seen by a boss or team-lead.   Ensure
     -   County with the lowest number of electric vehicles
     -   Most popular model of electric vehicle
     -   Least popular model of electric vehicle
--   Use ***at least 3*** the formatting techniques we've learned so far, such as:
-    -   Line highlighting
-    -   Slide backgrounds
-    -   Global transitions
-    -   Code folding
+-   Use ***at least 3*** of the formatting techniques we've learned so far (line highlighting, slide backgrounds, global transitions, code folding, etc.)
 :::
 
 ```{r}
@@ -237,6 +277,7 @@ countdown::countdown(15, bottom = 0)
 
 ## Terminal in IDE
 
+:::{.nonincremental}
 1)  Launch your IDE (Positron or RStudio)
 
 2)  Launch your [Terminal]{.bold-hilit} (next to the *Console* tab)
@@ -247,6 +288,7 @@ countdown::countdown(15, bottom = 0)
 
 5)  `cd` to `lab5`
 
+:::
 . . .
 
 ``` {.markdown filename="Terminal" code-line-numbers="false"}

@@ -2,7 +2,7 @@
 title: "Lab 5"
 subtitle: "Importing Dataframes"
 author: "Clara Reckhorn"
-format: html
+output: typst
 ---
 
 # Data Read In
