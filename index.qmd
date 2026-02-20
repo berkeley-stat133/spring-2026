@@ -192,7 +192,7 @@ Lab 4: [slides](labs/lab4/slides.html) | [PS3](https://bcourses.berkeley.edu/cou
 
 Lab 5: [__Quiz 2__]{.label-Quiz} | [slides](labs/lab5/slides.html) | [PS4](https://bcourses.berkeley.edu/courses/1551809/assignments/9021597)
 
-Importing Tables
+[Importing Tables](lectures/13-importing-tables/slides.html)
 :::
 
 ::: {.column width="50%"}
