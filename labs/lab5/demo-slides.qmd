@@ -1,0 +1,108 @@
+---
+title: "CEC Report"
+subtitle: "EV Sales Status Update"
+author: "Clara - Data Analyst Intern"
+format:
+  revealjs:
+    code-folding: true
+    echo: true
+    embed-resources: true
+---
+
+## Why EV Adoption Matters {background-color="#E8F3FF"}
+California’s Clean Transportation Transition
+
+Transportation is California’s largest emissions source
+
+EV adoption supports:
+
+- Reduced greenhouse gas emissions
+
+- Improved air quality
+
+- Energy independence
+
+![](images/CAenergy.png){fig-align="center"}
+
+## State investments focus on:
+
+- Charging infrastructure
+
+- Technology innovation
+
+- Consumer accessibility
+
+```{r}
+library(tidyverse)
+
+ev_sales <- read_csv("data/ev-sales-cleaned.csv")
+
+head(ev_sales)
+```
+
+## Key Statistics: EV Adoption in California
+
+We summarize EV adoption using county-level and vehicle-model data.
+
+## Using dplyr tools, 
+- Which CA county has the most EV sales in 2023?
+
+```{r}
+county_max_sales <- ev_sales |>
+  group_by(county) |>
+  summarise(total_sales = sum(sales)) |>
+  arrange(desc(total_sales)) |>
+  slice_head(n = 1)
+```
+
+- Which CA county has the least EV sales in 2023?
+
+```{r}
+county_min_sales <- ev_sales |>
+  group_by(county) |>
+  summarise(total_sales = sum(sales)) |>
+  arrange(total_sales) |>
+  slice_head(n = 1)
+```
+
+## Using dplyr tools,
+
+- What model of EV is the most popular in CA in 2023?
+
+```{r}
+popular_model <- ev_sales |>
+  group_by(model) |>
+  summarise(total_sales = sum(sales)) |>
+  arrange(desc(total_sales)) |>
+  slice_head(n = 1)
+```
+
+- What model of EV is the least popular in CA in 2023?
+
+```{r}
+least_popular_model <- ev_sales |>
+  group_by(model) |>
+  summarise(total_sales = sum(sales)) |>
+  arrange(total_sales) |>
+  slice_head(n = 1)
+```
+
+## Statistics
+
+- The county with the most EVs is `r county_max_sales`
+- The county with the least EVs is `r county_min_sales`
+- The most popular model is `r popular_model`
+- The least popular model is `r least_popular_model`
+
+## Key Takeaways {background-color="#F4FFF0"}
+
+:::{.incremental}
+
+- EV adoption continues to grow statewide
+
+- Adoption is concentrated in specific counties
+
+- A small number of vehicle models dominate sales
+
+- Infrastructure investment remains critical for equitable adoption
+:::
