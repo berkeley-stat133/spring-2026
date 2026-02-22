@@ -1,0 +1,256 @@
+---
+title: "Interactive Graphics"
+subtitle: "Data Visualization III"
+format: stat133slides-revealjs
+revealjs-plugins:
+  - drop
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE, cache = FALSE)
+library(tidyverse)
+library(plotly)
+library(ggiraph)
+```
+
+
+## Agenda
+
+. . .
+
+Adding interactivity to ggplots with packages:
+
+- `"plotly"`
+- `"ggiraph"`
+
+## Installation
+
+```{r}
+#| eval: false
+# run this command on R's console
+# (don't include this in a qmd file)
+install.packages(c("plotly", "ggiraph"))
+```
+
+
+# `"plotly"`
+
+## About Plotly
+
+__Plotly__ is a software company that develops online data analytics and visualization tools, as well as scientific graphing libraries for R, Python, Matlab, etc.
+
+\
+
+. . .
+
+In R, we have the package `"plotly"`.
+
+\
+
+. . .
+
+_plotly_ comes with its own grammar of graphics syntax. Interestingly, we can use the `ggplotly()` function to make a ggplot graphic into a web-interactive graphic.
+
+
+## Palmer Penguins {.smaller}
+
+```{r}
+library(palmerpenguins)
+penguins
+```
+
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+```
+:::
+:::
+
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+gg1 <- ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+
+ggplotly(gg1)
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+gg1 <- ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+
+ggplotly(gg1)
+```
+:::
+:::
+
+
+## Be careful {.smaller}
+
+Not all ggplot graphical elements translate to plotly
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+gg2 <- ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point() +
+  labs(title = "Scatter plot", 
+       subtitle = "Palmen Penguins Data")
+
+ggplotly(gg2)
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+gg2 <- ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point() +
+  labs(title = "Scatter plot", 
+       subtitle = "Palmen Penguins Data")
+
+ggplotly(gg2)
+```
+:::
+:::
+
+
+# `"ggiraph"`
+
+## About `"ggiraph"`
+
+This package allows us to make ggplot2 graphics interactive following the same framewokr and syntax of adding layers to a graphic.
+
+\
+
+`"ggiraph"` provides sibling _geom_ functions, e.g.:
+
+- `geom_point_interactive()`
+- `geom_bar_interactive()`
+- `geom_col_interactive()`
+- `geom_histogram_interactive()`
+- `geom_density_interactive()`
+- `geom_boxplot_interactive()`
+
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+```
+:::
+:::
+
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+gg3 <- ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point_interactive(aes(tooltip = sex))
+
+girafe(ggobj = gg3)
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+gg3 <- ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point_interactive(aes(tooltip = sex))
+
+girafe(ggobj = gg3)
+```
+:::
+:::
+
+
+##
+
+```{r}
+#| code-fold: true
+gg4 <- ggplot(
+  data = penguins,
+  aes(x = bill_length_mm, 
+      y = flipper_length_mm,
+       color = species,
+      tooltip = sex)) +
+  geom_point_interactive()
+
+ggiraph::girafe(ggobj = gg4)
+```
