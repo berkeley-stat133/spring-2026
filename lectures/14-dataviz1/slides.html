@@ -111,6 +111,7 @@
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-drop/drop-runtime.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -257,7 +258,7 @@ Gaston Sanchez
 <img data-src="slides_files/figure-revealjs/unnamed-chunk-2-1.png" width="1440" class="r-stretch"><p>What do these plots have in common? How do they differ?</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_7abe3d2f" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_00a422b1" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
@@ -270,7 +271,7 @@ Gaston Sanchez
 
 <img data-src="slides_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"><div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_3c6e40d5" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_77e8777f" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
@@ -288,7 +289,7 @@ Gaston Sanchez
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li class="fragment">A grammar to describes all statistical graphics.</li>
+<li class="fragment">A grammar to describe all statistical graphics.</li>
 <li class="fragment">Underlies most modern data visualization software.</li>
 </ul>
 </div><div class="column fragment" style="width:50%;">
@@ -326,7 +327,7 @@ Gaston Sanchez
 
 <img data-src="slides_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"><div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_bc4a438e" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_d553d0a7" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
@@ -365,7 +366,7 @@ Gaston Sanchez
 <section id="section-5" class="slide level2 smaller nostretch">
 <h2></h2>
 <div class="columns">
-<div class="column fragment" style="width:50%;">
+<div class="column fragment" style="width:45%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>penguins <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a></a>  <span class="fu">select</span>(bill_length_mm,</span>
@@ -388,7 +389,7 @@ Gaston Sanchez
 # ℹ 334 more rows</code></pre>
 </div>
 </div>
-</div><div class="column fragment" style="width:50%;">
+</div><div class="column fragment" style="width:55%;">
 <div class="cell" height="100%">
 <div class="cell-output-display">
 <div>
@@ -400,12 +401,37 @@ Gaston Sanchez
 </div>
 </div></div>
 </section>
+<section id="section-6" class="slide level2 nostretch">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb5-2"><a></a>  <span class="at">data =</span> penguins,</span>
+<span id="cb5-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb5-4"><a></a>    <span class="at">x =</span> bill_length_mm, </span>
+<span id="cb5-5"><a></a>    <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb5-6"><a></a>    <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb5-7"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:55%;">
+<div class="cell" height="100%">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-11-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
 <section id="ggplot-syntax" class="slide level2">
 <h2><code>ggplot()</code> syntax</h2>
 <div class="fragment">
 <p><code>ggplot()</code> builds a plot layer by layer, each one added on top of one another with <code>+</code> (not <code>|&gt;</code>).</p>
 <ul>
-<li class="fragment"><code>ggplot()</code> creates canvas</li>
+<li class="fragment"><code>ggplot()</code> creates a canvas</li>
 <li class="fragment"><code>aes()</code> creates mappings, called inside <code>ggplot()</code> or a <code>geom()</code></li>
 <li class="fragment"><code>geom_()</code> puts down marks using declared geometry</li>
 </ul>
@@ -420,25 +446,40 @@ Gaston Sanchez
 <section id="layer-by-layer" class="slide level2">
 <h2>Layer by layer</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb5-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
-<span id="cb5-3"><a></a>             <span class="at">y =</span> flipper_length_mm,</span>
-<span id="cb5-4"><a></a>             <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb5-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb5-6"><a></a>  <span class="fu">theme_gray</span>(<span class="at">base_size =</span> <span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb6-2"><a></a>  <span class="at">data =</span> penguins, </span>
+<span id="cb6-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb6-4"><a></a>    <span class="at">x =</span> bill_length_mm,</span>
+<span id="cb6-5"><a></a>    <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb6-6"><a></a>    <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb6-7"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-8"><a></a>  <span class="fu">theme_gray</span>(<span class="at">base_size =</span> <span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><br>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># equivalent command</span></span>
+<span id="cb7-2"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
+<span id="cb7-4"><a></a>             <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb7-5"><a></a>             <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb7-6"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb7-7"><a></a>  <span class="fu">theme_gray</span>(<span class="at">base_size =</span> <span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="common-aes" class="slide level2">
 <h2>Common <code>aes()</code></h2>
 <div class="columns">
-<div class="column fragment" style="width:50%;">
+<div class="column" style="width:50%;">
 <ul>
 <li class="fragment"><code>x</code></li>
 <li class="fragment"><code>y</code></li>
 <li class="fragment"><code>color</code></li>
 <li class="fragment"><code>fill</code></li>
 </ul>
-</div><div class="column fragment" style="width:50%;">
+</div><div class="column" style="width:50%;">
 <ul>
 <li class="fragment"><code>size</code></li>
 <li class="fragment"><code>shape</code></li>
@@ -449,13 +490,13 @@ Gaston Sanchez
 <section id="common-geom" class="slide level2">
 <h2>Common <code>geom()</code></h2>
 <div class="columns">
-<div class="column fragment" style="width:50%;">
+<div class="column" style="width:50%;">
 <ul>
 <li class="fragment"><code>geom_point()</code></li>
 <li class="fragment"><code>geom_bar()</code> / <code>geom_col()</code></li>
 <li class="fragment"><code>geom_line()</code></li>
 </ul>
-</div><div class="column fragment" style="width:50%;">
+</div><div class="column" style="width:50%;">
 <ul>
 <li class="fragment"><code>geom_histogram()</code></li>
 <li class="fragment"><code>geom_density()</code></li>
@@ -484,38 +525,19 @@ Gaston Sanchez
 </ul></li>
 </ul>
 </section>
-<section id="section-6" class="slide level2 smaller nostretch" data-auto-animate="true">
+<section id="section-7" class="slide level2 smaller nostretch" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="columns">
 <div class="column fragment" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb6-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb8-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column fragment" style="width:50%;">
 <div class="cell" height="100%">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-12-1.png" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
-</section>
-<section id="section-7" class="slide level2 smaller nostretch" data-auto-animate="true">
-<h2 data-id="quarto-animate-title"></h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb7-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell" height="100%">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-14-1.png" width="768"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-15-1.png" width="768"></p>
 </figure>
 </div>
 </div>
@@ -527,16 +549,14 @@ Gaston Sanchez
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb8-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb8-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb8-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb9-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" height="100%">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-16-1.png" width="768"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-17-1.png" width="768"></p>
 </figure>
 </div>
 </div>
@@ -548,17 +568,16 @@ Gaston Sanchez
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb9-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb9-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb9-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
-<span id="cb9-4" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb10-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb10-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb10-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" height="100%">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-18-1.png" width="768"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-19-1.png" width="768"></p>
 </figure>
 </div>
 </div>
@@ -570,18 +589,17 @@ Gaston Sanchez
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb10-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb10-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb10-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
-<span id="cb10-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb10-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb11-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb11-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb11-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb11-4" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" height="100%">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-20-1.png" width="768"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-21-1.png" width="768"></p>
 </figure>
 </div>
 </div>
@@ -593,17 +611,40 @@ Gaston Sanchez
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb11-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb11-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb11-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
-<span id="cb11-4" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb12-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb12-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb12-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb12-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb12-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" height="100%">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-22-1.png" width="768"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-23-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="section-12" class="slide level2 smaller nostretch" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb13-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb13-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb13-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb13-4" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" height="100%">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-25-1.png" width="768"></p>
 </figure>
 </div>
 </div>
@@ -628,6 +669,7 @@ Gaston Sanchez
   <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-drop/drop-runtime.js"></script>
   <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -651,6 +693,7 @@ Gaston Sanchez
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
 'chalkboard': {"buttons":true},
+'drop': {"button":true,"shortcut":"`","engine":"webr","webr":{"packages":[]},"pyodide":{"packages":[]}},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -821,7 +864,7 @@ Gaston Sanchez
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealDrop, QuartoSupport,
 
           RevealMath,
           RevealNotes,
