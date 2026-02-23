@@ -18,6 +18,18 @@ chalkboard: true
 - Problem Set 1
 
 
+## Reminder: Special Symbols
+
+\
+
+| Symbol | Meaning                             |
+|--------|-------------------------------------|
+| `/`    | root directory (1st slash)          |
+| `A/B`  | A contains B (intermediate slash)   |
+| `~`    | home directory (i.e. `/home/user/`) |
+| `.`    | current directory                   |
+| `..`   | parent directory                    |
+
 ## Folder `stat133/`
 
 Somewhere in your computer (e.g. Desktop, Documents) you should have the following folders and files:
@@ -45,18 +57,6 @@ Let's determine the following file paths to `stat133/`
 
 1) [absolute]{.mdlit} path to `stat133/`
 2) [relative]{.hilit} path (from home directory) to `stat133/`
-
-## Reminder: Special Symbols
-
-\
-
-| Symbol | Meaning                             |
-|--------|-------------------------------------|
-| `/`    | root directory (1st slash)          |
-| `A/B`  | A contains B (intermediate slash)   |
-| `~`    | home directory (i.e. `/home/user/`) |
-| `.`    | current directory                   |
-| `..`   | parent directory                    |
 
 ## 
 
