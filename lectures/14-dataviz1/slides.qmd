@@ -2,6 +2,8 @@
 title: "The Grammar of Graphics"
 subtitle: "Data Visualization I"
 format: stat133slides-revealjs
+revealjs-plugins:
+  - drop
 chalkboard: true
 ---
 
@@ -89,7 +91,7 @@ Leland Wilkinson (1999)
 
 ::: {.columns}
 ::: {.column width="50%"}
-- A grammar to describes all statistical graphics.
+- A grammar to describe all statistical graphics.
 - Underlies most modern data visualization software.
 :::
 
@@ -183,7 +185,7 @@ A plot can be decomposed into three primary elements:
 ## {.smaller .nostretch}
 
 ::: {.columns}
-::: {.column .fragment width="50%"}
+::: {.column .fragment width="45%"}
 ```{r}
 penguins |>
   select(bill_length_mm,
@@ -192,7 +194,39 @@ penguins |>
 ```
 :::
 
-::: {.column .fragment width="50%"}
+::: {.column .fragment width="55%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+penguins |>
+  select(bill_length_mm,
+         flipper_length_mm,
+         species) |> 
+  ggplot(aes(x = bill_length_mm, y = flipper_length_mm)) +
+  geom_point(aes(color = species))
+```
+:::
+:::
+
+
+## {.nostretch}
+
+::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+ggplot(
+  data = penguins,
+  mapping = aes(
+    x = bill_length_mm, 
+    y = flipper_length_mm,
+    color = species)) +
+  geom_point()
+```
+:::
+
+::: {.column width="55%"}
 ```{r height="100%"}
 #| echo: false
 #| fig-width: 8
@@ -214,7 +248,7 @@ penguins |>
 
 `ggplot()` builds a plot layer by layer, each one added on top of one another with `+` (not `|>`).
 
-- `ggplot()` creates canvas
+- `ggplot()` creates a canvas
 - `aes()` creates mappings, called inside `ggplot()` or a `geom()`
 - `geom_()` puts down marks using declared geometry
 
@@ -228,6 +262,23 @@ penguins |>
 
 ```{r}
 #| eval: false
+ggplot(
+  data = penguins, 
+  mapping = aes(
+    x = bill_length_mm,
+    y = flipper_length_mm,
+    color = species)) +
+  geom_point() +
+  theme_gray(base_size = 18)
+```  
+
+. . .
+
+\
+
+```{r}
+#| eval: false
+# equivalent command
 penguins |>
   ggplot(aes(x = bill_length_mm,
              y = flipper_length_mm,
@@ -240,14 +291,14 @@ penguins |>
 ## Common `aes()`
 
 ::: {.columns}
-::: {.column .fragment width="50%"}
+::: {.column width="50%"}
 - `x`
 - `y`
 - `color`
 - `fill`
 :::
 
-::: {.column .fragment width="50%"}
+::: {.column width="50%"}
 - `size`
 - `shape`
 - `alpha`
@@ -258,13 +309,13 @@ penguins |>
 ## Common `geom()`
 
 ::: {.columns}
-::: {.column .fragment width="50%"}
+::: {.column width="50%"}
 - `geom_point()`
 - `geom_bar()` / `geom_col()`
 - `geom_line()`
 :::
 
-::: {.column .fragment width="50%"}
+::: {.column width="50%"}
 - `geom_histogram()`
 - `geom_density()`
 - `geom_boxplot()`

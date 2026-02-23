@@ -2,6 +2,8 @@
 title: "The Grammar of Graphics"
 subtitle: "Data Visualization II"
 format: stat133slides-revealjs
+revealjs-plugins:
+  - drop
 chalkboard: true
 ---
 
@@ -125,8 +127,8 @@ ggplot(data = penguins,
     + Axis labels
 - Annotations
 - Themes
-- Scales
 - Facets
+- Scales
 
 
 ## Labels
@@ -269,4 +271,293 @@ ggplot(data = penguins,
 - `theme_minimal()`
 - `theme_classic()`
 - `theme_light()`
+
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+```
+:::
+:::
+
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point() +
+  theme_classic()
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point() +
+  theme_classic()
+```
+:::
+:::
+
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point() +
+  theme_bw()
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point() +
+  theme_bw()
+```
+:::
+:::
+
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point() +
+  theme_minimal()
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point() +
+  theme_minimal()
+```
+:::
+:::
+
+
+# Scales
+
+## Scale Functions
+
+- `scale_x_continuous()`
+- `scale_y_continuous()`
+- `scale_color_manual()`
+- `scale_fill_manual()`
+- ETC
+
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+```
+:::
+:::
+
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point() +
+  scale_x_continuous(limits = c(0, 60))
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point() +
+  scale_x_continuous(limits = c(0, 60))
+```
+:::
+:::
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point() +
+  scale_x_continuous(limits = c(0, 60)) +
+  scale_y_continuous(limits = c(160, 240))
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point() +
+  scale_x_continuous(limits = c(0, 60)) +
+  scale_y_continuous(limits = c(160, 240))
+```
+:::
+:::
+
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point()
+```
+:::
+:::
+
+
+## {.smaller .nostretch auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point() +
+  scale_color_manual(
+    values = c("orange", "magenta", "turquoise"))
+```
+:::
+
+::: {.column width="50%"}
+```{r height="100%"}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm,
+                     color = species)) +
+  geom_point() +
+  scale_color_manual(
+    values = c("orange", "magenta", "turquoise"))
+```
+:::
+:::
+
+
 
