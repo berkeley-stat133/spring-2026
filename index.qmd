@@ -226,7 +226,7 @@ Lab 5: [__Quiz 2__]{.label-Quiz} | [slides](labs/lab5/slides.html) | [PS4](https
 #### Description
 [Dataviz I](lectures/14-dataviz1/slides.html)
 
-Dataviz II 
+[Dataviz II](lectures/15-dataviz2/slides.html)
 
 Lab 6: slides | PS5 
 
