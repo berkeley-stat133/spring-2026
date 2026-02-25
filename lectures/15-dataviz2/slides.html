@@ -331,6 +331,282 @@ Gaston Sanchez
 </div></div>
 </section></section>
 <section>
+<section id="more-on-mappings" class="title-slide slide level1 center">
+<h1>More on Mappings</h1>
+
+</section>
+<section id="recap-1" class="slide level2">
+<h2>Recap</h2>
+<ul>
+<li class="fragment">An <span class="hilit">aesthetic mapping</span> links a variable in the data to a visual attribute.</li>
+<li class="fragment"><code>ggplot()</code> and <code>geom_()</code> have a <code>mapping</code> argument.</li>
+<li class="fragment">We use the <code>aes()</code> to specify such mappings, e.g.
+<ul>
+<li class="fragment"><code>ggplot(..., aes(x = species))</code></li>
+<li class="fragment"><code>geom_bar(aes(x = species))</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="global--vs--local-mappings" class="slide level2">
+<h2>Global -vs- Local Mappings</h2>
+<p>We distinguish 2 types of aesthetic mappings:</p>
+<ul>
+<li class="fragment"><span class="hilit">Global Mappings</span>: those specified inside <code>ggplot()</code></li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li class="fragment"><span class="hilit">Local Mappings</span>: those specified inside <code>geom_()</code> functions</li>
+</ul>
+</section>
+<section id="section-3" class="slide level2 smaller nostretch">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># global mappings</span></span>
+<span id="cb6-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb6-3"><a></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb6-4"><a></a>           <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb6-5"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-8-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># local mappings</span></span>
+<span id="cb7-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb7-3"><a></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb7-4"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb7-5"><a></a>        <span class="at">y =</span> flipper_length_mm))  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-9-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="section-4" class="slide level2 smaller nostretch">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># global mappings</span></span>
+<span id="cb8-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb8-3"><a></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb8-4"><a></a>           <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb8-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb8-6"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-10-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<div class="cell" height="100%">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># local mappings (be careful!!!)</span></span>
+<span id="cb9-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb9-3"><a></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb9-4"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb9-5"><a></a>        <span class="at">y =</span> flipper_length_mm))  <span class="sc">+</span></span>
+<span id="cb9-6"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" height="100%">
+<div class="cell-output cell-output-error">
+<pre><code>Error in `geom_smooth()`:
+! Problem while computing stat.
+ℹ Error occurred in the 2nd layer.
+Caused by error in `compute_layer()`:
+! `stat_smooth()` requires the following missing aesthetics: x and y.</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="section-5" class="slide level2 smaller nostretch">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># global mappings</span></span>
+<span id="cb11-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb11-3"><a></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb11-4"><a></a>           <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb11-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb11-6"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-12-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<div class="cell" height="100%">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># local mappings (be careful!!!)</span></span>
+<span id="cb12-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb12-3"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb12-4"><a></a>                 <span class="at">y =</span> flipper_length_mm))  <span class="sc">+</span></span>
+<span id="cb12-5"><a></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb12-6"><a></a>                  <span class="at">y =</span> flipper_length_mm),</span>
+<span id="cb12-7"><a></a>              <span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" height="100%">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-13-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="section-6" class="slide level2 smaller nostretch">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="co"># global mappings</span></span>
+<span id="cb13-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb13-3"><a></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb13-4"><a></a>           <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb13-5"><a></a>           <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb13-6"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-14-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># local mappings</span></span>
+<span id="cb14-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb14-3"><a></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb14-4"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb14-5"><a></a>        <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb14-6"><a></a>        <span class="at">color =</span> species))  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-15-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="section-7" class="slide level2 smaller nostretch">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># global mappings</span></span>
+<span id="cb15-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb15-3"><a></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb15-4"><a></a>           <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb15-5"><a></a>           <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb15-6"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb15-7"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-16-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<div class="cell" height="100%">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># global and local mappings</span></span>
+<span id="cb16-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb16-3"><a></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb16-4"><a></a>           <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb16-5"><a></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>, <span class="fu">aes</span>(<span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb16-6"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>,</span>
+<span id="cb16-7"><a></a>              <span class="at">color =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" height="100%">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-17-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="section-8" class="slide level2 smaller nostretch">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># global mappings</span></span>
+<span id="cb17-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb17-3"><a></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb17-4"><a></a>           <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb17-5"><a></a>           <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb17-6"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb17-7"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-18-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<div class="cell" height="100%">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># global and local mappings</span></span>
+<span id="cb18-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb18-3"><a></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb18-4"><a></a>           <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb18-5"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>,</span>
+<span id="cb18-6"><a></a>              <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb18-7"><a></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>, <span class="fu">aes</span>(<span class="at">color =</span> species))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" height="100%">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-19-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section></section>
+<section>
 <section id="more-graphical-elements" class="title-slide slide level1 center">
 <h1>More Graphical Elements</h1>
 
@@ -353,58 +629,58 @@ Gaston Sanchez
 <section id="labels" class="slide level2">
 <h2>Labels</h2>
 <p><code>labs()</code> allows you to add</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">labs</span>(</span>
-<span id="cb6-2"><a></a>  <span class="at">title =</span> <span class="st">"..."</span>,</span>
-<span id="cb6-3"><a></a>  <span class="at">subtitle =</span> <span class="st">"..."</span>,</span>
-<span id="cb6-4"><a></a>  <span class="at">x =</span> <span class="st">"..."</span>,</span>
-<span id="cb6-5"><a></a>  <span class="at">y =</span> <span class="st">"..."</span></span>
-<span id="cb6-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">labs</span>(</span>
+<span id="cb19-2"><a></a>  <span class="at">title =</span> <span class="st">"..."</span>,</span>
+<span id="cb19-3"><a></a>  <span class="at">subtitle =</span> <span class="st">"..."</span>,</span>
+<span id="cb19-4"><a></a>  <span class="at">x =</span> <span class="st">"..."</span>,</span>
+<span id="cb19-5"><a></a>  <span class="at">y =</span> <span class="st">"..."</span></span>
+<span id="cb19-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="section-3" class="slide level2 smaller nostretch" data-auto-animate="true">
+<section id="section-9" class="slide level2 smaller nostretch" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb7-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb7-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb7-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
-<span id="cb7-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb7-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb20-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb20-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb20-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb20-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb20-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" height="100%">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-9-1.png" width="768"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-21-1.png" width="768"></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="section-4" class="slide level2 smaller nostretch" data-auto-animate="true">
+<section id="section-10" class="slide level2 smaller nostretch" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb8-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb8-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb8-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
-<span id="cb8-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb8-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb8-6" class="hljs-ln-code"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb8-7" class="hljs-ln-code"><a></a>    <span class="at">title =</span> <span class="st">"Bill and flipper length"</span>,</span>
-<span id="cb8-8" class="hljs-ln-code"><a></a>    <span class="at">subtitle =</span> <span class="st">"Positive relation"</span>,</span>
-<span id="cb8-9" class="hljs-ln-code"><a></a>    <span class="at">x =</span> <span class="st">"Bill length (mm)"</span>,</span>
-<span id="cb8-10" class="hljs-ln-code"><a></a>    <span class="at">y =</span> <span class="st">"Flipper length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb21-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb21-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb21-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb21-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb21-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb21-6" class="hljs-ln-code"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb21-7" class="hljs-ln-code"><a></a>    <span class="at">title =</span> <span class="st">"Bill and flipper length"</span>,</span>
+<span id="cb21-8" class="hljs-ln-code"><a></a>    <span class="at">subtitle =</span> <span class="st">"Positive relation"</span>,</span>
+<span id="cb21-9" class="hljs-ln-code"><a></a>    <span class="at">x =</span> <span class="st">"Bill length (mm)"</span>,</span>
+<span id="cb21-10" class="hljs-ln-code"><a></a>    <span class="at">y =</span> <span class="st">"Flipper length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" height="100%">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-11-1.png" width="768"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-23-1.png" width="768"></p>
 </figure>
 </div>
 </div>
@@ -428,55 +704,91 @@ Gaston Sanchez
 </ul></li>
 </ul>
 </section>
-<section id="section-5" class="slide level2 smaller nostretch" data-auto-animate="true">
+<section id="section-11" class="slide level2 smaller nostretch" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb9-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb9-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> flipper_length_mm, <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb9-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb9-4" class="hljs-ln-code"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb22-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb22-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> flipper_length_mm, <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb22-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb22-4" class="hljs-ln-code"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-12-1.png" style="width:95.0%"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-24-1.png" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="section-6" class="slide level2 smaller nostretch" data-auto-animate="true">
+<section id="section-12" class="slide level2 smaller nostretch" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb10-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb10-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> flipper_length_mm, <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb10-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb10-4" class="hljs-ln-code"><a></a>  <span class="fu">facet_grid</span>(. <span class="sc">~</span> species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb23-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb23-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> flipper_length_mm, <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb23-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb23-4" class="hljs-ln-code"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> species, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-13-1.png" style="width:95.0%"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-25-1.png" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="section-7" class="slide level2 smaller nostretch" data-auto-animate="true">
+<section id="section-13" class="slide level2 smaller nostretch" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb11-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb11-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> flipper_length_mm, <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb11-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb11-4" class="hljs-ln-code"><a></a>  <span class="fu">facet_grid</span>(species <span class="sc">~</span> .)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb24-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb24-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> flipper_length_mm, <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb24-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb24-4" class="hljs-ln-code"><a></a>  <span class="fu">facet_grid</span>(. <span class="sc">~</span> species)  <span class="co"># facet_grid(cols = vars(species))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-14-1.png" style="width:95.0%"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-26-1.png" style="width:95.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="section-14" class="slide level2 smaller nostretch" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb25-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb25-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> flipper_length_mm, <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb25-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb25-4" class="hljs-ln-code"><a></a>  <span class="fu">facet_grid</span>(species <span class="sc">~</span> .)  <span class="co"># facet_grid(rows = vars(species))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-27-1.png" style="width:95.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="section-15" class="slide level2 smaller nostretch" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb26-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb26-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> flipper_length_mm, <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb26-3" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb26-4" class="hljs-ln-code"><a></a>  <span class="fu">facet_grid</span>(species <span class="sc">~</span> island)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-28-1.png" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
@@ -496,96 +808,100 @@ Gaston Sanchez
 <li class="fragment"><code>theme_classic()</code></li>
 <li class="fragment"><code>theme_light()</code></li>
 </ul>
+<div class="fragment">
+<p>There’s also the package <code>"ggthemes"</code></p>
+<p><a href="https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/" class="uri">https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/</a></p>
+</div>
 </section>
-<section id="section-8" class="slide level2 smaller nostretch" data-auto-animate="true">
+<section id="section-16" class="slide level2 smaller nostretch" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb12-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb12-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb12-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
-<span id="cb12-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb12-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb27-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb27-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb27-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb27-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb27-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" height="100%">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-16-1.png" width="768"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-30-1.png" width="768"></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="section-9" class="slide level2 smaller nostretch" data-auto-animate="true">
+<section id="section-17" class="slide level2 smaller nostretch" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb13-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb13-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb13-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
-<span id="cb13-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb13-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb13-6" class="hljs-ln-code"><a></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb28-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb28-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb28-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb28-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb28-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb28-6" class="hljs-ln-code"><a></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" height="100%">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-18-1.png" width="768"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-32-1.png" width="768"></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="section-10" class="slide level2 smaller nostretch" data-auto-animate="true">
+<section id="section-18" class="slide level2 smaller nostretch" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb14-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb14-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb14-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
-<span id="cb14-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb14-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb14-6" class="hljs-ln-code"><a></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb29-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb29-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb29-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb29-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb29-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb29-6" class="hljs-ln-code"><a></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" height="100%">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-20-1.png" width="768"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-34-1.png" width="768"></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="section-11" class="slide level2 smaller nostretch" data-auto-animate="true">
+<section id="section-19" class="slide level2 smaller nostretch" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb15-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb15-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb15-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
-<span id="cb15-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb15-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb15-6" class="hljs-ln-code"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb30-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb30-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb30-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb30-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb30-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb30-6" class="hljs-ln-code"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" height="100%">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-22-1.png" width="768"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-36-1.png" width="768"></p>
 </figure>
 </div>
 </div>
@@ -607,120 +923,224 @@ Gaston Sanchez
 <li class="fragment">ETC</li>
 </ul>
 </section>
-<section id="section-12" class="slide level2 smaller nostretch" data-auto-animate="true">
+<section id="section-20" class="slide level2 smaller nostretch" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb16-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb16-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb16-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
-<span id="cb16-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb16-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb31-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb31-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb31-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb31-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb31-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" height="100%">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-24-1.png" width="768"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-38-1.png" width="768"></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="section-13" class="slide level2 smaller nostretch" data-auto-animate="true">
+<section id="section-21" class="slide level2 smaller nostretch" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb17-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb17-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb17-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
-<span id="cb17-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb17-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb17-6" class="hljs-ln-code"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">60</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb32-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb32-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb32-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb32-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb32-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb32-6" class="hljs-ln-code"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">60</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" height="100%">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-26-1.png" width="768"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-40-1.png" width="768"></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="section-14" class="slide level2 smaller nostretch" data-auto-animate="true">
+<section id="section-22" class="slide level2 smaller nostretch" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb18-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb18-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb18-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
-<span id="cb18-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb18-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb18-6" class="hljs-ln-code"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">60</span>)) <span class="sc">+</span></span>
-<span id="cb18-7" class="hljs-ln-code"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">160</span>, <span class="dv">240</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb33-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb33-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb33-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb33-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb33-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb33-6" class="hljs-ln-code"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">60</span>)) <span class="sc">+</span></span>
+<span id="cb33-7" class="hljs-ln-code"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">160</span>, <span class="dv">240</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" height="100%">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-28-1.png" width="768"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-42-1.png" width="768"></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="section-15" class="slide level2 smaller nostretch" data-auto-animate="true">
+<section id="section-23" class="slide level2 smaller nostretch" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb19-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb19-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb19-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
-<span id="cb19-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb19-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb34-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb34-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb34-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb34-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb34-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" height="100%">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-30-1.png" width="768"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-44-1.png" width="768"></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="section-16" class="slide level2 smaller nostretch" data-auto-animate="true">
+<section id="section-24" class="slide level2 smaller nostretch" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb20-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb20-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb20-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
-<span id="cb20-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb20-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb20-6" class="hljs-ln-code"><a></a>  <span class="fu">scale_color_manual</span>(</span>
-<span id="cb20-7" class="hljs-ln-code"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"orange"</span>, <span class="st">"magenta"</span>, <span class="st">"turquoise"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb35-1" class="hljs-ln-code"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb35-2" class="hljs-ln-code"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb35-3" class="hljs-ln-code"><a></a>                     <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb35-4" class="hljs-ln-code"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb35-5" class="hljs-ln-code"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb35-6" class="hljs-ln-code"><a></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb35-7" class="hljs-ln-code"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"orange"</span>, <span class="st">"magenta"</span>, <span class="st">"turquoise"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" height="100%">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-32-1.png" width="768"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-46-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="bonus-example" class="title-slide slide level1 center">
+<h1>Bonus Example</h1>
+
+</section>
+<section id="section-25" class="slide level2 smaller nostretch">
+<h2></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36" data-code-line-numbers="1|1-2|1-3|1-4|1-6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>big_males <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb36-2"><a></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"male"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb36-3"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb36-4"><a></a>  <span class="fu">slice_max</span>(body_mass_g)</span>
+<span id="cb36-5"><a></a></span>
+<span id="cb36-6"><a></a>big_males</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 8
+# Groups:   species [3]
+  species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+  &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+1 Adelie    Biscoe           43.2          19                 197        4775
+2 Chinstrap Dream            52            20.7               210        4800
+3 Gentoo    Biscoe           49.2          15.2               221        6300
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="section-26" class="slide level2 smaller nostretch">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb38-2"><a></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb38-3"><a></a>    <span class="at">data =</span> <span class="fu">filter</span>(penguins, sex <span class="sc">==</span> <span class="st">"male"</span>),</span>
+<span id="cb38-4"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
+<span id="cb38-5"><a></a>        <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb38-6"><a></a>        <span class="at">color =</span> species),</span>
+<span id="cb38-7"><a></a>    <span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb38-8"><a></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb38-9"><a></a>    <span class="at">data =</span> big_males,</span>
+<span id="cb38-10"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
+<span id="cb38-11"><a></a>        <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb38-12"><a></a>        <span class="at">color =</span> species),</span>
+<span id="cb38-13"><a></a>    <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb38-14"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+
+</div>
+</div><div class="column fragment" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-49-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="section-27" class="slide level2">
+<h2></h2>
+<p>Because the mappings for <code>x</code>, <code>y</code> and <code>color</code> are the same in both calls to <code>geom_point()</code></p>
+<ul>
+<li><code>x = bill_length_mm</code></li>
+<li><code>y = flipper_length_mm</code></li>
+<li><code>color = species</code></li>
+</ul>
+<p>we can simplify the command in the previous slides as follows (next slide)</p>
+</section>
+<section id="section-28" class="slide level2 smaller nostretch">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb39-2"><a></a>  <span class="at">data =</span> <span class="fu">filter</span>(penguins, sex <span class="sc">==</span> <span class="st">"male"</span>),</span>
+<span id="cb39-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
+<span id="cb39-4"><a></a>      <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb39-5"><a></a>      <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb39-6"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb39-7"><a></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb39-8"><a></a>    <span class="at">data =</span> big_males,</span>
+<span id="cb39-9"><a></a>    <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb39-10"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+
+</div>
+</div><div class="column fragment" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-51-1.png" width="768"></p>
 </figure>
 </div>
 </div>

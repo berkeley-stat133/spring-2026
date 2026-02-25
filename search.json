@@ -2093,7 +2093,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 9      Kevin McCul… NYK   SF           78    210 March 15,… US      R         \n2 99     KJ Martin    UTA   SF           78    215 January 6… US      4         \n3 18     Chuma Okeke  PHI   PF           79    229 August 18… US      4         \n4 44     Patrick Wil… CHI   PF           78    215 August 26… US      4         \n5 15     Malcolm Bro… WAS   PG           76    229 December … US      8         \n6 77     Orlando Rob… SAC   C            82    235 July 10, … US      2         \n7 7      Amir Coffey  LAC   SG           79    210 June 17, … US      5         \n8 7      Killian Hay… BRK   PG           76    195 July 27, … US      4         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 22     Desmond Bane MEM   SG           78    215 June 25, … US      4         \n2 24     Garrison Ma… ATL   SG           77    215 October 2… US      5         \n3 8      Paul George  PHI   PF           80    220 May 2, 19… US      14        \n4 24     Jalen Picke… DEN   SG           74    202 October 2… US      1         \n5 50     Kylor Kelley DAL   C            84    215 August 26… US      R         \n6 14     MarJon Beau… NYK   SF           79    199 October 1… US      2         \n7 25     Skal Labiss… SAC   PF           82    235 March 18,… HT      4         \n8 17     Dennis Schr… BRK   PG           73    175 September… DE      11        \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -2520,7 +2520,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"bronze\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"silver\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -2534,7 +2534,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"senior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"sophomore\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -2881,18 +2881,18 @@
     "text": "Agenda\n\nUsing the Terminal and basic Unix commands\n\npwd, cd, ls\n\nReview: qmd files with code chunks\n\nR as a calculator\n\nQuartoPub\n\nSign up\n\n1st Quarto Publication\nProblem Set 1"
   },
   {
-    "objectID": "labs/lab2/slides.html#folder-stat133",
-    "href": "labs/lab2/slides.html#folder-stat133",
-    "title": "Lab 2",
-    "section": "Folder stat133/",
-    "text": "Folder stat133/\nSomewhere in your computer (e.g. Desktop, Documents) you should have the following folders and files:\n\n\n\n\n  stat133/\n    labs/\n        lab1/\n          lab1-first-last.qmd\n          lab1-first-last.html\n\n\n\n\n\nLet’s determine the following file paths to stat133/\n\nabsolute path to stat133/\nrelative path (from home directory) to stat133/"
-  },
-  {
     "objectID": "labs/lab2/slides.html#reminder-special-symbols",
     "href": "labs/lab2/slides.html#reminder-special-symbols",
     "title": "Lab 2",
     "section": "Reminder: Special Symbols",
     "text": "Reminder: Special Symbols\n\n\n\n\n\nSymbol\nMeaning\n\n\n\n\n/\nroot directory (1st slash)\n\n\nA/B\nA contains B (intermediate slash)\n\n\n~\nhome directory (i.e. /home/user/)\n\n\n.\ncurrent directory\n\n\n..\nparent directory"
+  },
+  {
+    "objectID": "labs/lab2/slides.html#folder-stat133",
+    "href": "labs/lab2/slides.html#folder-stat133",
+    "title": "Lab 2",
+    "section": "Folder stat133/",
+    "text": "Folder stat133/\nSomewhere in your computer (e.g. Desktop, Documents) you should have the following folders and files:\n\n\n\n\n  stat133/\n    labs/\n        lab1/\n          lab1-first-last.qmd\n          lab1-first-last.html\n\n\n\n\n\nLet’s determine the following file paths to stat133/\n\nabsolute path to stat133/\nrelative path (from home directory) to stat133/"
   },
   {
     "objectID": "labs/lab2/slides.html#section",
@@ -3168,6 +3168,13 @@
     "text": "Pset 4 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps4\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
   {
+    "objectID": "labs/lab6/scrollytelling.html",
+    "href": "labs/lab6/scrollytelling.html",
+    "title": "Fuel Efficiency and Engine Size",
+    "section": "",
+    "text": "How Engine Size Shapes Fuel Efficiency\n\n\n\n\nModern cars vary widely in fuel efficiency. As you scroll, we’ll explore how engine displacement relates to miles per gallon.\n\n\n\n\nStep 1 — The Full Dataset\n\n\n\n\nAt first glance, fuel efficiency might look random across vehicles.\nEach point represents a car model in the mpg dataset.\nScroll to investigate whether a pattern begins to emerge.\n\n\n\n\nStep 2 — A Relationship Appears\n\n\n\n\nNow focus on the overall direction of the cloud of points.\nDo you notice how fuel efficiency changes as engine size increases?\nLarger engines generally consume more fuel.\n\n\n\n\nStep 3 — Interpreting the Trend\n\n\n\n\nThe downward trend suggests a negative relationship:\nHigher displacement → lower MPG\nSmaller engines → higher efficiency\nThis is a classic tradeoff between performance and efficiency.\n\n\n\n\n\n\n\n\n\nSticky Visualization\n\n\n\n`geom_smooth()` using formula = 'y ~ x'"
+  },
+  {
     "objectID": "labs/lab1/slides.html#meet-your-gsi",
     "href": "labs/lab1/slides.html#meet-your-gsi",
     "title": "Lab 1",
@@ -3292,6 +3299,174 @@
     "title": "Lab 1",
     "section": "In case of trouble",
     "text": "In case of trouble\nIf you experienced any issues today, for example:\n\ninstalling software\nrendering .qmd file\nsubmission to bCourses\ngot lost along the discussion\n\nthen please come to office hours!"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#agenda",
+    "href": "labs/lab6/slides.html#agenda",
+    "title": "Lab 6",
+    "section": "Agenda",
+    "text": "Agenda\n\nWarmup\nReview: DataViz\nCloseread\n\nHow can we best present complex visual information to a reader?\n\n5th Quarto Publication"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#warmup-solution",
+    "href": "labs/lab6/slides.html#warmup-solution",
+    "title": "Lab 6",
+    "section": "Warmup Solution",
+    "text": "Warmup Solution"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#dataviz-review-common-aes",
+    "href": "labs/lab6/slides.html#dataviz-review-common-aes",
+    "title": "Lab 6",
+    "section": "DataViz Review: Common aes()",
+    "text": "DataViz Review: Common aes()\n\n\n\nx\ny\ncolor\nfill\n\n\n\nsize\nshape\nalpha"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#dataviz-review-common-geom",
+    "href": "labs/lab6/slides.html#dataviz-review-common-geom",
+    "title": "Lab 6",
+    "section": "DataViz Review: Common geom()",
+    "text": "DataViz Review: Common geom()\n\n\n\ngeom_point()\ngeom_bar() / geom_col()\ngeom_line()\n\n\n\ngeom_histogram()\ngeom_density()\ngeom_boxplot()\ngeom_violin()"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#examples",
+    "href": "labs/lab6/slides.html#examples",
+    "title": "Lab 6",
+    "section": "Examples",
+    "text": "Examples\nNew York Times Close-Reads\nhttps://www.nytimes.com/interactive/2021/arts/close-read.html\n\n\n\nProf. Sanchez’s example:\nhttps://www.gastonsanchez.com/learn-closeread/examples/example7/"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#talk-to-a-partner",
+    "href": "labs/lab6/slides.html#talk-to-a-partner",
+    "title": "Lab 6",
+    "section": "Talk to a partner",
+    "text": "Talk to a partner\nWhat kinds of projects could you use Scrollytelling for?\n\n\n\n−+\n03:00\n\n\n\n\nExplaining complex data step by step\nTeaching people how to read a chart or analyze an image\nRevealing patterns, causality, etc\nCommunicating uncertainty and statistical methodology\nMake research accessible to non-analysts"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#how-does-the-closeread-template-look",
+    "href": "labs/lab6/slides.html#how-does-the-closeread-template-look",
+    "title": "Lab 6",
+    "section": "How does the Closeread template look?",
+    "text": "How does the Closeread template look?\nBasic components:\n\nChange the format in the YAML header\nSpecify what part of the content will constitute a Closeread section\nIndicate what elements (e.g. text, images, code) will become the sticky item (i.e. the component that will get stuck as we scroll through the page)\nInclude a trigger among the narrative to cause the sticky to appear"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#how-does-the-closeread-template-look-1",
+    "href": "labs/lab6/slides.html#how-does-the-closeread-template-look-1",
+    "title": "Lab 6",
+    "section": "How does the Closeread template look?",
+    "text": "How does the Closeread template look?\nTo make a section and sticky item, we use a fenced div, which we have previously used to create columns, incremental lists, and callouts:\n\nStarts with a fence containing at least three consecutive colons plus some attributes\nThe Div ends with another line containing a string of at least three consecutive colons\n\n::: {.callout}\nHere is a callout.\n:::"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#anatomy-of-closeread-docs-1",
+    "href": "labs/lab6/slides.html#anatomy-of-closeread-docs-1",
+    "title": "Lab 6",
+    "section": "Anatomy of Closeread docs",
+    "text": "Anatomy of Closeread docs\n---\ntitle: \"Closeread story\"\nformat: closeread-html\n---\n\n:::: {.cr-section}\nSome interesting narrative \n\n::: {#cr-sticky}\n![](https://www.r-project.org/Rlogo.png)\n:::\n\nTrigger a sticky element @cr-sticky\n::::"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#yaml-header",
+    "href": "labs/lab6/slides.html#yaml-header",
+    "title": "Lab 6",
+    "section": "1. YAML Header",
+    "text": "1. YAML Header\n-   `format: closeread-html`"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#closeread-section",
+    "href": "labs/lab6/slides.html#closeread-section",
+    "title": "Lab 6",
+    "section": "2. Closeread Section",
+    "text": "2. Closeread Section\n:::: {.cr-section}\n\n::::\n\nAdd narrative elements here:\n\n:::: {.cr-section}\nSome interesting narrative\n::::"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#create-sticky-elements",
+    "href": "labs/lab6/slides.html#create-sticky-elements",
+    "title": "Lab 6",
+    "section": "3. Create Sticky elements",
+    "text": "3. Create Sticky elements\n:::: {.cr-section}\nSome interesting narrative\n\n::: {#cr-sticky}\n![](https://www.r-project.org/Rlogo.png)\n:::\n::::"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#trigger-sticky-elements",
+    "href": "labs/lab6/slides.html#trigger-sticky-elements",
+    "title": "Lab 6",
+    "section": "4. Trigger sticky elements",
+    "text": "4. Trigger sticky elements\n:::: {.cr-section}\nSome interesting narrative\n\n::: {#cr-sticky}\n![](https://www.r-project.org/Rlogo.png)\n:::\n\nTrigger a sticky element @cr-sticky\n::::"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#folder-stat133",
+    "href": "labs/lab6/slides.html#folder-stat133",
+    "title": "Lab 6",
+    "section": "Folder stat133/",
+    "text": "Folder stat133/\n  stat133/\n    labs/\n        lab1/\n        ...\n        lab5/\n    psets/\n        pset1/\n        ...\n        pset4/"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#terminal-in-ide",
+    "href": "labs/lab6/slides.html#terminal-in-ide",
+    "title": "Lab 6",
+    "section": "Terminal in IDE",
+    "text": "Terminal in IDE\n\nLaunch your IDE (Positron or RStudio)\nLaunch your Terminal (next to the Console tab)\ncd to your stat133/labs/ folder\ncreate a folder for this lab: mkdir lab6\ncd to lab6"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#installing-closeread-extension-1",
+    "href": "labs/lab6/slides.html#installing-closeread-extension-1",
+    "title": "Lab 6",
+    "section": "Installing Closeread extension",
+    "text": "Installing Closeread extension\nIn order to render a quarto document as a closeread document you need the closeread quarto extension (ideally in your working directory).\n\n\n\nBTW: Quarto extensions are the equivalent of R packages."
+  },
+  {
+    "objectID": "labs/lab6/slides.html#installing-closeread-extension-2",
+    "href": "labs/lab6/slides.html#installing-closeread-extension-2",
+    "title": "Lab 6",
+    "section": "Installing Closeread extension",
+    "text": "Installing Closeread extension\nRun the following command in your working directory\n\n\nTerminal\n\nquarto add qmd-lab/closeread\n\n\n\n\nYou will be prompted with the following (type Yes)\n? Do you trust the authors of this extension (Y/n) ›\n\n\n? Would you like to continue (Y/n) › \n\n\n? View documentation using default browser? (Y/n) ›"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#section",
+    "href": "labs/lab6/slides.html#section",
+    "title": "Lab 6",
+    "section": "",
+    "text": "Go to bCourses:\nFiles tab &gt; lab-materials &gt; lab6-quarto-closeread1\n\n\n\nDownload template file: closeread-template.qmd\nhttps://bcourses.berkeley.edu/courses/1551809/files/folder/lab-materials/lab6-quarto-closeread1\n\n\n\n\nCopy or move template file to your lab6/ directory."
+  },
+  {
+    "objectID": "labs/lab6/slides.html#section-1",
+    "href": "labs/lab6/slides.html#section-1",
+    "title": "Lab 6",
+    "section": "",
+    "text": "Important\n\n\nMake sure the template file closeread-template.qmd and the closeread extension are in the same working directory!\n\n\n\n\n\n\nYour lab6/ folder should look like this:\nlab6/\n  _extensions/\n  closeread-template.qmd\n\n\n\n\nOpen the template file and preview it."
+  },
+  {
+    "objectID": "labs/lab6/slides.html#open-a-new-qmd-file",
+    "href": "labs/lab6/slides.html#open-a-new-qmd-file",
+    "title": "Lab 6",
+    "section": "Open a new qmd file",
+    "text": "Open a new qmd file\nCopy the YAML header of the closeread template to your qmd file.\n\n\nmycloseread.qmd\n\n---\ntitle: \"My First Closeread Story\"\nauthor: \"Your Name\"\nformat: \n  closeread-html:\n    theme: cosmo\n    cr-style:\n      section-background-color: white\n      narrative-background-color-sidebar: black\n      narrative-text-color-sidebar: white\n      narrative-font-size: 2em\nembed-resources: true\n---"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#insert-a-setup-code-chunk",
+    "href": "labs/lab6/slides.html#insert-a-setup-code-chunk",
+    "title": "Lab 6",
+    "section": "Insert a setup code chunk",
+    "text": "Insert a setup code chunk\n#| label: setup\n#| include: false\n# load packages and/or import data\nlibrary(tidyverse)\n\n\nThis is intended to load any required packages and/or to import external data files (e.g. data sets)."
+  },
+  {
+    "objectID": "labs/lab6/slides.html#closeread-section-1",
+    "href": "labs/lab6/slides.html#closeread-section-1",
+    "title": "Lab 6",
+    "section": "Closeread Section",
+    "text": "Closeread Section\nInclude a pair of fenced elements to define the closeread section\n:::: {.cr-section}\n\n\n::::"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#sticky-element",
+    "href": "labs/lab6/slides.html#sticky-element",
+    "title": "Lab 6",
+    "section": "Sticky element",
+    "text": "Sticky element\nDefine a sticky element.\n::: {#cr-plot1}\n\n:::\n\n\nInside the sticky element, insert a code chunk to make a ggplot graphic of your choice, based on mpg data\nggplot(data = mpg,\n       aes(...)) +\n  geom_????()"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#trigger-sticky-element",
+    "href": "labs/lab6/slides.html#trigger-sticky-element",
+    "title": "Lab 6",
+    "section": "Trigger sticky element",
+    "text": "Trigger sticky element\nInside the closeread section, but outside the sticky element, write some narrative and trigger the sticky previously defined @cr-plot1\n\n\nAnd then preview or render your quarto closeread."
   },
   {
     "objectID": "labs/lab5/demo-slides.html#why-ev-adoption-matters",
@@ -4237,7 +4412,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 2 1"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 5 6"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#meet-the-palmer-penguins",
@@ -4265,7 +4440,7 @@
     "href": "lectures/14-dataviz1/slides.html#the-grammar-of-graphics-gg",
     "title": "The Grammar of Graphics",
     "section": "The Grammar of Graphics (GG)",
-    "text": "The Grammar of Graphics (GG)\nLeland Wilkinson (1999)\n\n\n\nA grammar to describe all statistical graphics.\nUnderlies most modern data visualization software."
+    "text": "The Grammar of Graphics (GG)\nLeland Wilkinson (1999)\n\n\n\nA grammar to describes all statistical graphics.\nUnderlies most modern data visualization software."
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#aesthetic-mapping",
@@ -4317,25 +4492,18 @@
     "text": "penguins |&gt;\n  select(bill_length_mm,\n         flipper_length_mm,\n         species)\n\n# A tibble: 344 × 3\n   bill_length_mm flipper_length_mm species\n            &lt;dbl&gt;             &lt;int&gt; &lt;fct&gt;  \n 1           39.1               181 Adelie \n 2           39.5               186 Adelie \n 3           40.3               195 Adelie \n 4           NA                  NA Adelie \n 5           36.7               193 Adelie \n 6           39.3               190 Adelie \n 7           38.9               181 Adelie \n 8           39.2               195 Adelie \n 9           34.1               193 Adelie \n10           42                 190 Adelie \n# ℹ 334 more rows"
   },
   {
-    "objectID": "lectures/14-dataviz1/slides.html#section-6",
-    "href": "lectures/14-dataviz1/slides.html#section-6",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(\n  data = penguins,\n  mapping = aes(\n    x = bill_length_mm, \n    y = flipper_length_mm,\n    color = species)) +\n  geom_point()"
-  },
-  {
     "objectID": "lectures/14-dataviz1/slides.html#ggplot-syntax",
     "href": "lectures/14-dataviz1/slides.html#ggplot-syntax",
     "title": "The Grammar of Graphics",
     "section": "ggplot() syntax",
-    "text": "ggplot() syntax\n\nggplot() builds a plot layer by layer, each one added on top of one another with + (not |&gt;).\n\nggplot() creates a canvas\naes() creates mappings, called inside ggplot() or a geom()\ngeom_() puts down marks using declared geometry\n\n\n\n\nUsually you specify the data in ggplot()\nthe data must be a dataframe or tibble"
+    "text": "ggplot() syntax\n\nggplot() builds a plot layer by layer, each one added on top of one another with + (not |&gt;).\n\nggplot() creates canvas\naes() creates mappings, called inside ggplot() or a geom()\ngeom_() puts down marks using declared geometry\n\n\n\n\nUsually you specify the data in ggplot()\nthe data must be a dataframe or tibble"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#layer-by-layer",
     "href": "lectures/14-dataviz1/slides.html#layer-by-layer",
     "title": "The Grammar of Graphics",
     "section": "Layer by layer",
-    "text": "Layer by layer\n\nggplot(\n  data = penguins, \n  mapping = aes(\n    x = bill_length_mm,\n    y = flipper_length_mm,\n    color = species)) +\n  geom_point() +\n  theme_gray(base_size = 18)\n\n\n\n\n\n# equivalent command\npenguins |&gt;\n  ggplot(aes(x = bill_length_mm,\n             y = flipper_length_mm,\n             color = species)) +\n  geom_point() +\n  theme_gray(base_size = 18)"
+    "text": "Layer by layer\n\npenguins |&gt;\n  ggplot(aes(x = bill_length_mm,\n             y = flipper_length_mm,\n             color = species)) +\n  geom_point() +\n  theme_gray(base_size = 18)"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#common-aes",
@@ -4366,43 +4534,43 @@
     "text": "Main inquiries when using \"ggplot2\"\nAlways ask yourself:\n\nWhat is the data set of interest?\nWhat variables (columns) will be used to make the plot?\nWhat graphic objects or geoms will be used to display the data?\nWhat visual attributes will be used to represent the data values?\n\nx, y\ncolor, fill\nshape\netc"
   },
   {
+    "objectID": "lectures/14-dataviz1/slides.html#section-6",
+    "href": "lectures/14-dataviz1/slides.html#section-6",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot()"
+  },
+  {
     "objectID": "lectures/14-dataviz1/slides.html#section-7",
     "href": "lectures/14-dataviz1/slides.html#section-7",
     "title": "The Grammar of Graphics",
     "section": "",
-    "text": "ggplot()"
+    "text": "ggplot(data = penguins)"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#section-8",
     "href": "lectures/14-dataviz1/slides.html#section-8",
     "title": "The Grammar of Graphics",
     "section": "",
-    "text": "ggplot(data = penguins)"
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm))"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#section-9",
     "href": "lectures/14-dataviz1/slides.html#section-9",
     "title": "The Grammar of Graphics",
     "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm))"
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm)) +\n  geom_point()"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#section-10",
     "href": "lectures/14-dataviz1/slides.html#section-10",
     "title": "The Grammar of Graphics",
     "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm)) +\n  geom_point()"
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point()"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#section-11",
     "href": "lectures/14-dataviz1/slides.html#section-11",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point()"
-  },
-  {
-    "objectID": "lectures/14-dataviz1/slides.html#section-12",
-    "href": "lectures/14-dataviz1/slides.html#section-12",
     "title": "The Grammar of Graphics",
     "section": "",
     "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm)) +\n  geom_point(aes(color = species))"
@@ -5318,6 +5486,62 @@
     "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point()"
   },
   {
+    "objectID": "lectures/15-dataviz2/slides.html#recap-1",
+    "href": "lectures/15-dataviz2/slides.html#recap-1",
+    "title": "The Grammar of Graphics",
+    "section": "Recap",
+    "text": "Recap\n\nAn aesthetic mapping links a variable in the data to a visual attribute.\nggplot() and geom_() have a mapping argument.\nWe use the aes() to specify such mappings, e.g.\n\nggplot(..., aes(x = species))\ngeom_bar(aes(x = species))"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#global--vs--local-mappings",
+    "href": "lectures/15-dataviz2/slides.html#global--vs--local-mappings",
+    "title": "The Grammar of Graphics",
+    "section": "Global -vs- Local Mappings",
+    "text": "Global -vs- Local Mappings\nWe distinguish 2 types of aesthetic mappings:\n\nGlobal Mappings: those specified inside ggplot()\n\n\n\n\nLocal Mappings: those specified inside geom_() functions"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-3",
+    "href": "lectures/15-dataviz2/slides.html#section-3",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\n\n\n# local mappings\nggplot(data = penguins) +\n  geom_point(\n    aes(x = bill_length_mm, \n        y = flipper_length_mm))"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-4",
+    "href": "lectures/15-dataviz2/slides.html#section-4",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm)) +\n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n\n\n\n\n\n\n\n\n\n\n\n# local mappings (be careful!!!)\nggplot(data = penguins) +\n  geom_point(\n    aes(x = bill_length_mm, \n        y = flipper_length_mm))  +\n  geom_smooth(method = \"lm\")\n\n\n\nError in `geom_smooth()`:\n! Problem while computing stat.\nℹ Error occurred in the 2nd layer.\nCaused by error in `compute_layer()`:\n! `stat_smooth()` requires the following missing aesthetics: x and y."
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-5",
+    "href": "lectures/15-dataviz2/slides.html#section-5",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm)) +\n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n\n\n\n\n\n\n\n\n\n# local mappings (be careful!!!)\nggplot(data = penguins) +\n  geom_point(aes(x = bill_length_mm, \n                 y = flipper_length_mm))  +\n  geom_smooth(aes(x = bill_length_mm, \n                  y = flipper_length_mm),\n              method = \"lm\")"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-6",
+    "href": "lectures/15-dataviz2/slides.html#section-6",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm,\n           color = species)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\n\n\n# local mappings\nggplot(data = penguins) +\n  geom_point(\n    aes(x = bill_length_mm, \n        y = flipper_length_mm,\n        color = species))"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-7",
+    "href": "lectures/15-dataviz2/slides.html#section-7",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm,\n           color = species)) +\n  geom_point(size = 3) +\n  geom_smooth(method = \"lm\")\n\n\n\n\n\n\n\n\n\n\n\n\n# global and local mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm)) +\n  geom_point(size=3, aes(color = species)) +\n  geom_smooth(method = \"lm\",\n              color = \"black\")"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-8",
+    "href": "lectures/15-dataviz2/slides.html#section-8",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm,\n           color = species)) +\n  geom_smooth(method = \"lm\") +\n  geom_point(size = 3)\n\n\n\n\n\n\n\n\n\n\n\n\n# global and local mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm)) +\n  geom_smooth(method = \"lm\",\n              color = \"black\") +\n  geom_point(size=3, aes(color = species))"
+  },
+  {
     "objectID": "lectures/15-dataviz2/slides.html#additional-graphical-elements",
     "href": "lectures/15-dataviz2/slides.html#additional-graphical-elements",
     "title": "The Grammar of Graphics",
@@ -5332,15 +5556,15 @@
     "text": "Labels\nlabs() allows you to add\nlabs(\n  title = \"...\",\n  subtitle = \"...\",\n  x = \"...\",\n  y = \"...\"\n)"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-3",
-    "href": "lectures/15-dataviz2/slides.html#section-3",
+    "objectID": "lectures/15-dataviz2/slides.html#section-9",
+    "href": "lectures/15-dataviz2/slides.html#section-9",
     "title": "The Grammar of Graphics",
     "section": "",
     "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point()"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-4",
-    "href": "lectures/15-dataviz2/slides.html#section-4",
+    "objectID": "lectures/15-dataviz2/slides.html#section-10",
+    "href": "lectures/15-dataviz2/slides.html#section-10",
     "title": "The Grammar of Graphics",
     "section": "",
     "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point() +\n  labs(\n    title = \"Bill and flipper length\",\n    subtitle = \"Positive relation\",\n    x = \"Bill length (mm)\",\n    y = \"Flipper length (mm)\")"
@@ -5353,57 +5577,71 @@
     "text": "Facets\n\nfacet_wrap() wraps a 1d sequence of panels into 2d\nfacet_grid() forms a matrix of panels defined by row and column faceting variables\n\nfacet_grid(rows = vars(...))\nfacet_grid(cols = vars(...))\nfacet_grid(row_var ~ col_var)"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-5",
-    "href": "lectures/15-dataviz2/slides.html#section-5",
+    "objectID": "lectures/15-dataviz2/slides.html#section-11",
+    "href": "lectures/15-dataviz2/slides.html#section-11",
     "title": "The Grammar of Graphics",
     "section": "",
     "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_wrap(~ species)"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-6",
-    "href": "lectures/15-dataviz2/slides.html#section-6",
+    "objectID": "lectures/15-dataviz2/slides.html#section-12",
+    "href": "lectures/15-dataviz2/slides.html#section-12",
     "title": "The Grammar of Graphics",
     "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_grid(. ~ species)"
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_wrap(~ species, nrow = 2)"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-7",
-    "href": "lectures/15-dataviz2/slides.html#section-7",
+    "objectID": "lectures/15-dataviz2/slides.html#section-13",
+    "href": "lectures/15-dataviz2/slides.html#section-13",
     "title": "The Grammar of Graphics",
     "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_grid(species ~ .)"
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_grid(. ~ species)  # facet_grid(cols = vars(species))"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-14",
+    "href": "lectures/15-dataviz2/slides.html#section-14",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_grid(species ~ .)  # facet_grid(rows = vars(species))"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-15",
+    "href": "lectures/15-dataviz2/slides.html#section-15",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_grid(species ~ island)"
   },
   {
     "objectID": "lectures/15-dataviz2/slides.html#theme-functions",
     "href": "lectures/15-dataviz2/slides.html#theme-functions",
     "title": "The Grammar of Graphics",
     "section": "Theme Functions",
-    "text": "Theme Functions\n\ntheme_gray()\ntheme_bw()\ntheme_minimal()\ntheme_classic()\ntheme_light()"
+    "text": "Theme Functions\n\ntheme_gray()\ntheme_bw()\ntheme_minimal()\ntheme_classic()\ntheme_light()\n\n\nThere’s also the package \"ggthemes\"\nhttps://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-8",
-    "href": "lectures/15-dataviz2/slides.html#section-8",
+    "objectID": "lectures/15-dataviz2/slides.html#section-16",
+    "href": "lectures/15-dataviz2/slides.html#section-16",
     "title": "The Grammar of Graphics",
     "section": "",
     "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point()"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-9",
-    "href": "lectures/15-dataviz2/slides.html#section-9",
+    "objectID": "lectures/15-dataviz2/slides.html#section-17",
+    "href": "lectures/15-dataviz2/slides.html#section-17",
     "title": "The Grammar of Graphics",
     "section": "",
     "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point() +\n  theme_classic()"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-10",
-    "href": "lectures/15-dataviz2/slides.html#section-10",
+    "objectID": "lectures/15-dataviz2/slides.html#section-18",
+    "href": "lectures/15-dataviz2/slides.html#section-18",
     "title": "The Grammar of Graphics",
     "section": "",
     "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point() +\n  theme_bw()"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-11",
-    "href": "lectures/15-dataviz2/slides.html#section-11",
+    "objectID": "lectures/15-dataviz2/slides.html#section-19",
+    "href": "lectures/15-dataviz2/slides.html#section-19",
     "title": "The Grammar of Graphics",
     "section": "",
     "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point() +\n  theme_minimal()"
@@ -5416,39 +5654,67 @@
     "text": "Scale Functions\n\nscale_x_continuous()\nscale_y_continuous()\nscale_color_manual()\nscale_fill_manual()\nETC"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-12",
-    "href": "lectures/15-dataviz2/slides.html#section-12",
+    "objectID": "lectures/15-dataviz2/slides.html#section-20",
+    "href": "lectures/15-dataviz2/slides.html#section-20",
     "title": "The Grammar of Graphics",
     "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point()"
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point(size = 3)"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-13",
-    "href": "lectures/15-dataviz2/slides.html#section-13",
+    "objectID": "lectures/15-dataviz2/slides.html#section-21",
+    "href": "lectures/15-dataviz2/slides.html#section-21",
     "title": "The Grammar of Graphics",
     "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point() +\n  scale_x_continuous(limits = c(0, 60))"
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point(size = 3) +\n  scale_x_continuous(limits = c(0, 60))"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-14",
-    "href": "lectures/15-dataviz2/slides.html#section-14",
+    "objectID": "lectures/15-dataviz2/slides.html#section-22",
+    "href": "lectures/15-dataviz2/slides.html#section-22",
     "title": "The Grammar of Graphics",
     "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point() +\n  scale_x_continuous(limits = c(0, 60)) +\n  scale_y_continuous(limits = c(160, 240))"
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point(size = 3) +\n  scale_x_continuous(limits = c(0, 60)) +\n  scale_y_continuous(limits = c(160, 240))"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-15",
-    "href": "lectures/15-dataviz2/slides.html#section-15",
+    "objectID": "lectures/15-dataviz2/slides.html#section-23",
+    "href": "lectures/15-dataviz2/slides.html#section-23",
     "title": "The Grammar of Graphics",
     "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point()"
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point(size = 3)"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-16",
-    "href": "lectures/15-dataviz2/slides.html#section-16",
+    "objectID": "lectures/15-dataviz2/slides.html#section-24",
+    "href": "lectures/15-dataviz2/slides.html#section-24",
     "title": "The Grammar of Graphics",
     "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point() +\n  scale_color_manual(\n    values = c(\"orange\", \"magenta\", \"turquoise\"))"
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point(size = 3) +\n  scale_color_manual(\n    values = c(\"orange\", \"magenta\", \"turquoise\"))"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-25",
+    "href": "lectures/15-dataviz2/slides.html#section-25",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "big_males &lt;- penguins |&gt; \n  filter(sex == \"male\") |&gt; \n  group_by(species) |&gt; \n  slice_max(body_mass_g)\n\nbig_males\n\n\n\n# A tibble: 3 × 8\n# Groups:   species [3]\n  species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie    Biscoe           43.2          19                 197        4775\n2 Chinstrap Dream            52            20.7               210        4800\n3 Gentoo    Biscoe           49.2          15.2               221        6300\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-26",
+    "href": "lectures/15-dataviz2/slides.html#section-26",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot() +\n  geom_point(\n    data = filter(penguins, sex == \"male\"),\n    aes(x = bill_length_mm,\n        y = flipper_length_mm,\n        color = species),\n    size = 0.5, alpha = 0.5) +\n  geom_point(\n    data = big_males,\n    aes(x = bill_length_mm,\n        y = flipper_length_mm,\n        color = species),\n    size = 4) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-27",
+    "href": "lectures/15-dataviz2/slides.html#section-27",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "Because the mappings for x, y and color are the same in both calls to geom_point()\n\nx = bill_length_mm\ny = flipper_length_mm\ncolor = species\n\nwe can simplify the command in the previous slides as follows (next slide)"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-28",
+    "href": "lectures/15-dataviz2/slides.html#section-28",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(\n  data = filter(penguins, sex == \"male\"),\n  aes(x = bill_length_mm,\n      y = flipper_length_mm,\n      color = species)) +\n  geom_point(size = 2, alpha = 0.5) +\n  geom_point(\n    data = big_males,\n    size = 4) +\n  theme_minimal()"
   },
   {
     "objectID": "lectures/28-geospatial3/slides.html#leaflet-web-interactive-maps",
