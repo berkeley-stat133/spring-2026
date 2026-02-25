@@ -117,6 +117,228 @@ ggplot(data = penguins,
 :::
 
 
+# More on Mappings
+
+## Recap
+
+- An [aesthetic mapping]{.hilit} links a variable in the data to a visual attribute.
+- `ggplot()` and `geom_()` have a `mapping` argument.
+- We use the `aes()` to specify such mappings, e.g.
+    + `ggplot(..., aes(x = species))`
+    + `geom_bar(aes(x = species))`
+
+
+## Global -vs- Local Mappings
+
+We distinguish 2 types of aesthetic mappings:
+
+- [Global Mappings]{.hilit}: those specified inside `ggplot()`
+
+\
+
+- [Local Mappings]{.hilit}: those specified inside `geom_()` functions
+
+
+##  {.smaller .nostretch}
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+#| output-location: fragment
+#| fig-width: 8
+#| fig-height: 7
+# global mappings
+ggplot(data = penguins,
+       aes(x = bill_length_mm, 
+           y = flipper_length_mm)) +
+  geom_point()
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r}
+#| output-location: fragment
+#| fig-width: 8
+#| fig-height: 7
+# local mappings
+ggplot(data = penguins) +
+  geom_point(
+    aes(x = bill_length_mm, 
+        y = flipper_length_mm))  
+```
+:::
+:::::
+
+
+##  {.smaller .nostretch}
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+#| output-location: fragment
+#| fig-width: 8
+#| fig-height: 7
+# global mappings
+ggplot(data = penguins,
+       aes(x = bill_length_mm, 
+           y = flipper_length_mm)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r height="100%"}
+#| output-location: fragment
+#| fig-width: 8
+#| fig-height: 7
+# local mappings (be careful!!!)
+ggplot(data = penguins) +
+  geom_point(
+    aes(x = bill_length_mm, 
+        y = flipper_length_mm))  +
+  geom_smooth(method = "lm")
+```
+:::
+:::::
+
+
+##  {.smaller .nostretch}
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+#| fig-width: 8
+#| fig-height: 7
+# global mappings
+ggplot(data = penguins,
+       aes(x = bill_length_mm, 
+           y = flipper_length_mm)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r height="100%"}
+#| output-location: fragment
+#| fig-width: 8
+#| fig-height: 7
+# local mappings (be careful!!!)
+ggplot(data = penguins) +
+  geom_point(aes(x = bill_length_mm, 
+                 y = flipper_length_mm))  +
+  geom_smooth(aes(x = bill_length_mm, 
+                  y = flipper_length_mm),
+              method = "lm")
+```
+:::
+:::::
+
+
+##  {.smaller .nostretch}
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+#| output-location: fragment
+#| fig-width: 8
+#| fig-height: 7
+# global mappings
+ggplot(data = penguins,
+       aes(x = bill_length_mm, 
+           y = flipper_length_mm,
+           color = species)) +
+  geom_point()
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r}
+#| output-location: fragment
+#| fig-width: 8
+#| fig-height: 7
+# local mappings
+ggplot(data = penguins) +
+  geom_point(
+    aes(x = bill_length_mm, 
+        y = flipper_length_mm,
+        color = species))  
+```
+:::
+:::::
+
+
+##  {.smaller .nostretch}
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+#| output-location: fragment
+#| fig-width: 8
+#| fig-height: 7
+# global mappings
+ggplot(data = penguins,
+       aes(x = bill_length_mm, 
+           y = flipper_length_mm,
+           color = species)) +
+  geom_point(size = 3) +
+  geom_smooth(method = "lm")
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r height="100%"}
+#| output-location: fragment
+#| fig-width: 8
+#| fig-height: 7
+# global and local mappings
+ggplot(data = penguins,
+       aes(x = bill_length_mm, 
+           y = flipper_length_mm)) +
+  geom_point(size=3, aes(color = species)) +
+  geom_smooth(method = "lm",
+              color = "black")
+```
+:::
+:::::
+
+
+##  {.smaller .nostretch}
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+#| output-location: fragment
+#| fig-width: 8
+#| fig-height: 7
+# global mappings
+ggplot(data = penguins,
+       aes(x = bill_length_mm, 
+           y = flipper_length_mm,
+           color = species)) +
+  geom_smooth(method = "lm") +
+  geom_point(size = 3)
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r height="100%"}
+#| output-location: fragment
+#| fig-width: 8
+#| fig-height: 7
+# global and local mappings
+ggplot(data = penguins,
+       aes(x = bill_length_mm, 
+           y = flipper_length_mm)) +
+  geom_smooth(method = "lm",
+              color = "black") +
+  geom_point(size=3, aes(color = species))
+```
+:::
+:::::
+
+
 # More Graphical Elements
 
 ## Additional graphical elements
@@ -246,7 +468,7 @@ ggplot(data = penguins,
 ggplot(data = penguins,
        mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
   geom_point() +
-  facet_grid(. ~ species)
+  facet_wrap(~ species, nrow = 2)
 ```
 
 
@@ -258,7 +480,31 @@ ggplot(data = penguins,
 ggplot(data = penguins,
        mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
   geom_point() +
-  facet_grid(species ~ .)
+  facet_grid(. ~ species)  # facet_grid(cols = vars(species))
+```
+
+
+## {.smaller .nostretch auto-animate=true}
+
+```{r}
+#| out-width: "95%"
+#| output-location: fragment
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+  geom_point() +
+  facet_grid(species ~ .)  # facet_grid(rows = vars(species))
+```
+
+
+## {.smaller .nostretch auto-animate=true}
+
+```{r}
+#| out-width: "95%"
+#| output-location: fragment
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+  geom_point() +
+  facet_grid(species ~ island)
 ```
 
 
@@ -271,6 +517,12 @@ ggplot(data = penguins,
 - `theme_minimal()`
 - `theme_classic()`
 - `theme_light()`
+
+. . .
+
+There's also the package `"ggthemes"`
+
+<https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/>
 
 
 ## {.smaller .nostretch auto-animate=true}
@@ -416,7 +668,7 @@ ggplot(data = penguins,
        mapping = aes(x = bill_length_mm, 
                      y = flipper_length_mm,
                      color = species)) +
-  geom_point()
+  geom_point(size = 3)
 ```
 :::
 
@@ -429,7 +681,7 @@ ggplot(data = penguins,
        mapping = aes(x = bill_length_mm, 
                      y = flipper_length_mm,
                      color = species)) +
-  geom_point()
+  geom_point(size = 3)
 ```
 :::
 :::
@@ -445,7 +697,7 @@ ggplot(data = penguins,
        mapping = aes(x = bill_length_mm, 
                      y = flipper_length_mm,
                      color = species)) +
-  geom_point() +
+  geom_point(size = 3) +
   scale_x_continuous(limits = c(0, 60))
 ```
 :::
@@ -459,7 +711,7 @@ ggplot(data = penguins,
        mapping = aes(x = bill_length_mm, 
                      y = flipper_length_mm,
                      color = species)) +
-  geom_point() +
+  geom_point(size = 3) +
   scale_x_continuous(limits = c(0, 60))
 ```
 :::
@@ -475,7 +727,7 @@ ggplot(data = penguins,
        mapping = aes(x = bill_length_mm, 
                      y = flipper_length_mm,
                      color = species)) +
-  geom_point() +
+  geom_point(size = 3) +
   scale_x_continuous(limits = c(0, 60)) +
   scale_y_continuous(limits = c(160, 240))
 ```
@@ -490,7 +742,7 @@ ggplot(data = penguins,
        mapping = aes(x = bill_length_mm, 
                      y = flipper_length_mm,
                      color = species)) +
-  geom_point() +
+  geom_point(size = 3) +
   scale_x_continuous(limits = c(0, 60)) +
   scale_y_continuous(limits = c(160, 240))
 ```
@@ -508,7 +760,7 @@ ggplot(data = penguins,
        mapping = aes(x = bill_length_mm, 
                      y = flipper_length_mm,
                      color = species)) +
-  geom_point()
+  geom_point(size = 3)
 ```
 :::
 
@@ -521,7 +773,7 @@ ggplot(data = penguins,
        mapping = aes(x = bill_length_mm, 
                      y = flipper_length_mm,
                      color = species)) +
-  geom_point()
+  geom_point(size = 3)
 ```
 :::
 :::
@@ -537,7 +789,7 @@ ggplot(data = penguins,
        mapping = aes(x = bill_length_mm, 
                      y = flipper_length_mm,
                      color = species)) +
-  geom_point() +
+  geom_point(size = 3) +
   scale_color_manual(
     values = c("orange", "magenta", "turquoise"))
 ```
@@ -552,7 +804,7 @@ ggplot(data = penguins,
        mapping = aes(x = bill_length_mm, 
                      y = flipper_length_mm,
                      color = species)) +
-  geom_point() +
+  geom_point(size = 3) +
   scale_color_manual(
     values = c("orange", "magenta", "turquoise"))
 ```
@@ -560,4 +812,119 @@ ggplot(data = penguins,
 :::
 
 
+# Bonus Example
 
+## {.smaller .nostretch}
+
+```{r}
+#| output-location: fragment
+#| code-line-numbers: "1|1-2|1-3|1-4|1-6"
+big_males <- penguins |> 
+  filter(sex == "male") |> 
+  group_by(species) |> 
+  slice_max(body_mass_g)
+
+big_males
+```
+
+
+## {.smaller .nostretch}
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+#| output-location: fragment
+ggplot() +
+  geom_point(
+    data = filter(penguins, sex == "male"),
+    aes(x = bill_length_mm,
+        y = flipper_length_mm,
+        color = species),
+    size = 0.5, alpha = 0.5) +
+  geom_point(
+    data = big_males,
+    aes(x = bill_length_mm,
+        y = flipper_length_mm,
+        color = species),
+    size = 4) +
+  theme_minimal()
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot() +
+  geom_point(
+    data = filter(penguins, sex == "male"),
+    aes(x = bill_length_mm,
+        y = flipper_length_mm,
+        color = species),
+    size = 2, alpha = 0.5) +
+  geom_point(
+    data = big_males,
+    aes(x = bill_length_mm,
+        y = flipper_length_mm,
+        color = species),
+    size = 4) +
+  theme_minimal()
+```
+:::
+
+::::
+
+
+##
+
+Because the mappings for `x`, `y` and `color` are the same in both calls to `geom_point()`
+
+::: {.nonincremental}
+- `x = bill_length_mm`
+- `y = flipper_length_mm`
+- `color = species`
+:::
+
+we can simplify the command in the previous slides as follows (next slide)
+
+## {.smaller .nostretch}
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+#| output-location: fragment
+ggplot(
+  data = filter(penguins, sex == "male"),
+  aes(x = bill_length_mm,
+      y = flipper_length_mm,
+      color = species)) +
+  geom_point(size = 2, alpha = 0.5) +
+  geom_point(
+    data = big_males,
+    size = 4) +
+  theme_minimal()
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(
+  data = filter(penguins, sex == "male"),
+  aes(x = bill_length_mm,
+      y = flipper_length_mm,
+      color = species)) +
+  geom_point(size = 2, alpha = 0.5) +
+  geom_point(
+    data = big_males,
+    size = 4) +
+  theme_minimal()
+```
+:::
+
+::::
