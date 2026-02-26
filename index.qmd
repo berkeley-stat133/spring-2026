@@ -228,7 +228,7 @@ Lab 5: [__Quiz 2__]{.label-Quiz} | [slides](labs/lab5/slides.html) | [PS4](https
 
 [Dataviz II](lectures/15-dataviz2/slides.html)
 
-Lab 6: slides | PS5 
+Lab 6: [slides](labs/lab6/slides.html) | [PS5](https://bcourses.berkeley.edu/courses/1551809/assignments/9021598) 
 
 Dataviz III | Proj3 
 :::
