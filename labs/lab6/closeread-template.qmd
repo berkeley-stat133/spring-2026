@@ -1,0 +1,94 @@
+---
+title: "Closeread Template"
+author: "Your Name"
+format: 
+  closeread-html:
+    theme: cosmo
+    cr-style:
+      section-background-color: white
+      narrative-background-color-sidebar: black
+      narrative-text-color-sidebar: white
+      narrative-font-size: 2em
+embed-resources: true
+---
+
+```{r setup, include=FALSE}
+# load packages and/or import data set(s)
+library(tidyverse)
+```
+
+
+:::: {.cr-section}
+
+This is a sample closeread document. @cr-iris
+
+The narrative appears on this side bar (left margin).
+
+The image on the right depicts three species of iris flowers and their corresponding Sepal and Petal elements.
+
+::: {#cr-iris}
+![](https://miro.medium.com/v2/resize:fit:1400/1*f6KbPXwksAliMIsibFyGJw.png)
+:::
+
+We refer to this image element as a __sticky__ element. Why? Because as you scroll down, the image of the iris flowers gets stuck in the same place. 
+
+When you trigger a sticky element, it will be displayed in the main section 
+(to the right of this sidebar).
+
+
+Here's another sticky element. It's a simple scatter plot based on the `iris` data set, which is a built-in data frame in R. @cr-plot1
+
+::: {#cr-plot1}
+```{r}
+ggplot(data = iris, 
+       aes(x = Sepal.Length, y = Petal.Length, color = Species)) +
+  geom_point() +
+  theme_bw() +
+  labs(title = "Iris flowers",
+       x = "Sepal Length", 
+       y = "Petal Length")
+```
+:::
+
+
+| This narrative section is displayed as a continuous piece of text instead of being broken down into separated paragraphs.
+|
+| There are 3 species of iris flowers:
+|
+| - Setosa (red)
+| - Versicolor (green)
+| - Virginica (blue)
+
+
+Here's a third sticky element. @cr-table1
+
+::: {#cr-table1}
+```{r}
+iris |>
+  group_by(Species) |> 
+  summarize(avg_sepal_length = mean(Sepal.Length),
+            sd_sepal_length = sd(Sepal.Length)) |> 
+  knitr::kable(format = "html")
+```
+:::
+
+It's just a table with summary statistics.
+
+
+And finally a fourth sticky element. @cr-plot2
+
+::: {#cr-plot2}
+```{r}
+ggplot(data = iris, 
+       aes(x = Sepal.Length, fill = Species)) +
+  geom_histogram(bins = 20, color = "white") +
+  facet_wrap(~ Species) +
+  theme_bw() +
+  theme(legend.position = "none")
+```
+:::
+
+A colorful plot using facets to show the distribution of Sepal Length among the three iris species.
+
+
+::::

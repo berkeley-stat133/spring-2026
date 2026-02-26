@@ -235,9 +235,11 @@ Trigger a sticky element @cr-sticky
 
 # Your Turn
 
-# Installing Closeread Extension
+You will create your own scrollytelling document with 3 sticky elements. 
 
-## Folder `stat133/`
+## 1. Create New Folder in `stat133/`
+
+Begin the same way as always: \
 
 ``` {.markdown code-line-numbers="false"}
   stat133/
@@ -263,7 +265,7 @@ Trigger a sticky element @cr-sticky
 
 5)  `cd` to `lab6`
 
-## Installing Closeread extension
+## 2. Install the Closeread extension
 
 In order to render a quarto document as a **closeread** document you need the closeread quarto extension (ideally in your working directory).
 
@@ -303,9 +305,7 @@ You will be prompted with the following (type **Yes**)
 ? View documentation using default browser? (Y/n) › 
 ```
 
-# Download Template
-
-## 
+## 3. Download Template
 
 Go to bCourses:
 
@@ -349,19 +349,19 @@ lab6/
 
 Open the template file and preview it.
 
-# Quarto Pub
+# 4. Your Task: Quarto Pub
 
 We'll use the `mpg` data frame from `"ggplot2"` which is part of *tidyverse*.\
 
-Your task:
+You will: \
 
--   Make a graphic of your choice using the `mpg` data
+- Build a scrolling narrative explaining a pattern in the data \
 
--   Create a scrollytelling document to reveal a trend in your graphic
+- Reveal information progressively using sticky elements \
 
--   Use at least 3 zoom scenes\
+- Include at least 3 sticky elements: a graph, an image, and a table \
 
-## Open a new qmd file
+## 5. Open a new qmd file
 
 Copy the YAML header of the closeread template to your qmd file.
 
@@ -381,7 +381,9 @@ embed-resources: true
 ---
 ```
 
-## Insert a setup code chunk
+## 6. Insert a setup code chunk
+
+This chunk loads required packages and runs before the document renders.
 
 ``` r
 #| label: setup
@@ -390,13 +392,9 @@ embed-resources: true
 library(tidyverse)
 ```
 
-\
+## 7. Closeread Section
 
-This is intended to load any required packages and/or to import external data files (e.g. data sets).
-
-## Closeread Section
-
-Include a pair of fenced elements to define the [closeread section]{.bold-hilit}
+Include a pair of fenced divs to define the [closeread section]{.bold-hilit}
 
 ``` {.markdown code-line-numbers="false"}
 :::: {.cr-section}
@@ -405,9 +403,13 @@ Include a pair of fenced elements to define the [closeread section]{.bold-hilit}
 ::::
 ```
 
-## Sticky element
+Think of this section as the scrolling storytelling area.
 
-Define a sticky element.
+## 8. Create a Sticky element
+
+Sticky elements are objects that remain fixed while the reader scrolls. \
+
+Define a sticky element. \
 
 ``` {.markdown code-line-numbers="false"}
 ::: {#cr-plot1}
@@ -417,7 +419,7 @@ Define a sticky element.
 
 \
 
-Inside the sticky element, insert a code chunk to make a ggplot graphic of your choice, based on `mpg` data
+Inside the sticky element, insert a code chunk to make a ggplot graphic of your choice, based on `mpg` data.
 
 ``` r
 ggplot(data = mpg,
@@ -425,10 +427,44 @@ ggplot(data = mpg,
   geom_????()
 ```
 
-## Trigger sticky element
+## 9. Trigger sticky element
 
 Inside the closeread section, but outside the sticky element, write some narrative and [trigger]{.hilit} the sticky previously defined `@cr-plot1`
 
 \
 
-And then preview or render your quarto closeread.
+Repeat these steps for the image and the table. \ 
+Then preview or render your quarto closeread.
+
+## Submission to bCourses
+
+Submit the URL (link) of your published document to the corresponding assignment in bCourses.
+
+See [Assignments tab \> Quarto Publications \> Pub5]{.bold-hilit}
+
+# Problem Set 5
+
+## Pset 5
+
+Available in bCourses:
+
+See [Assignments tab \> Problem Sets \> PS5]{.bold-hilit}
+
+You'll find 2 files:
+
+-   `ps5.html`: instructions
+
+-   `ps5.qmd`: template file to write your answers
+
+. . .
+
+In case of trouble: Go to Files tab, folder `problem-sets`, folder `ps5`, and download the `qmd` file.
+
+Sometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome).
+
+## Pset 5 Submission
+
+-   Submit your `qmd` and `html` files to bCourses.
+-   Use assignment problem set **ps5**
+-   Graded credit / no-credit
+-   Credit for evidence of earnest engagement (just don't submit a blank or empty template file)
