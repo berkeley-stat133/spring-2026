@@ -2093,7 +2093,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 10     Damion Lee   PHO   SG           78    210 October 2… US      6         \n2 3      Josh Hart    NYK   SG           77    215 March 6, … US      7         \n3 10     Justin Mina… POR   SF           77    205 March 26,… US      2         \n4 7      Jaylen Brown BOS   SF           78    223 October 2… US      8         \n5 6      DeAndre Jor… DEN   C            83    265 July 21, … US      16        \n6 24     Brandon Mil… CHO   SF           79    200 November … US      1         \n7 5      Quentin Gri… DAL   SG           76    210 May 8, 20… US      3         \n8 8      David Roddy  ATL   PF           77    255 March 27,… US      2         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 13     Tyrese Mart… BRK   SG           78    215 March 7, … US      1         \n2 17     Stanley Umu… MIL   SG           78    210 April 12,… US      2         \n3 22     Andrew Wigg… MIA   SF           78    197 February … CA      10        \n4 23     Keon Ellis   SAC   SG           76    175 January 8… US      2         \n5 13     Tristan Tho… CLE   C            81    254 March 13,… CA      13        \n6 22     Richaun Hol… WAS   PF           81    235 October 1… US      9         \n7 11     Brook Lopez  MIL   C            85    282 April 1, … US      16        \n8 4      Rob Dilling… MIN   PG           74    175 January 4… US      R         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -2520,7 +2520,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"gold\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"bronze\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -2534,7 +2534,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"senior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"freshman\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -3168,11 +3168,18 @@
     "text": "Pset 4 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps4\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
   {
-    "objectID": "labs/lab6/scrollytelling.html",
-    "href": "labs/lab6/scrollytelling.html",
-    "title": "Fuel Efficiency and Engine Size",
+    "objectID": "labs/lab6/closeread-template.html",
+    "href": "labs/lab6/closeread-template.html",
+    "title": "Closeread Template",
     "section": "",
-    "text": "How Engine Size Shapes Fuel Efficiency\n\n\n\n\nModern cars vary widely in fuel efficiency. As you scroll, we’ll explore how engine displacement relates to miles per gallon.\n\n\n\n\nStep 1 — The Full Dataset\n\n\n\n\nAt first glance, fuel efficiency might look random across vehicles.\nEach point represents a car model in the mpg dataset.\nScroll to investigate whether a pattern begins to emerge.\n\n\n\n\nStep 2 — A Relationship Appears\n\n\n\n\nNow focus on the overall direction of the cloud of points.\nDo you notice how fuel efficiency changes as engine size increases?\nLarger engines generally consume more fuel.\n\n\n\n\nStep 3 — Interpreting the Trend\n\n\n\n\nThe downward trend suggests a negative relationship:\nHigher displacement → lower MPG\nSmaller engines → higher efficiency\nThis is a classic tradeoff between performance and efficiency.\n\n\n\n\n\n\n\n\n\nSticky Visualization\n\n\n\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "This is a sample closeread document.\n\n\n\n\nThe narrative appears on this side bar (left margin).\n\n\n\n\nThe image on the right depicts three species of iris flowers and their corresponding Sepal and Petal elements.\n\n\n\n\nWe refer to this image element as a sticky element. Why? Because as you scroll down, the image of the iris flowers gets stuck in the same place.\n\n\n\n\nWhen you trigger a sticky element, it will be displayed in the main section (to the right of this sidebar).\n\n\n\n\nHere’s another sticky element. It’s a simple scatter plot based on the iris data set, which is a built-in data frame in R.\n\n\n\n\nThis narrative section is displayed as a continuous piece of text instead of being broken down into separated paragraphs.\n\nThere are 3 species of iris flowers:\n\n- Setosa (red)\n- Versicolor (green)\n- Virginica (blue)\n\n\n\n\nHere’s a third sticky element.\n\n\n\n\nIt’s just a table with summary statistics.\n\n\n\n\nAnd finally a fourth sticky element.\n\n\n\n\nA colorful plot using facets to show the distribution of Sepal Length among the three iris species.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecies\navg_sepal_length\nsd_sepal_length\n\n\n\n\nsetosa\n5.006\n0.3524897\n\n\nversicolor\n5.936\n0.5161711\n\n\nvirginica\n6.588\n0.6358796"
+  },
+  {
+    "objectID": "labs/lab6/scrollytelling-demo.html",
+    "href": "labs/lab6/scrollytelling-demo.html",
+    "title": "MT Cars Report",
+    "section": "",
+    "text": "This is a sample closeread document using the mtcars dataset.\n\n\n\n\nThe narrative appears in this sidebar (left margin), while visual elements appear on the right.\n\n\n\n\nThe mtcars dataset contains measurements for 32 cars from the 1970s, including fuel efficiency, engine size, horsepower, and transmission type.\n\n\n\n\nWe call this a sticky element because it stays fixed on the screen while you scroll through the explanation.\n\n\n\n\nEngine displacement (disp) measures engine size. Larger engines typically generate more power but often consume more fuel.\n\n\n\n\nHere is another sticky element showing the relationship between engine size and fuel efficiency.\n\n\n\n\nAs you scroll, notice the downward trend: cars with larger engines tend to have lower miles per gallon. This illustrates a common tradeoff between performance and efficiency.\n\n\n\n\nThis narrative section continues as a single block of explanatory text.\n\nThe mtcars dataset includes several important variables:\n\n- mpg: fuel efficiency\n- disp: engine displacement\n- hp: horsepower\n- wt: vehicle weight\n- am: transmission type (0 = automatic, 1 = manual)\n\n\n\n\nNext is a sticky table summarizing average fuel efficiency by transmission type.\n\n\n\n\nTables allow us to move from individual observations to summarized comparisons across groups.\n\n\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTransmission\nAverage MPG\nAverage Horsepower\nAverage Weight\n\n\n\n\nAutomatic\n17.14737\n160.2632\n3.768895\n\n\nManual\n24.39231\n126.8462\n2.411000"
   },
   {
     "objectID": "labs/lab1/slides.html#meet-your-gsi",
@@ -3392,11 +3399,11 @@
     "text": "4. Trigger sticky elements\n:::: {.cr-section}\nSome interesting narrative\n\n::: {#cr-sticky}\n![](https://www.r-project.org/Rlogo.png)\n:::\n\nTrigger a sticky element @cr-sticky\n::::"
   },
   {
-    "objectID": "labs/lab6/slides.html#folder-stat133",
-    "href": "labs/lab6/slides.html#folder-stat133",
+    "objectID": "labs/lab6/slides.html#create-new-folder-in-stat133",
+    "href": "labs/lab6/slides.html#create-new-folder-in-stat133",
     "title": "Lab 6",
-    "section": "Folder stat133/",
-    "text": "Folder stat133/\n  stat133/\n    labs/\n        lab1/\n        ...\n        lab5/\n    psets/\n        pset1/\n        ...\n        pset4/"
+    "section": "1. Create New Folder in stat133/",
+    "text": "1. Create New Folder in stat133/\nBegin the same way as always:\n\n  stat133/\n    labs/\n        lab1/\n        ...\n        lab5/\n    psets/\n        pset1/\n        ...\n        pset4/"
   },
   {
     "objectID": "labs/lab6/slides.html#terminal-in-ide",
@@ -3406,29 +3413,29 @@
     "text": "Terminal in IDE\n\nLaunch your IDE (Positron or RStudio)\nLaunch your Terminal (next to the Console tab)\ncd to your stat133/labs/ folder\ncreate a folder for this lab: mkdir lab6\ncd to lab6"
   },
   {
-    "objectID": "labs/lab6/slides.html#installing-closeread-extension-1",
-    "href": "labs/lab6/slides.html#installing-closeread-extension-1",
+    "objectID": "labs/lab6/slides.html#install-the-closeread-extension",
+    "href": "labs/lab6/slides.html#install-the-closeread-extension",
     "title": "Lab 6",
-    "section": "Installing Closeread extension",
-    "text": "Installing Closeread extension\nIn order to render a quarto document as a closeread document you need the closeread quarto extension (ideally in your working directory).\n\n\n\nBTW: Quarto extensions are the equivalent of R packages."
+    "section": "2. Install the Closeread extension",
+    "text": "2. Install the Closeread extension\nIn order to render a quarto document as a closeread document you need the closeread quarto extension (ideally in your working directory).\n\n\n\nBTW: Quarto extensions are the equivalent of R packages."
   },
   {
-    "objectID": "labs/lab6/slides.html#installing-closeread-extension-2",
-    "href": "labs/lab6/slides.html#installing-closeread-extension-2",
+    "objectID": "labs/lab6/slides.html#installing-closeread-extension",
+    "href": "labs/lab6/slides.html#installing-closeread-extension",
     "title": "Lab 6",
     "section": "Installing Closeread extension",
     "text": "Installing Closeread extension\nRun the following command in your working directory\n\n\nTerminal\n\nquarto add qmd-lab/closeread\n\n\n\n\nYou will be prompted with the following (type Yes)\n? Do you trust the authors of this extension (Y/n) ›\n\n\n? Would you like to continue (Y/n) › \n\n\n? View documentation using default browser? (Y/n) ›"
   },
   {
-    "objectID": "labs/lab6/slides.html#section",
-    "href": "labs/lab6/slides.html#section",
+    "objectID": "labs/lab6/slides.html#download-template",
+    "href": "labs/lab6/slides.html#download-template",
     "title": "Lab 6",
-    "section": "",
-    "text": "Go to bCourses:\nFiles tab &gt; lab-materials &gt; lab6-quarto-closeread1\n\n\n\nDownload template file: closeread-template.qmd\nhttps://bcourses.berkeley.edu/courses/1551809/files/folder/lab-materials/lab6-quarto-closeread1\n\n\n\n\nCopy or move template file to your lab6/ directory."
+    "section": "3. Download Template",
+    "text": "3. Download Template\nGo to bCourses:\nFiles tab &gt; lab-materials &gt; lab6-quarto-closeread1\n\n\n\nDownload template file: closeread-template.qmd\nhttps://bcourses.berkeley.edu/courses/1551809/files/folder/lab-materials/lab6-quarto-closeread1\n\n\n\n\nCopy or move template file to your lab6/ directory."
   },
   {
-    "objectID": "labs/lab6/slides.html#section-1",
-    "href": "labs/lab6/slides.html#section-1",
+    "objectID": "labs/lab6/slides.html#section",
+    "href": "labs/lab6/slides.html#section",
     "title": "Lab 6",
     "section": "",
     "text": "Important\n\n\nMake sure the template file closeread-template.qmd and the closeread extension are in the same working directory!\n\n\n\n\n\n\nYour lab6/ folder should look like this:\nlab6/\n  _extensions/\n  closeread-template.qmd\n\n\n\n\nOpen the template file and preview it."
@@ -3437,36 +3444,57 @@
     "objectID": "labs/lab6/slides.html#open-a-new-qmd-file",
     "href": "labs/lab6/slides.html#open-a-new-qmd-file",
     "title": "Lab 6",
-    "section": "Open a new qmd file",
-    "text": "Open a new qmd file\nCopy the YAML header of the closeread template to your qmd file.\n\n\nmycloseread.qmd\n\n---\ntitle: \"My First Closeread Story\"\nauthor: \"Your Name\"\nformat: \n  closeread-html:\n    theme: cosmo\n    cr-style:\n      section-background-color: white\n      narrative-background-color-sidebar: black\n      narrative-text-color-sidebar: white\n      narrative-font-size: 2em\nembed-resources: true\n---"
+    "section": "5. Open a new qmd file",
+    "text": "5. Open a new qmd file\nCopy the YAML header of the closeread template to your qmd file.\n\n\nmycloseread.qmd\n\n---\ntitle: \"My First Closeread Story\"\nauthor: \"Your Name\"\nformat: \n  closeread-html:\n    theme: cosmo\n    cr-style:\n      section-background-color: white\n      narrative-background-color-sidebar: black\n      narrative-text-color-sidebar: white\n      narrative-font-size: 2em\nembed-resources: true\n---"
   },
   {
     "objectID": "labs/lab6/slides.html#insert-a-setup-code-chunk",
     "href": "labs/lab6/slides.html#insert-a-setup-code-chunk",
     "title": "Lab 6",
-    "section": "Insert a setup code chunk",
-    "text": "Insert a setup code chunk\n#| label: setup\n#| include: false\n# load packages and/or import data\nlibrary(tidyverse)\n\n\nThis is intended to load any required packages and/or to import external data files (e.g. data sets)."
+    "section": "6. Insert a setup code chunk",
+    "text": "6. Insert a setup code chunk\nThis chunk loads required packages and runs before the document renders.\n#| label: setup\n#| include: false\n# load packages and/or import data\nlibrary(tidyverse)"
   },
   {
     "objectID": "labs/lab6/slides.html#closeread-section-1",
     "href": "labs/lab6/slides.html#closeread-section-1",
     "title": "Lab 6",
-    "section": "Closeread Section",
-    "text": "Closeread Section\nInclude a pair of fenced elements to define the closeread section\n:::: {.cr-section}\n\n\n::::"
+    "section": "7. Closeread Section",
+    "text": "7. Closeread Section\nInclude a pair of fenced divs to define the closeread section\n:::: {.cr-section}\n\n\n::::\nThink of this section as the scrolling storytelling area."
   },
   {
-    "objectID": "labs/lab6/slides.html#sticky-element",
-    "href": "labs/lab6/slides.html#sticky-element",
+    "objectID": "labs/lab6/slides.html#create-a-sticky-element",
+    "href": "labs/lab6/slides.html#create-a-sticky-element",
     "title": "Lab 6",
-    "section": "Sticky element",
-    "text": "Sticky element\nDefine a sticky element.\n::: {#cr-plot1}\n\n:::\n\n\nInside the sticky element, insert a code chunk to make a ggplot graphic of your choice, based on mpg data\nggplot(data = mpg,\n       aes(...)) +\n  geom_????()"
+    "section": "8. Create a Sticky element",
+    "text": "8. Create a Sticky element\nSticky elements are objects that remain fixed while the reader scrolls.\n\nDefine a sticky element.\n\n::: {#cr-plot1}\n\n:::\n\n\nInside the sticky element, insert a code chunk to make a ggplot graphic of your choice, based on mpg data.\nggplot(data = mpg,\n       aes(...)) +\n  geom_????()"
   },
   {
     "objectID": "labs/lab6/slides.html#trigger-sticky-element",
     "href": "labs/lab6/slides.html#trigger-sticky-element",
     "title": "Lab 6",
-    "section": "Trigger sticky element",
-    "text": "Trigger sticky element\nInside the closeread section, but outside the sticky element, write some narrative and trigger the sticky previously defined @cr-plot1\n\n\nAnd then preview or render your quarto closeread."
+    "section": "9. Trigger sticky element",
+    "text": "9. Trigger sticky element\nInside the closeread section, but outside the sticky element, write some narrative and trigger the sticky previously defined @cr-plot1\n\n\nRepeat these steps for the image and the table.   Then preview or render your quarto closeread."
+  },
+  {
+    "objectID": "labs/lab6/slides.html#submission-to-bcourses",
+    "href": "labs/lab6/slides.html#submission-to-bcourses",
+    "title": "Lab 6",
+    "section": "Submission to bCourses",
+    "text": "Submission to bCourses\nSubmit the URL (link) of your published document to the corresponding assignment in bCourses.\nSee Assignments tab &gt; Quarto Publications &gt; Pub5"
+  },
+  {
+    "objectID": "labs/lab6/slides.html#pset-5",
+    "href": "labs/lab6/slides.html#pset-5",
+    "title": "Lab 6",
+    "section": "Pset 5",
+    "text": "Pset 5\nAvailable in bCourses:\nSee Assignments tab &gt; Problem Sets &gt; PS5\nYou’ll find 2 files:\n\nps5.html: instructions\nps5.qmd: template file to write your answers\n\n\nIn case of trouble: Go to Files tab, folder problem-sets, folder ps5, and download the qmd file.\nSometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome)."
+  },
+  {
+    "objectID": "labs/lab6/slides.html#pset-5-submission",
+    "href": "labs/lab6/slides.html#pset-5-submission",
+    "title": "Lab 6",
+    "section": "Pset 5 Submission",
+    "text": "Pset 5 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps5\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
   {
     "objectID": "labs/lab5/demo-slides.html#why-ev-adoption-matters",
@@ -4412,7 +4440,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 2 1"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 1 6"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#meet-the-palmer-penguins",

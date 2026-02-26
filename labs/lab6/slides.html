@@ -237,7 +237,7 @@ STAT 133
 <p>How would you fill in this code to output this graph? Talk to a partner.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_613c2661" data-update-every="1" tabindex="0" style="top:0;right:0;">
+<div class="countdown" id="timer_4b1655a6" data-update-every="1" tabindex="0" style="top:0;right:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -335,7 +335,7 @@ STAT 133
 <p>What kinds of projects could you use Scrollytelling for?</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_f5d43b72" data-update-every="1" tabindex="0" style="top:0;right:0;">
+<div class="countdown" id="timer_e22491bd" data-update-every="1" tabindex="0" style="top:0;right:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -430,18 +430,15 @@ STAT 133
 <span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a>Trigger a sticky element @cr-sticky</span>
 <span id="cb7-9"><a aria-hidden="true" tabindex="-1"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
+<section>
 <section id="your-turn" class="title-slide slide level1 center">
 <h1>Your Turn</h1>
-
+<p>You will create your own scrollytelling document with 3 sticky elements.</p>
 </section>
-
-<section>
-<section id="installing-closeread-extension" class="title-slide slide level1 center">
-<h1>Installing Closeread Extension</h1>
-
-</section>
-<section id="folder-stat133" class="slide level2">
-<h2>Folder <code>stat133/</code></h2>
+<section id="create-new-folder-in-stat133" class="slide level2">
+<h2>1. Create New Folder in <code>stat133/</code></h2>
+<p>Begin the same way as always:<br>
+</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>  stat133/</span>
 <span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>    labs/</span>
 <span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>        lab1/</span>
@@ -462,8 +459,8 @@ STAT 133
 <li class="fragment"><p><code>cd</code> to <code>lab6</code></p></li>
 </ol>
 </section>
-<section id="installing-closeread-extension-1" class="slide level2">
-<h2>Installing Closeread extension</h2>
+<section id="install-the-closeread-extension" class="slide level2">
+<h2>2. Install the Closeread extension</h2>
 <p>In order to render a quarto document as a <strong>closeread</strong> document you need the closeread quarto extension (ideally in your working directory).</p>
 <p><br>
 </p>
@@ -471,7 +468,7 @@ STAT 133
 <p>BTW: Quarto extensions are the equivalent of R packages.</p>
 </div>
 </section>
-<section id="installing-closeread-extension-2" class="slide level2">
+<section id="installing-closeread-extension" class="slide level2">
 <h2>Installing Closeread extension</h2>
 <p>Run the following command in your working directory</p>
 <div class="code-with-filename">
@@ -492,14 +489,9 @@ STAT 133
 <div class="fragment">
 <pre><code>? View documentation using default browser? (Y/n) › </code></pre>
 </div>
-</section></section>
-<section>
-<section id="download-template" class="title-slide slide level1 center">
-<h1>Download Template</h1>
-
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
+<section id="download-template" class="slide level2">
+<h2>3. Download Template</h2>
 <p>Go to bCourses:</p>
 <p>Files tab &gt; lab-materials &gt; lab6-quarto-closeread1</p>
 <p><br>
@@ -514,7 +506,7 @@ STAT 133
 <p>Copy or move template file to your <code>lab6/</code> directory.</p>
 </div>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section" class="slide level2">
 <h2></h2>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
@@ -544,20 +536,23 @@ STAT 133
 </div>
 </section></section>
 <section>
-<section id="quarto-pub" class="title-slide slide level1 center">
-<h1>Quarto Pub</h1>
+<section id="your-task-quarto-pub" class="title-slide slide level1 center">
+<h1>4. Your Task: Quarto Pub</h1>
 <p>We’ll use the <code>mpg</code> data frame from <code>"ggplot2"</code> which is part of <em>tidyverse</em>.<br>
 </p>
-<p>Your task:</p>
+<p>You will:<br>
+</p>
 <ul>
-<li class="fragment"><p>Make a graphic of your choice using the <code>mpg</code> data</p></li>
-<li class="fragment"><p>Create a scrollytelling document to reveal a trend in your graphic</p></li>
-<li class="fragment"><p>Use at least 3 zoom scenes<br>
+<li class="fragment"><p>Build a scrolling narrative explaining a pattern in the data<br>
+</p></li>
+<li class="fragment"><p>Reveal information progressively using sticky elements<br>
+</p></li>
+<li class="fragment"><p>Include at least 3 sticky elements: a graph, an image, and a table<br>
 </p></li>
 </ul>
 </section>
 <section id="open-a-new-qmd-file" class="slide level2">
-<h2>Open a new qmd file</h2>
+<h2>5. Open a new qmd file</h2>
 <p>Copy the YAML header of the closeread template to your qmd file.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -579,42 +574,77 @@ STAT 133
 </div>
 </section>
 <section id="insert-a-setup-code-chunk" class="slide level2">
-<h2>Insert a setup code chunk</h2>
+<h2>6. Insert a setup code chunk</h2>
+<p>This chunk loads required packages and runs before the document renders.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co">#| label: setup</span></span>
 <span id="cb15-2"><a></a><span class="co">#| include: false</span></span>
 <span id="cb15-3"><a></a><span class="co"># load packages and/or import data</span></span>
 <span id="cb15-4"><a></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br>
-</p>
-<p>This is intended to load any required packages and/or to import external data files (e.g.&nbsp;data sets).</p>
 </section>
 <section id="closeread-section-1" class="slide level2">
-<h2>Closeread Section</h2>
-<p>Include a pair of fenced elements to define the <span class="bold-hilit">closeread section</span></p>
+<h2>7. Closeread Section</h2>
+<p>Include a pair of fenced divs to define the <span class="bold-hilit">closeread section</span></p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>:::: {.cr-section}</span>
 <span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Think of this section as the scrolling storytelling area.</p>
 </section>
-<section id="sticky-element" class="slide level2">
-<h2>Sticky element</h2>
-<p>Define a sticky element.</p>
+<section id="create-a-sticky-element" class="slide level2">
+<h2>8. Create a Sticky element</h2>
+<p>Sticky elements are objects that remain fixed while the reader scrolls.<br>
+</p>
+<p>Define a sticky element.<br>
+</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>::: {#cr-plot1}</span>
 <span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br>
 </p>
-<p>Inside the sticky element, insert a code chunk to make a ggplot graphic of your choice, based on <code>mpg</code> data</p>
+<p>Inside the sticky element, insert a code chunk to make a ggplot graphic of your choice, based on <code>mpg</code> data.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
 <span id="cb18-2"><a></a>       <span class="fu">aes</span>(...)) <span class="sc">+</span></span>
 <span id="cb18-3"><a></a>  geom_????()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="trigger-sticky-element" class="slide level2">
-<h2>Trigger sticky element</h2>
+<h2>9. Trigger sticky element</h2>
 <p>Inside the closeread section, but outside the sticky element, write some narrative and <span class="hilit">trigger</span> the sticky previously defined <code>@cr-plot1</code></p>
 <p><br>
 </p>
-<p>And then preview or render your quarto closeread.</p>
+<p>Repeat these steps for the image and the table. &nbsp; Then preview or render your quarto closeread.</p>
+</section>
+<section id="submission-to-bcourses" class="slide level2">
+<h2>Submission to bCourses</h2>
+<p>Submit the URL (link) of your published document to the corresponding assignment in bCourses.</p>
+<p>See <span class="bold-hilit">Assignments tab &gt; Quarto Publications &gt; Pub5</span></p>
+</section></section>
+<section>
+<section id="problem-set-5" class="title-slide slide level1 center">
+<h1>Problem Set 5</h1>
+
+</section>
+<section id="pset-5" class="slide level2">
+<h2>Pset 5</h2>
+<p>Available in bCourses:</p>
+<p>See <span class="bold-hilit">Assignments tab &gt; Problem Sets &gt; PS5</span></p>
+<p>You’ll find 2 files:</p>
+<ul>
+<li class="fragment"><p><code>ps5.html</code>: instructions</p></li>
+<li class="fragment"><p><code>ps5.qmd</code>: template file to write your answers</p></li>
+</ul>
+<div class="fragment">
+<p>In case of trouble: Go to Files tab, folder <code>problem-sets</code>, folder <code>ps5</code>, and download the <code>qmd</code> file.</p>
+<p>Sometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g.&nbsp;Chrome).</p>
+</div>
+</section>
+<section id="pset-5-submission" class="slide level2">
+<h2>Pset 5 Submission</h2>
+<ul>
+<li class="fragment">Submit your <code>qmd</code> and <code>html</code> files to bCourses.</li>
+<li class="fragment">Use assignment problem set <strong>ps5</strong></li>
+<li class="fragment">Graded credit / no-credit</li>
+<li class="fragment">Credit for evidence of earnest engagement (just don’t submit a blank or empty template file)</li>
+</ul>
 
 
 </section></section>
