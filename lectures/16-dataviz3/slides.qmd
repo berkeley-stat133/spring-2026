@@ -19,10 +19,313 @@ library(ggiraph)
 
 . . .
 
+Objects of class `"ggplot"`
+
+\
+
+. . .
+
 Adding interactivity to ggplots with packages:
 
 - `"plotly"`
 - `"ggiraph"`
+
+
+# `"ggplot"` Objects
+
+## Palmer Penguins {.smaller}
+
+```{r}
+library(palmerpenguins)
+penguins
+```
+
+
+## {.smaller .nostretch}
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+ggplot(
+  data = penguins,
+  mapping = aes(x = bill_length_mm,
+                y = flipper_length_mm,
+                color = species)) +
+  geom_point(size = 2)
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+ggplot(
+  data = penguins,
+  mapping = aes(x = bill_length_mm,
+                y = flipper_length_mm,
+                color = species)) +
+  geom_point(size = 2)
+```
+:::
+
+::::
+
+## {.smaller .nostretch}
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+# we can store ggplot objects
+gg <- ggplot(
+  data = penguins,
+  mapping = aes(x = bill_length_mm,
+                y = flipper_length_mm,
+                color = species)) +
+  geom_point(size = 2)
+
+gg
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+gg <- ggplot(
+  data = penguins,
+  mapping = aes(x = bill_length_mm,
+                y = flipper_length_mm,
+                color = species)) +
+  geom_point(size = 2)
+
+gg
+```
+:::
+
+::::
+
+
+## `"ggplot"` objects
+
+. . .
+
+```{r}
+#| output-location: fragment
+# we can store ggplot objects
+gg <- ggplot(
+  data = penguins,
+  mapping = aes(x = bill_length_mm,
+                 y = flipper_length_mm,
+                 color = species)) +
+  geom_point(size = 2)
+
+class(gg)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+names(gg)
+```
+
+
+## `"ggplot"` objects
+
+. . .
+
+```{r}
+#| output-location: fragment
+#| fig-align: center
+#| fig-width: 10
+#| fig-height: 7
+#| out-width: "65%"
+# we can add layers to ggplot objects
+gg + theme_minimal()
+```
+
+
+## 
+
+```{r}
+#| output-location: fragment
+#| fig-align: center
+#| fig-width: 10
+#| fig-height: 7
+#| out-width: "65%"
+gg1 <- gg + theme_minimal()
+gg2 <- gg1 + labs(title = "Bill Length and Flipper Length")
+gg2
+```
+
+## `"ggplot"` objects
+
+. . .
+
+```{r}
+#| eval: false
+#| fig-align: center
+#| fig-width: 10
+#| fig-height: 7
+#| out-width: "65%"
+# we can save (export) ggplot graphics
+ggsave(filename = "scatterplot1.png", 
+       plot = gg, 
+       width = 9,
+       height = 7, 
+       units = "in")
+```
+
+
+# Example
+
+## {.smaller .nostretch}
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+p1 <- ggplot(penguins,
+  aes(x = bill_length_mm,
+      y = flipper_length_mm,
+      color = species)) +
+  geom_point(alpha = 0) +
+  theme_minimal()
+
+p1
+```
+:::
+
+::: {.column .fragment width="50%"}
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+p1 <- ggplot(penguins,
+  aes(x = bill_length_mm,
+      y = flipper_length_mm,
+      color = species)) +
+  geom_point(alpha = 0) +
+  theme_minimal()
+
+p1
+```
+:::
+
+::::
+
+
+## {.smaller .nostretch}
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+p2 <- p1 +
+  geom_point(
+    data = filter(penguins, species == "Adelie"),
+    aes(x = bill_length_mm,
+        y = flipper_length_mm))
+
+p2
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+p2 <- p1 +
+  geom_point(
+    data = filter(penguins, species == "Adelie"),
+    aes(x = bill_length_mm,
+        y = flipper_length_mm))
+
+p2
+```
+:::
+
+::::
+
+
+## {.smaller .nostretch}
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+p3 <- p1 +
+  geom_point(
+    data = filter(penguins, 
+    species %in% c("Adelie", "Chinstrap")),
+    aes(x = bill_length_mm,
+        y = flipper_length_mm))
+
+p3
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+p3 <- p1 +
+  geom_point(
+    data = filter(penguins, 
+    species %in% c("Adelie", "Chinstrap")),
+    aes(x = bill_length_mm,
+        y = flipper_length_mm))
+
+p3
+```
+:::
+
+::::
+
+
+## {.smaller .nostretch}
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| eval: false
+p4 <- p1 +
+  geom_point(
+    data = penguins,
+    aes(x = bill_length_mm,
+        y = flipper_length_mm,
+        color = species))
+
+p4
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 7
+p4 <- p1 +
+  geom_point(
+    data = penguins,
+    aes(x = bill_length_mm,
+        y = flipper_length_mm,
+        color = species))
+
+p4
+```
+:::
+
+::::
+
+
+# `plotly` and `ggiraph`
 
 ## Installation
 
@@ -51,14 +354,6 @@ In R, we have the package `"plotly"`.
 . . .
 
 _plotly_ comes with its own grammar of graphics syntax. Interestingly, we can use the `ggplotly()` function to make a ggplot graphic into a web-interactive graphic.
-
-
-## Palmer Penguins {.smaller}
-
-```{r}
-library(palmerpenguins)
-penguins
-```
 
 
 ## {.smaller .nostretch auto-animate=true}
@@ -166,7 +461,7 @@ ggplotly(gg2)
 
 ## About `"ggiraph"`
 
-This package allows us to make ggplot2 graphics interactive following the same framewokr and syntax of adding layers to a graphic.
+This package allows us to make ggplot2 graphics interactive following the same framework and syntax of adding layers to a graphic.
 
 \
 
@@ -243,7 +538,6 @@ girafe(ggobj = gg3)
 ##
 
 ```{r}
-#| code-fold: true
 gg4 <- ggplot(
   data = penguins,
   aes(x = bill_length_mm, 
