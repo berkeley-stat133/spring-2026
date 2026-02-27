@@ -2093,7 +2093,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 13     Tyrese Mart… BRK   SG           78    215 March 7, … US      1         \n2 17     Stanley Umu… MIL   SG           78    210 April 12,… US      2         \n3 22     Andrew Wigg… MIA   SF           78    197 February … CA      10        \n4 23     Keon Ellis   SAC   SG           76    175 January 8… US      2         \n5 13     Tristan Tho… CLE   C            81    254 March 13,… CA      13        \n6 22     Richaun Hol… WAS   PF           81    235 October 1… US      9         \n7 11     Brook Lopez  MIL   C            85    282 April 1, … US      16        \n8 4      Rob Dilling… MIN   PG           74    175 January 4… US      R         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 12     Ja Morant    MEM   PG           74    174 August 10… US      5         \n2 00     Bennedict M… IND   SF           77    210 June 19, … CA      2         \n3 4      Russell Wes… DEN   PG           76    200 November … US      16        \n4 1      Jonathan Is… ORL   PF           82    230 October 3… US      5         \n5 3      N'Faly Dante HOU   C            83    230 October 1… ML      R         \n6 0      Keldon John… SAS   SF           78    220 October 1… US      5         \n7 1      Amen Thomps… HOU   SF           79    200 January 3… US      1         \n8 35     Kylor Kelley NOP   C            84    215 August 26… US      R         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -2520,7 +2520,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"bronze\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"gold\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -2534,7 +2534,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"freshman\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"senior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -4440,7 +4440,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 1 6"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 3 1"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#meet-the-palmer-penguins",
@@ -4608,7 +4608,98 @@
     "href": "lectures/16-dataviz3/slides.html#agenda",
     "title": "Interactive Graphics",
     "section": "Agenda",
-    "text": "Agenda\n\nAdding interactivity to ggplots with packages:\n\n\"plotly\"\n\"ggiraph\""
+    "text": "Agenda\n\nRecap\n\n\n\n\nObjects of class \"ggplot\"\n\n\n\n\nAdding interactivity to ggplots with packages:\n\n\"plotly\"\n\"ggiraph\""
+  },
+  {
+    "objectID": "lectures/16-dataviz3/slides.html#palmer-penguins",
+    "href": "lectures/16-dataviz3/slides.html#palmer-penguins",
+    "title": "Interactive Graphics",
+    "section": "Palmer Penguins",
+    "text": "Palmer Penguins\n\nlibrary(palmerpenguins)\npenguins\n\n# A tibble: 344 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+  },
+  {
+    "objectID": "lectures/16-dataviz3/slides.html#section",
+    "href": "lectures/16-dataviz3/slides.html#section",
+    "title": "Interactive Graphics",
+    "section": "",
+    "text": "What are the mappings, geometries and settings used here?\n\n\n\n\n−+\n01:30"
+  },
+  {
+    "objectID": "lectures/16-dataviz3/slides.html#section-1",
+    "href": "lectures/16-dataviz3/slides.html#section-1",
+    "title": "Interactive Graphics",
+    "section": "",
+    "text": "What are the mappings, geometries and settings used here?\n\n\n\n\n−+\n01:30"
+  },
+  {
+    "objectID": "lectures/16-dataviz3/slides.html#section-2",
+    "href": "lectures/16-dataviz3/slides.html#section-2",
+    "title": "Interactive Graphics",
+    "section": "",
+    "text": "ggplot(\n  data = penguins,\n  mapping = aes(x = bill_length_mm,\n                y = flipper_length_mm,\n                color = species)) +\n  geom_point(size = 2)"
+  },
+  {
+    "objectID": "lectures/16-dataviz3/slides.html#section-3",
+    "href": "lectures/16-dataviz3/slides.html#section-3",
+    "title": "Interactive Graphics",
+    "section": "",
+    "text": "# we can store ggplot objects\ngg &lt;- ggplot(\n  data = penguins,\n  mapping = aes(x = bill_length_mm,\n                y = flipper_length_mm,\n                color = species)) +\n  geom_point(size = 2)\n\ngg"
+  },
+  {
+    "objectID": "lectures/16-dataviz3/slides.html#ggplot-objects-1",
+    "href": "lectures/16-dataviz3/slides.html#ggplot-objects-1",
+    "title": "Interactive Graphics",
+    "section": "\"ggplot\" objects",
+    "text": "\"ggplot\" objects\n\n\n# we can store ggplot objects\ngg &lt;- ggplot(\n  data = penguins,\n  mapping = aes(x = bill_length_mm,\n                 y = flipper_length_mm,\n                 color = species)) +\n  geom_point(size = 2)\n\nclass(gg)\n\n\n\n[1] \"gg\"     \"ggplot\"\n\n\n\n\n\nnames(gg)\n\n\n\n [1] \"data\"        \"layers\"      \"scales\"      \"guides\"      \"mapping\"    \n [6] \"theme\"       \"coordinates\" \"facet\"       \"plot_env\"    \"layout\"     \n[11] \"labels\""
+  },
+  {
+    "objectID": "lectures/16-dataviz3/slides.html#ggplot-objects-2",
+    "href": "lectures/16-dataviz3/slides.html#ggplot-objects-2",
+    "title": "Interactive Graphics",
+    "section": "\"ggplot\" objects",
+    "text": "\"ggplot\" objects\n\n\n# we can add layers to ggplot objects\ngg + theme_minimal()"
+  },
+  {
+    "objectID": "lectures/16-dataviz3/slides.html#section-4",
+    "href": "lectures/16-dataviz3/slides.html#section-4",
+    "title": "Interactive Graphics",
+    "section": "",
+    "text": "gg1 &lt;- gg + theme_minimal()\ngg2 &lt;- gg1 + labs(title = \"Bill Length and Flipper Length\")\ngg2"
+  },
+  {
+    "objectID": "lectures/16-dataviz3/slides.html#ggplot-objects-3",
+    "href": "lectures/16-dataviz3/slides.html#ggplot-objects-3",
+    "title": "Interactive Graphics",
+    "section": "\"ggplot\" objects",
+    "text": "\"ggplot\" objects\n\n\n# we can save (export) ggplot graphics\n# e.g. save to working directory\nggsave(filename = \"scatterplot1.png\", \n       plot = gg, \n       width = 9,\n       height = 7, \n       units = \"in\")"
+  },
+  {
+    "objectID": "lectures/16-dataviz3/slides.html#section-5",
+    "href": "lectures/16-dataviz3/slides.html#section-5",
+    "title": "Interactive Graphics",
+    "section": "",
+    "text": "p1 &lt;- ggplot(penguins,\n  aes(x = bill_length_mm,\n      y = flipper_length_mm,\n      color = species)) +\n  geom_point(alpha = 0) +\n  theme_minimal()\n\np1"
+  },
+  {
+    "objectID": "lectures/16-dataviz3/slides.html#section-6",
+    "href": "lectures/16-dataviz3/slides.html#section-6",
+    "title": "Interactive Graphics",
+    "section": "",
+    "text": "p2 &lt;- p1 +\n  geom_point(\n    data = filter(penguins, species == \"Adelie\"),\n    aes(x = bill_length_mm,\n        y = flipper_length_mm))\n\np2"
+  },
+  {
+    "objectID": "lectures/16-dataviz3/slides.html#section-7",
+    "href": "lectures/16-dataviz3/slides.html#section-7",
+    "title": "Interactive Graphics",
+    "section": "",
+    "text": "p3 &lt;- p1 +\n  geom_point(\n    data = filter(penguins, \n    species %in% c(\"Adelie\", \"Chinstrap\")),\n    aes(x = bill_length_mm,\n        y = flipper_length_mm))\n\np3"
+  },
+  {
+    "objectID": "lectures/16-dataviz3/slides.html#section-8",
+    "href": "lectures/16-dataviz3/slides.html#section-8",
+    "title": "Interactive Graphics",
+    "section": "",
+    "text": "p4 &lt;- p1 +\n  geom_point(\n    data = penguins,\n    aes(x = bill_length_mm,\n        y = flipper_length_mm,\n        color = species))\n\np4"
   },
   {
     "objectID": "lectures/16-dataviz3/slides.html#installation",
@@ -4625,22 +4716,15 @@
     "text": "About Plotly\nPlotly is a software company that develops online data analytics and visualization tools, as well as scientific graphing libraries for R, Python, Matlab, etc.\n\n\n\nIn R, we have the package \"plotly\".\n\n\n\n\nplotly comes with its own grammar of graphics syntax. Interestingly, we can use the ggplotly() function to make a ggplot graphic into a web-interactive graphic."
   },
   {
-    "objectID": "lectures/16-dataviz3/slides.html#palmer-penguins",
-    "href": "lectures/16-dataviz3/slides.html#palmer-penguins",
-    "title": "Interactive Graphics",
-    "section": "Palmer Penguins",
-    "text": "Palmer Penguins\n\nlibrary(palmerpenguins)\npenguins\n\n# A tibble: 344 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
-  },
-  {
-    "objectID": "lectures/16-dataviz3/slides.html#section",
-    "href": "lectures/16-dataviz3/slides.html#section",
+    "objectID": "lectures/16-dataviz3/slides.html#section-9",
+    "href": "lectures/16-dataviz3/slides.html#section-9",
     "title": "Interactive Graphics",
     "section": "",
     "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point()"
   },
   {
-    "objectID": "lectures/16-dataviz3/slides.html#section-1",
-    "href": "lectures/16-dataviz3/slides.html#section-1",
+    "objectID": "lectures/16-dataviz3/slides.html#section-10",
+    "href": "lectures/16-dataviz3/slides.html#section-10",
     "title": "Interactive Graphics",
     "section": "",
     "text": "gg1 &lt;- ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point()\n\nggplotly(gg1)"
@@ -4657,28 +4741,28 @@
     "href": "lectures/16-dataviz3/slides.html#about-ggiraph",
     "title": "Interactive Graphics",
     "section": "About \"ggiraph\"",
-    "text": "About \"ggiraph\"\nThis package allows us to make ggplot2 graphics interactive following the same framewokr and syntax of adding layers to a graphic.\n\n\n\"ggiraph\" provides sibling geom functions, e.g.:\n\ngeom_point_interactive()\ngeom_bar_interactive()\ngeom_col_interactive()\ngeom_histogram_interactive()\ngeom_density_interactive()\ngeom_boxplot_interactive()"
+    "text": "About \"ggiraph\"\nThis package allows us to make ggplot2 graphics interactive following the same framework and syntax of adding layers to a graphic.\n\n\n\"ggiraph\" provides sibling geom functions, e.g.:\n\ngeom_point_interactive()\ngeom_bar_interactive()\ngeom_col_interactive()\ngeom_histogram_interactive()\ngeom_density_interactive()\ngeom_boxplot_interactive()"
   },
   {
-    "objectID": "lectures/16-dataviz3/slides.html#section-2",
-    "href": "lectures/16-dataviz3/slides.html#section-2",
+    "objectID": "lectures/16-dataviz3/slides.html#section-11",
+    "href": "lectures/16-dataviz3/slides.html#section-11",
     "title": "Interactive Graphics",
     "section": "",
     "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point()"
   },
   {
-    "objectID": "lectures/16-dataviz3/slides.html#section-3",
-    "href": "lectures/16-dataviz3/slides.html#section-3",
+    "objectID": "lectures/16-dataviz3/slides.html#section-12",
+    "href": "lectures/16-dataviz3/slides.html#section-12",
     "title": "Interactive Graphics",
     "section": "",
     "text": "gg3 &lt;- ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point_interactive(aes(tooltip = sex))\n\ngirafe(ggobj = gg3)"
   },
   {
-    "objectID": "lectures/16-dataviz3/slides.html#section-4",
-    "href": "lectures/16-dataviz3/slides.html#section-4",
+    "objectID": "lectures/16-dataviz3/slides.html#section-13",
+    "href": "lectures/16-dataviz3/slides.html#section-13",
     "title": "Interactive Graphics",
     "section": "",
-    "text": "Code\ngg4 &lt;- ggplot(\n  data = penguins,\n  aes(x = bill_length_mm, \n      y = flipper_length_mm,\n       color = species,\n      tooltip = sex)) +\n  geom_point_interactive()\n\nggiraph::girafe(ggobj = gg4)"
+    "text": "gg4 &lt;- ggplot(\n  data = penguins,\n  aes(x = bill_length_mm, \n      y = flipper_length_mm,\n       color = species,\n      tooltip = sex)) +\n  geom_point_interactive()\n\nggiraph::girafe(ggobj = gg4)"
   },
   {
     "objectID": "lectures/13-importing-tables/slides.html#example",
