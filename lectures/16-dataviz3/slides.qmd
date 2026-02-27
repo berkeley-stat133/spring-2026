@@ -19,6 +19,12 @@ library(ggiraph)
 
 . . .
 
+Recap
+
+. . .
+
+\
+
 Objects of class `"ggplot"`
 
 \
