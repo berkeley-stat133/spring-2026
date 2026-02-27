@@ -31,14 +31,67 @@ Adding interactivity to ggplots with packages:
 - `"ggiraph"`
 
 
-# `"ggplot"` Objects
-
 ## Palmer Penguins {.smaller}
 
 ```{r}
 library(palmerpenguins)
 penguins
 ```
+
+
+## 
+
+What are the mappings, geometries and settings used here?
+
+```{r}
+#| echo: false
+penguins |> 
+  drop_na() |> 
+  ggplot(aes(x = bill_length_mm, y = flipper_length_mm)) +
+  geom_point(aes(color = species, size = body_mass_g),
+  alpha = 0.5, shape = 18) +
+  facet_wrap(~ sex) +
+  labs(title = "Palmer Penguins",
+       x = "Bill Length (mm)",
+       y = "Flipper Length (mm)") +
+  theme_bw()
+```
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+
+## 
+
+What are the mappings, geometries and settings used here?
+
+```{r}
+#| echo: false
+penguins |> 
+  drop_na() |> 
+  ggplot(aes(x = species, y = flipper_length_mm)) +
+  geom_boxplot(aes(fill = species), alpha = 0.3) +
+  geom_jitter(width = 0.05, 
+    aes(color = species),
+    size = 2,
+    shape = 21) +
+  labs(title = "Palmer Penguins",
+       x = "",
+       y = "Flipper Length (mm)") +
+  theme_bw() +
+  theme(legend.position = "none")
+```
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+
+
+# `"ggplot"` Objects
 
 
 ## {.smaller .nostretch}
@@ -173,6 +226,7 @@ gg2
 #| fig-height: 7
 #| out-width: "65%"
 # we can save (export) ggplot graphics
+# e.g. save to working directory
 ggsave(filename = "scatterplot1.png", 
        plot = gg, 
        width = 9,
