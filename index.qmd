@@ -230,7 +230,7 @@ Lab 5: [__Quiz 2__]{.label-Quiz} | [slides](labs/lab5/slides.html) | [PS4](https
 
 Lab 6: [slides](labs/lab6/slides.html) | [PS5](https://bcourses.berkeley.edu/courses/1551809/assignments/9021598) 
 
-Dataviz III | Proj3 
+[Dataviz III](lectures/16-dataviz3/slides.html) | [Proj3](https://bcourses.berkeley.edu/courses/1551809/assignments/9021608)
 :::
 
 ::: {.column width="50%"}
