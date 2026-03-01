@@ -2,6 +2,8 @@
 title: "Joins and Pivots"
 subtitle: "Merging and Reshaping data frames"
 format: stat133slides-revealjs
+revealjs-plugins:
+  - drop
 chalkboard: true
 ---
 
@@ -546,6 +548,132 @@ pivot_wider(data, names_from, values_from)
 ```
 
 
+# Your Turn
+
+## {auto-animate=true}
+
+How do you go from `dat1` to `dat2`?
+
+```{r}
+#| echo: false
+dat1 <- tibble(
+  name = c("Harry", "Hermione", "Ron"),
+  fall = c("spells-1A", "potions-1B", "charms-1A"),
+  spring = c("potions-1A", "spells-1B", "charms-1B"))
+
+dat2 <- pivot_longer(
+  data = dat1,
+  cols = c(fall, spring),
+  names_to = "term",
+  values_to = "course")
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+dat1
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+dat2
+```
+:::
+::::
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+## {auto-animate=true}
+
+How do you go from `dat1` to `dat2`?
+
+```{r}
+#| echo: false
+dat1 <- tibble(
+  name = c("Harry", "Hermione", "Ron"),
+  fall = c("spells-1A", "potions-1B", "charms-1A"),
+  spring = c("potions-1A", "spells-1B", "charms-1B"))
+
+dat2 <- pivot_longer(
+  data = dat1,
+  cols = c(fall, spring),
+  names_to = "term",
+  values_to = "course")
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+dat1
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+dat2
+```
+:::
+::::
+
+. . .
+
+\
+
+```{r}
+#| eval: false
+#| code-line-numbers: "1|1-2|1-3|1-4|1-5"
+dat2 <- pivot_longer(
+  data = dat1,
+  cols = c(fall, spring),
+  names_to = "term",
+  values_to = "course")
+```
+
+
+## {auto-animate=true}
+
+How do you go from `tb1` to `tb2`?
+
+. . .
+
+```{r}
+#| echo: false
+tb1 <- tibble(
+  name = rep(c("Harry", "Hermione", "Ron"), each = 2),
+  year = c(1, 2, 1, 2, 1, 2),
+  spells = c(8, 10, 15, 17, 5, 7),
+  potions = c(10, 12, 18, 20, 6, 8))
+
+tb2 <- pivot_longer(
+  data = tb1,
+  cols = c(spells, potions),
+  names_to = "type",
+  values_to = "count")
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+tb1
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+tb2
+```
+:::
+::::
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
 
 ## {auto-animate=true}
 
@@ -599,6 +727,8 @@ tb2 <- pivot_longer(
 
 How do you go from `tb1` to `tb3`?
 
+. . .
+
 ```{r}
 #| echo: false
 tb1 <- tibble(
@@ -607,11 +737,9 @@ tb1 <- tibble(
   spells = c(8, 10, 15, 17, 5, 7),
   potions = c(10, 12, 18, 20, 6, 8))
 
-tb3 <- unite(
-  data = tb1,
-  ratio, spells, potions,
-  sep = "/", remove = TRUE
-)
+tb3 <- tb1 |>
+  mutate(`spells/potions` = spells / potions) |>
+  select(name, year, `spells/potions`)
 ```
 
 :::: {.columns}
@@ -634,13 +762,111 @@ tb3
 
 ```{r}
 #| eval: false
+#| code-line-numbers: "1|1-2|1-3"
+tb3 <- tb1 |>
+  mutate(`spells/potions` = spells / potions) |>
+  select(name, year, `spells/potions`)
+```
+
+
+# Bonus
+
+## {auto-animate=true}
+
+How do you go from `tb1` to `tb4`?
+
+. . .
+
+```{r}
+#| echo: false
+tb1 <- tibble(
+  name = rep(c("Harry", "Hermione", "Ron"), each = 2),
+  year = c(1, 2, 1, 2, 1, 2),
+  spells = c(8, 10, 15, 17, 5, 7),
+  potions = c(10, 12, 18, 20, 6, 8))
+
+tb4 <- unite(
+  data = tb1,
+  ratio, spells, potions,
+  sep = "/", remove = TRUE
+)
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+tb1
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+tb4
+```
+:::
+::::
+
+. . .
+
+\
+
+```{r}
+#| eval: false
 #| code-line-numbers: "1|1-2|1-3|1-4|1-5"
-tb3 <- unite(
+tb4 <- unite(
   data = tb1,
   ratio, spells, potions,
   sep = "/", 
   remove = TRUE)
 ```
 
+
+## {auto-animate=true}
+
+How do you go from `tb4` to `tb1`?
+
+```{r}
+#| echo: false
+tb1 <- tibble(
+  name = rep(c("Harry", "Hermione", "Ron"), each = 2),
+  year = c(1, 2, 1, 2, 1, 2),
+  spells = c(8, 10, 15, 17, 5, 7),
+  potions = c(10, 12, 18, 20, 6, 8))
+
+tb4 <- unite(
+  data = tb1,
+  ratio, spells, potions,
+  sep = "/", remove = TRUE
+)
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+tb4
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+tb1
+```
+:::
+::::
+
+. . .
+
+\
+
+```{r}
+#| eval: false
+#| code-line-numbers: "1|1-2|1-3|1-4|1-5|1-6"
+tb1 <- separate(
+  data = tb4,
+  col = ratio,
+  into = c("spells", "potions"),
+  sep = "/", 
+  remove = TRUE)
+```
 
 

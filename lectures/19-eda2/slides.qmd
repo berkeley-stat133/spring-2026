@@ -2,6 +2,8 @@
 title: "Explanatory Data Analysis"
 subtitle: "EDA part II"
 format: stat133slides-revealjs
+revealjs-plugins:
+  - drop
 chalkboard: true
 ---
 
@@ -228,7 +230,7 @@ ggplot(aes(x = height, y = weight, color = position)) +
 #| code-fold: true
 #| fig-width: 10
 #| fig-height: 8
-#| out-width: "100%"
+#| out-width: "90%"
 ggplotly(
   dat |> 
     mutate(position = case_when(
