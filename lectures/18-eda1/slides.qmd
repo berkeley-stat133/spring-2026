@@ -120,7 +120,24 @@ dim(dat)
 
 ```{r}
 #| output-location: fragment
+# which teams?
 dat |> distinct(team) |> pull(team)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# 30 teams?
+dat |> distinct(team) |> pull(team) |> length()
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# 5 positions?
+dat |> distinct(position) |> pull(position)
 ```
 
 
@@ -172,6 +189,8 @@ ggplot(dat, aes(x = height)) +
 
 ```{r}
 #| code-fold: true
+#| fig-width: 13
+#| fig-height: 7
 # default histogram (30 bins)
 ggplotly(
   ggplot(dat, aes(x = height)) +
