@@ -19,13 +19,29 @@ library(patchwork)
 
 ![](images/GSW-roster-2025.png){fig-align="center"}
 
-Source: Basketball Reference
+Source: <https://www.basketball-reference.com/teams/GSW/2025.html>
+
+
+## NBA Roster Data (season 2024-2025) {.smaller}
+
+```{r}
+dat <- read_csv("all-teams-2025-roster.csv")
+dat
+```
 
 
 ## Files
 
 - CSV file: `all-teams-2025-roster.csv`
+
+- <https://bcourses.berkeley.edu/courses/1551809/files/folder/misc>
+
+. . .
+
+\
+
 - Data Dictionary: `roster-data-dictionary.md`
+
 
 
 ## Data Dictionary (i.e. codebook)
@@ -64,7 +80,6 @@ Source: Basketball Reference
 ![](images/basketball-positions.png){fig-align="center"}
 :::
 ::: {.column .fragment width="45%"}
-::: {.nonincremental}
 - [Point Guard (PG)]{.hilit}: The team's primary ball handler and playmaker.
 
 - [Shooting Guard (SG)]{.hilit}: Focused on scoring, specially from long range.
@@ -74,8 +89,6 @@ Source: Basketball Reference
 - [Power Forward (PF)]{.hilit}: Strong player who scores inside and rebounds.
 
 - [Center (C)]{.hilit}: Tallest player, dominant near the rim, controls rebounds and block shots.
-
-:::
 :::
 ::::
 
@@ -83,12 +96,12 @@ Source: Basketball Reference
 ## NBA Roster Data (season 2024-2025) {.smaller}
 
 ```{r}
-dat <- read_csv("all-teams-2025-roster.csv")
 dat
 ```
 
+. . .
 
-## Questions
+\
 
 Talk to your neighbor(s) and come up with at least 4 questions that you would like to ask about the `height` of NBA players.
 
@@ -107,6 +120,15 @@ slice_sample(dat, n = 8)
 \
 
 [Let's explore the height of NBA players]{.mdlit}
+
+
+## Sanity checks
+
+- Data table dimensions
+- Data types of columns
+- Teams
+- Positions
+- ETC
 
 
 ## Sanity checks
@@ -403,7 +425,6 @@ ggplot(dat, aes(x = height, y = team, color = team)) +
 ```
 
 
-
 ## Height and Team
 
 ```{r}
@@ -471,3 +492,20 @@ dat |>
   labs(x = "average height", y = "")
 ```
 
+
+# Workflow
+
+## Workflow
+
+Where do you store/save your exploratory analysis?
+
+\
+
+How would you organize the work you've done?
+
+\
+
+What about file structure?
+
+
+## Workflow (demo)
