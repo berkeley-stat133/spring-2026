@@ -2079,14 +2079,21 @@
     "href": "lectures/18-eda1/slides.html#nba-2024-2025-season-roster-data",
     "title": "Exploratory Data Analysis",
     "section": "NBA 2024-2025 season: Roster Data",
-    "text": "NBA 2024-2025 season: Roster Data\n\nSource: Basketball Reference"
+    "text": "NBA 2024-2025 season: Roster Data\n\nSource: https://www.basketball-reference.com/teams/GSW/2025.html"
+  },
+  {
+    "objectID": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025",
+    "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025",
+    "title": "Exploratory Data Analysis",
+    "section": "NBA Roster Data (season 2024-2025)",
+    "text": "NBA Roster Data (season 2024-2025)\n\ndat &lt;- read_csv(\"all-teams-2025-roster.csv\")\ndat\n\n# A tibble: 655 × 10\n   number player      team  position height weight birth_date country experience\n   &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n 1 31     Jarrett Al… CLE   C            81    243 April 21,… US      7         \n 2 21     Emoni Bates CLE   SF           81    202 January 2… US      1         \n 3 10     Darius Gar… CLE   PG           73    192 January 2… US      5         \n 4 8      Javonte Gr… CLE   SG           77    205 July 23, … US      5         \n 5 12     De'Andre H… CLE   SF           79    221 December … US      5         \n 6 2      Ty Jerome   CLE   SG           77    195 July 8, 1… US      5         \n 7 3      Caris LeVe… CLE   SF           79    205 August 25… US      8         \n 8 5      Sam Merrill CLE   SG           76    205 May 15, 1… US      4         \n 9 45     Donovan Mi… CLE   SG           74    215 September… US      7         \n10 4      Evan Mobley CLE   PF           83    215 June 18, … US      3         \n# ℹ 645 more rows\n# ℹ 1 more variable: college &lt;chr&gt;"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#files",
     "href": "lectures/18-eda1/slides.html#files",
     "title": "Exploratory Data Analysis",
     "section": "Files",
-    "text": "Files\n\nCSV file: all-teams-2025-roster.csv\nData Dictionary: roster-data-dictionary.md"
+    "text": "Files\n\nCSV file: all-teams-2025-roster.csv\nhttps://bcourses.berkeley.edu/courses/1551809/files/folder/misc\n\n\n\n\n\nData Dictionary: roster-data-dictionary.md"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#data-dictionary-i.e.-codebook",
@@ -2110,29 +2117,29 @@
     "text": "Basketball Positions and Roles\n\n\n\n\n\n\n\n\n\nPoint Guard (PG): The team’s primary ball handler and playmaker.\nShooting Guard (SG): Focused on scoring, specially from long range.\nSmall Forward (SF): Versatile player skilled in both offense and defense.\nPower Forward (PF): Strong player who scores inside and rebounds.\nCenter (C): Tallest player, dominant near the rim, controls rebounds and block shots."
   },
   {
-    "objectID": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025",
-    "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025",
-    "title": "Exploratory Data Analysis",
-    "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\ndat &lt;- read_csv(\"all-teams-2025-roster.csv\")\ndat\n\n# A tibble: 655 × 10\n   number player      team  position height weight birth_date country experience\n   &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n 1 31     Jarrett Al… CLE   C            81    243 April 21,… US      7         \n 2 21     Emoni Bates CLE   SF           81    202 January 2… US      1         \n 3 10     Darius Gar… CLE   PG           73    192 January 2… US      5         \n 4 8      Javonte Gr… CLE   SG           77    205 July 23, … US      5         \n 5 12     De'Andre H… CLE   SF           79    221 December … US      5         \n 6 2      Ty Jerome   CLE   SG           77    195 July 8, 1… US      5         \n 7 3      Caris LeVe… CLE   SF           79    205 August 25… US      8         \n 8 5      Sam Merrill CLE   SG           76    205 May 15, 1… US      4         \n 9 45     Donovan Mi… CLE   SG           74    215 September… US      7         \n10 4      Evan Mobley CLE   PF           83    215 June 18, … US      3         \n# ℹ 645 more rows\n# ℹ 1 more variable: college &lt;chr&gt;"
-  },
-  {
-    "objectID": "lectures/18-eda1/slides.html#questions",
-    "href": "lectures/18-eda1/slides.html#questions",
-    "title": "Exploratory Data Analysis",
-    "section": "Questions",
-    "text": "Questions\nTalk to your neighbor(s) and come up with at least 4 questions that you would like to ask about the height of NBA players.\n\n\n\n−+\n02:00"
-  },
-  {
     "objectID": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-1",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 24     Isaiah Craw… SAC   SF           78    220 November … US      R         \n2 77     Bones Hyland MIN   PG           74    169 September… US      3         \n3 15     Liam Robbins MIL   C            84    250 July 12, … US      R         \n4 2      Terry Rozier MIA   PG           73    190 March 17,… US      9         \n5 23     Tre Mann     CHO   PG           76    178 February … US      3         \n6 13     Tyrese Mart… BRK   SG           78    215 March 7, … US      1         \n7 23     LeBron James LAL   SF           81    250 December … US      21        \n8 17     Onyeka Okon… ATL   C            82    240 December … US      4         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\ndat\n\n# A tibble: 655 × 10\n   number player      team  position height weight birth_date country experience\n   &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n 1 31     Jarrett Al… CLE   C            81    243 April 21,… US      7         \n 2 21     Emoni Bates CLE   SF           81    202 January 2… US      1         \n 3 10     Darius Gar… CLE   PG           73    192 January 2… US      5         \n 4 8      Javonte Gr… CLE   SG           77    205 July 23, … US      5         \n 5 12     De'Andre H… CLE   SF           79    221 December … US      5         \n 6 2      Ty Jerome   CLE   SG           77    195 July 8, 1… US      5         \n 7 3      Caris LeVe… CLE   SF           79    205 August 25… US      8         \n 8 5      Sam Merrill CLE   SG           76    205 May 15, 1… US      4         \n 9 45     Donovan Mi… CLE   SG           74    215 September… US      7         \n10 4      Evan Mobley CLE   PF           83    215 June 18, … US      3         \n# ℹ 645 more rows\n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\n\nTalk to your neighbor(s) and come up with at least 4 questions that you would like to ask about the height of NBA players.\n\n\n\n−+\n02:00"
+  },
+  {
+    "objectID": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
+    "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
+    "title": "Exploratory Data Analysis",
+    "section": "NBA Roster Data (season 2024-2025)",
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 55     Duncan Robi… MIA   SF           79    215 April 22,… US      6         \n2 21     Adama Sanogo CHI   C            81    245 February … ML      1         \n3 12     Steven Adams HOU   C            83    265 July 20, … NZ      10        \n4 11     Jordan McLa… SAS   PG           71    185 April 9, … US      5         \n5 7      Kel'el Ware  MIA   C            84    230 April 20,… US      R         \n6 23     Jaden Ivey   DET   SG           75    195 February … US      2         \n7 11     Naz Reid     MIN   C            81    264 August 26… US      5         \n8 8      Cui Yongxi   BRK   SG           77    190 May 28, 2… CN      R         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
     "href": "lectures/18-eda1/slides.html#sanity-checks",
+    "title": "Exploratory Data Analysis",
+    "section": "Sanity checks",
+    "text": "Sanity checks\n\nData table dimensions\nData types of columns\nTeams\nPositions\nETC"
+  },
+  {
+    "objectID": "lectures/18-eda1/slides.html#sanity-checks-1",
+    "href": "lectures/18-eda1/slides.html#sanity-checks-1",
     "title": "Exploratory Data Analysis",
     "section": "Sanity checks",
     "text": "Sanity checks\n\ndim(dat)\n\n\n\n[1] 655  10\n\n\n\n\n# which teams?\ndat |&gt; distinct(team) |&gt; pull(team)\n\n\n\n [1] \"CLE\" \"BOS\" \"NYK\" \"IND\" \"MIL\" \"DET\" \"ORL\" \"ATL\" \"CHI\" \"MIA\" \"TOR\" \"BRK\"\n[13] \"PHI\" \"CHO\" \"WAS\" \"OKC\" \"HOU\" \"LAL\" \"DEN\" \"LAC\" \"MIN\" \"GSW\" \"MEM\" \"SAC\"\n[25] \"DAL\" \"PHO\" \"POR\" \"SAS\" \"NOP\" \"UTA\"\n\n\n\n\n\n# 30 teams?\ndat |&gt; distinct(team) |&gt; pull(team) |&gt; length()\n\n\n\n[1] 30\n\n\n\n\n\n# 5 positions?\ndat |&gt; distinct(position) |&gt; pull(position)\n\n\n\n[1] \"C\"  \"SF\" \"PG\" \"SG\" \"PF\""
@@ -2311,6 +2318,20 @@
     "title": "Exploratory Data Analysis",
     "section": "",
     "text": "dat |&gt; \n  group_by(team) |&gt; \n  summarize(avg_ht = mean(height)) |&gt; \n  ggplot(aes(x = avg_ht, y = reorder(team, avg_ht))) +\n  geom_col() +\n  labs(x = \"average height\", y = \"\")"
+  },
+  {
+    "objectID": "lectures/18-eda1/slides.html#workflow-1",
+    "href": "lectures/18-eda1/slides.html#workflow-1",
+    "title": "Exploratory Data Analysis",
+    "section": "Workflow",
+    "text": "Workflow\nWhere do you store/save your exploratory analysis?\n\n\nHow would you organize the work you’ve done?\n\n\nWhat about file structure?"
+  },
+  {
+    "objectID": "lectures/18-eda1/slides.html#workflow-demo",
+    "href": "lectures/18-eda1/slides.html#workflow-demo",
+    "title": "Exploratory Data Analysis",
+    "section": "Workflow (demo)",
+    "text": "Workflow (demo)"
   },
   {
     "objectID": "lectures/1-welcome/slides.html#welcome-to-stat-133",
@@ -2555,7 +2576,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"silver\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"bronze\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -2569,7 +2590,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"freshman\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"sophomore\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -4475,7 +4496,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 3 1"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 4 6"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#meet-the-palmer-penguins",
