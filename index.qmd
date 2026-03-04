@@ -264,7 +264,7 @@ Lab 6: [slides](labs/lab6/slides.html) | [PS5](https://bcourses.berkeley.edu/cou
 #### Description
 [Joins and Pivots](lectures/17-joins-pivots/slides.html)
 
-Exploratory EDA
+[Exploratory EDA](lectures/18-eda1/slides.html)
 
 Lab 7: [__Quiz 3__]{.label-Quiz} | slides | PS6
 
