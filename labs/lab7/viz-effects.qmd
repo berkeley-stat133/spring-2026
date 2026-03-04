@@ -1,0 +1,66 @@
+---
+title: "Scaling and Panning"
+format: 
+  closeread-html:
+    theme: cosmo
+    css: ../../styles.css
+    cr-style:
+      narrative-background-color-sidebar: "#fcf7f0"
+      section-background-color: white
+      narrative-text-color-sidebar: black
+      narrative-font-size: 2em
+---
+
+::::{.cr-section}
+
+## Scaling
+
+A graph without any visual effects at a normal scale. @cr-plot
+
+:::{#cr-plot}
+```{r barchart8, message=FALSE}
+library(tidyverse)
+
+# number of storms per year (1980-2022)
+storms_per_year = storms |>
+  filter(year >= 1980) |> 
+  mutate(id = paste0(name, "-", year)) |> 
+  count(year, id, name = "count") |> 
+  count(year, name = "count")
+
+# color palette
+lowcolor = "#dccfb1" # low-light color
+medcolor = "#BD835D" # highlight color per decade
+maxcolor = "#ff9933" # color of maximum
+
+# all storms with fitted line
+storms_per_year |> 
+  ggplot(aes(x = year, y = count)) +
+  geom_col(fill = lowcolor) +
+  geom_smooth(se = FALSE, linewidth = 1.4, color = medcolor) +
+  scale_x_continuous(breaks = seq(1980, 2020, by = 5)) +
+  theme_minimal() +
+  labs(title = "Number of Storms per Year in the North Atlantic",
+       x = "")
+```
+:::
+
+A graph with a "shrinking" effect. [@cr-plot]{scale-by="0.5"}
+
+A graph with an "enlarging" effect. [@cr-plot]{scale-by="2"}
+
+Now the graph is normal size again. @cr-plot
+
+## Panning
+
+| The panning attribute takes a pair of x and y values that control the horizontal and vertical panning, respectively.
+| Normal position 
+@cr-plot
+
+Panning to the left [@cr-plot]{pan-to="-100px,0px"}
+
+Panning to the right [@cr-plot]{pan-to="0px,100px"}
+
+Normal position again @cr-plot
+
+::::
