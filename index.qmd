@@ -266,7 +266,7 @@ Lab 6: [slides](labs/lab6/slides.html) | [PS5](https://bcourses.berkeley.edu/cou
 
 [Exploratory EDA](lectures/18-eda1/slides.html)
 
-Lab 7: [__Quiz 3__]{.label-Quiz} | slides | PS6
+Lab 7: [__Quiz 3__]{.label-Quiz} | [slides](labs/lab7/slides.html) | [PS6](https://bcourses.berkeley.edu/courses/1551809/assignments/9021599)
 
 Explanatory EDA
 :::
