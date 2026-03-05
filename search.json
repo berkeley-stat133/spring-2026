@@ -2128,7 +2128,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 55     Duncan Robi… MIA   SF           79    215 April 22,… US      6         \n2 21     Adama Sanogo CHI   C            81    245 February … ML      1         \n3 12     Steven Adams HOU   C            83    265 July 20, … NZ      10        \n4 11     Jordan McLa… SAS   PG           71    185 April 9, … US      5         \n5 7      Kel'el Ware  MIA   C            84    230 April 20,… US      R         \n6 23     Jaden Ivey   DET   SG           75    195 February … US      2         \n7 11     Naz Reid     MIN   C            81    264 August 26… US      5         \n8 8      Cui Yongxi   BRK   SG           77    190 May 28, 2… CN      R         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 13     \"Bogdan Bog… ATL   SG           77    225 August 18… RS      7         \n2 8      \"Javonte Gr… CLE   SG           77    205 July 23, … US      5         \n3 55     \"Trey Jemis… LAL   C            82    270 November … US      1         \n4 2      \"Terry Rozi… MIA   PG           73    190 March 17,… US      9         \n5 27     \"Jamal Murr… DEN   PG           76    215 February … CA      7         \n6 25     \"Mikal Brid… NYK   SF           78    209 August 30… US      6         \n7 20     \"Georges Ni… ATL   PF           78    230 June 17, … US      8         \n8 12     \"Collin Gil… PHO   PG           73    195 June 25, … US      1         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -2576,7 +2576,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"bronze\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"gold\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -2590,7 +2590,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"sophomore\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"senior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -3224,144 +3224,18 @@
     "text": "Pset 4 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps4\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
   {
-    "objectID": "labs/lab6/closeread-template.html",
-    "href": "labs/lab6/closeread-template.html",
-    "title": "Closeread Template",
+    "objectID": "labs/lab7/incremental-graph.html",
+    "href": "labs/lab7/incremental-graph.html",
+    "title": "Storms in the North Atlantic",
     "section": "",
-    "text": "This is a sample closeread document.\n\n\n\n\nThe narrative appears on this side bar (left margin).\n\n\n\n\nThe image on the right depicts three species of iris flowers and their corresponding Sepal and Petal elements.\n\n\n\n\nWe refer to this image element as a sticky element. Why? Because as you scroll down, the image of the iris flowers gets stuck in the same place.\n\n\n\n\nWhen you trigger a sticky element, it will be displayed in the main section (to the right of this sidebar).\n\n\n\n\nHere’s another sticky element. It’s a simple scatter plot based on the iris data set, which is a built-in data frame in R.\n\n\n\n\nThis narrative section is displayed as a continuous piece of text instead of being broken down into separated paragraphs.\n\nThere are 3 species of iris flowers:\n\n- Setosa (red)\n- Versicolor (green)\n- Virginica (blue)\n\n\n\n\nHere’s a third sticky element.\n\n\n\n\nIt’s just a table with summary statistics.\n\n\n\n\nAnd finally a fourth sticky element.\n\n\n\n\nA colorful plot using facets to show the distribution of Sepal Length among the three iris species.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecies\navg_sepal_length\nsd_sepal_length\n\n\n\n\nsetosa\n5.006\n0.3524897\n\n\nversicolor\n5.936\n0.5161711\n\n\nvirginica\n6.588\n0.6358796"
+    "text": "What can the analysis of the dplyr::storms data set reveal about the number of tropical storms per year that occurred in the North Atlantic between 1980 and 2022?\n\n\n\n\nLet’s take a look decade by decade.\n\n\n\n\nIn the 1980’s the average number of tropical storms per year was 9.\n\n\n\n\nThe number of tropical storms per year kept increasing in the 1990’s with an average of 12.7.\n\n\n\n\nThe year 1995 saw a record number of 21 storms.\n\n\n\n\nThe increasing trend continued during the 2000’s, averaging 16.9 storms per year\n\n\n\n\nWith a jaw dropping record of 29 storms in 2005!\n\n\n\n\nIn the 2010’s the trend seemed to slow down a bit with an average number of storms per year of 16.3 …\n\n\n\n\n… only to go up again\n\n\n\n\nreaching a new all time high of 30 storms in 2020.\n\n\n\n\nSo what was the overall trend between 1980 and 2022?\n\n\n\n\nAn increasing trend as you can tell."
   },
   {
-    "objectID": "labs/lab6/scrollytelling-demo.html",
-    "href": "labs/lab6/scrollytelling-demo.html",
-    "title": "MT Cars Report",
+    "objectID": "labs/lab7/viz-effects.html",
+    "href": "labs/lab7/viz-effects.html",
+    "title": "Scaling and Panning",
     "section": "",
-    "text": "This is a sample closeread document using the mtcars dataset.\n\n\n\n\nThe narrative appears in this sidebar (left margin), while visual elements appear on the right.\n\n\n\n\nThe mtcars dataset contains measurements for 32 cars from the 1970s, including fuel efficiency, engine size, horsepower, and transmission type.\n\n\n\n\nWe call this a sticky element because it stays fixed on the screen while you scroll through the explanation.\n\n\n\n\nEngine displacement (disp) measures engine size. Larger engines typically generate more power but often consume more fuel.\n\n\n\n\nHere is another sticky element showing the relationship between engine size and fuel efficiency.\n\n\n\n\nAs you scroll, notice the downward trend: cars with larger engines tend to have lower miles per gallon. This illustrates a common tradeoff between performance and efficiency.\n\n\n\n\nThis narrative section continues as a single block of explanatory text.\n\nThe mtcars dataset includes several important variables:\n\n- mpg: fuel efficiency\n- disp: engine displacement\n- hp: horsepower\n- wt: vehicle weight\n- am: transmission type (0 = automatic, 1 = manual)\n\n\n\n\nNext is a sticky table summarizing average fuel efficiency by transmission type.\n\n\n\n\nTables allow us to move from individual observations to summarized comparisons across groups.\n\n\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTransmission\nAverage MPG\nAverage Horsepower\nAverage Weight\n\n\n\n\nAutomatic\n17.14737\n160.2632\n3.768895\n\n\nManual\n24.39231\n126.8462\n2.411000"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#meet-your-gsi",
-    "href": "labs/lab1/slides.html#meet-your-gsi",
-    "title": "Lab 1",
-    "section": "Meet your GSI",
-    "text": "Meet your GSI\n\nIntroduce yourself to the clasas. You can talk about your:\n\nName\nMajor\nExperience\nFun fact"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#with-the-people-around-you",
-    "href": "labs/lab1/slides.html#with-the-people-around-you",
-    "title": "Lab 1",
-    "section": "With the people around you …",
-    "text": "With the people around you …\n\nTake a few minutes to share your:\n\n\n\nName\nMajor\nYear\nHometown\nWhich dog mood are you today?\n\n\n\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#ice-breakers",
-    "href": "labs/lab1/slides.html#ice-breakers",
-    "title": "Lab 1",
-    "section": "Ice Breakers",
-    "text": "Ice Breakers"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#course-website",
-    "href": "labs/lab1/slides.html#course-website",
-    "title": "Lab 1",
-    "section": "Course Website",
-    "text": "Course Website\nhttps://stat133.berkeley.edu/spring-2026"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#syllabus",
-    "href": "labs/lab1/slides.html#syllabus",
-    "title": "Lab 1",
-    "section": "Syllabus",
-    "text": "Syllabus\nPlease take some minutes to read the syllabus and jot down at least two questions that you have.\nhttps://stat133.berkeley.edu/spring-2026/syllabus.html\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#installation",
-    "href": "labs/lab1/slides.html#installation",
-    "title": "Lab 1",
-    "section": "Installation",
-    "text": "Installation\n\n\n\n−+\n03:00\n\n\n\n1) R  https://www.r-project.org/\n\n\n\n2) Positron  https://positron.posit.co/\n\n\n\n\n⚠️ 2b) If Positron fails, then RStudio  https://posit.co/download/rstudio-desktop/\n\n\n\n\n3) Windows users‼️: Git  https://git-scm.com/"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#directory-stat133",
-    "href": "labs/lab1/slides.html#directory-stat133",
-    "title": "Lab 1",
-    "section": "Directory stat133",
-    "text": "Directory stat133\nIn your computer, e.g. folder Desktop or Documents, please create a folder (i.e. directory) for this course.\n\n\n👍 Good Names:\n\nstat133\nSTAT133\nStat133\n\n\n👎 Bad Names (no blank spaces):\n\nstat 133\nSTAT 133\nStat 133\n\n\nThis will be a dedicated directory for all the work you’ll do in this course."
-  },
-  {
-    "objectID": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
-    "href": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
-    "title": "Lab 1",
-    "section": "First contact with Positron (or Rstudio)",
-    "text": "First contact with Positron (or Rstudio)\nDemo:\n\nOpen Positron\nUnderstanding workspace\nQuadrants or panes"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#explorer-positron",
-    "href": "labs/lab1/slides.html#explorer-positron",
-    "title": "Lab 1",
-    "section": "Explorer (Positron)",
-    "text": "Explorer (Positron)\nLet’s focus on the Explorer tab"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#explorer-positron-1",
-    "href": "labs/lab1/slides.html#explorer-positron-1",
-    "title": "Lab 1",
-    "section": "Explorer (Positron)",
-    "text": "Explorer (Positron)\nOpen your folder stat133"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#explorer-tab",
-    "href": "labs/lab1/slides.html#explorer-tab",
-    "title": "Lab 1",
-    "section": "Explorer tab",
-    "text": "Explorer tab\n\nLet’s focus on the Explorer tab\nUse it to find your folder stat133\nClick on stat133 (i.e. move inside this folder)\nClick on folder icon to create a labs folder\nClick on labs (i.e. move inside this folder)\nInside labs, create a folder lab1"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#first-contact-with-quarto-file",
-    "href": "labs/lab1/slides.html#first-contact-with-quarto-file",
-    "title": "Lab 1",
-    "section": "First contact with Quarto File",
-    "text": "First contact with Quarto File\n\nOpen a Quarto file (i.e. Quarto document)\nUnderstanding anatomy of basic quarto file\n\nYAML header\nNarrative elements\nCode chunks\n\nEdit YAML header:\n\ntitle: \"Lab 1\"\nauthor: \"First Last\""
-  },
-  {
-    "objectID": "labs/lab1/slides.html#rendering-a-.qmd-file",
-    "href": "labs/lab1/slides.html#rendering-a-.qmd-file",
-    "title": "Lab 1",
-    "section": "Rendering a .qmd file",
-    "text": "Rendering a .qmd file\n\nClick the Preview button. In RStudio is the Render button.\nSave file in your lab1 folder.\nOutput file is an HTML document (assuming format: html)\nBTW: most assignments will require submission of their .qmd and .html files."
-  },
-  {
-    "objectID": "labs/lab1/slides.html#editing-a-.qmd-file",
-    "href": "labs/lab1/slides.html#editing-a-.qmd-file",
-    "title": "Lab 1",
-    "section": "Editing a .qmd file",
-    "text": "Editing a .qmd file\nEdit the content of your .qmd file to include the following content:\n\nMajor(s) and, if applicable, minor.\nHometown.\nFavorite song in the last 3 months.\nInsert a table (e.g. 3x3 table).\nInsert an image.\nInclude a quote.\n\n\nRender your quarto file again."
-  },
-  {
-    "objectID": "labs/lab1/slides.html#submission-to-bcourses",
-    "href": "labs/lab1/slides.html#submission-to-bcourses",
-    "title": "Lab 1",
-    "section": "Submission to bCourses",
-    "text": "Submission to bCourses\nSubmit both your .qmd and .html files to bCourses under the lab1 assignment.\n\n\nThis is a “dummy” assignment: won’t be part of your grade; we just want to make sure everyone knows how and where to submit .qmd and .html files."
-  },
-  {
-    "objectID": "labs/lab1/slides.html#so-far",
-    "href": "labs/lab1/slides.html#so-far",
-    "title": "Lab 1",
-    "section": "So far …",
-    "text": "So far …\n\nSoftware Installed\nDirectory, subdirectories, and files:\n\n  stat133/\n    labs/\n        lab1/\n          lab1-first-last.qmd\n          lab1-first-last.html\n\nLab1 .qmd and .html files submitted to bCourses"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#section-1",
-    "href": "labs/lab1/slides.html#section-1",
-    "title": "Lab 1",
-    "section": "",
-    "text": "File\nA named container that stores data—such as text, images, or programs—on a computer disk.\nThe file name usually ends in an extension (.txt, .png, .qmd) that indicates the format.\n\n\nDirectory (or Folder)\nA named container that stores a set of files or other folders.\nWe’ll write directories by appending a slash at the end: e.g., Documents/, stat133/, lab1/"
-  },
-  {
-    "objectID": "labs/lab1/slides.html#in-case-of-trouble",
-    "href": "labs/lab1/slides.html#in-case-of-trouble",
-    "title": "Lab 1",
-    "section": "In case of trouble",
-    "text": "In case of trouble\nIf you experienced any issues today, for example:\n\ninstalling software\nrendering .qmd file\nsubmission to bCourses\ngot lost along the discussion\n\nthen please come to office hours!"
+    "text": "A graph without any visual effects at a normal scale.\n\n\n\n\nA graph with a “shrinking” effect.\n\n\n\n\nA graph with an “enlarging” effect.\n\n\n\n\nNow the graph is normal size again.\n\n\n\n\n\n\n\nThe panning attribute takes a pair of x and y values that control the horizontal and vertical panning, respectively.\nNormal position\n\n\n\n\n\n\n\n\n\nPanning to the left\n\n\n\n\nPanning to the right\n\n\n\n\nNormal position again\n\n\n\n\n\n\n\n\nWarning: package 'readr' was built under R version 4.5.2\n\n\nWarning: package 'dplyr' was built under R version 4.5.2"
   },
   {
     "objectID": "labs/lab6/slides.html#agenda",
@@ -3553,6 +3427,272 @@
     "text": "Pset 5 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps5\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
   {
+    "objectID": "labs/lab1/slides.html#meet-your-gsi",
+    "href": "labs/lab1/slides.html#meet-your-gsi",
+    "title": "Lab 1",
+    "section": "Meet your GSI",
+    "text": "Meet your GSI\n\nIntroduce yourself to the clasas. You can talk about your:\n\nName\nMajor\nExperience\nFun fact"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#with-the-people-around-you",
+    "href": "labs/lab1/slides.html#with-the-people-around-you",
+    "title": "Lab 1",
+    "section": "With the people around you …",
+    "text": "With the people around you …\n\nTake a few minutes to share your:\n\n\n\nName\nMajor\nYear\nHometown\nWhich dog mood are you today?\n\n\n\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#ice-breakers",
+    "href": "labs/lab1/slides.html#ice-breakers",
+    "title": "Lab 1",
+    "section": "Ice Breakers",
+    "text": "Ice Breakers"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#course-website",
+    "href": "labs/lab1/slides.html#course-website",
+    "title": "Lab 1",
+    "section": "Course Website",
+    "text": "Course Website\nhttps://stat133.berkeley.edu/spring-2026"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#syllabus",
+    "href": "labs/lab1/slides.html#syllabus",
+    "title": "Lab 1",
+    "section": "Syllabus",
+    "text": "Syllabus\nPlease take some minutes to read the syllabus and jot down at least two questions that you have.\nhttps://stat133.berkeley.edu/spring-2026/syllabus.html\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#installation",
+    "href": "labs/lab1/slides.html#installation",
+    "title": "Lab 1",
+    "section": "Installation",
+    "text": "Installation\n\n\n\n−+\n03:00\n\n\n\n1) R  https://www.r-project.org/\n\n\n\n2) Positron  https://positron.posit.co/\n\n\n\n\n⚠️ 2b) If Positron fails, then RStudio  https://posit.co/download/rstudio-desktop/\n\n\n\n\n3) Windows users‼️: Git  https://git-scm.com/"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#directory-stat133",
+    "href": "labs/lab1/slides.html#directory-stat133",
+    "title": "Lab 1",
+    "section": "Directory stat133",
+    "text": "Directory stat133\nIn your computer, e.g. folder Desktop or Documents, please create a folder (i.e. directory) for this course.\n\n\n👍 Good Names:\n\nstat133\nSTAT133\nStat133\n\n\n👎 Bad Names (no blank spaces):\n\nstat 133\nSTAT 133\nStat 133\n\n\nThis will be a dedicated directory for all the work you’ll do in this course."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
+    "href": "labs/lab1/slides.html#first-contact-with-positron-or-rstudio",
+    "title": "Lab 1",
+    "section": "First contact with Positron (or Rstudio)",
+    "text": "First contact with Positron (or Rstudio)\nDemo:\n\nOpen Positron\nUnderstanding workspace\nQuadrants or panes"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#explorer-positron",
+    "href": "labs/lab1/slides.html#explorer-positron",
+    "title": "Lab 1",
+    "section": "Explorer (Positron)",
+    "text": "Explorer (Positron)\nLet’s focus on the Explorer tab"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#explorer-positron-1",
+    "href": "labs/lab1/slides.html#explorer-positron-1",
+    "title": "Lab 1",
+    "section": "Explorer (Positron)",
+    "text": "Explorer (Positron)\nOpen your folder stat133"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#explorer-tab",
+    "href": "labs/lab1/slides.html#explorer-tab",
+    "title": "Lab 1",
+    "section": "Explorer tab",
+    "text": "Explorer tab\n\nLet’s focus on the Explorer tab\nUse it to find your folder stat133\nClick on stat133 (i.e. move inside this folder)\nClick on folder icon to create a labs folder\nClick on labs (i.e. move inside this folder)\nInside labs, create a folder lab1"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#first-contact-with-quarto-file",
+    "href": "labs/lab1/slides.html#first-contact-with-quarto-file",
+    "title": "Lab 1",
+    "section": "First contact with Quarto File",
+    "text": "First contact with Quarto File\n\nOpen a Quarto file (i.e. Quarto document)\nUnderstanding anatomy of basic quarto file\n\nYAML header\nNarrative elements\nCode chunks\n\nEdit YAML header:\n\ntitle: \"Lab 1\"\nauthor: \"First Last\""
+  },
+  {
+    "objectID": "labs/lab1/slides.html#rendering-a-.qmd-file",
+    "href": "labs/lab1/slides.html#rendering-a-.qmd-file",
+    "title": "Lab 1",
+    "section": "Rendering a .qmd file",
+    "text": "Rendering a .qmd file\n\nClick the Preview button. In RStudio is the Render button.\nSave file in your lab1 folder.\nOutput file is an HTML document (assuming format: html)\nBTW: most assignments will require submission of their .qmd and .html files."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#editing-a-.qmd-file",
+    "href": "labs/lab1/slides.html#editing-a-.qmd-file",
+    "title": "Lab 1",
+    "section": "Editing a .qmd file",
+    "text": "Editing a .qmd file\nEdit the content of your .qmd file to include the following content:\n\nMajor(s) and, if applicable, minor.\nHometown.\nFavorite song in the last 3 months.\nInsert a table (e.g. 3x3 table).\nInsert an image.\nInclude a quote.\n\n\nRender your quarto file again."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#submission-to-bcourses",
+    "href": "labs/lab1/slides.html#submission-to-bcourses",
+    "title": "Lab 1",
+    "section": "Submission to bCourses",
+    "text": "Submission to bCourses\nSubmit both your .qmd and .html files to bCourses under the lab1 assignment.\n\n\nThis is a “dummy” assignment: won’t be part of your grade; we just want to make sure everyone knows how and where to submit .qmd and .html files."
+  },
+  {
+    "objectID": "labs/lab1/slides.html#so-far",
+    "href": "labs/lab1/slides.html#so-far",
+    "title": "Lab 1",
+    "section": "So far …",
+    "text": "So far …\n\nSoftware Installed\nDirectory, subdirectories, and files:\n\n  stat133/\n    labs/\n        lab1/\n          lab1-first-last.qmd\n          lab1-first-last.html\n\nLab1 .qmd and .html files submitted to bCourses"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#section-1",
+    "href": "labs/lab1/slides.html#section-1",
+    "title": "Lab 1",
+    "section": "",
+    "text": "File\nA named container that stores data—such as text, images, or programs—on a computer disk.\nThe file name usually ends in an extension (.txt, .png, .qmd) that indicates the format.\n\n\nDirectory (or Folder)\nA named container that stores a set of files or other folders.\nWe’ll write directories by appending a slash at the end: e.g., Documents/, stat133/, lab1/"
+  },
+  {
+    "objectID": "labs/lab1/slides.html#in-case-of-trouble",
+    "href": "labs/lab1/slides.html#in-case-of-trouble",
+    "title": "Lab 1",
+    "section": "In case of trouble",
+    "text": "In case of trouble\nIf you experienced any issues today, for example:\n\ninstalling software\nrendering .qmd file\nsubmission to bCourses\ngot lost along the discussion\n\nthen please come to office hours!"
+  },
+  {
+    "objectID": "labs/lab6/scrollytelling-demo.html",
+    "href": "labs/lab6/scrollytelling-demo.html",
+    "title": "MT Cars Report",
+    "section": "",
+    "text": "This is a sample closeread document using the mtcars dataset.\n\n\n\n\nThe narrative appears in this sidebar (left margin), while visual elements appear on the right.\n\n\n\n\nThe mtcars dataset contains measurements for 32 cars from the 1970s, including fuel efficiency, engine size, horsepower, and transmission type.\n\n\n\n\nWe call this a sticky element because it stays fixed on the screen while you scroll through the explanation.\n\n\n\n\nEngine displacement (disp) measures engine size. Larger engines typically generate more power but often consume more fuel.\n\n\n\n\nHere is another sticky element showing the relationship between engine size and fuel efficiency.\n\n\n\n\nAs you scroll, notice the downward trend: cars with larger engines tend to have lower miles per gallon. This illustrates a common tradeoff between performance and efficiency.\n\n\n\n\nThis narrative section continues as a single block of explanatory text.\n\nThe mtcars dataset includes several important variables:\n\n- mpg: fuel efficiency\n- disp: engine displacement\n- hp: horsepower\n- wt: vehicle weight\n- am: transmission type (0 = automatic, 1 = manual)\n\n\n\n\nNext is a sticky table summarizing average fuel efficiency by transmission type.\n\n\n\n\nTables allow us to move from individual observations to summarized comparisons across groups.\n\n\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTransmission\nAverage MPG\nAverage Horsepower\nAverage Weight\n\n\n\n\nAutomatic\n17.14737\n160.2632\n3.768895\n\n\nManual\n24.39231\n126.8462\n2.411000"
+  },
+  {
+    "objectID": "labs/lab6/closeread-template.html",
+    "href": "labs/lab6/closeread-template.html",
+    "title": "Closeread Template",
+    "section": "",
+    "text": "This is a sample closeread document.\n\n\n\n\nThe narrative appears on this side bar (left margin).\n\n\n\n\nThe image on the right depicts three species of iris flowers and their corresponding Sepal and Petal elements.\n\n\n\n\nWe refer to this image element as a sticky element. Why? Because as you scroll down, the image of the iris flowers gets stuck in the same place.\n\n\n\n\nWhen you trigger a sticky element, it will be displayed in the main section (to the right of this sidebar).\n\n\n\n\nHere’s another sticky element. It’s a simple scatter plot based on the iris data set, which is a built-in data frame in R.\n\n\n\n\nThis narrative section is displayed as a continuous piece of text instead of being broken down into separated paragraphs.\n\nThere are 3 species of iris flowers:\n\n- Setosa (red)\n- Versicolor (green)\n- Virginica (blue)\n\n\n\n\nHere’s a third sticky element.\n\n\n\n\nIt’s just a table with summary statistics.\n\n\n\n\nAnd finally a fourth sticky element.\n\n\n\n\nA colorful plot using facets to show the distribution of Sepal Length among the three iris species.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecies\navg_sepal_length\nsd_sepal_length\n\n\n\n\nsetosa\n5.006\n0.3524897\n\n\nversicolor\n5.936\n0.5161711\n\n\nvirginica\n6.588\n0.6358796"
+  },
+  {
+    "objectID": "labs/lab7/slides.html#before-the-quiz-1",
+    "href": "labs/lab7/slides.html#before-the-quiz-1",
+    "title": "Lab 7",
+    "section": "Before the Quiz",
+    "text": "Before the Quiz\n\nSpread out as much as possible.\n🚽 If you need to use the bathroom, this is the time to do it.\n🧹 Clear your desk of everything except a pen/pencil and your ID.\n🧢 Remove hats, hoods, and sunglasses (don’t hide your face please!)\n📱 All electronic devices (laptop, phone, airbuds, smart watch) should remain in your bag for the entire quiz period."
+  },
+  {
+    "objectID": "labs/lab7/slides.html#quiz",
+    "href": "labs/lab7/slides.html#quiz",
+    "title": "Lab 7",
+    "section": "Quiz",
+    "text": "Quiz\n\n\n\n−+\n35:00\n\n\n\n\nPlease be quiet.\nWhen you get a quiz, do not begin until we tell you so.\nWrite your name and SID.\nKeep your eyes on your own quiz.\nOnly one person allowed to use the bathroom at a time.\nIf you finish early, please hold on to your quiz and wait.\nWhen the timer ends, hold up your quiz in the air immediately and put your writing utensils down or risk a 0.\n\nGood luck! 🍀"
+  },
+  {
+    "objectID": "labs/lab7/slides.html#basic-workflow",
+    "href": "labs/lab7/slides.html#basic-workflow",
+    "title": "Lab 7",
+    "section": "Basic Workflow",
+    "text": "Basic Workflow\nYou write .qmd file\n        ↓\nQuarto renders → HTML\n        ↓\nNetlify hosts the HTML\n        ↓\nPublic link you can submit/share"
+  },
+  {
+    "objectID": "labs/lab7/slides.html#set-up",
+    "href": "labs/lab7/slides.html#set-up",
+    "title": "Lab 7",
+    "section": "Set Up",
+    "text": "Set Up\n\nLog in to Netlify with Google using your Berkeley credentials\nEnter your name, use case, etc and click ‘Continue to deploy’\nAt ‘Deploy your first project’, click ‘skip this step for now’"
+  },
+  {
+    "objectID": "labs/lab7/slides.html#set-up-1",
+    "href": "labs/lab7/slides.html#set-up-1",
+    "title": "Lab 7",
+    "section": "Set Up",
+    "text": "Set Up\n\n\nOnce you’ve created and finished your .qmd file for today’s publication, you will drag and drop the rendered .html version into this box.  \nAt ‘Rename to index.html?’, click ‘Rename and deploy’"
+  },
+  {
+    "objectID": "labs/lab7/slides.html#set-up-2",
+    "href": "labs/lab7/slides.html#set-up-2",
+    "title": "Lab 7",
+    "section": "Set Up",
+    "text": "Set Up\n\n\nClick on ‘Quick Setup’  \nUnder ‘Project Name’, rename the project to ‘Your-Name-Pub6’  \nNow the project is publicly available online under Your-Name-Pub6.netlify.app!"
+  },
+  {
+    "objectID": "labs/lab7/slides.html#why-use-visual-effects",
+    "href": "labs/lab7/slides.html#why-use-visual-effects",
+    "title": "Lab 7",
+    "section": "Why Use Visual Effects?",
+    "text": "Why Use Visual Effects?\nNow that we’ve seen various introductory examples, we should take the next step and discuss the so-called focus effects.\n\n‘focus effects’ = what you use to guide your readers’ attention to certain aspects of your stickies"
+  },
+  {
+    "objectID": "labs/lab7/slides.html#focus-effects",
+    "href": "labs/lab7/slides.html#focus-effects",
+    "title": "Lab 7",
+    "section": "Focus Effects",
+    "text": "Focus Effects\nBelow is an abstract example:\nTrigger without focus effect @cr-sticky\n\nTrigger with some focus effect [@cr-sticky]{effect=\"...\"}\nThe reason why an effect is attached to a trigger is because a trigger is what Closeread uses to decide what to do with a sticky."
+  },
+  {
+    "objectID": "labs/lab7/slides.html#syntax-to-specify-focus-effects",
+    "href": "labs/lab7/slides.html#syntax-to-specify-focus-effects",
+    "title": "Lab 7",
+    "section": "Syntax to Specify Focus Effects",
+    "text": "Syntax to Specify Focus Effects\nThe syntax to specify a focus effect is the following:\n\nYou wrap the trigger @cr-sticky with brackets: [@cr-sticky]\nYou append an attribute effect using braces [@cr-sticky]{effect=\"...\"}\nInside the braces, you specify the name of the effect, followed by the equals sign =, followed by the value of the effect surrounded in quotes \"...\""
+  },
+  {
+    "objectID": "labs/lab7/slides.html#available-effects-in-closeread",
+    "href": "labs/lab7/slides.html#available-effects-in-closeread",
+    "title": "Lab 7",
+    "section": "Available Effects in Closeread",
+    "text": "Available Effects in Closeread\nCloseread comes with a handful of focus effects, and we will focus on:\n\nScaling: the scale-by effect is used to shrink or enlarge the size of a sticky (e.g. text, equations, images, code).\nPanning: the pan-to effect is used to move a sticky up-down, and left-right, or if you prefer north-south, east-west (e.g. text, equations, images, code)."
+  },
+  {
+    "objectID": "labs/lab7/slides.html#syntax-scaling",
+    "href": "labs/lab7/slides.html#syntax-scaling",
+    "title": "Lab 7",
+    "section": "Syntax: Scaling",
+    "text": "Syntax: Scaling\nThe scaling effect works on text (including math equations, and code) and images. Keep in mind that you include this focus effect by attaching it to a trigger, for example:\nNormal scale @cr-sticky\n\nShrinking effect [@cr-sticky]{scale-by=\"0.5\"}\n\nEnlarging effect [@cr-sticky]{scale-by=\"2\"}\n\nNormal size again @cr-sticky"
+  },
+  {
+    "objectID": "labs/lab7/slides.html#syntax-panning",
+    "href": "labs/lab7/slides.html#syntax-panning",
+    "title": "Lab 7",
+    "section": "Syntax: Panning",
+    "text": "Syntax: Panning\nTo move a sticky element you use the pan-to effect, e.g. @cr-sticky\n\nNormal position @cr-sticky\n\nPanning to the left [@cr-sticky]{pan-to=\"-10px,0px\"}\n\nPanning to the right [@cr-sticky]{pan-to=\"0px,10px\"}\n\nNormal position again @cr-sticky"
+  },
+  {
+    "objectID": "labs/lab7/slides.html#demo",
+    "href": "labs/lab7/slides.html#demo",
+    "title": "Lab 7",
+    "section": "Demo",
+    "text": "Demo\nExample of visual effects"
+  },
+  {
+    "objectID": "labs/lab7/slides.html#more-scrollytelling-effects",
+    "href": "labs/lab7/slides.html#more-scrollytelling-effects",
+    "title": "Lab 7",
+    "section": "More Scrollytelling Effects",
+    "text": "More Scrollytelling Effects\nDataViz example  \nIncrementally reveal portions of a graph by:  \n\nUsing the scrollytelling format  \nCreating separate versions of the graph which incrementally add elements  \nUsing scrollytelling sections to wrap each graph and trigger them to give the impression of an incremental reveal"
+  },
+  {
+    "objectID": "labs/lab7/slides.html#demo-1",
+    "href": "labs/lab7/slides.html#demo-1",
+    "title": "Lab 7",
+    "section": "Demo",
+    "text": "Demo\nExample of incrementally revealing a graph"
+  },
+  {
+    "objectID": "labs/lab7/slides.html#submission-to-bcourses",
+    "href": "labs/lab7/slides.html#submission-to-bcourses",
+    "title": "Lab 7",
+    "section": "Submission to BCourses",
+    "text": "Submission to BCourses\nSubmit the Netlify URL (link) of your published document to the corresponding assignment in bCourses.\nSee Assignments tab &gt; Quarto Publications &gt; Pub6"
+  },
+  {
+    "objectID": "labs/lab7/slides.html#pset-6",
+    "href": "labs/lab7/slides.html#pset-6",
+    "title": "Lab 7",
+    "section": "Pset 6",
+    "text": "Pset 6\nAvailable in bCourses:\nSee Assignments tab &gt; Problem Sets &gt; PS6\nYou’ll find 2 files:\n\nps6.html: instructions\nps6.qmd: template file to write your answers\n\n\nIn case of trouble: Go to Files tab, folder problem-sets, folder ps6, and download the qmd file.\nSometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome)."
+  },
+  {
+    "objectID": "labs/lab7/slides.html#pset-6-submission",
+    "href": "labs/lab7/slides.html#pset-6-submission",
+    "title": "Lab 7",
+    "section": "Pset 6 Submission",
+    "text": "Pset 6 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps5\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
+  },
+  {
     "objectID": "labs/lab5/demo-slides.html#why-ev-adoption-matters",
     "href": "labs/lab5/demo-slides.html#why-ev-adoption-matters",
     "title": "CEC Report",
@@ -3606,7 +3746,7 @@
     "href": "labs/lab5/data-cleaning.html",
     "title": "Lab 5",
     "section": "",
-    "text": "ev_sales &lt;- read.csv(\"data/ev-sales.csv\")\n\nhead(ev_sales)\n\n  Data.Year Quarter        COUNTY FUEL_TYPE  MAKE    MODEL Number.of.Vehicles\n1      2008       3       Alameda  Electric Tesla Roadster                  1\n2      2008       3 San Francisco  Electric Tesla Roadster                  1\n3      2008       3     San Mateo  Electric Tesla Roadster                  3\n4      2008       3   Santa Clara  Electric Tesla Roadster                  4\n5      2008       3        Sonoma  Electric Tesla Roadster                  1\n6      2008       4       Alameda  Electric Tesla Roadster                  5\n\n\n\n\nWe want to know about EV sales in California in 2023 by model and by county.\n\n\n\nTalk to a partner and answer the following questions: - How many rows and columns are in the dataframe? - What do the columns and rows represent? - What are the data types of each column?\n\n\n\n\nRepresents a county and year by model of EV sold in CA and how many were sold.\n\n\n\n\nchanging names of cols\n\ncolnames(ev_sales) &lt;- c(\"year\", \"quarter\", \"county\", \"fuel_type\", \"make\", \"model\", \"sales\")\n\n\n\n\n\nyear: the year of the sales\nquarter: the quarter of the year when the sales were recorded\ncounty: the county in California where the EVs were sold\nmake: the make/brand of the EV sold\nmodel: the model of the EV sold\nFUEL_TYPE: the type of fuel used by the EV (e.g., electric, hybrid)\nsales: the number of EVs sold in that county for that make and model in that year\n\nWe aren’t interested in the quarter, so we can group by each other column and drop the quarter column.\n\nlibrary(tidyverse)\n\nWarning: package 'readr' was built under R version 4.5.2\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.6\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nev_sales &lt;- ev_sales |&gt;\n  group_by(year, county, make, model, fuel_type) |&gt;\n  summarise(\n    sales = sum(`sales`, na.rm = TRUE),\n    .groups = \"drop\"\n  )\n\nNow each row is year and county by make and model of EV sold in CA and how many were sold.\nWe are only interested in 2023, so we can filter the dataframe to only include rows where the year is 2023.\n\nev_sales &lt;- ev_sales |&gt;\n  filter(year == 2023)\n\n\n# save the cleaned dataframe as a csv file\nwrite.csv(ev_sales, \"data/ev-sales-cleaned.csv\", row.names = FALSE)\n\n\n\n\n\nWhich CA county has the most EV sales in 2023?\n\n\ncounty_max_sales &lt;- ev_sales |&gt;\n  group_by(county) |&gt;\n  summarise(total_sales = sum(sales)) |&gt;\n  arrange(desc(total_sales)) |&gt;\n  slice_head(n = 1)\n\n\nWhich CA county has the least EV sales in 2023?\n\n\ncounty_min_sales &lt;- ev_sales |&gt;\n  group_by(county) |&gt;\n  summarise(total_sales = sum(sales)) |&gt;\n  arrange(total_sales) |&gt;\n  slice_head(n = 1)\n\n\nWhat model of EV is the most popular in CA in 2023?\n\n\npopular_model &lt;- ev_sales |&gt;\n  group_by(model) |&gt;\n  summarise(total_sales = sum(sales)) |&gt;\n  arrange(desc(total_sales)) |&gt;\n  slice_head(n = 1)\n\n\nWhat model of EV is the least popular in CA in 2023?\n\n\nleast_popular_model &lt;- ev_sales |&gt;\n  group_by(model) |&gt;\n  summarise(total_sales = sum(sales)) |&gt;\n  arrange(total_sales) |&gt;\n  slice_head(n = 1)"
+    "text": "ev_sales &lt;- read.csv(\"data/ev-sales.csv\")\n\nhead(ev_sales)\n\n  Data.Year Quarter        COUNTY FUEL_TYPE  MAKE    MODEL Number.of.Vehicles\n1      2008       3       Alameda  Electric Tesla Roadster                  1\n2      2008       3 San Francisco  Electric Tesla Roadster                  1\n3      2008       3     San Mateo  Electric Tesla Roadster                  3\n4      2008       3   Santa Clara  Electric Tesla Roadster                  4\n5      2008       3        Sonoma  Electric Tesla Roadster                  1\n6      2008       4       Alameda  Electric Tesla Roadster                  5\n\n\n\n\nWe want to know about EV sales in California in 2023 by model and by county.\n\n\n\nTalk to a partner and answer the following questions: - How many rows and columns are in the dataframe? - What do the columns and rows represent? - What are the data types of each column?\n\n\n\n\nRepresents a county and year by model of EV sold in CA and how many were sold.\n\n\n\n\nchanging names of cols\n\ncolnames(ev_sales) &lt;- c(\"year\", \"quarter\", \"county\", \"fuel_type\", \"make\", \"model\", \"sales\")\n\n\n\n\n\nyear: the year of the sales\nquarter: the quarter of the year when the sales were recorded\ncounty: the county in California where the EVs were sold\nmake: the make/brand of the EV sold\nmodel: the model of the EV sold\nFUEL_TYPE: the type of fuel used by the EV (e.g., electric, hybrid)\nsales: the number of EVs sold in that county for that make and model in that year\n\nWe aren’t interested in the quarter, so we can group by each other column and drop the quarter column.\n\nlibrary(tidyverse)\n\nWarning: package 'readr' was built under R version 4.5.2\n\n\nWarning: package 'dplyr' was built under R version 4.5.2\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.0     ✔ readr     2.1.6\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nev_sales &lt;- ev_sales |&gt;\n  group_by(year, county, make, model, fuel_type) |&gt;\n  summarise(\n    sales = sum(`sales`, na.rm = TRUE),\n    .groups = \"drop\"\n  )\n\nNow each row is year and county by make and model of EV sold in CA and how many were sold.\nWe are only interested in 2023, so we can filter the dataframe to only include rows where the year is 2023.\n\nev_sales &lt;- ev_sales |&gt;\n  filter(year == 2023)\n\n\n# save the cleaned dataframe as a csv file\nwrite.csv(ev_sales, \"data/ev-sales-cleaned.csv\", row.names = FALSE)\n\n\n\n\n\nWhich CA county has the most EV sales in 2023?\n\n\ncounty_max_sales &lt;- ev_sales |&gt;\n  group_by(county) |&gt;\n  summarise(total_sales = sum(sales)) |&gt;\n  arrange(desc(total_sales)) |&gt;\n  slice_head(n = 1)\n\n\nWhich CA county has the least EV sales in 2023?\n\n\ncounty_min_sales &lt;- ev_sales |&gt;\n  group_by(county) |&gt;\n  summarise(total_sales = sum(sales)) |&gt;\n  arrange(total_sales) |&gt;\n  slice_head(n = 1)\n\n\nWhat model of EV is the most popular in CA in 2023?\n\n\npopular_model &lt;- ev_sales |&gt;\n  group_by(model) |&gt;\n  summarise(total_sales = sum(sales)) |&gt;\n  arrange(desc(total_sales)) |&gt;\n  slice_head(n = 1)\n\n\nWhat model of EV is the least popular in CA in 2023?\n\n\nleast_popular_model &lt;- ev_sales |&gt;\n  group_by(model) |&gt;\n  summarise(total_sales = sum(sales)) |&gt;\n  arrange(total_sales) |&gt;\n  slice_head(n = 1)"
   },
   {
     "objectID": "labs/lab5/data-cleaning.html#our-goal",
@@ -3641,7 +3781,7 @@
     "href": "labs/lab5/data-cleaning.html#each-column",
     "title": "Lab 5",
     "section": "",
-    "text": "year: the year of the sales\nquarter: the quarter of the year when the sales were recorded\ncounty: the county in California where the EVs were sold\nmake: the make/brand of the EV sold\nmodel: the model of the EV sold\nFUEL_TYPE: the type of fuel used by the EV (e.g., electric, hybrid)\nsales: the number of EVs sold in that county for that make and model in that year\n\nWe aren’t interested in the quarter, so we can group by each other column and drop the quarter column.\n\nlibrary(tidyverse)\n\nWarning: package 'readr' was built under R version 4.5.2\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.6\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nev_sales &lt;- ev_sales |&gt;\n  group_by(year, county, make, model, fuel_type) |&gt;\n  summarise(\n    sales = sum(`sales`, na.rm = TRUE),\n    .groups = \"drop\"\n  )\n\nNow each row is year and county by make and model of EV sold in CA and how many were sold.\nWe are only interested in 2023, so we can filter the dataframe to only include rows where the year is 2023.\n\nev_sales &lt;- ev_sales |&gt;\n  filter(year == 2023)\n\n\n# save the cleaned dataframe as a csv file\nwrite.csv(ev_sales, \"data/ev-sales-cleaned.csv\", row.names = FALSE)"
+    "text": "year: the year of the sales\nquarter: the quarter of the year when the sales were recorded\ncounty: the county in California where the EVs were sold\nmake: the make/brand of the EV sold\nmodel: the model of the EV sold\nFUEL_TYPE: the type of fuel used by the EV (e.g., electric, hybrid)\nsales: the number of EVs sold in that county for that make and model in that year\n\nWe aren’t interested in the quarter, so we can group by each other column and drop the quarter column.\n\nlibrary(tidyverse)\n\nWarning: package 'readr' was built under R version 4.5.2\n\n\nWarning: package 'dplyr' was built under R version 4.5.2\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.0     ✔ readr     2.1.6\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nev_sales &lt;- ev_sales |&gt;\n  group_by(year, county, make, model, fuel_type) |&gt;\n  summarise(\n    sales = sum(`sales`, na.rm = TRUE),\n    .groups = \"drop\"\n  )\n\nNow each row is year and county by make and model of EV sold in CA and how many were sold.\nWe are only interested in 2023, so we can filter the dataframe to only include rows where the year is 2023.\n\nev_sales &lt;- ev_sales |&gt;\n  filter(year == 2023)\n\n\n# save the cleaned dataframe as a csv file\nwrite.csv(ev_sales, \"data/ev-sales-cleaned.csv\", row.names = FALSE)"
   },
   {
     "objectID": "labs/lab5/data-cleaning.html#using-dplyr-tools",
@@ -4496,7 +4636,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 4 6"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 2 6"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#meet-the-palmer-penguins",
@@ -5287,7 +5427,7 @@
     "href": "lectures/27-geospatial2/slides.html#storms-data-from-dplyr-north-atlantic",
     "title": "Storms in North Atlantic I",
     "section": "storms data from \"dplyr\" (North Atlantic)",
-    "text": "storms data from \"dplyr\" (North Atlantic)\n\nstorms\n\n# A tibble: 19,537 × 13\n   name   year month   day  hour   lat  long status      category  wind pressure\n   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;\n 1 Amy    1975     6    27     0  27.5 -79   tropical d…       NA    25     1013\n 2 Amy    1975     6    27     6  28.5 -79   tropical d…       NA    25     1013\n 3 Amy    1975     6    27    12  29.5 -79   tropical d…       NA    25     1013\n 4 Amy    1975     6    27    18  30.5 -79   tropical d…       NA    25     1013\n 5 Amy    1975     6    28     0  31.5 -78.8 tropical d…       NA    25     1012\n 6 Amy    1975     6    28     6  32.4 -78.7 tropical d…       NA    25     1012\n 7 Amy    1975     6    28    12  33.3 -78   tropical d…       NA    25     1011\n 8 Amy    1975     6    28    18  34   -77   tropical d…       NA    30     1006\n 9 Amy    1975     6    29     0  34.4 -75.8 tropical s…       NA    35     1004\n10 Amy    1975     6    29     6  34   -74.8 tropical s…       NA    40     1002\n# ℹ 19,527 more rows\n# ℹ 2 more variables: tropicalstorm_force_diameter &lt;int&gt;,\n#   hurricane_force_diameter &lt;int&gt;\n\n\n\n\n\n\nSource: NOAA Atlantic hurricane database best track data\nThe data includes the positions and attributes of storms from 1975-2022."
+    "text": "storms data from \"dplyr\" (North Atlantic)\n\nstorms\n\n# A tibble: 20,778 × 13\n   name   year month   day  hour   lat  long status      category  wind pressure\n   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;\n 1 Amy    1975     6    27     0  27.5 -79   tropical d…       NA    25     1013\n 2 Amy    1975     6    27     6  28.5 -79   tropical d…       NA    25     1013\n 3 Amy    1975     6    27    12  29.5 -79   tropical d…       NA    25     1013\n 4 Amy    1975     6    27    18  30.5 -79   tropical d…       NA    25     1013\n 5 Amy    1975     6    28     0  31.5 -78.8 tropical d…       NA    25     1012\n 6 Amy    1975     6    28     6  32.4 -78.7 tropical d…       NA    25     1012\n 7 Amy    1975     6    28    12  33.3 -78   tropical d…       NA    25     1011\n 8 Amy    1975     6    28    18  34   -77   tropical d…       NA    30     1006\n 9 Amy    1975     6    29     0  34.4 -75.8 tropical s…       NA    35     1004\n10 Amy    1975     6    29     6  34   -74.8 tropical s…       NA    40     1002\n# ℹ 20,768 more rows\n# ℹ 2 more variables: tropicalstorm_force_diameter &lt;int&gt;,\n#   hurricane_force_diameter &lt;int&gt;\n\n\n\n\n\n\nSource: NOAA Atlantic hurricane database best track data\nThe data includes the positions and attributes of storms from 1975-2022."
   },
   {
     "objectID": "lectures/27-geospatial2/slides.html#storms-in-1975",
