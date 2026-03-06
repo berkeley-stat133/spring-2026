@@ -73,6 +73,7 @@ sw <- c(
 )
 ```
 
+. . .
 
 ```{r}
 str_view(sw, pattern = "[A-Z]")

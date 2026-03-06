@@ -196,6 +196,7 @@ Provides a large set of functions for string manipulation
 - `str_match()`
 - `str_replace()`
 - `str_extract()`
+- `str_remove()`
 :::
 :::
 

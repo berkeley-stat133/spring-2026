@@ -93,34 +93,10 @@ __Common Questions__
 ![](images/sea-surface-temp-anomaly-jul-31-2023.png){width="85%" fig-align="center"}
 
 
-##
-
-```{r}
-dat |> 
-  group_by(position) |> 
-  summarize(avg_ht = mean(height)) |> 
-  ggplot(aes(x = position, y = avg_ht)) +
-  geom_col() +
-  labs(title = "Average Height by Position",
-       y = "height")
-```
+# NBA Players Data
 
 
-##
-
-```{r}
-dat |> 
-  group_by(position) |> 
-  summarize(avg_ht = mean(height)) |> 
-  ggplot(aes(x = reorder(position, -avg_ht), y = avg_ht)) +
-  geom_col() +
-  labs(title = "Average Height by Position",
-       y = "height")
-```
-
-# Height and Weight
-
-## The Plan
+## The Plan: Height and Weight by Position
 
 __Audience:__ Basketball enthusiasts
 
