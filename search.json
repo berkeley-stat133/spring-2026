@@ -850,78 +850,64 @@
     "text": "Facilitating Comparison\n\nHow does this compare to that?\nHow does this compare to what’s typical?\nHow big is this variability relative to that variability?"
   },
   {
+    "objectID": "lectures/19-eda2/slides.html#the-plan-height-and-weight-by-position",
+    "href": "lectures/19-eda2/slides.html#the-plan-height-and-weight-by-position",
+    "title": "Explanatory Data Analysis",
+    "section": "The Plan: Height and Weight by Position",
+    "text": "The Plan: Height and Weight by Position\nAudience: Basketball enthusiasts\n\nMy story: Relationship between height and weight doesn’t seem to be constant across positions\n\n\nMy strategy: Display the relationship between height and weight in a manner that makes it easy to see and compare the difference between players’ position"
+  },
+  {
     "objectID": "lectures/19-eda2/slides.html#section-3",
     "href": "lectures/19-eda2/slides.html#section-3",
     "title": "Explanatory Data Analysis",
     "section": "",
-    "text": "dat |&gt; \n  group_by(position) |&gt; \n  summarize(avg_ht = mean(height)) |&gt; \n  ggplot(aes(x = position, y = avg_ht)) +\n  geom_col() +\n  labs(title = \"Average Height by Position\",\n       y = \"height\")"
+    "text": "Code\nggplot(dat, aes(x = height, y = weight)) +\n  geom_point()"
   },
   {
     "objectID": "lectures/19-eda2/slides.html#section-4",
     "href": "lectures/19-eda2/slides.html#section-4",
     "title": "Explanatory Data Analysis",
     "section": "",
-    "text": "dat |&gt; \n  group_by(position) |&gt; \n  summarize(avg_ht = mean(height)) |&gt; \n  ggplot(aes(x = reorder(position, -avg_ht), y = avg_ht)) +\n  geom_col() +\n  labs(title = \"Average Height by Position\",\n       y = \"height\")"
-  },
-  {
-    "objectID": "lectures/19-eda2/slides.html#the-plan",
-    "href": "lectures/19-eda2/slides.html#the-plan",
-    "title": "Explanatory Data Analysis",
-    "section": "The Plan",
-    "text": "The Plan\nAudience: Basketball enthusiasts\n\nMy story: Relationship between height and weight doesn’t seem to be constant across positions\n\n\nMy strategy: Display the relationship between height and weight in a manner that makes it easy to see and compare the difference between players’ position"
+    "text": "Code\nggplot(dat, aes(x = height, y = weight, color = position)) +\n  geom_point()"
   },
   {
     "objectID": "lectures/19-eda2/slides.html#section-5",
     "href": "lectures/19-eda2/slides.html#section-5",
     "title": "Explanatory Data Analysis",
     "section": "",
-    "text": "Code\nggplot(dat, aes(x = height, y = weight)) +\n  geom_point()"
+    "text": "Code\nggplot(dat, aes(x = height, y = weight, color = position)) +\n  geom_point(alpha = 0.7) +\n  theme_bw()"
   },
   {
     "objectID": "lectures/19-eda2/slides.html#section-6",
     "href": "lectures/19-eda2/slides.html#section-6",
     "title": "Explanatory Data Analysis",
     "section": "",
-    "text": "Code\nggplot(dat, aes(x = height, y = weight, color = position)) +\n  geom_point()"
+    "text": "Code\nggplot(dat, aes(x = height, y = weight, color = position)) +\n  geom_point(alpha = 0.7) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  theme_bw()"
   },
   {
     "objectID": "lectures/19-eda2/slides.html#section-7",
     "href": "lectures/19-eda2/slides.html#section-7",
     "title": "Explanatory Data Analysis",
     "section": "",
-    "text": "Code\nggplot(dat, aes(x = height, y = weight, color = position)) +\n  geom_point(alpha = 0.7) +\n  theme_bw()"
+    "text": "Code\nggplot(dat, aes(x = height, y = weight, color = position)) +\n  geom_point(alpha = 0.7) +\n  theme_bw() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  facet_wrap(~ position)"
   },
   {
     "objectID": "lectures/19-eda2/slides.html#section-8",
     "href": "lectures/19-eda2/slides.html#section-8",
     "title": "Explanatory Data Analysis",
     "section": "",
-    "text": "Code\nggplot(dat, aes(x = height, y = weight, color = position)) +\n  geom_point(alpha = 0.7) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  theme_bw()"
+    "text": "Code\ndat |&gt; \n  mutate(position = case_when(\n    position == \"C\" ~ \"Center\",\n    position == \"PF\" ~ \"Power Forward\",\n    position == \"PG\" ~ \"Point Guard\",\n    position == \"SF\" ~ \"Small Forward\",\n    position == \"SG\" ~ \"Shooting Guard\"\n  )) |&gt; \nggplot(aes(x = height, y = weight, color = position)) +\n  geom_point(alpha = 0.7) +\n  theme_bw() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  facet_wrap(~ position)"
   },
   {
     "objectID": "lectures/19-eda2/slides.html#section-9",
     "href": "lectures/19-eda2/slides.html#section-9",
     "title": "Explanatory Data Analysis",
     "section": "",
-    "text": "Code\nggplot(dat, aes(x = height, y = weight, color = position)) +\n  geom_point(alpha = 0.7) +\n  theme_bw() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  facet_wrap(~ position)"
+    "text": "Code\ndat |&gt; \n  mutate(position = case_when(\n    position == \"C\" ~ \"Center\",\n    position == \"PF\" ~ \"Power Forward\",\n    position == \"PG\" ~ \"Point Guard\",\n    position == \"SF\" ~ \"Small Forward\",\n    position == \"SG\" ~ \"Shooting Guard\"\n  )) |&gt; \nggplot(aes(x = height, y = weight, color = position)) +\n  geom_point(alpha = 0.7) +\n  theme_bw() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  facet_wrap(~ position) +\n  theme(legend.position = \"none\")"
   },
   {
     "objectID": "lectures/19-eda2/slides.html#section-10",
     "href": "lectures/19-eda2/slides.html#section-10",
-    "title": "Explanatory Data Analysis",
-    "section": "",
-    "text": "Code\ndat |&gt; \n  mutate(position = case_when(\n    position == \"C\" ~ \"Center\",\n    position == \"PF\" ~ \"Power Forward\",\n    position == \"PG\" ~ \"Point Guard\",\n    position == \"SF\" ~ \"Small Forward\",\n    position == \"SG\" ~ \"Shooting Guard\"\n  )) |&gt; \nggplot(aes(x = height, y = weight, color = position)) +\n  geom_point(alpha = 0.7) +\n  theme_bw() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  facet_wrap(~ position)"
-  },
-  {
-    "objectID": "lectures/19-eda2/slides.html#section-11",
-    "href": "lectures/19-eda2/slides.html#section-11",
-    "title": "Explanatory Data Analysis",
-    "section": "",
-    "text": "Code\ndat |&gt; \n  mutate(position = case_when(\n    position == \"C\" ~ \"Center\",\n    position == \"PF\" ~ \"Power Forward\",\n    position == \"PG\" ~ \"Point Guard\",\n    position == \"SF\" ~ \"Small Forward\",\n    position == \"SG\" ~ \"Shooting Guard\"\n  )) |&gt; \nggplot(aes(x = height, y = weight, color = position)) +\n  geom_point(alpha = 0.7) +\n  theme_bw() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  facet_wrap(~ position) +\n  theme(legend.position = \"none\")"
-  },
-  {
-    "objectID": "lectures/19-eda2/slides.html#section-12",
-    "href": "lectures/19-eda2/slides.html#section-12",
     "title": "Explanatory Data Analysis",
     "section": "",
     "text": "Code\nggplotly(\n  dat |&gt; \n    mutate(position = case_when(\n      position == \"C\" ~ \"Center\",\n      position == \"PF\" ~ \"Power Forward\",\n      position == \"PG\" ~ \"Point Guard\",\n      position == \"SF\" ~ \"Small Forward\",\n      position == \"SG\" ~ \"Shooting Guard\"\n    )) |&gt; \n    ggplot(aes(x = height, y = weight, color = position, label = player)) +\n    geom_point(alpha = 0.7) +\n    theme_bw() +\n    geom_smooth(method = \"lm\", se = FALSE) +\n    facet_wrap(~ position) +\n    theme(legend.position = \"none\")\n)"
@@ -994,7 +980,7 @@
     "href": "lectures/20-strings1/slides.html#stringr",
     "title": "Strings I",
     "section": "\"stringr\"",
-    "text": "\"stringr\"\nProvides a large set of functions for string manipulation\n\n\n\nstr_length(): analog of nchar()\nstr_c(): analog of paste()\nstr_view()\nstr_sub()\nstr_detect()\n\n\n\nstr_split()\nstr_match()\nstr_replace()\nstr_extract()"
+    "text": "\"stringr\"\nProvides a large set of functions for string manipulation\n\n\n\nstr_length(): analog of nchar()\nstr_c(): analog of paste()\nstr_view()\nstr_sub()\nstr_detect()\n\n\n\nstr_split()\nstr_match()\nstr_replace()\nstr_extract()\nstr_remove()"
   },
   {
     "objectID": "lectures/20-strings1/slides.html#str_view",
@@ -2128,7 +2114,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 13     \"Bogdan Bog… ATL   SG           77    225 August 18… RS      7         \n2 8      \"Javonte Gr… CLE   SG           77    205 July 23, … US      5         \n3 55     \"Trey Jemis… LAL   C            82    270 November … US      1         \n4 2      \"Terry Rozi… MIA   PG           73    190 March 17,… US      9         \n5 27     \"Jamal Murr… DEN   PG           76    215 February … CA      7         \n6 25     \"Mikal Brid… NYK   SF           78    209 August 30… US      6         \n7 20     \"Georges Ni… ATL   PF           78    230 June 17, … US      8         \n8 12     \"Collin Gil… PHO   PG           73    195 June 25, … US      1         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 4      Dalton Knec… LAL   SF           78    215 April 19,… US      R         \n2 18     Kyle Kuzma   MIL   PF           80    221 July 24, … US      7         \n3 8      Grayson All… PHO   SG           75    198 October 8… US      6         \n4 30     Julian Cham… SAS   SF           79    217 June 29, … US      2         \n5 5      De'Aaron Fox SAC   PG           75    185 December … US      7         \n6 2      Deandre Ayt… POR   C            84    252 July 23, … BS      6         \n7 17     Jahmir Young CHI   PG           72    185 October 7… US      R         \n8 22     Zeke Nnaji   DEN   PF           82    240 January 9… US      4         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -2590,7 +2576,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"senior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"sophomore\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -4160,7 +4146,7 @@
     "href": "lectures/21-strings2/slides.html#section",
     "title": "Strings II",
     "section": "",
-    "text": "sw &lt;- c(\n  \"LEIA is a 1.50 meters tall Female\",\n  \"LUKE is a 1.70 meters tall Male\",\n  \"HAN is a 1.80 meters tall Male\"\n)\n\n\nstr_view(sw, pattern = \"[A-Z]\")\n\n[1] │ &lt;L&gt;&lt;E&gt;&lt;I&gt;&lt;A&gt; is a 1.50 meters tall &lt;F&gt;emale\n[2] │ &lt;L&gt;&lt;U&gt;&lt;K&gt;&lt;E&gt; is a 1.70 meters tall &lt;M&gt;ale\n[3] │ &lt;H&gt;&lt;A&gt;&lt;N&gt; is a 1.80 meters tall &lt;M&gt;ale"
+    "text": "sw &lt;- c(\n  \"LEIA is a 1.50 meters tall Female\",\n  \"LUKE is a 1.70 meters tall Male\",\n  \"HAN is a 1.80 meters tall Male\"\n)\n\n\n\nstr_view(sw, pattern = \"[A-Z]\")\n\n[1] │ &lt;L&gt;&lt;E&gt;&lt;I&gt;&lt;A&gt; is a 1.50 meters tall &lt;F&gt;emale\n[2] │ &lt;L&gt;&lt;U&gt;&lt;K&gt;&lt;E&gt; is a 1.70 meters tall &lt;M&gt;ale\n[3] │ &lt;H&gt;&lt;A&gt;&lt;N&gt; is a 1.80 meters tall &lt;M&gt;ale"
   },
   {
     "objectID": "lectures/21-strings2/slides.html#anchors-1",
@@ -4636,7 +4622,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 2 6"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 2 5"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#meet-the-palmer-penguins",
