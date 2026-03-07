@@ -20,11 +20,11 @@ title: "STAT 133: Concepts in Computing with Data"
 ::::
 
 ::: {.callout-tip icon="false"}
-## Week 7 Announcements
+## Week 8 Announcements
 
-- [Problem Set 5]{.label-Homework} due Wed 3/04 by 6PM
-- [6th Quarto Pub]{.label-Pub} on Thu 3/05 (in lab)
-- [Quiz 3]{.label-Quiz} on Thu 3/05 (in lab)
+- [Problem Set 6]{.label-Homework} due Wed 3/11 by 6PM
+- [7th Publication]{.label-Pub} on Thu 3/12 (in lab)
+- [Project 3]{.label-Project} on Fri 3/13 by 6PM
 :::
 
 -----
