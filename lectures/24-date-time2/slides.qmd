@@ -1,0 +1,371 @@
+---
+title: "Dates and Times II"
+subtitle: "Time spans and time zones."
+format: stat133slides-revealjs
+revealjs-plugins:
+  - drop
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+```
+
+
+## Agenda
+
+Last time: 
+
+1) How does a computer __Store__ dates and times?
+
+2) How do we __Create__ dates and times?
+
+3) How do we __Get and Set__ them?
+
+. . .
+
+Today:
+
+4) How do you specify __Time Spans__?
+
+5) How do you account for __Time Zones__?
+
+. . .
+
+\
+
+```{r}
+#| eval: false
+library(tidyverse)  # includes "lubridate"
+```
+
+
+# Time Spans
+
+## How old is Oski?
+
+Oski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a
+freshman rally at the Greek Theatre.
+
+. . .
+
+```{r}
+#| output-location: fragment
+a <- today()
+b <- ymd("1941-09-27")
+class(a)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+class(b)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+a - b
+```
+
+
+## Durations
+
+Subtraction of two base R `Date` vectors -> `difftime` vector.
+
+. . .
+
+```{r}
+#| output-location: fragment
+class(a - b)
+```
+
+. . .
+
+A `difftime` can be recorded in many different units, so better to use `lubridate::as.duration()` to always record it in [seconds]{.bold-hilit}.
+
+. . .
+
+```{r}
+#| output-location: fragment
+oski_age_sec <- as.duration(a - b)
+class(oski_age_sec)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+oski_age_sec
+```
+
+
+## Constructing a duration
+
+You can make a `duration` by coercing a `Date` object or using a constructor function.
+
+. . .
+
+:::: {.columns}
+::: {.column .nonincremental width="50%"}
+```{r}
+dseconds(15)
+```
+
+```{r}
+dminutes(10)
+```
+
+```{r}
+dhours(c(12, 24))
+```
+:::
+
+::: {.column .fragment .nonincremental width="50%"}
+```{r}
+ddays(0:3)
+```
+
+```{r}
+dweeks(3)
+```
+
+```{r}
+dyears(1)
+```
+:::
+::::
+
+
+## Some Wrinkles
+
+. . .
+
+```{r}
+#| output-location: fragment
+one_am <- ymd_hms("2026-03-08 01:00:00", tz = "America/Los_Angeles")
+one_am
+```
+
+. . .
+
+\
+
+What should the following yield?
+
+```{r}
+#| output-location: fragment
+one_am + ddays(1)
+```
+
+. . .
+
+> Daylight savings time!
+
+
+## Question
+
+What is the answer to the following questions:
+
+1) How long is a __day__?
+
+2) How long is a __year__?
+
+
+## Periods
+
+In `"lubridate"`, a `period` is like a `duration` except it doesn’t have a fixed length in seconds. It tracks human units (day, week) that are responsive to irregularities.
+
+. . .
+
+:::: {.columns}
+::: {.column .nonincremental width="50%"}
+Example period constructors:
+
+```{r}
+seconds(15)
+```
+
+```{r}
+minutes(10)
+```
+
+```{r}
+hours(c(12, 24))
+```
+:::
+
+::: {.column .fragment .nonincremental width="50%"}
+\
+```{r}
+days(0:3)
+```
+
+```{r}
+weeks(3)
+```
+
+```{r}
+years(1)
+```
+:::
+::::
+
+
+## Working with periods
+
+. . .
+
+```{r}
+#| output-location: fragment
+one_am
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+one_am + days(1)
+```
+
+. . .
+
+\
+
+What will the following yield?
+
+```{r}
+#| output-location: fragment
+ymd("2024-01-01") + dyears(1)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+ymd("2024-01-01") + years(1) # accounts for leap year
+```
+
+
+## How old will Oski be ...
+
+. . .
+
+In a year?
+
+```{r}
+#| output-location: fragment
+oski_age_sec
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+oski_age_sec + dyears(1) # adding average seconds in a year
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+as.period(oski_age_sec)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+as.period(oski_age_sec) + years(1)
+```
+
+
+## Time Spans recap
+
+### Base R
+
+- `difftime`: inconsistent units
+
+\
+
+### lubridate
+
+- `duration`: fixed span in seconds
+
+- `period`: variable span in human units
+
+- `interval`: duration plus a starting point
+
+
+# Time Zones
+
+## {background-image="images/World_Time_Zones_Map.png" background-size="contain"}
+
+## {background-image="images/alcan.png" background-size="contain"}
+
+## {background-image="images/india.png" background-size="contain"}
+
+## {background-image="images/china.png" background-size="contain"}
+
+
+## UTC
+
+Coordinated Universal Time (UTC) is primary global time standard. Successor to GMT.
+
+
+### Offsets
+
+Each time zone has a particular offset from UTC.
+
+- London: +0
+- New York: -5
+- Kyoto: +9
+
+::: {.fragment}
+
+```{r}
+#| output-location: fragment
+Sys.timezone() # What R says my timezone is
+```
+:::
+
+
+## Olson Name
+
+```{r}
+# names of Time Zones
+OlsonNames()
+```
+
+
+## Changing Time
+
+Two flavors
+
+Change the instant in time.
+
+
+```{r}
+#| output-location: fragment
+x1 <- ymd_hms("2024-06-01 12:00:00", tz = "America/New_York")
+x1
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+force_tz(x1, tzone = "Asia/Tokyo")
+```
+
+. . .
+
+Keep the same instant but change the way it's printed:
+
+```{r}
+#| output-location: fragment
+with_tz(x1, tzone = "Asia/Tokyo")
+```

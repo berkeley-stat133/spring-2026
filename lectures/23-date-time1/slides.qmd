@@ -1,0 +1,370 @@
+---
+title: "Dates and Times I"
+subtitle: "Storing, creating, displaying, and converting time."
+format: stat133slides-revealjs
+revealjs-plugins:
+  - drop
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+```
+
+
+## Agenda
+
+1) How does a computer __Store__ dates and times?
+
+2) How do we __Create__ dates and times?
+
+3) How do we __Get and Set__ them?
+
+
+# Store
+
+## Unix Time
+
+. . .
+
+A method to measure time as the number of seconds[^1] that have elapsed since midnight UTC on 1 January 1970, the Unix epoch.
+
+Examples:
+
+| Date Time (UTC)      | Unix Time |
+|----------------------|-----------|
+| 12:01 am Jan 1, 1970 | 60        |
+
+[^1]: excluding leap-seconds
+
+
+## Unix Time {auto-animate="true"}
+
+A method to measure time as the number of seconds[^1] that have elapsed since midnight UTC on 1 January 1970, the Unix epoch.
+
+Examples:
+
+| Date Time (UTC)      | Unix Time |
+|----------------------|-----------|
+| 12:01 am Jan 1, 1970 | 60        |
+| 12:01 am Jan 2, 1970 | 86460     |
+
+[^1]: excluding leap-seconds
+
+
+## Unix Time {auto-animate="true"}
+
+A method to measure time as the number of seconds[^1] that have elapsed since midnight UTC on 1 January 1970, the Unix epoch.
+
+Examples:
+
+| Date Time (UTC)      | Unix Time |
+|----------------------|-----------|
+| 12:01 am Jan 1, 1970 | 60        |
+| 12:01 am Jan 2, 1970 | 86460     |
+| 7 pm Mar 16, 2026 (today at noon) | 1773687600     |
+
+[^1]: excluding leap-seconds
+
+
+## Unix Time {auto-animate="true"}
+
+A method to measure time as the number of seconds[^1] that have elapsed since midnight UTC on 1 January 1970, the Unix epoch.
+
+Examples:
+
+| Date Time (UTC)      | Unix Time |
+|----------------------|-----------|
+| 12:01 am Jan 1, 1970 | 60        |
+| 12:01 am Jan 2, 1970 | 86460     |
+| 7 pm Mar 16, 2026 (today at noon) | 1773687600     |
+| 1:33 pm Dec 31, 1933 | -1136131200 |
+
+[^1]: excluding leap-seconds
+
+
+##
+
+<iframe width="1000" height="500" src="https://www.unixtimestamp.com/" title="Unix Timestamp"></iframe>
+
+\
+
+<https://www.unixtimestamp.com/>
+
+
+## An R vector for date-times
+
+[POSIXct]{.bold-hilit} (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.
+
+. . .
+
+```{r}
+#| output-location: fragment
+now <- Sys.time()
+now
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+class(now)
+```
+
+
+## Why not just use a double vector?
+
+```{r}
+#| output-location: fragment
+# it prints as a legible string
+now
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# while respecting arithmetic
+now + 1
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# and other sensible operations
+round(now)
+```
+
+. . .
+
+
+```{r}
+#| output-location: fragment
+# and makes it easy to use other formats
+format(now, "%m/%d/%y")
+```
+
+
+# Creating
+
+## Creating date-time vectors
+
+Use `as.POSIXct()` to create a date-time vector from a numeric (in Unix Time) or a string in a particular format.
+
+. . .
+
+```{r}
+#| output-location: fragment
+as.POSIXct(x = 60, tz = "UTC")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+as.POSIXct(x = "1970-01-01 00:01:00", tz = "UTC")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+as.POSIXct(x = "Jan 1, 1970 12:01 am", 
+           format = "%b %d, %Y %I:%M %p",  
+           tz = "UTC")
+```
+
+. . .
+
+> Formats: <https://r4ds.hadley.nz/datetimes.html#tbl-date-formats>
+
+
+## Quick aside
+
+In addition to a `POSIXct` vector, you can store simpler date data in a `Date` vector, created with `as.Date()`.
+
+. . .
+
+```{r}
+#| output-location: fragment
+halloween <- as.Date("2000-10-31")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+class(halloween)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+typeof(halloween)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+halloween
+```
+
+
+## {auto-animate=true}
+
+![](images/tidyverse-hex-logo.png){fig-align="center"}
+
+
+## {auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+![](images/tidyverse-hex-logo.png)
+:::
+
+::: {.column width="50%"}
+![](images/lubridate-hex.svg)
+:::
+:::
+
+
+## Creating with `"lubridate"`
+
+. . .
+
+```{r}
+#| eval: false
+library(tidyverse)  # contains "lubridate"
+```
+
+. . .
+
+`"lubridate"` has many functions that can parse the year (y), month (m), day (d), hour (h), minute (m), and second (s) components of a date-time string.
+
+```{r}
+#| output-location: fragment
+mdy_hm("Jan 1, 1970 12:01 am")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+dmy_hm("1-1-1970 12:01")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+x <- dmy_hm("1-1-1970 12:01")
+class(x)
+```
+
+
+# Getting and Setting
+
+## Getting
+
+You can extract components of the date-time object using `year()`, `month()`, `week()`, `day()`, `wday()`, `hour()`, etc.
+
+```{r}
+#| output-location: fragment
+year(now)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+day(now)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+wday(now)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+wday(now, label = TRUE)
+```
+
+
+## Getting
+
+You can extract components of the date-time object using `year()`, `month()`, `week()`, `day()`, `wday()`, `hour()`, etc.
+
+```{r}
+year(now)
+```
+
+
+```{r}
+day(now)
+```
+
+
+```{r}
+wday(now)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+wday(now, label = TRUE, abbr = FALSE)
+```
+
+
+## Setting
+
+You can set those same components in an existing date-time object using change-in-place notation.
+
+. . .
+
+```{r}
+#| output-location: fragment
+year(now) <- 2025
+now
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+wday(now, label = TRUE, abbr = FALSE)
+```
+
+
+## Your Turn
+
+Question: Write the (lines) of code necessary to determine:
+
+1) On which day of the week will New Years Eve fall this year?
+
+```{r}
+#| eval: false
+#| echo: false
+wday("2026-12-31")
+```
+
+2) What day of the week was last year's US Independence Day?
+
+```{r}
+#| eval: false
+#| echo: false
+wday("2025-07-04")
+```
+
+
