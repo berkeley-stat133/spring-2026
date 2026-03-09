@@ -300,7 +300,7 @@ Lab 7: [__Quiz 3__]{.label-Quiz} | [slides](labs/lab7/slides.html) | [PS6](https
 
 ::: {.column width="30%"}
 #### Description
-Strings I
+[Strings I](lectures/20-strings1/slides.html)
 
 Strings II
 
