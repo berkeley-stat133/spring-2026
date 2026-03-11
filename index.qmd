@@ -302,7 +302,7 @@ Lab 7: [__Quiz 3__]{.label-Quiz} | [slides](labs/lab7/slides.html) | [PS6](https
 #### Description
 [Strings I](lectures/20-strings1/slides.html)
 
-Strings II
+[Strings II](lectures/21-strings2/slides.html)
 
 Lab 8: slides | PS7 
 

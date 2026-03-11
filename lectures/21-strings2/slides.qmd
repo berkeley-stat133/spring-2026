@@ -2,6 +2,8 @@
 title: "Strings II"
 subtitle: "Parsing text with regular expressions"
 format: stat133slides-revealjs
+revealjs-plugins:
+  - drop
 chalkboard: true
 ---
 
@@ -75,7 +77,10 @@ sw <- c(
 
 . . .
 
+\
+
 ```{r}
+#| output-location: fragment
 str_view(sw, pattern = "[A-Z]")
 ```
 
@@ -107,6 +112,7 @@ vehicles
 \
 
 ```{r}
+#| output-location: fragment
 # start with vowel
 str_view(vehicles, pattern = "^[aeiou]")
 ```
@@ -123,13 +129,17 @@ teas
 \
 
 ```{r}
+#| output-location: fragment
 # end in vowel
 str_view(teas, pattern = "[aeiou]$")
 ```
 
 . . .
 
+\
+
 ```{r}
+#| output-location: fragment
 # end in not a vowel
 str_view(teas, pattern = "[^aeiou]$")
 ```
@@ -144,12 +154,14 @@ vehicles
 . . .
 
 ```{r}
+#| output-location: fragment
 # first character
 str_view(vehicles, pattern = "^.")
 ```
 . . .
 
 ```{r}
+#| output-location: fragment
 # last character
 str_view(vehicles, pattern = ".$")
 ```
@@ -317,7 +329,7 @@ str_view(vehicles, "a(r|n|t)")
 str_view('Hermione said, "Yaaaay", and hugged Ron', pattern = )
 ```
 
-Question: Write down 5 different regular expressions to match `<Yaaaay>`.
+Question: Write down 4 different regular expressions to match `<Yaaaay>`.
 
 ```{r}
 #| echo: false

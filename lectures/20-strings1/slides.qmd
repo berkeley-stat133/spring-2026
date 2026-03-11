@@ -2,6 +2,8 @@
 title: "Strings I"
 subtitle: "Parsing text with regular expressions"
 format: stat133slides-revealjs
+revealjs-plugins:
+  - drop
 chalkboard: true
 ---
 
@@ -677,7 +679,7 @@ For example `[[:digit:]]` which is equivalent to `[0-9]`
 
 - `[[:digit:]]` analog of `[0-9]`
 - `[[:alpha:]]` analog of `[A-Za-z]`
-- `[[:alnum:]]` analog of `[A-Za-z0-9a]`
+- `[[:alnum:]]` analog of `[A-Za-z0-9]`
 - `[[:lower:]]` analog of `[a-z]`
 - `[[:upper:]]` analog of `[A-Z]`
 - `[[:space:]]` for whitespace characters
