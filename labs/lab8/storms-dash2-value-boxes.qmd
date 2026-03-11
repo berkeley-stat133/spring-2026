@@ -1,0 +1,70 @@
+---
+title: "Dashboard Demo-2"
+format: dashboard
+embed-resources: true
+---
+
+```{r include=FALSE}
+# packages
+library(tidyverse)
+library(plotly)
+
+
+# Analysis on data "storms" from dplyr
+
+# Strongest storm of all times
+strongest = storms |> 
+  slice_max(wind)
+```
+
+
+# Strongest Storm
+
+## Row
+
+```{r}
+#| content: valuebox
+#| title: "Name"
+list(
+  icon = "cloud-drizzle",
+  color = "secondary",
+  value = strongest$name
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Wind Speed (knots)"
+list(
+  icon = "speedometer2",
+  color = "primary",
+  value = strongest$wind
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Date"
+list(
+  icon = "calendar-event",
+  color = "dark",
+  value = paste(strongest$year, strongest$month, sep="-")
+)
+```
+
+
+## Row
+
+```{r}
+# Wind speed histogram of strongest storm
+ggplotly(
+  storms |> 
+  filter(name == strongest$name,
+         year == strongest$year) |> 
+  ggplot(aes(x = wind)) +
+  geom_histogram(binwidth = 10, color = "white") +
+  theme_minimal() +
+  labs(title = "Distribution of Wind Speed",
+       x = "Wind speed (knots)")
+)
+```

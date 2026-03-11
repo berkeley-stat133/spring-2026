@@ -1,5 +1,5 @@
 ---
-title: "Lab 7"
+title: "Lab 8"
 subtitle: "Quarto Dashboards"
 author: "STAT 133"
 format: stat133slides-revealjs
@@ -9,6 +9,7 @@ chalkboard: true
 # Agenda
 
 -   Overview: Dashboards
+-   Demo Dashboard
 -   7th Quarto Publication
 
 ## Data Dashboards {auto-animate=true}
@@ -43,24 +44,6 @@ Used for:
 
 ![](images/quarto.png){.fragment .absolute top=500 left=800 width=600}
 
-
-# Let's Try it Out! 
-
-## Links:
-
-*Documentation:* <https://quarto.org/docs/dashboards/>
-
-*Demo Dashboard:* Log into Bcourses and find the `.qmd` under Assignments > Pub7
-
-::: notes
-Click on link yourself and edit the dashboard on DataHub. First steps:
-
-1. Render the doc as is and discuss how there are code cells that run and show but no output.
-1. Have them add their name as author (so you can tell their submissions apart).
-1. Run quarto publish to publish the HTML file.
-1. Ask a student for their URL and project it to show that it is indeed publicly available.
-2. Add format: dashboard.
-:::
 
 # Anatomy of a Dashboard
 
@@ -122,7 +105,7 @@ format:
 ```
 
 - In general, each code cell creates one card
-- Tune dimensions by adding e.g. `## Row {height=30%}`
+- Change dimensions by adding e.g. `## Row {height=30%}`
 
 
 
@@ -187,12 +170,6 @@ format:
 :::
 :::
 
-## Your turn
-
-1. Add four empty cards to your document by adding inserting four blank code cells at the bottom.
-2. Arrange them in a 2 x 2 grid layout.
-
-{{< countdown 2:30 >}}
 
 # Data Display
 
@@ -274,108 +251,78 @@ list(
 ```
 ````
 
-## Blank Cards
 
-. . .
+# Let's Try it Out! 
 
-You can create a blank card to fill with anything (code, images, markdown) using:
+## Links:
 
-```markdown
-::: {.card}
-Gapminder combines data from multiple sources into
-unique coherent time-series that can’t be found
-elsewhere. Learn more about the Gampminder dataset at
-<https://www.gapminder.org/data/>.
+*Documentation:* <https://quarto.org/docs/dashboards/>
+
+*Demo Dashboard:* Log into Bcourses and find the `.qmd` under Assignments > Pub7 \ 
+\ 
+
+> Note: Many examples in the Quarto documentation use Python, but the same dashboard structure applies when using R. Focus on the layout and components rather than the language.
+
+::: notes
+Steps for the demo dashboard:
+
+1. Render the doc as is and discuss how there are code cells that run and show but no output.
+2. Have them add their name as author (so you can tell their submissions apart).
+3. Add format: dashboard.
+4. Instruct students to build a dashboards with the advanced elements already available in the demo document
 :::
-```
 
-## Your Turn
+## Your turn
 
-Display the data on earthquakes in your dashboard according to the following layout.
+1. Try to render the demo-dashboard.qmd. What do you see? \ 
+\ 
+
+
+> Note: You may need to use `install.packages("")` to load packages such as `gt`, `leaflet`, `sf`, `httr2`, and `shiny` into your session.
+
+{{< countdown 2:30 >}}
+
+::: notes
+The students will see an empty dashboard because no panels have been intialized yet, so now they will need to add cards to display the code outputs
+:::
+
+## Your turn
+
+2. Add four empty cards to your document by adding inserting four blank code cells at the bottom.
+3. Arrange them in a 2 x 2 grid layout.
+
+{{< countdown 2:30 >}}
+
+## Your Turn {.smaller}
+
+Display the data on earthquakes in your dashboard by putting 4 elements into panels:
+
+- `recent_quakes`: Table of recent quakes
+
+- `n_24`: Summary statistics (How many quakes were there in the last 24 hours?)
+
+- `quake_map`: Map graphic
+
+- `mag_hist`: Quake histogram
+
+- `timeline`: Timeline of recent quakes
+
+- `top_n_table`: Recent quakes table
 
 {{< countdown 6:00 >}}
 
 
-## Pages {.smaller}
+# Publication 7
 
-Split your dashboard into multiple pages by adding level one headers with the page name. This example uses two pages, "Bills" and "Flippers", that will be linked in the navbar.
+Now you will create your own dashboard document with:
 
-::: {.columns}
-::: {.column}
-````markdown
----
-title: "Palmer Penguins"
-format: dashboard
----
-    
-# Bills 
-
-```{{r}}
-```
-
-# Flippers
-
-## Column
-
-```{{r}}
-```
-
-```{{r}}
-```
-
-## Column 
-
-```{{r}}
-```
-````
-:::
-::: {.column}
-:::
-:::
-
-# Your Turn
-
-You will create your own dashboard document with 3 pane elements (a table, a graph, and a summary)
-
-## 1. Create New Folder in `stat133/`
-
-Begin the same way as always: \
-
-``` {.markdown code-line-numbers="false"}
-  stat133/
-    labs/
-        lab1/
-        ...
-        lab5/
-    psets/
-        pset1/
-        ...
-        pset5/
-```
-
-## Terminal in IDE
-
-1)  Launch your IDE (Positron or RStudio)
-
-2)  Launch your [Terminal]{.bold-hilit} (next to the *Console* tab)
-
-3)  `cd` to your `stat133/labs/` folder
-
-4)  create a folder for this lab: `mkdir lab7`
-
-5)  `cd` to `lab7`
-
-## 2. Your Task: Quarto Dashboard
-
-You will: 
-
-- Decide a research question to explore \
+- A research question you want to explore \
 
 - Build a dashboard explaining a pattern in the data \
 
-- Include at least 3 elements: a research question, a graph, a table, and a report summary \
+- Include 4 elements: a research question, a graph, a table, a value box, and a report summary \
 
-## 3. Open a new qmd file
+## Open a new qmd file
 
 Copy the YAML header of the demo dashboard to your qmd file.
 
@@ -389,28 +336,20 @@ embed-resources: true
 ---
 ```
 
-## 4. Insert a setup code chunk
+## Choose a Research Question and Create Elements
 
-This chunk loads required packages and runs before the document renders.
+Choose a dataset (from baseR or tidyverse) to visualize a trend in the data with. Possible examples:
 
-``` r
-#| label: setup
-#| include: false
-# load packages and/or import data
-library(tidyverse)
-```
+- `airquality`: How do temperature and ozone levels relate during summer months?
 
-## 5. Choose a Research Question
+- `mpg`: How does vehicle class affect highway fuel economy?
 
-Choose a dataset (from baseR or tidyverse) to make your graphics with, such as `iris`, `mtcars`, `airquality`, `economics`, `mpg`, etc.
+- `iris`: Do petal measurements vary more across species than sepal measurements?
 
-What is an interesting trend in this data? What can be 
-
-## 6. Create your Graphics and Dashboard
 
 ## Submission to BCourses
 
-Submit the Netlify URL (link) of your published document to the corresponding assignment in bCourses.
+Submit the [Netlify](https://www.netlify.com/) URL (link) of your published document to the corresponding assignment in bCourses.
 
 See [Assignments tab \> Quarto Publications \> Pub7]{.bold-hilit}
 

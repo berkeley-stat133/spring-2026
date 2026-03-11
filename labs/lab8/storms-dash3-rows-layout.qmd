@@ -1,0 +1,67 @@
+---
+title: "Dashboard Demo-3"
+format: dashboard
+embed-resources: true
+---
+
+```{r setup, include=FALSE}
+# packages
+library(tidyverse)
+library(plotly)
+
+
+# Analysis on data "storms" from dplyr
+
+# Number of storms by year
+storms_count_per_year = storms |> 
+  count(year, name) |> 
+  count(year)
+```
+
+
+## Plot 1
+
+```{r}
+# Bar chart of tropical cyclones count per year
+ggplotly(
+  storms_count_per_year |> 
+    ggplot(aes(x = year, y = n)) +
+    geom_col(fill = "#009999") +
+    theme_minimal() +
+    labs(title = "Tropical Cyclones in the North Atlantic",
+         y = "count")
+)
+```
+
+
+## Plot 2
+
+```{r}
+# Bar chart of tropical cyclones count per year
+ggplotly(
+  storms_count_per_year |> 
+    ggplot(aes(x = year, y = n)) +
+    geom_col(fill = "red") +
+    theme_minimal() +
+    labs(title = "Tropical Cyclones in the North Atlantic",
+         y = "count")
+)
+```
+
+
+## Plot 3
+
+```{r}
+# Bar chart of tropical cyclones count per year
+ggplotly(
+  storms_count_per_year |> 
+    ggplot(aes(x = year, y = n)) +
+    geom_col(fill = "yellow") +
+    theme_minimal() +
+    labs(title = "Tropical Cyclones in the North Atlantic",
+         y = "count")
+)
+```
+
+
+
