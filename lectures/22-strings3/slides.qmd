@@ -375,6 +375,26 @@ dat$Mark[1:6]
 
 . . .
 
+```{r}
+#| output-location: fragment
+str_extract(dat$Mark, pattern = "\\d{2}")
+```
+
+
+##
+
+```{r}
+dat$Mark[1:6]
+```
+
+\
+
+[Goal:]{.mdlit} Get just the feet with `str_extract()`
+
+\
+
+. . .
+
 :::: {.columns}
 ::: {.column width="75%"}
 ```{r}
@@ -387,6 +407,8 @@ str_extract(dat$Mark[1:6], pattern = "______")
 🤷
 :::
 ::::
+
+
 
 
 # Look Arounds
@@ -464,6 +486,35 @@ str_extract(dat$Mark[1:6], "\\.\\d{2}")
 #| output-location: fragment
 # look behind ("preceded by dot but excluding it")
 str_extract(dat$Mark[1:6], "(?<=\\.)\\d{2}")
+```
+
+
+##
+
+```{r}
+dat$Mark[1:6]
+```
+
+\
+
+[Goal:]{.mdlit} Get just the feet with `str_extract()`
+
+\
+
+. . .
+
+```{r}
+#| output-location: fragment
+# ( followed by 2 digits
+str_extract(dat$Mark[1:6], "\\(\\d{2}")
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# look behind ("preceded by dot but excluding it")
+str_extract(dat$Mark[1:6], "(?<=\\()\\d{2}")
 ```
 
 
