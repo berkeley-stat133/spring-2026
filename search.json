@@ -469,14 +469,14 @@
     "href": "lectures/24-date-time2/slides.html#how-old-is-oski",
     "title": "Dates and Times II",
     "section": "How old is Oski?",
-    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30847 days"
+    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30848 days"
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#durations",
     "href": "lectures/24-date-time2/slides.html#durations",
     "title": "Dates and Times II",
     "section": "Durations",
-    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2665180800s (~84.45 years)\""
+    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2665267200s (~84.46 years)\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#constructing-a-duration",
@@ -518,7 +518,7 @@
     "href": "lectures/24-date-time2/slides.html#how-old-will-oski-be",
     "title": "Dates and Times II",
     "section": "How old will Oski be …",
-    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2665180800s (~84.45 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2696738400s (~85.45 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 166d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 166d 0H 0M 0S\""
+    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2665267200s (~84.46 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2696824800s (~85.46 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 167d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 167d 0H 0M 0S\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#time-spans-recap",
@@ -1554,14 +1554,14 @@
     "href": "lectures/23-date-time1/slides.html#an-r-vector-for-date-times",
     "title": "Dates and Times I",
     "section": "An R vector for date-times",
-    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-03-12 08:21:36 PDT\"\n\n\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\""
+    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-03-13 08:50:12 PDT\"\n\n\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\""
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "href": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "title": "Dates and Times I",
     "section": "Why not just use a double vector?",
-    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-03-12 08:21:36 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-03-12 08:21:37 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-03-12 08:21:36 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"03/12/26\""
+    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-03-13 08:50:12 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-03-13 08:50:13 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-03-13 08:50:12 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"03/13/26\""
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#creating-date-time-vectors",
@@ -1589,21 +1589,21 @@
     "href": "lectures/23-date-time1/slides.html#getting",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 12\n\n\n\n\n\nwday(now)\n\n\n\n[1] 5\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Thu\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 13\n\n\n\n\n\nwday(now)\n\n\n\n[1] 6\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Fri\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#getting-1",
     "href": "lectures/23-date-time1/slides.html#getting-1",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 12\n\n\n\nwday(now)\n\n[1] 5\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Thursday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 13\n\n\n\nwday(now)\n\n[1] 6\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Friday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#setting",
     "href": "lectures/23-date-time1/slides.html#setting",
     "title": "Dates and Times I",
     "section": "Setting",
-    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-03-12 08:21:36 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Wednesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-03-13 08:50:12 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Thursday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#your-turn",
@@ -2107,7 +2107,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 13     \"Bogdan Bog… ATL   SG           77    225 August 18… RS      7         \n2 77     \"Jamison Ba… TOR   SF           79    220 May 10, 2… US      R         \n3 22     \"Oshae Bris… PHI   SF           79    210 June 20, … CA      5         \n4 12     \"Antonio Re… NOP   SG           77    205 November … US      R         \n5 12     \"Tosan Evbu… BRK   SF           80    217 February … UK      1         \n6 8      \"Cui Yongxi\" BRK   SG           77    190 May 28, 2… CN      R         \n7 26     \"Drew Timme\" BRK   PF           81    235 September… US      R         \n8 2      \"Brandin Po… GSW   SG           76    205 February … US      1         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 21     Orlando Rob… TOR   C            82    235 July 10, … US      2         \n2 31     Klay Thomps… DAL   SF           77    220 February … US      11        \n3 5      Luguentz Do… OKC   SF           76    220 April 19,… CA      5         \n4 8      Cui Yongxi   BRK   SG           77    190 May 28, 2… CN      R         \n5 8      De'Anthony … GSW   SG           74    200 May 28, 1… US      6         \n6 12     De'Andre Hu… ATL   SF           79    221 December … US      5         \n7 23     Monte Morris PHO   PG           74    183 June 27, … US      7         \n8 13     Isaiah Coll… UTA   PG           76    210 October 8… US      R         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -4755,7 +4755,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 6 3"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 6 1"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#meet-the-palmer-penguins",
@@ -5798,7 +5798,7 @@
     "href": "lectures/22-strings3/slides.html#section-9",
     "title": "Strings III",
     "section": "",
-    "text": "head(dat$Mark)\n\n[1] \"7.61 m (24 ft 11+1⁄2 in)\" \"7.69 m (25 ft 2+3⁄4 in)\" \n[3] \"7.76 m (25 ft 5+1⁄2 in)\"  \"7.89 m (25 ft 10+1⁄2 in)\"\n[5] \"7.90 m (25 ft 11 in)\"     \"7.93 m (26 ft 0 in)\"     \n\n\n\n\nQuestion: How would you use str_extract() to get:\n\nthe distance values (in meters): \"7.61\" \"7.69\" \"7.76\" etc\njust the meter digit: \"7\" \"7\" \"7\" etc\njust the decimals (the centimeters): \"61\" \"69\" \"76\" etc"
+    "text": "head(dat$Mark)\n\n[1] \"7.61 m (24 ft 11+1⁄2 in)\" \"7.69 m (25 ft 2+3⁄4 in)\" \n[3] \"7.76 m (25 ft 5+1⁄2 in)\"  \"7.89 m (25 ft 10+1⁄2 in)\"\n[5] \"7.90 m (25 ft 11 in)\"     \"7.93 m (26 ft 0 in)\"     \n\n\n\n\nQuestion: What pattern would you use in str_extract() to get:\n\nthe distance values (in meters): \"7.61\" \"7.69\" \"7.76\" etc\njust the meter digit: \"7\" \"7\" \"7\" etc\njust the decimals (the centimeters): \"61\" \"69\" \"76\" etc\njust the feet: \"24\" \"25\" \"25\" etc"
   },
   {
     "objectID": "lectures/22-strings3/slides.html#section-10",
@@ -5889,7 +5889,7 @@
     "href": "lectures/22-strings3/slides.html#section-18",
     "title": "Strings III",
     "section": "",
-    "text": "dat$Mark[1:6]\n\n[1] \"7.61 m (24 ft 11+1⁄2 in)\" \"7.69 m (25 ft 2+3⁄4 in)\" \n[3] \"7.76 m (25 ft 5+1⁄2 in)\"  \"7.89 m (25 ft 10+1⁄2 in)\"\n[5] \"7.90 m (25 ft 11 in)\"     \"7.93 m (26 ft 0 in)\"     \n\n\n\n\nGoal: Get just the feet with str_extract()\n\n\n\n\n# ( followed by 2 digits\nstr_extract(dat$Mark[1:6], \"\\\\(\\\\d{2}\")\n\n\n\n[1] \"(24\" \"(25\" \"(25\" \"(25\" \"(25\" \"(26\"\n\n\n\n\n\n# look behind (\"preceded by dot but excluding it\")\nstr_extract(dat$Mark[1:6], \"(?&lt;=\\\\()\\\\d{2}\")\n\n\n\n[1] \"24\" \"25\" \"25\" \"25\" \"25\" \"26\""
+    "text": "dat$Mark[1:6]\n\n[1] \"7.61 m (24 ft 11+1⁄2 in)\" \"7.69 m (25 ft 2+3⁄4 in)\" \n[3] \"7.76 m (25 ft 5+1⁄2 in)\"  \"7.89 m (25 ft 10+1⁄2 in)\"\n[5] \"7.90 m (25 ft 11 in)\"     \"7.93 m (26 ft 0 in)\"     \n\n\n\n\nGoal: Get just the feet with str_extract()\n\n\n\n\n# ( followed by 2 digits\nstr_extract(dat$Mark[1:6], \"\\\\(\\\\d{2}\")\n\n\n\n[1] \"(24\" \"(25\" \"(25\" \"(25\" \"(25\" \"(26\"\n\n\n\n\n\n# look behind (\"preceded by ( but excluding it\")\nstr_extract(dat$Mark[1:6], \"(?&lt;=\\\\()\\\\d{2}\")\n\n\n\n[1] \"24\" \"25\" \"25\" \"25\" \"25\" \"26\""
   },
   {
     "objectID": "lectures/22-strings3/slides.html#section-19",
