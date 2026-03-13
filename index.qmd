@@ -306,7 +306,7 @@ Lab 7: [__Quiz 3__]{.label-Quiz} | [slides](labs/lab7/slides.html) | [PS6](https
 
 Lab 8: [slides](labs/lab8/slides.html) | [PS7](https://bcourses.berkeley.edu/courses/1551809/assignments/9021600) 
 
-Strings III | Proj4 
+[Strings III](lectures/22-strings3/slides.html) | [Proj4](https://bcourses.berkeley.edu/courses/1551809/assignments/9021609) 
 :::
 
 ::: {.column width="50%"}

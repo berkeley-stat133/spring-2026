@@ -264,13 +264,15 @@ head(dat$Mark)
 
 \
 
-Question: How would you use `str_extract()` to get:
+Question: What pattern would you use in `str_extract()` to get:
 
 1) the distance values (in meters): `"7.61" "7.69" "7.76"` etc
 
 2) just the meter digit: `"7" "7" "7"` etc
 
 3) just the decimals (the centimeters): `"61" "69" "76"` etc
+
+4) just the feet: `"24" "25" "25"` etc
 
 
 ##
@@ -513,7 +515,7 @@ str_extract(dat$Mark[1:6], "\\(\\d{2}")
 
 ```{r}
 #| output-location: fragment
-# look behind ("preceded by dot but excluding it")
+# look behind ("preceded by ( but excluding it")
 str_extract(dat$Mark[1:6], "(?<=\\()\\d{2}")
 ```
 
