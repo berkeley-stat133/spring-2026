@@ -10,6 +10,7 @@ chalkboard: true
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, error = TRUE)
 library(tidyverse)
+library(rvest)
 ```
 
 
@@ -368,4 +369,224 @@ Keep the same instant but change the way it's printed:
 ```{r}
 #| output-location: fragment
 with_tz(x1, tzone = "Asia/Tokyo")
+```
+
+
+# Some Examples
+
+## Men's Long Jump World Record Progression {.smaller}
+
+```{r}
+#| echo: false
+doc <- read_html("mens-long-jump.html")
+dat <- html_table(doc)[[2]]
+```
+
+```{r}
+#| eval: false
+library(rvest)
+url <- "https://en.wikipedia.org/wiki/Men%27s_long_jump_world_record_progression"
+
+# import HTML file
+doc <- read_html(url)
+
+# extract 2nd HTML table (as data.frame/tibble)
+dat <- html_table(doc)[[2]]
+dat
+```
+
+. . .
+
+```{r}
+#| echo: false
+dat
+```
+
+
+##
+
+
+```{r}
+#| output-location: fragment
+#| code-line-numbers: "1-2|1-4|1-6|1-8|1-10"
+dat |> 
+  mutate(
+    # distance
+    Mark = as.numeric(str_sub(Mark, start = 1, end = 4)),
+    # extract string Date
+    Date = str_extract(Date, "\\d+ \\w+ \\d{4}"),
+    # convert column  Date as "Date" type
+    Date = dmy(Date)) |> 
+    select(Mark, Date) |> 
+    slice_head(n = 5)
+```
+
+
+##
+
+
+```{r}
+#| code-fold: true
+dat |> 
+  mutate(
+    Mark = as.numeric(str_sub(Mark, start = 1, end = 4)),
+    Date = str_extract(Date, "\\d+ \\w+ \\d{4}"),
+    Date = dmy(Date)) |> 
+  ggplot(aes(x = Date, y = Mark)) +
+  geom_point() +
+  geom_step() +
+  labs(title = "Men's Long Jump World Record Progression") +
+  theme_minimal()
+```
+
+
+## 10 Matches of Serena Williams
+
+Data file `serena_williams_matches.csv`
+
+\
+
+```
+player1,player1_dob,player2,player2_dob,date_match
+Serena Williams,1981-09-26,Iva Majoli,1977-08-12,2001-08-13
+Serena Williams,1981-09-26,Maria Kirilenko,1987-01-25,2004-05-24
+Serena Williams,1981-09-26,Sania Mirza,1986-11-15,2005-01-17
+Serena Williams,1981-09-26,Tatiana Perebiynis,1982-12-15,2007-10-08
+Serena Williams,1981-09-26,Maria Jose Martinez,1982-08-12,2009-08-31
+Serena Williams,1981-09-26,Maria Jose Martinez,1982-08-12,2010-01-11
+Serena Williams,1981-09-26,Caroline Wozniacki,1990-07-11,2014-08-25
+Serena Williams,1981-09-26,Venus Williams,1980-06-17,2015-06-29
+Serena Williams,1981-09-26,Yaroslava Shvedova,1987-09-12,2016-08-29
+Serena Williams,1981-09-26,Maria Sakkari,1995-07-25,2020-08-24
+```
+
+
+## 10 Matches of Serena Williams
+
+Data file `serena_williams_matches.csv`
+
+::: {.nonincremental}
+- `player1`: Serena Williams
+- `player1_dob`: Serena Williams' date of birth
+- `player2`: Opponent's name
+- `player2_dob`: Opponent's date of birth
+- `date_match`: date of match
+:::
+
+
+## Serena Williams matches {.smaller}
+
+```{r}
+matches <- read_csv("serena_williams_matches.csv")
+matches
+```
+
+. . .
+
+\
+
+1) Compute Serena Williams' age at date of match
+
+2) Compute opponent's age at date of match
+
+3) Compute age difference between Serena and opponent
+
+
+## Serena's and opponent's age
+
+```{r}
+#| output-location: fragment
+# Serena's age (as difftime)
+matches$date_match - matches$player1_dob
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+# Opponent's age (as difftime)
+matches$date_match - matches$player2_dob
+```
+
+
+## Serena's and opponent's age
+
+```{r}
+#| output-location: fragment
+# Serena's age (as duration)
+as.duration(matches$date_match - matches$player1_dob)
+```
+
+\
+
+```{r}
+#| output-location: fragment
+# Opponent's age (as duration)
+as.duration(matches$date_match - matches$player2_dob)
+```
+
+
+## Serena's and opponent's age
+
+```{r}
+#| output-location: fragment
+# Serena's age (as period in "years")
+years(as.duration(matches$date_match - matches$player1_dob))
+```
+
+\
+
+```{r}
+#| output-location: fragment
+# Opponent's age (as period in "years")
+years(as.duration(matches$date_match - matches$player2_dob))
+```
+
+
+## Serena's and opponent's age
+
+```{r}
+#| output-location: fragment
+# Serena's age (as interval)
+interval(matches$player1_dob, matches$date_match)
+```
+
+\
+
+```{r}
+#| output-location: fragment
+# Opponent's age (as interval)
+interval(matches$player2_dob, matches$date_match)
+```
+
+
+## Serena's and opponent's age
+
+```{r}
+#| output-location: fragment
+# Serena's age (in years)
+interval(matches$player1_dob, matches$date_match) / years(1)
+```
+
+\
+
+```{r}
+#| output-location: fragment
+# Opponent's age (in years)
+interval(matches$player2_dob, matches$date_match) / years(1)
+```
+
+
+## {.smaller}
+
+```{r}
+#| output-location: fragment
+matches |> 
+  mutate(
+    player1_age = interval(player1_dob, date_match) / years(1),
+    player2_age = interval(player2_dob, date_match) / years(1),
+    age_difference = player1_age - player2_age) |> 
+  select(date_match, player1, player1_age, player2, player2_age, age_difference)
 ```
