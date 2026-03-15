@@ -1,0 +1,91 @@
+---
+title: "Calls for Service 2025"
+format: 
+  dashboard:
+    theme: lumen
+---
+
+```{r}
+# packages
+library(tidyverse)
+library(plotly)
+
+cfs = read_csv("callsforservice_2025.csv") |> 
+  mutate(Call_Type = str_extract(Call_Type, "(?<=\\s-).*"))
+
+# count of dispositions of interest
+dispositions = cfs |> 
+  summarize(
+    mental = sum(str_detect(Dispositions, "Mental"), na.rm = TRUE), 
+    homeless = sum(str_detect(Dispositions, "Homeless"), na.rm = TRUE),
+    ripa = sum(str_detect(Dispositions, "RIPA"), na.rm = TRUE))
+```
+
+## Row
+
+```{r}
+#| content: valuebox
+#| title: "Mental Health Related"
+list(
+  color = "secondary",
+  value = dispositions$mental
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Homeless Related"
+list(
+  color = "secondary",
+  value = dispositions$homeless
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "RIPA Stops"
+list(
+  color = "secondary",
+  value = dispositions$ripa
+)
+```
+
+
+## Row
+
+```{r}
+ggplotly(
+  cfs |> 
+  filter(Source %in% c("911 Call",
+                       "Telephone",
+                       "Officer Initiated")) |> 
+  count(Call_Type, name = "count", sort = TRUE) |> 
+  slice_head(n = 10) |> 
+  ggplot(aes(x = count, y = reorder(Call_Type, count))) +
+  geom_col() +
+  labs(title = "10 Most Common Call Types",
+       x = "count",
+       y = "") +
+  theme_minimal()
+)
+```
+
+
+```{r}
+ggplotly(
+  cfs |> 
+  filter(Source %in% c("911 Call",
+                       "Telephone",
+                       "Officer Initiated")) |> 
+  mutate(Month = month(CreateDatetime)) |> 
+  count(Source, Month) |> 
+  ggplot(aes(x = Month, y = n, color = Source)) +
+  geom_line(linewidth = 1.2) +
+  labs(title = "Calls by Source",
+       y = "count") +
+  scale_x_continuous(breaks = 1:12, labels = month.abb) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+)
+```
+
