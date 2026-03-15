@@ -38,6 +38,7 @@ dat <- html_table(doc)[[2]]
 
 ```{r}
 #| eval: false
+library(rvest)
 url <- "https://en.wikipedia.org/wiki/Men%27s_long_jump_world_record_progression"
 
 # import HTML file
