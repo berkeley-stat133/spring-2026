@@ -28,60 +28,70 @@ library(tidyverse)
 
 . . .
 
-A method to measure time as the number of seconds[^1] that have elapsed since midnight UTC on 1 January 1970, the Unix epoch.
+A method to measure time as the number of seconds[^1] that have elapsed since midnight UTC[^2] on 1 January 1970, the [Unix epoch]{.mdlit}.
+
+. . .
 
 Examples:
 
 | Date Time (UTC)      | Unix Time |
 |----------------------|-----------|
+| 12:00 am Jan 1, 1970 | 0         |
 | 12:01 am Jan 1, 1970 | 60        |
 
 [^1]: excluding leap-seconds
+[^2]: Coordinated Universal Time (UTC)
 
 
 ## Unix Time {auto-animate="true"}
 
-A method to measure time as the number of seconds[^1] that have elapsed since midnight UTC on 1 January 1970, the Unix epoch.
+A method to measure time as the number of seconds[^1] that have elapsed since midnight UTC[^2] on 1 January 1970, the [Unix epoch]{.mdlit}.
 
 Examples:
 
 | Date Time (UTC)      | Unix Time |
 |----------------------|-----------|
+| 12:00 am Jan 1, 1970 | 0         |
 | 12:01 am Jan 1, 1970 | 60        |
 | 12:01 am Jan 2, 1970 | 86460     |
 
 [^1]: excluding leap-seconds
+[^2]: Coordinated Universal Time (UTC)
 
 
 ## Unix Time {auto-animate="true"}
 
-A method to measure time as the number of seconds[^1] that have elapsed since midnight UTC on 1 January 1970, the Unix epoch.
+A method to measure time as the number of seconds[^1] that have elapsed since midnight UTC[^2] on 1 January 1970, the [Unix epoch]{.mdlit}.
 
 Examples:
 
 | Date Time (UTC)      | Unix Time |
 |----------------------|-----------|
+| 12:00 am Jan 1, 1970 | 0         |
 | 12:01 am Jan 1, 1970 | 60        |
 | 12:01 am Jan 2, 1970 | 86460     |
 | 7 pm Mar 16, 2026 (today at noon) | 1773687600     |
 
 [^1]: excluding leap-seconds
+[^2]: Coordinated Universal Time (UTC)
 
 
 ## Unix Time {auto-animate="true"}
 
-A method to measure time as the number of seconds[^1] that have elapsed since midnight UTC on 1 January 1970, the Unix epoch.
+A method to measure time as the number of seconds[^1] that have elapsed since midnight UTC[^2] on 1 January 1970, the [Unix epoch]{.mdlit}.
 
 Examples:
 
 | Date Time (UTC)      | Unix Time |
 |----------------------|-----------|
+| 12:00 am Jan 1, 1970 | 0         |
 | 12:01 am Jan 1, 1970 | 60        |
 | 12:01 am Jan 2, 1970 | 86460     |
 | 7 pm Mar 16, 2026 (today at noon) | 1773687600     |
 | 1:33 pm Dec 31, 1933 | -1136131200 |
 
 [^1]: excluding leap-seconds
+[^2]: Coordinated Universal Time (UTC)
 
 
 ##
@@ -107,11 +117,24 @@ now
 
 . . .
 
-\
-
 ```{r}
 #| output-location: fragment
 class(now)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+typeof(now)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+# unix time (when rendering slides)
+unclass(now)
 ```
 
 
@@ -213,6 +236,31 @@ typeof(halloween)
 ```{r}
 #| output-location: fragment
 halloween
+```
+
+
+## Quick aside (cont'd)
+
+In addition to a `POSIXct` vector, you can store simpler date data in a `Date` vector, created with `as.Date()`.
+
+```{r}
+as.Date("03-16-2026", format = "%m-%d-%Y")
+```
+
+. . .
+
+\
+
+```{r}
+as.Date("2026-March-16", format = "%Y-%B-%d")
+```
+
+. . .
+
+\
+
+```{r}
+as.Date("2026-Mar-16", format = "%Y-%b-%d")
 ```
 
 
