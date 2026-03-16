@@ -20,11 +20,11 @@ title: "STAT 133: Concepts in Computing with Data"
 ::::
 
 ::: {.callout-tip icon="false"}
-## Week 8 Announcements
+## Week 9 Announcements
 
-- [Problem Set 6]{.label-Homework} due Wed 3/11 by 6PM
-- [7th Publication]{.label-Pub} on Thu 3/12 (in lab)
-- [Project 3]{.label-Project} on Fri 3/13 by 6PM
+- [Problem Set 7]{.label-Homework} due Wed 3/18 by 6PM
+- [8th Publication]{.label-Pub} on Thu 3/19 (in lab)
+- [Quiz 4]{.label-Quiz} on Thu 3/19 (in lab)
 :::
 
 -----
@@ -338,7 +338,7 @@ Lab 8: [slides](labs/lab8/slides.html) | [PS7](https://bcourses.berkeley.edu/cou
 
 ::: {.column width="30%"}
 #### Description
-Dates and Times I
+[Dates and Times I](lectures/23-date-time1/slides.html)
 
 Dates and Times II
 
