@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/24-date-time2/slides.html</loc>
-    <lastmod>2026-03-09T02:21:22.134Z</lastmod>
+    <lastmod>2026-03-15T02:03:49.293Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/5-unix-basics/slides.html</loc>
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/23-date-time1/slides.html</loc>
-    <lastmod>2026-03-09T01:49:12.392Z</lastmod>
+    <lastmod>2026-03-14T23:42:05.575Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/2-intro/slides.html</loc>
@@ -55,6 +55,10 @@
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/1-welcome/slides.html</loc>
     <lastmod>2026-01-21T05:03:58.714Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/25-date-time3/cfs-dashboard.html</loc>
+    <lastmod>2026-03-15T21:53:15.644Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/8-control-flow/slides.html</loc>
@@ -162,7 +166,7 @@
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/index.html</loc>
-    <lastmod>2026-03-13T15:48:47.403Z</lastmod>
+    <lastmod>2026-03-16T15:44:17.110Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/info/about.html</loc>
@@ -171,6 +175,10 @@
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/syllabus.html</loc>
     <lastmod>2026-02-14T22:15:30.776Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/25-date-time3/slides.html</loc>
+    <lastmod>2026-03-16T15:43:46.838Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/21-strings2/slides.html</loc>
@@ -210,7 +218,7 @@
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/22-strings3/slides.html</loc>
-    <lastmod>2026-03-13T04:40:54.690Z</lastmod>
+    <lastmod>2026-03-15T01:09:54.440Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/26-geospatial1/slides.html</loc>
