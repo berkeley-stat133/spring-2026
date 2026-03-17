@@ -1,0 +1,93 @@
+---
+title: "Pub 8 Solutions"
+subtitle: "Cleaning Text Data and Visualizing Activity with a Quarto Dashboard"
+author: "STAT 133"
+format: dashboard
+embed-resources: true
+theme: lux
+---
+
+```{r}
+#| label: setup
+#| message: false
+
+
+library(tidyverse)
+library(stringr)
+library(lubridate)
+library(DT)
+
+times_data <- tibble(
+  timestamp = c(
+    "03/12/24 14:03",
+    "03/12/24 14:05",
+    "03/12/24 15:10",
+    "03/12/24 15:22",
+    "03/12/24 16:01"
+  ),
+  message = c(
+    "ERROR: user=482 failed-login",
+    "INFO: user=511 login-success",
+    "WARN: user=482 retry-login",
+    "ERROR: user=222 failed-login",
+    "INFO: user=482 login-success"
+  )
+)
+```
+
+
+
+# Tab 1 - Data Cleaning
+
+## Row 1
+
+```{r}
+# Show messy data table here
+
+datatable(times_data)
+```
+
+
+## Row 2
+
+```{r}
+# Show clean data table here
+
+times_clean <- times_data |>
+  mutate(
+    level = str_extract(message, "ERROR|WARN|INFO"),
+    user_id = str_extract(message, "(?<=user=)\\d+"),
+    event = str_extract(message, "(failed-login|login-success|retry-login)")
+  )
+
+times_clean <- times_clean |>
+  mutate(
+    timestamp = mdy_hm(timestamp),
+    hour = hour(timestamp),
+    date = as_date(timestamp)
+  )
+
+datatable(times_clean)
+```
+
+# Tab 2 - Chart
+
+```{r}
+# Add a graphic here of Events by Hour
+
+events_by_hour <- times_clean |>
+  count(hour)
+
+events_chart <- ggplot(events_by_hour, aes(x = hour, y = n)) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title = "Events by Hour",
+    x = "Hour of Day",
+    y = "Number of Events"
+  )
+
+events_chart
+```
+
+Analysis: Most activity occurs at 14:00 and 15:00, each with two events recorded. The data suggests login activity is concentrated in the early afternoon, with fewer events later in the day.

@@ -1,0 +1,221 @@
+---
+title: "Lab 9"
+subtitle: "Quiz 4 and Dashboards"
+author: "STAT 133"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+# Agenda
+
+-   Quiz 4
+-   Review: Strings and Dates+Times
+-   Quarto Dashboards (continued)
+-   Pub Assignment
+
+# Before the Quiz
+
+::: callout-important
+A note on academic integrity:
+:::
+
+\
+Cheating is **100% not tolerated**. Talking with other individuals during the quiz, using your phone for any reason, looking at others' answers, etc. will result in a violation of the Academic Integrity Pledge. We reserve the right to give a 0 to anyone seen cheating.
+
+## Before the Quiz
+
+::: nonincremental
+1.  Spread out as much as possible.
+2.  🚽 If you need to use the bathroom, this is the time to do it.
+3.  🧹 Clear your desk of everything except a pen/pencil and your ID.
+4.  🧢 Remove hats, hoods, and sunglasses (don't hide your face please!)
+5.  📱 All electronic devices (laptop, phone, airbuds, smart watch) should remain in your bag for the entire quiz period.
+:::
+
+## Quiz
+
+```{r}
+countdown::countdown(35, top = 0)
+```
+
+::: nonincremental
+1.  Please be quiet.
+2.  When you get a quiz, do not begin until we tell you so.
+3.  Write your name and SID.
+4.  Keep your eyes on your own quiz.
+5.  Only one person allowed to use the bathroom at a time.
+6.  If you finish early, please hold on to your quiz and wait.
+7.  When the timer ends, hold up your quiz in the air immediately and put your writing utensils down or risk a 0.
+:::
+
+Good luck! 🍀
+
+# Lab 9
+
+# Review: Strings {.smaller}
+
+> A **string** is text data stored inside quotes.
+
+We use regular expressions (regex) and other tools to parse strings into structured data that can be analyzed.  
+
+## Key Techniques for Strings
+
+Package `stringr`
+
+-   `str_length()`: analog of `nchar()`
+-   `str_c()`: analog of `paste()`
+-   `str_view()`: Show more readable version of strings. Also see how a pattern matches
+-   `str_sub()`: Subset strings by position
+-   `str_detect()`: Detects the presence or absence of a pattern in a string
+
+## Key Techniques for Strings
+
+Package `stringr`
+
+-   `str_split()`: Splits a string into pieces based on a pattern or separator
+-   `str_match()`: Extracts parts of a string that match a regex pattern
+-   `str_replace()`: Replaces the first occurrence of a pattern with new text
+-   `str_extract()`: Extracts the first substring that matches a pattern
+-   `str_remove()`: Removes a pattern from a string
+
+## Review: RegEx {.smaller}
+
+:::{.nonincremental}
+
+> Regex works by searching for patterns inside text.
+
+::: {.columns}
+::: {.column}
+Examples of patterns:
+
+
+-   numbers
+
+-   words
+
+-   specific characters
+
+-   repeated structures
+:::
+::: {.column}
+| Pattern | Meaning           | Example     |
+|---------|-------------------|-------------|
+| `.`     | any character     | `a.c` → abc |
+| `[0-9]` | any digit         | 3           |
+| `[a-z]` | lowercase letters | hello       |
+| `+`     | one or more       | `[0-9]+`    |
+| `*`     | zero or more      | `ab*`       |
+| `\`     | escape character  | `\.`        |
+:::
+:::
+<!-- end columns -->
+
+
+:::
+
+# Review: Dates+Times
+
+> Dates and times represent points in time (e.g., days, hours, minutes).
+
+They often appear as text in raw data, so we need to parse them into proper date-time formats before analysis.  
+
+Example:
+
+`"2024-03-12 14:05:23"`
+
+Once converted, we can filter, sort, and summarize events over time.
+
+## Why Dates and Times Matter {.smaller}
+
+Many datasets include time information:
+
+::::: columns
+::: column
+Examples:
+
+-   transaction timestamps
+
+-   website logs
+
+-   sensor measurements
+
+-   survey submission times
+:::
+
+::: column
+After parsing, we can analyze patterns like:
+
+-   activity by **day**
+
+-   trends over **time**
+
+-   events by **hour**
+:::
+:::::
+
+## Key Techniques for Dates and Times
+
+Package `lubridate`
+
+-   `ymd()` : Convert text to a **date** in year-month-day format
+
+-   `mdy()` : Convert text in month-day-year format
+
+-   `ymd_hms()` : Convert text to a **date-time** (year, month, day, hour, minute, second)
+
+-   `now()` : Returns the current date and time
+
+-   `today()` : Returns today's date
+
+## Common Date-Time Formats
+
+Dates can appear in many formats:
+
+
+```{markdown}
+2024-03-12
+03/12/2024
+Mar 12, 2024
+2024-03-12 14:05:23
+```
+
+With `lubridate` we can convert these into a standard format that R can analyze.
+
+# Pub Assignment
+
+With the given messy dataset, use regex and date-time tools to clean and display results in a Quarto dashboard.
+
+- Navigate to BCourses > Pub 8 
+
+- Download both `.qmd` files, `pub8-your-name.qmd` and `data-prep.qmd`
+
+- Follow the instructions to prepare the data and transfer the necessary code chunks to your dashboard documents. 
+
+- Upload your finished dashboard to Netlify and submit the link to BCourses.
+
+# Problem Set 8
+
+## Pset 8
+
+Available in bCourses:
+
+See [Assignments tab \> Problem Sets \> PS8]{.bold-hilit}
+
+You'll find 2 files:
+
+-   `ps8.html`: instructions
+
+-   `ps8.qmd`: template file to write your answers
+
+. . .
+
+In case of trouble: Go to Files tab, folder `problem-sets`, folder `ps8`, and download the `qmd` file.
+
+Sometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome).
+
+## Pset 8 Submission
+
+-   Submit your `qmd` and `html` files to bCourses.
+-   Use assignment problem set **ps8**
+-   Graded credit / no-credit
+-   Credit for evidence of earnest engagement (just don't submit a blank or empty template file)

@@ -1,0 +1,63 @@
+---
+title: "Pub 8"
+subtitle: "Cleaning Text Data and Visualizing Activity with a Quarto Dashboard"
+author: "Your Name"
+format: dashboard
+# theme: add preferred theme here
+embed-resources: true
+---
+
+Data Preparation: 
+
+```{r}
+#| label: setup
+#| message: false
+
+library(tidyverse)
+library(stringr)
+library(lubridate)
+library(DT)
+
+times_data <- tibble(
+  timestamp = c(
+    "03/12/24 14:03",
+    "03/12/24 14:05",
+    "03/12/24 15:10",
+    "03/12/24 15:22",
+    "03/12/24 16:01"
+  ),
+  message = c(
+    "ERROR: user=482 failed-login",
+    "INFO: user=511 login-success",
+    "WARN: user=482 retry-login",
+    "ERROR: user=222 failed-login",
+    "INFO: user=482 login-success"
+  )
+)
+```
+
+
+
+# Tab 1 - Data Cleaning
+
+## Row 1
+
+```{r}
+# Show messy data table here
+```
+
+
+## Row 2
+
+```{r}
+# Show clean data table here
+
+```
+
+# Tab 2 - Chart
+
+```{r}
+# Add a graphic here of Events by Hour
+```
+
+Analysis: 
