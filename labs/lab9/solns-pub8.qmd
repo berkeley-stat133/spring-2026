@@ -1,10 +1,11 @@
 ---
 title: "Pub 8 Solutions"
-subtitle: "Cleaning Text Data and Visualizing Activity with a Quarto Dashboard"
+subtitle: "Quarto Dashboard"
 author: "STAT 133"
-format: dashboard
+format: 
+  dashboard
 embed-resources: true
-theme: lux
+theme: morph
 ---
 
 ```{r}
@@ -42,6 +43,7 @@ times_data <- tibble(
 ## Row 1
 
 ```{r}
+#| title: Messy Data
 # Show messy data table here
 
 datatable(times_data)
@@ -51,6 +53,7 @@ datatable(times_data)
 ## Row 2
 
 ```{r}
+#| title: Clean Data
 # Show clean data table here
 
 times_clean <- times_data |>
