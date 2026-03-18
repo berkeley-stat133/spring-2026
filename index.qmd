@@ -340,7 +340,7 @@ Lab 8: [slides](labs/lab8/slides.html) | [PS7](https://bcourses.berkeley.edu/cou
 #### Description
 [Dates and Times I](lectures/23-date-time1/slides.html)
 
-Dates and Times II
+[Dates and Times II](lectures/24-date-time2/slides.html)
 
 Lab 9: [__Quiz 4__]{.label-Quiz} | slides | PS8
 

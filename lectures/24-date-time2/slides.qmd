@@ -284,6 +284,72 @@ as.period(oski_age_sec) + years(1)
 ```
 
 
+## Intervals
+
+An [interval]{.bold-hilit} is a time span that is tied to two specific, real date-time points: a [start date]{.mdlit} and an [end date]{.hilit}
+
+. . .
+
+\
+
+Unlike lubridate's other time span classes (**durations** and **periods**), an interval retains complete information about when exactly it occurs on the timeline. 
+
+
+## Interval Example
+
+```{r}
+#| code-line-numbers: "1-2|1-5|1-8"
+#| output-location: fragment
+# Oski's debute
+date1 <- ymd("1941-09-27")
+
+# present's date
+date2 <- ymd("2026-03-18")
+
+# interval
+interval(date1, date2)
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+# length of the interval in seconds
+int_length(interval(date1, date2))
+```
+
+
+## Interval Example (cont'd)
+
+```{r}
+#| output-location: fragment
+# number of years 
+interval(date1, date2) / years(1)
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+# number of months
+interval(date1, date2) / months(1)
+```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+# number of weeks
+interval(date1, date2) / weeks(1)
+```
+
+
 ## Time Spans recap
 
 ### Base R
@@ -372,7 +438,7 @@ with_tz(x1, tzone = "Asia/Tokyo")
 ```
 
 
-# Some Examples
+# Example: Men's Long Jump World Records
 
 ## Men's Long Jump World Record Progression {.smaller}
 
@@ -405,7 +471,6 @@ dat
 
 ##
 
-
 ```{r}
 #| output-location: fragment
 #| code-line-numbers: "1-2|1-4|1-6|1-8|1-10"
@@ -424,7 +489,6 @@ dat |>
 
 ##
 
-
 ```{r}
 #| code-fold: true
 dat |> 
@@ -439,6 +503,41 @@ dat |>
   theme_minimal()
 ```
 
+
+##
+
+Calculate records' age
+
+. . .
+
+```{r}
+#| output-location: fragment
+dat |> 
+  select(Mark, Athlete, Date) |> 
+  mutate(
+    Mark = str_sub(Mark, start = 1, end = 4),
+    Date = str_extract(Date, "\\d+ \\w+ \\d{4}"),
+    Date = dmy(Date)) 
+```
+
+
+## {auto-animate=true}
+
+Calculate records' age
+
+```{r}
+#| output-location: fragment
+dat |> 
+  select(Mark, Athlete, Date) |> 
+  mutate(
+    Mark = str_sub(Mark, start = 1, end = 4),
+    Date = str_extract(Date, "\\d+ \\w+ \\d{4}"),
+    Date = dmy(Date),
+    Record_Age = interval(Date, ymd("2026-03-18")) / years(1)) 
+```
+
+
+# Example: Serena William's Matches
 
 ## 10 Matches of Serena Williams
 
