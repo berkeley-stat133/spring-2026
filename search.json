@@ -469,14 +469,14 @@
     "href": "lectures/24-date-time2/slides.html#how-old-is-oski",
     "title": "Dates and Times II",
     "section": "How old is Oski?",
-    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30851 days"
+    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30852 days"
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#durations",
     "href": "lectures/24-date-time2/slides.html#durations",
     "title": "Dates and Times II",
     "section": "Durations",
-    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2665526400s (~84.47 years)\""
+    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2665612800s (~84.47 years)\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#constructing-a-duration",
@@ -518,7 +518,28 @@
     "href": "lectures/24-date-time2/slides.html#how-old-will-oski-be",
     "title": "Dates and Times II",
     "section": "How old will Oski be …",
-    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2665526400s (~84.47 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2697084000s (~85.47 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 170d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 170d 0H 0M 0S\""
+    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2665612800s (~84.47 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2697170400s (~85.47 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 171d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 171d 0H 0M 0S\""
+  },
+  {
+    "objectID": "lectures/24-date-time2/slides.html#intervals",
+    "href": "lectures/24-date-time2/slides.html#intervals",
+    "title": "Dates and Times II",
+    "section": "Intervals",
+    "text": "Intervals\nAn interval is a time span that is tied to two specific, real date-time points: a start date and an end date\n\n\n\nUnlike lubridate’s other time span classes (durations and periods), an interval retains complete information about when exactly it occurs on the timeline."
+  },
+  {
+    "objectID": "lectures/24-date-time2/slides.html#interval-example",
+    "href": "lectures/24-date-time2/slides.html#interval-example",
+    "title": "Dates and Times II",
+    "section": "Interval Example",
+    "text": "Interval Example\n\n# Oski's debute\ndate1 &lt;- ymd(\"1941-09-27\")\n\n# present's date\ndate2 &lt;- ymd(\"2026-03-18\")\n\n# interval\ninterval(date1, date2)\n\n\n\n[1] 1941-09-27 UTC--2026-03-18 UTC\n\n\n\n\n\n\n# length of the interval in seconds\nint_length(interval(date1, date2))\n\n\n\n[1] 2665699200"
+  },
+  {
+    "objectID": "lectures/24-date-time2/slides.html#interval-example-contd",
+    "href": "lectures/24-date-time2/slides.html#interval-example-contd",
+    "title": "Dates and Times II",
+    "section": "Interval Example (cont’d)",
+    "text": "Interval Example (cont’d)\n\n# number of years \ninterval(date1, date2) / years(1)\n\n\n\n[1] 84.47123\n\n\n\n\n\n\n# number of months\ninterval(date1, date2) / months(1)\n\n\n\n[1] 1013.679\n\n\n\n\n\n\n\n# number of weeks\ninterval(date1, date2) / weeks(1)\n\n\n\n[1] 4407.571"
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#time-spans-recap",
@@ -568,6 +589,20 @@
     "title": "Dates and Times II",
     "section": "",
     "text": "Code\ndat |&gt; \n  mutate(\n    Mark = as.numeric(str_sub(Mark, start = 1, end = 4)),\n    Date = str_extract(Date, \"\\\\d+ \\\\w+ \\\\d{4}\"),\n    Date = dmy(Date)) |&gt; \n  ggplot(aes(x = Date, y = Mark)) +\n  geom_point() +\n  geom_step() +\n  labs(title = \"Men's Long Jump World Record Progression\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "lectures/24-date-time2/slides.html#section-6",
+    "href": "lectures/24-date-time2/slides.html#section-6",
+    "title": "Dates and Times II",
+    "section": "",
+    "text": "Calculate records’ age\n\n\ndat |&gt; \n  select(Mark, Athlete, Date) |&gt; \n  mutate(\n    Mark = str_sub(Mark, start = 1, end = 4),\n    Date = str_extract(Date, \"\\\\d+ \\\\w+ \\\\d{4}\"),\n    Date = dmy(Date)) \n\n\n\n# A tibble: 19 × 3\n   Mark  Athlete                  Date      \n   &lt;chr&gt; &lt;chr&gt;                    &lt;date&gt;    \n 1 7.61  Peter O'Connor (IRE)     1901-08-05\n 2 7.69  Edward Gourdin (USA)     1921-07-23\n 3 7.76  Robert LeGendre (USA)    1924-07-07\n 4 7.89  DeHart Hubbard (USA)     1925-06-13\n 5 7.90  Edward Hamm (USA)        1928-07-07\n 6 7.93  Sylvio Cator (HAI)       1928-09-09\n 7 7.98  Chuhei Nambu (JPN)       1931-10-27\n 8 8.13  Jesse Owens (USA)        1935-05-25\n 9 8.21  Ralph Boston (USA)       1960-08-12\n10 8.24  Ralph Boston (USA)       1961-05-27\n11 8.28  Ralph Boston (USA)       1961-07-16\n12 8.31  Igor Ter-Ovanesyan (URS) 1962-06-10\n13 8.33  Phil Shinnick (USA)      1963-05-25\n14 8.31  Ralph Boston (USA)       1964-08-15\n15 8.34  Ralph Boston (USA)       1964-09-12\n16 8.35  Ralph Boston (USA)       1965-05-29\n17 8.35  Igor Ter-Ovanesyan (URS) 1967-10-19\n18 8.90  Bob Beamon (USA)         1968-10-18\n19 8.95  Mike Powell (USA)        1991-08-30"
+  },
+  {
+    "objectID": "lectures/24-date-time2/slides.html#section-7",
+    "href": "lectures/24-date-time2/slides.html#section-7",
+    "title": "Dates and Times II",
+    "section": "",
+    "text": "Calculate records’ age\n\ndat |&gt; \n  select(Mark, Athlete, Date) |&gt; \n  mutate(\n    Mark = str_sub(Mark, start = 1, end = 4),\n    Date = str_extract(Date, \"\\\\d+ \\\\w+ \\\\d{4}\"),\n    Date = dmy(Date),\n    Record_Age = interval(Date, ymd(\"2026-03-18\")) / years(1)) \n\n\n\n# A tibble: 19 × 4\n   Mark  Athlete                  Date       Record_Age\n   &lt;chr&gt; &lt;chr&gt;                    &lt;date&gt;          &lt;dbl&gt;\n 1 7.61  Peter O'Connor (IRE)     1901-08-05      125. \n 2 7.69  Edward Gourdin (USA)     1921-07-23      105. \n 3 7.76  Robert LeGendre (USA)    1924-07-07      102. \n 4 7.89  DeHart Hubbard (USA)     1925-06-13      101. \n 5 7.90  Edward Hamm (USA)        1928-07-07       97.7\n 6 7.93  Sylvio Cator (HAI)       1928-09-09       97.5\n 7 7.98  Chuhei Nambu (JPN)       1931-10-27       94.4\n 8 8.13  Jesse Owens (USA)        1935-05-25       90.8\n 9 8.21  Ralph Boston (USA)       1960-08-12       65.6\n10 8.24  Ralph Boston (USA)       1961-05-27       64.8\n11 8.28  Ralph Boston (USA)       1961-07-16       64.7\n12 8.31  Igor Ter-Ovanesyan (URS) 1962-06-10       63.8\n13 8.33  Phil Shinnick (USA)      1963-05-25       62.8\n14 8.31  Ralph Boston (USA)       1964-08-15       61.6\n15 8.34  Ralph Boston (USA)       1964-09-12       61.5\n16 8.35  Ralph Boston (USA)       1965-05-29       60.8\n17 8.35  Igor Ter-Ovanesyan (URS) 1967-10-19       58.4\n18 8.90  Bob Beamon (USA)         1968-10-18       57.4\n19 8.95  Mike Powell (USA)        1991-08-30       34.5"
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#matches-of-serena-williams",
@@ -626,8 +661,8 @@
     "text": "Serena’s and opponent’s age\n\n# Serena's age (in years)\ninterval(matches$player1_dob, matches$date_match) / years(1)\n\n\n\n [1] 19.87945 22.65847 23.30959 26.03279 27.92877 28.29315 32.91233 33.75616\n [9] 34.92350 38.90984\n\n\n\n\n\n# Opponent's age (in years)\ninterval(matches$player2_dob, matches$date_match) / years(1)\n\n\n\n [1] 24.00274 17.32787 18.17260 24.81370 27.05205 27.41644 24.12329 35.03279\n [9] 28.96175 25.08219"
   },
   {
-    "objectID": "lectures/24-date-time2/slides.html#section-6",
-    "href": "lectures/24-date-time2/slides.html#section-6",
+    "objectID": "lectures/24-date-time2/slides.html#section-8",
+    "href": "lectures/24-date-time2/slides.html#section-8",
     "title": "Dates and Times II",
     "section": "",
     "text": "matches |&gt; \n  mutate(\n    player1_age = interval(player1_dob, date_match) / years(1),\n    player2_age = interval(player2_dob, date_match) / years(1),\n    age_difference = player1_age - player2_age) |&gt; \n  select(date_match, player1, player1_age, player2, player2_age, age_difference)\n\n\n\n# A tibble: 10 × 6\n   date_match player1         player1_age player2     player2_age age_difference\n   &lt;date&gt;     &lt;chr&gt;                 &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;          &lt;dbl&gt;\n 1 2001-08-13 Serena Williams        19.9 Iva Majoli         24.0         -4.12 \n 2 2004-05-24 Serena Williams        22.7 Maria Kiri…        17.3          5.33 \n 3 2005-01-17 Serena Williams        23.3 Sania Mirza        18.2          5.14 \n 4 2007-10-08 Serena Williams        26.0 Tatiana Pe…        24.8          1.22 \n 5 2009-08-31 Serena Williams        27.9 Maria Jose…        27.1          0.877\n 6 2010-01-11 Serena Williams        28.3 Maria Jose…        27.4          0.877\n 7 2014-08-25 Serena Williams        32.9 Caroline W…        24.1          8.79 \n 8 2015-06-29 Serena Williams        33.8 Venus Will…        35.0         -1.28 \n 9 2016-08-29 Serena Williams        34.9 Yaroslava …        29.0          5.96 \n10 2020-08-24 Serena Williams        38.9 Maria Sakk…        25.1         13.8"
@@ -1638,14 +1673,14 @@
     "href": "lectures/23-date-time1/slides.html#an-r-vector-for-date-times",
     "title": "Dates and Times I",
     "section": "An R vector for date-times",
-    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-03-16 08:45:59 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1773675959"
+    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-03-17 20:56:59 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1773806219"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "href": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "title": "Dates and Times I",
     "section": "Why not just use a double vector?",
-    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-03-16 08:45:59 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-03-16 08:46:00 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-03-16 08:45:59 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"03/16/26\""
+    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-03-17 20:56:59 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-03-17 20:57:00 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-03-17 20:56:59 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"03/17/26\""
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#creating-date-time-vectors",
@@ -1680,21 +1715,21 @@
     "href": "lectures/23-date-time1/slides.html#getting",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 16\n\n\n\n\n\nwday(now)\n\n\n\n[1] 2\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Mon\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 17\n\n\n\n\n\nwday(now)\n\n\n\n[1] 3\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Tue\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#getting-1",
     "href": "lectures/23-date-time1/slides.html#getting-1",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 16\n\n\n\nwday(now)\n\n[1] 2\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Monday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 17\n\n\n\nwday(now)\n\n[1] 3\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Tuesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#setting",
     "href": "lectures/23-date-time1/slides.html#setting",
     "title": "Dates and Times I",
     "section": "Setting",
-    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-03-16 08:45:59 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Sunday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-03-17 20:56:59 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Monday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#your-turn",
@@ -2198,7 +2233,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 1      Jonathan Is… ORL   PF           82    230 October 3… US      5         \n2 3      Anthony Dav… LAL   C            82    253 March 11,… US      12        \n3 5      Stephon Cas… SAS   SG           78    215 November … US      R         \n4 15     JT Thor      CLE   PF           81    203 August 26… US      3         \n5 5      Quentin Gri… PHI   SG           76    210 May 8, 20… US      3         \n6 7      David Duke … SAS   SG           76    204 October 1… US      3         \n7 12     Josh Okogie  CHO   SG           76    213 September… NG      6         \n8 00     Jordan Clar… UTA   SG           77    194 June 7, 1… US      10        \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 23     Zach Collins SAS   C            81    250 November … US      6         \n2 11     Bol Bol      PHO   PF           87    220 November … SD      5         \n3 10     Justin Mina… POR   SF           77    205 March 26,… US      2         \n4 11     Jalen Bruns… NYK   PG           74    190 August 31… US      6         \n5 0      Bilal Couli… WAS   SF           79    195 July 26, … FR      1         \n6 27     Jordan Walsh BOS   PF           78    205 March 3, … US      1         \n7 32     Karl-Anthon… NYK   C            84    248 November … US      9         \n8 7      Damion Baugh CHO   SG           76    194 August 3,… US      R         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -2646,7 +2681,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"silver\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"bronze\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -2660,7 +2695,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"senior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"junior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -4986,7 +5021,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 4 4"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 3 3"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#meet-the-palmer-penguins",
@@ -6680,7 +6715,7 @@
     "href": "lectures/28-geospatial3/slides.html#adding-data-objects",
     "title": "Storms in North Atlantic II",
     "section": "Adding Data Objects",
-    "text": "Adding Data Objects\nBoth leaflet() and the map layer functions have an optional data parameter that is designed to receive spatial data in one of several forms:\n\nFrom base R:\n\nlng/lat matrix\ndata frame with lng/lat columns\n\nFrom the \"sf\" package:\n\nthe data frame of class \"sf\"\n\nFrom the \"maps\" package\n\nthe data frame from returned from map()"
+    "text": "Adding Data Objects\nBoth leaflet() and the map layer functions have an optional data parameter that is designed to receive spatial data in one of several forms:\n\nFrom base R:\n\nlng/lat matrix\ndata frame with lng/lat columns\n\nFrom the \"sf\" package:\n\nthe data frame of class \"sf\"\n\nFrom the \"maps\" package\n\nthe data frame returned from map()"
   },
   {
     "objectID": "lectures/28-geospatial3/slides.html#section",

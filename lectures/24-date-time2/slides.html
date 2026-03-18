@@ -277,7 +277,7 @@ Gaston Sanchez
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 30851 days</code></pre>
+<pre><code>Time difference of 30852 days</code></pre>
 </div>
 </div>
 </div>
@@ -317,7 +317,7 @@ attr(,"package")
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2665526400s (~84.47 years)"</code></pre>
+<pre><code>[1] "2665612800s (~84.47 years)"</code></pre>
 </div>
 </div>
 </div>
@@ -513,7 +513,7 @@ attr(,"package")
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2665526400s (~84.47 years)"</code></pre>
+<pre><code>[1] "2665612800s (~84.47 years)"</code></pre>
 </div>
 </div>
 </div>
@@ -523,7 +523,7 @@ attr(,"package")
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2697084000s (~85.47 years)"</code></pre>
+<pre><code>[1] "2697170400s (~85.47 years)"</code></pre>
 </div>
 </div>
 </div>
@@ -533,7 +533,7 @@ attr(,"package")
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "84y 0m 170d 0H 0M 0S"</code></pre>
+<pre><code>[1] "84y 0m 171d 0H 0M 0S"</code></pre>
 </div>
 </div>
 </div>
@@ -543,7 +543,85 @@ attr(,"package")
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "85y 0m 170d 0H 0M 0S"</code></pre>
+<pre><code>[1] "85y 0m 171d 0H 0M 0S"</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="intervals" class="slide level2">
+<h2>Intervals</h2>
+<p>An <span class="bold-hilit">interval</span> is a time span that is tied to two specific, real date-time points: a <span class="mdlit">start date</span> and an <span class="hilit">end date</span></p>
+<div class="fragment">
+<p><br>
+</p>
+<p>Unlike lubridate’s other time span classes (<strong>durations</strong> and <strong>periods</strong>), an interval retains complete information about when exactly it occurs on the timeline.</p>
+</div>
+</section>
+<section id="interval-example" class="slide level2">
+<h2>Interval Example</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58" data-code-line-numbers="1-2|1-5|1-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a><span class="co"># Oski's debute</span></span>
+<span id="cb58-2"><a></a>date1 <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">"1941-09-27"</span>)</span>
+<span id="cb58-3"><a></a></span>
+<span id="cb58-4"><a></a><span class="co"># present's date</span></span>
+<span id="cb58-5"><a></a>date2 <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">"2026-03-18"</span>)</span>
+<span id="cb58-6"><a></a></span>
+<span id="cb58-7"><a></a><span class="co"># interval</span></span>
+<span id="cb58-8"><a></a><span class="fu">interval</span>(date1, date2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1941-09-27 UTC--2026-03-18 UTC</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p><br>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a><span class="co"># length of the interval in seconds</span></span>
+<span id="cb60-2"><a></a><span class="fu">int_length</span>(<span class="fu">interval</span>(date1, date2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2665699200</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="interval-example-contd" class="slide level2">
+<h2>Interval Example (cont’d)</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a></a><span class="co"># number of years </span></span>
+<span id="cb62-2"><a></a><span class="fu">interval</span>(date1, date2) <span class="sc">/</span> <span class="fu">years</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 84.47123</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p><br>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a></a><span class="co"># number of months</span></span>
+<span id="cb64-2"><a></a><span class="fu">interval</span>(date1, date2) <span class="sc">/</span> <span class="fu">months</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1013.679</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><br>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a><span class="co"># number of weeks</span></span>
+<span id="cb66-2"><a></a><span class="fu">interval</span>(date1, date2) <span class="sc">/</span> <span class="fu">weeks</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4407.571</code></pre>
 </div>
 </div>
 </div>
@@ -592,7 +670,7 @@ attr(,"package")
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a><span class="fu">Sys.timezone</span>() <span class="co"># What R says my timezone is</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a></a><span class="fu">Sys.timezone</span>() <span class="co"># What R says my timezone is</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -604,8 +682,8 @@ attr(,"package")
 <section id="olson-name" class="slide level2">
 <h2>Olson Name</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a><span class="co"># names of Time Zones</span></span>
-<span id="cb60-2"><a></a><span class="fu">OlsonNames</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a></a><span class="co"># names of Time Zones</span></span>
+<span id="cb70-2"><a></a><span class="fu">OlsonNames</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  [1] "Africa/Abidjan"                   "Africa/Accra"                    
   [3] "Africa/Addis_Ababa"               "Africa/Algiers"                  
@@ -916,8 +994,8 @@ attr(,"Version")
 <p>Two flavors</p>
 <p>Change the instant in time.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a></a>x1 <span class="ot">&lt;-</span> <span class="fu">ymd_hms</span>(<span class="st">"2024-06-01 12:00:00"</span>, <span class="at">tz =</span> <span class="st">"America/New_York"</span>)</span>
-<span id="cb62-2"><a></a>x1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a></a>x1 <span class="ot">&lt;-</span> <span class="fu">ymd_hms</span>(<span class="st">"2024-06-01 12:00:00"</span>, <span class="at">tz =</span> <span class="st">"America/New_York"</span>)</span>
+<span id="cb72-2"><a></a>x1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -926,7 +1004,7 @@ attr(,"Version")
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a></a><span class="fu">force_tz</span>(x1, <span class="at">tzone =</span> <span class="st">"Asia/Tokyo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a></a><span class="fu">force_tz</span>(x1, <span class="at">tzone =</span> <span class="st">"Asia/Tokyo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -937,7 +1015,7 @@ attr(,"Version")
 <div class="fragment">
 <p>Keep the same instant but change the way it’s printed:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a><span class="fu">with_tz</span>(x1, <span class="at">tzone =</span> <span class="st">"Asia/Tokyo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a></a><span class="fu">with_tz</span>(x1, <span class="at">tzone =</span> <span class="st">"Asia/Tokyo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -947,22 +1025,22 @@ attr(,"Version")
 </div>
 </section></section>
 <section>
-<section id="some-examples" class="title-slide slide level1 center">
-<h1>Some Examples</h1>
+<section id="example-mens-long-jump-world-records" class="title-slide slide level1 center">
+<h1>Example: Men’s Long Jump World Records</h1>
 
 </section>
 <section id="mens-long-jump-world-record-progression" class="slide level2 smaller">
 <h2>Men’s Long Jump World Record Progression</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a></a><span class="fu">library</span>(rvest)</span>
-<span id="cb68-2"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://en.wikipedia.org/wiki/Men%27s_long_jump_world_record_progression"</span></span>
-<span id="cb68-3"><a></a></span>
-<span id="cb68-4"><a></a><span class="co"># import HTML file</span></span>
-<span id="cb68-5"><a></a>doc <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url)</span>
-<span id="cb68-6"><a></a></span>
-<span id="cb68-7"><a></a><span class="co"># extract 2nd HTML table (as data.frame/tibble)</span></span>
-<span id="cb68-8"><a></a>dat <span class="ot">&lt;-</span> <span class="fu">html_table</span>(doc)[[<span class="dv">2</span>]]</span>
-<span id="cb68-9"><a></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a></a><span class="fu">library</span>(rvest)</span>
+<span id="cb78-2"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://en.wikipedia.org/wiki/Men%27s_long_jump_world_record_progression"</span></span>
+<span id="cb78-3"><a></a></span>
+<span id="cb78-4"><a></a><span class="co"># import HTML file</span></span>
+<span id="cb78-5"><a></a>doc <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url)</span>
+<span id="cb78-6"><a></a></span>
+<span id="cb78-7"><a></a><span class="co"># extract 2nd HTML table (as data.frame/tibble)</span></span>
+<span id="cb78-8"><a></a>dat <span class="ot">&lt;-</span> <span class="fu">html_table</span>(doc)[[<span class="dv">2</span>]]</span>
+<span id="cb78-9"><a></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <div class="cell">
@@ -996,16 +1074,16 @@ attr(,"Version")
 <section id="section-4" class="slide level2">
 <h2></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70" data-code-line-numbers="1-2|1-4|1-6|1-8|1-10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a></a>dat <span class="sc">|&gt;</span> </span>
-<span id="cb70-2"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb70-3"><a></a>    <span class="co"># distance</span></span>
-<span id="cb70-4"><a></a>    <span class="at">Mark =</span> <span class="fu">as.numeric</span>(<span class="fu">str_sub</span>(Mark, <span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">4</span>)),</span>
-<span id="cb70-5"><a></a>    <span class="co"># extract string Date</span></span>
-<span id="cb70-6"><a></a>    <span class="at">Date =</span> <span class="fu">str_extract</span>(Date, <span class="st">"</span><span class="sc">\\</span><span class="st">d+ </span><span class="sc">\\</span><span class="st">w+ </span><span class="sc">\\</span><span class="st">d{4}"</span>),</span>
-<span id="cb70-7"><a></a>    <span class="co"># convert column  Date as "Date" type</span></span>
-<span id="cb70-8"><a></a>    <span class="at">Date =</span> <span class="fu">dmy</span>(Date)) <span class="sc">|&gt;</span> </span>
-<span id="cb70-9"><a></a>    <span class="fu">select</span>(Mark, Date) <span class="sc">|&gt;</span> </span>
-<span id="cb70-10"><a></a>    <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80" data-code-line-numbers="1-2|1-4|1-6|1-8|1-10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a></a>dat <span class="sc">|&gt;</span> </span>
+<span id="cb80-2"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb80-3"><a></a>    <span class="co"># distance</span></span>
+<span id="cb80-4"><a></a>    <span class="at">Mark =</span> <span class="fu">as.numeric</span>(<span class="fu">str_sub</span>(Mark, <span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">4</span>)),</span>
+<span id="cb80-5"><a></a>    <span class="co"># extract string Date</span></span>
+<span id="cb80-6"><a></a>    <span class="at">Date =</span> <span class="fu">str_extract</span>(Date, <span class="st">"</span><span class="sc">\\</span><span class="st">d+ </span><span class="sc">\\</span><span class="st">w+ </span><span class="sc">\\</span><span class="st">d{4}"</span>),</span>
+<span id="cb80-7"><a></a>    <span class="co"># convert column  Date as "Date" type</span></span>
+<span id="cb80-8"><a></a>    <span class="at">Date =</span> <span class="fu">dmy</span>(Date)) <span class="sc">|&gt;</span> </span>
+<span id="cb80-9"><a></a>    <span class="fu">select</span>(Mark, Date) <span class="sc">|&gt;</span> </span>
+<span id="cb80-10"><a></a>    <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1025,20 +1103,104 @@ attr(,"Version")
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a></a>dat <span class="sc">|&gt;</span> </span>
-<span id="cb72-2"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb72-3"><a></a>    <span class="at">Mark =</span> <span class="fu">as.numeric</span>(<span class="fu">str_sub</span>(Mark, <span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">4</span>)),</span>
-<span id="cb72-4"><a></a>    <span class="at">Date =</span> <span class="fu">str_extract</span>(Date, <span class="st">"</span><span class="sc">\\</span><span class="st">d+ </span><span class="sc">\\</span><span class="st">w+ </span><span class="sc">\\</span><span class="st">d{4}"</span>),</span>
-<span id="cb72-5"><a></a>    <span class="at">Date =</span> <span class="fu">dmy</span>(Date)) <span class="sc">|&gt;</span> </span>
-<span id="cb72-6"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Date, <span class="at">y =</span> Mark)) <span class="sc">+</span></span>
-<span id="cb72-7"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb72-8"><a></a>  <span class="fu">geom_step</span>() <span class="sc">+</span></span>
-<span id="cb72-9"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Men's Long Jump World Record Progression"</span>) <span class="sc">+</span></span>
-<span id="cb72-10"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a></a>dat <span class="sc">|&gt;</span> </span>
+<span id="cb82-2"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb82-3"><a></a>    <span class="at">Mark =</span> <span class="fu">as.numeric</span>(<span class="fu">str_sub</span>(Mark, <span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">4</span>)),</span>
+<span id="cb82-4"><a></a>    <span class="at">Date =</span> <span class="fu">str_extract</span>(Date, <span class="st">"</span><span class="sc">\\</span><span class="st">d+ </span><span class="sc">\\</span><span class="st">w+ </span><span class="sc">\\</span><span class="st">d{4}"</span>),</span>
+<span id="cb82-5"><a></a>    <span class="at">Date =</span> <span class="fu">dmy</span>(Date)) <span class="sc">|&gt;</span> </span>
+<span id="cb82-6"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Date, <span class="at">y =</span> Mark)) <span class="sc">+</span></span>
+<span id="cb82-7"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb82-8"><a></a>  <span class="fu">geom_step</span>() <span class="sc">+</span></span>
+<span id="cb82-9"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Men's Long Jump World Record Progression"</span>) <span class="sc">+</span></span>
+<span id="cb82-10"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="slides_files/figure-revealjs/unnamed-chunk-39-1.png" width="960" class="r-stretch"></section>
+<img data-src="slides_files/figure-revealjs/unnamed-chunk-44-1.png" width="960" class="r-stretch"></section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<p>Calculate records’ age</p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a></a>dat <span class="sc">|&gt;</span> </span>
+<span id="cb83-2"><a></a>  <span class="fu">select</span>(Mark, Athlete, Date) <span class="sc">|&gt;</span> </span>
+<span id="cb83-3"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb83-4"><a></a>    <span class="at">Mark =</span> <span class="fu">str_sub</span>(Mark, <span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">4</span>),</span>
+<span id="cb83-5"><a></a>    <span class="at">Date =</span> <span class="fu">str_extract</span>(Date, <span class="st">"</span><span class="sc">\\</span><span class="st">d+ </span><span class="sc">\\</span><span class="st">w+ </span><span class="sc">\\</span><span class="st">d{4}"</span>),</span>
+<span id="cb83-6"><a></a>    <span class="at">Date =</span> <span class="fu">dmy</span>(Date)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 19 × 3
+   Mark  Athlete                  Date      
+   &lt;chr&gt; &lt;chr&gt;                    &lt;date&gt;    
+ 1 7.61  Peter O'Connor&nbsp;(IRE)     1901-08-05
+ 2 7.69  Edward Gourdin&nbsp;(USA)     1921-07-23
+ 3 7.76  Robert LeGendre&nbsp;(USA)    1924-07-07
+ 4 7.89  DeHart Hubbard&nbsp;(USA)     1925-06-13
+ 5 7.90  Edward Hamm&nbsp;(USA)        1928-07-07
+ 6 7.93  Sylvio Cator&nbsp;(HAI)       1928-09-09
+ 7 7.98  Chuhei Nambu&nbsp;(JPN)       1931-10-27
+ 8 8.13  Jesse Owens&nbsp;(USA)        1935-05-25
+ 9 8.21  Ralph Boston&nbsp;(USA)       1960-08-12
+10 8.24  Ralph Boston&nbsp;(USA)       1961-05-27
+11 8.28  Ralph Boston&nbsp;(USA)       1961-07-16
+12 8.31  Igor Ter-Ovanesyan&nbsp;(URS) 1962-06-10
+13 8.33  Phil Shinnick&nbsp;(USA)      1963-05-25
+14 8.31  Ralph Boston&nbsp;(USA)       1964-08-15
+15 8.34  Ralph Boston&nbsp;(USA)       1964-09-12
+16 8.35  Ralph Boston&nbsp;(USA)       1965-05-29
+17 8.35  Igor Ter-Ovanesyan&nbsp;(URS) 1967-10-19
+18 8.90  Bob Beamon&nbsp;(USA)         1968-10-18
+19 8.95  Mike Powell&nbsp;(USA)        1991-08-30</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="section-7" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<p>Calculate records’ age</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb85-1" class="hljs-ln-code"><a></a>dat <span class="sc">|&gt;</span> </span>
+<span id="cb85-2" class="hljs-ln-code"><a></a>  <span class="fu">select</span>(Mark, Athlete, Date) <span class="sc">|&gt;</span> </span>
+<span id="cb85-3" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb85-4" class="hljs-ln-code"><a></a>    <span class="at">Mark =</span> <span class="fu">str_sub</span>(Mark, <span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">4</span>),</span>
+<span id="cb85-5" class="hljs-ln-code"><a></a>    <span class="at">Date =</span> <span class="fu">str_extract</span>(Date, <span class="st">"</span><span class="sc">\\</span><span class="st">d+ </span><span class="sc">\\</span><span class="st">w+ </span><span class="sc">\\</span><span class="st">d{4}"</span>),</span>
+<span id="cb85-6" class="hljs-ln-code"><a></a>    <span class="at">Date =</span> <span class="fu">dmy</span>(Date),</span>
+<span id="cb85-7" class="hljs-ln-code"><a></a>    <span class="at">Record_Age =</span> <span class="fu">interval</span>(Date, <span class="fu">ymd</span>(<span class="st">"2026-03-18"</span>)) <span class="sc">/</span> <span class="fu">years</span>(<span class="dv">1</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 19 × 4
+   Mark  Athlete                  Date       Record_Age
+   &lt;chr&gt; &lt;chr&gt;                    &lt;date&gt;          &lt;dbl&gt;
+ 1 7.61  Peter O'Connor&nbsp;(IRE)     1901-08-05      125. 
+ 2 7.69  Edward Gourdin&nbsp;(USA)     1921-07-23      105. 
+ 3 7.76  Robert LeGendre&nbsp;(USA)    1924-07-07      102. 
+ 4 7.89  DeHart Hubbard&nbsp;(USA)     1925-06-13      101. 
+ 5 7.90  Edward Hamm&nbsp;(USA)        1928-07-07       97.7
+ 6 7.93  Sylvio Cator&nbsp;(HAI)       1928-09-09       97.5
+ 7 7.98  Chuhei Nambu&nbsp;(JPN)       1931-10-27       94.4
+ 8 8.13  Jesse Owens&nbsp;(USA)        1935-05-25       90.8
+ 9 8.21  Ralph Boston&nbsp;(USA)       1960-08-12       65.6
+10 8.24  Ralph Boston&nbsp;(USA)       1961-05-27       64.8
+11 8.28  Ralph Boston&nbsp;(USA)       1961-07-16       64.7
+12 8.31  Igor Ter-Ovanesyan&nbsp;(URS) 1962-06-10       63.8
+13 8.33  Phil Shinnick&nbsp;(USA)      1963-05-25       62.8
+14 8.31  Ralph Boston&nbsp;(USA)       1964-08-15       61.6
+15 8.34  Ralph Boston&nbsp;(USA)       1964-09-12       61.5
+16 8.35  Ralph Boston&nbsp;(USA)       1965-05-29       60.8
+17 8.35  Igor Ter-Ovanesyan&nbsp;(URS) 1967-10-19       58.4
+18 8.90  Bob Beamon&nbsp;(USA)         1968-10-18       57.4
+19 8.95  Mike Powell&nbsp;(USA)        1991-08-30       34.5</code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="example-serena-williams-matches" class="title-slide slide level1 center">
+<h1>Example: Serena William’s Matches</h1>
+
+</section>
 <section id="matches-of-serena-williams" class="slide level2">
 <h2>10 Matches of Serena Williams</h2>
 <p>Data file <code>serena_williams_matches.csv</code></p>
@@ -1070,8 +1232,8 @@ Serena Williams,1981-09-26,Maria Sakkari,1995-07-25,2020-08-24</code></pre>
 <section id="serena-williams-matches" class="slide level2 smaller">
 <h2>Serena Williams matches</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a></a>matches <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"serena_williams_matches.csv"</span>)</span>
-<span id="cb74-2"><a></a>matches</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a></a>matches <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"serena_williams_matches.csv"</span>)</span>
+<span id="cb88-2"><a></a>matches</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 5
    player1         player1_dob player2             player2_dob date_match
@@ -1101,8 +1263,8 @@ Serena Williams,1981-09-26,Maria Sakkari,1995-07-25,2020-08-24</code></pre>
 <section id="serenas-and-opponents-age" class="slide level2">
 <h2>Serena’s and opponent’s age</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a></a><span class="co"># Serena's age (as difftime)</span></span>
-<span id="cb76-2"><a></a>matches<span class="sc">$</span>date_match <span class="sc">-</span> matches<span class="sc">$</span>player1_dob</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a></a><span class="co"># Serena's age (as difftime)</span></span>
+<span id="cb90-2"><a></a>matches<span class="sc">$</span>date_match <span class="sc">-</span> matches<span class="sc">$</span>player1_dob</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1114,8 +1276,8 @@ Serena Williams,1981-09-26,Maria Sakkari,1995-07-25,2020-08-24</code></pre>
 <p><br>
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a></a><span class="co"># Opponent's age (as difftime)</span></span>
-<span id="cb78-2"><a></a>matches<span class="sc">$</span>date_match <span class="sc">-</span> matches<span class="sc">$</span>player2_dob</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a></a><span class="co"># Opponent's age (as difftime)</span></span>
+<span id="cb92-2"><a></a>matches<span class="sc">$</span>date_match <span class="sc">-</span> matches<span class="sc">$</span>player2_dob</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1128,8 +1290,8 @@ Serena Williams,1981-09-26,Maria Sakkari,1995-07-25,2020-08-24</code></pre>
 <section id="serenas-and-opponents-age-1" class="slide level2">
 <h2>Serena’s and opponent’s age</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a></a><span class="co"># Serena's age (as duration)</span></span>
-<span id="cb80-2"><a></a><span class="fu">as.duration</span>(matches<span class="sc">$</span>date_match <span class="sc">-</span> matches<span class="sc">$</span>player1_dob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a></a><span class="co"># Serena's age (as duration)</span></span>
+<span id="cb94-2"><a></a><span class="fu">as.duration</span>(matches<span class="sc">$</span>date_match <span class="sc">-</span> matches<span class="sc">$</span>player1_dob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1143,8 +1305,8 @@ Serena Williams,1981-09-26,Maria Sakkari,1995-07-25,2020-08-24</code></pre>
 <p><br>
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a></a><span class="co"># Opponent's age (as duration)</span></span>
-<span id="cb82-2"><a></a><span class="fu">as.duration</span>(matches<span class="sc">$</span>date_match <span class="sc">-</span> matches<span class="sc">$</span>player2_dob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a></a><span class="co"># Opponent's age (as duration)</span></span>
+<span id="cb96-2"><a></a><span class="fu">as.duration</span>(matches<span class="sc">$</span>date_match <span class="sc">-</span> matches<span class="sc">$</span>player2_dob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1159,8 +1321,8 @@ Serena Williams,1981-09-26,Maria Sakkari,1995-07-25,2020-08-24</code></pre>
 <section id="serenas-and-opponents-age-2" class="slide level2">
 <h2>Serena’s and opponent’s age</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a></a><span class="co"># Serena's age (as period in "years")</span></span>
-<span id="cb84-2"><a></a><span class="fu">years</span>(<span class="fu">as.duration</span>(matches<span class="sc">$</span>date_match <span class="sc">-</span> matches<span class="sc">$</span>player1_dob))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a></a><span class="co"># Serena's age (as period in "years")</span></span>
+<span id="cb98-2"><a></a><span class="fu">years</span>(<span class="fu">as.duration</span>(matches<span class="sc">$</span>date_match <span class="sc">-</span> matches<span class="sc">$</span>player1_dob))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1174,8 +1336,8 @@ Serena Williams,1981-09-26,Maria Sakkari,1995-07-25,2020-08-24</code></pre>
 <p><br>
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a></a><span class="co"># Opponent's age (as period in "years")</span></span>
-<span id="cb86-2"><a></a><span class="fu">years</span>(<span class="fu">as.duration</span>(matches<span class="sc">$</span>date_match <span class="sc">-</span> matches<span class="sc">$</span>player2_dob))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a></a><span class="co"># Opponent's age (as period in "years")</span></span>
+<span id="cb100-2"><a></a><span class="fu">years</span>(<span class="fu">as.duration</span>(matches<span class="sc">$</span>date_match <span class="sc">-</span> matches<span class="sc">$</span>player2_dob))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1190,8 +1352,8 @@ Serena Williams,1981-09-26,Maria Sakkari,1995-07-25,2020-08-24</code></pre>
 <section id="serenas-and-opponents-age-3" class="slide level2">
 <h2>Serena’s and opponent’s age</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a></a><span class="co"># Serena's age (as interval)</span></span>
-<span id="cb88-2"><a></a><span class="fu">interval</span>(matches<span class="sc">$</span>player1_dob, matches<span class="sc">$</span>date_match)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a></a><span class="co"># Serena's age (as interval)</span></span>
+<span id="cb102-2"><a></a><span class="fu">interval</span>(matches<span class="sc">$</span>player1_dob, matches<span class="sc">$</span>date_match)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1205,8 +1367,8 @@ Serena Williams,1981-09-26,Maria Sakkari,1995-07-25,2020-08-24</code></pre>
 <p><br>
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a></a><span class="co"># Opponent's age (as interval)</span></span>
-<span id="cb90-2"><a></a><span class="fu">interval</span>(matches<span class="sc">$</span>player2_dob, matches<span class="sc">$</span>date_match)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a></a><span class="co"># Opponent's age (as interval)</span></span>
+<span id="cb104-2"><a></a><span class="fu">interval</span>(matches<span class="sc">$</span>player2_dob, matches<span class="sc">$</span>date_match)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1221,8 +1383,8 @@ Serena Williams,1981-09-26,Maria Sakkari,1995-07-25,2020-08-24</code></pre>
 <section id="serenas-and-opponents-age-4" class="slide level2">
 <h2>Serena’s and opponent’s age</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a></a><span class="co"># Serena's age (in years)</span></span>
-<span id="cb92-2"><a></a><span class="fu">interval</span>(matches<span class="sc">$</span>player1_dob, matches<span class="sc">$</span>date_match) <span class="sc">/</span> <span class="fu">years</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a></a><span class="co"># Serena's age (in years)</span></span>
+<span id="cb106-2"><a></a><span class="fu">interval</span>(matches<span class="sc">$</span>player1_dob, matches<span class="sc">$</span>date_match) <span class="sc">/</span> <span class="fu">years</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1233,8 +1395,8 @@ Serena Williams,1981-09-26,Maria Sakkari,1995-07-25,2020-08-24</code></pre>
 <p><br>
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a></a><span class="co"># Opponent's age (in years)</span></span>
-<span id="cb94-2"><a></a><span class="fu">interval</span>(matches<span class="sc">$</span>player2_dob, matches<span class="sc">$</span>date_match) <span class="sc">/</span> <span class="fu">years</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a></a><span class="co"># Opponent's age (in years)</span></span>
+<span id="cb108-2"><a></a><span class="fu">interval</span>(matches<span class="sc">$</span>player2_dob, matches<span class="sc">$</span>date_match) <span class="sc">/</span> <span class="fu">years</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1243,15 +1405,15 @@ Serena Williams,1981-09-26,Maria Sakkari,1995-07-25,2020-08-24</code></pre>
 </div>
 </div>
 </section>
-<section id="section-6" class="slide level2 smaller">
+<section id="section-8" class="slide level2 smaller">
 <h2></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a></a>matches <span class="sc">|&gt;</span> </span>
-<span id="cb96-2"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb96-3"><a></a>    <span class="at">player1_age =</span> <span class="fu">interval</span>(player1_dob, date_match) <span class="sc">/</span> <span class="fu">years</span>(<span class="dv">1</span>),</span>
-<span id="cb96-4"><a></a>    <span class="at">player2_age =</span> <span class="fu">interval</span>(player2_dob, date_match) <span class="sc">/</span> <span class="fu">years</span>(<span class="dv">1</span>),</span>
-<span id="cb96-5"><a></a>    <span class="at">age_difference =</span> player1_age <span class="sc">-</span> player2_age) <span class="sc">|&gt;</span> </span>
-<span id="cb96-6"><a></a>  <span class="fu">select</span>(date_match, player1, player1_age, player2, player2_age, age_difference)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a></a>matches <span class="sc">|&gt;</span> </span>
+<span id="cb110-2"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb110-3"><a></a>    <span class="at">player1_age =</span> <span class="fu">interval</span>(player1_dob, date_match) <span class="sc">/</span> <span class="fu">years</span>(<span class="dv">1</span>),</span>
+<span id="cb110-4"><a></a>    <span class="at">player2_age =</span> <span class="fu">interval</span>(player2_dob, date_match) <span class="sc">/</span> <span class="fu">years</span>(<span class="dv">1</span>),</span>
+<span id="cb110-5"><a></a>    <span class="at">age_difference =</span> player1_age <span class="sc">-</span> player2_age) <span class="sc">|&gt;</span> </span>
+<span id="cb110-6"><a></a>  <span class="fu">select</span>(date_match, player1, player1_age, player2, player2_age, age_difference)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
