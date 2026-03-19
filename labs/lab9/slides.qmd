@@ -1,6 +1,6 @@
 ---
 title: "Lab 9"
-subtitle: "Quiz 4 and Dashboards"
+subtitle: "Quiz 4 and Shiny Dashboards"
 author: "STAT 133"
 format: stat133slides-revealjs
 embed-resources: true
@@ -9,9 +9,8 @@ embed-resources: true
 # Agenda
 
 -   Quiz 4
--   Review: Dates+Times
--   Quarto Dashboards (continued)
--   Pub Assignment
+-   Shiny Dashboards
+-   Demo
 
 # Before the Quiz
 
@@ -52,272 +51,197 @@ Good luck! 🍀
 
 # Lab 9
 
-# Review: Dates+Times
+## Quarto Dashboards → Shiny
 
-> Dates and times represent points in time (e.g., days, hours, minutes).
+You've already built Quarto dashboards. Shiny is the next level, adding interactivity:
 
-They often appear as text in raw data, so we need to parse them into proper date-time formats before analysis.  
+| Quarto Dashboard | + Shiny |
+|------------------|---------|
+| Static layout | **Reactive** layout |
+| Pre-computed outputs | Outputs update **in real-time** |
+| No server needed | Needs an **R session** (server) |
 
-Example:
+## Examples
 
-`"2024-03-12 14:05:23"`
-
-Once converted, we can filter, sort, and summarize events over time.
-
-## Why Dates and Times Matter
-
-Many datasets include time information:
-
-::::: columns
-::: column
-*Examples:*
-
--   transaction timestamps
-
--   website logs
-
--   sensor measurements
-
--   survey submission times
-:::
-
-::: column
-*After parsing, we can analyze patterns such as:*
-
--   activity by **day**
-
--   trends over **time**
-
--   events by **hour**
-:::
-:::::
-
-## Key Techniques for Dates and Times
-
-Package `lubridate`
-
--   `ymd()` : Convert text to a **date** in year-month-day format
-
--   `mdy()` : Convert text in month-day-year format
-
--   `ymd_hms()` : Convert text to a **date-time** (year, month, day, hour, minute, second)
-
--   `now()` : Returns the current date and time
-
--   `today()` : Returns today's date
-
-## Common Date-Time Formats
-
-Dates can appear in many formats:
-
-```{.markdown code-line-numbers="false"}
-2024-03-12
-03/12/2024
-Mar 12, 2024
-2024-03-12 14:05:23
-```
-
-With `lubridate` we can convert these into a standard format that R can analyze.
-
-# Dashboards
-
-*Last week:* Dashboard Basics \ 
+[Visualizing Investments in the S&P 500](https://clarareckhorn.shinyapps.io/Documents/) \ 
 
 \ 
 
-*This week:* \ 
+[Text Analysis of State of the Union Addresses (1970-2021)](https://clarareckhorn.shinyapps.io/app2/) \ 
 
-- NavBar Options
+\ 
 
-- Tabs
-
-- Themes
-
-- Scrolling Dashboard
+[California Crash Data (2021-2023) Analysis](https://clarareckhorn.shinyapps.io/cal_crashes_2021_2023/) \ 
 
 
-## Navbar
+## What is a Shiny App?
 
-More personalizations to explore:
+A Shiny app is an **interactive web app** built entirely in R
 
-![](images/navbar.png){fig-align="center"}
+\
 
-. . .
+You've already made Quarto dashboards. Shiny allows the user to change things and then the output updates instantly.
 
-```markdown
---- 
-title: "Palmer Penguins"
-author: "Cobblepot Analytics"
-format: 
-  dashboard:
-    logo: images/penguins.png
-    nav-buttons: [linkedin, twitter, github]
----
+\
+
+## Shiny App Structure
+
+Every basic Shiny app lives in a single file called `app.R`:
+
+```r
+library(shiny)
+
+ui <- ...       # What the user SEES
+
+server <- ...   # What R DOES
+
+shinyApp(ui = ui, server = server)
 ```
 
-<https://quarto.org/docs/reference/projects/websites.html#nav-items>{preview-link=true}
+Three parts: the last line tells the app to run.
 
+## The UI
 
+`ui` describes the **layout and widgets** of your app (like a blueprint)
 
-## YAML Options and NavBar {.smaller}
-
-The **navbar** appears at the top of the dashboard and helps with navigation.
-
-```{.yaml}
----
-title: "My Dashboard"
-format:
-  dashboard:
-    logo: logo.png
-    nav-buttons:
-      - icon: github
-        href: https://github.com/your-repo
-      - icon: linkedin
-        href: https://linkedin.com
----
+```r
+ui <- fluidPage(
+  titlePanel("My App"),
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("bins", "Number of bins:", min = 5, max = 50, value = 30)
+    ),
+    mainPanel(
+      plotOutput("myPlot")
+    )
+  )
+)
 ```
 
-| Option | Description |
-|---|---|
-| `logo:` | Image file shown in top-left |
-| `nav-buttons:` | Icon links in the top-right corner |
-| `scrolling: true` | Makes the dashboard scroll rather than fill the viewport |
-
-
-
-## Dashboard Tabs
-
-Use `# Tab Title` to a column/row to create tabs.
-
-``` {.markdown code-line-numbers="false"}
----
-title: "My Dashboard"
-format: dashboard
----
-
-# Tab 1
-
-## Row 1 - Chart A
-
-content
-
-# Tab 2
-
-## Row 1 - Chart B
-
-content
-
-```
-
-Tabs help **organize content** across multiple views without overwhelming the reader.
-
-## Dashboard Tabs
-
-Example: \ 
-
-
-[COVID 19 Data Explorer](https://ourworldindata.org/explorers/covid?Metric=Excess+mortality+%28estimates%29&Interval=Cumulative&Relative+to+population=true&country=USA~BRA~JPN~DEU){preview-link=true}
-
-## Dashboard Themes
-
-Apply a theme using the `theme:` option in the YAML header.
-
-```{.markdown code-line-numbers="false"}
----
-title: "My Dashboard"
-format:
-  dashboard:
-    theme: morph
----
-```
-
-[Available themes](https://quarto.org/docs/output-formats/html-themes.html) (from Bootswatch)
-
-## Putting It All Together {.smaller}
-
-A complete dashboard YAML example:
-
-```{.yaml}
----
-title: "STAT 133 Dashboard"
-format:
-  dashboard:
-    theme: flatly
-    logo: bear.png
-    scrolling: false
-    nav-buttons:
-      - icon: github
-        href: https://github.com/stat133
----
-```
-
-## Quick Reference: Dashboard Syntax
-
-| Element | Syntax |
-|---|---|
-| New tab | `# Page Title` |
-| New row | `## Row` |
-| Value box | `#\| content: valuebox` |
-| Row height | `::: {.row height="40%"}` |
-| Column width | `::: {.column width="40%"}` |
-| Scrolling layout | `scrolling: true` in YAML |
-| Theme | `theme: flatly` in YAML |
-
-
-# Pub Assignment
-
-With the given messy dataset, use regex and date-time tools to clean and display results in a Quarto dashboard.
-
-- Navigate to BCourses > Pub 8 
-
-- Download both `.qmd` files, `pub8-your-name.qmd` and `data-prep.qmd`
-
-- Follow the instructions to prepare the data and transfer the necessary code chunks to your dashboard documents. 
-
-- Upload your finished dashboard to Netlify and submit the link to BCourses.
-
-## Finished Product
-
-::: {.columns}
-::: {.column}
-Your finished pub should have 2 tabs: 
-
-- Tab 1: Your data before and after cleaning
-
-- Tab 2: A basic chart and an explanatory analysis section
-
-View an interactive example solution [here](https://stat133-pub8.netlify.app/).
+::: callout-note
+`sliderInput("bins", ...)` creates a widget with the ID `"bins"`. \
+`plotOutput("myPlot")` reserves a spot for a plot with ID `"myPlot"`.
 :::
-::: {.column}
-![](images/pub8-layout.png)
-:::
-:::
-<!-- end columns -->
+
+## The Server
+
+`server` is a function that **reacts to inputs and produces outputs**.
+
+```r
+server <- function(input, output) {
+  output$myPlot <- renderPlot({
+    hist(rnorm(100), breaks = input$bins)
+  })
+}
+```
+
+## UI and Server: How They Interact
+
+```
+UI                            SERVER
+────────────────────────────────────────────
+sliderInput("bins", ...)  →   input$bins
+plotOutput("myPlot")      ←   output$myPlot
+```
+
+\
+
+The **ID string** is the link between them. If the UI defines `"bins"`, the server reads `input$bins`. If the server writes `output$myPlot`, the UI must have `plotOutput("myPlot")`.
 
 
-# Problem Set 8
+# Demo
 
-## Pset 8
+## Demo: Old Faithful Explorer
 
-Available in bCourses:
+We'll start with an app that has **one widget** (a dropdown to choose the variable) and a fixed number of bins.
 
-See [Assignments tab \> Problem Sets \> PS8]{.bold-hilit}
+\
 
-You'll find 2 files:
+Then we'll add a second widget: a slider to control the bin count.
 
--   `ps8.html`: instructions
+## Starting `app.R`
 
--   `ps8.qmd`: template file to write your answers
+```r
+library(shiny)
+library(tidyverse)
 
-. . .
+ui <- fluidPage(
+  titlePanel("Old Faithful Geyser Explorer"),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("variable",
+                  "Variable to display:",
+                  choices = c("Waiting Time"  = "waiting",
+                              "Eruption Time" = "eruptions"))
+    ),
+    mainPanel(
+      plotOutput("histPlot")
+    )
+  )
+)
 
-In case of trouble: Go to Files tab, folder `problem-sets`, folder `ps8`, and download the `qmd` file.
+server <- function(input, output) {
+  output$histPlot <- renderPlot({
+    x_label <- if (input$variable == "waiting") {
+      "Waiting Time (minutes)"
+    } else {
+      "Eruption Time (minutes)"
+    }
+    faithful |>
+      ggplot(aes(x = .data[[input$variable]])) +
+      geom_histogram(bins = 30, fill = "steelblue", color = "white") +
+      theme_minimal() +
+      labs(x = x_label, y = "Count",
+           title = paste("Distribution of", x_label))
+  })
+}
 
-Sometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome).
+shinyApp(ui = ui, server = server)
+```
 
-## Pset 8 Submission
+## Running the App
 
--   Submit your `qmd` and `html` files to bCourses.
--   Use assignment problem set **ps8**
--   Graded credit / no-credit
--   Credit for evidence of earnest engagement (just don't submit a blank or empty template file)
+Navigate to BCourses > Files > Lab Materials > Lab 9 > `app.R` \ 
+
+\ 
+
+In Positron/RStudio, open `app.R` and click on the Play button.
+
+## Adding a Widget- Step 1: UI
+
+Add a `sliderInput` to the `sidebarPanel`:
+
+```r
+sidebarPanel(
+  selectInput("variable",
+              "Variable to display:",
+              choices = c("Waiting Time"  = "waiting",
+                          "Eruption Time" = "eruptions")),
+
+  # add this:
+  sliderInput("num_bins",
+              "Number of bins:",
+              min = 5, max = 60, value = 30)
+)
+```
+
+This creates a slider with ID `"num_bins"`. Now we use it in the server.
+
+## Adding a Widget- Step 2: Server
+
+Swap the `30` for `input$num_bins`:
+
+```r
+geom_histogram(bins = input$num_bins,   # before: bins = 30
+               fill = "steelblue", color = "white")
+```
+
+\
+
+That's the whole addition, and the slider now connects to the histogram.
+
+## Completed `app.R`
+
+-> demo
+
+# Happy Spring Break!
