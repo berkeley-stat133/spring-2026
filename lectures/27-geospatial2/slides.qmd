@@ -601,7 +601,7 @@ ggplot() +
 
 ## Our first workflow {.nostretch}
 
-![](images/storm-track-workflow1.svg){width="80%" fig-align="center"}
+![](images/storm-track-workflow1.svg){width="100%" fig-align="center"}
 
 
 # Projections
