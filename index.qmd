@@ -353,7 +353,7 @@ Geospatial Data
 
 [PS7]{.label-Homework}
 
-[Pub8]{.label-Pub}
+[Pub8 canceled]{.label-Pub}
 
 &nbsp;
 :::
