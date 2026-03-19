@@ -6,6 +6,36 @@ format: html
 embed-resources: true
 ---
 
+**Setup - Data**
+
+```{r}
+#| label: setup
+#| message: false
+
+
+library(tidyverse)
+library(stringr)
+library(lubridate)
+library(DT)
+
+times_data <- tibble(
+  timestamp = c(
+    "03/12/24 14:03",
+    "03/12/24 14:05",
+    "03/12/24 15:10",
+    "03/12/24 15:22",
+    "03/12/24 16:01"
+  ),
+  message = c(
+    "ERROR: user=482 failed-login",
+    "INFO: user=511 login-success",
+    "WARN: user=482 retry-login",
+    "ERROR: user=222 failed-login",
+    "INFO: user=482 login-success"
+  )
+)
+```
+
 **Part 1 - Extract Information with Regex**
 The message column contains multiple pieces of information.
 
