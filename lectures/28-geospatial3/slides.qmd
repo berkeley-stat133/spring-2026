@@ -339,7 +339,7 @@ that is designed to receive spatial data in one of several forms:
 - From the `"sf"` package:
     + the data frame of class `"sf"`
 - From the `"maps"` package
-    + the data frame from returned from `map()`
+    + the data frame returned from `map()`
 
 
 ## {.smaller}
