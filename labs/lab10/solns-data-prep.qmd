@@ -1,0 +1,72 @@
+---
+title: "Pub 8 Solutions"
+subtitle: "Cleaning Text Data and Visualizing Activity"
+author: "STAT 133"
+format: html
+embed-resources: true
+---
+
+**Part 1 - Extract Information with Regex**
+The message column contains multiple pieces of information.
+
+*Tasks:*
+
+Use regex to extract the log level (ERROR, WARN, INFO).
+
+Extract the user ID number.
+
+Extract the event type (failed-login, login-success, etc.).
+
+Create new columns: `level`, `user_id`, `event`
+
+```{r}
+# Extract Information with Regex
+
+times_clean <- times_data |>
+  mutate(
+    level = str_extract(message, "ERROR|WARN|INFO"),
+    user_id = str_extract(message, "(?<=user=)\\d+"),
+    event = str_extract(message, "(failed-login|login-success|retry-login)")
+  )
+```
+
+**Part 2 - Work with Dates and Times**
+Convert the `timestamp` column to a date-time object. Then extract: `hour of day` and `date`. Create `hour` and `date` columns.
+
+```{r}
+# Work with Dates and Times
+
+times_clean <- times_clean |>
+  mutate(
+    timestamp = mdy_hm(timestamp),
+    hour = hour(timestamp),
+    date = as_date(timestamp)
+  )
+```
+
+**Part 3 - Create Chart of Events by Hour**
+
+Show how many events occurred during each hour.
+
+x-axis: `hour`
+
+y-axis: `number of events`
+
+```{r}
+# Create Chart of Events by Hour
+events_by_hour <- times_clean |>
+  count(hour)
+
+events_chart <- ggplot(events_by_hour, aes(x = hour, y = n)) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title = "Events by Hour",
+    x = "Hour of Day",
+    y = "Number of Events"
+  )
+```
+
+**Part 4 - Brief Analysis**
+Explain what hour had the most events happening or other interesting findings in 1-2 sentences in the second Tab of your dashboard: \ 
+Most activity occurs at 14:00 and 15:00, each with two events recorded. The data suggests login activity is concentrated in the early afternoon, with fewer events later in the day.

@@ -172,7 +172,7 @@ Normal position @cr-sticky
 
 Panning to the left [@cr-sticky]{pan-to="-10px,0px"}
 
-Panning to the right [@cr-sticky]{pan-to="0px,10px"}
+Panning to the right [@cr-sticky]{pan-to="10px,0px"}
 
 Normal position again @cr-sticky
 

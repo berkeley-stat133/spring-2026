@@ -1,0 +1,247 @@
+---
+title: "Lab 9"
+subtitle: "Quiz 4 and Shiny Dashboards"
+author: "STAT 133"
+format: stat133slides-revealjs
+embed-resources: true
+---
+
+# Agenda
+
+-   Quiz 4
+-   Shiny Dashboards
+-   Demo
+
+# Before the Quiz
+
+::: callout-important
+A note on academic integrity:
+:::
+
+\
+Cheating is **100% not tolerated**. Talking with other individuals during the quiz, using your phone for any reason, looking at others' answers, etc. will result in a violation of the Academic Integrity Pledge. We reserve the right to give a 0 to anyone seen cheating.
+
+## Before the Quiz
+
+::: nonincremental
+1.  Spread out as much as possible.
+2.  🚽 If you need to use the bathroom, this is the time to do it.
+3.  🧹 Clear your desk of everything except a pen/pencil and your ID.
+4.  🧢 Remove hats, hoods, and sunglasses (don't hide your face please!)
+5.  📱 All electronic devices (laptop, phone, airbuds, smart watch) should remain in your bag for the entire quiz period.
+:::
+
+## Quiz
+
+```{r}
+countdown::countdown(35, top = 0)
+```
+
+::: nonincremental
+1.  Please be quiet.
+2.  When you get a quiz, do not begin until we tell you so.
+3.  Write your name and SID.
+4.  Keep your eyes on your own quiz.
+5.  Only one person allowed to use the bathroom at a time.
+6.  If you finish early, please hold on to your quiz and wait.
+7.  When the timer ends, hold up your quiz in the air immediately and put your writing utensils down or risk a 0.
+:::
+
+Good luck! 🍀
+
+# Lab 9
+
+## Quarto Dashboards → Shiny
+
+You've already built Quarto dashboards. Shiny is the next level, adding interactivity:
+
+| Quarto Dashboard | + Shiny |
+|------------------|---------|
+| Static layout | **Reactive** layout |
+| Pre-computed outputs | Outputs update **in real-time** |
+| No server needed | Needs an **R session** (server) |
+
+## Examples
+
+[Visualizing Investments in the S&P 500](https://clarareckhorn.shinyapps.io/Documents/) \ 
+
+\ 
+
+[Text Analysis of State of the Union Addresses (1970-2021)](https://clarareckhorn.shinyapps.io/app2/) \ 
+
+\ 
+
+[California Crash Data (2021-2023) Analysis](https://clarareckhorn.shinyapps.io/cal_crashes_2021_2023/) \ 
+
+
+## What is a Shiny App?
+
+A Shiny app is an **interactive web app** built entirely in R
+
+\
+
+You've already made Quarto dashboards. Shiny allows the user to change things and then the output updates instantly.
+
+\
+
+## Shiny App Structure
+
+Every basic Shiny app lives in a single file called `app.R`:
+
+```r
+library(shiny)
+
+ui <- ...       # What the user SEES
+
+server <- ...   # What R DOES
+
+shinyApp(ui = ui, server = server)
+```
+
+Three parts: the last line tells the app to run.
+
+## The UI
+
+`ui` describes the **layout and widgets** of your app (like a blueprint)
+
+```r
+ui <- fluidPage(
+  titlePanel("My App"),
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("bins", "Number of bins:", min = 5, max = 50, value = 30)
+    ),
+    mainPanel(
+      plotOutput("myPlot")
+    )
+  )
+)
+```
+
+::: callout-note
+`sliderInput("bins", ...)` creates a widget with the ID `"bins"`. \
+`plotOutput("myPlot")` reserves a spot for a plot with ID `"myPlot"`.
+:::
+
+## The Server
+
+`server` is a function that **reacts to inputs and produces outputs**.
+
+```r
+server <- function(input, output) {
+  output$myPlot <- renderPlot({
+    hist(rnorm(100), breaks = input$bins)
+  })
+}
+```
+
+## UI and Server: How They Interact
+
+```
+UI                            SERVER
+────────────────────────────────────────────
+sliderInput("bins", ...)  →   input$bins
+plotOutput("myPlot")      ←   output$myPlot
+```
+
+\
+
+The **ID string** is the link between them. If the UI defines `"bins"`, the server reads `input$bins`. If the server writes `output$myPlot`, the UI must have `plotOutput("myPlot")`.
+
+
+# Demo
+
+## Demo: Old Faithful Explorer
+
+We'll start with an app that has **one widget** (a dropdown to choose the variable) and a fixed number of bins.
+
+\
+
+Then we'll add a second widget: a slider to control the bin count.
+
+## Starting `app.R`
+
+```r
+library(shiny)
+library(tidyverse)
+
+ui <- fluidPage(
+  titlePanel("Old Faithful Geyser Explorer"),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("variable",
+                  "Variable to display:",
+                  choices = c("Waiting Time"  = "waiting",
+                              "Eruption Time" = "eruptions"))
+    ),
+    mainPanel(
+      plotOutput("histPlot")
+    )
+  )
+)
+
+server <- function(input, output) {
+  output$histPlot <- renderPlot({
+    x_label <- if (input$variable == "waiting") {
+      "Waiting Time (minutes)"
+    } else {
+      "Eruption Time (minutes)"
+    }
+    faithful |>
+      ggplot(aes(x = .data[[input$variable]])) +
+      geom_histogram(bins = 30, fill = "steelblue", color = "white") +
+      theme_minimal() +
+      labs(x = x_label, y = "Count",
+           title = paste("Distribution of", x_label))
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+## Running the App
+
+Navigate to BCourses > Files > Lab Materials > Lab 9 > `app.R` \ 
+
+\ 
+
+In Positron/RStudio, open `app.R` and click on the Play button.
+
+## Adding a Widget- Step 1: UI
+
+Add a `sliderInput` to the `sidebarPanel`:
+
+```r
+sidebarPanel(
+  selectInput("variable",
+              "Variable to display:",
+              choices = c("Waiting Time"  = "waiting",
+                          "Eruption Time" = "eruptions")),
+
+  # add this:
+  sliderInput("num_bins",
+              "Number of bins:",
+              min = 5, max = 60, value = 30)
+)
+```
+
+This creates a slider with ID `"num_bins"`. Now we use it in the server.
+
+## Adding a Widget- Step 2: Server
+
+Swap the `30` for `input$num_bins`:
+
+```r
+geom_histogram(bins = input$num_bins,   # before: bins = 30
+               fill = "steelblue", color = "white")
+```
+
+\
+
+That's the whole addition, and the slider now connects to the histogram.
+
+## Completed `app.R`
+
+-> demo
+
+# Happy Spring Break!
