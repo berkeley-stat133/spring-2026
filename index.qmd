@@ -342,7 +342,7 @@ Lab 8: [slides](labs/lab8/slides.html) | [PS7](https://bcourses.berkeley.edu/cou
 
 [Dates and Times II](lectures/24-date-time2/slides.html)
 
-Lab 9: [__Quiz 4__]{.label-Quiz} | slides | PS8
+Lab 9: [__Quiz 4__]{.label-Quiz} | [slides](labs/lab9/slides.html) | [PS8](https://bcourses.berkeley.edu/courses/1551809/assignments/9021601)
 
 Geospatial Data
 :::
