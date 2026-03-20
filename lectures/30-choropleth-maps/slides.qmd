@@ -1,0 +1,361 @@
+---
+title: "Choropleth Maps"
+subtitle: "Maps of Raster Data"
+format: stat133slides-revealjs
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)
+library(rvest)
+library(sf)
+library(viridis)
+library(usmap)
+library(RColorBrewer)
+library(ggiraph)
+```
+
+##
+
+```{r}
+#| eval: false
+# packages
+library(tidyverse)     # ecosystem of data science packages
+library(rvest)         # for web scraping
+library(sf)            # "simple features" (classes for maps)
+library(usmap)         # map of US states (with Alaska & Hawaii)
+library(RColorBrewer)  # Brewer color palettes
+library(ggiraph)       # make ggplots interactive
+```
+
+
+# Average Salary by State (2025)
+
+## {background-image="images/average-salary-by-state-in-the-us-2025.png" background-size="contain"}
+
+## Average Salary by State in 2025
+
+Goal: replicate the choropleth map that appears in the following Forbes's article by Jennifer Simonson (Jan 30, 2026):
+
+\
+
+<https://www.forbes.com/advisor/business/average-salary-by-state/>
+
+
+## Data
+
+👎 Bad news: _Average Salary by State_ data is displayed in the above Forbes' webpage.
+Unfortunately, this HTML table is not scrapable. 
+
+\
+
+👍 Good news: similar data can be found in 
+the following SoFi webpage:
+
+<https://www.sofi.com/learn/content/average-salary-in-us/>
+
+\
+
+```{r}
+# run this command in the console
+# (assuming the working directory is the same of the qmd file)
+download.file(
+  url = "https://www.sofi.com/learn/content/average-salary-in-us/", 
+  destfile = "sofi-average-salary-in-us-2025.html")
+```
+
+
+## {background-image="images/sofi-average-salary-by-state-2025.png" background-size="contain"}
+
+
+##
+
+Let's extract all the HTML tables from the downloaded HTML file
+
+```{r}
+tbls = read_html("sofi-average-salary-in-us-2025.html") |>
+  html_table()
+```
+
+. . .
+
+\
+
+The table of interest is in the first element of the list.
+
+```{r}
+#| output-location: fragment
+salaries = tbls[[1]]
+head(salaries)
+```
+
+
+##
+
+How would you "convert" `Average` and `Median` to double types?
+
+```{r}
+head(salaries)
+```
+
+```{r}
+#| echo: false
+countdown::countdown(1, bottom = 0)
+```
+
+
+## A little bit of data cleaning
+
+```{r}
+# data with average and median salaries
+salaries = salaries |>
+  mutate(Average = as.numeric(str_remove_all(Average, "[,$]")),
+         Median = as.numeric(str_remove_all(Median, "[,$]")))
+
+head(salaries)
+```
+
+
+# Map of U.S. States from package `"usmap"`
+
+## Map data with all 50 U.S. States
+
+```{r}
+# from package "usmap"
+us_states = us_map(regions = "states")
+
+class(us_states)
+```
+
+. . .
+
+\
+
+```{r}
+names(us_states)
+```
+
+
+## {.smaller}
+
+```{r}
+head(us_states)
+```
+
+. . .
+
+\
+
+### Columns
+
++ `fips`: FIPS code, or Federal Information Processing Standard code, 
+which is a unique numerical identifier assigned to geographic regions, 
+primarily in the United States, by the U.S. federal government.
++ `abbr`: 2-letter abbreviation of State
++ `full`: full name of State
++ `geom`: spatial vector geometry (polygons in this case)
+
+
+##
+
+We can plot it with `ggplot()` and `geom_sf()`
+
+```{r}
+ggplot(data = us_states) +
+  geom_sf()
+```
+
+
+# Choropleth Map
+
+## So far: we have 2 tables
+
+. . .
+
+:::: {.columns}
+::: {.column}
+`salaries`: table of salaries by states with `r nrow(salaries)` rows and the 
+following `r ncol(salaries)` columns:
+
+::: {.nonincremental}
++ `State`: full name of State
++ `Average`: Average Salary
++ `Median`: Median Salary
+:::
+:::
+
+::: {.column .fragment}
+`us_states`: table of states and their geometries (this is an `"sf"` object)
+with `r nrow(us_states)` rows[^1] and the following `r ncol(us_states)` columns:
+
+::: {.nonincremental}
++ `fips`: FIPS code
++ `abbr`: abbreviated name of State
++ `full`: full name of State
++ `geom`: vector geometry
+:::
+
+[^1]: It includes DC
+:::
+::::
+
+
+## So far: we have 2 tables {.smaller}
+
+:::: {.columns}
+::: {.column width="70%"}
+```{r}
+us_states
+```
+:::
+
+::: {.column width="30%"}
+```{r}
+salaries
+```
+:::
+::::
+
+
+## Joining `us_states` and `salaries`
+
+```{r}
+# inner join
+joined_inner = inner_join(
+    x = us_states, 
+    y = salaries, 
+    by = c("full" = "State"))
+```
+
+
+## `inner_join()` {.smaller}
+
+```{r}
+# inner join
+joined_inner = inner_join(us_states, salaries, by = c("full" = "State"))
+dim(joined_inner)
+```
+
+\
+
+```{r}
+head(joined_inner)
+```
+
+
+## Choropleth Map (ver 1)
+
+```{r}
+joined_inner |>
+  ggplot() +
+  geom_sf(aes(fill = Average), color = "white") +
+  theme_void()
+```
+
+
+## Purple Color Palette
+
+To have a color scheme similar to the plot in Forbes' article, we can use
+`scale_fill_gradient()`
+
+```{r}
+#| eval: false
+joined_inner |>
+  ggplot() +
+  geom_sf(aes(fill = Average), color = "white") +
+  scale_fill_gradient(low = "#1b4bab", high = "#d7e1f5") +
+  theme_void()
+```
+
+
+##
+
+```{r}
+#| code-fold: true
+joined_inner |>
+  ggplot() +
+  geom_sf(aes(fill = Average), color = "white") +
+  scale_fill_gradient(low = "#1b4bab", high = "#d7e1f5") +
+  theme_void()
+```
+
+
+## Another Purple Color Palette
+
+We can also use `scale_fill_gradient()`. In this case we borrow one of the 
+color schemes from the package `"RColorBrewer"`: the `"Purples"` scheme
+
+<https://colorbrewer2.org/#type=sequential&scheme=Purples&n=9>
+
+```{r}
+#| eval: false
+joined_inner |>
+  ggplot() +
+  geom_sf(aes(fill = Average), color = "white") +
+  scale_fill_gradientn(colors = brewer.pal(n = 7, name = "Purples"), 
+                       breaks = seq(45000, 80000, by = 5000)) +
+  theme_void()
+```
+
+\
+
+In contrast to the map in Forbes, we prefer to have dark hues for higher average
+salaries, and light hues for lower average salaries.
+
+
+##
+
+```{r}
+#| code-fold: true
+joined_inner |>
+  ggplot() +
+  geom_sf(aes(fill = Average), color = "white") +
+  scale_fill_gradientn(colors = brewer.pal(n = 7, name = "Purples"), 
+                       breaks = seq(45000, 80000, by = 5000)) +
+  theme_void()
+```
+
+
+# Interactive Map
+
+## Interactive map with `"ggiraph"`
+
+We can make it interactive by using `geom_sf_interactive()` and activating
+the `tooltip` argument inside the aesthetic mappings.
+
+
+##
+
+```{r}
+#| code-fold: true
+# adding interactivity with "ggiraph" functions
+gmap = joined_inner |>
+  mutate(Label = paste0(full, ": ", Average)) |>
+  ggplot(aes(fill = Average,
+             tooltip = Label)) +
+  geom_sf_interactive(color = "white") +
+  scale_fill_gradientn(colors = brewer.pal(n = 7, name = "Purples"), 
+                       breaks = seq(45000, 80000, by = 5000)) +
+  theme_void()
+
+girafe(ggobj = gmap)
+```
+
+
+## Viridis Palette
+
+```{r}
+#| code-fold: true
+# adding interactivity with "ggiraph" functions
+gmap = joined_inner |>
+  mutate(Label = paste0(full, ": ", Average)) |>
+  ggplot(aes(fill = Average,
+             tooltip = Label)) +
+  geom_sf_interactive(color = "white") +
+  scale_fill_viridis_c(direction = -1) +
+  theme_void()
+
+girafe(ggobj = gmap)
+```
+
