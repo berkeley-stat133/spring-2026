@@ -99,15 +99,15 @@ select(cfs, Incident_Number, Call_Type, Dispositions) |> slice_head(n=6)
 
 ## Snapshot Dashboard (revisited)
 
-![](images/cfs-dashboard-page2.png){width="80%" fig-align="center"}
+![](images/cfs-dashboard-page2.png){width="85%" fig-align="center"}
 
 
 ## Comments
 
-- Focus on value boxes:
-    + Mental Health Related
-    + Homeless Related
-    + RIPA Stop
+- Focus on [value boxes]{.mdlit}:
+    + Mental Health Related dispositions
+    + Homeless Related dispositions
+    + RIPA Stop dispositions
 - Let's ignore the map; replace it with timeline of calls by Source
 - Bar chart of 10 most comon Call Types
 
@@ -137,6 +137,49 @@ cfs |> select(CreateDatetime) |> slice_head(n = 4)
 + Homeless Related
 + RIPA Stop
 :::
+
+. . .
+
+```{r}
+cfs |> select(Dispositions) |> slice_head(n = 6)
+```
+
+
+## {.smaller}
+
+Some [_Mental Health Related_]{.hilit} `Dispositions`:
+
+```
+Arrest only (no Case), Homeless, Incident Report, Mental Health                  
+Arrest only (no Case), Homeless, Incident Report, Mental Health, RIPA            
+Arrest only (no Case), Homeless, Mental Health, RIPA                             
+Building Secure and Tight, Mental Health, MDT Narrative Only                     
+CHP-180 Report, Mental Health                                                    
+Homeless, Arrest only (no Case), Mental Health                                   
+Homeless, Incident Report, Mental Health, RIPA                                   
+Homeless, MDT Narrative Only, Mental Health                                      
+Homeless, Mental Health                                                          
+Homeless, Primary Case (Case or Cold Theft), Arrest only (no Case), Mental Health
+Homeless, Primary Case (Case or Cold Theft), Mental Health                       
+Homeless, RIPA, MDT Narrative Only, Mental Health                                
+Homeless, RIPA, Mental Health                                                    
+Incident Report, Homeless, MDT Narrative Only, Mental Health                     
+Incident Report, Homeless, Mental Health                                         
+Incident Report, Mental Health                                                   
+Incident Report, Mental Health, MDT Narrative Only                               
+Incident Report, Mental Health, RIPA                                             
+MDT Narrative Only, Homeless, Incident Report, Mental Health                     
+MDT Narrative Only, Homeless, Mental Health, Follow Up
+```
+
+\
+
+What would you do to identify these types of `Dispositions`?
+
+```{r}
+#| echo: false
+countdown::countdown(1, bottom = 0)
+```
 
 
 ## {.smaller}
@@ -187,6 +230,10 @@ dispositions
 
 ## 10 most common Call Types
 
+Call Types from 3 `Source` categories: 911 Call, Telephone, POfficer Initiated
+
+. . .
+
 ```{r}
 #| code-fold: true
 cfs |> 
@@ -217,16 +264,42 @@ cfs |>
 ```
 
 
-## Calls by Source
+##
+
+```{r}
+#| echo: false
+cfs |> 
+  filter(Source %in% c("911 Call",
+                       "Telephone",
+                       "Officer Initiated")) |> 
+  count(Call_Type, name = "count", sort = TRUE) |> 
+  slice_head(n = 10) |> 
+  ggplot(aes(x = count, y = reorder(Call_Type, count))) +
+  geom_col() +
+  labs(title = "10 Most Common Call Types",
+       x = "count",
+       y = "") +
+  theme_minimal()
+```
+
+How would "clean" labels of Call Types (i.e. get rid of codes)?
+
+```{r}
+#| echo: false
+countdown::countdown(1, bottom = 0)
+```
+
+
+## Timeline of Calls by Source
 
 Interest in the following `Source` categories:
 
-- `911 Call`
-- `Telephone`
-- `Officer Initiated`
+- `"911 Call"`
+- `"Telephone"`
+- `"Officer Initiated"`
 
 
-##
+## Calls by Source
 
 ```{r}
 #| output-location: fragment
@@ -238,7 +311,7 @@ cfs |>
 ```
 
 
-## {auto-animate=true}
+## Monthly Calls by Source {auto-animate=true}
 
 ```{r}
 cfs |> 
@@ -271,6 +344,20 @@ cfs |>
 
 
 # Dashboard
+
+## {background-image="images/cfs-dashboard-screenshot.png" background-size="contain"}
+
+## {.nostretch}
+
+Question: What is the layout of this dashboard?
+
+![](images/cfs-dashboard-screenshot.png){width="70%" fig-align="center"}
+
+```{r}
+#| echo: false
+countdown::countdown(1, top = 0)
+```
+
 
 ##
 
