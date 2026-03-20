@@ -23,7 +23,7 @@ title: "STAT 133: Concepts in Computing with Data"
 ## Week 9 Announcements
 
 - [Problem Set 7]{.label-Homework} due Wed 3/18 by 6PM
-- [8th Publication]{.label-Pub} on Thu 3/19 (in lab)
+- [8th Publication]{.label-Pub} Canceled
 - [Quiz 4]{.label-Quiz} on Thu 3/19 (in lab)
 :::
 
