@@ -1939,14 +1939,14 @@
     "href": "lectures/23-date-time1/slides.html#an-r-vector-for-date-times",
     "title": "Dates and Times I",
     "section": "An R vector for date-times",
-    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-03-19 19:23:00 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1773973380"
+    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-03-20 08:04:51 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1774019091"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "href": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "title": "Dates and Times I",
     "section": "Why not just use a double vector?",
-    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-03-19 19:23:00 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-03-19 19:23:01 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-03-19 19:23:00 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"03/19/26\""
+    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-03-20 08:04:51 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-03-20 08:04:52 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-03-20 08:04:51 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"03/20/26\""
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#creating-date-time-vectors",
@@ -1981,21 +1981,21 @@
     "href": "lectures/23-date-time1/slides.html#getting",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 19\n\n\n\n\n\nwday(now)\n\n\n\n[1] 5\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Thu\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 20\n\n\n\n\n\nwday(now)\n\n\n\n[1] 6\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Fri\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#getting-1",
     "href": "lectures/23-date-time1/slides.html#getting-1",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 19\n\n\n\nwday(now)\n\n[1] 5\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Thursday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 20\n\n\n\nwday(now)\n\n[1] 6\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Friday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#setting",
     "href": "lectures/23-date-time1/slides.html#setting",
     "title": "Dates and Times I",
     "section": "Setting",
-    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-03-19 19:23:00 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Wednesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-03-20 08:04:51 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Thursday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#your-turn",
@@ -2499,7 +2499,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 00     Jacob Toppin ATL   SF           81    200 May 8, 20… US      1         \n2 5      Jarace Walk… IND   PF           79    235 September… US      1         \n3 0      Miles Bridg… CHO   PF           79    225 March 21,… US      5         \n4 31     Klay Thomps… DAL   SF           77    220 February … US      11        \n5 36     Phillip Whe… PHI   PF           80    185 April 23,… US      R         \n6 19     Justin Edwa… PHI   SF           79    203 December … US      R         \n7 12     Torrey Craig BOS   SF           77    221 December … US      7         \n8 67     Taj Gibson   CHO   C            81    232 June 24, … US      15        \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 5      \"Quentin Gr… PHI   SG           76    210 May 8, 20… US      3         \n2 7      \"Chet Holmg… OKC   C            85    208 May 1, 20… US      1         \n3 77     \"Luka DonÄ\\… LAL   PG           80    230 February … SI      6         \n4 10     \"Jeremy Soc… SAS   PF           80    230 May 20, 2… US      2         \n5 14     \"Terance Ma… LAC   SG           78    215 October 1… US      5         \n6 16     \"Keshad Joh… MIA   SF           78    225 June 23, … US      R         \n7 45     \"Davion Mit… MIA   PG           72    202 September… US      3         \n8 23     \"Jaden Ivey\" DET   SG           75    195 February … US      2         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -2947,7 +2947,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"gold\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"bronze\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -2961,7 +2961,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"sophomore\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"freshman\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -4775,7 +4775,7 @@
     "href": "index.html",
     "title": "STAT 133: Concepts in Computing with Data",
     "section": "",
-    "text": "Ed\n\n\nbCourses\n\n\nR-DataHub\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 9 Announcements\n\n\n\n\nProblem Set 7 due Wed 3/18 by 6PM\n8th Publication Canceled\nQuiz 4 on Thu 3/19 (in lab)\n\n\n\n\n\n\n\n\nWeek 1\n\nWed 1/21\nThu 1/22\nFri 1/23\n\n\n\n\n\nDescription\nWelcome\nLab 1: slides\nIntroduction\n\n\n\n\nDue\n\n\n\n\n\n\n\n\n\nWeek 2\n\nMon 1/26\nWed 1/28\nThu 1/29\nFri 1/30\n\n\n\n\n\nDescription\nVectors\nWorking with Vectors\nLab 2: slides | PS1\nUnix Basics | Proj1\n\n\n\n\nDue\n \n \nPub1\n \n\n\n\n\n\n\n\n\n\nWeek 3\n\nMon 2/2\nWed 2/4\nThu 2/5\nFri 2/6\n\n\n\n\n\nDescription\nExtending Vectors\nLists\nLab 3: Quiz 1 | slides | PS2\nControl Flow\n\n\n\n\nDue\n \nPS1\nPub2\n \n\n\n\n\n\n\n\n\n\nWeek 4\n\nMon 2/9\nWed 2/11\nThu 2/12\nFri 2/13\n\n\n\n\n\nDescription\nFunctions\nFactors and Data Frames\nLab 4: slides | PS3\nData Wrangling I | Proj2\n\n\n\n\nDue\n \nPS2\nPub3\nProj1\n\n\n\n\n\n\n\n\n\nWeek 5\n\nMon 2/16\nWed 2/18\nThu 2/19\nFri 2/20\n\n\n\n\n\nDescription\nNo class\nData Wrangling II\nLab 5: Quiz 2 | slides | PS4\nImporting Tables\n\n\n\n\nDue\n \nPS3\nPub4\n \n\n\n\n\n\n\n\n\n\nWeek 6\n\nMon 2/23\nWed 2/25\nThu 2/26\nFri 2/27\n\n\n\n\n\nDescription\nDataviz I\nDataviz II\nLab 6: slides | PS5\nDataviz III | Proj3\n\n\n\n\nDue\n \nPS4\nPub5\nProj2\n\n\n\n\n\n\n\n\n\nWeek 7\n\nMon 3/2\nWed 3/4\nThu 3/5\nFri 3/6\n\n\n\n\n\nDescription\nJoins and Pivots\nExploratory EDA\nLab 7: Quiz 3 | slides | PS6\nExplanatory EDA\n\n\n\n\nDue\n \nPS5\nPub6\n \n\n\n\n\n\n\n\n\n\nWeek 8\n\nMon 3/9\nWed 3/11\nThu 3/12\nFri 3/13\n\n\n\n\n\nDescription\nStrings I\nStrings II\nLab 8: slides | PS7\nStrings III | Proj4\n\n\n\n\nDue\n \nPS6\nPub7\nProj3\n\n\n\n\n\n\n\n\n\nWeek 9\n\nMon 3/16\nWed 3/18\nThu 3/19\nFri 3/20\n\n\n\n\n\nDescription\nDates and Times I\nDates and Times II\nLab 9: Quiz 4 | slides | PS8\nGeospatial Data\n\n\n\n\nDue\n \nPS7\nPub8 canceled\n \n\n\n\n\n\n\n\n\n\nWeek 10\n\n3/23-3/27\n\n\n\n\n\nDescription\nSpring Recess\n\n\n\n\n\n\n\n\n\nWeek 11\n\nMon 3/30\nWed 4/1\nThu 4/2\nFri 4/3\n\n\n\n\n\nDescription\nStorm Tracks I\nLeaflet Maps\nLab 10: slides | PS9\nShapefiles | Proj5\n\n\n\n\nDue\n \nPS8\nPub9\nProj4\n\n\n\n\n\n\n\n\n\nWeek 12\n\nMon 4/6\nWed 4/8\nThu 4/9\nFri 4/10\n\n\n\n\n\nDescription\nChoropleth Maps\nRaster Data I\nLab 11: Quiz 5 | slides | PS10\nRaster Data II\n\n\n\n\nDue\n \nPS9\nPub10\n \n\n\n\n\n\n\n\n\n\nWeek 13\n\nMon 4/13\nWed 4/15\nThu 4/16\nFri 4/17\n\n\n\n\n\nDescription\nJSON Data\nAPIs\nLab 12: slides | PS11\nXML Data | Proj6\n\n\n\n\nDue\n \nPS10\nPub11\nProj5\n\n\n\n\n\n\n\n\n\nWeek 14\n\nMon 4/20\nWed 4/22\nThu 4/23\nFri 4/24\n\n\n\n\n\nDescription\nText Analysis 1\nText Analysis 2\nLab 13: Quiz 6 | slides | PS12\nText Analysis 3\n\n\n\n\nDue\n \nPS11\nPub12\n \n\n\n\n\n\n\n\n\n\nWeek 15\n\nMon 4/27\nWed 4/29\nThu 4/30\nFri 5/1\n\n\n\n\n\nDescription\nTBD\nTBD\nLab 14: slides\nClosing Lecture\n\n\n\n\nDue\n \nPS12\n \nProj6\n\n\n\n\n\n\n\n\n\nWeek 16\n\n5/4-5/8\n\n\n\n\n\nDescription\nRRR Week\n\n\n\n\n\n\n\n\n\nWeek 17\n\n5/11\n\n\n\n\n\nDescription\nFinal Exam, 7-10pm",
+    "text": "Ed\n\n\nbCourses\n\n\nR-DataHub\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 9 Announcements\n\n\n\n\nProblem Set 7 due Wed 3/18 by 6PM\n8th Publication Canceled\nQuiz 4 on Thu 3/19 (in lab)\n\n\n\n\n\n\n\n\nWeek 1\n\nWed 1/21\nThu 1/22\nFri 1/23\n\n\n\n\n\nDescription\nWelcome\nLab 1: slides\nIntroduction\n\n\n\n\nDue\n\n\n\n\n\n\n\n\n\nWeek 2\n\nMon 1/26\nWed 1/28\nThu 1/29\nFri 1/30\n\n\n\n\n\nDescription\nVectors\nWorking with Vectors\nLab 2: slides | PS1\nUnix Basics | Proj1\n\n\n\n\nDue\n \n \nPub1\n \n\n\n\n\n\n\n\n\n\nWeek 3\n\nMon 2/2\nWed 2/4\nThu 2/5\nFri 2/6\n\n\n\n\n\nDescription\nExtending Vectors\nLists\nLab 3: Quiz 1 | slides | PS2\nControl Flow\n\n\n\n\nDue\n \nPS1\nPub2\n \n\n\n\n\n\n\n\n\n\nWeek 4\n\nMon 2/9\nWed 2/11\nThu 2/12\nFri 2/13\n\n\n\n\n\nDescription\nFunctions\nFactors and Data Frames\nLab 4: slides | PS3\nData Wrangling I | Proj2\n\n\n\n\nDue\n \nPS2\nPub3\nProj1\n\n\n\n\n\n\n\n\n\nWeek 5\n\nMon 2/16\nWed 2/18\nThu 2/19\nFri 2/20\n\n\n\n\n\nDescription\nNo class\nData Wrangling II\nLab 5: Quiz 2 | slides | PS4\nImporting Tables\n\n\n\n\nDue\n \nPS3\nPub4\n \n\n\n\n\n\n\n\n\n\nWeek 6\n\nMon 2/23\nWed 2/25\nThu 2/26\nFri 2/27\n\n\n\n\n\nDescription\nDataviz I\nDataviz II\nLab 6: slides | PS5\nDataviz III | Proj3\n\n\n\n\nDue\n \nPS4\nPub5\nProj2\n\n\n\n\n\n\n\n\n\nWeek 7\n\nMon 3/2\nWed 3/4\nThu 3/5\nFri 3/6\n\n\n\n\n\nDescription\nJoins and Pivots\nExploratory EDA\nLab 7: Quiz 3 | slides | PS6\nExplanatory EDA\n\n\n\n\nDue\n \nPS5\nPub6\n \n\n\n\n\n\n\n\n\n\nWeek 8\n\nMon 3/9\nWed 3/11\nThu 3/12\nFri 3/13\n\n\n\n\n\nDescription\nStrings I\nStrings II\nLab 8: slides | PS7\nStrings III | Proj4\n\n\n\n\nDue\n \nPS6\nPub7\nProj3\n\n\n\n\n\n\n\n\n\nWeek 9\n\nMon 3/16\nWed 3/18\nThu 3/19\nFri 3/20\n\n\n\n\n\nDescription\nDates and Times I\nDates and Times II\nLab 9: Quiz 4 | slides | PS8\nDashboard Demo\n\n\n\n\nDue\n \nPS7\nPub8 canceled\n \n\n\n\n\n\n\n\n\n\nWeek 10\n\n3/23-3/27\n\n\n\n\n\nDescription\nSpring Recess\n\n\n\n\n\n\n\n\n\nWeek 11\n\nMon 3/30\nWed 4/1\nThu 4/2\nFri 4/3\n\n\n\n\n\nDescription\nStorm Tracks I\nLeaflet Maps\nLab 10: slides | PS9\nShapefiles | Proj5\n\n\n\n\nDue\n \nPS8\nPub9\nProj4\n\n\n\n\n\n\n\n\n\nWeek 12\n\nMon 4/6\nWed 4/8\nThu 4/9\nFri 4/10\n\n\n\n\n\nDescription\nChoropleth Maps\nRaster Data I\nLab 11: Quiz 5 | slides | PS10\nRaster Data II\n\n\n\n\nDue\n \nPS9\nPub10\n \n\n\n\n\n\n\n\n\n\nWeek 13\n\nMon 4/13\nWed 4/15\nThu 4/16\nFri 4/17\n\n\n\n\n\nDescription\nJSON Data\nAPIs\nLab 12: slides | PS11\nXML Data | Proj6\n\n\n\n\nDue\n \nPS10\nPub11\nProj5\n\n\n\n\n\n\n\n\n\nWeek 14\n\nMon 4/20\nWed 4/22\nThu 4/23\nFri 4/24\n\n\n\n\n\nDescription\nText Analysis 1\nText Analysis 2\nLab 13: Quiz 6 | slides | PS12\nText Analysis 3\n\n\n\n\nDue\n \nPS11\nPub12\n \n\n\n\n\n\n\n\n\n\nWeek 15\n\nMon 4/27\nWed 4/29\nThu 4/30\nFri 5/1\n\n\n\n\n\nDescription\nTBD\nTBD\nLab 14: slides\nClosing Lecture\n\n\n\n\nDue\n \nPS12\n \nProj6\n\n\n\n\n\n\n\n\n\nWeek 16\n\n5/4-5/8\n\n\n\n\n\nDescription\nRRR Week\n\n\n\n\n\n\n\n\n\nWeek 17\n\n5/11\n\n\n\n\n\nDescription\nFinal Exam, 7-10pm",
     "crumbs": [
       "Home"
     ]
@@ -4888,7 +4888,7 @@
     "href": "lectures/25-date-time3/slides.html#comments",
     "title": "Dashboard Demo",
     "section": "Comments",
-    "text": "Comments\n\nFocus on value boxes:\n\nMental Health Related\nHomeless Related\nRIPA Stop\n\nLet’s ignore the map; replace it with timeline of calls by Source\nBar chart of 10 most comon Call Types"
+    "text": "Comments\n\nFocus on value boxes:\n\nMental Health Related dispositions\nHomeless Related dispositions\nRIPA Stop dispositions\n\nLet’s ignore the map; replace it with timeline of calls by Source\nBar chart of 10 most comon Call Types"
   },
   {
     "objectID": "lectures/25-date-time3/slides.html#section-3",
@@ -4902,18 +4902,25 @@
     "href": "lectures/25-date-time3/slides.html#dispositions",
     "title": "Dashboard Demo",
     "section": "Dispositions",
-    "text": "Dispositions\n\nMental Health Related\nHomeless Related\nRIPA Stop"
+    "text": "Dispositions\n\nMental Health Related\nHomeless Related\nRIPA Stop\n\n\n\ncfs |&gt; select(Dispositions) |&gt; slice_head(n = 6)\n\n# A tibble: 6 × 1\n  Dispositions                               \n  &lt;chr&gt;                                      \n1 Homeless, MDT Narrative Only               \n2 Homeless, MDT Narrative Only, Mental Health\n3 Primary Case (Case or Cold Theft)          \n4 MDT Narrative Only                         \n5 Primary Case (Case or Cold Theft)          \n6 Primary Case (Case or Cold Theft)"
   },
   {
     "objectID": "lectures/25-date-time3/slides.html#section-4",
     "href": "lectures/25-date-time3/slides.html#section-4",
     "title": "Dashboard Demo",
     "section": "",
-    "text": "# Mental Health Related\ncfs |&gt; \n  filter(str_detect(Dispositions, \"Mental\")) |&gt; \n  count()\n\n\n\n# A tibble: 1 × 1\n      n\n  &lt;int&gt;\n1  2616\n\n\n\n\n# Homeless Related\ncfs |&gt; \n  filter(str_detect(Dispositions, \"Homeless\")) |&gt; \n  count()\n\n\n\n# A tibble: 1 × 1\n      n\n  &lt;int&gt;\n1  2643\n\n\n\n\n\n# RIPA Stop\ncfs |&gt; \n  filter(str_detect(Dispositions, \"RIPA\")) |&gt; \n  count()\n\n\n\n# A tibble: 1 × 1\n      n\n  &lt;int&gt;\n1  5572"
+    "text": "Some Mental Health Related Dispositions:\nArrest only (no Case), Homeless, Incident Report, Mental Health                  \nArrest only (no Case), Homeless, Incident Report, Mental Health, RIPA            \nArrest only (no Case), Homeless, Mental Health, RIPA                             \nBuilding Secure and Tight, Mental Health, MDT Narrative Only                     \nCHP-180 Report, Mental Health                                                    \nHomeless, Arrest only (no Case), Mental Health                                   \nHomeless, Incident Report, Mental Health, RIPA                                   \nHomeless, MDT Narrative Only, Mental Health                                      \nHomeless, Mental Health                                                          \nHomeless, Primary Case (Case or Cold Theft), Arrest only (no Case), Mental Health\nHomeless, Primary Case (Case or Cold Theft), Mental Health                       \nHomeless, RIPA, MDT Narrative Only, Mental Health                                \nHomeless, RIPA, Mental Health                                                    \nIncident Report, Homeless, MDT Narrative Only, Mental Health                     \nIncident Report, Homeless, Mental Health                                         \nIncident Report, Mental Health                                                   \nIncident Report, Mental Health, MDT Narrative Only                               \nIncident Report, Mental Health, RIPA                                             \nMDT Narrative Only, Homeless, Incident Report, Mental Health                     \nMDT Narrative Only, Homeless, Mental Health, Follow Up\n\n\nWhat would you do to identify these types of Dispositions?\n\n\n\n−+\n01:00"
   },
   {
     "objectID": "lectures/25-date-time3/slides.html#section-5",
     "href": "lectures/25-date-time3/slides.html#section-5",
+    "title": "Dashboard Demo",
+    "section": "",
+    "text": "# Mental Health Related\ncfs |&gt; \n  filter(str_detect(Dispositions, \"Mental\")) |&gt; \n  count()\n\n\n\n# A tibble: 1 × 1\n      n\n  &lt;int&gt;\n1  2616\n\n\n\n\n# Homeless Related\ncfs |&gt; \n  filter(str_detect(Dispositions, \"Homeless\")) |&gt; \n  count()\n\n\n\n# A tibble: 1 × 1\n      n\n  &lt;int&gt;\n1  2643\n\n\n\n\n\n# RIPA Stop\ncfs |&gt; \n  filter(str_detect(Dispositions, \"RIPA\")) |&gt; \n  count()\n\n\n\n# A tibble: 1 × 1\n      n\n  &lt;int&gt;\n1  5572"
+  },
+  {
+    "objectID": "lectures/25-date-time3/slides.html#section-6",
+    "href": "lectures/25-date-time3/slides.html#section-6",
     "title": "Dashboard Demo",
     "section": "",
     "text": "# counting dispositions of interests\ndispositions &lt;- cfs |&gt; \n  summarize(\n    mental = sum(str_detect(Dispositions, \"Mental\"), na.rm = TRUE), \n    homeless = sum(str_detect(Dispositions, \"Homeless\"), na.rm = TRUE),\n    ripa = sum(str_detect(Dispositions, \"RIPA\"), na.rm = TRUE))\n\ndispositions\n\n\n\n# A tibble: 1 × 3\n  mental homeless  ripa\n   &lt;int&gt;    &lt;int&gt; &lt;int&gt;\n1   2616     2643  5572"
@@ -4923,7 +4930,7 @@
     "href": "lectures/25-date-time3/slides.html#most-common-call-types",
     "title": "Dashboard Demo",
     "section": "10 most common Call Types",
-    "text": "10 most common Call Types\n\n\nCode\ncfs |&gt; \n  filter(Source %in% c(\"911 Call\",\n                       \"Telephone\",\n                       \"Officer Initiated\")) |&gt; \n  count(Call_Type, name = \"count\", sort = TRUE) |&gt; \n  slice_head(n = 10)\n\n\n# A tibble: 10 × 2\n   Call_Type                      count\n   &lt;chr&gt;                          &lt;int&gt;\n 1 CFS SEC - Security Check        6573\n 2 CFS 415 - Disturbance           5168\n 3 CFS T - Traffic Stop            4268\n 4 CFS 1033A - Audible Alarm       3550\n 5 CFS 1042 - Welfare Check        3156\n 6 CFS W911 - Wireless 911         2865\n 7 CFS AID - Aid to Citizen        2190\n 8 CFS 415E - Noise Disturbance    2117\n 9 CFS 484 - Theft                 2032\n10 CFS PRKVIO - Parking Violation  2008"
+    "text": "10 most common Call Types\nCall Types from 3 Source categories: 911 Call, Telephone, POfficer Initiated\n\n\n\nCode\ncfs |&gt; \n  filter(Source %in% c(\"911 Call\",\n                       \"Telephone\",\n                       \"Officer Initiated\")) |&gt; \n  count(Call_Type, name = \"count\", sort = TRUE) |&gt; \n  slice_head(n = 10)\n\n\n# A tibble: 10 × 2\n   Call_Type                      count\n   &lt;chr&gt;                          &lt;int&gt;\n 1 CFS SEC - Security Check        6573\n 2 CFS 415 - Disturbance           5168\n 3 CFS T - Traffic Stop            4268\n 4 CFS 1033A - Audible Alarm       3550\n 5 CFS 1042 - Welfare Check        3156\n 6 CFS W911 - Wireless 911         2865\n 7 CFS AID - Aid to Citizen        2190\n 8 CFS 415E - Noise Disturbance    2117\n 9 CFS 484 - Theft                 2032\n10 CFS PRKVIO - Parking Violation  2008"
   },
   {
     "objectID": "lectures/25-date-time3/slides.html#most-common-call-types-1",
@@ -4933,25 +4940,32 @@
     "text": "10 most common Call Types\n\n\nCode\ncfs |&gt; \n  filter(Source %in% c(\"911 Call\",\n                       \"Telephone\",\n                       \"Officer Initiated\")) |&gt; \n  count(Call_Type, name = \"count\", sort = TRUE) |&gt; \n  slice_head(n = 10) |&gt; \n  ggplot(aes(x = count, y = reorder(Call_Type, count))) +\n  geom_col() +\n  labs(title = \"10 Most Common Call Types\",\n       x = \"count\",\n       y = \"\") +\n  theme_minimal()"
   },
   {
-    "objectID": "lectures/25-date-time3/slides.html#calls-by-source",
-    "href": "lectures/25-date-time3/slides.html#calls-by-source",
-    "title": "Dashboard Demo",
-    "section": "Calls by Source",
-    "text": "Calls by Source\nInterest in the following Source categories:\n\n911 Call\nTelephone\nOfficer Initiated"
-  },
-  {
-    "objectID": "lectures/25-date-time3/slides.html#section-6",
-    "href": "lectures/25-date-time3/slides.html#section-6",
-    "title": "Dashboard Demo",
-    "section": "",
-    "text": "cfs |&gt; \n  filter(Source %in% c(\"911 Call\",\n                       \"Telephone\",\n                       \"Officer Initiated\")) |&gt; \n  count(Source)\n\n\n\n# A tibble: 3 × 2\n  Source                n\n  &lt;chr&gt;             &lt;int&gt;\n1 911 Call          16044\n2 Officer Initiated 15526\n3 Telephone         27163"
-  },
-  {
     "objectID": "lectures/25-date-time3/slides.html#section-7",
     "href": "lectures/25-date-time3/slides.html#section-7",
     "title": "Dashboard Demo",
     "section": "",
-    "text": "cfs |&gt; \n  filter(Source %in% c(\"911 Call\",\n                       \"Telephone\",\n                       \"Officer Initiated\")) |&gt; \n  mutate(Month = month(CreateDatetime)) |&gt; \n  count(Source, Month)\n\n# A tibble: 36 × 3\n   Source   Month     n\n   &lt;chr&gt;    &lt;dbl&gt; &lt;int&gt;\n 1 911 Call     1  1279\n 2 911 Call     2  1230\n 3 911 Call     3  1300\n 4 911 Call     4  1289\n 5 911 Call     5  1468\n 6 911 Call     6  1301\n 7 911 Call     7  1242\n 8 911 Call     8  1337\n 9 911 Call     9  1508\n10 911 Call    10  1451\n# ℹ 26 more rows"
+    "text": "How would “clean” labels of Call Types (i.e. get rid of codes)?\n\n\n\n−+\n01:00"
+  },
+  {
+    "objectID": "lectures/25-date-time3/slides.html#timeline-of-calls-by-source",
+    "href": "lectures/25-date-time3/slides.html#timeline-of-calls-by-source",
+    "title": "Dashboard Demo",
+    "section": "Timeline of Calls by Source",
+    "text": "Timeline of Calls by Source\nInterest in the following Source categories:\n\n\"911 Call\"\n\"Telephone\"\n\"Officer Initiated\""
+  },
+  {
+    "objectID": "lectures/25-date-time3/slides.html#calls-by-source",
+    "href": "lectures/25-date-time3/slides.html#calls-by-source",
+    "title": "Dashboard Demo",
+    "section": "Calls by Source",
+    "text": "Calls by Source\n\ncfs |&gt; \n  filter(Source %in% c(\"911 Call\",\n                       \"Telephone\",\n                       \"Officer Initiated\")) |&gt; \n  count(Source)\n\n\n\n# A tibble: 3 × 2\n  Source                n\n  &lt;chr&gt;             &lt;int&gt;\n1 911 Call          16044\n2 Officer Initiated 15526\n3 Telephone         27163"
+  },
+  {
+    "objectID": "lectures/25-date-time3/slides.html#monthly-calls-by-source",
+    "href": "lectures/25-date-time3/slides.html#monthly-calls-by-source",
+    "title": "Dashboard Demo",
+    "section": "Monthly Calls by Source",
+    "text": "Monthly Calls by Source\n\ncfs |&gt; \n  filter(Source %in% c(\"911 Call\",\n                       \"Telephone\",\n                       \"Officer Initiated\")) |&gt; \n  mutate(Month = month(CreateDatetime)) |&gt; \n  count(Source, Month)\n\n# A tibble: 36 × 3\n   Source   Month     n\n   &lt;chr&gt;    &lt;dbl&gt; &lt;int&gt;\n 1 911 Call     1  1279\n 2 911 Call     2  1230\n 3 911 Call     3  1300\n 4 911 Call     4  1289\n 5 911 Call     5  1468\n 6 911 Call     6  1301\n 7 911 Call     7  1242\n 8 911 Call     8  1337\n 9 911 Call     9  1508\n10 911 Call    10  1451\n# ℹ 26 more rows"
   },
   {
     "objectID": "lectures/25-date-time3/slides.html#section-8",
@@ -4965,18 +4979,25 @@
     "href": "lectures/25-date-time3/slides.html#section-10",
     "title": "Dashboard Demo",
     "section": "",
+    "text": "Question: What is the layout of this dashboard?\n\n\n\n\n\n\n\n\n−+\n01:00"
+  },
+  {
+    "objectID": "lectures/25-date-time3/slides.html#section-12",
+    "href": "lectures/25-date-time3/slides.html#section-12",
+    "title": "Dashboard Demo",
+    "section": "",
     "text": "```{r}\n#| content: valuebox\n#| title: \"Mental Health Related\"\nlist(color = \"secondary\", value = dispositions$mental)\n```\n\n\n\n```{r}\n#| content: valuebox\n#| title: \"Homeless Related\"\nlist(color = \"secondary\", value = dispositions$homeless)\n```\n\n\n\n\n```{r}\n#| content: valuebox\n#| title: \"RIPA Stops\"\nlist(color = \"secondary\", value = dispositions$ripa)\n```"
   },
   {
-    "objectID": "lectures/25-date-time3/slides.html#section-11",
-    "href": "lectures/25-date-time3/slides.html#section-11",
+    "objectID": "lectures/25-date-time3/slides.html#section-13",
+    "href": "lectures/25-date-time3/slides.html#section-13",
     "title": "Dashboard Demo",
     "section": "",
     "text": "```{r}\n# bar chart of 10 most common Call Types\nggplotly(\n  cfs |&gt; \n  filter(Source %in% c(\"911 Call\",\n                       \"Telephone\",\n                       \"Officer Initiated\")) |&gt; \n  count(Call_Type, name = \"count\", sort = TRUE) |&gt; \n  slice_head(n = 10) |&gt; \n  ggplot(aes(x = count, y = reorder(Call_Type, count))) +\n  geom_col() +\n  labs(title = \"10 Most Common Call Types\",\n       x = \"count\",\n       y = \"\") +\n  theme_minimal())\n```"
   },
   {
-    "objectID": "lectures/25-date-time3/slides.html#section-12",
-    "href": "lectures/25-date-time3/slides.html#section-12",
+    "objectID": "lectures/25-date-time3/slides.html#section-14",
+    "href": "lectures/25-date-time3/slides.html#section-14",
     "title": "Dashboard Demo",
     "section": "",
     "text": "```{r}\n# timeline of number of calls by Source\nggplotly(\n  cfs |&gt; \n  filter(Source %in% c(\"911 Call\",\n                       \"Telephone\",\n                       \"Officer Initiated\")) |&gt; \n  mutate(Month = month(CreateDatetime)) |&gt; \n  count(Source, Month) |&gt; \n  ggplot(aes(x = Month, y = n, color = Source)) +\n  geom_line(linewidth = 1.2) +\n  labs(title = \"Calls by Source\",\n       y = \"count\") +\n  scale_x_continuous(breaks = 1:12, labels = month.abb) +\n  theme_minimal() +\n  theme(legend.position = \"bottom\")\n)\n```"
@@ -5483,7 +5504,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 6 4"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 2 3"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#meet-the-palmer-penguins",
@@ -6179,6 +6200,13 @@
     "text": "Code\njoined_inner |&gt;\n  ggplot() +\n  geom_sf(aes(fill = Average), color = \"white\") +\n  scale_fill_gradientn(colors = brewer.pal(n = 7, name = \"Purples\"), \n                       breaks = seq(45000, 80000, by = 5000)) +\n  theme_void()"
   },
   {
+    "objectID": "lectures/30-choropleth-maps/slides.html#our-workflow",
+    "href": "lectures/30-choropleth-maps/slides.html#our-workflow",
+    "title": "Choropleth Maps",
+    "section": "Our workflow",
+    "text": "Our workflow"
+  },
+  {
     "objectID": "lectures/30-choropleth-maps/slides.html#interactive-map-with-ggiraph",
     "href": "lectures/30-choropleth-maps/slides.html#interactive-map-with-ggiraph",
     "title": "Choropleth Maps",
@@ -6771,14 +6799,14 @@
     "href": "lectures/24-date-time2/slides.html#how-old-is-oski",
     "title": "Dates and Times II",
     "section": "How old is Oski?",
-    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30854 days"
+    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30855 days"
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#durations",
     "href": "lectures/24-date-time2/slides.html#durations",
     "title": "Dates and Times II",
     "section": "Durations",
-    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2665785600s (~84.47 years)\""
+    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2665872000s (~84.48 years)\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#constructing-a-duration",
@@ -6820,7 +6848,7 @@
     "href": "lectures/24-date-time2/slides.html#how-old-will-oski-be",
     "title": "Dates and Times II",
     "section": "How old will Oski be …",
-    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2665785600s (~84.47 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2697343200s (~85.47 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 173d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 173d 0H 0M 0S\""
+    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2665872000s (~84.48 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2697429600s (~85.48 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 174d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 174d 0H 0M 0S\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#intervals",
