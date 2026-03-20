@@ -10,8 +10,9 @@ knitr::opts_chunk$set(echo = TRUE, error = TRUE)
 library(tidyverse)
 library(terra)
 library(viridis)
+library(rnaturalearth)
 
-dat = rast("nclimgrid_tavg_april_2025.nc")
+dat = rast("tavg_1564.nc")
 ```
 
 
@@ -187,6 +188,31 @@ unit        : degree_Celsius, degree_Celsius, degree_Celsius, degree_Celsius, de
 time (days) : 1895-01-01 to 2026-02-01 (2 steps) 
 ```
 
+## Importing NetCDF files with `rast()` {.smaller}
+
+```{r}
+#| eval: false
+# NClimGrid data as of Feb-2026
+dat <- rast("nclimgrid_tavg.nc")
+dat
+```
+
+. . .
+
+```
+class       : SpatRaster 
+dimensions  : 596, 1385, 1574  (nrow, ncol, nlyr)
+resolution  : 0.04166666, 0.04166667  (x, y)
+extent      : -124.7083, -67, 24.5417, 49.37503  (xmin, xmax, ymin, ymax)
+coord. ref. : lon/lat WGS 84 (CRS84) (OGC:CRS84) 
+source      : nclimgrid_tavg.nc 
+varname     : tavg (Temperature, monthly average of daily averages) 
+names       :         tavg_1,         tavg_2,         tavg_3,         tavg_4,         tavg_5,  ...
+unit        : degree_Celsius, degree_Celsius, degree_Celsius, degree_Celsius, degree_Celsius,  ... 
+time (days) : 1895-01-01 to 2026-02-01 (2 steps) 
+```
+
+
 ##
 
 Dimensions:
@@ -326,13 +352,85 @@ plot(dat, col = viridis(n = 6))
 
 ## Converting temp to Fahrenheit
 
-
 ```{r}
 #| eval: false
-plot(dat_raster[[1564]] * (9/5) + 32)
+plot(dat[[1564]] * (9/5) + 32)
 ```
 
 ```{r}
 #| echo: false
 plot(dat * (9/5) + 32)
+```
+
+
+# Raster Maps with `"ggplot2"`
+
+## Raster to table
+
+First we need to convert the raster object into a table (data.frame or tibble)
+
+```{r}
+#| eval: false
+apr_2025 = as.data.frame(dat[[1564]], xy = TRUE)
+head(apr_2025)
+```
+
+```{r}
+#| echo: false
+apr_2025 = as.data.frame(dat, xy = TRUE)
+head(apr_2025)
+```
+
+
+##
+
+```{r}
+ggplot() +
+  geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564))
+```
+
+
+##
+
+```{r}
+ggplot() +
+  geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564)) +
+  scale_fill_viridis_c()
+```
+
+
+## Map of US States
+
+```{r}
+us_states = ne_states(
+  country = "United States of America", 
+  returnclass = "sf")
+
+ggplot() +
+  geom_sf(data = us_states) +
+  coord_sf(xlim = c(-124.7083, -67), ylim = c(24.5417, 49.37503))
+```
+
+
+## 
+
+```{r}
+# Superimposing polygons to temperatures
+ggplot() +
+  geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564)) +
+  geom_sf(data = us_states, fill = "#FFFFFF00", color = "white") +
+  coord_sf(xlim = c(-124.7083, -67), ylim = c(24.5417, 49.37503))
+```
+
+
+##
+
+```{r}
+#| code-fold: true
+# color gradient: binned viridis (discrete)
+ggplot() +
+  geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564)) + 
+  scale_fill_viridis_b(breaks = seq(from = -10, to = 25, by = 5)) +
+  geom_sf(data = us_states, fill = "#FFFFFF00", color = "white") +
+  coord_sf(xlim = c(-124.7083, -67), ylim = c(24.5417, 49.37503))
 ```
