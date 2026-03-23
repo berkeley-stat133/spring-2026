@@ -45,8 +45,12 @@ Goal: replicate the choropleth map that appears in the following Forbes's articl
 
 ## Data
 
+. . .
+
 👎 Bad news: _Average Salary by State_ data is displayed in the above Forbes' webpage.
 Unfortunately, this HTML table is not scrapable. 
+
+. . .
 
 \
 
@@ -57,9 +61,11 @@ the following SoFi webpage:
 
 \
 
+. . .
+
 ```{r}
 # run this command in the console
-# (assuming the working directory is the same of the qmd file)
+# (saves html in your working directory)
 download.file(
   url = "https://www.sofi.com/learn/content/average-salary-in-us/", 
   destfile = "sofi-average-salary-in-us-2025.html")
@@ -107,7 +113,10 @@ countdown::countdown(1, bottom = 0)
 
 ## A little bit of data cleaning
 
+. . .
+
 ```{r}
+#| output-location: fragment
 # data with average and median salaries
 salaries = salaries |>
   mutate(Average = as.numeric(str_remove_all(Average, "[,$]")),
@@ -122,6 +131,7 @@ head(salaries)
 ## Map data with all 50 U.S. States
 
 ```{r}
+#| output-location: fragment
 # from package "usmap"
 us_states = us_map(regions = "states")
 
@@ -130,9 +140,15 @@ class(us_states)
 
 . . .
 
+Notice that `us_states` is an **sf table**!
+
+. . .
+
 \
 
 ```{r}
+#| output-location: fragment
+# column names
 names(us_states)
 ```
 
@@ -140,7 +156,7 @@ names(us_states)
 ## {.smaller}
 
 ```{r}
-head(us_states)
+head(us_states, n = 5)
 ```
 
 . . .
@@ -159,11 +175,45 @@ primarily in the United States, by the U.S. federal government.
 
 ##
 
-We can plot it with `ggplot()` and `geom_sf()`
+We can plot `us_states` with `ggplot()` and `geom_sf()`
+
+. . .
 
 ```{r}
+#| code-fold: true
+#| fig-width: 8
+#| fig-height: 6
 ggplot(data = us_states) +
   geom_sf()
+```
+
+
+## {auto-animate=true}
+
+We can plot `us_states` with `ggplot()` and `geom_sf()`
+
+```{r}
+#| code-fold: true
+#| fig-width: 8
+#| fig-height: 6
+ggplot(data = us_states) +
+  geom_sf() +
+  geom_sf_text(aes(label = abbr))
+```
+
+
+## {auto-animate=true}
+
+We can plot `us_states` with `ggplot()` and `geom_sf()`
+
+```{r}
+#| code-fold: true
+#| fig-width: 8
+#| fig-height: 6
+ggplot(data = us_states) +
+  geom_sf() +
+  geom_sf_text(aes(label = abbr)) +
+  theme_void()
 ```
 
 
@@ -228,13 +278,21 @@ joined_inner = inner_join(
     by = c("full" = "State"))
 ```
 
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+dim(joined_inner)
+```
+
 
 ## `inner_join()` {.smaller}
 
 ```{r}
 # inner join
 joined_inner = inner_join(us_states, salaries, by = c("full" = "State"))
-dim(joined_inner)
 ```
 
 \
@@ -315,6 +373,11 @@ joined_inner |>
                        breaks = seq(45000, 80000, by = 5000)) +
   theme_void()
 ```
+
+
+## Our workflow {.nostretch}
+
+![](images/choropleth-salaries-workflow.svg){width="100%" fig-align="center"}
 
 
 # Interactive Map
