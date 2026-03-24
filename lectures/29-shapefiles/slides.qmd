@@ -1,0 +1,356 @@
+---
+title: "Shapefiles"
+subtitle: "Vector Data"
+format: stat133slides-revealjs
+revealjs-plugins:
+  - drop
+chalkboard: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library(tidyverse)     # ecosystem of data science packages
+library(sf)            # "simple features" (classes for maps)
+library(rnaturalearth) # data base of maps
+library(maps)          # maps of US states (with counties)
+library(leaflet)       # web interactive maps
+
+# import cal_perims_2013.RData
+load("cal_perims_2013.RData")
+```
+
+
+## About
+
+In this lecture we'll work with geospatial data in [shapefile]{.bold-hilit} format which is perhaps the most common format of geospatial vector data.
+
+\
+
+```{r}
+#| eval: false
+# packages
+library(tidyverse)     # ecosystem of data science packages
+library(sf)            # "simple features" (classes for maps)
+library(rnaturalearth) # data base of maps
+library(maps)          # maps of US states (with counties)
+library(leaflet)       # web interactive maps
+```
+
+
+# California Wildfire Perimeters 
+
+## Fire Perimeters Data
+
+Historical Fire Perimeters (California Wildfires)
+
+<https://www.fire.ca.gov/what-we-do/fire-resource-assessment-program/fire-perimeters>
+
+\
+
+CAL FIRE Historical Wildland Fire Perimeters
+
+<https://gis.data.ca.gov/datasets/CALFIRE-Forestry::california-fire-perimeters-all/>
+
+
+## {background-image="images/calfire-app.png" background-size="contain"}
+
+
+## {background-image="images/cal-state-geoportal-app.png" background-size="contain"}
+
+## Example: data in Shapefile format {.nostretch .smaller}
+
+![](images/cal-state-geoportal-download.png){width="75%"}
+
+<https://gis.data.ca.gov/datasets/CALFIRE-Forestry::california-fire-perimeters-all/about>
+
+
+## Example: data in Shapefile format {.nostretch .smaller}
+
+![](images/shapefile-all-example.png){width="75%"}
+
+
+# Geospatial Data in Shapefile Format
+
+## What is a shapefile?
+
+- A [shapefile]{.hilit} is one particular file format to store geospatial vector data.
+
+- It's a common standard for handling vector data.
+
+- It's developed by [ESRI](https://en.wikipedia.org/wiki/Esri) as a mostly open format for GIS software products (e.g. ArcGIS).
+
+- Confusingly, a shapefile is NOT a single file, but a set of files.
+
+
+## What files are in a shapefile?
+
+There are 3 core files to have at a minimum for a shapefile:
+
+1) [.shp]{.bold-hilit} stores the feature geometry (e.g. points, lines, polygons).
+
+2) [.dbf]{.bold-hilit} stores attributes information.
+
+3) [.shx]{.bold-hilit} index (i.e. link) between [.shp]{.hilit} and [.dbf]{.mdlit} files.
+
+. . .
+
+\
+
+Usually, although not always, there are other files:
+
+4) [.prj]{.mdlit} stores coordinate system information; used by ArcGIS.
+
+5) [.xml]{.mdlit} metadata in XML format about the shapefile.
+
+6) [.cpg]{.mdlit} codepage for identifying the characterset to be used.
+
+
+# CalFire Perimeters (1950+)
+
+## Download data (1950+) {.nostretch .smaller}
+
+![](images/calfire-1950-open-data-portal.png){width="70%"}
+
+<https://data.ca.gov/dataset/california-fire-perimeters-1950>
+
+
+## Download Data
+
+Download CalFire Perimeters (1950+)[^1]
+
+[California_Fire_Perimeters_(1950+)]{.bold-hilit}
+
+- `California_Fire_Perimeters_(1950+).shp`
+- `California_Fire_Perimeters_(1950+).dbf`
+- `California_Fire_Perimeters_(1950+).shx`
+- `California_Fire_Perimeters_(1950+).prj`
+- `California_Fire_Perimeters_(1950+).shp.xml`
+- `California_Fire_Perimeters_(1950+).cpg`
+
+[^1]: As of March 2026
+
+
+## Import Data in R
+
+Shapefiles can be easily imported in R with the `"sf"` function `st_read()`[^2]
+
+[^2]: The `st_` prefix stands for **Spatial and Temporal**
+
+. . .
+
+```{r}
+#| eval: false
+cal_perims <- st_read("California_Fire_Perimeters_(1950+)")
+```
+
+```
+Reading layer `California_Fire_Perimeters_(1950+)' from data source 
+using driver `ESRI Shapefile'
+Simple feature collection with 17540 features and 18 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -13848330 ymin: 3833204 xmax: -12705610 ymax: 5255380
+Projected CRS: WGS 84 / Pseudo-Mercator
+```
+
+. . .
+
+```{r}
+#| eval: false
+class(cal_perims)
+```
+
+```
+[1] "sf"         "data.frame"
+```
+
+
+## Wildfires in 2013
+
+```{r}
+#| eval: false
+cal_perims_2013 = cal_perims |> 
+  filter(YEAR_ == 2013)
+
+names(cal_perims_2013)
+```
+
+. . .
+
+```{r}
+#| echo: false
+names(cal_perims_2013)
+```
+
+
+## Plot 1 (naive)
+
+```{r}
+ggplot(data = cal_perims_2013) +
+  geom_sf()
+```
+
+
+## Map of California (option 1) {.smaller}
+
+:::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+# from package "rnaturalearth"
+cal_map = ne_states(
+  country = "United States of America", 
+  returnclass = "sf") |> 
+  filter(name == "California")
+
+ggplot() + 
+  geom_sf(data = cal_map)
+```
+:::
+
+::: {.column width="55%"}
+```{r}
+#| echo: false
+#| fig-width: 9 # width in inches
+#| fig-height: 7 # height in inches
+#| out-width: "105%"
+cal_map = ne_states(
+    country = "United States of America", 
+    returnclass = "sf") |> 
+  filter(name == "California")
+
+ggplot() + 
+  geom_sf(data = cal_map)
+```
+:::
+::::
+
+
+## Map of California (option 2) {.smaller}
+
+:::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+# from package "maps"
+cal_county_map = st_as_sf(
+  map(database = "county", 
+      plot = FALSE, 
+      fill = TRUE)) |>
+  filter(str_detect(ID, "^california"))
+
+ggplot() +
+  geom_sf(data = cal_county_map)
+```
+:::
+
+::: {.column width="55%"}
+```{r}
+#| echo: false
+#| fig-width: 9 # width in inches
+#| fig-height: 7 # height in inches
+#| out-width: "105%"
+cal_county_map = st_as_sf(
+    map(database = "county", plot = FALSE, fill = TRUE)
+) |>
+  filter(str_detect(ID, "^california"))
+
+ggplot() +
+  geom_sf(data = cal_county_map)
+```
+:::
+::::
+
+
+##
+
+```{r}
+#| code-fold: true
+ggplot() +
+  geom_sf(data = cal_county_map) +
+  geom_sf(data = cal_perims_2013, fill = "red", color = "red3") +
+  theme_void() +
+  labs(title = "Wildfires in California 2013")
+```
+
+
+## Our workflow {.nostretch}
+
+![](images/calfire-perims-workflow1.svg){width="100%" fig-align="center"}
+
+
+# Shapefiles with Leaflet
+
+## Failed Attempt
+
+```{r}
+#| eval: false
+cal_perims_2013 |> 
+  leaflet() |> 
+  addTiles() |> 
+  addPolygons()
+```
+
+```
+Warning messages:
+1: sf layer is not long-lat data 
+2: sf layer has inconsistent datum (+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs).
+Need '+proj=longlat +datum=WGS84' 
+```
+
+. . .
+
+\
+
+- `cal_perims_2013` is in meters (not in degrees).
+- But `"leaflet"` needs data in decimal degrees (latitude and longitude).
+
+
+## What's going on
+
+The issue is that `"leaflet"` requires data to be in unprojected (WGS84) coordinates (latitude and longitude in degrees), but `cal_perims_2013` is using a projected coordinate system.
+
+\
+
+Specifically, `cal_perims_2013` is using a Pseudo-Mercator projection (indicated by `+proj=merc` and `units=m` in the warning message), where coordinates are expressed in meters rather than degrees. 
+
+\
+
+While `"leaflet"` can display maps in various projections, its R functions for adding markers, polygons, and lines almost always expect **EPSG:4326 (WGS 84)** input.
+
+
+## Transforming `cal_perims_2013`
+
+We need to transform `cal_perims_2013` so that it is expressed in geographic coordinate system CRS 4326 using `st_transform()`
+
+```{r}
+#| eval: false
+cal_perims_2013 |> 
+  st_transform(crs = 4326) |> 
+  leaflet() |> 
+  addProviderTiles(provider = "CartoDB.Positron") |> 
+  addPolygons(
+    color = "red",
+    weight = 1, 
+    label = ~FIRE_NAME)
+```
+
+
+## Interactive Map
+
+```{r}
+#| code-fold: true
+#| fig-width: 9 # width in inches
+#| fig-height: 7 # height in inches
+#| out-width: "90%"
+cal_perims_2013 |> 
+  st_transform(crs = 4326) |> 
+  leaflet() |> 
+  addProviderTiles(provider = "CartoDB.Positron") |> 
+  addPolygons(
+    color = "red",
+    weight = 1, 
+    label = ~FIRE_NAME)
+```
+
+
