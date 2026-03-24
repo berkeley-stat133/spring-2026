@@ -39,23 +39,23 @@ library(leaflet)       # web interactive maps
 
 # California Wildfire Perimeters 
 
+## Meadow Fire, Sep 2014 {background-color="black" background-image="images/Meadow_Fire_Sep_7_2014.jpg" background-repeat="no-repeat"}
+
 ## Fire Perimeters Data
-
-Historical Fire Perimeters (California Wildfires)
-
-<https://www.fire.ca.gov/what-we-do/fire-resource-assessment-program/fire-perimeters>
-
-\
 
 CAL FIRE Historical Wildland Fire Perimeters
 
 <https://gis.data.ca.gov/datasets/CALFIRE-Forestry::california-fire-perimeters-all/>
 
+![](images/cal-state-geoportal-app.png)
 
-## {background-image="images/calfire-app.png" background-size="contain"}
 
+## {background-image="images/fire-perim-app.png" background-size="contain"}
 
-## {background-image="images/cal-state-geoportal-app.png" background-size="contain"}
+## {background-image="images/fire-perim-2014.png" background-size="contain"}
+
+## {background-image="images/fire-perim-2014-meadow.png" background-size="contain"}
+
 
 ## Example: data in Shapefile format {.nostretch .smaller}
 
@@ -81,6 +81,8 @@ CAL FIRE Historical Wildland Fire Perimeters
 
 - Confusingly, a shapefile is NOT a single file, but a set of files.
 
+- You must keep files with the same name together in one folder.
+
 
 ## What files are in a shapefile?
 
@@ -103,6 +105,18 @@ Usually, although not always, there are other files:
 5) [.xml]{.mdlit} metadata in XML format about the shapefile.
 
 6) [.cpg]{.mdlit} codepage for identifying the characterset to be used.
+
+
+## More Fire Perimeters Data
+
+Historical Fire Perimeters (California Wildfires)
+
+<https://www.fire.ca.gov/what-we-do/fire-resource-assessment-program/fire-perimeters>
+
+![](images/calfire-app.png)
+
+
+## {background-image="images/calfire-app.png" background-size="contain"}
 
 
 # CalFire Perimeters (1950+)
@@ -165,6 +179,41 @@ class(cal_perims)
 ```
 
 
+## Columns
+
+- `YEAR_`: Fire Year
+- `STATE`: State
+- `AGENCY`: Protection agency responsible for fire
+- `UNIT_ID`: ICS code for unit
+- `FIRE_NAME`: Name of the fire
+- `INC_NUM`: Number assigned by the Emergency Command
+- `ALARM_DATE`: Alarm date for fire
+
+## Columns (cont'd)
+
+- `CONT_DATE`: Containment date for fire
+- `CAUSE`: Reason fire ignited
+- `C_METHOD`: Method used to collect perimeter data
+- `OBJECTIVE`: Either supression or resource benefit
+- `GIS_ACRES`: GIS calculated area in acres
+- `COMMENTS`: Miscellaneous comments
+- `FIRE_NUM`: Former numbering system
+
+
+## 
+
+1) A fire is reported.
+2) Crews are called to the scene (`ALARM_DATE`).
+3) They give the fire a name (`FIRE_NAME`), often geography related.
+4) Fire crews do a size up and respond appropriately.
+    + Most fires are supressed when they are small.
+    + A few that escape initial attack become very large (burn for months).
+5) When "containment lines" around the entire fire perimeter stop further spread, it is considered contained (`CONT_DATE`).
+6) The difference between `ALARM_DATE` and `CONT_DATE` = how long the fire burned.
+7) `GIS_ACRES` is the final total area within the containment line (i.e. fire perimeter).
+
+
+
 ## Wildfires in 2013
 
 ```{r}
@@ -182,6 +231,35 @@ names(cal_perims_2013)
 names(cal_perims_2013)
 ```
 
+
+## Top-5 largest fires in 2013 {.smaller}
+
+. . .
+
+```{r}
+#| output-location: fragment
+top5_fires_2013 <- cal_perims_2013 |> 
+  arrange(desc(GIS_ACRES)) |> 
+  slice_head(n = 5) |> 
+  select(FIRE_NAME, ALARM_DATE, CONT_DATE, GIS_ACRES)
+
+top5_fires_2013
+```
+
+
+## Top-5 largest fires in 2013 {.smaller}
+
+```{r}
+#| output-location: fragment
+# drop "geometry"
+top5_fires_2013$geometry = NULL
+
+top5_fires_2013 |> 
+  mutate(DURATION = CONT_DATE - ALARM_DATE)
+```
+
+
+# Fire Perimeters Maps
 
 ## Plot 1 (naive)
 
@@ -298,8 +376,6 @@ Warning messages:
 Need '+proj=longlat +datum=WGS84' 
 ```
 
-. . .
-
 \
 
 - `cal_perims_2013` is in meters (not in degrees).
@@ -354,3 +430,10 @@ cal_perims_2013 |>
 ```
 
 
+## Common "Gotchas"
+
+- Missing Files: Trying to load a `.shp` without the `.dbf` or `.shx` present in the folder.
+
+- CRS Mismatch: Trying to plot two layers that use different coordinate systems (they won't line up!).
+
+- Size limit: Shapefiles have a 2GB size limit and truncate column names to 10 characters.
