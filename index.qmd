@@ -392,13 +392,13 @@ Lab 9: [__Quiz 4__]{.label-Quiz} | [slides](labs/lab9/slides.html) | [PS8](https
 
 ::: {.column width="30%"}
 #### Description
-Storm Tracks I
+Shiny Dashboards I
 
-Leaflet Maps
+Shiny Dashboards II
 
 Lab 10: slides | PS9
 
-Shapefiles | Proj5
+Leaflet Maps | Proj5
 :::
 
 ::: {.column width="50%"}
@@ -430,13 +430,13 @@ Shapefiles | Proj5
 
 ::: {.column width="30%"}
 #### Description
-Choropleth Maps
+Geospatial Data
 
-Raster Data I
+Storm Tracks
 
 Lab 11: [__Quiz 5__]{.label-Quiz} | slides | PS10
 
-Raster Data II
+Leaflet Maps
 :::
 
 ::: {.column width="50%"}
@@ -468,13 +468,13 @@ Raster Data II
 
 ::: {.column width="30%"}
 #### Description
-JSON Data
+Shapefiles
 
-APIs
+Choropleth Maps
 
 Lab 12: slides | PS11
 
-XML Data | Proj6
+Raster Data Maps | Proj6
 :::
 
 ::: {.column width="50%"}
@@ -506,13 +506,13 @@ XML Data | Proj6
 
 ::: {.column width="30%"}
 #### Description
-Text Analysis 1
+JSON Data
 
-Text Analysis 2
+APIs
 
 Lab 13: [__Quiz 6__]{.label-Quiz} | slides | PS12
 
-Text Analysis 3
+XML Data
 :::
 
 ::: {.column width="50%"}
@@ -544,9 +544,9 @@ Text Analysis 3
 
 ::: {.column width="30%"}
 #### Description
-TBD
+Text Analysis 1
 
-TBD 
+Text Analysis 2
 
 Lab 14: slides
 
