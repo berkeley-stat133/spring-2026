@@ -398,7 +398,7 @@ Shiny Dashboards II
 
 Lab 10: slides | PS9
 
-Leaflet Maps | Proj5
+Geospatial Data | Proj5
 :::
 
 ::: {.column width="50%"}
@@ -430,13 +430,13 @@ Leaflet Maps | Proj5
 
 ::: {.column width="30%"}
 #### Description
-Geospatial Data
+Mapping Storm tracks
 
-Storm Tracks
+Leaflet Maps
 
 Lab 11: [__Quiz 5__]{.label-Quiz} | slides | PS10
 
-Leaflet Maps
+Dashboard Demo
 :::
 
 ::: {.column width="50%"}
