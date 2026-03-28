@@ -5,24 +5,28 @@
     <lastmod>2026-01-11T00:53:47.770Z</lastmod>
   </url>
   <url>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/33-raster/slides.html</loc>
+    <lastmod>2026-03-19T21:11:40.572Z</lastmod>
+  </url>
+  <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/11-data-wrangling1/slides.html</loc>
     <lastmod>2026-02-13T16:45:27.648Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/lectures/12-data-wrangling2/slides.html</loc>
-    <lastmod>2026-02-17T20:45:05.565Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/29-geospetial2/slides.html</loc>
+    <lastmod>2026-03-18T01:11:56.406Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/34-json/slides.html</loc>
+    <lastmod>2026-03-23T21:41:52.314Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/15-dataviz2/slides.html</loc>
     <lastmod>2026-02-25T04:52:56.859Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/lectures/26-geospatial1/slides.html</loc>
-    <lastmod>2026-01-08T15:33:14.379Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/lectures/22-strings3/slides.html</loc>
-    <lastmod>2026-03-15T01:09:54.440Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/5-unix-basics/slides.html</loc>
+    <lastmod>2026-02-01T16:29:11.349Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/19-eda2/slides.html</loc>
@@ -33,16 +37,20 @@
     <lastmod>2026-03-11T15:49:11.191Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/lectures/13-importing-tables/slides.html</loc>
-    <lastmod>2026-02-14T17:54:04.147Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/10-factors/slides.html</loc>
+    <lastmod>2026-02-11T16:54:22.642Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/lectures/16-dataviz3/slides.html</loc>
-    <lastmod>2026-02-27T16:45:44.984Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/17-joins-pivots/slides.html</loc>
+    <lastmod>2026-03-01T17:56:52.312Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/23-date-time1/slides.html</loc>
     <lastmod>2026-03-14T23:42:05.575Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/14-dataviz1/slides.html</loc>
+    <lastmod>2026-02-24T00:30:32.873Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/2-intro/slides.html</loc>
@@ -198,7 +206,7 @@
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/index.html</loc>
-    <lastmod>2026-03-20T15:03:02.015Z</lastmod>
+    <lastmod>2026-03-27T22:55:52.850Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/info/about.html</loc>
@@ -229,44 +237,52 @@
     <lastmod>2026-02-09T17:06:09.954Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/lectures/14-dataviz1/slides.html</loc>
-    <lastmod>2026-02-24T00:30:32.873Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/32-choropleth-maps/slides.html</loc>
+    <lastmod>2026-03-23T20:57:56.466Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/lectures/17-joins-pivots/slides.html</loc>
-    <lastmod>2026-03-01T17:56:52.312Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/28-geospatial1/slides.html</loc>
+    <lastmod>2026-01-08T15:33:14.379Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/lectures/10-factors/slides.html</loc>
-    <lastmod>2026-02-11T16:54:22.642Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/30-geospatial3/slides.html</loc>
+    <lastmod>2026-03-17T20:16:40.166Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/lectures/30-choropleth-maps/slides.html</loc>
-    <lastmod>2026-03-20T02:49:22.371Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/16-dataviz3/slides.html</loc>
+    <lastmod>2026-02-27T16:45:44.984Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/13-importing-tables/slides.html</loc>
+    <lastmod>2026-02-14T17:54:04.147Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/3-atomic-vectors/slides.html</loc>
     <lastmod>2026-01-26T18:15:01.960Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/lectures/27-geospatial2/slides.html</loc>
-    <lastmod>2026-03-18T01:11:56.406Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/lectures/5-unix-basics/slides.html</loc>
-    <lastmod>2026-02-01T16:29:11.349Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/22-strings3/slides.html</loc>
+    <lastmod>2026-03-15T01:09:54.440Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/lectures/24-date-time2/slides.html</loc>
     <lastmod>2026-03-18T03:28:44.447Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/lectures/31-raster/slides.html</loc>
-    <lastmod>2026-03-19T21:11:40.572Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/12-data-wrangling2/slides.html</loc>
+    <lastmod>2026-02-17T20:45:05.565Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/lectures/28-geospatial3/slides.html</loc>
-    <lastmod>2026-03-17T20:16:40.166Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/26-shiny1/slides.html</loc>
+    <lastmod>2026-03-27T16:25:28.741Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/31-shapefiles/slides.html</loc>
+    <lastmod>2026-03-24T20:15:52.942Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat133.berkeley.edu/spring-2026/lectures/27-shiny2/slides.html</loc>
+    <lastmod>2026-03-27T19:01:41.910Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/calendar.html</loc>
