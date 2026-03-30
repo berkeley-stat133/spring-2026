@@ -812,7 +812,7 @@
     "href": "lectures/34-json/slides.html#api-open-notify",
     "title": "JSON Data",
     "section": "API “Open Notify”",
-    "text": "API “Open Notify”\nAPI stands for Application Programming Interface. In simpler terms, think of API as a data sharing interface.\n\nurl = \"http://api.open-notify.org/iss-now.json\"\n\nx = fromJSON(url)\nx\n\n$message\n[1] \"success\"\n\n$iss_position\n$iss_position$longitude\n[1] \"-71.9707\"\n\n$iss_position$latitude\n[1] \"-38.5667\"\n\n\n$timestamp\n[1] 1774846672"
+    "text": "API “Open Notify”\nAPI stands for Application Programming Interface. In simpler terms, think of API as a data sharing interface.\n\nurl = \"http://api.open-notify.org/iss-now.json\"\n\nx = fromJSON(url)\nx\n\n$message\n[1] \"success\"\n\n$iss_position\n$iss_position$latitude\n[1] \"-43.6110\"\n\n$iss_position$longitude\n[1] \"108.3628\"\n\n\n$timestamp\n[1] 1774891413"
   },
   {
     "objectID": "lectures/15-dataviz2/slides.html#palmer-penguins",
@@ -2037,14 +2037,14 @@
     "href": "lectures/23-date-time1/slides.html#an-r-vector-for-date-times",
     "title": "Dates and Times I",
     "section": "An R vector for date-times",
-    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-03-29 21:57:25 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1774846645"
+    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-03-30 10:23:06 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1774891387"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "href": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "title": "Dates and Times I",
     "section": "Why not just use a double vector?",
-    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-03-29 21:57:25 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-03-29 21:57:26 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-03-29 21:57:25 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"03/29/26\""
+    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-03-30 10:23:06 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-03-30 10:23:07 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-03-30 10:23:07 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"03/30/26\""
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#creating-date-time-vectors",
@@ -2079,21 +2079,21 @@
     "href": "lectures/23-date-time1/slides.html#getting",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 29\n\n\n\n\n\nwday(now)\n\n\n\n[1] 1\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Sun\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 30\n\n\n\n\n\nwday(now)\n\n\n\n[1] 2\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Mon\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#getting-1",
     "href": "lectures/23-date-time1/slides.html#getting-1",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 29\n\n\n\nwday(now)\n\n[1] 1\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Sunday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 30\n\n\n\nwday(now)\n\n[1] 2\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Monday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#setting",
     "href": "lectures/23-date-time1/slides.html#setting",
     "title": "Dates and Times I",
     "section": "Setting",
-    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-03-29 21:57:25 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Saturday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-03-30 10:23:06 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Sunday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#your-turn",
@@ -2758,7 +2758,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 31     Jarrett All… CLE   C            81    243 April 21,… US      7         \n2 25     P.J. Washin… DAL   PF           79    230 August 23… US      5         \n3 67     Taj Gibson   CHO   C            81    232 June 24, … US      15        \n4 17     Dennis Schr… DET   PG           73    175 September… DE      11        \n5 6      DeAndre Jor… DEN   C            83    265 July 21, … US      16        \n6 4      Dalton Knec… LAL   SF           78    215 April 19,… US      R         \n7 4      Matisse Thy… POR   SG           77    202 March 4, … US      5         \n8 55     Trey Jemison NOP   C            82    270 November … US      1         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 24     Pat Connaug… MIL   SG           77    209 January 6… US      9         \n2 5      Kevon Looney GSW   C            81    222 February … US      9         \n3 20     Jaylen Nowe… NOP   SG           76    201 July 9, 1… US      5         \n4 1      KJ Martin    PHI   PF           78    215 January 6… US      4         \n5 5      AJ Johnson   WAS   SG           77    160 December … US      R         \n6 12     Zach Collins CHI   PF           81    250 November … US      6         \n7 8      Zach LaVine  SAC   SG           77    200 March 10,… US      10        \n8 5      Stephon Cas… SAS   SG           78    215 November … US      R         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -3220,7 +3220,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"freshman\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"junior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -5763,7 +5763,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 6 3"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 3 4"
   },
   {
     "objectID": "lectures/32-choropleth-maps/slides.html#section",
@@ -7093,14 +7093,14 @@
     "href": "lectures/24-date-time2/slides.html#how-old-is-oski",
     "title": "Dates and Times II",
     "section": "How old is Oski?",
-    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30864 days"
+    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30865 days"
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#durations",
     "href": "lectures/24-date-time2/slides.html#durations",
     "title": "Dates and Times II",
     "section": "Durations",
-    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2666649600s (~84.5 years)\""
+    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2666736000s (~84.5 years)\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#constructing-a-duration",
@@ -7142,7 +7142,7 @@
     "href": "lectures/24-date-time2/slides.html#how-old-will-oski-be",
     "title": "Dates and Times II",
     "section": "How old will Oski be …",
-    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2666649600s (~84.5 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2698207200s (~85.5 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 183d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 183d 0H 0M 0S\""
+    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2666736000s (~84.5 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2698293600s (~85.5 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 184d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 184d 0H 0M 0S\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#intervals",
@@ -7488,11 +7488,11 @@
     "text": "Old Faithful"
   },
   {
-    "objectID": "lectures/26-shiny1/slides.html#section",
-    "href": "lectures/26-shiny1/slides.html#section",
+    "objectID": "lectures/26-shiny1/slides.html#old-faithful-geyser-data",
+    "href": "lectures/26-shiny1/slides.html#old-faithful-geyser-data",
     "title": "Dashboards with Shiny I",
-    "section": "",
-    "text": "head(faithful, n = 10)\n\n   eruptions waiting\n1      3.600      79\n2      1.800      54\n3      3.333      74\n4      2.283      62\n5      4.533      85\n6      2.883      55\n7      4.700      88\n8      3.600      85\n9      1.950      51\n10     4.350      85\n\n\n\n\n\neruptions: time of eruption (min)\nwaiting: waiting time till next eruption (min)"
+    "section": "Old Faithful Geyser Data",
+    "text": "Old Faithful Geyser Data\n\nhead(faithful, n = 10)\n\n\n\n   eruptions waiting\n1      3.600      79\n2      1.800      54\n3      3.333      74\n4      2.283      62\n5      4.533      85\n6      2.883      55\n7      4.700      88\n8      3.600      85\n9      1.950      51\n10     4.350      85\n\n\n\n\n\neruptions: time of eruption (min)\nwaiting: waiting time till next eruption (min)"
   },
   {
     "objectID": "lectures/26-shiny1/slides.html#section-1",
@@ -7562,7 +7562,7 @@
     "href": "lectures/26-shiny1/slides.html#section-18",
     "title": "Dashboards with Shiny I",
     "section": "",
-    "text": "Function\nInserts\n\n\n\n\nplotOutput()\nplot\n\n\nGirageOutput()\nggiraph plot\n\n\nplotlyOutput()\nplotly\n\n\nleafletOutput()\nleaflet map\n\n\ntableOutput()\ntable (non-interactive)\n\n\nDT::DTOutput()\ntable (interactive)\n\n\ntextOutput()\ntext\n\n\nverbatimTextOutput()\ntext\n\n\nimageOutput()\nimage\n\n\nhtmlOutput()\nraw HTML"
+    "text": "Function\nInserts\n\n\n\n\nplotOutput()\nplot\n\n\ngirafeOutput()\nggiraph plot\n\n\nplotlyOutput()\nplotly\n\n\nleafletOutput()\nleaflet map\n\n\ntableOutput()\ntable (non-interactive)\n\n\nDT::DTOutput()\ntable (interactive)\n\n\ntextOutput()\ntext\n\n\nverbatimTextOutput()\ntext\n\n\nimageOutput()\nimage\n\n\nhtmlOutput()\nraw HTML"
   },
   {
     "objectID": "lectures/26-shiny1/slides.html#section-19",
@@ -7639,7 +7639,7 @@
     "href": "lectures/26-shiny1/slides.html#typical-structure",
     "title": "Dashboards with Shiny I",
     "section": "Typical Structure",
-    "text": "Typical Structure\n\n\n\nYAML header\n\nformat: dashboard\nserver: shiny\n\nSetup code chunk:\n\n#| context: setup\nload packages\nimport files\ndata preparation\n\n\n\n\nSidebar section:\n\n## {.sidebar} (local)\n# {.sidebar} (global)\nto declare input elements\n\nOptional tabs:\n\n# Tab\nto declare output elements\n\nServer code chunk:\n\n#| context: server\nassemble inputs into outputs"
+    "text": "Typical Structure\n\n\n\nYAML header\n\nformat: dashboard\nserver: shiny\n\nSetup code chunk:\n\n#| context: setup\nload packages\nimport files\ndata preparation\n\n\n\n\nSidebar or Menubar:\n\n## {.sidebar} (local)\n## {.menubar} (local)\nto declare input elements\n\nOptional tabs:\n\n# Tab\nto declare output elements\n\nServer code chunk:\n\n#| context: server\nassemble inputs into outputs"
   },
   {
     "objectID": "lectures/26-shiny1/slides.html#section-22",
