@@ -20,11 +20,11 @@ title: "STAT 133: Concepts in Computing with Data"
 ::::
 
 ::: {.callout-tip icon="false"}
-## Week 9 Announcements
+## Week 11 Announcements
 
-- [Problem Set 7]{.label-Homework} due Wed 3/18 by 6PM
-- [8th Publication]{.label-Pub} Canceled
-- [Quiz 4]{.label-Quiz} on Thu 3/19 (in lab)
+- [Problem Set 8]{.label-Homework} due Wed 4/1 by 6PM
+- [9th Publication]{.label-Pub} due Thu 4/2 in lab
+- [Project 4]{.label-Project} due Fri 4/3 by 6PM
 :::
 
 -----
@@ -392,7 +392,7 @@ Lab 9: [__Quiz 4__]{.label-Quiz} | [slides](labs/lab9/slides.html) | [PS8](https
 
 ::: {.column width="30%"}
 #### Description
-Shiny Dashboards I
+[Shiny Dashboards I](lectures/26-shiny1/slides.html)
 
 Shiny Dashboards II
 
