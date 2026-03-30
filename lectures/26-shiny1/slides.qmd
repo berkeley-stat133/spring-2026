@@ -26,8 +26,13 @@ library(tidyverse)
 
 ##
 
+<iframe width="1100" height="800" src="https://www.youtube.com/embed/4In-VEMmX_8?si=-jSzL4HZOQE_Wwv7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+## Old Faithful Geyser Data
+
 ```{r}
-#| output-location: default
+#| output-location: fragment
 head(faithful, n = 10)
 ```
 
@@ -40,7 +45,7 @@ head(faithful, n = 10)
 ##
 
 ```{r}
-#| output-location: default
+#| output-location: fragment
 ggplot(data = faithful, aes(x = waiting)) +
   geom_histogram(bins = 30, color = "white") +
   theme_minimal()
@@ -95,6 +100,8 @@ Every Shiny app is maintained by a computer[^2] running R
 ## {.nostretch}
 
 Build your app around [__inputs__]{style="color: green;"} and outputs
+
+. . .
 
 ![](images/build-shiny-input.png){width="73%" fig-align="center"}
 
@@ -158,7 +165,7 @@ Build your app around [__inputs__]{style="color: green;"} and [__outputs__]{styl
 | Function          | Inserts |
 |-------------------|---------|
 | `plotOutput()`    | plot |
-| `GirageOutput()`  | ggiraph plot |
+| `girafeOutput()`  | ggiraph plot |
 | `plotlyOutput()`  | plotly |
 | `leafletOutput()` | leaflet map |
 | `tableOutput()`   | table (non-interactive) |
@@ -416,9 +423,9 @@ renderPlot({
 :::
 
 ::: {.column}
-- Sidebar section: 
+- Sidebar or Menubar: 
     + `## {.sidebar}` (local)
-    + `# {.sidebar}` (global)
+    + `## {.menubar}` (local)
     + to declare input elements
 
 - Optional tabs: 
