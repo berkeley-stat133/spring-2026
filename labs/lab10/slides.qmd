@@ -180,7 +180,7 @@ This will take you to the homepage, from where you can follow the steps to link 
 
 2. In Positron/RStudio, use `install.packages('rsconnect')` to install the packages and link your account
 3. Authorize your account using the given token and secret. 
-4. When you're ready to deploy, run `library(rsconnect)` and `rsconnect::deployApp('path/to/your/app')`
+4. When you're ready to deploy, use the quarto package (first install.packages('quarto') then library(quarto)). Then run quarto_publish_app("your_dashboard.qmd", server = "shinyapps.io")
 
 ## Steps to deploy
 
@@ -198,7 +198,7 @@ Open the file and fill in the code.
 
 ## Submission to BCourses
 
-Submit the Netlify URL (link) of your published document to the corresponding assignment in bCourses.
+Submit the Shinyapps.io URL (link) of your published document to the corresponding assignment in bCourses.
 
 See [Assignments tab \> Quarto Publications \> Pub9]{.bold-hilit}
 
