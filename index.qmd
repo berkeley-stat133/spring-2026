@@ -394,7 +394,7 @@ Lab 9: [__Quiz 4__]{.label-Quiz} | [slides](labs/lab9/slides.html) | [PS8](https
 #### Description
 [Shiny Dashboards I](lectures/26-shiny1/slides.html)
 
-Shiny Dashboards II
+[Shiny Dashboards II](lectures/27-shiny2/slides.html)
 
 Lab 10: slides | PS9
 
