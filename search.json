@@ -812,7 +812,7 @@
     "href": "lectures/34-json/slides.html#api-open-notify",
     "title": "JSON Data",
     "section": "API “Open Notify”",
-    "text": "API “Open Notify”\nAPI stands for Application Programming Interface. In simpler terms, think of API as a data sharing interface.\n\nurl = \"http://api.open-notify.org/iss-now.json\"\n\nx = fromJSON(url)\nx\n\n$timestamp\n[1] 1775058315\n\n$message\n[1] \"success\"\n\n$iss_position\n$iss_position$longitude\n[1] \"98.8766\"\n\n$iss_position$latitude\n[1] \"-29.2945\""
+    "text": "API “Open Notify”\nAPI stands for Application Programming Interface. In simpler terms, think of API as a data sharing interface.\n\nurl = \"http://api.open-notify.org/iss-now.json\"\n\nx = fromJSON(url)\nx\n\n$message\n[1] \"success\"\n\n$iss_position\n$iss_position$longitude\n[1] \"-128.9346\"\n\n$iss_position$latitude\n[1] \"7.9075\"\n\n\n$timestamp\n[1] 1775149864"
   },
   {
     "objectID": "lectures/15-dataviz2/slides.html#palmer-penguins",
@@ -2037,14 +2037,14 @@
     "href": "lectures/23-date-time1/slides.html#an-r-vector-for-date-times",
     "title": "Dates and Times I",
     "section": "An R vector for date-times",
-    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-01 08:44:48 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1775058289"
+    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-02 10:10:37 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1775149838"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "href": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "title": "Dates and Times I",
     "section": "Why not just use a double vector?",
-    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-01 08:44:48 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-01 08:44:49 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-01 08:44:49 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/01/26\""
+    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-02 10:10:37 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-02 10:10:38 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-02 10:10:38 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/02/26\""
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#creating-date-time-vectors",
@@ -2079,21 +2079,21 @@
     "href": "lectures/23-date-time1/slides.html#getting",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 1\n\n\n\n\n\nwday(now)\n\n\n\n[1] 4\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Wed\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 2\n\n\n\n\n\nwday(now)\n\n\n\n[1] 5\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Thu\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#getting-1",
     "href": "lectures/23-date-time1/slides.html#getting-1",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 1\n\n\n\nwday(now)\n\n[1] 4\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Wednesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 2\n\n\n\nwday(now)\n\n[1] 5\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Thursday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#setting",
     "href": "lectures/23-date-time1/slides.html#setting",
     "title": "Dates and Times I",
     "section": "Setting",
-    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-01 08:44:48 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Tuesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-02 10:10:37 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Wednesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#your-turn",
@@ -2758,7 +2758,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 8      Josh Minott  MIN   SF           80    205 November … US      2         \n2 44     Patrick Wil… CHI   PF           78    215 August 26… US      4         \n3 32     Dean Wade    CLE   PF           81    228 November … US      5         \n4 5      Kevon Looney GSW   C            81    222 February … US      9         \n5 30     Jay Huff     MEM   C            85    240 August 25… US      3         \n6 9      Bobby Portis MIL   PF           81    250 February … US      9         \n7 22     Malaki Bran… SAS   SG           76    180 May 12, 2… US      2         \n8 32     Terry Taylor SAC   PF           77    230 September… US      3         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 45     Keon Johnson BRK   SG           77    185 March 10,… US      3         \n2 1      KJ Martin    PHI   PF           78    215 January 6… US      4         \n3 12     Cam Christie LAC   SG           77    190 July 24, … US      R         \n4 15     Gui Santos   GSW   PF           79    185 June 22, … BR      1         \n5 10     Ben Simmons  BRK   PG           82    240 July 20, … AU      6         \n6 21     Adama Sanogo CHI   C            81    245 February … ML      1         \n7 12     Zach Collins CHI   PF           81    250 November … US      6         \n8 24     Norman Powe… LAC   SG           75    215 May 25, 1… US      9         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -3206,7 +3206,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"bronze\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"gold\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -3220,7 +3220,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"sophomore\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"senior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -3854,88 +3854,11 @@
     "text": "Pset 4 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps4\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
   {
-    "objectID": "labs/lab10/slides.html#why-dates-and-times-matter",
-    "href": "labs/lab10/slides.html#why-dates-and-times-matter",
-    "title": "Lab 9",
-    "section": "Why Dates and Times Matter",
-    "text": "Why Dates and Times Matter\nMany datasets include time information:\n\n\nExamples:\n\ntransaction timestamps\nwebsite logs\nsensor measurements\nsurvey submission times\n\n\nAfter parsing, we can analyze patterns such as:\n\nactivity by day\ntrends over time\nevents by hour"
-  },
-  {
-    "objectID": "labs/lab10/slides.html#key-techniques-for-dates-and-times",
-    "href": "labs/lab10/slides.html#key-techniques-for-dates-and-times",
-    "title": "Lab 9",
-    "section": "Key Techniques for Dates and Times",
-    "text": "Key Techniques for Dates and Times\nPackage lubridate\n\nymd() : Convert text to a date in year-month-day format\nmdy() : Convert text in month-day-year format\nymd_hms() : Convert text to a date-time (year, month, day, hour, minute, second)\nnow() : Returns the current date and time\ntoday() : Returns today’s date"
-  },
-  {
-    "objectID": "labs/lab10/slides.html#common-date-time-formats",
-    "href": "labs/lab10/slides.html#common-date-time-formats",
-    "title": "Lab 9",
-    "section": "Common Date-Time Formats",
-    "text": "Common Date-Time Formats\nDates can appear in many formats:\n2024-03-12\n03/12/2024\nMar 12, 2024\n2024-03-12 14:05:23\nWith lubridate we can convert these into a standard format that R can analyze."
-  },
-  {
-    "objectID": "labs/lab10/slides.html#navbar",
-    "href": "labs/lab10/slides.html#navbar",
-    "title": "Lab 9",
-    "section": "Navbar",
-    "text": "Navbar\nMore personalizations to explore:\n\n\n--- \ntitle: \"Palmer Penguins\"\nauthor: \"Cobblepot Analytics\"\nformat: \n  dashboard:\n    logo: images/penguins.png\n    nav-buttons: [linkedin, twitter, github]\n---\nhttps://quarto.org/docs/reference/projects/websites.html#nav-items"
-  },
-  {
-    "objectID": "labs/lab10/slides.html#yaml-options-and-navbar",
-    "href": "labs/lab10/slides.html#yaml-options-and-navbar",
-    "title": "Lab 9",
-    "section": "YAML Options and NavBar",
-    "text": "YAML Options and NavBar\nThe navbar appears at the top of the dashboard and helps with navigation.\n---\ntitle: \"My Dashboard\"\nformat:\n  dashboard:\n    logo: logo.png\n    nav-buttons:\n      - icon: github\n        href: https://github.com/your-repo\n      - icon: linkedin\n        href: https://linkedin.com\n---\n\n\n\n\n\n\n\nOption\nDescription\n\n\n\n\nlogo:\nImage file shown in top-left\n\n\nnav-buttons:\nIcon links in the top-right corner\n\n\nscrolling: true\nMakes the dashboard scroll rather than fill the viewport"
-  },
-  {
-    "objectID": "labs/lab10/slides.html#dashboard-tabs",
-    "href": "labs/lab10/slides.html#dashboard-tabs",
-    "title": "Lab 9",
-    "section": "Dashboard Tabs",
-    "text": "Dashboard Tabs\nUse # Tab Title to a column/row to create tabs.\n---\ntitle: \"My Dashboard\"\nformat: dashboard\n---\n\n# Tab 1\n\n## Row 1 - Chart A\n\ncontent\n\n# Tab 2\n\n## Row 1 - Chart B\n\ncontent\nTabs help organize content across multiple views without overwhelming the reader."
-  },
-  {
-    "objectID": "labs/lab10/slides.html#dashboard-tabs-1",
-    "href": "labs/lab10/slides.html#dashboard-tabs-1",
-    "title": "Lab 9",
-    "section": "Dashboard Tabs",
-    "text": "Dashboard Tabs\nExample:  \nCOVID 19 Data Explorer"
-  },
-  {
-    "objectID": "labs/lab10/slides.html#dashboard-themes",
-    "href": "labs/lab10/slides.html#dashboard-themes",
-    "title": "Lab 9",
-    "section": "Dashboard Themes",
-    "text": "Dashboard Themes\nApply a theme using the theme: option in the YAML header.\n---\ntitle: \"My Dashboard\"\nformat:\n  dashboard:\n    theme: morph\n---\nAvailable themes (from Bootswatch)"
-  },
-  {
-    "objectID": "labs/lab10/slides.html#putting-it-all-together",
-    "href": "labs/lab10/slides.html#putting-it-all-together",
-    "title": "Lab 9",
-    "section": "Putting It All Together",
-    "text": "Putting It All Together\nA complete dashboard YAML example:\n---\ntitle: \"STAT 133 Dashboard\"\nformat:\n  dashboard:\n    theme: flatly\n    logo: bear.png\n    scrolling: false\n    nav-buttons:\n      - icon: github\n        href: https://github.com/stat133\n---"
-  },
-  {
-    "objectID": "labs/lab10/slides.html#quick-reference-dashboard-syntax",
-    "href": "labs/lab10/slides.html#quick-reference-dashboard-syntax",
-    "title": "Lab 9",
-    "section": "Quick Reference: Dashboard Syntax",
-    "text": "Quick Reference: Dashboard Syntax\n\n\n\nElement\nSyntax\n\n\n\n\nNew tab\n# Page Title\n\n\nNew row\n## Row\n\n\nValue box\n#\\| content: valuebox\n\n\nRow height\n::: {.row height=\"40%\"}\n\n\nColumn width\n::: {.column width=\"40%\"}\n\n\nScrolling layout\nscrolling: true in YAML\n\n\nTheme\ntheme: flatly in YAML"
-  },
-  {
-    "objectID": "labs/lab10/slides.html#finished-product",
-    "href": "labs/lab10/slides.html#finished-product",
-    "title": "Lab 9",
-    "section": "Finished Product",
-    "text": "Finished Product\n\n\nYour finished pub should have 2 tabs:\n\nTab 1: Your data before and after cleaning\nTab 2: A basic chart and an explanatory analysis section\n\nView an interactive example solution here."
-  },
-  {
-    "objectID": "labs/lab10/data-prep.html",
-    "href": "labs/lab10/data-prep.html",
-    "title": "Pub 8",
+    "objectID": "labs/lab10/solns-data-prep.html",
+    "href": "labs/lab10/solns-data-prep.html",
+    "title": "Pub 8 Solutions",
     "section": "",
-    "text": "Part 1 - Extract Information with Regex The message column contains multiple pieces of information.\nTasks:\nUse regex to extract the log level (ERROR, WARN, INFO).\nExtract the user ID number.\nExtract the event type (failed-login, login-success, etc.).\nCreate new columns: level, user_id, event\n\n# Extract Information with Regex\n\nPart 2 - Work with Dates and Times Convert the timestamp column to a date-time object. Then extract: hour of day and date. Create hour and date columns.\n\n# Work with Dates and Times\n\nPart 3 - Create Chart of Events by Hour\nShow how many events occurred during each hour.\nx-axis: hour\ny-axis: number of events\n\n# Create Chart of Events by Hour\n\nPart 4 - Brief Analysis Explain what hour had the most events happening or other interesting findings in 1-2 sentences in the second Tab of your dashboard."
+    "text": "Setup - Data\n\nlibrary(tidyverse)\n\nWarning: package 'readr' was built under R version 4.5.2\n\n\nWarning: package 'dplyr' was built under R version 4.5.2\n\nlibrary(stringr)\nlibrary(lubridate)\nlibrary(DT)\n\ntimes_data &lt;- tibble(\n  timestamp = c(\n    \"03/12/24 14:03\",\n    \"03/12/24 14:05\",\n    \"03/12/24 15:10\",\n    \"03/12/24 15:22\",\n    \"03/12/24 16:01\"\n  ),\n  message = c(\n    \"ERROR: user=482 failed-login\",\n    \"INFO: user=511 login-success\",\n    \"WARN: user=482 retry-login\",\n    \"ERROR: user=222 failed-login\",\n    \"INFO: user=482 login-success\"\n  )\n)\n\nPart 1 - Extract Information with Regex The message column contains multiple pieces of information.\nTasks:\nUse regex to extract the log level (ERROR, WARN, INFO).\nExtract the user ID number.\nExtract the event type (failed-login, login-success, etc.).\nCreate new columns: level, user_id, event\n\n# Extract Information with Regex\n\ntimes_clean &lt;- times_data |&gt;\n  mutate(\n    level = str_extract(message, \"ERROR|WARN|INFO\"),\n    user_id = str_extract(message, \"(?&lt;=user=)\\\\d+\"),\n    event = str_extract(message, \"(failed-login|login-success|retry-login)\")\n  )\n\nPart 2 - Work with Dates and Times Convert the timestamp column to a date-time object. Then extract: hour of day and date. Create hour and date columns.\n\n# Work with Dates and Times\n\ntimes_clean &lt;- times_clean |&gt;\n  mutate(\n    timestamp = mdy_hm(timestamp),\n    hour = hour(timestamp),\n    date = as_date(timestamp)\n  )\n\nPart 3 - Create Chart of Events by Hour\nShow how many events occurred during each hour.\nx-axis: hour\ny-axis: number of events\n\n# Create Chart of Events by Hour\nevents_by_hour &lt;- times_clean |&gt;\n  count(hour)\n\nevents_chart &lt;- ggplot(events_by_hour, aes(x = hour, y = n)) +\n  geom_line() +\n  geom_point() +\n  labs(\n    title = \"Events by Hour\",\n    x = \"Hour of Day\",\n    y = \"Number of Events\"\n  )\n\nPart 4 - Brief Analysis Explain what hour had the most events happening or other interesting findings in 1-2 sentences in the second Tab of your dashboard:   Most activity occurs at 14:00 and 15:00, each with two events recorded. The data suggests login activity is concentrated in the early afternoon, with fewer events later in the day."
   },
   {
     "objectID": "labs/lab7/slides.html#before-the-quiz-1",
@@ -4652,11 +4575,151 @@
     "text": "Completed app.R\n-&gt; demo"
   },
   {
-    "objectID": "labs/lab10/solns-data-prep.html",
-    "href": "labs/lab10/solns-data-prep.html",
-    "title": "Pub 8 Solutions",
-    "section": "",
-    "text": "Setup - Data\n\nlibrary(tidyverse)\n\nWarning: package 'readr' was built under R version 4.5.2\n\n\nWarning: package 'dplyr' was built under R version 4.5.2\n\nlibrary(stringr)\nlibrary(lubridate)\nlibrary(DT)\n\ntimes_data &lt;- tibble(\n  timestamp = c(\n    \"03/12/24 14:03\",\n    \"03/12/24 14:05\",\n    \"03/12/24 15:10\",\n    \"03/12/24 15:22\",\n    \"03/12/24 16:01\"\n  ),\n  message = c(\n    \"ERROR: user=482 failed-login\",\n    \"INFO: user=511 login-success\",\n    \"WARN: user=482 retry-login\",\n    \"ERROR: user=222 failed-login\",\n    \"INFO: user=482 login-success\"\n  )\n)\n\nPart 1 - Extract Information with Regex The message column contains multiple pieces of information.\nTasks:\nUse regex to extract the log level (ERROR, WARN, INFO).\nExtract the user ID number.\nExtract the event type (failed-login, login-success, etc.).\nCreate new columns: level, user_id, event\n\n# Extract Information with Regex\n\ntimes_clean &lt;- times_data |&gt;\n  mutate(\n    level = str_extract(message, \"ERROR|WARN|INFO\"),\n    user_id = str_extract(message, \"(?&lt;=user=)\\\\d+\"),\n    event = str_extract(message, \"(failed-login|login-success|retry-login)\")\n  )\n\nPart 2 - Work with Dates and Times Convert the timestamp column to a date-time object. Then extract: hour of day and date. Create hour and date columns.\n\n# Work with Dates and Times\n\ntimes_clean &lt;- times_clean |&gt;\n  mutate(\n    timestamp = mdy_hm(timestamp),\n    hour = hour(timestamp),\n    date = as_date(timestamp)\n  )\n\nPart 3 - Create Chart of Events by Hour\nShow how many events occurred during each hour.\nx-axis: hour\ny-axis: number of events\n\n# Create Chart of Events by Hour\nevents_by_hour &lt;- times_clean |&gt;\n  count(hour)\n\nevents_chart &lt;- ggplot(events_by_hour, aes(x = hour, y = n)) +\n  geom_line() +\n  geom_point() +\n  labs(\n    title = \"Events by Hour\",\n    x = \"Hour of Day\",\n    y = \"Number of Events\"\n  )\n\nPart 4 - Brief Analysis Explain what hour had the most events happening or other interesting findings in 1-2 sentences in the second Tab of your dashboard:   Most activity occurs at 14:00 and 15:00, each with two events recorded. The data suggests login activity is concentrated in the early afternoon, with fewer events later in the day."
+    "objectID": "labs/lab10/slides.html#elements-of-a-shiny-app",
+    "href": "labs/lab10/slides.html#elements-of-a-shiny-app",
+    "title": "Lab 9",
+    "section": "Elements of a Shiny App",
+    "text": "Elements of a Shiny App\n\n\n\nNavbar\nSidebar with widgets\nMain panel\n\n\n\n\n\nExample Shiny App"
+  },
+  {
+    "objectID": "labs/lab10/slides.html#walkthrough",
+    "href": "labs/lab10/slides.html#walkthrough",
+    "title": "Lab 9",
+    "section": "Walkthrough",
+    "text": "Walkthrough\n\nThe ‘traditional’ method uses a .R file and a function input (last time’s demo)\nNewer .qmd file solution can be broken down into more intuitive quarto elements"
+  },
+  {
+    "objectID": "labs/lab10/slides.html#orientation",
+    "href": "labs/lab10/slides.html#orientation",
+    "title": "Lab 9",
+    "section": "Orientation",
+    "text": "Orientation\nOrientation of Shiny Apps works the same as in quarto dashboards"
+  },
+  {
+    "objectID": "labs/lab10/slides.html#part-1-yaml-header-and-setup",
+    "href": "labs/lab10/slides.html#part-1-yaml-header-and-setup",
+    "title": "Lab 9",
+    "section": "Part 1: YAML Header and Setup",
+    "text": "Part 1: YAML Header and Setup\n\nShiny apps must live on a shiny server - more on this later"
+  },
+  {
+    "objectID": "labs/lab10/slides.html#part-2-sidebar",
+    "href": "labs/lab10/slides.html#part-2-sidebar",
+    "title": "Lab 9",
+    "section": "Part 2: Sidebar",
+    "text": "Part 2: Sidebar\nSidebars are a great place to group inputs for dashboards. To include a sidebar, add the .sidebar class to a level 2 heading. Here’s how a sidebar would usually appear:\n\n\n\n\n\nSidebar Code\n\n\n\n\n\n\nResulting Widgets"
+  },
+  {
+    "objectID": "labs/lab10/slides.html#sidebar-layouts",
+    "href": "labs/lab10/slides.html#sidebar-layouts",
+    "title": "Lab 9",
+    "section": "Sidebar Layouts",
+    "text": "Sidebar Layouts\nGlobal Sidebar\nIf you have a dashboard with multiple pages, you may want the sidebar to be global (i.e. visible across all pages). To do this, add the .sidebar class to a level 1 heading"
+  },
+  {
+    "objectID": "labs/lab10/slides.html#sidebar-layouts-1",
+    "href": "labs/lab10/slides.html#sidebar-layouts-1",
+    "title": "Lab 9",
+    "section": "Sidebar Layouts",
+    "text": "Sidebar Layouts\nInline Sidebar\nWhile sidebars are often laid out at the page level (i.e. spanning the dashboard from top to bottom) you can actually include them anywhere within a layout. For example, here we have a sidebar that is within a row (rather than spanning all rows):"
+  },
+  {
+    "objectID": "labs/lab10/slides.html#sidebar-layouts-2",
+    "href": "labs/lab10/slides.html#sidebar-layouts-2",
+    "title": "Lab 9",
+    "section": "Sidebar Layouts",
+    "text": "Sidebar Layouts\nLocation and Size\nSidebars can be located on either the left or right side. Layout a sidebar on the right by including it after the column(s) it is adjacent to. You can also modify the size of sidebars using the width attribute. This example demonstrates both of these techniques:"
+  },
+  {
+    "objectID": "labs/lab10/slides.html#part-3-content",
+    "href": "labs/lab10/slides.html#part-3-content",
+    "title": "Lab 9",
+    "section": "Part 3: Content",
+    "text": "Part 3: Content\nAfter defining your YAML Header and the layout of your sidebar, add content to create plots and data tables in the output pane."
+  },
+  {
+    "objectID": "labs/lab10/slides.html#part-4-server",
+    "href": "labs/lab10/slides.html#part-4-server",
+    "title": "Lab 9",
+    "section": "Part 4: Server",
+    "text": "Part 4: Server\nShiny is a reactive programming framework, meaning it takes care of tracking the relationships between inputs and outputs in your app.\n\nWhen an input changes, only outputs that are affected by that input are re-rendered.\n\nThis is a powerful feature that makes it easy to create dashboards that respond to user input efficiently."
+  },
+  {
+    "objectID": "labs/lab10/slides.html#server",
+    "href": "labs/lab10/slides.html#server",
+    "title": "Lab 9",
+    "section": "Server",
+    "text": "Server\ncontext: server as an option in the second code chunk delineates this R code as running within the Shiny Server\n\nThis is where to assign reactive items like output$plot &lt;- renderPlot()"
+  },
+  {
+    "objectID": "labs/lab10/slides.html#demo-1",
+    "href": "labs/lab10/slides.html#demo-1",
+    "title": "Lab 9",
+    "section": "Demo 1",
+    "text": "Demo 1\nNavigate to BCourses:\nFiles &gt; lab-materials &gt; lab10-shiny-dashboards &gt; penguins1-density-plot\nOpen the file and identify the following components:\n\nYAML Header and setup\nSidebar\nPanel Content\nServer"
+  },
+  {
+    "objectID": "labs/lab10/slides.html#deploying-with-shinyapps.io",
+    "href": "labs/lab10/slides.html#deploying-with-shinyapps.io",
+    "title": "Lab 9",
+    "section": "Deploying with shinyapps.io",
+    "text": "Deploying with shinyapps.io\nshinyapps.io is a hosting service that runs your Shiny app on a server for you."
+  },
+  {
+    "objectID": "labs/lab10/slides.html#steps-to-deploy",
+    "href": "labs/lab10/slides.html#steps-to-deploy",
+    "title": "Lab 9",
+    "section": "Steps to deploy",
+    "text": "Steps to deploy\n\nCreate a free account at shinyapps.io"
+  },
+  {
+    "objectID": "labs/lab10/slides.html#steps-to-deploy-1",
+    "href": "labs/lab10/slides.html#steps-to-deploy-1",
+    "title": "Lab 9",
+    "section": "Steps to deploy",
+    "text": "Steps to deploy\n\nCreate a free account at shinyapps.io"
+  },
+  {
+    "objectID": "labs/lab10/slides.html#steps-to-deploy-2",
+    "href": "labs/lab10/slides.html#steps-to-deploy-2",
+    "title": "Lab 9",
+    "section": "Steps to deploy",
+    "text": "Steps to deploy\nThis will take you to the homepage, from where you can follow the steps to link your account."
+  },
+  {
+    "objectID": "labs/lab10/slides.html#steps-to-deploy-3",
+    "href": "labs/lab10/slides.html#steps-to-deploy-3",
+    "title": "Lab 9",
+    "section": "Steps to deploy",
+    "text": "Steps to deploy\n\nIn Positron/RStudio, use install.packages('rsconnect') to install the packages and link your account\nAuthorize your account using the given token and secret.\nWhen you’re ready to deploy, use the quarto package (first install.packages(‘quarto’) then library(quarto)). Then run quarto_publish_app(“your_dashboard.qmd”, server = “shinyapps.io”)"
+  },
+  {
+    "objectID": "labs/lab10/slides.html#steps-to-deploy-4",
+    "href": "labs/lab10/slides.html#steps-to-deploy-4",
+    "title": "Lab 9",
+    "section": "Steps to deploy",
+    "text": "Steps to deploy\nshinyapps.io uploads your app and gives you a public URL to share\nYour app now lives on their server. R is running there, not on your laptop."
+  },
+  {
+    "objectID": "labs/lab10/slides.html#submission-to-bcourses",
+    "href": "labs/lab10/slides.html#submission-to-bcourses",
+    "title": "Lab 9",
+    "section": "Submission to BCourses",
+    "text": "Submission to BCourses\nSubmit the Shinyapps.io URL (link) of your published document to the corresponding assignment in bCourses.\nSee Assignments tab &gt; Quarto Publications &gt; Pub9"
+  },
+  {
+    "objectID": "labs/lab10/slides.html#pset-8",
+    "href": "labs/lab10/slides.html#pset-8",
+    "title": "Lab 9",
+    "section": "Pset 8",
+    "text": "Pset 8\nAvailable in bCourses:\nSee Assignments tab &gt; Problem Sets &gt; PS8\nYou’ll find 2 files:\n\nps8.html: instructions\nps8.qmd: template file to write your answers\n\n\nIn case of trouble: Go to Files tab, folder problem-sets, folder ps8, and download the qmd file.\nSometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome)."
+  },
+  {
+    "objectID": "labs/lab10/slides.html#pset-8-submission",
+    "href": "labs/lab10/slides.html#pset-8-submission",
+    "title": "Lab 9",
+    "section": "Pset 8 Submission",
+    "text": "Pset 8 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps8\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
   {
     "objectID": "labs/lab5/demo-slides.html#why-ev-adoption-matters",
@@ -5763,7 +5826,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 6 6"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 6 5"
   },
   {
     "objectID": "lectures/32-choropleth-maps/slides.html#section",
@@ -7093,14 +7156,14 @@
     "href": "lectures/24-date-time2/slides.html#how-old-is-oski",
     "title": "Dates and Times II",
     "section": "How old is Oski?",
-    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30867 days"
+    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30868 days"
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#durations",
     "href": "lectures/24-date-time2/slides.html#durations",
     "title": "Dates and Times II",
     "section": "Durations",
-    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2666908800s (~84.51 years)\""
+    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2666995200s (~84.51 years)\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#constructing-a-duration",
@@ -7142,7 +7205,7 @@
     "href": "lectures/24-date-time2/slides.html#how-old-will-oski-be",
     "title": "Dates and Times II",
     "section": "How old will Oski be …",
-    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2666908800s (~84.51 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2698466400s (~85.51 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 186d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 186d 0H 0M 0S\""
+    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2666995200s (~84.51 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2698552800s (~85.51 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 187d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 187d 0H 0M 0S\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#intervals",
