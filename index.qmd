@@ -396,7 +396,7 @@ Lab 9: [__Quiz 4__]{.label-Quiz} | [slides](labs/lab9/slides.html) | [PS8](https
 
 [Shiny Dashboards II](lectures/27-shiny2/slides.html)
 
-Lab 10: slides | PS9
+Lab 10: [slides](labs/lab10/slides.html) | [PS9](https://bcourses.berkeley.edu/courses/1551809/assignments/9021602)
 
 Geospatial Data | Proj5
 :::
