@@ -812,7 +812,7 @@
     "href": "lectures/34-json/slides.html#api-open-notify",
     "title": "JSON Data",
     "section": "API “Open Notify”",
-    "text": "API “Open Notify”\nAPI stands for Application Programming Interface. In simpler terms, think of API as a data sharing interface.\n\nurl = \"http://api.open-notify.org/iss-now.json\"\n\nx = fromJSON(url)\nx\n\n$message\n[1] \"success\"\n\n$iss_position\n$iss_position$longitude\n[1] \"-128.9346\"\n\n$iss_position$latitude\n[1] \"7.9075\"\n\n\n$timestamp\n[1] 1775149864"
+    "text": "API “Open Notify”\nAPI stands for Application Programming Interface. In simpler terms, think of API as a data sharing interface.\n\nurl = \"http://api.open-notify.org/iss-now.json\"\n\nx = fromJSON(url)\nx\n\n$message\n[1] \"success\"\n\n$iss_position\n$iss_position$longitude\n[1] \"-48.0795\"\n\n$iss_position$latitude\n[1] \"48.0393\"\n\n\n$timestamp\n[1] 1775228866"
   },
   {
     "objectID": "lectures/15-dataviz2/slides.html#palmer-penguins",
@@ -2037,14 +2037,14 @@
     "href": "lectures/23-date-time1/slides.html#an-r-vector-for-date-times",
     "title": "Dates and Times I",
     "section": "An R vector for date-times",
-    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-02 10:10:37 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1775149838"
+    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-03 08:07:18 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1775228838"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "href": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "title": "Dates and Times I",
     "section": "Why not just use a double vector?",
-    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-02 10:10:37 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-02 10:10:38 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-02 10:10:38 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/02/26\""
+    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-03 08:07:18 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-03 08:07:19 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-03 08:07:18 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/03/26\""
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#creating-date-time-vectors",
@@ -2079,21 +2079,21 @@
     "href": "lectures/23-date-time1/slides.html#getting",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 2\n\n\n\n\n\nwday(now)\n\n\n\n[1] 5\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Thu\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 3\n\n\n\n\n\nwday(now)\n\n\n\n[1] 6\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Fri\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#getting-1",
     "href": "lectures/23-date-time1/slides.html#getting-1",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 2\n\n\n\nwday(now)\n\n[1] 5\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Thursday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 3\n\n\n\nwday(now)\n\n[1] 6\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Friday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#setting",
     "href": "lectures/23-date-time1/slides.html#setting",
     "title": "Dates and Times I",
     "section": "Setting",
-    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-02 10:10:37 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Wednesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-03 08:07:18 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Thursday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#your-turn",
@@ -2758,7 +2758,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 45     Keon Johnson BRK   SG           77    185 March 10,… US      3         \n2 1      KJ Martin    PHI   PF           78    215 January 6… US      4         \n3 12     Cam Christie LAC   SG           77    190 July 24, … US      R         \n4 15     Gui Santos   GSW   PF           79    185 June 22, … BR      1         \n5 10     Ben Simmons  BRK   PG           82    240 July 20, … AU      6         \n6 21     Adama Sanogo CHI   C            81    245 February … ML      1         \n7 12     Zach Collins CHI   PF           81    250 November … US      6         \n8 24     Norman Powe… LAC   SG           75    215 May 25, 1… US      9         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 18     Chuma Okeke  PHI   PF           79    229 August 18… US      4         \n2 24     Jordan Hawk… NOP   SG           77    190 April 29,… US      1         \n3 5      Bones Hyland LAC   PG           74    169 September… US      3         \n4 27     Maxwell Lew… BRK   SF           79    215 July 27, … US      1         \n5 24     Haywood Hig… MIA   SF           77    220 December … US      4         \n6 34     Wendell Car… ORL   C            82    270 April 16,… US      6         \n7 3      Caris LeVert CLE   SF           79    205 August 25… US      8         \n8 31     Jarrett All… CLE   C            81    243 April 21,… US      7         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -3220,7 +3220,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"senior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"junior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -5826,7 +5826,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 6 5"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 1 1"
   },
   {
     "objectID": "lectures/32-choropleth-maps/slides.html#section",
@@ -6001,7 +6001,7 @@
     "href": "lectures/28-geospatial1/slides.html#geographic-data",
     "title": "Geospatial Data",
     "section": "Geographic Data",
-    "text": "Geographic Data\nA collection of “objects” on which we have information about their geographic location (and possibly other variables or attributes)\n\nExamples of “objects” on Campus:\n\n\n\nBike racks\nTrees\nGreen areas\nBuildings\nSwimming pools\n\n\n\nLoop stations\nBus stops\nFire hydrants\nBathrooms\nETC"
+    "text": "Geographic Data\nA collection of “objects” on which we have information about their geographic location (and possibly other variables or attributes)\n\n\n\nExamples of “objects” on Campus:\n\n\n\nBike racks\nTrees\nGreen areas\nBuildings\nSwimming pools\n\n\n\nLoop stations\nBus stops\nFire hydrants\nBathrooms\nETC"
   },
   {
     "objectID": "lectures/28-geospatial1/slides.html#example-bike-racks-on-campus",
@@ -6057,7 +6057,7 @@
     "href": "lectures/28-geospatial1/slides.html#geographic-coordinate-systems-gcs",
     "title": "Geospatial Data",
     "section": "Geographic Coordinate Systems (GCS)",
-    "text": "Geographic Coordinate Systems (GCS)\nWidely used! Expressed as latitude & longitude\n\n\nWGS84 (EPSG: 4326)\n\nBased on satellites, used by cell phones, GPS\nBest overall fit for most places on earth\n\nNAD83 (EPSG: 4269)\n\nBased on satellites and survey data\nBest fit for USA\nUsed by many federal data products, like Census data"
+    "text": "Geographic Coordinate Systems (GCS)\nWidely used. Expressed as latitude & longitude. Two common GCS are:\n\n\nWGS84 (EPSG: 4326)\n\nBased on satellites, used by cell phones, GPS\nBest overall fit for most places on earth\n\nNAD83 (EPSG: 4269)\n\nBased on satellites and survey data\nBest fit for USA\nUsed by many federal data products, like Census data"
   },
   {
     "objectID": "lectures/28-geospatial1/slides.html#projected-coordinate-systems-pcs",
@@ -6078,14 +6078,14 @@
     "href": "lectures/28-geospatial1/slides.html#in-short",
     "title": "Geospatial Data",
     "section": "In short …",
-    "text": "In short …\n\n\n\n\n\n\n\n\nThe Earth is not Flat!\n\nBut computer screens, paper maps and most of the math underlying spatial analysis methods assume it is!\nWe use map projections to transform geographic coordinates from a 3D model of the earth to a 2D plane.\nThis makes location data much more usable BUT\nIt introduces distortion.\nYou need to understand how this distortion impacts your maps and spatial analysis!"
+    "text": "In short …\n\n\n\n\n\n\n\n\nThe Earth is not Flat!\n\nBut computer screens, paper maps and most of the math underlying spatial analysis methods assume it is!\nWe use map projections to transform geographic coordinates from a 3D model of the earth to a 2D plane.\nThis makes location data much more usable BUT …\nIt introduces distortion.\nYou need to understand how this distortion impacts your maps and spatial analysis!"
   },
   {
     "objectID": "lectures/28-geospatial1/slides.html#section-3",
     "href": "lectures/28-geospatial1/slides.html#section-3",
     "title": "Geospatial Data",
     "section": "",
-    "text": "Which representation is better A or B?\n\n\n\n\n\n\n\n\n−+\n02:00"
+    "text": "Which representation is better A or B?\n\n\n\n\n\n\n\n\n−+\n01:30"
   },
   {
     "objectID": "lectures/28-geospatial1/slides.html#mapping-the-world-in-2-styles",
@@ -6099,21 +6099,21 @@
     "href": "lectures/28-geospatial1/slides.html#vector-data-geometries",
     "title": "Geospatial Data",
     "section": "Vector Data Geometries",
-    "text": "Vector Data Geometries"
+    "text": "Vector Data Geometries\n\n\n\n\n\n\nNote: The term “Vector Data” as used in geospatial literature is different to the notion of “vectors” in R."
   },
   {
-    "objectID": "lectures/28-geospatial1/slides.html#vector-data-geometris-and-attributes",
-    "href": "lectures/28-geospatial1/slides.html#vector-data-geometris-and-attributes",
+    "objectID": "lectures/28-geospatial1/slides.html#vector-data-geometries-and-attributes",
+    "href": "lectures/28-geospatial1/slides.html#vector-data-geometries-and-attributes",
     "title": "Geospatial Data",
-    "section": "Vector Data Geometris and Attributes",
-    "text": "Vector Data Geometris and Attributes"
+    "section": "Vector Data Geometries and Attributes",
+    "text": "Vector Data Geometries and Attributes"
   },
   {
     "objectID": "lectures/28-geospatial1/slides.html#vector-data-with-attributes",
     "href": "lectures/28-geospatial1/slides.html#vector-data-with-attributes",
     "title": "Geospatial Data",
     "section": "Vector Data with Attributes",
-    "text": "Vector Data with Attributes\nEach row represents one geospatial feature\nAttributes describe the features (fields or columns)\nEach feature has an associated geometry or geometry collection\nA group of features is called a layer"
+    "text": "Vector Data with Attributes\nEach row represents one geospatial feature.\nAttributes describe the features (fields or columns).\nEach feature has an associated geometry or geometry collection.\nA group of features is called a layer."
   },
   {
     "objectID": "lectures/28-geospatial1/slides.html#raster-data-1",
@@ -6127,7 +6127,7 @@
     "href": "lectures/28-geospatial1/slides.html#raster-data-regular-grids",
     "title": "Geospatial Data",
     "section": "Raster Data (regular grids)",
-    "text": "Raster Data (regular grids)\nA location is represented by a grid cell\nCells have regular size, e.g. 30x30m\nGrid has dimension - fixed number of rows and columns\nEach cell has a value that represents the attribute of interest, e.g. elevation"
+    "text": "Raster Data (regular grids)\nA location is represented by a grid cell.\nCells have regular size, e.g. 30x30m.\nGrid has dimension - fixed number of rows and columns.\nEach cell has a value that represents the attribute of interest, e.g. elevation."
   },
   {
     "objectID": "lectures/28-geospatial1/slides.html#vector-data--vs--raster-data",
@@ -7156,14 +7156,14 @@
     "href": "lectures/24-date-time2/slides.html#how-old-is-oski",
     "title": "Dates and Times II",
     "section": "How old is Oski?",
-    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30868 days"
+    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30869 days"
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#durations",
     "href": "lectures/24-date-time2/slides.html#durations",
     "title": "Dates and Times II",
     "section": "Durations",
-    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2666995200s (~84.51 years)\""
+    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2667081600s (~84.51 years)\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#constructing-a-duration",
@@ -7205,7 +7205,7 @@
     "href": "lectures/24-date-time2/slides.html#how-old-will-oski-be",
     "title": "Dates and Times II",
     "section": "How old will Oski be …",
-    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2666995200s (~84.51 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2698552800s (~85.51 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 187d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 187d 0H 0M 0S\""
+    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2667081600s (~84.51 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2698639200s (~85.51 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 188d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 188d 0H 0M 0S\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#intervals",
