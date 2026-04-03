@@ -398,7 +398,7 @@ Lab 9: [__Quiz 4__]{.label-Quiz} | [slides](labs/lab9/slides.html) | [PS8](https
 
 Lab 10: [slides](labs/lab10/slides.html) | [PS9](https://bcourses.berkeley.edu/courses/1551809/assignments/9021602)
 
-Geospatial Data | Proj5
+[Geospatial Data](lectures/28-geospatial1/slides.html) | [Proj5](https://bcourses.berkeley.edu/courses/1551809/assignments/9021610)
 :::
 
 ::: {.column width="50%"}

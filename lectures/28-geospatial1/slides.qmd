@@ -19,6 +19,8 @@ A collection of "objects" on which we have information about their geographic lo
 
 . . .
 
+\
+
 Examples of "objects" on Campus:
 
 :::: {.columns}
@@ -96,7 +98,7 @@ How do we know that those coordinates reference that specific location?
 
 :::: {.columns}
 ::: {.column width="45%"}
-A Coordinate Reference System, or CRS, is a system for associating coordinates  with a specific, unambiguous location on the surface of the Earth.
+A [Coordinate Reference System]{.bold-hilit}, or CRS, is a system for associating coordinates  with a specific, unambiguous location on the surface of the Earth.
 :::
 
 ::: {.column width="55%"}
@@ -137,7 +139,7 @@ Why? Because our understanding of and ability to measure the shape of the earth 
 
 ## Geographic Coordinate Systems (GCS)
 
-Widely used! Expressed as latitude & longitude
+Widely used. Expressed as latitude & longitude. Two common GCS are:
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -193,7 +195,7 @@ The Earth is not Flat!
 
 - But computer screens, paper maps and most of the math underlying spatial analysis methods assume it is!
 - We use map projections to transform geographic coordinates from a 3D model of the earth to a 2D plane.
-- This makes location data much more usable BUT
+- This makes location data much more usable BUT ...
 - It introduces distortion.
 - You need to understand how this distortion impacts your maps and spatial analysis!
 :::
@@ -211,7 +213,7 @@ Which representation is better A or B?
 
 ```{r}
 #| echo: false
-countdown::countdown(2, top = 0)
+countdown::countdown(1.5, top = 0)
 ```
 
 
@@ -232,20 +234,25 @@ There are two fundamental spatial data models:
 
 ![](images/vector-shapes.svg){width="85%" fig-align="center"}
 
-## Vector Data Geometris and Attributes {.nostretch}
+. . .
+
+Note: The term "Vector Data" as used in geospatial literature is different to the notion of "vectors" in R.
+
+
+## Vector Data Geometries and Attributes {.nostretch}
 
 ![](images/vector-shapes-datasets.svg){width="75%" fig-align="center"}
 
 
 ## Vector Data with Attributes
 
-Each row represents one geospatial feature
+Each row represents one geospatial feature.
 
-Attributes describe the features (fields or columns)
+Attributes describe the features (fields or columns).
 
-Each feature has an associated geometry or geometry collection
+Each feature has an associated geometry or geometry collection.
 
-A group of features is called a layer
+A group of features is called a __layer__.
 
 
 # Raster Data {.nostretch}
@@ -259,26 +266,26 @@ A group of features is called a layer
 
 ## Raster Data (regular grids)
 
-A location is represented by a grid cell
+A location is represented by a grid cell.
 
-Cells have regular size, e.g. 30x30m
+Cells have regular size, e.g. 30x30m.
 
-Grid has dimension - fixed number of rows and columns
+Grid has dimension - fixed number of rows and columns.
 
-Each cell has a value that represents the attribute of interest, e.g. elevation
+Each cell has a value that represents the attribute of interest, e.g. elevation.
 
 
 ## Vector Data -vs- Raster Data
 
 :::: {.columns}
 ::: {.column width="50%"}
-Vector data are better for discretely bounded data, e.g. bike racks, rivers, political boundaries, etc.
+Vector data are better for [discretely bounded data]{.hilit}, e.g. bike racks, rivers, political boundaries, etc.
 
 ![](images/vector-features.png)
 :::
 
 ::: {.column .fragment  width="50%"}
-Raster data are better for continuous data, e.g. temperature, elevation, rainfall, etc.
+Raster data are better for [continuous data]{.mdlit}, e.g. temperature, elevation, rainfall, etc.
 
 ![](images/raster-features.png)
 :::
@@ -293,7 +300,7 @@ Raster data are better for continuous data, e.g. temperature, elevation, rainfal
 
 :::: {.columns}
 ::: {.column width="50%"}
-__Vector Data__
+[__Vector Data__]{.hilit}
 
 - Shapefile (.shp)
 - GeoJSON, JSON
@@ -301,8 +308,8 @@ __Vector Data__
 - GeoPackage
 :::
 
-::: {.column width="50%"}
-__Raster Data__
+::: {.column .fragment width="50%"}
+[__Raster Data__]{.mdlit}
 
 - GeoTIFF
 - netCDF
