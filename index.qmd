@@ -20,11 +20,11 @@ title: "STAT 133: Concepts in Computing with Data"
 ::::
 
 ::: {.callout-tip icon="false"}
-## Week 11 Announcements
+## Week 12 Announcements
 
-- [Problem Set 8]{.label-Homework} due Wed 4/1 by 6PM
-- [9th Publication]{.label-Pub} due Thu 4/2 in lab
-- [Project 4]{.label-Project} due Fri 4/3 by 6PM
+- [Problem Set 9]{.label-Homework} due Wed 4/8 by 6PM
+- [10th Publication]{.label-Pub} due Thu 4/9 in lab
+- [Quiz 5]{.label-Quiz} due Thu 4/9 in lab
 :::
 
 -----
@@ -436,7 +436,7 @@ Leaflet Maps
 
 Lab 11: [__Quiz 5__]{.label-Quiz} | slides | PS10
 
-Dashboard Demo
+Choropleth Maps
 :::
 
 ::: {.column width="50%"}
@@ -470,11 +470,11 @@ Dashboard Demo
 #### Description
 Shapefiles
 
-Choropleth Maps
+Raster Data Maps
 
 Lab 12: slides | PS11
 
-Raster Data Maps | Proj6
+Dashboard Demo | Proj6
 :::
 
 ::: {.column width="50%"}
