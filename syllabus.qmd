@@ -60,12 +60,12 @@ Problem sets are weekly assignments that provide you with essential practice on 
 
 ### Quarto Publications
 
-Except for a couple of labs (e.g. first and last lab), during discussion you will have the opportunity to publish a variety of demo documents---using some flavor of quarto file---to your __QuartoPub__ account. These _demo_ publications will help you to be ready for the publication of your Projects. They are due each Thursday during discussion (deadline by 6PM) and are graded credit / no credit.
+Except for a couple of labs (e.g. first and last lab), during discussion you will have the opportunity to publish a variety of demo documents---using some flavor of quarto file---to your __Netlify__ account. These _demo_ publications will help you to be ready for the publication of your Projects. They are due each Thursday during discussion (deadline by 6PM) and are graded credit / no credit.
 
 
 ### Projects
 
-Projects are biweekly open-ended assignments designed to apply the concepts from the lecture notes in the cause of doing an analysis of real data. This will involve both writing code and communicating your thoughts and findings in English. In addition, you will be publishing your Projects to your QuartoPub account. Time permitting, we'll be working through some problems from the projects in lab section, but you will be spending time on them outside of class time. Projcets are generally due every other week on Friday by 6PM and are graded credit / no credit.
+Projects are biweekly open-ended assignments designed to apply the concepts from the lecture notes in the cause of doing an analysis of real data. This will involve both writing code and communicating your thoughts and findings in English. In addition, you will be publishing your Projects to your Netlify account. Time permitting, we'll be working through some problems from the projects in lab section, but you will be spending time on them outside of class time. Projcets are generally due every other week on Friday by 6PM and are graded credit / no credit.
 
 
 ### Quizzes
