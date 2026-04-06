@@ -15,7 +15,7 @@ website:
     background: "dark"
   sidebar:
     style: "docked"
-    title: "STAT 133 <br><small>Spring 2026</small>"
+    title: "STAT 133 <br><small>Spring 2026, with</small> <br><small>Gaston Sanchez</small>"
     logo: assets/stat133-hex-logo-small.png
     logo-alt: "UC Berkeley Statistics logo"
     collapse-level: 1
