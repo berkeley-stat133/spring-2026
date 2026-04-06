@@ -39,7 +39,7 @@ title: "STAT 133: Concepts in Computing with Data"
 - Fri 1/23 
 :::
 
-::: {.column width="30%"}
+::: {.column width="35%"}
 #### Description
 [Welcome](lectures/1-welcome/slides.html)
 
@@ -48,7 +48,7 @@ Lab 1: [slides](labs/lab1/slides.html)
 [Introduction](lectures/2-intro/slides.html)
 :::
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 #### Due
 
 :::
@@ -69,7 +69,7 @@ Lab 1: [slides](labs/lab1/slides.html)
 - Fri 1/30
 :::
 
-::: {.column width="30%"}
+::: {.column width="35%"}
 #### Description
 [Vectors](lectures/3-atomic-vectors/slides.html)
 
@@ -80,7 +80,7 @@ Lab 2: [slides](labs/lab2/slides.html) | [PS1](https://bcourses.berkeley.edu/cou
 [Unix Basics](lectures/5-unix-basics/slides.html) | [Proj1](https://bcourses.berkeley.edu/courses/1551809/assignments/9021606)
 :::
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 #### Due
 &nbsp;
 
@@ -108,7 +108,7 @@ Lab 2: [slides](labs/lab2/slides.html) | [PS1](https://bcourses.berkeley.edu/cou
 - Fri 2/6 
 :::
 
-::: {.column width="30%"}
+::: {.column width="35%"}
 #### Description
 [Extending Vectors](lectures/6-extending-vectors/slides.html)
 
@@ -119,7 +119,7 @@ Lab 3: [__Quiz 1__]{.label-Quiz} | [slides](labs/lab3/slides.html) | [PS2](https
 [Control Flow](lectures/8-control-flow/slides.html)
 :::
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 #### Due
 &nbsp;
 
@@ -146,7 +146,7 @@ Lab 3: [__Quiz 1__]{.label-Quiz} | [slides](labs/lab3/slides.html) | [PS2](https
 - Fri 2/13 
 :::
 
-::: {.column width="30%"}
+::: {.column width="35%"}
 #### Description
 [Functions](lectures/9-functions/slides.html)
 
@@ -157,7 +157,7 @@ Lab 4: [slides](labs/lab4/slides.html) | [PS3](https://bcourses.berkeley.edu/cou
 [Data Wrangling I](lectures/11-data-wrangling1/slides.html) | [Proj2](https://bcourses.berkeley.edu/courses/1551809/assignments/9021607)
 :::
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 #### Due
 &nbsp;
 
@@ -184,7 +184,7 @@ Lab 4: [slides](labs/lab4/slides.html) | [PS3](https://bcourses.berkeley.edu/cou
 - Fri 2/20
 :::
 
-::: {.column width="30%"}
+::: {.column width="35%"}
 #### Description
 [No class]{.label-None}
 
@@ -195,7 +195,7 @@ Lab 5: [__Quiz 2__]{.label-Quiz} | [slides](labs/lab5/slides.html) | [PS4](https
 [Importing Tables](lectures/13-importing-tables/slides.html)
 :::
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 #### Due
 &nbsp;
 
@@ -222,7 +222,7 @@ Lab 5: [__Quiz 2__]{.label-Quiz} | [slides](labs/lab5/slides.html) | [PS4](https
 - Fri 2/27
 :::
 
-::: {.column width="30%"}
+::: {.column width="35%"}
 #### Description
 [Dataviz I](lectures/14-dataviz1/slides.html)
 
@@ -233,7 +233,7 @@ Lab 6: [slides](labs/lab6/slides.html) | [PS5](https://bcourses.berkeley.edu/cou
 [Dataviz III](lectures/16-dataviz3/slides.html) | [Proj3](https://bcourses.berkeley.edu/courses/1551809/assignments/9021608)
 :::
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 #### Due
 &nbsp;
 
@@ -260,7 +260,7 @@ Lab 6: [slides](labs/lab6/slides.html) | [PS5](https://bcourses.berkeley.edu/cou
 - Fri 3/6
 :::
 
-::: {.column width="30%"}
+::: {.column width="35%"}
 #### Description
 [Joins and Pivots](lectures/17-joins-pivots/slides.html)
 
@@ -271,7 +271,7 @@ Lab 7: [__Quiz 3__]{.label-Quiz} | [slides](labs/lab7/slides.html) | [PS6](https
 [Explanatory EDA](lectures/19-eda2/slides.html)
 :::
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 #### Due
 &nbsp;
 
@@ -298,7 +298,7 @@ Lab 7: [__Quiz 3__]{.label-Quiz} | [slides](labs/lab7/slides.html) | [PS6](https
 - Fri 3/13
 :::
 
-::: {.column width="30%"}
+::: {.column width="35%"}
 #### Description
 [Strings I](lectures/20-strings1/slides.html)
 
@@ -309,7 +309,7 @@ Lab 8: [slides](labs/lab8/slides.html) | [PS7](https://bcourses.berkeley.edu/cou
 [Strings III](lectures/22-strings3/slides.html) | [Proj4](https://bcourses.berkeley.edu/courses/1551809/assignments/9021609) 
 :::
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 #### Due
 &nbsp;
 
@@ -336,7 +336,7 @@ Lab 8: [slides](labs/lab8/slides.html) | [PS7](https://bcourses.berkeley.edu/cou
 - Fri 3/20
 :::
 
-::: {.column width="30%"}
+::: {.column width="35%"}
 #### Description
 [Dates and Times I](lectures/23-date-time1/slides.html)
 
@@ -347,7 +347,7 @@ Lab 9: [__Quiz 4__]{.label-Quiz} | [slides](labs/lab9/slides.html) | [PS8](https
 [Dashboard Demo](lectures/25-date-time3/slides.html)
 :::
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 #### Due
 &nbsp;
 
@@ -390,7 +390,7 @@ Lab 9: [__Quiz 4__]{.label-Quiz} | [slides](labs/lab9/slides.html) | [PS8](https
 - Fri 4/3
 :::
 
-::: {.column width="30%"}
+::: {.column width="35%"}
 #### Description
 [Shiny Dashboards I](lectures/26-shiny1/slides.html)
 
@@ -401,7 +401,7 @@ Lab 10: [slides](labs/lab10/slides.html) | [PS9](https://bcourses.berkeley.edu/c
 [Geospatial Data](lectures/28-geospatial1/slides.html) | [Proj5](https://bcourses.berkeley.edu/courses/1551809/assignments/9021610)
 :::
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 #### Due
 &nbsp;
 
@@ -428,9 +428,9 @@ Lab 10: [slides](labs/lab10/slides.html) | [PS9](https://bcourses.berkeley.edu/c
 - Fri 4/10
 :::
 
-::: {.column width="30%"}
+::: {.column width="35%"}
 #### Description
-Mapping Storm tracks
+[Mapping Storm tracks](lectures/29-geospatial2/slides.html)
 
 Leaflet Maps
 
@@ -439,7 +439,7 @@ Lab 11: [__Quiz 5__]{.label-Quiz} | slides | PS10
 Choropleth Maps
 :::
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 #### Due
 &nbsp;
 
@@ -466,7 +466,7 @@ Choropleth Maps
 - Fri 4/17
 :::
 
-::: {.column width="30%"}
+::: {.column width="35%"}
 #### Description
 Shapefiles
 
@@ -477,7 +477,7 @@ Lab 12: slides | PS11
 Dashboard Demo | Proj6
 :::
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 #### Due
 &nbsp;
 
@@ -504,7 +504,7 @@ Dashboard Demo | Proj6
 - Fri 4/24
 :::
 
-::: {.column width="30%"}
+::: {.column width="35%"}
 #### Description
 JSON Data
 
@@ -515,7 +515,7 @@ Lab 13: [__Quiz 6__]{.label-Quiz} | slides | PS12
 XML Data
 :::
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 #### Due
 &nbsp;
 
@@ -542,7 +542,7 @@ XML Data
 - Fri 5/1
 :::
 
-::: {.column width="30%"}
+::: {.column width="35%"}
 #### Description
 Text Analysis 1
 
@@ -553,7 +553,7 @@ Lab 14: slides
 Closing Lecture
 :::
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 #### Due
 &nbsp;
 
