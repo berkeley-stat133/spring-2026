@@ -8,7 +8,7 @@ Append `@berkeley.edu` to all email addresses.
 ::: {.grid}
 
 ::: {.g-col-6}
-**Instructor:** Gaston Sanchez<br>
+**Instructor:** <a href="https://www.gastonsanchez.com" target="_blank">Gaston Sanchez</a><br>
 `gastonsanchez`<br>
 Office hours: <br>
 - Mon 5:00pm-6:00pm, Evans 309<br>
