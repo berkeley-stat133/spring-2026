@@ -432,7 +432,7 @@ Lab 10: [slides](labs/lab10/slides.html) | [PS9](https://bcourses.berkeley.edu/c
 #### Description
 [Mapping Storm tracks](lectures/29-geospatial2/slides.html)
 
-Leaflet Maps
+[Leaflet Maps](lectures/30-geospatial3/slides.html)
 
 Lab 11: [__Quiz 5__]{.label-Quiz} | slides | PS10
 

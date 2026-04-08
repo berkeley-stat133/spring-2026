@@ -706,7 +706,8 @@ storms75 |>
   addLegend(
     position = "bottomleft", 
     pal = pal, 
-    values = ~name)
+    values = ~name,
+    title = "Storm name")
 ```
 :::
 
@@ -724,7 +725,8 @@ storms75 |>
   addLegend(
     position = "bottomleft", 
     pal = pal, 
-    values = ~name)
+    values = ~name,
+    title = "Storm name")
 ```
 :::
 ::::
@@ -757,9 +759,18 @@ storms75 |>
 
 # Polygons
 
-## Example: adding `"sf"` data polygons
+## Example: adding `"sf"` data polygons {auto-animate=true}
 
 ```{r}
+usa_states = ne_states(
+  country = "United States of America", 
+  returnclass = "sf")
+```
+
+## Example: adding `"sf"` data polygons {auto-animate=true}
+
+```{r}
+#| output-location: fragment
 usa_states = ne_states(
   country = "United States of America", 
   returnclass = "sf")
@@ -769,7 +780,6 @@ leaflet(data = usa_states) |>
   setView(lng = -90, lat = 40, zoom = 3) |>
   addPolygons(fillColor = rainbow(10), stroke = FALSE)
 ```
-
 
 
 ## Leaflet Maps
