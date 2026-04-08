@@ -1788,25 +1788,18 @@
     "text": "gg4 &lt;- ggplot(\n  data = penguins,\n  aes(x = bill_length_mm, \n      y = flipper_length_mm,\n       color = species,\n      tooltip = sex)) +\n  geom_point_interactive()\n\nggiraph::girafe(ggobj = gg4)"
   },
   {
-    "objectID": "lectures/30-geospatial3/slides.html#leaflet-web-interactive-maps",
-    "href": "lectures/30-geospatial3/slides.html#leaflet-web-interactive-maps",
-    "title": "Storms in North Atlantic II",
-    "section": "Leaflet: Web Interactive Maps",
-    "text": "Leaflet: Web Interactive Maps"
-  },
-  {
     "objectID": "lectures/30-geospatial3/slides.html#leaflet",
     "href": "lectures/30-geospatial3/slides.html#leaflet",
     "title": "Storms in North Atlantic II",
     "section": "Leaflet",
-    "text": "Leaflet\n\nlibrary(leaflet)\n\nLeaflet is a JavaScript library used to build interactive maps for websites and web mapping applications.\n\nThe R package \"leaflet\" lets you create and customize Leaflet maps in R.\n\n\nThese maps can be used directly from the R console, Positron, RStudio, in Markdown documents (e.g. qmd, Rmd), and in Shiny applications."
+    "text": "Leaflet\n\nlibrary(leaflet)\n\nLeaflet is a JavaScript library used to build interactive maps for websites and web mapping applications.\n\n\n\nThe R package \"leaflet\" lets you create and customize Leaflet maps in R.\n\n\n\n\nThese maps can be used directly from the R console, Positron, RStudio, in Markdown documents (e.g. qmd, Rmd), and in Shiny applications."
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#basic-usage",
     "href": "lectures/30-geospatial3/slides.html#basic-usage",
     "title": "Storms in North Atlantic II",
     "section": "Basic Usage",
-    "text": "Basic Usage\nYou create a Leaflet map with these basic steps:\n\nCreate a map widget by calling leaflet().\nAdd layers (i.e. features) to the map by using layer functions:\n\naddTiles()\naddMarkers()\naddCircles()\naddPolygons()\naddLegend()\n\nRepeat step 2 as desired.\nPrint the map widget to display it."
+    "text": "Basic Usage\nYou create a Leaflet map with these basic steps:\n\nCreate a map widget by calling leaflet().\nAdd layers (i.e. features) to the map, via |&gt;, by using layer functions:\n\naddTiles()\naddMarkers()\naddCircles()\naddPolygons()\naddLegend()\n\nRepeat step 2 as desired.\nPrint the map widget to display it."
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#basic-usage-1",
@@ -1872,6 +1865,13 @@
     "text": "Changing Tiles\n\n\n\nleaflet() |&gt; \n  addProviderTiles(\n    \"Esri.WorldImagery\") |&gt; \n  addMarkers(\n    lng = -122.2579, \n    lat = 37.8718, \n    popup = \"Fiat Lux\")"
   },
   {
+    "objectID": "lectures/30-geospatial3/slides.html#changing-tiles-2",
+    "href": "lectures/30-geospatial3/slides.html#changing-tiles-2",
+    "title": "Storms in North Atlantic II",
+    "section": "Changing Tiles",
+    "text": "Changing Tiles\n\n\n\nleaflet() |&gt; \n  addProviderTiles(\n    \"Esri.WorldTopoMap\") |&gt; \n  addMarkers(\n    lng = -122.2579, \n    lat = 37.8718, \n    popup = \"Fiat Lux\")"
+  },
+  {
     "objectID": "lectures/30-geospatial3/slides.html#adding-data-objects",
     "href": "lectures/30-geospatial3/slides.html#adding-data-objects",
     "title": "Storms in North Atlantic II",
@@ -1879,57 +1879,57 @@
     "text": "Adding Data Objects\nBoth leaflet() and the map layer functions have an optional data parameter that is designed to receive spatial data in one of several forms:\n\nFrom base R:\n\nlng/lat matrix\ndata frame with lng/lat columns\n\nFrom the \"sf\" package:\n\nthe data frame of class \"sf\"\n\nFrom the \"maps\" package\n\nthe data frame returned from map()"
   },
   {
-    "objectID": "lectures/30-geospatial3/slides.html#section",
-    "href": "lectures/30-geospatial3/slides.html#section",
-    "title": "Storms in North Atlantic II",
-    "section": "",
-    "text": "storms75 &lt;- filter(storms, year == 1975)\n\nstorms75\n\n# A tibble: 238 × 13\n   name   year month   day  hour   lat  long status      category  wind pressure\n   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;\n 1 Amy    1975     6    27     0  27.5 -79   tropical d…       NA    25     1013\n 2 Amy    1975     6    27     6  28.5 -79   tropical d…       NA    25     1013\n 3 Amy    1975     6    27    12  29.5 -79   tropical d…       NA    25     1013\n 4 Amy    1975     6    27    18  30.5 -79   tropical d…       NA    25     1013\n 5 Amy    1975     6    28     0  31.5 -78.8 tropical d…       NA    25     1012\n 6 Amy    1975     6    28     6  32.4 -78.7 tropical d…       NA    25     1012\n 7 Amy    1975     6    28    12  33.3 -78   tropical d…       NA    25     1011\n 8 Amy    1975     6    28    18  34   -77   tropical d…       NA    30     1006\n 9 Amy    1975     6    29     0  34.4 -75.8 tropical s…       NA    35     1004\n10 Amy    1975     6    29     6  34   -74.8 tropical s…       NA    40     1002\n# ℹ 228 more rows\n# ℹ 2 more variables: tropicalstorm_force_diameter &lt;int&gt;,\n#   hurricane_force_diameter &lt;int&gt;\n\n\n\n\n\nstorms75 has columns lat (latitude) and long (longitude) which can be passed to the arguments lat and lng of leaflet functions"
-  },
-  {
     "objectID": "lectures/30-geospatial3/slides.html#section-1",
     "href": "lectures/30-geospatial3/slides.html#section-1",
     "title": "Storms in North Atlantic II",
     "section": "",
-    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles()\n\n\n\n\nNote: this is an empty map because no geometries have been added."
+    "text": "storms75 &lt;- filter(storms, year == 1975)\n\nstorms75\n\n# A tibble: 238 × 13\n   name   year month   day  hour   lat  long status      category  wind pressure\n   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;\n 1 Amy    1975     6    27     0  27.5 -79   tropical d…       NA    25     1013\n 2 Amy    1975     6    27     6  28.5 -79   tropical d…       NA    25     1013\n 3 Amy    1975     6    27    12  29.5 -79   tropical d…       NA    25     1013\n 4 Amy    1975     6    27    18  30.5 -79   tropical d…       NA    25     1013\n 5 Amy    1975     6    28     0  31.5 -78.8 tropical d…       NA    25     1012\n 6 Amy    1975     6    28     6  32.4 -78.7 tropical d…       NA    25     1012\n 7 Amy    1975     6    28    12  33.3 -78   tropical d…       NA    25     1011\n 8 Amy    1975     6    28    18  34   -77   tropical d…       NA    30     1006\n 9 Amy    1975     6    29     0  34.4 -75.8 tropical s…       NA    35     1004\n10 Amy    1975     6    29     6  34   -74.8 tropical s…       NA    40     1002\n# ℹ 228 more rows\n# ℹ 2 more variables: tropicalstorm_force_diameter &lt;int&gt;,\n#   hurricane_force_diameter &lt;int&gt;\n\n\n\n\n\nstorms75 has columns lat (latitude) and long (longitude) which can be passed to the arguments lat and lng of leaflet functions"
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#section-2",
     "href": "lectures/30-geospatial3/slides.html#section-2",
     "title": "Storms in North Atlantic II",
     "section": "",
-    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat)\n\n\n\n\n\n\n\n\n\n\n\n\nNote the use of the tilde ~ to map (i.e. link) columns long and lat to arguments lng and lat respectively."
+    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles()\n\n\n\n\nNote: this is an empty map because no geometries have been added."
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#section-3",
     "href": "lectures/30-geospatial3/slides.html#section-3",
     "title": "Storms in North Atlantic II",
     "section": "",
-    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name)"
+    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat)\n\n\n\n\n\n\n\n\n\n\n\n\nNote the use of the tilde ~ to map (i.e. link) columns long and lat to arguments lng and lat respectively."
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#section-4",
     "href": "lectures/30-geospatial3/slides.html#section-4",
     "title": "Storms in North Atlantic II",
     "section": "",
-    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    radius = 50000)"
+    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name)"
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#section-5",
     "href": "lectures/30-geospatial3/slides.html#section-5",
     "title": "Storms in North Atlantic II",
     "section": "",
-    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    radius = 50000, \n    weight = 1)"
+    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    radius = 50000)"
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#section-6",
     "href": "lectures/30-geospatial3/slides.html#section-6",
     "title": "Storms in North Atlantic II",
     "section": "",
-    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    radius = 50000, \n    weight = 1,\n    fillOpacity = 0.7)"
+    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    radius = 50000, \n    weight = 1)"
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#section-7",
     "href": "lectures/30-geospatial3/slides.html#section-7",
+    "title": "Storms in North Atlantic II",
+    "section": "",
+    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    radius = 50000, \n    weight = 1,\n    fillOpacity = 0.7)"
+  },
+  {
+    "objectID": "lectures/30-geospatial3/slides.html#section-8",
+    "href": "lectures/30-geospatial3/slides.html#section-8",
     "title": "Storms in North Atlantic II",
     "section": "",
     "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    color = ~name)\n\n\n👎 How NOT to color-code: trying to map column name to argument color won’t work"
@@ -1942,32 +1942,39 @@
     "text": "Mapping Variables to Colors\n\"leaflet\" package provides a couple of functions to generate colors:\n\ncolorNumeric(): simple linear mapping from continuous numeric data to an interpolated palette\ncolorBin(): maps continuous numeric data, but performs binning based on value\ncolorQuantile(): maps continuous numeric data, but performs binning via the quantile() function\ncolorFactor(): maps factors to colors (to be used for categorical data)"
   },
   {
-    "objectID": "lectures/30-geospatial3/slides.html#section-9",
-    "href": "lectures/30-geospatial3/slides.html#section-9",
-    "title": "Storms in North Atlantic II",
-    "section": "",
-    "text": "To color code storms based on their name (categorical values) we have to create a color palette via colorFactor().\n\n\nUnique storm names in 1975:\n\nstorms75 |&gt; distinct(name)\n\n# A tibble: 8 × 1\n  name    \n  &lt;chr&gt;   \n1 Amy     \n2 Blanche \n3 Caroline\n4 Doris   \n5 Eloise  \n6 Faye    \n7 Gladys  \n8 Hallie  \n\n\n\nRainbow colors:\n\nrainbow(8)\n\n[1] \"#FF0000\" \"#FFBF00\" \"#80FF00\" \"#00FF40\" \"#00FFFF\" \"#0040FF\" \"#8000FF\"\n[8] \"#FF00BF\"\n\n\n\nColor palette function:\n\npal &lt;- colorFactor(\n  palette = rainbow(8), \n  domain = storms75$name)\n\npal(c(\"Amy\", \"Blanche\"))\n\n[1] \"#FF0000\" \"#FFBF00\""
-  },
-  {
     "objectID": "lectures/30-geospatial3/slides.html#section-10",
     "href": "lectures/30-geospatial3/slides.html#section-10",
     "title": "Storms in North Atlantic II",
     "section": "",
-    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    color = ~pal(name))\n\n\n👍 How to color-code: use the pal() function to generate colors according to name of storm\n\n\n\n\n\n\n\n\n\nWhat about a legend?"
+    "text": "To color code storms based on their name (categorical values) we have to create a color palette via colorFactor().\n\n\nUnique storm names in 1975:\n\nstorms75 |&gt; distinct(name)\n\n# A tibble: 8 × 1\n  name    \n  &lt;chr&gt;   \n1 Amy     \n2 Blanche \n3 Caroline\n4 Doris   \n5 Eloise  \n6 Faye    \n7 Gladys  \n8 Hallie  \n\n\n\nRainbow colors:\n\nrainbow(8)\n\n[1] \"#FF0000\" \"#FFBF00\" \"#80FF00\" \"#00FF40\" \"#00FFFF\" \"#0040FF\" \"#8000FF\"\n[8] \"#FF00BF\"\n\n\n\nColor palette function:\n\npal &lt;- colorFactor(\n  palette = rainbow(8), \n  domain = storms75$name)\n\npal(c(\"Amy\", \"Blanche\"))\n\n[1] \"#FF0000\" \"#FFBF00\""
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#section-11",
     "href": "lectures/30-geospatial3/slides.html#section-11",
     "title": "Storms in North Atlantic II",
     "section": "",
-    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    color = ~pal(name)) |&gt; \n  addLegend(\n    position = \"bottomleft\", \n    pal = pal, \n    values = ~name,\n    title = \"Storm name\")"
+    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    color = ~pal(name))\n\n\n👍 How to color-code: use the pal() function to generate colors according to name of storm\n\n\n\n\n\n\n\n\n\nWhat about a legend?"
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#section-12",
     "href": "lectures/30-geospatial3/slides.html#section-12",
     "title": "Storms in North Atlantic II",
     "section": "",
+    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    color = ~pal(name)) |&gt; \n  addLegend(\n    position = \"bottomleft\", \n    pal = pal, \n    values = ~name,\n    title = \"Storm name\")"
+  },
+  {
+    "objectID": "lectures/30-geospatial3/slides.html#section-13",
+    "href": "lectures/30-geospatial3/slides.html#section-13",
+    "title": "Storms in North Atlantic II",
+    "section": "",
     "text": "View Code\nstorms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~paste0(name, \": \", month, \"-\", day),\n    radius = ~wind*1000,\n    weight = 1, \n    fillOpacity = 0.7,\n    color = ~pal(name)) |&gt; \n  addLegend(\n    position = \"bottomleft\", \n    pal = pal, \n    values = ~name)"
+  },
+  {
+    "objectID": "lectures/30-geospatial3/slides.html#bonus-map",
+    "href": "lectures/30-geospatial3/slides.html#bonus-map",
+    "title": "Storms in North Atlantic II",
+    "section": "Bonus Map",
+    "text": "Bonus Map\n\n\nView Code\nstorms |&gt;\n  filter(year == 1975) |&gt;\nleaflet() |&gt;\n  setView(lng = -50, lat = 30, zoom = 3) |&gt;\n  addTiles() |&gt;\n  addProviderTiles(provider = \"NASAGIBS.ViirsEarthAtNight2012\") |&gt;\n  addCircleMarkers(\n    lng = ~long, \n    lat = ~lat,\n    radius = 1, \n    color = \"#DDFF03\", \n    weight = ~wind/5)"
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#example-adding-sf-data-polygons",
@@ -1982,20 +1989,6 @@
     "title": "Storms in North Atlantic II",
     "section": "Example: adding \"sf\" data polygons",
     "text": "Example: adding \"sf\" data polygons\n\nusa_states = ne_states(\n  country = \"United States of America\", \n  returnclass = \"sf\")\n\nleaflet(data = usa_states) |&gt; \n  addTiles() |&gt;\n  setView(lng = -90, lat = 40, zoom = 3) |&gt;\n  addPolygons(fillColor = rainbow(10), stroke = FALSE)"
-  },
-  {
-    "objectID": "lectures/30-geospatial3/slides.html#leaflet-maps",
-    "href": "lectures/30-geospatial3/slides.html#leaflet-maps",
-    "title": "Storms in North Atlantic II",
-    "section": "Leaflet Maps",
-    "text": "Leaflet Maps\n\n\nView Code\nstorms |&gt;\n  filter(year == 1975) |&gt;\nleaflet() |&gt;\n  setView(lng = -50, lat = 30, zoom = 3) |&gt;\n  addTiles() |&gt;\n  addProviderTiles(provider = \"NASAGIBS.ViirsEarthAtNight2012\") |&gt;\n  addCircleMarkers(\n    lng = ~long, \n    lat = ~lat,\n    radius = 1, \n    color = \"#DDFF03\")"
-  },
-  {
-    "objectID": "lectures/30-geospatial3/slides.html#leaflet-maps-1",
-    "href": "lectures/30-geospatial3/slides.html#leaflet-maps-1",
-    "title": "Storms in North Atlantic II",
-    "section": "Leaflet Maps",
-    "text": "Leaflet Maps\n\n\nView Code\nstorms |&gt;\n  filter(year == 1975) |&gt;\nleaflet() |&gt;\n  setView(lng = -50, lat = 30, zoom = 3) |&gt;\n  addTiles() |&gt;\n  addProviderTiles(provider = \"NASAGIBS.ViirsEarthAtNight2012\") |&gt;\n  addCircleMarkers(\n    lng = ~long, \n    lat = ~lat,\n    radius = 1, \n    color = \"#DDFF03\", \n    weight = ~wind/5)"
   },
   {
     "objectID": "lectures/28-geospatial1/slides.html#geographic-data",
@@ -2464,7 +2457,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 5 5"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 3 4"
   },
   {
     "objectID": "lectures/7-lists/slides.html#discuss-with-a-neighbor",
@@ -4958,7 +4951,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"silver\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"bronze\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -4972,7 +4965,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"freshman\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"junior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -5273,7 +5266,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 13     Bam Adebayo  MIA   C            81    255 July 18, … US      7         \n2 5      Anthony Edw… MIN   SG           76    225 August 5,… US      4         \n3 5      Dejounte Mu… NOP   PG           76    180 September… US      7         \n4 7      Buddy Hield  GSW   SG           76    220 December … BS      8         \n5 25     Isaiah Mobl… PHI   PF           80    238 September… US      2         \n6 0      Josh Richar… MIA   SG           77    200 September… US      9         \n7 28     Brice Sensa… UTA   SF           78    235 October 3… US      1         \n8 13     Jett Howard  ORL   SF           80    215 September… US      1         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 17     \"Garrett Te… TOR   SG           77    195 May 8, 19… US      14        \n2 3, 17  \"Isaac Jone… SAC   PF           80    245 July 11, … US      R         \n3 45     \"Donovan Mi… CLE   SG           74    215 September… US      7         \n4 10     \"Bogdan Bog… LAC   SG           77    225 August 18… RS      7         \n5 44     \"Jaden Spri… BOS   SG           76    202 September… US      3         \n6 16     \"Anthony Gi… WAS   PF           79    230 October 1… US      4         \n7 00     \"Jericho Si… MIL   C            82    250 October 2… US      3         \n8 5      \"Stephon Ca… SAS   SG           78    215 November … US      R         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -6127,14 +6120,14 @@
     "href": "lectures/23-date-time1/slides.html#an-r-vector-for-date-times",
     "title": "Dates and Times I",
     "section": "An R vector for date-times",
-    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-07 21:22:18 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1775622138"
+    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-08 10:15:34 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1775668534"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "href": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "title": "Dates and Times I",
     "section": "Why not just use a double vector?",
-    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-07 21:22:18 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-07 21:22:19 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-07 21:22:18 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/07/26\""
+    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-08 10:15:34 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-08 10:15:35 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-08 10:15:34 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/08/26\""
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#creating-date-time-vectors",
@@ -6169,21 +6162,21 @@
     "href": "lectures/23-date-time1/slides.html#getting",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 7\n\n\n\n\n\nwday(now)\n\n\n\n[1] 3\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Tue\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 8\n\n\n\n\n\nwday(now)\n\n\n\n[1] 4\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Wed\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#getting-1",
     "href": "lectures/23-date-time1/slides.html#getting-1",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 7\n\n\n\nwday(now)\n\n[1] 3\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Tuesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 8\n\n\n\nwday(now)\n\n[1] 4\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Wednesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#setting",
     "href": "lectures/23-date-time1/slides.html#setting",
     "title": "Dates and Times I",
     "section": "Setting",
-    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-07 21:22:18 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Monday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-08 10:15:34 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Tuesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#your-turn",
@@ -7247,14 +7240,14 @@
     "href": "lectures/24-date-time2/slides.html#how-old-is-oski",
     "title": "Dates and Times II",
     "section": "How old is Oski?",
-    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30873 days"
+    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30874 days"
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#durations",
     "href": "lectures/24-date-time2/slides.html#durations",
     "title": "Dates and Times II",
     "section": "Durations",
-    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2667427200s (~84.53 years)\""
+    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2667513600s (~84.53 years)\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#constructing-a-duration",
@@ -7296,7 +7289,7 @@
     "href": "lectures/24-date-time2/slides.html#how-old-will-oski-be",
     "title": "Dates and Times II",
     "section": "How old will Oski be …",
-    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2667427200s (~84.53 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2698984800s (~85.53 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 192d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 192d 0H 0M 0S\""
+    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2667513600s (~84.53 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2699071200s (~85.53 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 193d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 193d 0H 0M 0S\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#intervals",
@@ -7779,7 +7772,7 @@
     "href": "lectures/34-json/slides.html#api-open-notify",
     "title": "JSON Data",
     "section": "API “Open Notify”",
-    "text": "API “Open Notify”\nAPI stands for Application Programming Interface. In simpler terms, think of API as a data sharing interface.\n\nurl = \"http://api.open-notify.org/iss-now.json\"\n\nx = fromJSON(url)\nx\n\n$timestamp\n[1] 1775622171\n\n$iss_position\n$iss_position$latitude\n[1] \"-51.6100\"\n\n$iss_position$longitude\n[1] \"-66.4898\"\n\n\n$message\n[1] \"success\""
+    "text": "API “Open Notify”\nAPI stands for Application Programming Interface. In simpler terms, think of API as a data sharing interface.\n\nurl = \"http://api.open-notify.org/iss-now.json\"\n\nx = fromJSON(url)\nx\n\n$iss_position\n$iss_position$latitude\n[1] \"19.7207\"\n\n$iss_position$longitude\n[1] \"-155.6235\"\n\n\n$timestamp\n[1] 1775668566\n\n$message\n[1] \"success\""
   },
   {
     "objectID": "lectures/31-shapefiles/slides.html#about",
