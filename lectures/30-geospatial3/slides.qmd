@@ -15,6 +15,40 @@ library(rnaturalearth)
 
 # Web Interactive Maps with Leaflet
 
+##
+
+```{r}
+#| echo: false
+#| out-width: 90%
+#| fig-width: 13
+#| fig-height: 9
+storms75 = storms |>
+  filter(year == 1975)
+
+pal <- colorFactor(
+  palette = rainbow(8), 
+  domain = storms75$name)
+
+storms75 |>
+  leaflet() |> 
+  addProviderTiles(provider = 'CartoDB') |> 
+  addCircles(
+    lng = ~long, 
+    lat = ~lat,
+    label = ~paste0(name, ": ", month, "-", day),
+    radius = ~wind*1000,
+    weight = 1, 
+    fillOpacity = 0.7,
+    color = ~pal(name)) |> 
+  addLegend(
+    position = "bottomleft", 
+    pal = pal, 
+    values = ~name,
+    title = "Storms 1975")
+```
+
+
+<!--
 ## Leaflet: Web Interactive Maps
 
 ```{r}
@@ -33,7 +67,7 @@ storms |>
     lat = ~lat,
     radius = 1)
 ```
-
+-->
 
 ## Leaflet
 
@@ -47,9 +81,13 @@ interactive maps for websites and web mapping applications.
 
 . . .
 
+\
+
 The R package `"leaflet"` lets you create and customize _Leaflet_ maps in R. 
 
 . . .
+
+\
 
 These maps can be used directly from the R console, Positron, RStudio, in Markdown 
 documents (e.g. `qmd`, `Rmd`), and in Shiny applications.
@@ -61,7 +99,7 @@ You create a Leaflet map with these basic steps:
 
 1) Create a map widget by calling `leaflet()`.
 
-2) Add layers (i.e. features) to the map by using layer functions:
+2) Add layers (i.e. features) to the map, via `|>`, by using layer functions:
 
     + `addTiles()`
     + `addMarkers()`
@@ -317,6 +355,37 @@ leaflet() |>
 leaflet() |> 
   addProviderTiles(
     "Esri.WorldImagery") |> 
+  addMarkers(
+    lng = -122.2579, 
+    lat = 37.8718, 
+    popup = "Fiat Lux")
+```
+:::
+::::
+
+
+## Changing Tiles
+
+:::: {.columns}
+::: {.column width="45%"}
+```{r}
+#| eval: false
+leaflet() |> 
+  addProviderTiles(
+    "Esri.WorldTopoMap") |> 
+  addMarkers(
+    lng = -122.2579, 
+    lat = 37.8718, 
+    popup = "Fiat Lux")
+```
+:::
+
+::: {.column .fragment width="55%"}
+```{r}
+#| echo: false
+leaflet() |> 
+  addProviderTiles(
+    "Esri.WorldTopoMap") |> 
   addMarkers(
     lng = -122.2579, 
     lat = 37.8718, 
@@ -757,6 +826,29 @@ storms75 |>
 ```
 
 
+## Bonus Map
+
+```{r}
+#| code-fold: true
+#| code-summary: View Code
+#| out-width: 90%
+#| fig-width: 13
+#| fig-height: 8
+storms |>
+  filter(year == 1975) |>
+leaflet() |>
+  setView(lng = -50, lat = 30, zoom = 3) |>
+  addTiles() |>
+  addProviderTiles(provider = "NASAGIBS.ViirsEarthAtNight2012") |>
+  addCircleMarkers(
+    lng = ~long, 
+    lat = ~lat,
+    radius = 1, 
+    color = "#DDFF03", 
+    weight = ~wind/5)
+```
+
+
 # Polygons
 
 ## Example: adding `"sf"` data polygons {auto-animate=true}
@@ -779,47 +871,6 @@ leaflet(data = usa_states) |>
   addTiles() |>
   setView(lng = -90, lat = 40, zoom = 3) |>
   addPolygons(fillColor = rainbow(10), stroke = FALSE)
-```
-
-
-## Leaflet Maps
-
-```{r}
-#| code-fold: true
-#| code-summary: View Code
-#| echo: true
-storms |>
-  filter(year == 1975) |>
-leaflet() |>
-  setView(lng = -50, lat = 30, zoom = 3) |>
-  addTiles() |>
-  addProviderTiles(provider = "NASAGIBS.ViirsEarthAtNight2012") |>
-  addCircleMarkers(
-    lng = ~long, 
-    lat = ~lat,
-    radius = 1, 
-    color = "#DDFF03")
-```
-
-
-## Leaflet Maps
-
-```{r}
-#| code-fold: true
-#| code-summary: View Code
-#| echo: true
-storms |>
-  filter(year == 1975) |>
-leaflet() |>
-  setView(lng = -50, lat = 30, zoom = 3) |>
-  addTiles() |>
-  addProviderTiles(provider = "NASAGIBS.ViirsEarthAtNight2012") |>
-  addCircleMarkers(
-    lng = ~long, 
-    lat = ~lat,
-    radius = 1, 
-    color = "#DDFF03", 
-    weight = ~wind/5)
 ```
 
 
