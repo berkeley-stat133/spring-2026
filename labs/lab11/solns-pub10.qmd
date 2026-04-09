@@ -1,0 +1,69 @@
+---
+title: "Pub 10: My Favorite Spots in Berkeley"
+author: "STAT133"
+format: 
+  dashboard
+server: shiny
+---
+
+```{r}
+#| context: setup
+library(shiny)
+library(leaflet)
+
+locations <- data.frame(
+  name     = c("Kresge Engineering Library", "Cheese Board Pizza", "Kiklo Cafe"),
+  category = c("Study Spot", "Restaurant", "Cafe"),
+  lat      = c(37.8738211,  37.8798723,  37.8738509),
+  lng      = c(-122.2608825, -122.2720543, -122.2612693),
+  desc     = c(
+    "Favorite study spot",
+    "Favorite restaurant",
+    "Favorite cafe"
+  )
+)
+```
+
+# Campus Map
+
+## {.sidebar}
+
+**Filter Locations**
+
+```{r}
+checkboxGroupInput(
+  inputId  = "categories",
+  label    = NULL,
+  choices  = c("Study Spot", "Restaurant", "Cafe"),
+  selected = c("Study Spot", "Restaurant", "Cafe")
+)
+```
+
+
+## Column
+
+```{r}
+leafletOutput("map", height = "600px")
+```
+
+```{r}
+#| context: server
+
+output$map <- renderLeaflet({
+  df <- locations[locations$category %in% input$categories, ]
+  
+  leaflet(df) |>
+    addProviderTiles("CartoDB.Voyager") |>
+    setView(lng = -122.265, lat = 37.874, zoom = 15) |>
+    addCircleMarkers(
+      lng         = ~lng,
+      lat         = ~lat,
+      radius      = 10,
+      fillColor   = "blue",
+      fillOpacity = 0.9,
+      color       = "white",
+      weight      = 1.5,
+      popup       = ~paste0("<b>", name, "</b><br>", category, "<br>", desc)
+    )
+})
+```
