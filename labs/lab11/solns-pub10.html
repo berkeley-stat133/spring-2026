@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Scaling and Panning – STAT 133</title>
+<title>solns-pub10 – STAT 133</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -40,10 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-647c897f562ff2854f1e30db979fceb2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/intersection-observer-polyfill-1.0.0/intersection-observer.js"></script>
-<script src="../../site_libs/quarto-contrib/scrollama-3.2.0/scrollama.min.js"></script>
-<script src="../../site_libs/quarto-contrib/closeread-0.1.0/closeread.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-b880a317d4e47616d5831ba0a659ac23.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -80,11 +77,8 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 </script>
-<meta cr-debug-mode="false">
-<meta cr-remove-header-space="false">
 
 
-<link rel="stylesheet" href="../../site_libs/quarto-contrib/quarto-project/qmd-lab/closeread/closeread.css">
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
@@ -92,119 +86,18 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
-      <!-- user-provided yaml closeread style options -->
-      <style>
-        :root {
-          --cr-narrative-text-color-sidebar: black;
---cr-section-background-color: white;
---cr-narrative-background-color-sidebar: #fcf7f0;
---cr-narrative-font-size: 2em;
-        }
-      </style>
-    
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Scaling and Panning</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta column-page">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<div class="cr-section cr-column-screen sidebar-left">
-<div class="narrative-col">
-<section id="scaling" class="level2 narrative trigger">
-<h2 class="narrative anchored" data-anchor-id="scaling">Scaling</h2>
-</section>
-<div class="trigger new-trigger" data-focus-on="cr-plot">
-<div class="narrative">
-<p>A graph without any visual effects at a normal scale.</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-scale-by="0.5" data-focus-on="cr-plot">
-<div class="narrative">
-<p>A graph with a “shrinking” effect.</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-scale-by="2" data-focus-on="cr-plot">
-<div class="narrative">
-<p>A graph with an “enlarging” effect.</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-focus-on="cr-plot">
-<div class="narrative">
-<p>Now the graph is normal size again.</p>
-</div>
-</div>
-<section id="panning" class="level2 narrative trigger">
-<h2 class="narrative anchored" data-anchor-id="panning">Panning</h2>
-</section>
-<div class="trigger">
-<div class="narrative">
-<div class="line-block"><span id="lb1-1">The panning attribute takes a pair of x and y values that control the horizontal and vertical panning, respectively.</span><br>
-<span id="lb1-2">Normal position</span></div>
-</div>
-</div>
-<div class="trigger new-trigger" data-focus-on="cr-plot">
-<div class="narrative">
-
-</div>
-</div>
-<div class="trigger new-trigger" data-pan-to="-100px,0px" data-focus-on="cr-plot">
-<div class="narrative">
-<p>Panning to the left</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-pan-to="0px,100px" data-focus-on="cr-plot">
-<div class="narrative">
-<p>Panning to the right</p>
-</div>
-</div>
-<div class="trigger new-trigger" data-focus-on="cr-plot">
-<div class="narrative">
-<p>Normal position again</p>
-</div>
-</div>
-</div>
-<div class="sticky-col">
-<div class="sticky-col-stack">
-<div id="cr-plot" class="sticky">
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'readr' was built under R version 4.5.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'dplyr' was built under R version 4.5.2</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="viz-effects_files/figure-html/barchart8-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 
 
 
@@ -295,6 +188,11 @@ gtag('config', 'G-CES9J82GLL', { 'anonymize_ip': true});
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

@@ -2457,7 +2457,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 3 4"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 6 5"
   },
   {
     "objectID": "lectures/7-lists/slides.html#discuss-with-a-neighbor",
@@ -4316,6 +4316,111 @@
     "text": "Pset 6 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps5\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
   {
+    "objectID": "labs/lab11/slides.html#before-the-quiz-1",
+    "href": "labs/lab11/slides.html#before-the-quiz-1",
+    "title": "Lab 11",
+    "section": "Before the Quiz",
+    "text": "Before the Quiz\n\nSpread out as much as possible.\n🚽 If you need to use the bathroom, this is the time to do it.\n🧹 Clear your desk of everything except a pen/pencil and your ID.\n🧢 Remove hats, hoods, and sunglasses (don’t hide your face please!)\n📱 All electronic devices (laptop, phone, airbuds, smart watch) should remain in your bag for the entire quiz period."
+  },
+  {
+    "objectID": "labs/lab11/slides.html#quiz",
+    "href": "labs/lab11/slides.html#quiz",
+    "title": "Lab 11",
+    "section": "Quiz",
+    "text": "Quiz\n\n\n\n−+\n35:00\n\n\n\n\nPlease be quiet.\nWhen you get a quiz, do not begin until we tell you so.\nWrite your name and SID.\nKeep your eyes on your own quiz.\nOnly one person allowed to use the bathroom at a time.\nIf you finish early, please hold on to your quiz and wait.\nWhen the timer ends, hold up your quiz in the air immediately and put your writing utensils down or risk a 0.\n\nGood luck! 🍀"
+  },
+  {
+    "objectID": "labs/lab11/slides.html#web-interactive-maps-with-leaflet",
+    "href": "labs/lab11/slides.html#web-interactive-maps-with-leaflet",
+    "title": "Lab 11",
+    "section": "Web Interactive Maps with Leaflet",
+    "text": "Web Interactive Maps with Leaflet\nLeaflet is a JavaScript library used to build interactive maps for websites and web mapping applications.\n\nThe R package leaflet lets you create and customize Leaflet maps in R.\nThese maps can be used directly from the R console, from RStudio, in Markdown documents (e.g. qmd, Rmd), and in Shiny applications."
+  },
+  {
+    "objectID": "labs/lab11/slides.html#basic-usage",
+    "href": "labs/lab11/slides.html#basic-usage",
+    "title": "Lab 11",
+    "section": "Basic Usage",
+    "text": "Basic Usage\nYou create a Leaflet map with these basic steps:\n\nCreate a map widget by calling leaflet().\nAdd layers (i.e. features) to the map, via |&gt;, by using layer functions:\n\naddTiles()\naddMarkers()\naddCircles()\naddPolygons()\naddLegend()\n\nRepeat step 2 as desired.\nPrint the map widget to display it."
+  },
+  {
+    "objectID": "labs/lab11/slides.html#example-basic-leaflet",
+    "href": "labs/lab11/slides.html#example-basic-leaflet",
+    "title": "Lab 11",
+    "section": "Example: Basic Leaflet",
+    "text": "Example: Basic Leaflet\n\nlibrary(leaflet)\n# view of UC Berkeley \n# with marker at Campanile's lat & long\nleaflet() |&gt;\n  addTiles() |&gt; # default OpenStreetMap map tiles\n  addMarkers(lng = -122.2579, lat = 37.8721, popup = \"Berkeley\")"
+  },
+  {
+    "objectID": "labs/lab11/slides.html#your-turn-campus-leaflet",
+    "href": "labs/lab11/slides.html#your-turn-campus-leaflet",
+    "title": "Lab 11",
+    "section": "Your Turn: Campus Leaflet",
+    "text": "Your Turn: Campus Leaflet\n\nTry graphing a leaflet map in a .qmd file with 2 markers indicating your favorite places on Campus.\nYou will have to pass a 2-element vector for the lng coordinates, and also a 2-element vector for the lat coordinates.\nYou will also have to pass a 2-element vector for the popup names.\nTo obtain the latitude and longitude coordinates, you can search a location on Google Maps. The coordinates are displayed in the URL of your browser.\n\n\n\n\n−+\n07:00"
+  },
+  {
+    "objectID": "labs/lab11/slides.html#map-tiles",
+    "href": "labs/lab11/slides.html#map-tiles",
+    "title": "Lab 11",
+    "section": "Map Tiles",
+    "text": "Map Tiles\nLots of different map tiles can be used in leaflet maps.\nLeaflet uses map tiles from:\n\nOpenStreetMap (OSM)\n\nOSM is simply the database with all the data in xml-vector format.\n\nCartoDB\n\nMost popular base maps:"
+  },
+  {
+    "objectID": "labs/lab11/slides.html#example-map-tiles",
+    "href": "labs/lab11/slides.html#example-map-tiles",
+    "title": "Lab 11",
+    "section": "Example: Map Tiles",
+    "text": "Example: Map Tiles\n\n# OpenStreetMap (default) — just use addTiles()\nleaflet() |&gt;\n  addTiles() |&gt;\n  setView(lng = -122.265, lat = 37.874, zoom = 15)\n\n# CartoDB — use addProviderTiles() with a CartoDB style\nleaflet() |&gt;\n  addProviderTiles(\"CartoDB.Voyager\") |&gt;       # light\n  setView(lng = -122.265, lat = 37.874, zoom = 15)"
+  },
+  {
+    "objectID": "labs/lab11/slides.html#adding-data-objects",
+    "href": "labs/lab11/slides.html#adding-data-objects",
+    "title": "Lab 11",
+    "section": "Adding Data Objects",
+    "text": "Adding Data Objects\nBoth leaflet() and the map layer functions have an optional data parameter that is designed to receive spatial data in one of several forms, for instance:\n\nFrom base R:\n\nlng/lat matrix\ndata frame with lng/lat columns\n\nFrom the “sf” package:\n\nthe data frame of class “sf”"
+  },
+  {
+    "objectID": "labs/lab11/slides.html#example-adding-sf-data-polygons",
+    "href": "labs/lab11/slides.html#example-adding-sf-data-polygons",
+    "title": "Lab 11",
+    "section": "Example: adding “sf” data polygons",
+    "text": "Example: adding “sf” data polygons\n\nlibrary(sf)\nlibrary(rnaturalearth)\nlibrary(tidyverse)\nusa_states = ne_states(\n  country = \"United States of America\", \n  returnclass = \"sf\")\n\nleaflet(data = usa_states) |&gt; \n  addTiles() |&gt;\n  setView(lng = -90, lat = 40, zoom = 3) |&gt;\n  addPolygons(fillColor = rainbow(10), stroke = FALSE)"
+  },
+  {
+    "objectID": "labs/lab11/slides.html#mapping-1975-north-atlantic-storms",
+    "href": "labs/lab11/slides.html#mapping-1975-north-atlantic-storms",
+    "title": "Lab 11",
+    "section": "Mapping 1975 North Atlantic Storms",
+    "text": "Mapping 1975 North Atlantic Storms\n\nstorms |&gt;\n  filter(year == 1975) |&gt;\nleaflet() |&gt;\n  setView(lng = -50, lat = 30, zoom = 3) |&gt;\n  addTiles() |&gt;\n  addProviderTiles(provider = \"NASAGIBS.ViirsEarthAtNight2012\") |&gt;\n  addCircleMarkers(\n    lng = ~long, \n    lat = ~lat,\n    radius = 1, \n    color = \"#DDFF03\")"
+  },
+  {
+    "objectID": "labs/lab11/slides.html#requirements",
+    "href": "labs/lab11/slides.html#requirements",
+    "title": "Lab 11",
+    "section": "Requirements",
+    "text": "Requirements\n\nA leaflet map displaying 3 campus locations:\n\nfavorite study spot\nfavorite restaurant\nfavorite cafe\n\nOne input control that updates the map (e.g. dropdown or checkbox to filter locations)\nA personalized map tile"
+  },
+  {
+    "objectID": "labs/lab11/slides.html#submission-to-bcourses",
+    "href": "labs/lab11/slides.html#submission-to-bcourses",
+    "title": "Lab 11",
+    "section": "Submission to BCourses",
+    "text": "Submission to BCourses\nSubmit the Shinyapps.io URL (link) of your published document to the corresponding assignment in bCourses.\nSee Assignments tab &gt; Quarto Publications &gt; Pub10"
+  },
+  {
+    "objectID": "labs/lab11/slides.html#pset-9",
+    "href": "labs/lab11/slides.html#pset-9",
+    "title": "Lab 11",
+    "section": "Pset 9",
+    "text": "Pset 9\nAvailable in bCourses:\nSee Assignments tab &gt; Problem Sets &gt; PS9\nYou’ll find 2 files:\n\nps9.html: instructions\nps9.qmd: template file to write your answers\n\n\nIn case of trouble: Go to Files tab, folder problem-sets, folder ps9, and download the qmd file.\nSometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome)."
+  },
+  {
+    "objectID": "labs/lab11/slides.html#pset-9-submission",
+    "href": "labs/lab11/slides.html#pset-9-submission",
+    "title": "Lab 11",
+    "section": "Pset 9 Submission",
+    "text": "Pset 9 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps9\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
+  },
+  {
     "objectID": "labs/lab10/solns-data-prep.html",
     "href": "labs/lab10/solns-data-prep.html",
     "title": "Pub 8 Solutions",
@@ -4951,7 +5056,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"bronze\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"gold\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -4965,7 +5070,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"junior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"freshman\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -5266,7 +5371,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 17     \"Garrett Te… TOR   SG           77    195 May 8, 19… US      14        \n2 3, 17  \"Isaac Jone… SAC   PF           80    245 July 11, … US      R         \n3 45     \"Donovan Mi… CLE   SG           74    215 September… US      7         \n4 10     \"Bogdan Bog… LAC   SG           77    225 August 18… RS      7         \n5 44     \"Jaden Spri… BOS   SG           76    202 September… US      3         \n6 16     \"Anthony Gi… WAS   PF           79    230 October 1… US      4         \n7 00     \"Jericho Si… MIL   C            82    250 October 2… US      3         \n8 5      \"Stephon Ca… SAS   SG           78    215 November … US      R         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 2      Nick Richar… PHO   C            83    245 November … JM      4         \n2 54     Sandro Mamu… SAS   PF           81    240 May 23, 1… US      3         \n3 11     Bryce McGow… POR   SG           78    190 November … US      2         \n4 9      Moses Brown  DAL   C            86    258 October 1… US      5         \n5 22     Malachi Fly… CHO   PG           73    185 May 10, 1… US      4         \n6 25     P.J. Washin… DAL   PF           79    230 August 23… US      5         \n7 5      Dyson Danie… ATL   SG           79    199 March 17,… AU      2         \n8 88     Neemias Que… BOS   C            84    248 July 13, … PT      3         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -6120,14 +6225,14 @@
     "href": "lectures/23-date-time1/slides.html#an-r-vector-for-date-times",
     "title": "Dates and Times I",
     "section": "An R vector for date-times",
-    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-08 10:15:34 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1775668534"
+    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-09 08:28:25 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1775748505"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "href": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "title": "Dates and Times I",
     "section": "Why not just use a double vector?",
-    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-08 10:15:34 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-08 10:15:35 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-08 10:15:34 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/08/26\""
+    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-09 08:28:25 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-09 08:28:26 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-09 08:28:25 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/09/26\""
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#creating-date-time-vectors",
@@ -6162,21 +6267,21 @@
     "href": "lectures/23-date-time1/slides.html#getting",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 8\n\n\n\n\n\nwday(now)\n\n\n\n[1] 4\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Wed\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 9\n\n\n\n\n\nwday(now)\n\n\n\n[1] 5\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Thu\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#getting-1",
     "href": "lectures/23-date-time1/slides.html#getting-1",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 8\n\n\n\nwday(now)\n\n[1] 4\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Wednesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 9\n\n\n\nwday(now)\n\n[1] 5\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Thursday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#setting",
     "href": "lectures/23-date-time1/slides.html#setting",
     "title": "Dates and Times I",
     "section": "Setting",
-    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-08 10:15:34 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Tuesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-09 08:28:25 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Wednesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#your-turn",
@@ -7240,14 +7345,14 @@
     "href": "lectures/24-date-time2/slides.html#how-old-is-oski",
     "title": "Dates and Times II",
     "section": "How old is Oski?",
-    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30874 days"
+    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30875 days"
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#durations",
     "href": "lectures/24-date-time2/slides.html#durations",
     "title": "Dates and Times II",
     "section": "Durations",
-    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2667513600s (~84.53 years)\""
+    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2667600000s (~84.53 years)\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#constructing-a-duration",
@@ -7289,7 +7394,7 @@
     "href": "lectures/24-date-time2/slides.html#how-old-will-oski-be",
     "title": "Dates and Times II",
     "section": "How old will Oski be …",
-    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2667513600s (~84.53 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2699071200s (~85.53 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 193d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 193d 0H 0M 0S\""
+    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2667600000s (~84.53 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2699157600s (~85.53 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 194d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 194d 0H 0M 0S\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#intervals",
@@ -7772,7 +7877,7 @@
     "href": "lectures/34-json/slides.html#api-open-notify",
     "title": "JSON Data",
     "section": "API “Open Notify”",
-    "text": "API “Open Notify”\nAPI stands for Application Programming Interface. In simpler terms, think of API as a data sharing interface.\n\nurl = \"http://api.open-notify.org/iss-now.json\"\n\nx = fromJSON(url)\nx\n\n$iss_position\n$iss_position$latitude\n[1] \"19.7207\"\n\n$iss_position$longitude\n[1] \"-155.6235\"\n\n\n$timestamp\n[1] 1775668566\n\n$message\n[1] \"success\""
+    "text": "API “Open Notify”\nAPI stands for Application Programming Interface. In simpler terms, think of API as a data sharing interface.\n\nurl = \"http://api.open-notify.org/iss-now.json\"\n\nx = fromJSON(url)\nx\n\n$timestamp\n[1] 1775748538\n\n$message\n[1] \"success\"\n\n$iss_position\n$iss_position$latitude\n[1] \"23.0826\"\n\n$iss_position$longitude\n[1] \"9.4377\""
   },
   {
     "objectID": "lectures/31-shapefiles/slides.html#about",
