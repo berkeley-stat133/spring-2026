@@ -434,7 +434,7 @@ Lab 10: [slides](labs/lab10/slides.html) | [PS9](https://bcourses.berkeley.edu/c
 
 [Leaflet Maps](lectures/30-geospatial3/slides.html)
 
-Lab 11: [__Quiz 5__]{.label-Quiz} | slides | PS10
+Lab 11: [__Quiz 5__]{.label-Quiz} | [slides](labs/lab11/slides.html) | [PS10](https://bcourses.berkeley.edu/courses/1551809/assignments/9021603)
 
 Choropleth Maps
 :::
