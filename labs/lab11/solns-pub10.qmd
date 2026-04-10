@@ -1,12 +1,11 @@
 ---
 title: "Pub 10: My Favorite Spots in Berkeley"
 author: "STAT133"
-format: 
-  dashboard
-server: shiny
+format: dashboard
 ---
 
 ```{r}
+#| eval: false
 #| context: setup
 library(shiny)
 library(leaflet)
@@ -31,6 +30,7 @@ locations <- data.frame(
 **Filter Locations**
 
 ```{r}
+#| eval: false
 checkboxGroupInput(
   inputId  = "categories",
   label    = NULL,
@@ -43,10 +43,12 @@ checkboxGroupInput(
 ## Column
 
 ```{r}
+#| eval: false
 leafletOutput("map", height = "600px")
 ```
 
 ```{r}
+#| eval: false
 #| context: server
 
 output$map <- renderLeaflet({
