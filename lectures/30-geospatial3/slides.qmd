@@ -7,9 +7,22 @@ chalkboard: true
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, error = TRUE)
-library(tidyverse)
-library(leaflet)
-library(rnaturalearth)
+library(tidyverse)     # ecosystem of data science packages
+library(leaflet)       # web-interactive maps ('Leaflet' JavaScript library)
+library(rnaturalearth) # maps data from www.naturalearthdata.com
+```
+
+
+##
+
+```{r}
+#| eval: false
+# packages
+library(tidyverse)     # ecosystem of data science packages
+
+library(leaflet)       # web-interactive maps ('Leaflet' JavaScript library)
+
+library(rnaturalearth) # maps data from www.naturalearthdata.com
 ```
 
 
