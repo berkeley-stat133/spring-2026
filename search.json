@@ -10,193 +10,221 @@
     ]
   },
   {
+    "objectID": "lectures/33-raster/slides.html#section",
+    "href": "lectures/33-raster/slides.html#section",
+    "title": "Maps of Raster Data",
+    "section": "",
+    "text": "# packages\nlibrary(tidyverse)     # ecosystem of data science packages\n\nlibrary(terra)         # for spatial data in raster and vector form\n\nlibrary(viridis)       # colorblind-friendly color schemes\n\nlibrary(rnaturalearth) # maps data from www.naturalearthdata.com"
+  },
+  {
     "objectID": "lectures/33-raster/slides.html#mapping-the-world-in-2-styles",
     "href": "lectures/33-raster/slides.html#mapping-the-world-in-2-styles",
-    "title": "Raster Data",
+    "title": "Maps of Raster Data",
     "section": "Mapping the World in 2 styles",
     "text": "Mapping the World in 2 styles"
   },
   {
     "objectID": "lectures/33-raster/slides.html#vector-data--vs--raster-data",
     "href": "lectures/33-raster/slides.html#vector-data--vs--raster-data",
-    "title": "Raster Data",
+    "title": "Maps of Raster Data",
     "section": "Vector Data -vs- Raster Data",
     "text": "Vector Data -vs- Raster Data\n\n\nVector data are better for discretely bounded data, e.g. bike racks, rivers, political boundaries, etc.\n\n\nRaster data are better for continuous data, e.g. temperature, elevation, rainfall, etc."
   },
   {
     "objectID": "lectures/33-raster/slides.html#raster-data",
     "href": "lectures/33-raster/slides.html#raster-data",
-    "title": "Raster Data",
+    "title": "Maps of Raster Data",
     "section": "Raster Data",
     "text": "Raster Data"
   },
   {
     "objectID": "lectures/33-raster/slides.html#raster-data-regular-grids",
     "href": "lectures/33-raster/slides.html#raster-data-regular-grids",
-    "title": "Raster Data",
+    "title": "Maps of Raster Data",
     "section": "Raster Data (regular grids)",
-    "text": "Raster Data (regular grids)\nA location is represented by a grid cell\nCells have regular size, e.g. 30x30m\nGrid has dimension: fixed number of rows and columns\nEach cell has a value that represents the attribute of interest, e.g. elevation"
+    "text": "Raster Data (regular grids)\n\nRasters are spatial data models that define space as an array of equally sized cells, and composed of single or multiple bands.\n\nA location is represented by a grid cell.\nCells have regular size, e.g. 30x30m.\nGrid has dimension: fixed number of rows and columns.\nEach cell has a value that represents the attribute of interest, e.g. temperature, elevation, precipitation, pollution, etc.\nCell values can be either positive or negative, integer, or floating point."
   },
   {
     "objectID": "lectures/33-raster/slides.html#about-netcdf-files",
     "href": "lectures/33-raster/slides.html#about-netcdf-files",
-    "title": "Raster Data",
+    "title": "Maps of Raster Data",
     "section": "About NetCDF files",
     "text": "About NetCDF files\n\nNetCDF: Network Common Data Form\nBinary file format specifically designed for storing and sharing multidimensional data (e.g. data cube or data hypercube).\nPopular format for storing scientific data, especially when dealing with gridded or multidimensional information like temperature, precipitation, or satellite imagery.\nCommonly used in fields such as meteorology, climatology, and GIS to store data like temperature, precipitation, humidity, wind speed, and direction."
   },
   {
+    "objectID": "lectures/33-raster/slides.html#netcdf-of-data-cubes",
+    "href": "lectures/33-raster/slides.html#netcdf-of-data-cubes",
+    "title": "Maps of Raster Data",
+    "section": "NetCDF of Data Cubes",
+    "text": "NetCDF of Data Cubes\nMany NetCDF files are used to store data cubes or hypercubes.\n\n\n\n3-dim cube\n\n\n4-dim hypercube\n\n\n\n\nImages by Edzer Pebesma, https://r-spatial.org/python/06-Cubes.html"
+  },
+  {
+    "objectID": "lectures/33-raster/slides.html#section-1",
+    "href": "lectures/33-raster/slides.html#section-1",
+    "title": "Maps of Raster Data",
+    "section": "",
+    "text": "A 4-dim raster data cube layed out flat over two dimensions\n\n\nImages by Edzer Pebesma, https://r-spatial.org/python/06-Cubes.html"
+  },
+  {
     "objectID": "lectures/33-raster/slides.html#netcdf-data-format",
     "href": "lectures/33-raster/slides.html#netcdf-data-format",
-    "title": "Raster Data",
+    "title": "Maps of Raster Data",
     "section": "NetCDF Data Format",
     "text": "NetCDF Data Format\n\nNetCDF files are self-describing, containing all the necessary information about the data, including its structure, data types, and units.\nIt can handle various data types, including floats, integers, and strings.\nVariables in NetCDF files are associated with dimensions, allowing for organization of the data based on spatial and temporal coordinates."
   },
   {
+    "objectID": "lectures/33-raster/slides.html#netcdf-example",
+    "href": "lectures/33-raster/slides.html#netcdf-example",
+    "title": "Maps of Raster Data",
+    "section": "NetCDF Example",
+    "text": "NetCDF Example\nNOAA Monthly U.S. Climate Gridded Dataset (NClimGrid)\nhttps://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C00332\n\n\n\nFour Climate variables:\n\nMaximum Temperature\nMinimum Temperature\nAverage Temperature (we’ll focus on this one)\nPrecipitation"
+  },
+  {
+    "objectID": "lectures/33-raster/slides.html#section-3",
+    "href": "lectures/33-raster/slides.html#section-3",
+    "title": "Maps of Raster Data",
+    "section": "",
+    "text": "Monthly average temperature NetCDF file nclimgrid_tavg.nc available at:\nhttps://www.ncei.noaa.gov/data/nclimgrid-monthly/access/"
+  },
+  {
+    "objectID": "lectures/33-raster/slides.html#r-package-terra",
+    "href": "lectures/33-raster/slides.html#r-package-terra",
+    "title": "Maps of Raster Data",
+    "section": "R Package \"terra\"",
+    "text": "R Package \"terra\"\nThe \"terra\" package provides methods for spatial data analysis with vector (points, lines, polygons) and raster (grid) data.\n\n\n\n# install.packages(\"terra\")\nlibrary(terra)"
+  },
+  {
+    "objectID": "lectures/33-raster/slides.html#importing-netcdf-files-with-rast",
+    "href": "lectures/33-raster/slides.html#importing-netcdf-files-with-rast",
+    "title": "Maps of Raster Data",
+    "section": "Importing NetCDF files with rast()",
+    "text": "Importing NetCDF files with rast()\nAssuming you’ve downloaded \"nclimgrid_tavg.nc\" to your working directory\n\n\n# NClimGrid data as of Feb-2026\ndat &lt;- rast(\"nclimgrid_tavg.nc\")\ndat\n\n\n\nclass       : SpatRaster \ndimensions  : 596, 1385, 1574  (nrow, ncol, nlyr)\nresolution  : 0.04166666, 0.04166667  (x, y)\nextent      : -124.7083, -67, 24.5417, 49.37503  (xmin, xmax, ymin, ymax)\ncoord. ref. : lon/lat WGS 84 (CRS84) (OGC:CRS84) \nsource      : nclimgrid_tavg.nc \nvarname     : tavg (Temperature, monthly average of daily averages) \nnames       :         tavg_1,         tavg_2,         tavg_3,         tavg_4,         tavg_5,         tavg_6, ... \nunit        : degree_Celsius, degree_Celsius, degree_Celsius, degree_Celsius, degree_Celsius, degree_Celsius, ... \ntime (days) : 1895-01-01 to 2026-02-01 (2 steps)"
+  },
+  {
     "objectID": "lectures/33-raster/slides.html#essential-netcdf-vocabulary",
     "href": "lectures/33-raster/slides.html#essential-netcdf-vocabulary",
-    "title": "Raster Data",
+    "title": "Maps of Raster Data",
     "section": "Essential netCDF vocabulary",
     "text": "Essential netCDF vocabulary\n\nDimension\nVariables\nCoordinate Variables"
   },
   {
     "objectID": "lectures/33-raster/slides.html#dimension",
     "href": "lectures/33-raster/slides.html#dimension",
-    "title": "Raster Data",
+    "title": "Maps of Raster Data",
     "section": "Dimension",
     "text": "Dimension\n\nA NetCDF dimension has both a name and a size.\nA dimension size is an arbitrary positive integer.\nA dimension can be used to represent a real physical dimension, for example, time, latitude, longitude, or height.\nA dimension can also be used to index other quantities, for example, station or model run number.\nIt is possible to use the same dimension more than once in specifying a variable shape.\nThe number of dimensions is called the rank (or dimensionality)."
   },
   {
     "objectID": "lectures/33-raster/slides.html#variables",
     "href": "lectures/33-raster/slides.html#variables",
-    "title": "Raster Data",
+    "title": "Maps of Raster Data",
     "section": "Variables",
-    "text": "Variables\n\nA variable represents an array of values of the same type.\nVariables are used to store the bulk of the data in a netCDF file.\nA variable has a name, a data type, and a shape described by its list of dimensions specified when the variable is created. + A scalar variable has rank 0, + A vector has rank 1, + A matrix has rank 2.\nA variable can also have associated attributes that can be added, deleted, or changed after the variable is created."
+    "text": "Variables\n\nA variable represents an array of values of the same type.\nVariables are used to store the bulk of the data in a netCDF file.\nA variable has a name, a data type, and a shape described by its list of dimensions specified when the variable is created.\n\nA scalar variable has rank 0,\nA vector has rank 1,\nA matrix has rank 2.\n\nA variable can also have associated attributes that can be added, deleted, or changed after the variable is created."
   },
   {
-    "objectID": "lectures/33-raster/slides.html#netcdf-example",
-    "href": "lectures/33-raster/slides.html#netcdf-example",
-    "title": "Raster Data",
-    "section": "NetCDF Example",
-    "text": "NetCDF Example\nNOAA Monthly U.S. Climate Gridded Dataset (NClimGrid)\nhttps://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C00332\n\n\n\nFour Climate variables:\n\nMaximum Temperature\nMinimum Temperature\nAverage Temperature\nPrecipitation"
+    "objectID": "lectures/33-raster/slides.html#noaa-monthly-u.s.-climate-gridded-dataset",
+    "href": "lectures/33-raster/slides.html#noaa-monthly-u.s.-climate-gridded-dataset",
+    "title": "Maps of Raster Data",
+    "section": "NOAA Monthly U.S. Climate Gridded Dataset",
+    "text": "NOAA Monthly U.S. Climate Gridded Dataset\n\n# NClimGrid data as of Feb-2026\ndat &lt;- rast(\"nclimgrid_tavg.nc\")\ndat\n\n\nclass       : SpatRaster \ndimensions  : 596, 1385, 1574  (nrow, ncol, nlyr)\nresolution  : 0.04166666, 0.04166667  (x, y)\nextent      : -124.7083, -67, 24.5417, 49.37503  (xmin, xmax, ymin, ymax)\ncoord. ref. : lon/lat WGS 84 (CRS84) (OGC:CRS84) \nsource      : nclimgrid_tavg.nc \nvarname     : tavg (Temperature, monthly average of daily averages) \nnames       :         tavg_1,         tavg_2,         tavg_3,         tavg_4,         tavg_5,  ...\nunit        : degree_Celsius, degree_Celsius, degree_Celsius, degree_Celsius, degree_Celsius,  ... \ntime (days) : 1895-01-01 to 2026-02-01 (2 steps)"
   },
   {
-    "objectID": "lectures/33-raster/slides.html#section-2",
-    "href": "lectures/33-raster/slides.html#section-2",
-    "title": "Raster Data",
-    "section": "",
-    "text": "Monthly average temperature file nclimgrid_tavg.nc available at:\nhttps://www.ncei.noaa.gov/data/nclimgrid-monthly/access/"
-  },
-  {
-    "objectID": "lectures/33-raster/slides.html#r-package-terra",
-    "href": "lectures/33-raster/slides.html#r-package-terra",
-    "title": "Raster Data",
-    "section": "R Package \"terra\"",
-    "text": "R Package \"terra\"\nThe \"terra\" package provides methods for spatial data analysis with vector (points, lines, polygons) and raster (grid) data.\n\nlibrary(terra)"
-  },
-  {
-    "objectID": "lectures/33-raster/slides.html#importing-netcdf-files-with-rast",
-    "href": "lectures/33-raster/slides.html#importing-netcdf-files-with-rast",
-    "title": "Raster Data",
-    "section": "Importing NetCDF files with rast()",
-    "text": "Importing NetCDF files with rast()\n\n# NClimGrid data as of Feb-2026\ndat &lt;- rast(\"nclimgrid_tavg.nc\")\ndat\n\n\nclass       : SpatRaster \ndimensions  : 596, 1385, 1574  (nrow, ncol, nlyr)\nresolution  : 0.04166666, 0.04166667  (x, y)\nextent      : -124.7083, -67, 24.5417, 49.37503  (xmin, xmax, ymin, ymax)\ncoord. ref. : lon/lat WGS 84 (CRS84) (OGC:CRS84) \nsource      : nclimgrid_tavg.nc \nvarname     : tavg (Temperature, monthly average of daily averages) \nnames       :         tavg_1,         tavg_2,         tavg_3,         tavg_4,         tavg_5,         tavg_6, ... \nunit        : degree_Celsius, degree_Celsius, degree_Celsius, degree_Celsius, degree_Celsius, degree_Celsius, ... \ntime (days) : 1895-01-01 to 2026-02-01 (2 steps)"
-  },
-  {
-    "objectID": "lectures/33-raster/slides.html#importing-netcdf-files-with-rast-1",
-    "href": "lectures/33-raster/slides.html#importing-netcdf-files-with-rast-1",
-    "title": "Raster Data",
-    "section": "Importing NetCDF files with rast()",
-    "text": "Importing NetCDF files with rast()\n\n# NClimGrid data as of Feb-2026\ndat &lt;- rast(\"nclimgrid_tavg.nc\")\ndat\n\n\nclass       : SpatRaster \ndimensions  : 596, 1385, 1574  (nrow, ncol, nlyr)\nresolution  : 0.04166666, 0.04166667  (x, y)\nextent      : -124.7083, -67, 24.5417, 49.37503  (xmin, xmax, ymin, ymax)\ncoord. ref. : lon/lat WGS 84 (CRS84) (OGC:CRS84) \nsource      : nclimgrid_tavg.nc \nvarname     : tavg (Temperature, monthly average of daily averages) \nnames       :         tavg_1,         tavg_2,         tavg_3,         tavg_4,         tavg_5,  ...\nunit        : degree_Celsius, degree_Celsius, degree_Celsius, degree_Celsius, degree_Celsius,  ... \ntime (days) : 1895-01-01 to 2026-02-01 (2 steps)"
-  },
-  {
-    "objectID": "lectures/33-raster/slides.html#section-3",
-    "href": "lectures/33-raster/slides.html#section-3",
-    "title": "Raster Data",
+    "objectID": "lectures/33-raster/slides.html#section-4",
+    "href": "lectures/33-raster/slides.html#section-4",
+    "title": "Maps of Raster Data",
     "section": "",
     "text": "Dimensions:\n\nnrow: 596\nncol: 1385\nnlyr: 1574\n\n\nOne layer per month:\n\n1st layer: January 1895\n12th layer: December 1895\nlayer 120: December 1904\nlayer 1564: April 2025"
   },
   {
     "objectID": "lectures/33-raster/slides.html#layer-1-january-1895",
     "href": "lectures/33-raster/slides.html#layer-1-january-1895",
-    "title": "Raster Data",
+    "title": "Maps of Raster Data",
     "section": "Layer 1: January 1895",
     "text": "Layer 1: January 1895\n\n# first layer\ndat[[1]]\n\nclass       : SpatRaster \ndimensions  : 596, 1385, 1  (nrow, ncol, nlyr)\nresolution  : 0.04166666, 0.04166667  (x, y)\nextent      : -124.7083, -67, 24.5417, 49.37503  (xmin, xmax, ymin, ymax)\ncoord. ref. : lon/lat WGS 84 (CRS84) (OGC:CRS84) \nsource      : nclimgrid_tavg.nc \nvarname     : tavg (Temperature, monthly average of daily averages) \nname        :         tavg_1 \nunit        : degree_Celsius \ntime (days) : 1895-01-01"
   },
   {
     "objectID": "lectures/33-raster/slides.html#layer-1564-april-2025",
     "href": "lectures/33-raster/slides.html#layer-1564-april-2025",
-    "title": "Raster Data",
+    "title": "Maps of Raster Data",
     "section": "Layer 1564: April 2025",
     "text": "Layer 1564: April 2025\n\n# layer 1564 - April: (2025-1895)*12 + 4\ndat[[1564]]\n\nclass       : SpatRaster \ndimensions  : 596, 1385, 1  (nrow, ncol, nlyr)\nresolution  : 0.04166666, 0.04166667  (x, y)\nextent      : -124.7083, -67, 24.5417, 49.37503  (xmin, xmax, ymin, ymax)\ncoord. ref. : lon/lat WGS 84 (CRS84) (OGC:CRS84) \nsource      : nclimgrid_tavg.nc \nvarname     : tavg (Temperature, monthly average of daily averages) \nname        :      tavg_1564 \nunit        : degree_Celsius \ntime (days) : 2025-04-01"
   },
   {
     "objectID": "lectures/33-raster/slides.html#layer-1564-april-2025-1",
     "href": "lectures/33-raster/slides.html#layer-1564-april-2025-1",
-    "title": "Raster Data",
+    "title": "Maps of Raster Data",
     "section": "Layer 1564: April 2025",
-    "text": "Layer 1564: April 2025\n\nplot(dat[[1564]])"
-  },
-  {
-    "objectID": "lectures/33-raster/slides.html#section-4",
-    "href": "lectures/33-raster/slides.html#section-4",
-    "title": "Raster Data",
-    "section": "",
-    "text": "plot(dat[[1564]], col = viridis(n = 100))\n\n\n\n\n\n\n\n\n\n\n\nplot(dat[[1564]], col = plasma(n = 100))\n\n\n\n\n\n\n\n\n\n\n\n\nplot(dat[[1564]], col = magma(n = 100))\n\n\n\n\n\n\n\n\n\n\n\nplot(dat[[1564]], col = inferno(n = 100))"
+    "text": "Layer 1564: April 2025\n\n# \"terra\" has its plot() method\nplot(dat[[1564]])"
   },
   {
     "objectID": "lectures/33-raster/slides.html#section-5",
     "href": "lectures/33-raster/slides.html#section-5",
-    "title": "Raster Data",
+    "title": "Maps of Raster Data",
+    "section": "",
+    "text": "plot(dat[[1564]], col = viridis(n = 100))\n\n\n\n\n\n\n\n\n\n\n\nplot(dat[[1564]], col = plasma(n = 100))\n\n\n\n\n\n\n\n\n\n\n\n\nplot(dat[[1564]], col = magma(n = 100))\n\n\n\n\n\n\n\n\n\n\n\nplot(dat[[1564]], col = inferno(n = 100))"
+  },
+  {
+    "objectID": "lectures/33-raster/slides.html#section-6",
+    "href": "lectures/33-raster/slides.html#section-6",
+    "title": "Maps of Raster Data",
     "section": "",
     "text": "plot(dat[[1564]], col = viridis(n = 6))"
   },
   {
     "objectID": "lectures/33-raster/slides.html#converting-temp-to-fahrenheit",
     "href": "lectures/33-raster/slides.html#converting-temp-to-fahrenheit",
-    "title": "Raster Data",
+    "title": "Maps of Raster Data",
     "section": "Converting temp to Fahrenheit",
     "text": "Converting temp to Fahrenheit\n\nplot(dat[[1564]] * (9/5) + 32)"
   },
   {
-    "objectID": "lectures/33-raster/slides.html#raster-to-table",
-    "href": "lectures/33-raster/slides.html#raster-to-table",
-    "title": "Raster Data",
-    "section": "Raster to table",
-    "text": "Raster to table\nFirst we need to convert the raster object into a table (data.frame or tibble)\n\napr_2025 = as.data.frame(dat[[1564]], xy = TRUE)\nhead(apr_2025)\n\n\n\n             x        y tavg_1564\n710  -95.14583 49.35420  4.730469\n711  -95.10417 49.35420  4.780273\n712  -95.06250 49.35420  4.799805\n2095 -95.14583 49.31253  4.780273\n2096 -95.10417 49.31253  4.790039\n2097 -95.06250 49.31253  4.799805"
-  },
-  {
-    "objectID": "lectures/33-raster/slides.html#section-6",
-    "href": "lectures/33-raster/slides.html#section-6",
-    "title": "Raster Data",
-    "section": "",
-    "text": "ggplot() +\n  geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564))"
+    "objectID": "lectures/33-raster/slides.html#raster-to-data.frame-or-tibble",
+    "href": "lectures/33-raster/slides.html#raster-to-data.frame-or-tibble",
+    "title": "Maps of Raster Data",
+    "section": "Raster to data.frame (or tibble)",
+    "text": "Raster to data.frame (or tibble)\nTo use ggplot() first we need to convert the raster object into a table (data.frame or tibble)\n\n\napr_2025 = as.data.frame(dat[[1564]], xy = TRUE)\n\nhead(apr_2025)\n\n\n\n             x        y tavg_1564\n710  -95.14583 49.35420  4.730469\n711  -95.10417 49.35420  4.780273\n712  -95.06250 49.35420  4.799805\n2095 -95.14583 49.31253  4.780273\n2096 -95.10417 49.31253  4.790039\n2097 -95.06250 49.31253  4.799805"
   },
   {
     "objectID": "lectures/33-raster/slides.html#section-7",
     "href": "lectures/33-raster/slides.html#section-7",
-    "title": "Raster Data",
+    "title": "Maps of Raster Data",
     "section": "",
-    "text": "ggplot() +\n  geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564)) +\n  scale_fill_viridis_c()"
-  },
-  {
-    "objectID": "lectures/33-raster/slides.html#map-of-us-states",
-    "href": "lectures/33-raster/slides.html#map-of-us-states",
-    "title": "Raster Data",
-    "section": "Map of US States",
-    "text": "Map of US States\n\nus_states = ne_states(\n  country = \"United States of America\", \n  returnclass = \"sf\")\n\nggplot() +\n  geom_sf(data = us_states) +\n  coord_sf(xlim = c(-124.7083, -67), ylim = c(24.5417, 49.37503))"
+    "text": "ggplot() +\n  geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564))"
   },
   {
     "objectID": "lectures/33-raster/slides.html#section-8",
     "href": "lectures/33-raster/slides.html#section-8",
-    "title": "Raster Data",
+    "title": "Maps of Raster Data",
     "section": "",
-    "text": "# Superimposing polygons to temperatures\nggplot() +\n  geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564)) +\n  geom_sf(data = us_states, fill = \"#FFFFFF00\", color = \"white\") +\n  coord_sf(xlim = c(-124.7083, -67), ylim = c(24.5417, 49.37503))"
+    "text": "ggplot() +\n  geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564)) +\n  scale_fill_viridis_c()"
+  },
+  {
+    "objectID": "lectures/33-raster/slides.html#reminder-map-of-us-states",
+    "href": "lectures/33-raster/slides.html#reminder-map-of-us-states",
+    "title": "Maps of Raster Data",
+    "section": "Reminder: Map of US States",
+    "text": "Reminder: Map of US States\n\n\nus_states = ne_states(\n  country = \"United States of America\", \n  returnclass = \"sf\")\n\nggplot() +\n  geom_sf(data = us_states) +\n  coord_sf(xlim = c(-124.7083, -67), ylim = c(24.5417, 49.37503))"
   },
   {
     "objectID": "lectures/33-raster/slides.html#section-9",
     "href": "lectures/33-raster/slides.html#section-9",
-    "title": "Raster Data",
+    "title": "Maps of Raster Data",
+    "section": "",
+    "text": "# Superimposing polygons to temperatures\nggplot() +\n  geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564)) +\n  geom_sf(data = us_states, fill = \"#FFFFFF00\", color = \"white\") +\n  coord_sf(xlim = c(-124.7083, -67), ylim = c(24.5417, 49.37503))\n\n\n\n\n\n\n\n\n\n\n\nNote that geom_sf() sets fill to a fully transparent color so that only the polygon borders are shown in white."
+  },
+  {
+    "objectID": "lectures/33-raster/slides.html#section-10",
+    "href": "lectures/33-raster/slides.html#section-10",
+    "title": "Maps of Raster Data",
     "section": "",
     "text": "Code\n# color gradient: binned viridis (discrete)\nggplot() +\n  geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564)) + \n  scale_fill_viridis_b(breaks = seq(from = -10, to = 25, by = 5)) +\n  geom_sf(data = us_states, fill = \"#FFFFFF00\", color = \"white\") +\n  coord_sf(xlim = c(-124.7083, -67), ylim = c(24.5417, 49.37503))"
+  },
+  {
+    "objectID": "lectures/33-raster/slides.html#our-workflow",
+    "href": "lectures/33-raster/slides.html#our-workflow",
+    "title": "Maps of Raster Data",
+    "section": "Our workflow",
+    "text": "Our workflow"
   },
   {
     "objectID": "lectures/11-data-wrangling1/slides.html#section",
@@ -1788,6 +1816,13 @@
     "text": "gg4 &lt;- ggplot(\n  data = penguins,\n  aes(x = bill_length_mm, \n      y = flipper_length_mm,\n       color = species,\n      tooltip = sex)) +\n  geom_point_interactive()\n\nggiraph::girafe(ggobj = gg4)"
   },
   {
+    "objectID": "lectures/30-geospatial3/slides.html#section",
+    "href": "lectures/30-geospatial3/slides.html#section",
+    "title": "Storms in North Atlantic II",
+    "section": "",
+    "text": "# packages\nlibrary(tidyverse)     # ecosystem of data science packages\n\nlibrary(leaflet)       # web-interactive maps ('Leaflet' JavaScript library)\n\nlibrary(rnaturalearth) # maps data from www.naturalearthdata.com"
+  },
+  {
     "objectID": "lectures/30-geospatial3/slides.html#leaflet",
     "href": "lectures/30-geospatial3/slides.html#leaflet",
     "title": "Storms in North Atlantic II",
@@ -1879,57 +1914,57 @@
     "text": "Adding Data Objects\nBoth leaflet() and the map layer functions have an optional data parameter that is designed to receive spatial data in one of several forms:\n\nFrom base R:\n\nlng/lat matrix\ndata frame with lng/lat columns\n\nFrom the \"sf\" package:\n\nthe data frame of class \"sf\"\n\nFrom the \"maps\" package\n\nthe data frame returned from map()"
   },
   {
-    "objectID": "lectures/30-geospatial3/slides.html#section-1",
-    "href": "lectures/30-geospatial3/slides.html#section-1",
-    "title": "Storms in North Atlantic II",
-    "section": "",
-    "text": "storms75 &lt;- filter(storms, year == 1975)\n\nstorms75\n\n# A tibble: 238 × 13\n   name   year month   day  hour   lat  long status      category  wind pressure\n   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;\n 1 Amy    1975     6    27     0  27.5 -79   tropical d…       NA    25     1013\n 2 Amy    1975     6    27     6  28.5 -79   tropical d…       NA    25     1013\n 3 Amy    1975     6    27    12  29.5 -79   tropical d…       NA    25     1013\n 4 Amy    1975     6    27    18  30.5 -79   tropical d…       NA    25     1013\n 5 Amy    1975     6    28     0  31.5 -78.8 tropical d…       NA    25     1012\n 6 Amy    1975     6    28     6  32.4 -78.7 tropical d…       NA    25     1012\n 7 Amy    1975     6    28    12  33.3 -78   tropical d…       NA    25     1011\n 8 Amy    1975     6    28    18  34   -77   tropical d…       NA    30     1006\n 9 Amy    1975     6    29     0  34.4 -75.8 tropical s…       NA    35     1004\n10 Amy    1975     6    29     6  34   -74.8 tropical s…       NA    40     1002\n# ℹ 228 more rows\n# ℹ 2 more variables: tropicalstorm_force_diameter &lt;int&gt;,\n#   hurricane_force_diameter &lt;int&gt;\n\n\n\n\n\nstorms75 has columns lat (latitude) and long (longitude) which can be passed to the arguments lat and lng of leaflet functions"
-  },
-  {
     "objectID": "lectures/30-geospatial3/slides.html#section-2",
     "href": "lectures/30-geospatial3/slides.html#section-2",
     "title": "Storms in North Atlantic II",
     "section": "",
-    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles()\n\n\n\n\nNote: this is an empty map because no geometries have been added."
+    "text": "storms75 &lt;- filter(storms, year == 1975)\n\nstorms75\n\n# A tibble: 238 × 13\n   name   year month   day  hour   lat  long status      category  wind pressure\n   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;\n 1 Amy    1975     6    27     0  27.5 -79   tropical d…       NA    25     1013\n 2 Amy    1975     6    27     6  28.5 -79   tropical d…       NA    25     1013\n 3 Amy    1975     6    27    12  29.5 -79   tropical d…       NA    25     1013\n 4 Amy    1975     6    27    18  30.5 -79   tropical d…       NA    25     1013\n 5 Amy    1975     6    28     0  31.5 -78.8 tropical d…       NA    25     1012\n 6 Amy    1975     6    28     6  32.4 -78.7 tropical d…       NA    25     1012\n 7 Amy    1975     6    28    12  33.3 -78   tropical d…       NA    25     1011\n 8 Amy    1975     6    28    18  34   -77   tropical d…       NA    30     1006\n 9 Amy    1975     6    29     0  34.4 -75.8 tropical s…       NA    35     1004\n10 Amy    1975     6    29     6  34   -74.8 tropical s…       NA    40     1002\n# ℹ 228 more rows\n# ℹ 2 more variables: tropicalstorm_force_diameter &lt;int&gt;,\n#   hurricane_force_diameter &lt;int&gt;\n\n\n\n\n\nstorms75 has columns lat (latitude) and long (longitude) which can be passed to the arguments lat and lng of leaflet functions"
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#section-3",
     "href": "lectures/30-geospatial3/slides.html#section-3",
     "title": "Storms in North Atlantic II",
     "section": "",
-    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat)\n\n\n\n\n\n\n\n\n\n\n\n\nNote the use of the tilde ~ to map (i.e. link) columns long and lat to arguments lng and lat respectively."
+    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles()\n\n\n\n\nNote: this is an empty map because no geometries have been added."
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#section-4",
     "href": "lectures/30-geospatial3/slides.html#section-4",
     "title": "Storms in North Atlantic II",
     "section": "",
-    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name)"
+    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat)\n\n\n\n\n\n\n\n\n\n\n\n\nNote the use of the tilde ~ to map (i.e. link) columns long and lat to arguments lng and lat respectively."
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#section-5",
     "href": "lectures/30-geospatial3/slides.html#section-5",
     "title": "Storms in North Atlantic II",
     "section": "",
-    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    radius = 50000)"
+    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name)"
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#section-6",
     "href": "lectures/30-geospatial3/slides.html#section-6",
     "title": "Storms in North Atlantic II",
     "section": "",
-    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    radius = 50000, \n    weight = 1)"
+    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    radius = 50000)"
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#section-7",
     "href": "lectures/30-geospatial3/slides.html#section-7",
     "title": "Storms in North Atlantic II",
     "section": "",
-    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    radius = 50000, \n    weight = 1,\n    fillOpacity = 0.7)"
+    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    radius = 50000, \n    weight = 1)"
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#section-8",
     "href": "lectures/30-geospatial3/slides.html#section-8",
+    "title": "Storms in North Atlantic II",
+    "section": "",
+    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    radius = 50000, \n    weight = 1,\n    fillOpacity = 0.7)"
+  },
+  {
+    "objectID": "lectures/30-geospatial3/slides.html#section-9",
+    "href": "lectures/30-geospatial3/slides.html#section-9",
     "title": "Storms in North Atlantic II",
     "section": "",
     "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    color = ~name)\n\n\n👎 How NOT to color-code: trying to map column name to argument color won’t work"
@@ -1942,29 +1977,29 @@
     "text": "Mapping Variables to Colors\n\"leaflet\" package provides a couple of functions to generate colors:\n\ncolorNumeric(): simple linear mapping from continuous numeric data to an interpolated palette\ncolorBin(): maps continuous numeric data, but performs binning based on value\ncolorQuantile(): maps continuous numeric data, but performs binning via the quantile() function\ncolorFactor(): maps factors to colors (to be used for categorical data)"
   },
   {
-    "objectID": "lectures/30-geospatial3/slides.html#section-10",
-    "href": "lectures/30-geospatial3/slides.html#section-10",
-    "title": "Storms in North Atlantic II",
-    "section": "",
-    "text": "To color code storms based on their name (categorical values) we have to create a color palette via colorFactor().\n\n\nUnique storm names in 1975:\n\nstorms75 |&gt; distinct(name)\n\n# A tibble: 8 × 1\n  name    \n  &lt;chr&gt;   \n1 Amy     \n2 Blanche \n3 Caroline\n4 Doris   \n5 Eloise  \n6 Faye    \n7 Gladys  \n8 Hallie  \n\n\n\nRainbow colors:\n\nrainbow(8)\n\n[1] \"#FF0000\" \"#FFBF00\" \"#80FF00\" \"#00FF40\" \"#00FFFF\" \"#0040FF\" \"#8000FF\"\n[8] \"#FF00BF\"\n\n\n\nColor palette function:\n\npal &lt;- colorFactor(\n  palette = rainbow(8), \n  domain = storms75$name)\n\npal(c(\"Amy\", \"Blanche\"))\n\n[1] \"#FF0000\" \"#FFBF00\""
-  },
-  {
     "objectID": "lectures/30-geospatial3/slides.html#section-11",
     "href": "lectures/30-geospatial3/slides.html#section-11",
     "title": "Storms in North Atlantic II",
     "section": "",
-    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    color = ~pal(name))\n\n\n👍 How to color-code: use the pal() function to generate colors according to name of storm\n\n\n\n\n\n\n\n\n\nWhat about a legend?"
+    "text": "To color code storms based on their name (categorical values) we have to create a color palette via colorFactor().\n\n\nUnique storm names in 1975:\n\nstorms75 |&gt; distinct(name)\n\n# A tibble: 8 × 1\n  name    \n  &lt;chr&gt;   \n1 Amy     \n2 Blanche \n3 Caroline\n4 Doris   \n5 Eloise  \n6 Faye    \n7 Gladys  \n8 Hallie  \n\n\n\nRainbow colors:\n\nrainbow(8)\n\n[1] \"#FF0000\" \"#FFBF00\" \"#80FF00\" \"#00FF40\" \"#00FFFF\" \"#0040FF\" \"#8000FF\"\n[8] \"#FF00BF\"\n\n\n\nColor palette function:\n\npal &lt;- colorFactor(\n  palette = rainbow(8), \n  domain = storms75$name)\n\npal(c(\"Amy\", \"Blanche\"))\n\n[1] \"#FF0000\" \"#FFBF00\""
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#section-12",
     "href": "lectures/30-geospatial3/slides.html#section-12",
     "title": "Storms in North Atlantic II",
     "section": "",
-    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    color = ~pal(name)) |&gt; \n  addLegend(\n    position = \"bottomleft\", \n    pal = pal, \n    values = ~name,\n    title = \"Storm name\")"
+    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    color = ~pal(name))\n\n\n👍 How to color-code: use the pal() function to generate colors according to name of storm\n\n\n\n\n\n\n\n\n\nWhat about a legend?"
   },
   {
     "objectID": "lectures/30-geospatial3/slides.html#section-13",
     "href": "lectures/30-geospatial3/slides.html#section-13",
+    "title": "Storms in North Atlantic II",
+    "section": "",
+    "text": "storms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~name,\n    color = ~pal(name)) |&gt; \n  addLegend(\n    position = \"bottomleft\", \n    pal = pal, \n    values = ~name,\n    title = \"Storm name\")"
+  },
+  {
+    "objectID": "lectures/30-geospatial3/slides.html#section-14",
+    "href": "lectures/30-geospatial3/slides.html#section-14",
     "title": "Storms in North Atlantic II",
     "section": "",
     "text": "View Code\nstorms75 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addCircles(\n    lng = ~long, \n    lat = ~lat,\n    label = ~paste0(name, \": \", month, \"-\", day),\n    radius = ~wind*1000,\n    weight = 1, \n    fillOpacity = 0.7,\n    color = ~pal(name)) |&gt; \n  addLegend(\n    position = \"bottomleft\", \n    pal = pal, \n    values = ~name)"
@@ -2674,7 +2709,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 7      Dwight Powe… DAL   C            82    240 July 20, … CA      10        \n2 16     Keshad John… MIA   SF           78    225 June 23, … US      R         \n3 31     Kevin Knox   GSW   SF           80    215 August 11… US      6         \n4 11     Naz Reid     MIN   C            81    264 August 26… US      5         \n5 22     Malachi Fly… CHO   PG           73    185 May 10, 1… US      4         \n6 55     Baylor Sche… BOS   SG           78    205 September… US      R         \n7 42     Kevin Love   MIA   PF           82    251 September… US      16        \n8 12     Braxton Key  GSW   SF           79    225 February … US      3         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 23     \"Eric Gordo… PHI   SG           75    215 December … US      16        \n2 45     \"GG Jackson… MEM   PF           81    210 December … US      1         \n3 10     \"Bogdan Bog… LAC   SG           77    225 August 18… RS      7         \n4 10     \"Cory Josep… ORL   PG           74    200 August 20… CA      13        \n5 11     \"Bruce Brow… TOR   PG           76    202 August 15… US      6         \n6 25     \"Dalen Terr… CHI   SG           78    195 July 12, … US      2         \n7 20     \"Georges Ni… ATL   PF           78    230 June 17, … US      8         \n8 3      \"CJ McCollu… NOP   PG           75    190 September… US      11        \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -3122,7 +3157,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"bronze\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"gold\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -3136,7 +3171,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"senior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"freshman\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -3295,7 +3330,7 @@
     "href": "index.html",
     "title": "STAT 133: Concepts in Computing with Data",
     "section": "",
-    "text": "Ed\n\n\nbCourses\n\n\nR-DataHub\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 12 Announcements\n\n\n\n\nProblem Set 9 due Wed 4/8 by 6PM\n10th Publication due Thu 4/9 in lab\nQuiz 5 due Thu 4/9 in lab\n\n\n\n\n\n\n\n\nWeek 1\n\nWed 1/21\nThu 1/22\nFri 1/23\n\n\n\n\n\nDescription\nWelcome\nLab 1: slides\nIntroduction\n\n\n\n\nDue\n\n\n\n\n\n\n\n\n\nWeek 2\n\nMon 1/26\nWed 1/28\nThu 1/29\nFri 1/30\n\n\n\n\n\nDescription\nVectors\nWorking with Vectors\nLab 2: slides | PS1\nUnix Basics | Proj1\n\n\n\n\nDue\n \n \nPub1\n \n\n\n\n\n\n\n\n\n\nWeek 3\n\nMon 2/2\nWed 2/4\nThu 2/5\nFri 2/6\n\n\n\n\n\nDescription\nExtending Vectors\nLists\nLab 3: Quiz 1 | slides | PS2\nControl Flow\n\n\n\n\nDue\n \nPS1\nPub2\n \n\n\n\n\n\n\n\n\n\nWeek 4\n\nMon 2/9\nWed 2/11\nThu 2/12\nFri 2/13\n\n\n\n\n\nDescription\nFunctions\nFactors and Data Frames\nLab 4: slides | PS3\nData Wrangling I | Proj2\n\n\n\n\nDue\n \nPS2\nPub3\nProj1\n\n\n\n\n\n\n\n\n\nWeek 5\n\nMon 2/16\nWed 2/18\nThu 2/19\nFri 2/20\n\n\n\n\n\nDescription\nNo class\nData Wrangling II\nLab 5: Quiz 2 | slides | PS4\nImporting Tables\n\n\n\n\nDue\n \nPS3\nPub4\n \n\n\n\n\n\n\n\n\n\nWeek 6\n\nMon 2/23\nWed 2/25\nThu 2/26\nFri 2/27\n\n\n\n\n\nDescription\nDataviz I\nDataviz II\nLab 6: slides | PS5\nDataviz III | Proj3\n\n\n\n\nDue\n \nPS4\nPub5\nProj2\n\n\n\n\n\n\n\n\n\nWeek 7\n\nMon 3/2\nWed 3/4\nThu 3/5\nFri 3/6\n\n\n\n\n\nDescription\nJoins and Pivots\nExploratory EDA\nLab 7: Quiz 3 | slides | PS6\nExplanatory EDA\n\n\n\n\nDue\n \nPS5\nPub6\n \n\n\n\n\n\n\n\n\n\nWeek 8\n\nMon 3/9\nWed 3/11\nThu 3/12\nFri 3/13\n\n\n\n\n\nDescription\nStrings I\nStrings II\nLab 8: slides | PS7\nStrings III | Proj4\n\n\n\n\nDue\n \nPS6\nPub7\nProj3\n\n\n\n\n\n\n\n\n\nWeek 9\n\nMon 3/16\nWed 3/18\nThu 3/19\nFri 3/20\n\n\n\n\n\nDescription\nDates and Times I\nDates and Times II\nLab 9: Quiz 4 | slides | PS8\nDashboard Demo\n\n\n\n\nDue\n \nPS7\nPub8 canceled\n \n\n\n\n\n\n\n\n\n\nWeek 10\n\n3/23-3/27\n\n\n\n\n\nDescription\nSpring Recess\n\n\n\n\n\n\n\n\n\nWeek 11\n\nMon 3/30\nWed 4/1\nThu 4/2\nFri 4/3\n\n\n\n\n\nDescription\nShiny Dashboards I\nShiny Dashboards II\nLab 10: slides | PS9\nGeospatial Data | Proj5\n\n\n\n\nDue\n \nPS8\nPub9\nProj4\n\n\n\n\n\n\n\n\n\nWeek 12\n\nMon 4/6\nWed 4/8\nThu 4/9\nFri 4/10\n\n\n\n\n\nDescription\nMapping Storm tracks\nLeaflet Maps\nLab 11: Quiz 5 | slides | PS10\nChoropleth Maps\n\n\n\n\nDue\n \nPS9\nPub10\n \n\n\n\n\n\n\n\n\n\nWeek 13\n\nMon 4/13\nWed 4/15\nThu 4/16\nFri 4/17\n\n\n\n\n\nDescription\nShapefiles\nRaster Data Maps\nLab 12: slides | PS11\nDashboard Demo | Proj6\n\n\n\n\nDue\n \nPS10\nPub11\nProj5\n\n\n\n\n\n\n\n\n\nWeek 14\n\nMon 4/20\nWed 4/22\nThu 4/23\nFri 4/24\n\n\n\n\n\nDescription\nJSON Data\nAPIs\nLab 13: Quiz 6 | slides | PS12\nXML Data\n\n\n\n\nDue\n \nPS11\nPub12\n \n\n\n\n\n\n\n\n\n\nWeek 15\n\nMon 4/27\nWed 4/29\nThu 4/30\nFri 5/1\n\n\n\n\n\nDescription\nText Analysis 1\nText Analysis 2\nLab 14: slides\nClosing Lecture\n\n\n\n\nDue\n \nPS12\n \nProj6\n\n\n\n\n\n\n\n\n\nWeek 16\n\n5/4-5/8\n\n\n\n\n\nDescription\nRRR Week\n\n\n\n\n\n\n\n\n\nWeek 17\n\n5/11\n\n\n\n\n\nDescription\nFinal Exam, 7-10pm",
+    "text": "Ed\n\n\nbCourses\n\n\nR-DataHub\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 13 Announcements\n\n\n\n\nProblem Set 10 due Wed 4/15 by 6PM\n11th Publication due Thu 4/16 in lab\nProject 5 due Fri 4/17 by 6PM\n\n\n\n\n\n\n\n\nWeek 1\n\nWed 1/21\nThu 1/22\nFri 1/23\n\n\n\n\n\nDescription\nWelcome\nLab 1: slides\nIntroduction\n\n\n\n\nDue\n\n\n\n\n\n\n\n\n\nWeek 2\n\nMon 1/26\nWed 1/28\nThu 1/29\nFri 1/30\n\n\n\n\n\nDescription\nVectors\nWorking with Vectors\nLab 2: slides | PS1\nUnix Basics | Proj1\n\n\n\n\nDue\n \n \nPub1\n \n\n\n\n\n\n\n\n\n\nWeek 3\n\nMon 2/2\nWed 2/4\nThu 2/5\nFri 2/6\n\n\n\n\n\nDescription\nExtending Vectors\nLists\nLab 3: Quiz 1 | slides | PS2\nControl Flow\n\n\n\n\nDue\n \nPS1\nPub2\n \n\n\n\n\n\n\n\n\n\nWeek 4\n\nMon 2/9\nWed 2/11\nThu 2/12\nFri 2/13\n\n\n\n\n\nDescription\nFunctions\nFactors and Data Frames\nLab 4: slides | PS3\nData Wrangling I | Proj2\n\n\n\n\nDue\n \nPS2\nPub3\nProj1\n\n\n\n\n\n\n\n\n\nWeek 5\n\nMon 2/16\nWed 2/18\nThu 2/19\nFri 2/20\n\n\n\n\n\nDescription\nNo class\nData Wrangling II\nLab 5: Quiz 2 | slides | PS4\nImporting Tables\n\n\n\n\nDue\n \nPS3\nPub4\n \n\n\n\n\n\n\n\n\n\nWeek 6\n\nMon 2/23\nWed 2/25\nThu 2/26\nFri 2/27\n\n\n\n\n\nDescription\nDataviz I\nDataviz II\nLab 6: slides | PS5\nDataviz III | Proj3\n\n\n\n\nDue\n \nPS4\nPub5\nProj2\n\n\n\n\n\n\n\n\n\nWeek 7\n\nMon 3/2\nWed 3/4\nThu 3/5\nFri 3/6\n\n\n\n\n\nDescription\nJoins and Pivots\nExploratory EDA\nLab 7: Quiz 3 | slides | PS6\nExplanatory EDA\n\n\n\n\nDue\n \nPS5\nPub6\n \n\n\n\n\n\n\n\n\n\nWeek 8\n\nMon 3/9\nWed 3/11\nThu 3/12\nFri 3/13\n\n\n\n\n\nDescription\nStrings I\nStrings II\nLab 8: slides | PS7\nStrings III | Proj4\n\n\n\n\nDue\n \nPS6\nPub7\nProj3\n\n\n\n\n\n\n\n\n\nWeek 9\n\nMon 3/16\nWed 3/18\nThu 3/19\nFri 3/20\n\n\n\n\n\nDescription\nDates and Times I\nDates and Times II\nLab 9: Quiz 4 | slides | PS8\nDashboard Demo\n\n\n\n\nDue\n \nPS7\nPub8 canceled\n \n\n\n\n\n\n\n\n\n\nWeek 10\n\n3/23-3/27\n\n\n\n\n\nDescription\nSpring Recess\n\n\n\n\n\n\n\n\n\nWeek 11\n\nMon 3/30\nWed 4/1\nThu 4/2\nFri 4/3\n\n\n\n\n\nDescription\nShiny Dashboards I\nShiny Dashboards II\nLab 10: slides | PS9\nGeospatial Data | Proj5\n\n\n\n\nDue\n \nPS8\nPub9\nProj4\n\n\n\n\n\n\n\n\n\nWeek 12\n\nMon 4/6\nWed 4/8\nThu 4/9\nFri 4/10\n\n\n\n\n\nDescription\nMapping Storm tracks\nLeaflet Maps\nLab 11: Quiz 5 | slides | PS10\nChoropleth Maps\n\n\n\n\nDue\n \nPS9\nPub10\n \n\n\n\n\n\n\n\n\n\nWeek 13\n\nMon 4/13\nWed 4/15\nThu 4/16\nFri 4/17\n\n\n\n\n\nDescription\nShapefiles\nRaster Data Maps\nLab 12: slides | PS11\nDashboard Demo | Proj6\n\n\n\n\nDue\n \nPS10\nPub11\nProj5\n\n\n\n\n\n\n\n\n\nWeek 14\n\nMon 4/20\nWed 4/22\nThu 4/23\nFri 4/24\n\n\n\n\n\nDescription\nJSON Data\nAPIs\nLab 13: Quiz 6 | slides | PS12\nXML Data\n\n\n\n\nDue\n \nPS11\nPub12\n \n\n\n\n\n\n\n\n\n\nWeek 15\n\nMon 4/27\nWed 4/29\nThu 4/30\nFri 5/1\n\n\n\n\n\nDescription\nText Analysis 1\nText Analysis 2\nLab 14: slides\nClosing Lecture\n\n\n\n\nDue\n \nPS12\n \nProj6\n\n\n\n\n\n\n\n\n\nWeek 16\n\n5/4-5/8\n\n\n\n\n\nDescription\nRRR Week\n\n\n\n\n\n\n\n\n\nWeek 17\n\n5/11\n\n\n\n\n\nDescription\nFinal Exam, 7-10pm",
     "crumbs": [
       "Home"
     ]
@@ -5189,7 +5224,7 @@
     "href": "lectures/32-shapefiles/slides.html#about",
     "title": "Shapefiles",
     "section": "About",
-    "text": "About\nIn this lecture we’ll work with geospatial data in shapefile format which is perhaps the most common format of geospatial vector data.\n\n\n\n# packages\nlibrary(tidyverse)     # ecosystem of data science packages\nlibrary(sf)            # \"simple features\" (classes for maps)\nlibrary(rnaturalearth) # data base of maps\nlibrary(maps)          # maps of US states (with counties)\nlibrary(leaflet)       # web interactive maps"
+    "text": "About\nIn this lecture we’ll work with geospatial data in shapefile format which is perhaps the most common format of geospatial vector data.\n\n\n\n# packages\nlibrary(tidyverse)     # ecosystem of data science packages\n\nlibrary(sf)            # \"simple features\" (classes for maps)\n\nlibrary(rnaturalearth) # data base of maps\n\nlibrary(maps)          # maps of US states (with counties)\n\nlibrary(leaflet)       # web interactive maps"
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#meadow-fire-sep-2014",
@@ -5199,6 +5234,13 @@
     "text": "Meadow Fire, Sep 2014"
   },
   {
+    "objectID": "lectures/32-shapefiles/slides.html#meadow-fire-sep-2014-1",
+    "href": "lectures/32-shapefiles/slides.html#meadow-fire-sep-2014-1",
+    "title": "Shapefiles",
+    "section": "Meadow Fire, Sep 2014",
+    "text": "Meadow Fire, Sep 2014\n\nThe Meadow Fire was a wildfire which burned areas near Half Dome in Yosemite National Park, California.\nPark officials believe it was started near Starr King Lake, during a lightning storm, on July 19, 2014\nOn September 16, 2014 the fire burned 4,971 acres (2,012 ha) and was 80% contained.\nOn September 29, the Meadow Fire was 100% contained."
+  },
+  {
     "objectID": "lectures/32-shapefiles/slides.html#fire-perimeters-data",
     "href": "lectures/32-shapefiles/slides.html#fire-perimeters-data",
     "title": "Shapefiles",
@@ -5206,39 +5248,39 @@
     "text": "Fire Perimeters Data\nCAL FIRE Historical Wildland Fire Perimeters\nhttps://gis.data.ca.gov/datasets/CALFIRE-Forestry::california-fire-perimeters-all/"
   },
   {
-    "objectID": "lectures/32-shapefiles/slides.html#example-data-in-shapefile-format",
-    "href": "lectures/32-shapefiles/slides.html#example-data-in-shapefile-format",
+    "objectID": "lectures/32-shapefiles/slides.html#data-in-shapefile-format",
+    "href": "lectures/32-shapefiles/slides.html#data-in-shapefile-format",
     "title": "Shapefiles",
-    "section": "Example: data in Shapefile format",
-    "text": "Example: data in Shapefile format\n\nhttps://gis.data.ca.gov/datasets/CALFIRE-Forestry::california-fire-perimeters-all/about"
+    "section": "Data in Shapefile format",
+    "text": "Data in Shapefile format\n\nhttps://gis.data.ca.gov/datasets/CALFIRE-Forestry::california-fire-perimeters-all/about"
   },
   {
-    "objectID": "lectures/32-shapefiles/slides.html#example-data-in-shapefile-format-1",
-    "href": "lectures/32-shapefiles/slides.html#example-data-in-shapefile-format-1",
+    "objectID": "lectures/32-shapefiles/slides.html#data-in-shapefile-format-1",
+    "href": "lectures/32-shapefiles/slides.html#data-in-shapefile-format-1",
     "title": "Shapefiles",
-    "section": "Example: data in Shapefile format",
-    "text": "Example: data in Shapefile format"
+    "section": "Data in Shapefile format",
+    "text": "Data in Shapefile format"
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#what-is-a-shapefile",
     "href": "lectures/32-shapefiles/slides.html#what-is-a-shapefile",
     "title": "Shapefiles",
     "section": "What is a shapefile?",
-    "text": "What is a shapefile?\n\nA shapefile is one particular file format to store geospatial vector data.\nIt’s a common standard for handling vector data.\nIt’s developed by ESRI as a mostly open format for GIS software products (e.g. ArcGIS).\nConfusingly, a shapefile is NOT a single file, but a set of files.\nYou must keep files with the same name together in one folder."
+    "text": "What is a shapefile?\n\nA shapefile is one particular file format to store geospatial vector data.\nIt’s the most common, de facto standard format for handling vector data.\nIt’s developed by ESRI as a mostly open format for Geographic Information System (GIS) software products (e.g. ArcGIS).\nConfusingly, a shapefile is NOT a single file, but a set of files.\nYou must keep files with the same name together in one folder."
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#what-files-are-in-a-shapefile",
     "href": "lectures/32-shapefiles/slides.html#what-files-are-in-a-shapefile",
     "title": "Shapefiles",
     "section": "What files are in a shapefile?",
-    "text": "What files are in a shapefile?\nThere are 3 core files to have at a minimum for a shapefile:\n\n.shp stores the feature geometry (e.g. points, lines, polygons).\n.dbf stores attributes information.\n.shx index (i.e. link) between .shp and .dbf files.\n\n\n\n\nUsually, although not always, there are other files:\n\n.prj stores coordinate system information; used by ArcGIS.\n.xml metadata in XML format about the shapefile.\n.cpg codepage for identifying the characterset to be used."
+    "text": "What files are in a shapefile?\n\nThere are 3 core files to have at a minimum for a shapefile:\n\n.shp stores the feature geometry (e.g. points, lines, polygons). 1\n.dbf stores attributes information.\n.shx index (i.e. link) between .shp and .dbf files.\n\n\n\nUsually, although not always, there are other files:\n\n.prj stores the coordinate reference system (CRS) and map projection information; used by ArcGIS.\n.xml metadata in XML format about the shapefile.\n.cpg codepage for identifying the characterset to be used.\n\n\n.shp and .dbf are in binary file format: cannot be opened firectly in a text editor to read the content."
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#more-fire-perimeters-data",
     "href": "lectures/32-shapefiles/slides.html#more-fire-perimeters-data",
     "title": "Shapefiles",
     "section": "More Fire Perimeters Data",
-    "text": "More Fire Perimeters Data\nHistorical Fire Perimeters (California Wildfires)\nhttps://www.fire.ca.gov/what-we-do/fire-resource-assessment-program/fire-perimeters"
+    "text": "More Fire Perimeters Data\nThere are several web apps to visualize historical Fire Perimeters in California\nhttps://www.fire.ca.gov/what-we-do/fire-resource-assessment-program/fire-perimeters"
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#download-data-1950",
@@ -5248,18 +5290,18 @@
     "text": "Download data (1950+)\n\nhttps://data.ca.gov/dataset/california-fire-perimeters-1950"
   },
   {
-    "objectID": "lectures/32-shapefiles/slides.html#download-data",
-    "href": "lectures/32-shapefiles/slides.html#download-data",
+    "objectID": "lectures/32-shapefiles/slides.html#calfire-perimeters-1950-1",
+    "href": "lectures/32-shapefiles/slides.html#calfire-perimeters-1950-1",
     "title": "Shapefiles",
-    "section": "Download Data",
-    "text": "Download Data\nDownload CalFire Perimeters (1950+)1\nCalifornia_Fire_Perimeters_(1950+)\n\nCalifornia_Fire_Perimeters_(1950+).shp\nCalifornia_Fire_Perimeters_(1950+).dbf\nCalifornia_Fire_Perimeters_(1950+).shx\nCalifornia_Fire_Perimeters_(1950+).prj\nCalifornia_Fire_Perimeters_(1950+).shp.xml\nCalifornia_Fire_Perimeters_(1950+).cpg\n\nAs of March 2026"
+    "section": "CalFire Perimeters (1950+)",
+    "text": "CalFire Perimeters (1950+)\nDownloading California_Fire_Perimeters_(1950+) will give you a shapefile with the following files:\n\nCalifornia_Fire_Perimeters_(1950+).shp\nCalifornia_Fire_Perimeters_(1950+).dbf\nCalifornia_Fire_Perimeters_(1950+).shx\nCalifornia_Fire_Perimeters_(1950+).prj\nCalifornia_Fire_Perimeters_(1950+).shp.xml\nCalifornia_Fire_Perimeters_(1950+).cpg"
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#import-data-in-r",
     "href": "lectures/32-shapefiles/slides.html#import-data-in-r",
     "title": "Shapefiles",
     "section": "Import Data in R",
-    "text": "Import Data in R\nShapefiles can be easily imported in R with the \"sf\" function st_read()1\n\n\ncal_perims &lt;- st_read(\"California_Fire_Perimeters_(1950+)\")\n\nReading layer `California_Fire_Perimeters_(1950+)' from data source \nusing driver `ESRI Shapefile'\nSimple feature collection with 17540 features and 18 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -13848330 ymin: 3833204 xmax: -12705610 ymax: 5255380\nProjected CRS: WGS 84 / Pseudo-Mercator\n\n\n\nclass(cal_perims)\n\n[1] \"sf\"         \"data.frame\"\n\nThe st_ prefix stands for Spatial and Temporal"
+    "text": "Import Data in R\nShapefiles can be easily imported in R with the \"sf\" function st_read()1\n\n\ncal_perims &lt;- st_read(\"California_Fire_Perimeters_(1950+)\")\n\n\n\nReading layer `California_Fire_Perimeters_(1950+)' from data source \nusing driver `ESRI Shapefile'\nSimple feature collection with 17540 features and 18 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -13848330 ymin: 3833204 xmax: -12705610 ymax: 5255380\nProjected CRS: WGS 84 / Pseudo-Mercator\n\n\n\nclass(cal_perims)\n\n[1] \"sf\"         \"data.frame\"\n\nThe st_ prefix of many \"sf\" functions stands for Spatial and Temporal"
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#columns",
@@ -5273,7 +5315,7 @@
     "href": "lectures/32-shapefiles/slides.html#columns-contd",
     "title": "Shapefiles",
     "section": "Columns (cont’d)",
-    "text": "Columns (cont’d)\n\nCONT_DATE: Containment date for fire\nCAUSE: Reason fire ignited\nC_METHOD: Method used to collect perimeter data\nOBJECTIVE: Either supression or resource benefit\nGIS_ACRES: GIS calculated area in acres\nCOMMENTS: Miscellaneous comments\nFIRE_NUM: Former numbering system"
+    "text": "Columns (cont’d)\n\nCONT_DATE: Containment date for fire\nCAUSE: Reason fire ignited\nC_METHOD: Method used to collect perimeter data\nOBJECTIVE: Either supression or resource benefit\nGIS_ACRES: GIS calculated area in acres\nCOMMENTS: Miscellaneous comments\nFIRE_NUM: Former numbering system\n\n\nA bit of context about fire perimeters in next slide."
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#section-4",
@@ -5283,53 +5325,74 @@
     "text": "A fire is reported.\nCrews are called to the scene (ALARM_DATE).\nThey give the fire a name (FIRE_NAME), often geography related.\nFire crews do a size up and respond appropriately.\n\nMost fires are supressed when they are small.\nA few that escape initial attack become very large (burn for months).\n\nWhen “containment lines” around the entire fire perimeter stop further spread, it is considered contained (CONT_DATE).\nThe difference between ALARM_DATE and CONT_DATE = how long the fire burned.\nGIS_ACRES is the final total area within the containment line (i.e. fire perimeter)."
   },
   {
-    "objectID": "lectures/32-shapefiles/slides.html#wildfires-in-2013",
-    "href": "lectures/32-shapefiles/slides.html#wildfires-in-2013",
+    "objectID": "lectures/32-shapefiles/slides.html#wildfires-in-2014",
+    "href": "lectures/32-shapefiles/slides.html#wildfires-in-2014",
     "title": "Shapefiles",
-    "section": "Wildfires in 2013",
-    "text": "Wildfires in 2013\n\ncal_perims_2013 = cal_perims |&gt; \n  filter(YEAR_ == 2013)\n\nnames(cal_perims_2013)\n\n\n\n\n [1] \"YEAR_\"      \"STATE\"      \"AGENCY\"     \"UNIT_ID\"    \"FIRE_NAME\" \n [6] \"INC_NUM\"    \"ALARM_DATE\" \"CONT_DATE\"  \"CAUSE\"      \"C_METHOD\"  \n[11] \"OBJECTIVE\"  \"GIS_ACRES\"  \"COMMENTS\"   \"COMPLEX_NA\" \"IRWINID\"   \n[16] \"FIRE_NUM\"   \"COMPLEX_ID\" \"DECADES\"    \"geometry\""
+    "section": "Wildfires in 2014",
+    "text": "Wildfires in 2014\n\n\ncal_perims_2014 = cal_perims |&gt; \n  filter(YEAR_ == 2014)\n\nnames(cal_perims_2014)\n\n\n\n\n\n [1] \"YEAR_\"      \"STATE\"      \"AGENCY\"     \"UNIT_ID\"    \"FIRE_NAME\" \n [6] \"INC_NUM\"    \"ALARM_DATE\" \"CONT_DATE\"  \"CAUSE\"      \"C_METHOD\"  \n[11] \"OBJECTIVE\"  \"GIS_ACRES\"  \"COMMENTS\"   \"COMPLEX_NA\" \"IRWINID\"   \n[16] \"FIRE_NUM\"   \"COMPLEX_ID\" \"DECADES\"    \"geometry\""
   },
   {
-    "objectID": "lectures/32-shapefiles/slides.html#top-5-largest-fires-in-2013",
-    "href": "lectures/32-shapefiles/slides.html#top-5-largest-fires-in-2013",
+    "objectID": "lectures/32-shapefiles/slides.html#top-5-largest-fires-in-2014",
+    "href": "lectures/32-shapefiles/slides.html#top-5-largest-fires-in-2014",
     "title": "Shapefiles",
-    "section": "Top-5 largest fires in 2013",
-    "text": "Top-5 largest fires in 2013\n\n\ntop5_fires_2013 &lt;- cal_perims_2013 |&gt; \n  arrange(desc(GIS_ACRES)) |&gt; \n  slice_head(n = 5) |&gt; \n  select(FIRE_NAME, ALARM_DATE, CONT_DATE, GIS_ACRES)\n\ntop5_fires_2013\n\n\n\nSimple feature collection with 5 features and 4 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -13433330 ymin: 3983703 xmax: -12973620 ymax: 4750281\nProjected CRS: WGS 84 / Pseudo-Mercator\n   FIRE_NAME ALARM_DATE  CONT_DATE GIS_ACRES                       geometry\n1        RIM 2013-08-17 2013-10-24  256176.0 MULTIPOLYGON (((-13345772 4...\n2 POWERHOUSE 2013-05-30 2013-12-18   30267.7 MULTIPOLYGON (((-13183974 4...\n3   MOUNTAIN 2013-07-15 2013-07-30   27523.7 MULTIPOLYGON (((-12988076 3...\n4   AMERICAN 2013-08-10 2013-10-08   27430.5 MULTIPOLYGON (((-13422021 4...\n5    SPRINGS 2013-05-02 2013-05-11   23676.7 MULTIPOLYGON (((-13249431 4..."
+    "section": "Top-5 largest fires in 2014",
+    "text": "Top-5 largest fires in 2014\n\n\ntop5_fires_2014 &lt;- cal_perims_2014 |&gt; \n  arrange(desc(GIS_ACRES)) |&gt; \n  slice_head(n = 5) |&gt; \n  select(FIRE_NAME, ALARM_DATE, CONT_DATE, GIS_ACRES)\n\ntop5_fires_2014\n\n\n\nSimple feature collection with 5 features and 4 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -13735580 ymin: 4687377 xmax: -13400290 ymax: 5175033\nProjected CRS: WGS 84 / Pseudo-Mercator\n     FIRE_NAME ALARM_DATE  CONT_DATE GIS_ACRES                       geometry\n1   FRYING PAN 2014-08-11 2014-09-30  133177.0 MULTIPOLYGON (((-13714829 5...\n2         KING 2014-09-13 2014-10-10   97684.5 MULTIPOLYGON (((-13401450 4...\n3         BALD 2014-07-30 2014-08-15   39752.2 MULTIPOLYGON (((-13500857 5...\n4 OREGON GULCH 2014-07-30 2014-08-13   35111.2 MULTIPOLYGON (((-13601828 5...\n5       WHITES 2014-07-30 2014-09-25   33794.4 MULTIPOLYGON (((-13696767 5..."
   },
   {
-    "objectID": "lectures/32-shapefiles/slides.html#top-5-largest-fires-in-2013-1",
-    "href": "lectures/32-shapefiles/slides.html#top-5-largest-fires-in-2013-1",
+    "objectID": "lectures/32-shapefiles/slides.html#top-5-largest-fires-in-2014-1",
+    "href": "lectures/32-shapefiles/slides.html#top-5-largest-fires-in-2014-1",
     "title": "Shapefiles",
-    "section": "Top-5 largest fires in 2013",
-    "text": "Top-5 largest fires in 2013\n\n# drop \"geometry\"\ntop5_fires_2013$geometry = NULL\n\ntop5_fires_2013 |&gt; \n  mutate(DURATION = CONT_DATE - ALARM_DATE)\n\n\n\n   FIRE_NAME ALARM_DATE  CONT_DATE GIS_ACRES DURATION\n1        RIM 2013-08-17 2013-10-24  256176.0  68 days\n2 POWERHOUSE 2013-05-30 2013-12-18   30267.7 202 days\n3   MOUNTAIN 2013-07-15 2013-07-30   27523.7  15 days\n4   AMERICAN 2013-08-10 2013-10-08   27430.5  59 days\n5    SPRINGS 2013-05-02 2013-05-11   23676.7   9 days"
+    "section": "Top-5 largest fires in 2014",
+    "text": "Top-5 largest fires in 2014\n\n# drop \"geometry\"\ntop5_fires_2014$geometry = NULL\n\ntop5_fires_2014 |&gt; \n  mutate(DURATION = CONT_DATE - ALARM_DATE)\n\n\n\n     FIRE_NAME ALARM_DATE  CONT_DATE GIS_ACRES DURATION\n1   FRYING PAN 2014-08-11 2014-09-30  133177.0  50 days\n2         KING 2014-09-13 2014-10-10   97684.5  27 days\n3         BALD 2014-07-30 2014-08-15   39752.2  16 days\n4 OREGON GULCH 2014-07-30 2014-08-13   35111.2  14 days\n5       WHITES 2014-07-30 2014-09-25   33794.4  57 days"
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#plot-1-naive",
     "href": "lectures/32-shapefiles/slides.html#plot-1-naive",
     "title": "Shapefiles",
     "section": "Plot 1 (naive)",
-    "text": "Plot 1 (naive)\n\nggplot(data = cal_perims_2013) +\n  geom_sf()"
-  },
-  {
-    "objectID": "lectures/32-shapefiles/slides.html#map-of-california-option-1",
-    "href": "lectures/32-shapefiles/slides.html#map-of-california-option-1",
-    "title": "Shapefiles",
-    "section": "Map of California (option 1)",
-    "text": "Map of California (option 1)\n\n\n\n# from package \"rnaturalearth\"\ncal_map = ne_states(\n  country = \"United States of America\", \n  returnclass = \"sf\") |&gt; \n  filter(name == \"California\")\n\nggplot() + \n  geom_sf(data = cal_map)"
-  },
-  {
-    "objectID": "lectures/32-shapefiles/slides.html#map-of-california-option-2",
-    "href": "lectures/32-shapefiles/slides.html#map-of-california-option-2",
-    "title": "Shapefiles",
-    "section": "Map of California (option 2)",
-    "text": "Map of California (option 2)\n\n\n\n# from package \"maps\"\ncal_county_map = st_as_sf(\n  map(database = \"county\", \n      plot = FALSE, \n      fill = TRUE)) |&gt;\n  filter(str_detect(ID, \"^california\"))\n\nggplot() +\n  geom_sf(data = cal_county_map)"
+    "text": "Plot 1 (naive)\n\n\n\nggplot(cal_perims_2014) +\n  geom_sf()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(cal_perims_2014) +\n  geom_sf(fill = \"red\")"
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#section-5",
     "href": "lectures/32-shapefiles/slides.html#section-5",
     "title": "Shapefiles",
     "section": "",
-    "text": "Code\nggplot() +\n  geom_sf(data = cal_county_map) +\n  geom_sf(data = cal_perims_2013, fill = \"red\", color = \"red3\") +\n  theme_void() +\n  labs(title = \"Wildfires in California 2013\")"
+    "text": "How can we visualize these fire perimeters on a map of California?\n\n\n\n−+\n00:45"
+  },
+  {
+    "objectID": "lectures/32-shapefiles/slides.html#section-6",
+    "href": "lectures/32-shapefiles/slides.html#section-6",
+    "title": "Shapefiles",
+    "section": "",
+    "text": "To visualize fire perimeters on a map of California we need to get data for the polygon(s) of California.\n\n\n\nThere are several options:\n\nMap of California (simple map, no county lines).\nMap of California with counties.\nMap of California with districts.\nMap of California with other kind of meaningful divisions."
+  },
+  {
+    "objectID": "lectures/32-shapefiles/slides.html#map-of-california-option-1",
+    "href": "lectures/32-shapefiles/slides.html#map-of-california-option-1",
+    "title": "Shapefiles",
+    "section": "Map of California (option 1)",
+    "text": "Map of California (option 1)\n\n\n\n\n# from package \"rnaturalearth\"\ncal_map = ne_states(\n  country = \"United States of America\", \n  returnclass = \"sf\") |&gt; \n  filter(name == \"California\")\n\nggplot() + \n  geom_sf(data = cal_map)"
+  },
+  {
+    "objectID": "lectures/32-shapefiles/slides.html#map-of-california-option-2",
+    "href": "lectures/32-shapefiles/slides.html#map-of-california-option-2",
+    "title": "Shapefiles",
+    "section": "Map of California (option 2)",
+    "text": "Map of California (option 2)\n\n\n\n\n# from package \"maps\"\ncal_county_map = st_as_sf(\n  maps::map(database = \"county\", \n      plot = FALSE, \n      fill = TRUE)) |&gt;\n  filter(str_detect(ID, \"^california\"))\n\nggplot() +\n  geom_sf(data = cal_county_map)"
+  },
+  {
+    "objectID": "lectures/32-shapefiles/slides.html#so-far-we-have-2-tables",
+    "href": "lectures/32-shapefiles/slides.html#so-far-we-have-2-tables",
+    "title": "Shapefiles",
+    "section": "So far: we have 2 tables",
+    "text": "So far: we have 2 tables\n\n\n\ncal_perims_2014: sf table of fire perimeters and their geometries with 236 rows and 19 columns, e.g.:\n\nYEAR_: year of fire\nFIRE_NAME: name of fire\nALARM_DATE: alarm date for fire\nCONT_DATE: containment date\ngeometry: polygon geometry\n\n\ncal_county_map: sf table of county polygons with 58 rows and the following 2 columns:\n\nID: name of state and name of county\ngeom: polygon geometry"
+  },
+  {
+    "objectID": "lectures/32-shapefiles/slides.html#section-7",
+    "href": "lectures/32-shapefiles/slides.html#section-7",
+    "title": "Shapefiles",
+    "section": "",
+    "text": "Code\nggplot() +\n  geom_sf(data = cal_county_map) +\n  geom_sf(data = cal_perims_2014, fill = \"red\", color = \"red3\") +\n  theme_void() +\n  labs(title = \"Wildfires in California 2014\")"
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#our-workflow",
@@ -5339,32 +5402,32 @@
     "text": "Our workflow"
   },
   {
-    "objectID": "lectures/32-shapefiles/slides.html#failed-attempt",
-    "href": "lectures/32-shapefiles/slides.html#failed-attempt",
+    "objectID": "lectures/32-shapefiles/slides.html#can-we-get-an-interactive-map-with-leaflet",
+    "href": "lectures/32-shapefiles/slides.html#can-we-get-an-interactive-map-with-leaflet",
     "title": "Shapefiles",
-    "section": "Failed Attempt",
-    "text": "Failed Attempt\n\ncal_perims_2013 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addPolygons()\n\nWarning messages:\n1: sf layer is not long-lat data \n2: sf layer has inconsistent datum (+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs).\nNeed '+proj=longlat +datum=WGS84' \n\n\n\ncal_perims_2013 is in meters (not in degrees).\nBut \"leaflet\" needs data in decimal degrees (latitude and longitude)."
+    "section": "Can we get an interactive map with leaflet?",
+    "text": "Can we get an interactive map with leaflet?\n\n\ncal_perims_2014 |&gt; \n  leaflet() |&gt; \n  addTiles() |&gt; \n  addPolygons()\n\n\n\nWarning messages:\n1: sf layer is not long-lat data \n2: sf layer has inconsistent datum (+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs).\nNeed '+proj=longlat +datum=WGS84' \n\n\n\ncal_perims_2014 is in meters (not in degrees).\nBut \"leaflet\" needs data in decimal degrees (latitude and longitude)."
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#whats-going-on",
     "href": "lectures/32-shapefiles/slides.html#whats-going-on",
     "title": "Shapefiles",
     "section": "What’s going on",
-    "text": "What’s going on\nThe issue is that \"leaflet\" requires data to be in unprojected (WGS84) coordinates (latitude and longitude in degrees), but cal_perims_2013 is using a projected coordinate system.\n\n\nSpecifically, cal_perims_2013 is using a Pseudo-Mercator projection (indicated by +proj=merc and units=m in the warning message), where coordinates are expressed in meters rather than degrees.\n\n\nWhile \"leaflet\" can display maps in various projections, its R functions for adding markers, polygons, and lines almost always expect EPSG:4326 (WGS 84) input."
+    "text": "What’s going on\nThe issue is that \"leaflet\" requires data to be in unprojected (WGS84) coordinates (latitude and longitude in degrees), but cal_perims_2014 is using a projected coordinate system.\n\n\nSpecifically, cal_perims_2014 is using a Pseudo-Mercator projection (indicated by +proj=merc and units=m in the warning message), where coordinates are expressed in meters rather than degrees.\n\n\nWhile \"leaflet\" can display maps in various projections, its R functions for adding markers, polygons, and lines almost always expect EPSG:4326 (WGS 84) input."
   },
   {
-    "objectID": "lectures/32-shapefiles/slides.html#transforming-cal_perims_2013",
-    "href": "lectures/32-shapefiles/slides.html#transforming-cal_perims_2013",
+    "objectID": "lectures/32-shapefiles/slides.html#transforming-cal_perims_2014",
+    "href": "lectures/32-shapefiles/slides.html#transforming-cal_perims_2014",
     "title": "Shapefiles",
-    "section": "Transforming cal_perims_2013",
-    "text": "Transforming cal_perims_2013\nWe need to transform cal_perims_2013 so that it is expressed in geographic coordinate system CRS 4326 using st_transform()\n\ncal_perims_2013 |&gt; \n  st_transform(crs = 4326) |&gt; \n  leaflet() |&gt; \n  addProviderTiles(provider = \"CartoDB.Positron\") |&gt; \n  addPolygons(\n    color = \"red\",\n    weight = 1, \n    label = ~FIRE_NAME)"
+    "section": "Transforming cal_perims_2014",
+    "text": "Transforming cal_perims_2014\nWe need to transform cal_perims_2014 so that it is expressed in geographic coordinate system CRS 4326 using st_transform()\n\n\ncal_perims_2014 |&gt; \n  st_transform(crs = 4326) |&gt; \n  leaflet() |&gt; \n  addProviderTiles(provider = \"Esri.WorldTopoMap\") |&gt; \n  addPolygons(\n    color = \"red\",\n    fillOpacity = 0.5,\n    weight = 1, \n    label = ~FIRE_NAME)"
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#interactive-map",
     "href": "lectures/32-shapefiles/slides.html#interactive-map",
     "title": "Shapefiles",
     "section": "Interactive Map",
-    "text": "Interactive Map\n\n\nCode\ncal_perims_2013 |&gt; \n  st_transform(crs = 4326) |&gt; \n  leaflet() |&gt; \n  addProviderTiles(provider = \"CartoDB.Positron\") |&gt; \n  addPolygons(\n    color = \"red\",\n    weight = 1, \n    label = ~FIRE_NAME)"
+    "text": "Interactive Map\n\n\nCode\ncal_perims_2014 |&gt; \n  st_transform(crs = 4326) |&gt; \n  leaflet() |&gt; \n  addProviderTiles(provider = \"Esri.WorldTopoMap\") |&gt; \n  addPolygons(\n    color = \"red\",\n    fillOpacity = 0.5,\n    weight = 1, \n    label = ~FIRE_NAME)"
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#common-gotchas",
@@ -6036,7 +6099,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 2 1"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 1 2"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#meet-the-palmer-penguins",
@@ -6246,14 +6309,14 @@
     "href": "lectures/23-date-time1/slides.html#an-r-vector-for-date-times",
     "title": "Dates and Times I",
     "section": "An R vector for date-times",
-    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-10 08:15:47 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1775834148"
+    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-11 12:13:08 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1775934788"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "href": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "title": "Dates and Times I",
     "section": "Why not just use a double vector?",
-    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-10 08:15:47 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-10 08:15:48 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-10 08:15:48 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/10/26\""
+    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-11 12:13:08 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-11 12:13:09 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-11 12:13:08 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/11/26\""
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#creating-date-time-vectors",
@@ -6288,21 +6351,21 @@
     "href": "lectures/23-date-time1/slides.html#getting",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 10\n\n\n\n\n\nwday(now)\n\n\n\n[1] 6\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Fri\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 11\n\n\n\n\n\nwday(now)\n\n\n\n[1] 7\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Sat\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#getting-1",
     "href": "lectures/23-date-time1/slides.html#getting-1",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 10\n\n\n\nwday(now)\n\n[1] 6\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Friday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 11\n\n\n\nwday(now)\n\n[1] 7\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Saturday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#setting",
     "href": "lectures/23-date-time1/slides.html#setting",
     "title": "Dates and Times I",
     "section": "Setting",
-    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-10 08:15:47 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Thursday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-11 12:13:08 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Friday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#your-turn",
@@ -6718,6 +6781,13 @@
     "text": "Tibbles\n\nThe main difference is that tibbles are lazy and surly: they do less and complain more.\nHadley Wickham\n\nhttps://tibble.tidyverse.org/"
   },
   {
+    "objectID": "lectures/29-geospatial2/slides.html#section",
+    "href": "lectures/29-geospatial2/slides.html#section",
+    "title": "Storms in North Atlantic I",
+    "section": "",
+    "text": "# packages\nlibrary(tidyverse)     # ecosystem of data science packages\n\nlibrary(sf)            # \"simple features\" (classes for maps)\n\nlibrary(rnaturalearth) # maps data from www.naturalearthdata.com"
+  },
+  {
     "objectID": "lectures/29-geospatial2/slides.html#two-fundamental-spatial-data-models",
     "href": "lectures/29-geospatial2/slides.html#two-fundamental-spatial-data-models",
     "title": "Storms in North Atlantic I",
@@ -6746,8 +6816,8 @@
     "text": "Raster Data\n\n\n\n\n\nGeographic area represented as a grid.\nGrid has dimension: fixed number of rows and columns.\nA location is represented by a grid cell.\nEach cell has a value that represents the attribute of interest: emissions.\nEach cell is color-coded based on attribute value."
   },
   {
-    "objectID": "lectures/29-geospatial2/slides.html#section",
-    "href": "lectures/29-geospatial2/slides.html#section",
+    "objectID": "lectures/29-geospatial2/slides.html#section-1",
+    "href": "lectures/29-geospatial2/slides.html#section-1",
     "title": "Storms in North Atlantic I",
     "section": "",
     "text": "Vector Data\nVector data are better for discretely bounded data, e.g. bike racks, rivers, political boundaries, etc.\n\n\nRaster Data\nRaster data are better for continuous data, e.g. temperature, elevation, rainfall, etc."
@@ -6760,13 +6830,6 @@
     "text": "Hurricane Sandy 2012"
   },
   {
-    "objectID": "lectures/29-geospatial2/slides.html#section-1",
-    "href": "lectures/29-geospatial2/slides.html#section-1",
-    "title": "Storms in North Atlantic I",
-    "section": "",
-    "text": "Vector or Raster?\n\n\n\n\n−+\n00:20"
-  },
-  {
     "objectID": "lectures/29-geospatial2/slides.html#section-2",
     "href": "lectures/29-geospatial2/slides.html#section-2",
     "title": "Storms in North Atlantic I",
@@ -6776,6 +6839,13 @@
   {
     "objectID": "lectures/29-geospatial2/slides.html#section-3",
     "href": "lectures/29-geospatial2/slides.html#section-3",
+    "title": "Storms in North Atlantic I",
+    "section": "",
+    "text": "Vector or Raster?\n\n\n\n\n−+\n00:20"
+  },
+  {
+    "objectID": "lectures/29-geospatial2/slides.html#section-4",
+    "href": "lectures/29-geospatial2/slides.html#section-4",
     "title": "Storms in North Atlantic I",
     "section": "",
     "text": "Vector or Raster?\n\n\n\n\n−+\n00:20"
@@ -6795,22 +6865,22 @@
     "text": "Storms in 1975\n\nstorms |&gt; \n  filter(year == 1975)\n\n\n\n# A tibble: 238 × 13\n   name   year month   day  hour   lat  long status      category  wind pressure\n   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;\n 1 Amy    1975     6    27     0  27.5 -79   tropical d…       NA    25     1013\n 2 Amy    1975     6    27     6  28.5 -79   tropical d…       NA    25     1013\n 3 Amy    1975     6    27    12  29.5 -79   tropical d…       NA    25     1013\n 4 Amy    1975     6    27    18  30.5 -79   tropical d…       NA    25     1013\n 5 Amy    1975     6    28     0  31.5 -78.8 tropical d…       NA    25     1012\n 6 Amy    1975     6    28     6  32.4 -78.7 tropical d…       NA    25     1012\n 7 Amy    1975     6    28    12  33.3 -78   tropical d…       NA    25     1011\n 8 Amy    1975     6    28    18  34   -77   tropical d…       NA    30     1006\n 9 Amy    1975     6    29     0  34.4 -75.8 tropical s…       NA    35     1004\n10 Amy    1975     6    29     6  34   -74.8 tropical s…       NA    40     1002\n# ℹ 228 more rows\n# ℹ 2 more variables: tropicalstorm_force_diameter &lt;int&gt;,\n#   hurricane_force_diameter &lt;int&gt;"
   },
   {
-    "objectID": "lectures/29-geospatial2/slides.html#section-5",
-    "href": "lectures/29-geospatial2/slides.html#section-5",
+    "objectID": "lectures/29-geospatial2/slides.html#section-6",
+    "href": "lectures/29-geospatial2/slides.html#section-6",
     "title": "Storms in North Atlantic I",
     "section": "",
     "text": "storms |&gt; \n  filter(year == 1975) |&gt; \n  ggplot(aes(x = long, y = lat)) +\n  geom_point()"
   },
   {
-    "objectID": "lectures/29-geospatial2/slides.html#section-6",
-    "href": "lectures/29-geospatial2/slides.html#section-6",
+    "objectID": "lectures/29-geospatial2/slides.html#section-7",
+    "href": "lectures/29-geospatial2/slides.html#section-7",
     "title": "Storms in North Atlantic I",
     "section": "",
     "text": "storms |&gt; \n  filter(year == 1975) |&gt; \n  ggplot(aes(x = long, y = lat, color = name)) +\n  geom_point()"
   },
   {
-    "objectID": "lectures/29-geospatial2/slides.html#section-7",
-    "href": "lectures/29-geospatial2/slides.html#section-7",
+    "objectID": "lectures/29-geospatial2/slides.html#section-8",
+    "href": "lectures/29-geospatial2/slides.html#section-8",
     "title": "Storms in North Atlantic I",
     "section": "",
     "text": "storms |&gt; \n  filter(year == 1975) |&gt; \n  ggplot(aes(x = long, y = lat, color = name)) +\n  geom_point() +\n  geom_path()"
@@ -6844,36 +6914,36 @@
     "text": "Simple Features\n\nA feature is thought of as a thing, or an object in the real world, such as a building, a tree, a bike rack, or a tropical cyclone.\nFeatures have a geometry describing where on Earth the feature is located.\nFeatures can have attributes, which describe other properties.\nThe Simple Features package \"sf\" is based on a standard describing how objects located in the real world can be represented in computers.\nThe Simple Features standard puts emphasis on the spatial geometry of these objects.\nThe standard is widely implemented in spatial databases such as PostGIS, commercial GIS, and libraries such as GDAL."
   },
   {
-    "objectID": "lectures/29-geospatial2/slides.html#section-8",
-    "href": "lectures/29-geospatial2/slides.html#section-8",
-    "title": "Storms in North Atlantic I",
-    "section": "",
-    "text": "# world map data (\"sf\" object)\nworld1 &lt;- ne_coastline(returnclass = \"sf\")\n\nggplot(data = world1) +\n  geom_sf()"
-  },
-  {
     "objectID": "lectures/29-geospatial2/slides.html#section-9",
     "href": "lectures/29-geospatial2/slides.html#section-9",
     "title": "Storms in North Atlantic I",
     "section": "",
-    "text": "class(world1)\n\n[1] \"sf\"         \"data.frame\"\n\n\n\n\n\n\ndim(world1)\n\n[1] 134   4\n\n\n\n\n\n\n\nhead(world1)\n\nSimple feature collection with 6 features and 3 fields\nGeometry type: LINESTRING\nDimension:     XY\nBounding box:  xmin: -163.7129 ymin: -79.63421 xmax: 150.8016 ymax: 77.83463\nGeodetic CRS:  WGS 84\n  scalerank featurecla min_zoom                       geometry\n1         1  Coastline      1.0 LINESTRING (-163.7129 -78.5...\n2         0  Coastline      0.0 LINESTRING (-6.197885 53.86...\n3         0  Coastline      0.0 LINESTRING (141.0002 -2.600...\n4         0  Coastline      0.0 LINESTRING (114.204 4.52587...\n5         1  Coastline      1.5 LINESTRING (-93.61276 74.98...\n6         1  Coastline      1.5 LINESTRING (-93.84 77.52, -...\n\n\n\n\n\n\n\nnames(world1)\n\n[1] \"scalerank\"  \"featurecla\" \"min_zoom\"   \"geometry\""
+    "text": "# world map data (\"sf\" object)\nworld1 &lt;- ne_coastline(returnclass = \"sf\")\n\nggplot(data = world1) +\n  geom_sf()"
   },
   {
     "objectID": "lectures/29-geospatial2/slides.html#section-10",
     "href": "lectures/29-geospatial2/slides.html#section-10",
     "title": "Storms in North Atlantic I",
     "section": "",
-    "text": "world1$geometry\n\nGeometry set for 134 features \nGeometry type: LINESTRING\nDimension:     XY\nBounding box:  xmin: -180 ymin: -85.60904 xmax: 180 ymax: 83.64513\nGeodetic CRS:  WGS 84\nFirst 5 geometries:\n\n\nLINESTRING (-163.7129 -78.59567, -163.1058 -78....\nLINESTRING (-6.197885 53.86757, -6.032985 53.15...\nLINESTRING (141.0002 -2.600151, 142.7352 -3.289...\nLINESTRING (114.204 4.525874, 114.6 4.900011, 1...\nLINESTRING (-93.61276 74.98, -94.15691 74.59235..."
+    "text": "class(world1)\n\n[1] \"sf\"         \"data.frame\"\n\n\n\n\n\n\ndim(world1)\n\n[1] 134   4\n\n\n\n\n\n\n\nhead(world1)\n\nSimple feature collection with 6 features and 3 fields\nGeometry type: LINESTRING\nDimension:     XY\nBounding box:  xmin: -163.7129 ymin: -79.63421 xmax: 150.8016 ymax: 77.83463\nGeodetic CRS:  WGS 84\n  scalerank featurecla min_zoom                       geometry\n1         1  Coastline      1.0 LINESTRING (-163.7129 -78.5...\n2         0  Coastline      0.0 LINESTRING (-6.197885 53.86...\n3         0  Coastline      0.0 LINESTRING (141.0002 -2.600...\n4         0  Coastline      0.0 LINESTRING (114.204 4.52587...\n5         1  Coastline      1.5 LINESTRING (-93.61276 74.98...\n6         1  Coastline      1.5 LINESTRING (-93.84 77.52, -...\n\n\n\n\n\n\n\nnames(world1)\n\n[1] \"scalerank\"  \"featurecla\" \"min_zoom\"   \"geometry\""
   },
   {
     "objectID": "lectures/29-geospatial2/slides.html#section-11",
     "href": "lectures/29-geospatial2/slides.html#section-11",
     "title": "Storms in North Atlantic I",
     "section": "",
-    "text": "world1 is an \"sf\" object:\n\nit is a special data.frame (df with a geometry column)\neach row is a feature\neach column (or variable) is an attribute\nit specifies the Coordinate Reference System: WGS 84\ni.e. coordinates are longitude and latitude in Decimal Degrees (DD)\nthe geometry indicates the kind of vector geometry (e.g. points, lines, polygons)\n\nsf object uses only one type of geometry (not allowed to mix them!)\n\ngeometry is used by geom_sf() to plot the corresponding vector geometries"
+    "text": "world1$geometry\n\nGeometry set for 134 features \nGeometry type: LINESTRING\nDimension:     XY\nBounding box:  xmin: -180 ymin: -85.60904 xmax: 180 ymax: 83.64513\nGeodetic CRS:  WGS 84\nFirst 5 geometries:\n\n\nLINESTRING (-163.7129 -78.59567, -163.1058 -78....\nLINESTRING (-6.197885 53.86757, -6.032985 53.15...\nLINESTRING (141.0002 -2.600151, 142.7352 -3.289...\nLINESTRING (114.204 4.525874, 114.6 4.900011, 1...\nLINESTRING (-93.61276 74.98, -94.15691 74.59235..."
   },
   {
     "objectID": "lectures/29-geospatial2/slides.html#section-12",
     "href": "lectures/29-geospatial2/slides.html#section-12",
+    "title": "Storms in North Atlantic I",
+    "section": "",
+    "text": "world1 is an \"sf\" object:\n\nit is a special data.frame (df with a geometry column)\neach row is a feature\neach column (or variable) is an attribute\nit specifies the Coordinate Reference System: WGS 84\ni.e. coordinates are longitude and latitude in Decimal Degrees (DD)\nthe geometry indicates the kind of vector geometry (e.g. points, lines, polygons)\n\nsf object uses only one type of geometry (not allowed to mix them!)\n\ngeometry is used by geom_sf() to plot the corresponding vector geometries"
+  },
+  {
+    "objectID": "lectures/29-geospatial2/slides.html#section-13",
+    "href": "lectures/29-geospatial2/slides.html#section-13",
     "title": "Storms in North Atlantic I",
     "section": "",
     "text": "Plotting world1 with ggplot() + geom_sf() produces a 2D map.\n\nTo be more precise, the LINESTRINGS are projected into a 2D map, which means there is a Projected Coordinate System used by geom_sf() behind the scenes.\nBy default geom_sf() uses the Plate Carrée (equirectangular) projection when plotting data in a geographic system like WGS 84."
@@ -6886,8 +6956,8 @@
     "text": "Another World Map from \"rnaturalearth\"\n\n\n# another world map data (\"sf\" object)\nworld2 &lt;- ne_countries(returnclass = \"sf\")\nggplot(data = world2) +\n  geom_sf()"
   },
   {
-    "objectID": "lectures/29-geospatial2/slides.html#section-13",
-    "href": "lectures/29-geospatial2/slides.html#section-13",
+    "objectID": "lectures/29-geospatial2/slides.html#section-14",
+    "href": "lectures/29-geospatial2/slides.html#section-14",
     "title": "Storms in North Atlantic I",
     "section": "",
     "text": "class(world2)\n\n[1] \"sf\"         \"data.frame\"\n\n\n\n\n\n\ndim(world2)\n\n[1] 177 169\n\n\n\n\n\n\n\nnames(world2)\n\n  [1] \"featurecla\" \"scalerank\"  \"labelrank\"  \"sovereignt\" \"sov_a3\"    \n  [6] \"adm0_dif\"   \"level\"      \"type\"       \"tlc\"        \"admin\"     \n [11] \"adm0_a3\"    \"geou_dif\"   \"geounit\"    \"gu_a3\"      \"su_dif\"    \n [16] \"subunit\"    \"su_a3\"      \"brk_diff\"   \"name\"       \"name_long\" \n [21] \"brk_a3\"     \"brk_name\"   \"brk_group\"  \"abbrev\"     \"postal\"    \n [26] \"formal_en\"  \"formal_fr\"  \"name_ciawf\" \"note_adm0\"  \"note_brk\"  \n [31] \"name_sort\"  \"name_alt\"   \"mapcolor7\"  \"mapcolor8\"  \"mapcolor9\" \n [36] \"mapcolor13\" \"pop_est\"    \"pop_rank\"   \"pop_year\"   \"gdp_md\"    \n [41] \"gdp_year\"   \"economy\"    \"income_grp\" \"fips_10\"    \"iso_a2\"    \n [46] \"iso_a2_eh\"  \"iso_a3\"     \"iso_a3_eh\"  \"iso_n3\"     \"iso_n3_eh\" \n [51] \"un_a3\"      \"wb_a2\"      \"wb_a3\"      \"woe_id\"     \"woe_id_eh\" \n [56] \"woe_note\"   \"adm0_iso\"   \"adm0_diff\"  \"adm0_tlc\"   \"adm0_a3_us\"\n [61] \"adm0_a3_fr\" \"adm0_a3_ru\" \"adm0_a3_es\" \"adm0_a3_cn\" \"adm0_a3_tw\"\n [66] \"adm0_a3_in\" \"adm0_a3_np\" \"adm0_a3_pk\" \"adm0_a3_de\" \"adm0_a3_gb\"\n [71] \"adm0_a3_br\" \"adm0_a3_il\" \"adm0_a3_ps\" \"adm0_a3_sa\" \"adm0_a3_eg\"\n [76] \"adm0_a3_ma\" \"adm0_a3_pt\" \"adm0_a3_ar\" \"adm0_a3_jp\" \"adm0_a3_ko\"\n [81] \"adm0_a3_vn\" \"adm0_a3_tr\" \"adm0_a3_id\" \"adm0_a3_pl\" \"adm0_a3_gr\"\n [86] \"adm0_a3_it\" \"adm0_a3_nl\" \"adm0_a3_se\" \"adm0_a3_bd\" \"adm0_a3_ua\"\n [91] \"adm0_a3_un\" \"adm0_a3_wb\" \"continent\"  \"region_un\"  \"subregion\" \n [96] \"region_wb\"  \"name_len\"   \"long_len\"   \"abbrev_len\" \"tiny\"      \n[101] \"homepart\"   \"min_zoom\"   \"min_label\"  \"max_label\"  \"label_x\"   \n[106] \"label_y\"    \"ne_id\"      \"wikidataid\" \"name_ar\"    \"name_bn\"   \n[111] \"name_de\"    \"name_en\"    \"name_es\"    \"name_fa\"    \"name_fr\"   \n[116] \"name_el\"    \"name_he\"    \"name_hi\"    \"name_hu\"    \"name_id\"   \n[121] \"name_it\"    \"name_ja\"    \"name_ko\"    \"name_nl\"    \"name_pl\"   \n[126] \"name_pt\"    \"name_ru\"    \"name_sv\"    \"name_tr\"    \"name_uk\"   \n[131] \"name_ur\"    \"name_vi\"    \"name_zh\"    \"name_zht\"   \"fclass_iso\"\n[136] \"tlc_diff\"   \"fclass_tlc\" \"fclass_us\"  \"fclass_fr\"  \"fclass_ru\" \n[141] \"fclass_es\"  \"fclass_cn\"  \"fclass_tw\"  \"fclass_in\"  \"fclass_np\" \n[146] \"fclass_pk\"  \"fclass_de\"  \"fclass_gb\"  \"fclass_br\"  \"fclass_il\" \n[151] \"fclass_ps\"  \"fclass_sa\"  \"fclass_eg\"  \"fclass_ma\"  \"fclass_pt\" \n[156] \"fclass_ar\"  \"fclass_jp\"  \"fclass_ko\"  \"fclass_vn\"  \"fclass_tr\" \n[161] \"fclass_id\"  \"fclass_pl\"  \"fclass_gr\"  \"fclass_it\"  \"fclass_nl\" \n[166] \"fclass_se\"  \"fclass_bd\"  \"fclass_ua\"  \"geometry\""
@@ -6935,8 +7005,8 @@
     "text": "Customize theme and labels\n\n\nggplot() +\n  geom_sf(data = world2) +\n  coord_sf(xlim = c(-110, -30), ylim = c(5, 65)) +\n  geom_point(data = storms75, \n             aes(x = long, y = lat, color = name)) +\n  geom_path(data = storms75, \n            aes(x = long, y = lat, color = name)) +\n  theme(panel.background = element_blank()) + \n  labs(title = \"North Atlantic Storms (1975)\")"
   },
   {
-    "objectID": "lectures/29-geospatial2/slides.html#section-14",
-    "href": "lectures/29-geospatial2/slides.html#section-14",
+    "objectID": "lectures/29-geospatial2/slides.html#section-15",
+    "href": "lectures/29-geospatial2/slides.html#section-15",
     "title": "Storms in North Atlantic I",
     "section": "",
     "text": "Code\nggplot() +\n  geom_sf(data = world2) +\n  coord_sf(xlim = c(-110, -30), ylim = c(5, 65)) +\n  geom_point(data = storms75, \n             aes(x = long, y = lat, color = name)) +\n  geom_path(data = storms75, \n            aes(x = long, y = lat, color = name)) +\n  theme(panel.background = element_blank()) + \n  labs(title = \"North Atlantic Storms (1975)\")"
@@ -6956,36 +7026,36 @@
     "text": "Change Projection\nYou can change the projection with the ggplot layer coord_sf()\n\nworld2 &lt;- ne_countries(returnclass = \"sf\")\n\nggplot(data = world2) +\n  geom_sf() +\n  coord_sf(crs = ...)"
   },
   {
-    "objectID": "lectures/29-geospatial2/slides.html#section-16",
-    "href": "lectures/29-geospatial2/slides.html#section-16",
-    "title": "Storms in North Atlantic I",
-    "section": "",
-    "text": "ggplot(data = world2) +\n  geom_sf() +\n  coord_sf(crs = 4326)"
-  },
-  {
     "objectID": "lectures/29-geospatial2/slides.html#section-17",
     "href": "lectures/29-geospatial2/slides.html#section-17",
     "title": "Storms in North Atlantic I",
     "section": "",
-    "text": "# Mollweide\nggplot(data = world2) +\n  geom_sf() +\n  coord_sf(crs = \"+proj=moll\")"
+    "text": "ggplot(data = world2) +\n  geom_sf() +\n  coord_sf(crs = 4326)"
   },
   {
     "objectID": "lectures/29-geospatial2/slides.html#section-18",
     "href": "lectures/29-geospatial2/slides.html#section-18",
     "title": "Storms in North Atlantic I",
     "section": "",
-    "text": "# Equal Area Cylindrical\nggplot(data = world2) +\n  geom_sf() +\n  coord_sf(crs = \"+proj=cea\")"
+    "text": "# Mollweide\nggplot(data = world2) +\n  geom_sf() +\n  coord_sf(crs = \"+proj=moll\")"
   },
   {
     "objectID": "lectures/29-geospatial2/slides.html#section-19",
     "href": "lectures/29-geospatial2/slides.html#section-19",
     "title": "Storms in North Atlantic I",
     "section": "",
-    "text": "# Eckert I\nggplot(data = world2) +\n  geom_sf() +\n  coord_sf(crs = \"+proj=eck1\")"
+    "text": "# Equal Area Cylindrical\nggplot(data = world2) +\n  geom_sf() +\n  coord_sf(crs = \"+proj=cea\")"
   },
   {
     "objectID": "lectures/29-geospatial2/slides.html#section-20",
     "href": "lectures/29-geospatial2/slides.html#section-20",
+    "title": "Storms in North Atlantic I",
+    "section": "",
+    "text": "# Eckert I\nggplot(data = world2) +\n  geom_sf() +\n  coord_sf(crs = \"+proj=eck1\")"
+  },
+  {
+    "objectID": "lectures/29-geospatial2/slides.html#section-21",
+    "href": "lectures/29-geospatial2/slides.html#section-21",
     "title": "Storms in North Atlantic I",
     "section": "",
     "text": "# Orthographic\nggplot(data = world2) +\n  geom_sf() +\n  coord_sf(crs = \"+proj=ortho\")"
@@ -7366,14 +7436,14 @@
     "href": "lectures/24-date-time2/slides.html#how-old-is-oski",
     "title": "Dates and Times II",
     "section": "How old is Oski?",
-    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30876 days"
+    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30877 days"
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#durations",
     "href": "lectures/24-date-time2/slides.html#durations",
     "title": "Dates and Times II",
     "section": "Durations",
-    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2667686400s (~84.53 years)\""
+    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2667772800s (~84.54 years)\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#constructing-a-duration",
@@ -7415,7 +7485,7 @@
     "href": "lectures/24-date-time2/slides.html#how-old-will-oski-be",
     "title": "Dates and Times II",
     "section": "How old will Oski be …",
-    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2667686400s (~84.53 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2699244000s (~85.53 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 195d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 195d 0H 0M 0S\""
+    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2667772800s (~84.54 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2699330400s (~85.54 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 196d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 196d 0H 0M 0S\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#intervals",
@@ -7898,7 +7968,7 @@
     "href": "lectures/34-json/slides.html#api-open-notify",
     "title": "JSON Data",
     "section": "API “Open Notify”",
-    "text": "API “Open Notify”\nAPI stands for Application Programming Interface. In simpler terms, think of API as a data sharing interface.\n\nurl = \"http://api.open-notify.org/iss-now.json\"\n\nx = fromJSON(url)\nx\n\n$message\n[1] \"success\"\n\n$iss_position\n$iss_position$longitude\n[1] \"133.0160\"\n\n$iss_position$latitude\n[1] \"-50.4256\"\n\n\n$timestamp\n[1] 1775834179"
+    "text": "API “Open Notify”\nAPI stands for Application Programming Interface. In simpler terms, think of API as a data sharing interface.\n\nurl = \"http://api.open-notify.org/iss-now.json\"\n\nx = fromJSON(url)\nx\n\n$iss_position\n$iss_position$longitude\n[1] \"92.8037\"\n\n$iss_position$latitude\n[1] \"-42.8976\"\n\n\n$timestamp\n[1] 1775934820\n\n$message\n[1] \"success\""
   },
   {
     "objectID": "lectures/31-choropleth-maps/slides.html#section",

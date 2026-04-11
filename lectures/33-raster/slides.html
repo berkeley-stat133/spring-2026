@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.7.28">
 
   <meta name="author" content="Gaston Sanchez">
-  <title>STAT 133 – Raster Data</title>
+  <title>STAT 133 – Maps of Raster Data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -205,8 +205,8 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="../../site_libs/quarto-contrib/quarto-project/stat133/stat133slides/stat133-hex-bg.svg" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Raster Data</h1>
-  <p class="subtitle">Maps of Raster Data</p>
+  <h1 class="title">Maps of Raster Data</h1>
+  <p class="subtitle">Geospatial data in a grid of cells</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -216,6 +216,19 @@ Gaston Sanchez
 </div>
 </div>
 
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># packages</span></span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(tidyverse)     <span class="co"># ecosystem of data science packages</span></span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="fu">library</span>(terra)         <span class="co"># for spatial data in raster and vector form</span></span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a><span class="fu">library</span>(viridis)       <span class="co"># colorblind-friendly color schemes</span></span>
+<span id="cb1-7"><a></a></span>
+<span id="cb1-8"><a></a><span class="fu">library</span>(rnaturalearth) <span class="co"># maps data from www.naturalearthdata.com</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section>
 <section id="types-of-spatial-data" class="title-slide slide level1 center">
@@ -243,14 +256,6 @@ Gaston Sanchez
 <p><img data-src="images/raster-features.png"></p>
 </div></div>
 </section>
-<section id="section" class="slide level2 nostretch">
-<h2></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/vector-vs-raster.png" class="quarto-figure quarto-figure-center" style="width:65.0%"></p>
-</figure>
-</div>
-</section>
 <section id="raster-data" class="slide level2 nostretch">
 <h2>Raster Data</h2>
 <div class="quarto-figure quarto-figure-center">
@@ -261,24 +266,55 @@ Gaston Sanchez
 </section>
 <section id="raster-data-regular-grids" class="slide level2">
 <h2>Raster Data (regular grids)</h2>
-<p>A location is represented by a grid cell</p>
-<p>Cells have regular size, e.g.&nbsp;30x30m</p>
-<p>Grid has dimension: fixed number of rows and columns</p>
-<p>Each cell has a value that represents the attribute of interest, e.g.&nbsp;elevation</p>
+<div class="fragment">
+<p>Rasters are spatial data models that define space as an <span class="bold-hilit">array of equally sized cells</span>, and composed of single or multiple bands.</p>
+<ul>
+<li class="fragment"><p>A location is represented by a grid cell.</p></li>
+<li class="fragment"><p>Cells have regular size, e.g.&nbsp;30x30m.</p></li>
+<li class="fragment"><p>Grid has dimension: fixed number of rows and columns.</p></li>
+<li class="fragment"><p>Each cell has a value that represents the attribute of interest, e.g.&nbsp;temperature, elevation, precipitation, pollution, etc.</p></li>
+<li class="fragment"><p>Cell values can be either positive or negative, integer, or floating point.</p></li>
+</ul>
+</div>
 </section></section>
 <section>
-<section id="netcdf-files" class="title-slide slide level1 center">
-<h1>NetCDF files</h1>
+<section id="raster-example-with-netcdf-files" class="title-slide slide level1 center">
+<h1>Raster example with NetCDF files</h1>
 
 </section>
 <section id="about-netcdf-files" class="slide level2">
 <h2>About NetCDF files</h2>
 <ul>
-<li class="fragment"><p>NetCDF: Network Common Data Form</p></li>
-<li class="fragment"><p>Binary file format specifically designed for storing and sharing multidimensional data (e.g.&nbsp;data cube or data hypercube).</p></li>
+<li class="fragment"><p>NetCDF: <span class="hilit">Network Common Data</span> Form</p></li>
+<li class="fragment"><p>Binary file format specifically designed for storing and sharing <span class="mdlit">multidimensional data</span> (e.g.&nbsp;data cube or data hypercube).</p></li>
 <li class="fragment"><p>Popular format for storing scientific data, especially when dealing with gridded or multidimensional information like temperature, precipitation, or satellite imagery.</p></li>
 <li class="fragment"><p>Commonly used in fields such as meteorology, climatology, and GIS to store data like temperature, precipitation, humidity, wind speed, and direction.</p></li>
 </ul>
+</section>
+<section id="netcdf-of-data-cubes" class="slide level2">
+<h2>NetCDF of Data Cubes</h2>
+<p>Many NetCDF files are used to store <strong>data cubes</strong> or <strong>hypercubes</strong>.</p>
+<div class="fragment">
+<div class="columns">
+<div class="column">
+<p>3-dim cube</p>
+<p><img data-src="images/raster-cube3d.png"></p>
+</div><div class="column fragment">
+<p>4-dim hypercube</p>
+<p><img data-src="images/raster-cube4d.png"></p>
+</div></div>
+</div>
+<div class="fragment">
+<p>Images by Edzer Pebesma, <a href="https://r-spatial.org/python/06-Cubes.html" class="uri">https://r-spatial.org/python/06-Cubes.html</a></p>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p>A 4-dim raster data cube layed out flat over two dimensions</p>
+
+<img data-src="images/raster-cube4d2-unfolded.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><div class="fragment">
+<p>Images by Edzer Pebesma, <a href="https://r-spatial.org/python/06-Cubes.html" class="uri">https://r-spatial.org/python/06-Cubes.html</a></p>
+</div>
 </section>
 <section id="netcdf-data-format" class="slide level2">
 <h2>NetCDF Data Format</h2>
@@ -287,38 +323,10 @@ Gaston Sanchez
 <li class="fragment"><p>It can handle various data types, including floats, integers, and strings.</p></li>
 <li class="fragment"><p>Variables in NetCDF files are associated with dimensions, allowing for organization of the data based on spatial and temporal coordinates.</p></li>
 </ul>
-</section>
-<section id="essential-netcdf-vocabulary" class="slide level2">
-<h2>Essential netCDF vocabulary</h2>
-<ul>
-<li class="fragment"><p>Dimension</p></li>
-<li class="fragment"><p>Variables</p></li>
-<li class="fragment"><p>Coordinate Variables</p></li>
-</ul>
-</section>
-<section id="dimension" class="slide level2">
-<h2>Dimension</h2>
-<ul>
-<li class="fragment"><p>A NetCDF dimension has both a name and a size.</p></li>
-<li class="fragment"><p>A dimension size is an arbitrary positive integer.</p></li>
-<li class="fragment"><p>A dimension can be used to represent a real physical dimension, for example, time, latitude, longitude, or height.</p></li>
-<li class="fragment"><p>A dimension can also be used to index other quantities, for example, station or model run number.</p></li>
-<li class="fragment"><p>It is possible to use the same dimension more than once in specifying a variable shape.</p></li>
-<li class="fragment"><p>The number of dimensions is called the rank (or dimensionality).</p></li>
-</ul>
-</section>
-<section id="variables" class="slide level2">
-<h2>Variables</h2>
-<ul>
-<li class="fragment"><p>A variable represents an array of values of the same type.</p></li>
-<li class="fragment"><p>Variables are used to store the bulk of the data in a netCDF file.</p></li>
-<li class="fragment"><p>A variable has a name, a data type, and a shape described by its list of dimensions specified when the variable is created. + A scalar variable has rank 0, + A vector has rank 1, + A matrix has rank 2.</p></li>
-<li class="fragment"><p>A variable can also have associated attributes that can be added, deleted, or changed after the variable is created.</p></li>
-</ul>
 </section></section>
 <section>
-<section id="noaa-monthly-u.s.-climate-gridded-dataset" class="title-slide slide level1 center">
-<h1>NOAA Monthly U.S. Climate Gridded Dataset</h1>
+<section id="noaa-monthly-u.s.-climate-gridded-dataset-netcdf" class="title-slide slide level1 center">
+<h1>NOAA Monthly U.S. Climate Gridded Dataset (NetCDF)</h1>
 
 </section>
 <section id="netcdf-example" class="slide level2">
@@ -332,33 +340,39 @@ Gaston Sanchez
 <ol type="1">
 <li class="fragment">Maximum Temperature</li>
 <li class="fragment">Minimum Temperature</li>
-<li class="fragment">Average Temperature</li>
+<li class="fragment"><span class="bold-hilit">Average Temperature</span> (we’ll focus on this one)</li>
 <li class="fragment">Precipitation</li>
 </ol>
 </div>
 </section>
-<section id="section-1" class="slide level2" data-background-image="images/NClimGrid-website.png" data-background-size="contain">
+<section id="section-2" class="slide level2" data-background-image="images/NClimGrid-website.png" data-background-size="contain">
 <h2></h2>
 </section>
-<section id="section-2" class="slide level2 nostretch">
+<section id="section-3" class="slide level2 nostretch">
 <h2></h2>
-<p>Monthly average temperature file <code>nclimgrid_tavg.nc</code> available at:</p>
+<p>Monthly average temperature NetCDF file <code>nclimgrid_tavg.nc</code> available at:</p>
 <p><a href="https://www.ncei.noaa.gov/data/nclimgrid-monthly/access/" class="uri">https://www.ncei.noaa.gov/data/nclimgrid-monthly/access/</a></p>
 <p><img data-src="images/nclimgrid-monthly.png" style="width:60.0%"></p>
 </section>
 <section id="r-package-terra" class="slide level2">
 <h2>R Package <code>"terra"</code></h2>
-<p>The <code>"terra"</code> package provides methods for spatial data analysis with vector (points, lines, polygons) and raster (grid) data.</p>
+<p>The <code>"terra"</code> package provides methods for spatial data analysis with <span class="mdlit">vector</span> (points, lines, polygons) and <span class="hilit">raster</span> (grid) data.</p>
+<p><br>
+</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(terra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># install.packages("terra")</span></span>
+<span id="cb2-2"><a></a><span class="fu">library</span>(terra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="importing-netcdf-files-with-rast" class="slide level2">
 <h2>Importing NetCDF files with <code>rast()</code></h2>
+<p>Assuming you’ve downloaded <code>"nclimgrid_tavg.nc"</code> to your working directory</p>
+<div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># NClimGrid data as of Feb-2026</span></span>
-<span id="cb2-2"><a></a>dat <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"nclimgrid_tavg.nc"</span>)</span>
-<span id="cb2-3"><a></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># NClimGrid data as of Feb-2026</span></span>
+<span id="cb3-2"><a></a>dat <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"nclimgrid_tavg.nc"</span>)</span>
+<span id="cb3-3"><a></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <div class="fragment">
 <pre><code>class       : SpatRaster 
@@ -373,12 +387,45 @@ unit        : degree_Celsius, degree_Celsius, degree_Celsius, degree_Celsius, de
 time (days) : 1895-01-01 to 2026-02-01 (2 steps) </code></pre>
 </div>
 </section>
-<section id="importing-netcdf-files-with-rast-1" class="slide level2 smaller">
-<h2>Importing NetCDF files with <code>rast()</code></h2>
+<section id="essential-netcdf-vocabulary" class="slide level2">
+<h2>Essential netCDF vocabulary</h2>
+<ul>
+<li class="fragment"><p>Dimension</p></li>
+<li class="fragment"><p>Variables</p></li>
+<li class="fragment"><p>Coordinate Variables</p></li>
+</ul>
+</section>
+<section id="dimension" class="slide level2">
+<h2>Dimension</h2>
+<ul>
+<li class="fragment"><p>A NetCDF dimension has both a <span class="hilit">name</span> and a <span class="mdlit">size</span>.</p></li>
+<li class="fragment"><p>A dimension size is an arbitrary positive integer.</p></li>
+<li class="fragment"><p>A dimension can be used to represent a real physical dimension, for example, time, latitude, longitude, or height.</p></li>
+<li class="fragment"><p>A dimension can also be used to index other quantities, for example, station or model run number.</p></li>
+<li class="fragment"><p>It is possible to use the same dimension more than once in specifying a variable shape.</p></li>
+<li class="fragment"><p>The number of dimensions is called the rank (or dimensionality).</p></li>
+</ul>
+</section>
+<section id="variables" class="slide level2">
+<h2>Variables</h2>
+<ul>
+<li class="fragment"><p>A variable represents an array of values of the same type.</p></li>
+<li class="fragment"><p>Variables are used to store the bulk of the data in a netCDF file.</p></li>
+<li class="fragment"><p>A variable has a name, a data type, and a shape described by its list of dimensions specified when the variable is created.</p>
+<ul>
+<li class="fragment">A scalar variable has rank 0,</li>
+<li class="fragment">A vector has rank 1,</li>
+<li class="fragment">A matrix has rank 2.</li>
+</ul></li>
+<li class="fragment"><p>A variable can also have associated attributes that can be added, deleted, or changed after the variable is created.</p></li>
+</ul>
+</section>
+<section id="noaa-monthly-u.s.-climate-gridded-dataset" class="slide level2">
+<h2>NOAA Monthly U.S. Climate Gridded Dataset</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># NClimGrid data as of Feb-2026</span></span>
-<span id="cb4-2"><a></a>dat <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"nclimgrid_tavg.nc"</span>)</span>
-<span id="cb4-3"><a></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># NClimGrid data as of Feb-2026</span></span>
+<span id="cb5-2"><a></a>dat <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"nclimgrid_tavg.nc"</span>)</span>
+<span id="cb5-3"><a></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <pre><code>class       : SpatRaster 
@@ -393,7 +440,7 @@ unit        : degree_Celsius, degree_Celsius, degree_Celsius, degree_Celsius, de
 time (days) : 1895-01-01 to 2026-02-01 (2 steps) </code></pre>
 </div>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 <p>Dimensions:</p>
 <ul>
@@ -414,8 +461,8 @@ time (days) : 1895-01-01 to 2026-02-01 (2 steps) </code></pre>
 <section id="layer-1-january-1895" class="slide level2 smaller">
 <h2>Layer 1: January 1895</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># first layer</span></span>
-<span id="cb6-2"><a></a>dat[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># first layer</span></span>
+<span id="cb7-2"><a></a>dat[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre><code>class       : SpatRaster 
 dimensions  : 596, 1385, 1  (nrow, ncol, nlyr)
@@ -431,8 +478,8 @@ time (days) : 1895-01-01 </code></pre>
 <section id="layer-1564-april-2025" class="slide level2 smaller">
 <h2>Layer 1564: April 2025</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># layer 1564 - April: (2025-1895)*12 + 4</span></span>
-<span id="cb8-2"><a></a>dat[[<span class="dv">1564</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># layer 1564 - April: (2025-1895)*12 + 4</span></span>
+<span id="cb9-2"><a></a>dat[[<span class="dv">1564</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre><code>class       : SpatRaster 
 dimensions  : 596, 1385, 1  (nrow, ncol, nlyr)
@@ -448,90 +495,113 @@ time (days) : 2025-04-01 </code></pre>
 <section id="layer-1564-april-2025-1" class="slide level2 smaller">
 <h2>Layer 1564: April 2025</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">plot</span>(dat[[<span class="dv">1564</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># "terra" has its plot() method</span></span>
+<span id="cb11-2"><a></a><span class="fu">plot</span>(dat[[<span class="dv">1564</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-
-<img data-src="slides_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
-<section id="section-4" class="slide level2 smaller">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-5" class="slide level2 smaller">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">plot</span>(dat[[<span class="dv">1564</span>]], <span class="at">col =</span> <span class="fu">viridis</span>(<span class="at">n =</span> <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">plot</span>(dat[[<span class="dv">1564</span>]], <span class="at">col =</span> <span class="fu">viridis</span>(<span class="at">n =</span> <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">plot</span>(dat[[<span class="dv">1564</span>]], <span class="at">col =</span> <span class="fu">plasma</span>(<span class="at">n =</span> <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">plot</span>(dat[[<span class="dv">1564</span>]], <span class="at">col =</span> <span class="fu">plasma</span>(<span class="at">n =</span> <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">plot</span>(dat[[<span class="dv">1564</span>]], <span class="at">col =</span> <span class="fu">magma</span>(<span class="at">n =</span> <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">plot</span>(dat[[<span class="dv">1564</span>]], <span class="at">col =</span> <span class="fu">magma</span>(<span class="at">n =</span> <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">plot</span>(dat[[<span class="dv">1564</span>]], <span class="at">col =</span> <span class="fu">inferno</span>(<span class="at">n =</span> <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">plot</span>(dat[[<span class="dv">1564</span>]], <span class="at">col =</span> <span class="fu">inferno</span>(<span class="at">n =</span> <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-6" class="slide level2">
 <h2></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">plot</span>(dat[[<span class="dv">1564</span>]], <span class="at">col =</span> <span class="fu">viridis</span>(<span class="at">n =</span> <span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">plot</span>(dat[[<span class="dv">1564</span>]], <span class="at">col =</span> <span class="fu">viridis</span>(<span class="at">n =</span> <span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
-<img data-src="slides_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch"></section>
+<img data-src="slides_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"></section>
 <section id="converting-temp-to-fahrenheit" class="slide level2">
 <h2>Converting temp to Fahrenheit</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">plot</span>(dat[[<span class="dv">1564</span>]] <span class="sc">*</span> (<span class="dv">9</span><span class="sc">/</span><span class="dv">5</span>) <span class="sc">+</span> <span class="dv">32</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">plot</span>(dat[[<span class="dv">1564</span>]] <span class="sc">*</span> (<span class="dv">9</span><span class="sc">/</span><span class="dv">5</span>) <span class="sc">+</span> <span class="dv">32</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-
-<img data-src="slides_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"></section></section>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section></section>
 <section>
 <section id="raster-maps-with-ggplot2" class="title-slide slide level1 center">
 <h1>Raster Maps with <code>"ggplot2"</code></h1>
 
 </section>
-<section id="raster-to-table" class="slide level2">
-<h2>Raster to table</h2>
-<p>First we need to convert the raster object into a table (data.frame or tibble)</p>
+<section id="raster-to-data.frame-or-tibble" class="slide level2">
+<h2>Raster to data.frame (or tibble)</h2>
+<p>To use <code>ggplot()</code> first we need to convert the raster object into a table (data.frame or tibble)</p>
+<div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>apr_2025 <span class="ot">=</span> <span class="fu">as.data.frame</span>(dat[[<span class="dv">1564</span>]], <span class="at">xy =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb17-2"><a></a><span class="fu">head</span>(apr_2025)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>apr_2025 <span class="ot">=</span> <span class="fu">as.data.frame</span>(dat[[<span class="dv">1564</span>]], <span class="at">xy =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-2"><a></a></span>
+<span id="cb18-3"><a></a><span class="fu">head</span>(apr_2025)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -544,65 +614,101 @@ time (days) : 2025-04-01 </code></pre>
 2097 -95.06250 49.31253  4.799805</code></pre>
 </div>
 </div>
-</section>
-<section id="section-6" class="slide level2">
-<h2></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb19-2"><a></a>  <span class="fu">geom_tile</span>(<span class="at">data =</span> apr_2025, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">fill =</span> tavg_1564))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
 </div>
-<img data-src="slides_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch"></section>
+</section>
 <section id="section-7" class="slide level2">
 <h2></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb20-2"><a></a>  <span class="fu">geom_tile</span>(<span class="at">data =</span> apr_2025, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">fill =</span> tavg_1564)) <span class="sc">+</span></span>
-<span id="cb20-3"><a></a>  <span class="fu">scale_fill_viridis_c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<span id="cb20-2"><a></a>  <span class="fu">geom_tile</span>(<span class="at">data =</span> apr_2025, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">fill =</span> tavg_1564))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<img data-src="slides_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
-<section id="map-of-us-states" class="slide level2">
-<h2>Map of US States</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>us_states <span class="ot">=</span> <span class="fu">ne_states</span>(</span>
-<span id="cb21-2"><a></a>  <span class="at">country =</span> <span class="st">"United States of America"</span>, </span>
-<span id="cb21-3"><a></a>  <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
-<span id="cb21-4"><a></a></span>
-<span id="cb21-5"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb21-6"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> us_states) <span class="sc">+</span></span>
-<span id="cb21-7"><a></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">124.7083</span>, <span class="sc">-</span><span class="dv">67</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">24.5417</span>, <span class="fl">49.37503</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-23-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="slides_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section>
+</div>
+</div>
+</section>
 <section id="section-8" class="slide level2">
 <h2></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="co"># Superimposing polygons to temperatures</span></span>
-<span id="cb22-2"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb22-3"><a></a>  <span class="fu">geom_tile</span>(<span class="at">data =</span> apr_2025, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">fill =</span> tavg_1564)) <span class="sc">+</span></span>
-<span id="cb22-4"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> us_states, <span class="at">fill =</span> <span class="st">"#FFFFFF00"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb22-5"><a></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">124.7083</span>, <span class="sc">-</span><span class="dv">67</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">24.5417</span>, <span class="fl">49.37503</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb21-2"><a></a>  <span class="fu">geom_tile</span>(<span class="at">data =</span> apr_2025, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">fill =</span> tavg_1564)) <span class="sc">+</span></span>
+<span id="cb21-3"><a></a>  <span class="fu">scale_fill_viridis_c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="slides_files/figure-revealjs/unnamed-chunk-25-1.png" width="960" class="r-stretch"></section>
+<img data-src="slides_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section>
+<section id="reminder-map-of-us-states" class="slide level2">
+<h2>Reminder: Map of US States</h2>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>us_states <span class="ot">=</span> <span class="fu">ne_states</span>(</span>
+<span id="cb22-2"><a></a>  <span class="at">country =</span> <span class="st">"United States of America"</span>, </span>
+<span id="cb22-3"><a></a>  <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
+<span id="cb22-4"><a></a></span>
+<span id="cb22-5"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb22-6"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> us_states) <span class="sc">+</span></span>
+<span id="cb22-7"><a></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">124.7083</span>, <span class="sc">-</span><span class="dv">67</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">24.5417</span>, <span class="fl">49.37503</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-25-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="section-9" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="co"># Superimposing polygons to temperatures</span></span>
+<span id="cb23-2"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb23-3"><a></a>  <span class="fu">geom_tile</span>(<span class="at">data =</span> apr_2025, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">fill =</span> tavg_1564)) <span class="sc">+</span></span>
+<span id="cb23-4"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> us_states, <span class="at">fill =</span> <span class="st">"#FFFFFF00"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb23-5"><a></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">124.7083</span>, <span class="sc">-</span><span class="dv">67</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">24.5417</span>, <span class="fl">49.37503</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-26-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Note that <code>geom_sf()</code> sets <code>fill</code> to a fully transparent color so that only the polygon borders are shown in white.</p>
+</div>
+</section>
+<section id="section-10" class="slide level2">
 <h2></h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="co"># color gradient: binned viridis (discrete)</span></span>
-<span id="cb23-2"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb23-3"><a></a>  <span class="fu">geom_tile</span>(<span class="at">data =</span> apr_2025, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">fill =</span> tavg_1564)) <span class="sc">+</span> </span>
-<span id="cb23-4"><a></a>  <span class="fu">scale_fill_viridis_b</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="dv">10</span>, <span class="at">to =</span> <span class="dv">25</span>, <span class="at">by =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
-<span id="cb23-5"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> us_states, <span class="at">fill =</span> <span class="st">"#FFFFFF00"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb23-6"><a></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">124.7083</span>, <span class="sc">-</span><span class="dv">67</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">24.5417</span>, <span class="fl">49.37503</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="co"># color gradient: binned viridis (discrete)</span></span>
+<span id="cb24-2"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb24-3"><a></a>  <span class="fu">geom_tile</span>(<span class="at">data =</span> apr_2025, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">fill =</span> tavg_1564)) <span class="sc">+</span> </span>
+<span id="cb24-4"><a></a>  <span class="fu">scale_fill_viridis_b</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="dv">10</span>, <span class="at">to =</span> <span class="dv">25</span>, <span class="at">by =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb24-5"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> us_states, <span class="at">fill =</span> <span class="st">"#FFFFFF00"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb24-6"><a></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">124.7083</span>, <span class="sc">-</span><span class="dv">67</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">24.5417</span>, <span class="fl">49.37503</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
+<img data-src="slides_files/figure-revealjs/unnamed-chunk-27-1.png" width="960" class="r-stretch"></section>
+<section id="our-workflow" class="slide level2 nostretch">
+<h2>Our workflow</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/raster-temperatures-workflow.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
 
 
-<img data-src="slides_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section></section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../../site_libs/quarto-contrib/quarto-project/stat133/stat133slides/stat133-hex-num-logo.png" class="slide-logo"></p>
