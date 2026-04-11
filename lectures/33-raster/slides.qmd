@@ -1,18 +1,34 @@
 ---
-title: "Raster Data"
-subtitle: "Maps of Raster Data"
+title: "Maps of Raster Data"
+subtitle: "Geospatial data in a grid of cells"
 format: stat133slides-revealjs
 chalkboard: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, error = TRUE)
-library(tidyverse)
-library(terra)
-library(viridis)
-library(rnaturalearth)
+library(tidyverse)     # ecosystem of data science packages
+library(terra)         # for spatial data in raster and vector form
+library(viridis)       # colorblind-friendly color schemes
+library(rnaturalearth) # maps data from www.naturalearthdata.com
 
+# import Temperature average layer number 1564
 dat = rast("tavg_1564.nc")
+```
+
+
+##
+
+```{r}
+#| eval: false
+# packages
+library(tidyverse)     # ecosystem of data science packages
+
+library(terra)         # for spatial data in raster and vector form
+
+library(viridis)       # colorblind-friendly color schemes
+
+library(rnaturalearth) # maps data from www.naturalearthdata.com
 ```
 
 
@@ -42,10 +58,6 @@ Raster data are better for continuous data, e.g. temperature, elevation, rainfal
 :::
 ::::
 
-## {.nostretch}
-
-![](images/vector-vs-raster.png){width="65%" fig-align="center"}
-
 
 ## Raster Data {.nostretch}
 
@@ -53,26 +65,67 @@ Raster data are better for continuous data, e.g. temperature, elevation, rainfal
 
 ## Raster Data (regular grids)
 
-A location is represented by a grid cell
+. . .
 
-Cells have regular size, e.g. 30x30m
+Rasters are spatial data models that define space as an [array of equally sized cells]{.bold-hilit}, and composed of single or multiple bands.
 
-Grid has dimension: fixed number of rows and columns
+- A location is represented by a grid cell.
 
-Each cell has a value that represents the attribute of interest, e.g. elevation
+- Cells have regular size, e.g. 30x30m.
+
+- Grid has dimension: fixed number of rows and columns.
+
+- Each cell has a value that represents the attribute of interest, e.g. temperature, elevation, precipitation, pollution, etc.
+
+- Cell values can be either positive or negative, integer, or floating point.
 
 
-# NetCDF files
+# Raster example with NetCDF files
 
 ## About NetCDF files
 
-- NetCDF: Network Common Data Form
+- NetCDF: [Network Common Data]{.hilit} Form
 
-- Binary file format specifically designed for storing and sharing multidimensional data (e.g. data cube or data hypercube).
+- Binary file format specifically designed for storing and sharing [multidimensional data]{.mdlit} (e.g. data cube or data hypercube).
 
 - Popular format for storing scientific data, especially when dealing with gridded or multidimensional information like temperature, precipitation, or satellite imagery. 
 
 - Commonly used in fields such as meteorology, climatology, and GIS to store data like temperature, precipitation, humidity, wind speed, and direction.
+
+
+## NetCDF of Data Cubes
+
+Many NetCDF files are used to store __data cubes__ or __hypercubes__.
+
+. . .
+
+:::: {.columns}
+::: {.column}
+3-dim cube
+
+![](images/raster-cube3d.png)
+:::
+
+::: {.column .fragment}
+4-dim hypercube
+
+![](images/raster-cube4d.png)
+:::
+::::
+
+. . .
+
+Images by Edzer Pebesma,  <https://r-spatial.org/python/06-Cubes.html>
+
+##
+
+A 4-dim raster data cube layed out flat over two dimensions
+
+![](images/raster-cube4d2-unfolded.png){fig-align="center" width="80%"}
+
+. . .
+
+Images by Edzer Pebesma,  <https://r-spatial.org/python/06-Cubes.html>
 
 
 ## NetCDF Data Format
@@ -84,45 +137,7 @@ Each cell has a value that represents the attribute of interest, e.g. elevation
 - Variables in NetCDF files are associated with dimensions, allowing for organization of the data based on spatial and temporal coordinates. 
 
 
-## Essential netCDF vocabulary
-
-- Dimension
-
-- Variables
-
-- Coordinate Variables
-
-
-## Dimension
-
-- A NetCDF dimension has both a name and a size.
-
-- A dimension size is an arbitrary positive integer.
-
-- A dimension can be used to represent a real physical dimension, for example, time, latitude, longitude, or height. 
-
-- A dimension can also be used to index other quantities, for example, station or model run number. 
-
-- It is possible to use the same dimension more than once in specifying a variable shape.
-
-- The number of dimensions is called the rank (or dimensionality). 
-
-
-## Variables
-
-- A variable represents an array of values of the same type. 
-
-- Variables are used to store the bulk of the data in a netCDF file. 
-
-- A variable has a name, a data type, and a shape described by its list of dimensions specified when the variable is created. 
-        + A scalar variable has rank 0,
-        + A vector has rank 1, 
-        + A matrix has rank 2. 
-
-- A variable can also have associated attributes that can be added, deleted, or changed after the variable is created.
-
-
-# NOAA Monthly U.S. Climate Gridded Dataset
+# NOAA Monthly U.S. Climate Gridded Dataset (NetCDF)
 
 ## NetCDF Example
 
@@ -138,7 +153,7 @@ Four Climate variables:
 
 1) Maximum Temperature
 2) Minimum Temperature
-3) Average Temperature
+3) [Average Temperature]{.bold-hilit} (we'll focus on this one)
 4) Precipitation
 
 
@@ -147,7 +162,7 @@ Four Climate variables:
 
 ## {.nostretch}
 
-Monthly average temperature file `nclimgrid_tavg.nc` available at:
+Monthly average temperature NetCDF file `nclimgrid_tavg.nc` available at:
 
 <https://www.ncei.noaa.gov/data/nclimgrid-monthly/access/>
 
@@ -156,15 +171,22 @@ Monthly average temperature file `nclimgrid_tavg.nc` available at:
 
 ## R Package `"terra"`
 
-The `"terra"` package provides methods for spatial data analysis with vector (points, lines, polygons) and raster (grid) data.
+The `"terra"` package provides methods for spatial data analysis with [vector]{.mdlit} (points, lines, polygons) and [raster]{.hilit} (grid) data.
+
+\
 
 ```{r}
 #| eval: false
+# install.packages("terra")
 library(terra)
 ```
 
 
 ## Importing NetCDF files with `rast()`
+
+Assuming you've downloaded `"nclimgrid_tavg.nc"` to your working directory
+
+. . .
 
 ```{r}
 #| eval: false
@@ -188,7 +210,45 @@ unit        : degree_Celsius, degree_Celsius, degree_Celsius, degree_Celsius, de
 time (days) : 1895-01-01 to 2026-02-01 (2 steps) 
 ```
 
-## Importing NetCDF files with `rast()` {.smaller}
+## Essential netCDF vocabulary
+
+- Dimension
+
+- Variables
+
+- Coordinate Variables
+
+
+## Dimension
+
+- A NetCDF dimension has both a [name]{.hilit} and a [size]{.mdlit}.
+
+- A dimension size is an arbitrary positive integer.
+
+- A dimension can be used to represent a real physical dimension, for example, time, latitude, longitude, or height. 
+
+- A dimension can also be used to index other quantities, for example, station or model run number. 
+
+- It is possible to use the same dimension more than once in specifying a variable shape.
+
+- The number of dimensions is called the rank (or dimensionality). 
+
+
+## Variables
+
+- A variable represents an array of values of the same type. 
+
+- Variables are used to store the bulk of the data in a netCDF file. 
+
+- A variable has a name, a data type, and a shape described by its list of dimensions specified when the variable is created. 
+    + A scalar variable has rank 0,
+    + A vector has rank 1, 
+    + A matrix has rank 2. 
+
+- A variable can also have associated attributes that can be added, deleted, or changed after the variable is created.
+
+
+## NOAA Monthly U.S. Climate Gridded Dataset
 
 ```{r}
 #| eval: false
@@ -277,8 +337,11 @@ time (days) : 2025-04-01
 
 ```{r}
 #| eval: false
+# "terra" has its plot() method
 plot(dat[[1564]])
 ```
+
+. . .
 
 ```{r}
 #| echo: false
@@ -357,6 +420,8 @@ plot(dat, col = viridis(n = 6))
 plot(dat[[1564]] * (9/5) + 32)
 ```
 
+. . .
+
 ```{r}
 #| echo: false
 plot(dat * (9/5) + 32)
@@ -365,13 +430,16 @@ plot(dat * (9/5) + 32)
 
 # Raster Maps with `"ggplot2"`
 
-## Raster to table
+## Raster to data.frame (or tibble)
 
-First we need to convert the raster object into a table (data.frame or tibble)
+To use `ggplot()` first we need to convert the raster object into a table (data.frame or tibble)
+
+. . .
 
 ```{r}
 #| eval: false
 apr_2025 = as.data.frame(dat[[1564]], xy = TRUE)
+
 head(apr_2025)
 ```
 
@@ -385,6 +453,7 @@ head(apr_2025)
 ##
 
 ```{r}
+#| output-location: fragment
 ggplot() +
   geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564))
 ```
@@ -399,7 +468,9 @@ ggplot() +
 ```
 
 
-## Map of US States
+## Reminder: Map of US States
+
+. . .
 
 ```{r}
 us_states = ne_states(
@@ -415,12 +486,17 @@ ggplot() +
 ## 
 
 ```{r}
+#| output-location: fragment
 # Superimposing polygons to temperatures
 ggplot() +
   geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564)) +
   geom_sf(data = us_states, fill = "#FFFFFF00", color = "white") +
   coord_sf(xlim = c(-124.7083, -67), ylim = c(24.5417, 49.37503))
 ```
+
+. . .
+
+Note that `geom_sf()` sets `fill` to a fully transparent color so that only the polygon borders are shown in white.
 
 
 ##
@@ -434,3 +510,9 @@ ggplot() +
   geom_sf(data = us_states, fill = "#FFFFFF00", color = "white") +
   coord_sf(xlim = c(-124.7083, -67), ylim = c(24.5417, 49.37503))
 ```
+
+
+## Our workflow {.nostretch}
+
+![](images/raster-temperatures-workflow.svg){width="100%" fig-align="center"}
+
