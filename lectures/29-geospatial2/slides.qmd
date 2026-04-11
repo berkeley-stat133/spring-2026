@@ -7,9 +7,21 @@ chalkboard: true
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, error = TRUE)
-library(tidyverse)
-library(sf)
-library(rnaturalearth)
+library(tidyverse)     # ecosystem of data science packages
+library(sf)            # "simple features" (classes for maps)
+library(rnaturalearth) # maps data from www.naturalearthdata.com
+```
+
+##
+
+```{r}
+#| eval: false
+# packages
+library(tidyverse)     # ecosystem of data science packages
+
+library(sf)            # "simple features" (classes for maps)
+
+library(rnaturalearth) # maps data from www.naturalearthdata.com
 ```
 
 
