@@ -96,6 +96,27 @@ One common approach is to consider the text as a combination of its individual w
 This involves assigning a sentiment category to each token, which in turn requires using a [Sentiment Lexicon]{.bold-hilit}
 
 
+##
+
+![](images/text-sentiment1.svg){fig-align="center" width=70%}
+
+##
+
+![](images/text-sentiment2.svg){fig-align="center" width=70%}
+
+##
+
+![](images/text-sentiment3.svg){fig-align="center" width=70%}
+
+##
+
+![](images/text-sentiment4.svg){fig-align="center" width=70%}
+
+##
+
+![](images/text-sentiment5.svg){fig-align="center" width=70%}
+
+
 ## Sentiment lexicon example
 
 `"tidytext"` provides a default sentiment lexicon `sentiments`
