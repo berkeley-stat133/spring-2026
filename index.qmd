@@ -468,7 +468,7 @@ Lab 11: [__Quiz 5__]{.label-Quiz} | [slides](labs/lab11/slides.html) | [PS10](ht
 
 ::: {.column width="35%"}
 #### Description
-Shapefiles
+[Shapefiles](lectures/32-shapefiles/slides.html)
 
 Raster Data Maps
 
