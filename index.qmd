@@ -510,7 +510,7 @@ Text Analysis 2
 
 Text Analysis 3
 
-Lab 13: [__Quiz 6__]{.label-Quiz} | slides | PS12
+Lab 13: slides | PS12
 
 XML Data
 :::
@@ -548,7 +548,7 @@ JSON Data
 
 APIs
 
-Lab 14: slides
+Lab 14: [__Quiz 6__]{.label-Quiz} | slides
 
 Closing Lecture
 :::
