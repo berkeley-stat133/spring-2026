@@ -689,228 +689,270 @@
     "text": "Server: #| context: server\nObject output$plot2 built with renderPlot()\n\n```{r}\noutput$plot2 &lt;- renderPlot({\n  gg2 = ggplot(data = faithful, \n    aes(x = eruptions)) +\n    theme_minimal()\n  \n  if (input$graphic == \"histogram\") {\n    gg2 + geom_histogram(bins = 30, color = \"white\")\n  } else if (input$graphic == \"density\") {\n    gg2 + geom_density()\n  } else {\n    gg2 + geom_boxplot()\n  }\n})\n```\nNotice access of input object with input$graphic"
   },
   {
-    "objectID": "lectures/12-data-wrangling2/slides.html#agenda",
-    "href": "lectures/12-data-wrangling2/slides.html#agenda",
-    "title": "Data Warngling II",
-    "section": "Agenda",
-    "text": "Agenda\n\nTwo big ideas today:\n\nData Pipelines\nGrouped Operations"
+    "objectID": "lectures/15-dataviz2/slides.html#palmer-penguins",
+    "href": "lectures/15-dataviz2/slides.html#palmer-penguins",
+    "title": "The Grammar of Graphics",
+    "section": "Palmer Penguins",
+    "text": "Palmer Penguins\n\nlibrary(palmerpenguins)\npenguins\n\n# A tibble: 344 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
   },
   {
-    "objectID": "lectures/12-data-wrangling2/slides.html#section",
-    "href": "lectures/12-data-wrangling2/slides.html#section",
-    "title": "Data Warngling II",
+    "objectID": "lectures/15-dataviz2/slides.html#ggplot-syntax",
+    "href": "lectures/15-dataviz2/slides.html#ggplot-syntax",
+    "title": "The Grammar of Graphics",
+    "section": "ggplot() syntax",
+    "text": "ggplot() syntax\n\nggplot() builds a plot layer by layer, each one added on top of one another with + (not |&gt;).\n\nggplot() creates canvas\naes() creates mappings, called inside ggplot() or a geom()\ngeom_() puts down marks using declared geometry\n\n\n\n\nUsually you specify the data in ggplot()\nthe data must be a dataframe or tibble"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section",
+    "href": "lectures/15-dataviz2/slides.html#section",
+    "title": "The Grammar of Graphics",
     "section": "",
-    "text": "library(tidyverse)\n\nwizards &lt;- data.frame(\n  name = c(\"Harry\", \"Bellatrix\", \"Hermione\", \"Draco\"),\n  house = c(\"Gryffindor\", \"Slytherin\", \"Gryffindor\",  \"Slytherin\"),\n  height = c(1.78, 1.57, 1.65, 1.75),\n  spells = c(60, 75, 70, 55)\n)\n\nUsing base R data frame subsetting, create from wizards …\n\nThe average height of characters from Gryffindor.\n\n\nLet’s look at three ways to solve this."
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm))"
   },
   {
-    "objectID": "lectures/12-data-wrangling2/slides.html#nesting",
-    "href": "lectures/12-data-wrangling2/slides.html#nesting",
-    "title": "Data Warngling II",
-    "section": "Nesting",
-    "text": "Nesting\n\nsummarize(filter(wizards, house == \"Gryffindor\"), mean(height))\n\n\n\n  mean(height)\n1        1.715\n\n\n\n\n\n\n\nMust be read from the inside out 👎\nHard to keep track of arguments 👎\n\n\n\nAll in one line of code 👍\nOnly refer to one data frame 👍"
-  },
-  {
-    "objectID": "lectures/12-data-wrangling2/slides.html#step-by-step",
-    "href": "lectures/12-data-wrangling2/slides.html#step-by-step",
-    "title": "Data Warngling II",
-    "section": "Step-by-step",
-    "text": "Step-by-step\n\nwizards2 &lt;- filter(wizards, house == \"Gryffindor\")\nsummarize(wizards2, mean(height))\n\n\n\n  mean(height)\n1        1.715\n\n\n\n\n\n\n\nHave to repeat data frame names 👎\nCreates unnecessary objects 👎\n\n\n\nStores intermediate objects 👍\nCan be read from top to bottom 👍"
-  },
-  {
-    "objectID": "lectures/12-data-wrangling2/slides.html#data-pipelines-in-r",
-    "href": "lectures/12-data-wrangling2/slides.html#data-pipelines-in-r",
-    "title": "Data Warngling II",
-    "section": "Data Pipelines in R",
-    "text": "Data Pipelines in R\n\n\n\n\n2016:\n\"magrittr\" introduces %&gt;%\n\n2021:\n\nR now provides a simple native forward pipe syntax |&gt;. The simple form of the forward pipe inserts the left-had side as the first argument in the right-hand side call."
-  },
-  {
-    "objectID": "lectures/12-data-wrangling2/slides.html#using-the-pipe-operator",
-    "href": "lectures/12-data-wrangling2/slides.html#using-the-pipe-operator",
-    "title": "Data Warngling II",
-    "section": "Using the Pipe Operator",
-    "text": "Using the Pipe Operator\n\nwizards"
-  },
-  {
-    "objectID": "lectures/12-data-wrangling2/slides.html#using-the-pipe-operator-1",
-    "href": "lectures/12-data-wrangling2/slides.html#using-the-pipe-operator-1",
-    "title": "Data Warngling II",
-    "section": "Using the Pipe Operator",
-    "text": "Using the Pipe Operator\n\nwizards |&gt;\n  filter(house == \"Gryffindor\")"
-  },
-  {
-    "objectID": "lectures/12-data-wrangling2/slides.html#using-the-pipe-operator-2",
-    "href": "lectures/12-data-wrangling2/slides.html#using-the-pipe-operator-2",
-    "title": "Data Warngling II",
-    "section": "Using the Pipe Operator",
-    "text": "Using the Pipe Operator\n\nwizards |&gt;\n  filter(house == \"Gryffindor\") |&gt; \n  summarize(mean(height))\n\n\n\n  mean(height)\n1        1.715\n\n\n\n\n\n\n\n🤷\n\n\n\nCan be read like an English paragraph 👍\nOnly type the data once 👍\nNo leftover objects 👍"
-  },
-  {
-    "objectID": "lectures/12-data-wrangling2/slides.html#works-everywhere",
-    "href": "lectures/12-data-wrangling2/slides.html#works-everywhere",
-    "title": "Data Warngling II",
-    "section": "|> works everywhere",
-    "text": "|&gt; works everywhere\n\nR now provides a simple native forward pipe syntax |&gt;. The simple form of the forward pipe inserts the left-hand side as the first argument in the right-hand side call.\n\n\n\nsummary(factor(c(\"owl\", \"fox\", \"owl\")))\n\nfox owl \n  1   2 \n\n\n\n\n\nfactor(c(\"owl\", \"fox\", \"owl\")) |&gt; summary()\n\nfox owl \n  1   2 \n\n\n\n\n\nc(\"owl\", \"fox\", \"owl\") |&gt; factor() |&gt; summary()\n\nfox owl \n  1   2"
-  },
-  {
-    "objectID": "lectures/12-data-wrangling2/slides.html#section-1",
-    "href": "lectures/12-data-wrangling2/slides.html#section-1",
-    "title": "Data Warngling II",
+    "objectID": "lectures/15-dataviz2/slides.html#section-1",
+    "href": "lectures/15-dataviz2/slides.html#section-1",
+    "title": "The Grammar of Graphics",
     "section": "",
-    "text": "wizards\n\n       name      house height spells\n1     Harry Gryffindor   1.78     60\n2 Bellatrix  Slytherin   1.57     75\n3  Hermione Gryffindor   1.65     70\n4     Draco  Slytherin   1.75     55\n\n\n\n\n\nwizards |&gt; # A #&lt;&lt;\n    filter(house == \"Gryffindor\",\n           name %in% c(\"Harry\", \"Hermione\")) |&gt; # B #&lt;&lt;\n    select(height, spells) |&gt; # C #&lt;&lt;\n    summarize(mean(height), sd(height),\n              mean(spells), sd(spells)) # D #&lt;&lt;\n\nQuestion: What are the dimensions of the data frame at each stage of the pipe: A, B, C, and D?\n\n\n\n−+\n02:00"
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm)) +\n  geom_point()"
   },
   {
-    "objectID": "lectures/12-data-wrangling2/slides.html#understanding-your-pipeline",
-    "href": "lectures/12-data-wrangling2/slides.html#understanding-your-pipeline",
-    "title": "Data Warngling II",
-    "section": "Understanding your pipeline",
-    "text": "Understanding your pipeline\nIt’s good practice to understand the output of each line by breaking the pipe.\n\n\n\n\n\n\nwizards |&gt; \n  select(house) |&gt; \n  filter(mean(height))\n\n\n\nError in `filter()`:\nℹ In argument: `mean(height)`.\nCaused by error:\n! object 'height' not found\n\n\n\n\nwizards |&gt; \n  select(house)\n\n\n\n       house\n1 Gryffindor\n2  Slytherin\n3 Gryffindor\n4  Slytherin"
-  },
-  {
-    "objectID": "lectures/12-data-wrangling2/slides.html#section-2",
-    "href": "lectures/12-data-wrangling2/slides.html#section-2",
-    "title": "Data Warngling II",
+    "objectID": "lectures/15-dataviz2/slides.html#section-2",
+    "href": "lectures/15-dataviz2/slides.html#section-2",
+    "title": "The Grammar of Graphics",
     "section": "",
-    "text": "wizards &lt;- data.frame(\n  name = c(\"Harry\", \"Bellatrix\", \"Hermione\", \"Draco\"),\n  house = c(\"Gryffindor\", \"Slytherin\", \"Gryffindor\",  \"Slytherin\"),\n  height = c(1.78, 1.57, 1.65, 1.75),\n  spells = c(60, 75, 70, 55)\n)\n\nUsing base R data frame subsetting, create from wizards …\n\nThe average height of characters from Gryffindor across each house.\n\n\nYou could set up two pipelines with different filters. But there’s a better way."
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point()"
   },
   {
-    "objectID": "lectures/12-data-wrangling2/slides.html#group_by",
-    "href": "lectures/12-data-wrangling2/slides.html#group_by",
-    "title": "Data Warngling II",
-    "section": "group_by()",
-    "text": "group_by()\nFlag the rows of a dataframe as belong to a group defined by a factor. For use in downstream operations.\n\n\nwizards |&gt;\n  group_by(house)\n\n\n\n# A tibble: 4 × 4\n# Groups:   house [2]\n  name      house      height spells\n  &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;\n1 Harry     Gryffindor   1.78     60\n2 Bellatrix Slytherin    1.57     75\n3 Hermione  Gryffindor   1.65     70\n4 Draco     Slytherin    1.75     55"
+    "objectID": "lectures/15-dataviz2/slides.html#recap-1",
+    "href": "lectures/15-dataviz2/slides.html#recap-1",
+    "title": "The Grammar of Graphics",
+    "section": "Recap",
+    "text": "Recap\n\nAn aesthetic mapping links a variable in the data to a visual attribute.\nggplot() and geom_() have a mapping argument.\nWe use the aes() to specify such mappings, e.g.\n\nggplot(..., aes(x = species))\ngeom_bar(aes(x = species))"
   },
   {
-    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-1",
-    "href": "lectures/12-data-wrangling2/slides.html#group_by-1",
-    "title": "Data Warngling II",
-    "section": "group_by()",
-    "text": "group_by()\nFlag the rows of a dataframe as belong to a group defined by a factor. For use in downstream operations.\n\n\nwizards |&gt;\n  group_by(house) |&gt; \n  summarize(mean(height))\n\n\n\n# A tibble: 2 × 2\n  house      `mean(height)`\n  &lt;chr&gt;               &lt;dbl&gt;\n1 Gryffindor           1.72\n2 Slytherin            1.66"
+    "objectID": "lectures/15-dataviz2/slides.html#global--vs--local-mappings",
+    "href": "lectures/15-dataviz2/slides.html#global--vs--local-mappings",
+    "title": "The Grammar of Graphics",
+    "section": "Global -vs- Local Mappings",
+    "text": "Global -vs- Local Mappings\nWe distinguish 2 types of aesthetic mappings:\n\nGlobal Mappings: those specified inside ggplot()\n\n\n\n\nLocal Mappings: those specified inside geom_() functions"
   },
   {
-    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-with-summarize",
-    "href": "lectures/12-data-wrangling2/slides.html#group_by-with-summarize",
-    "title": "Data Warngling II",
-    "section": "group_by() with summarize()",
-    "text": "group_by() with summarize()\n\n\nwizards |&gt;\n  summarize(mean(height))\n\n\n\n  mean(height)\n1       1.6875"
-  },
-  {
-    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-with-summarize-1",
-    "href": "lectures/12-data-wrangling2/slides.html#group_by-with-summarize-1",
-    "title": "Data Warngling II",
-    "section": "group_by() with summarize()",
-    "text": "group_by() with summarize()\n\nwizards |&gt;\n  group_by(house) |&gt; \n  summarize(mean(height))\n\n\n\n# A tibble: 2 × 2\n  house      `mean(height)`\n  &lt;chr&gt;               &lt;dbl&gt;\n1 Gryffindor           1.72\n2 Slytherin            1.66\n\n\n\n\n\nMakes a summary row for each group."
-  },
-  {
-    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-with-filter",
-    "href": "lectures/12-data-wrangling2/slides.html#group_by-with-filter",
-    "title": "Data Warngling II",
-    "section": "group_by() with filter()",
-    "text": "group_by() with filter()\n\n\nwizards |&gt;\n  filter(height == max(height))\n\n\n\n   name      house height spells\n1 Harry Gryffindor   1.78     60"
-  },
-  {
-    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-with-filter-1",
-    "href": "lectures/12-data-wrangling2/slides.html#group_by-with-filter-1",
-    "title": "Data Warngling II",
-    "section": "group_by() with filter()",
-    "text": "group_by() with filter()\n\nwizards |&gt;\n  group_by(house) |&gt; \n  filter(height == max(height))\n\n\n\n# A tibble: 2 × 4\n# Groups:   house [2]\n  name  house      height spells\n  &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;\n1 Harry Gryffindor   1.78     60\n2 Draco Slytherin    1.75     55\n\n\n\n\n\nChanges the scope of functions inside filter() to operate within groups."
-  },
-  {
-    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-with-arrange",
-    "href": "lectures/12-data-wrangling2/slides.html#group_by-with-arrange",
-    "title": "Data Warngling II",
-    "section": "group_by() with arrange()",
-    "text": "group_by() with arrange()\n\n\nwizards |&gt;\n  arrange(desc(height))\n\n\n\n       name      house height spells\n1     Harry Gryffindor   1.78     60\n2     Draco  Slytherin   1.75     55\n3  Hermione Gryffindor   1.65     70\n4 Bellatrix  Slytherin   1.57     75"
-  },
-  {
-    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-with-arrange-1",
-    "href": "lectures/12-data-wrangling2/slides.html#group_by-with-arrange-1",
-    "title": "Data Warngling II",
-    "section": "group_by() with arrange()",
-    "text": "group_by() with arrange()\n\nwizards |&gt;\n  group_by(house) |&gt; \n  arrange(desc(height))\n\n\n\n# A tibble: 4 × 4\n# Groups:   house [2]\n  name      house      height spells\n  &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;\n1 Harry     Gryffindor   1.78     60\n2 Draco     Slytherin    1.75     55\n3 Hermione  Gryffindor   1.65     70\n4 Bellatrix Slytherin    1.57     75\n\n\n\n\n\narrange() ignores group_by() and is always global. Why?"
-  },
-  {
-    "objectID": "lectures/12-data-wrangling2/slides.html#section-3",
-    "href": "lectures/12-data-wrangling2/slides.html#section-3",
-    "title": "Data Warngling II",
+    "objectID": "lectures/15-dataviz2/slides.html#section-3",
+    "href": "lectures/15-dataviz2/slides.html#section-3",
+    "title": "The Grammar of Graphics",
     "section": "",
-    "text": "wizards |&gt;\n  arrange(house, height)\n\n\n\n       name      house height spells\n1  Hermione Gryffindor   1.65     70\n2     Harry Gryffindor   1.78     60\n3 Bellatrix  Slytherin   1.57     75\n4     Draco  Slytherin   1.75     55"
+    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\n\n\n# local mappings\nggplot(data = penguins) +\n  geom_point(\n    aes(x = bill_length_mm, \n        y = flipper_length_mm))"
   },
   {
-    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-with-mutate",
-    "href": "lectures/12-data-wrangling2/slides.html#group_by-with-mutate",
-    "title": "Data Warngling II",
-    "section": "group_by() with mutate()",
-    "text": "group_by() with mutate()\n\n\nwizards |&gt;\n  mutate(height_z = (height - mean(height)) / sd(height))\n\n\n\n       name      house height spells   height_z\n1     Harry Gryffindor   1.78     60  0.9630715\n2 Bellatrix  Slytherin   1.57     75 -1.2233611\n3  Hermione Gryffindor   1.65     70 -0.3904344\n4     Draco  Slytherin   1.75     55  0.6507240"
+    "objectID": "lectures/15-dataviz2/slides.html#section-4",
+    "href": "lectures/15-dataviz2/slides.html#section-4",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm)) +\n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n\n\n\n\n\n\n\n\n\n\n\n# local mappings (be careful!!!)\nggplot(data = penguins) +\n  geom_point(\n    aes(x = bill_length_mm, \n        y = flipper_length_mm))  +\n  geom_smooth(method = \"lm\")\n\n\n\nError in `geom_smooth()`:\n! Problem while computing stat.\nℹ Error occurred in the 2nd layer.\nCaused by error in `compute_layer()`:\n! `stat_smooth()` requires the following missing aesthetics: x and y."
   },
   {
-    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-with-mutate-1",
-    "href": "lectures/12-data-wrangling2/slides.html#group_by-with-mutate-1",
-    "title": "Data Warngling II",
-    "section": "group_by() with mutate()",
-    "text": "group_by() with mutate()\n\nwizards |&gt;\n  group_by(house) |&gt; \n  mutate(height_z = (height - mean(height)) / sd(height))\n\n\n\n# A tibble: 4 × 5\n# Groups:   house [2]\n  name      house      height spells height_z\n  &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;\n1 Harry     Gryffindor   1.78     60    0.707\n2 Bellatrix Slytherin    1.57     75   -0.707\n3 Hermione  Gryffindor   1.65     70   -0.707\n4 Draco     Slytherin    1.75     55    0.707\n\n\n\n\n\nChanges the scope of functions inside mutate() to operate within groups."
+    "objectID": "lectures/15-dataviz2/slides.html#section-5",
+    "href": "lectures/15-dataviz2/slides.html#section-5",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm)) +\n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n\n\n\n\n\n\n\n\n\n# local mappings (be careful!!!)\nggplot(data = penguins) +\n  geom_point(aes(x = bill_length_mm, \n                 y = flipper_length_mm))  +\n  geom_smooth(aes(x = bill_length_mm, \n                  y = flipper_length_mm),\n              method = \"lm\")"
   },
   {
-    "objectID": "lectures/12-data-wrangling2/slides.html#statefulness",
-    "href": "lectures/12-data-wrangling2/slides.html#statefulness",
-    "title": "Data Warngling II",
-    "section": "Statefulness",
-    "text": "Statefulness\nWhat will this produce?\n\nwizards |&gt; \n  group_by(house) |&gt; \n  mutate(height_z = (height - mean(height)) / sd(height)) |&gt; \n  summarize(mean(height_z))\n\n\n\n# A tibble: 2 × 2\n  house      `mean(height_z)`\n  &lt;chr&gt;                 &lt;dbl&gt;\n1 Gryffindor         1.22e-15\n2 Slytherin         -8.88e-16\n\n\n\nOnce grouped, a data frame stays grouped until reduced to one-row-per group or it is ungrouped."
+    "objectID": "lectures/15-dataviz2/slides.html#section-6",
+    "href": "lectures/15-dataviz2/slides.html#section-6",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm,\n           color = species)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\n\n\n# local mappings\nggplot(data = penguins) +\n  geom_point(\n    aes(x = bill_length_mm, \n        y = flipper_length_mm,\n        color = species))"
   },
   {
-    "objectID": "lectures/12-data-wrangling2/slides.html#statefulness-1",
-    "href": "lectures/12-data-wrangling2/slides.html#statefulness-1",
-    "title": "Data Warngling II",
-    "section": "Statefulness",
-    "text": "Statefulness\nWhat will this produce?\n\nwizards |&gt; \n  group_by(house) |&gt; \n  mutate(height_z = (height - mean(height)) / sd(height)) |&gt; \n  ungroup() |&gt; \n  summarize(mean(height_z))\n\n\n\n# A tibble: 1 × 1\n  `mean(height_z)`\n             &lt;dbl&gt;\n1         1.11e-16"
+    "objectID": "lectures/15-dataviz2/slides.html#section-7",
+    "href": "lectures/15-dataviz2/slides.html#section-7",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm,\n           color = species)) +\n  geom_point(size = 3) +\n  geom_smooth(method = \"lm\")\n\n\n\n\n\n\n\n\n\n\n\n\n# global and local mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm)) +\n  geom_point(size=3, aes(color = species)) +\n  geom_smooth(method = \"lm\",\n              color = \"black\")"
   },
   {
-    "objectID": "lectures/12-data-wrangling2/slides.html#shortcut-.by",
-    "href": "lectures/12-data-wrangling2/slides.html#shortcut-.by",
-    "title": "Data Warngling II",
-    "section": "Shortcut: .by",
-    "text": "Shortcut: .by\nMost \"dplyr\" functions have a .by argument to apply the function to the groups of another variable.\n\nNot stateful\nGood for single line operations\n\n\n\nwizards |&gt; \n    summarize(mean(height), .by = house)\n\n\n\n       house mean(height)\n1 Gryffindor        1.715\n2  Slytherin        1.660"
+    "objectID": "lectures/15-dataviz2/slides.html#section-8",
+    "href": "lectures/15-dataviz2/slides.html#section-8",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm,\n           color = species)) +\n  geom_smooth(method = \"lm\") +\n  geom_point(size = 3)\n\n\n\n\n\n\n\n\n\n\n\n\n# global and local mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm)) +\n  geom_smooth(method = \"lm\",\n              color = \"black\") +\n  geom_point(size=3, aes(color = species))"
   },
   {
-    "objectID": "lectures/text-analysis1/slides.html#pride-and-prejudice-jane-austen-1813",
-    "href": "lectures/text-analysis1/slides.html#pride-and-prejudice-jane-austen-1813",
-    "title": "Text Analysis I",
-    "section": "Pride and Prejudice (Jane Austen, 1813)",
-    "text": "Pride and Prejudice (Jane Austen, 1813)\nQuestions:\n\nWhat words are most commonly used?\nWhat is the emotional arc of the novel?\n\n\nSteps:\n\nAccess text as computer file\nRead into R\nData cleaning\nSummary statistics\nVisualization"
+    "objectID": "lectures/15-dataviz2/slides.html#additional-graphical-elements",
+    "href": "lectures/15-dataviz2/slides.html#additional-graphical-elements",
+    "title": "The Grammar of Graphics",
+    "section": "Additional graphical elements",
+    "text": "Additional graphical elements\n\nLabels\n\nTitle\nSubtitle\nAxis labels\n\nAnnotations\nThemes\nFacets\nScales"
   },
   {
-    "objectID": "lectures/text-analysis1/slides.html#read-txt-file-directly-from-the-web",
-    "href": "lectures/text-analysis1/slides.html#read-txt-file-directly-from-the-web",
-    "title": "Text Analysis I",
-    "section": "Read txt file directly from the web",
-    "text": "Read txt file directly from the web\n\ntxt &lt;- \"https://www.gutenberg.org/cache/epub/1342/pg1342.txt\"\n\npp_raw &lt;- readLines(txt) # direct from web!\n\n\n\n\n[1] \"The Project Gutenberg eBook of Pride and Prejudice\"                      \n[2] \"    \"                                                                    \n[3] \"This eBook is for the use of anyone anywhere in the United States and\"   \n[4] \"most other parts of the world at no cost and with almost no restrictions\"\n[5] \"whatsoever. You may copy it, give it away or re-use it under the terms\""
+    "objectID": "lectures/15-dataviz2/slides.html#labels",
+    "href": "lectures/15-dataviz2/slides.html#labels",
+    "title": "The Grammar of Graphics",
+    "section": "Labels",
+    "text": "Labels\nlabs() allows you to add\nlabs(\n  title = \"...\",\n  subtitle = \"...\",\n  x = \"...\",\n  y = \"...\"\n)"
   },
   {
-    "objectID": "lectures/text-analysis1/slides.html#read-text-from-downloaded-file",
-    "href": "lectures/text-analysis1/slides.html#read-text-from-downloaded-file",
-    "title": "Text Analysis I",
-    "section": "Read text from downloaded file",
-    "text": "Read text from downloaded file\n\n\n# assuming txt file in working directory\npp_raw &lt;- readLines(\"pride-prejudice.txt\")\n\nhead(pp_raw, n = 5)\n\n\n\n[1] \"The Project Gutenberg eBook of Pride and Prejudice\"                      \n[2] \"    \"                                                                    \n[3] \"This eBook is for the use of anyone anywhere in the United States and\"   \n[4] \"most other parts of the world at no cost and with almost no restrictions\"\n[5] \"whatsoever. You may copy it, give it away or re-use it under the terms\""
+    "objectID": "lectures/15-dataviz2/slides.html#section-9",
+    "href": "lectures/15-dataviz2/slides.html#section-9",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point()"
   },
   {
-    "objectID": "lectures/text-analysis1/slides.html#read-from-gutenbergr-package",
-    "href": "lectures/text-analysis1/slides.html#read-from-gutenbergr-package",
-    "title": "Text Analysis I",
-    "section": "Read from \"gutenbergr\" package",
-    "text": "Read from \"gutenbergr\" package\n\n\n# install.packages(\"gutenbergr\")\nlibrary(gutenbergr)\n\npp_raw &lt;- gutenberg_download(\n  gutenberg_id = 1342,\n  mirror = \"https://aleph.pglaf.org/\")\n\nslice(pp_raw, 1:10)\n\n\n\n# A tibble: 10 × 2\n   gutenberg_id text                                            \n          &lt;int&gt; &lt;chr&gt;                                           \n 1         1342 \"                            [Illustration:\"    \n 2         1342 \"\"                                              \n 3         1342 \"                             GEORGE ALLEN\"     \n 4         1342 \"                               PUBLISHER\"      \n 5         1342 \"\"                                              \n 6         1342 \"                        156 CHARING CROSS ROAD\"\n 7         1342 \"                                LONDON\"        \n 8         1342 \"\"                                              \n 9         1342 \"                             RUSKIN HOUSE\"     \n10         1342 \"                                   ]\""
+    "objectID": "lectures/15-dataviz2/slides.html#section-10",
+    "href": "lectures/15-dataviz2/slides.html#section-10",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point() +\n  labs(\n    title = \"Bill and flipper length\",\n    subtitle = \"Positive relation\",\n    x = \"Bill length (mm)\",\n    y = \"Flipper length (mm)\")"
   },
   {
-    "objectID": "lectures/text-analysis1/slides.html#text-from-janeaustenr-package",
-    "href": "lectures/text-analysis1/slides.html#text-from-janeaustenr-package",
-    "title": "Text Analysis I",
-    "section": "Text from \"janeaustenr\" package",
-    "text": "Text from \"janeaustenr\" package\n\n\n# install.packages(\"janeaustenr\")\nlibrary(janeaustenr)\n\n# text in character vector\nprideprejudice[1:10]\n\n\n\n[1] \"PRIDE AND PREJUDICE\"                                                    \n [2] \"\"                                                                       \n [3] \"By Jane Austen\"                                                         \n [4] \"\"                                                                       \n [5] \"\"                                                                       \n [6] \"\"                                                                       \n [7] \"Chapter 1\"                                                              \n [8] \"\"                                                                       \n [9] \"\"                                                                       \n[10] \"It is a truth universally acknowledged, that a single man in possession\""
+    "objectID": "lectures/15-dataviz2/slides.html#facets-1",
+    "href": "lectures/15-dataviz2/slides.html#facets-1",
+    "title": "The Grammar of Graphics",
+    "section": "Facets",
+    "text": "Facets\n\nfacet_wrap() wraps a 1d sequence of panels into 2d\nfacet_grid() forms a matrix of panels defined by row and column faceting variables\n\nfacet_grid(rows = vars(...))\nfacet_grid(cols = vars(...))\nfacet_grid(row_var ~ col_var)"
   },
   {
-    "objectID": "lectures/text-analysis1/slides.html#about-tidytext",
-    "href": "lectures/text-analysis1/slides.html#about-tidytext",
-    "title": "Text Analysis I",
-    "section": "About \"tidytext\"",
-    "text": "About \"tidytext\"\n\"tidytext\" (by Julia Silge and David Robinson) is an R package specifically designed for text mining analysis using Tidy tools.\n\nWhile not a core component of tidyverse, \"tidytext\" is part of the companion or satellite packages that expand the core functionalities of the core tidy tools.\n\n# install.packages(\"tidytext\")\n\nlibrary(tidytext)"
+    "objectID": "lectures/15-dataviz2/slides.html#section-11",
+    "href": "lectures/15-dataviz2/slides.html#section-11",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_wrap(~ species)"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-12",
+    "href": "lectures/15-dataviz2/slides.html#section-12",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_wrap(~ species, nrow = 2)"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-13",
+    "href": "lectures/15-dataviz2/slides.html#section-13",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_grid(. ~ species)  # facet_grid(cols = vars(species))"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-14",
+    "href": "lectures/15-dataviz2/slides.html#section-14",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_grid(species ~ .)  # facet_grid(rows = vars(species))"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-15",
+    "href": "lectures/15-dataviz2/slides.html#section-15",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_grid(species ~ island)"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#theme-functions",
+    "href": "lectures/15-dataviz2/slides.html#theme-functions",
+    "title": "The Grammar of Graphics",
+    "section": "Theme Functions",
+    "text": "Theme Functions\n\ntheme_gray()\ntheme_bw()\ntheme_minimal()\ntheme_classic()\ntheme_light()\n\n\nThere’s also the package \"ggthemes\"\nhttps://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-16",
+    "href": "lectures/15-dataviz2/slides.html#section-16",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point()"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-17",
+    "href": "lectures/15-dataviz2/slides.html#section-17",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point() +\n  theme_classic()"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-18",
+    "href": "lectures/15-dataviz2/slides.html#section-18",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point() +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-19",
+    "href": "lectures/15-dataviz2/slides.html#section-19",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point() +\n  theme_minimal()"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#scale-functions",
+    "href": "lectures/15-dataviz2/slides.html#scale-functions",
+    "title": "The Grammar of Graphics",
+    "section": "Scale Functions",
+    "text": "Scale Functions\n\nscale_x_continuous()\nscale_y_continuous()\nscale_color_manual()\nscale_fill_manual()\nETC"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-20",
+    "href": "lectures/15-dataviz2/slides.html#section-20",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point(size = 3)"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-21",
+    "href": "lectures/15-dataviz2/slides.html#section-21",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point(size = 3) +\n  scale_x_continuous(limits = c(0, 60))"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-22",
+    "href": "lectures/15-dataviz2/slides.html#section-22",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point(size = 3) +\n  scale_x_continuous(limits = c(0, 60)) +\n  scale_y_continuous(limits = c(160, 240))"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-23",
+    "href": "lectures/15-dataviz2/slides.html#section-23",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point(size = 3)"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-24",
+    "href": "lectures/15-dataviz2/slides.html#section-24",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point(size = 3) +\n  scale_color_manual(\n    values = c(\"orange\", \"magenta\", \"turquoise\"))"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-25",
+    "href": "lectures/15-dataviz2/slides.html#section-25",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "big_males &lt;- penguins |&gt; \n  filter(sex == \"male\") |&gt; \n  group_by(species) |&gt; \n  slice_max(body_mass_g)\n\nbig_males\n\n\n\n# A tibble: 3 × 8\n# Groups:   species [3]\n  species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie    Biscoe           43.2          19                 197        4775\n2 Chinstrap Dream            52            20.7               210        4800\n3 Gentoo    Biscoe           49.2          15.2               221        6300\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-26",
+    "href": "lectures/15-dataviz2/slides.html#section-26",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot() +\n  geom_point(\n    data = filter(penguins, sex == \"male\"),\n    aes(x = bill_length_mm,\n        y = flipper_length_mm,\n        color = species),\n    size = 0.5, alpha = 0.5) +\n  geom_point(\n    data = big_males,\n    aes(x = bill_length_mm,\n        y = flipper_length_mm,\n        color = species),\n    size = 4) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-27",
+    "href": "lectures/15-dataviz2/slides.html#section-27",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "Because the mappings for x, y and color are the same in both calls to geom_point()\n\nx = bill_length_mm\ny = flipper_length_mm\ncolor = species\n\nwe can simplify the command in the previous slides as follows (next slide)"
+  },
+  {
+    "objectID": "lectures/15-dataviz2/slides.html#section-28",
+    "href": "lectures/15-dataviz2/slides.html#section-28",
+    "title": "The Grammar of Graphics",
+    "section": "",
+    "text": "ggplot(\n  data = filter(penguins, sex == \"male\"),\n  aes(x = bill_length_mm,\n      y = flipper_length_mm,\n      color = species)) +\n  geom_point(size = 2, alpha = 0.5) +\n  geom_point(\n    data = big_males,\n    size = 4) +\n  theme_minimal()"
   },
   {
     "objectID": "lectures/5-unix-basics/slides.html#yesterdays-lab",
@@ -1114,6 +1156,111 @@
     "title": "Explanatory Data Analysis",
     "section": "",
     "text": "Code\nggplotly(\n  dat |&gt; \n    mutate(position = case_when(\n      position == \"C\" ~ \"Center\",\n      position == \"PF\" ~ \"Power Forward\",\n      position == \"PG\" ~ \"Point Guard\",\n      position == \"SF\" ~ \"Small Forward\",\n      position == \"SG\" ~ \"Shooting Guard\"\n    )) |&gt; \n    ggplot(aes(x = height, y = weight, color = position, label = player)) +\n    geom_point(alpha = 0.7) +\n    theme_bw() +\n    geom_smooth(method = \"lm\", se = FALSE) +\n    facet_wrap(~ position) +\n    theme(legend.position = \"none\")\n)"
+  },
+  {
+    "objectID": "lectures/quarto-websites1/slides.html#open-a-new-quarto-website-in-positron",
+    "href": "lectures/quarto-websites1/slides.html#open-a-new-quarto-website-in-positron",
+    "title": "Quarto Websites I",
+    "section": "Open a New Quarto Website in Positron",
+    "text": "Open a New Quarto Website in Positron\nSteps to open a new Quarto Website in Positron\n\nClick the New button (top-left corner in Positron)\nSelect New File …\nChoose Quarto Project Quarto\nSelect Website Project\nChoose a directory for the website, and give it a name (e.g. webdemo)"
+  },
+  {
+    "objectID": "lectures/quarto-websites1/slides.html#open-a-new-quarto-website-in-rstudio",
+    "href": "lectures/quarto-websites1/slides.html#open-a-new-quarto-website-in-rstudio",
+    "title": "Quarto Websites I",
+    "section": "Open a New Quarto Website in RStudio",
+    "text": "Open a New Quarto Website in RStudio\nSteps to open a new Quarto Website in RStudio\n\nClick on the File tab in the menu bar\nSelect New Project …\nChoose Quarto Website\nSelect a location for your project, and give it a name (e.g. webdemo)\nClick Create"
+  },
+  {
+    "objectID": "lectures/quarto-websites1/slides.html#files-in-default-quarto-website",
+    "href": "lectures/quarto-websites1/slides.html#files-in-default-quarto-website",
+    "title": "Quarto Websites I",
+    "section": "Files in default quarto website",
+    "text": "Files in default quarto website\nPositron/Rstudio will open a new session containing your Quarto website1 with the following file structure:\n\n\n\nFilestructure in Positron: 2\nwebdemo/\n  .quarto/\n  _quarto.yml\n  index.qmd\n  about.qmd\n  styles.css\n\nFilestructure in RStudio: 3\nwebdemo/\n  webdemo.Rproj\n  _quarto.yml\n  index.qmd\n  about.qmd\n  styles.css\n\n\nAssuming the name of the website is webdemo.Positron uses an auxiliary .quarto/ directory. Don’t touch it!Rstudio uses an “RStudio Project”, hence the auxiliary .Rproj file. Don’t touch it!"
+  },
+  {
+    "objectID": "lectures/quarto-websites1/slides.html#website-preview",
+    "href": "lectures/quarto-websites1/slides.html#website-preview",
+    "title": "Quarto Websites I",
+    "section": "Website preview",
+    "text": "Website preview"
+  },
+  {
+    "objectID": "lectures/quarto-websites1/slides.html#website-preview-1",
+    "href": "lectures/quarto-websites1/slides.html#website-preview-1",
+    "title": "Quarto Websites I",
+    "section": "Website preview",
+    "text": "Website preview\nThe main way to preview your website is with the quarto preview command.\n\nIn Positron, you simply click the Preview button.\nIn RStudio, there is no Preview button but you can click the Render button.\n\n \n\nIf you are in the terminal, you can also type:\n\n\n\n\nTerminal\n\nquarto preview"
+  },
+  {
+    "objectID": "lectures/quarto-websites1/slides.html#websites-file-structure-1",
+    "href": "lectures/quarto-websites1/slides.html#websites-file-structure-1",
+    "title": "Quarto Websites I",
+    "section": "Website’s File Structure",
+    "text": "Website’s File Structure\n\nThe yaml file _quarto.yml is the configuration file.\n\n \n\nThe quarto files index.qmd and about.qmd are the default files that get rendered into the pages of the actual website.\n\n \n\nThe styles.css file is a cascade style-sheet file to optionally customize the appearance and format of your website."
+  },
+  {
+    "objectID": "lectures/quarto-websites1/slides.html#default-content-of-yaml-file",
+    "href": "lectures/quarto-websites1/slides.html#default-content-of-yaml-file",
+    "title": "Quarto Websites I",
+    "section": "Default content of yaml file",
+    "text": "Default content of yaml file\n\n\nproject:\n  type: website\n\nwebsite:\n  title: \"webdemo\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - about.qmd\n\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: true\n\n\n\n\nType of Project: “website”\nWebsite layout:\n\ntitle\nnavigation bar\nhome page (index)\nabout page\n\nOutput format: html\n\ncosmo theme\ncss style file\ntable of contents"
+  },
+  {
+    "objectID": "lectures/quarto-websites1/slides.html#index-home-page-index.qmd-file",
+    "href": "lectures/quarto-websites1/slides.html#index-home-page-index.qmd-file",
+    "title": "Quarto Websites I",
+    "section": "Index (Home) page: index.qmd file",
+    "text": "Index (Home) page: index.qmd file\n---\ntitle: \"webdemo\"\n---\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit \n&lt;https://quarto.org/docs/websites&gt;."
+  },
+  {
+    "objectID": "lectures/quarto-websites1/slides.html#about-page-about.qmd-file",
+    "href": "lectures/quarto-websites1/slides.html#about-page-about.qmd-file",
+    "title": "Quarto Websites I",
+    "section": "About page: about.qmd file",
+    "text": "About page: about.qmd file\n---\ntitle: \"About\"\n---\n\nAbout this site"
+  },
+  {
+    "objectID": "lectures/quarto-websites1/slides.html#folder-_site",
+    "href": "lectures/quarto-websites1/slides.html#folder-_site",
+    "title": "Quarto Websites I",
+    "section": "Folder _site/",
+    "text": "Folder _site/\nWhen a website is previewed or rendered, you will see an additional folder, _site/, in the file structure of your website:\n  webdemo/\n    _quarto.yml\n    index.qmd\n    about.qmd\n    styles.css\n    _site/\n\nThe _site/ folder contains all the HTML files of your website.\nThe content of these files come from the rendered .qmd files.\nIt also contains other necessary files and directories.\nUpload the _site/ folder when publishing your website to Netlify."
+  },
+  {
+    "objectID": "lectures/quarto-websites1/slides.html#what-kind-of-qmd-files-can-you-use-in-a-website",
+    "href": "lectures/quarto-websites1/slides.html#what-kind-of-qmd-files-can-you-use-in-a-website",
+    "title": "Quarto Websites I",
+    "section": "What kind of qmd files can you use in a Website?",
+    "text": "What kind of qmd files can you use in a Website?\n\nRegular qmd files (simple html output)\nQuarto revealjs slides\nCloseread documents\nQuarto dashboards (non-shiny)1\n\nQuarto websites, by default, don’t have a shiny server. While it is possible to have Shiny elements in a Quarto website, there is no simple-and-robust solution (yet) to this limitation."
+  },
+  {
+    "objectID": "lectures/quarto-websites1/slides.html#lets-add-more-content",
+    "href": "lectures/quarto-websites1/slides.html#lets-add-more-content",
+    "title": "Quarto Websites I",
+    "section": "Let’s add more content",
+    "text": "Let’s add more content\n\nCustomize index.qmd\n\nWrite a welcome blurb\nInsert an image\n\nCustomize about.qmd\n\nYour Name\nYour Major(s)/Minor\nPersonal fun fact"
+  },
+  {
+    "objectID": "lectures/quarto-websites1/slides.html#add-an-analysis.qmd-page",
+    "href": "lectures/quarto-websites1/slides.html#add-an-analysis.qmd-page",
+    "title": "Quarto Websites I",
+    "section": "Add an analysis.qmd page",
+    "text": "Add an analysis.qmd page\n\nOpen a new .qmd file (to be used for a small analysis).\nSave this file as analysis.qmd\nIn the YAML file, include analysis.qmd under - about.qmd (so that your analysis page shows up in the navbar)\nAdd some content to analysis.qmd:\n\nInclude a yaml header (with a title)\nInclude a code chunk to load tidyverse\nWrite some narrative and more code chunks\ne.g. obtain a graphic and some summary outputs using one of the data sets (mtcars, storms, penguins from \"palmerpenguins\")"
+  },
+  {
+    "objectID": "lectures/quarto-websites1/slides.html#preview-website",
+    "href": "lectures/quarto-websites1/slides.html#preview-website",
+    "title": "Quarto Websites I",
+    "section": "Preview website",
+    "text": "Preview website\n\nAfter you’ve saved the changes in analysis.qmd, preview your website.\nContinue modifying website:\n\nTry to include a simple quarto dashboard as another page.\n\nKeep previewing website"
+  },
+  {
+    "objectID": "lectures/quarto-websites1/slides.html#publish-website-to-netlify",
+    "href": "lectures/quarto-websites1/slides.html#publish-website-to-netlify",
+    "title": "Quarto Websites I",
+    "section": "Publish website to Netlify",
+    "text": "Publish website to Netlify\n\nLocate the folder _site/\nThis is the folder that you need to upload to Netlify\nSubmit netlify link to bCourses (Pub 11)"
   },
   {
     "objectID": "lectures/20-strings1/slides.html#agenda",
@@ -2709,7 +2856,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 23     \"Eric Gordo… PHI   SG           75    215 December … US      16        \n2 45     \"GG Jackson… MEM   PF           81    210 December … US      1         \n3 10     \"Bogdan Bog… LAC   SG           77    225 August 18… RS      7         \n4 10     \"Cory Josep… ORL   PG           74    200 August 20… CA      13        \n5 11     \"Bruce Brow… TOR   PG           76    202 August 15… US      6         \n6 25     \"Dalen Terr… CHI   SG           78    195 July 12, … US      2         \n7 20     \"Georges Ni… ATL   PF           78    230 June 17, … US      8         \n8 3      \"CJ McCollu… NOP   PG           75    190 September… US      11        \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 21     Spencer Jon… DEN   SF           79    225 June 14, … US      R         \n2 00     Bruce Brown  NOP   PG           76    202 August 15… US      6         \n3 6      Jaylin Will… OKC   PF           81    240 June 29, … US      2         \n4 24     Corey Kispe… WAS   SF           78    224 March 3, … US      3         \n5 3      Jordan McLa… SAC   PG           71    185 April 9, … US      5         \n6 20     JD Davison   BOS   PG           73    195 October 3… US      2         \n7 19     Jeenathan W… HOU   SG           77    205 February … US      2         \n8 8      Kris Dunn    LAC   PG           75    205 March 18,… US      8         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -2913,6 +3060,76 @@
     "title": "Exploratory Data Analysis",
     "section": "Workflow (demo)",
     "text": "Workflow (demo)"
+  },
+  {
+    "objectID": "lectures/36-json/slides.html#json-data",
+    "href": "lectures/36-json/slides.html#json-data",
+    "title": "JSON Data",
+    "section": "JSON Data",
+    "text": "JSON Data\nJSON stands for JavaScript Object Notation\nLet’s see the data types, and the kind of data containers"
+  },
+  {
+    "objectID": "lectures/36-json/slides.html#json-data-types",
+    "href": "lectures/36-json/slides.html#json-data-types",
+    "title": "JSON Data",
+    "section": "JSON data types",
+    "text": "JSON data types\n\nstring: \"hello\"\nnumbers: 1, 2, 3\nboolean: true and false\nnull"
+  },
+  {
+    "objectID": "lectures/36-json/slides.html#container-json-arrays",
+    "href": "lectures/36-json/slides.html#container-json-arrays",
+    "title": "JSON Data",
+    "section": "Container: JSON arrays",
+    "text": "Container: JSON arrays\n\nUnnamed ordered arrays\n\n\nExamples\n\n[\"A\", \"B\", \"C\", \"D\"]\n[1, 2, 3, 4, 5]\n[true, true, false]"
+  },
+  {
+    "objectID": "lectures/36-json/slides.html#container-json-object",
+    "href": "lectures/36-json/slides.html#container-json-object",
+    "title": "JSON Data",
+    "section": "Container: JSON object",
+    "text": "Container: JSON object\n\nKey-value pairs\n\n\n{ \"name\": value}\n\n\n\n\nExample\n{ \n  \"class\": \"STAT 133\",\n  \"semester\": \"Spring\",\n  \"year\": 2016,\n  \"prereqs\": null\n}"
+  },
+  {
+    "objectID": "lectures/36-json/slides.html#json-object-and-array",
+    "href": "lectures/36-json/slides.html#json-object-and-array",
+    "title": "JSON Data",
+    "section": "JSON object and array",
+    "text": "JSON object and array\n\n\n\n\n\n\n\n\nArray\n[\"Leia\", \"female\", 1.5, true]\n\nObject\n{ \n  \"name\": \"Leia\",\n  \"gender\": \"female\",\n  \"height\": 1.5,\n  \"force\": true\n}"
+  },
+  {
+    "objectID": "lectures/36-json/slides.html#section-2",
+    "href": "lectures/36-json/slides.html#section-2",
+    "title": "JSON Data",
+    "section": "",
+    "text": "Data in a JSON object\n\n{\n  \"name\": [\"Leia\", \"Luke\", \"Han\"],\n  \"gender\": [\"female\", \"male\", \"male\"],\n  \"height\": [1.6, 1.7, 1.8],\n  \"force\": [true, true, false]\n}\n\n\n\n\nData in a JSON array\n\n\n[\n  {\"name\": \"Leia\", \"gender\": \"female\", \"height\": 1.6, \"force\": true},\n  {\"name\": \"Luke\", \"gender\": \"male\", \"height\": 1.7, \"force\": true},\n  {\"name\": \"Han\", \"gender\": \"male\", \"height\": 1.8, \"force\": false}\n]"
+  },
+  {
+    "objectID": "lectures/36-json/slides.html#section-3",
+    "href": "lectures/36-json/slides.html#section-3",
+    "title": "JSON Data",
+    "section": "",
+    "text": "json1 = '[1, 2, 3, 4, 5]'\n\nr1 = fromJSON(json1)\nclass(r1)\n\n\n\n[1] \"integer\"\n\n\n\n\n\n\n\njson2 = '[true, true, false]'\n\nr2 = fromJSON(json2)\nclass(r2)\n\n\n\n[1] \"logical\""
+  },
+  {
+    "objectID": "lectures/36-json/slides.html#section-4",
+    "href": "lectures/36-json/slides.html#section-4",
+    "title": "JSON Data",
+    "section": "",
+    "text": "json3 = '{\"name\": \"Leia\", \"gender\": \"female\", \"height\": 1.6, \"force\": true}'\n\n\n\nfromJSON(json3)\n\n\n\n$name\n[1] \"Leia\"\n\n$gender\n[1] \"female\"\n\n$height\n[1] 1.6\n\n$force\n[1] TRUE"
+  },
+  {
+    "objectID": "lectures/36-json/slides.html#section-5",
+    "href": "lectures/36-json/slides.html#section-5",
+    "title": "JSON Data",
+    "section": "",
+    "text": "json6 = fromJSON('{\n  \"name\": [\"Leia\", \"Luke\", \"Han\"],\n  \"gender\": [\"female\", \"male\", \"male\"],\n  \"height\": [1.6, 1.7, 1.8],\n  \"force\": [true, true, false]\n}')\n\nas.data.frame(json6)\n\n\n\n  name gender height force\n1 Leia female    1.6  TRUE\n2 Luke   male    1.7  TRUE\n3  Han   male    1.8 FALSE"
+  },
+  {
+    "objectID": "lectures/36-json/slides.html#api-open-notify",
+    "href": "lectures/36-json/slides.html#api-open-notify",
+    "title": "JSON Data",
+    "section": "API “Open Notify”",
+    "text": "API “Open Notify”\nAPI stands for Application Programming Interface. In simpler terms, think of API as a data sharing interface.\n\nurl = \"http://api.open-notify.org/iss-now.json\"\n\nx = fromJSON(url)\nx\n\n$iss_position\n$iss_position$latitude\n[1] \"39.1540\"\n\n$iss_position$longitude\n[1] \"-128.1689\"\n\n\n$message\n[1] \"success\"\n\n$timestamp\n[1] 1776092670"
   },
   {
     "objectID": "lectures/1-welcome/slides.html#welcome-to-stat-133",
@@ -3157,7 +3374,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"gold\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"bronze\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -5273,7 +5490,7 @@
     "href": "lectures/32-shapefiles/slides.html#what-files-are-in-a-shapefile",
     "title": "Shapefiles",
     "section": "What files are in a shapefile?",
-    "text": "What files are in a shapefile?\n\nThere are 3 core files to have at a minimum for a shapefile:\n\n.shp stores the feature geometry (e.g. points, lines, polygons). 1\n.dbf stores attributes information.\n.shx index (i.e. link) between .shp and .dbf files.\n\n\n\nUsually, although not always, there are other files:\n\n.prj stores the coordinate reference system (CRS) and map projection information; used by ArcGIS.\n.xml metadata in XML format about the shapefile.\n.cpg codepage for identifying the characterset to be used.\n\n\n.shp and .dbf are in binary file format: cannot be opened firectly in a text editor to read the content."
+    "text": "What files are in a shapefile?\n\nThere are 3 core files to have at a minimum for a shapefile:\n\n.shp stores the feature geometry (e.g. points, lines, polygons). 1\n.dbf stores attributes information.\n.shx index (i.e. link) between .shp and .dbf files.\n\n\n\nUsually, although not always, there are other files:\n\n.prj stores the coordinate reference system (CRS) and map projection information; used by ArcGIS.\n.xml metadata in XML format about the shapefile.\n.cpg codepage for identifying the characterset to be used.\n\n\n.shp and .dbf are in binary file format: cannot be opened directly in a text editor to read the content."
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#more-fire-perimeters-data",
@@ -5283,11 +5500,11 @@
     "text": "More Fire Perimeters Data\nThere are several web apps to visualize historical Fire Perimeters in California\nhttps://www.fire.ca.gov/what-we-do/fire-resource-assessment-program/fire-perimeters"
   },
   {
-    "objectID": "lectures/32-shapefiles/slides.html#download-data-1950",
-    "href": "lectures/32-shapefiles/slides.html#download-data-1950",
+    "objectID": "lectures/32-shapefiles/slides.html#demo-based-on-1950-data",
+    "href": "lectures/32-shapefiles/slides.html#demo-based-on-1950-data",
     "title": "Shapefiles",
-    "section": "Download data (1950+)",
-    "text": "Download data (1950+)\n\nhttps://data.ca.gov/dataset/california-fire-perimeters-1950"
+    "section": "Demo based on 1950+ data",
+    "text": "Demo based on 1950+ data\n\nhttps://data.ca.gov/dataset/california-fire-perimeters-1950"
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#calfire-perimeters-1950-1",
@@ -5336,14 +5553,14 @@
     "href": "lectures/32-shapefiles/slides.html#top-5-largest-fires-in-2014",
     "title": "Shapefiles",
     "section": "Top-5 largest fires in 2014",
-    "text": "Top-5 largest fires in 2014\n\n\ntop5_fires_2014 &lt;- cal_perims_2014 |&gt; \n  arrange(desc(GIS_ACRES)) |&gt; \n  slice_head(n = 5) |&gt; \n  select(FIRE_NAME, ALARM_DATE, CONT_DATE, GIS_ACRES)\n\ntop5_fires_2014\n\n\n\nSimple feature collection with 5 features and 4 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -13735580 ymin: 4687377 xmax: -13400290 ymax: 5175033\nProjected CRS: WGS 84 / Pseudo-Mercator\n     FIRE_NAME ALARM_DATE  CONT_DATE GIS_ACRES                       geometry\n1   FRYING PAN 2014-08-11 2014-09-30  133177.0 MULTIPOLYGON (((-13714829 5...\n2         KING 2014-09-13 2014-10-10   97684.5 MULTIPOLYGON (((-13401450 4...\n3         BALD 2014-07-30 2014-08-15   39752.2 MULTIPOLYGON (((-13500857 5...\n4 OREGON GULCH 2014-07-30 2014-08-13   35111.2 MULTIPOLYGON (((-13601828 5...\n5       WHITES 2014-07-30 2014-09-25   33794.4 MULTIPOLYGON (((-13696767 5..."
+    "text": "Top-5 largest fires in 2014\n\n\ntop5_fires_2014 &lt;- cal_perims_2014 |&gt; \n  arrange(desc(GIS_ACRES)) |&gt; \n  slice_head(n = 5) |&gt; \n  select(FIRE_NAME, ALARM_DATE, CONT_DATE, GIS_ACRES)\n\ntop5_fires_2014\n\n\n\nSimple feature collection with 5 features and 4 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -13735580 ymin: 4687377 xmax: -13400290 ymax: 5175033\nProjected CRS: WGS 84 / Pseudo-Mercator\n     FIRE_NAME ALARM_DATE  CONT_DATE GIS_ACRES                       geometry\n1   FRYING PAN 2014-08-11 2014-09-30  133177.0 MULTIPOLYGON (((-13714829 5...\n2         KING 2014-09-13 2014-10-10   97684.5 MULTIPOLYGON (((-13401450 4...\n3         BALD 2014-07-30 2014-08-15   39752.2 MULTIPOLYGON (((-13500857 5...\n4 OREGON GULCH 2014-07-30 2014-08-13   35111.2 MULTIPOLYGON (((-13601828 5...\n5       WHITES 2014-07-30 2014-09-25   33794.4 MULTIPOLYGON (((-13696767 5...\n\n\n\n\n\n\nSince cal_perims_2014 is an \"sf\" object, you’ll be dragging the geometry column."
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#top-5-largest-fires-in-2014-1",
     "href": "lectures/32-shapefiles/slides.html#top-5-largest-fires-in-2014-1",
     "title": "Shapefiles",
     "section": "Top-5 largest fires in 2014",
-    "text": "Top-5 largest fires in 2014\n\n# drop \"geometry\"\ntop5_fires_2014$geometry = NULL\n\ntop5_fires_2014 |&gt; \n  mutate(DURATION = CONT_DATE - ALARM_DATE)\n\n\n\n     FIRE_NAME ALARM_DATE  CONT_DATE GIS_ACRES DURATION\n1   FRYING PAN 2014-08-11 2014-09-30  133177.0  50 days\n2         KING 2014-09-13 2014-10-10   97684.5  27 days\n3         BALD 2014-07-30 2014-08-15   39752.2  16 days\n4 OREGON GULCH 2014-07-30 2014-08-13   35111.2  14 days\n5       WHITES 2014-07-30 2014-09-25   33794.4  57 days"
+    "text": "Top-5 largest fires in 2014\nOptional: If you don’t want your derived tables to include the geometry column, you’ll have to drop it:\n\n\n# drop \"geometry\"\ntop5_fires_2014$geometry = NULL\n\ntop5_fires_2014 |&gt; \n  mutate(DURATION = CONT_DATE - ALARM_DATE)\n\n\n\n     FIRE_NAME ALARM_DATE  CONT_DATE GIS_ACRES DURATION\n1   FRYING PAN 2014-08-11 2014-09-30  133177.0  50 days\n2         KING 2014-09-13 2014-10-10   97684.5  27 days\n3         BALD 2014-07-30 2014-08-15   39752.2  16 days\n4 OREGON GULCH 2014-07-30 2014-08-13   35111.2  14 days\n5       WHITES 2014-07-30 2014-09-25   33794.4  57 days"
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#plot-1-naive",
@@ -5364,7 +5581,7 @@
     "href": "lectures/32-shapefiles/slides.html#section-6",
     "title": "Shapefiles",
     "section": "",
-    "text": "To visualize fire perimeters on a map of California we need to get data for the polygon(s) of California.\n\n\n\nThere are several options:\n\nMap of California (simple map, no county lines).\nMap of California with counties.\nMap of California with districts.\nMap of California with other kind of meaningful divisions."
+    "text": "To visualize fire perimeters on a map of California we need to get data1 for the polygon(s) of California.\n\n\n\nThere are several options:\n\nMap of California (simple map, no county lines).\nMap of California with counties.\nMap of California with districts.\nMap of California with other kind of meaningful divisions.\n\n\nRecall that R has several packages with data bases of maps, e.g. \"rnaturalearth\", \"maps\", \"usmap\", ETC"
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#map-of-california-option-1",
@@ -5378,7 +5595,7 @@
     "href": "lectures/32-shapefiles/slides.html#map-of-california-option-2",
     "title": "Shapefiles",
     "section": "Map of California (option 2)",
-    "text": "Map of California (option 2)\n\n\n\n\n# from package \"maps\"\ncal_county_map = st_as_sf(\n  maps::map(database = \"county\", \n      plot = FALSE, \n      fill = TRUE)) |&gt;\n  filter(str_detect(ID, \"^california\"))\n\nggplot() +\n  geom_sf(data = cal_county_map)"
+    "text": "Map of California (option 2)\n\n\n\n\n# from package \"maps\"\ncal_county_map = st_as_sf(\n  maps::map(database = \"county\", \n      plot = FALSE, \n      fill = TRUE)) |&gt;\n  filter(str_detect(ID, \"^california\"))\n\nggplot() +\n  geom_sf(data = cal_county_map)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s use this map!"
   },
   {
     "objectID": "lectures/32-shapefiles/slides.html#so-far-we-have-2-tables",
@@ -5878,6 +6095,195 @@
     "text": "Change in place syntax\nYou can assign into a subsetted vector to change its contents in place.\n\nz &lt;- c(latte = 2, boba = 4, matcha = 6)\nz[c(TRUE, FALSE, TRUE)] &lt;- 12\nz\n\n\n\n latte   boba matcha \n    12      4     12 \n\n\n\n\nnames(z)\n\n\n\n[1] \"latte\"  \"boba\"   \"matcha\"\n\n\n\n\n\nnames(z) &lt;- c(\"A\", \"B\", \"C\")\nz\n\n\n\n A  B  C \n12  4 12"
   },
   {
+    "objectID": "lectures/35-text-analysis2/slides.html#section",
+    "href": "lectures/35-text-analysis2/slides.html#section",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "# packages\nlibrary(tidyverse)     # ecosystem of data science packages\n\nlibrary(tidytext)      # text mining using tidy tools\n\nlibrary(textdata)      # various text datasets\n\nlibrary(janeaustenr)   # full texts for Jane Austen's 6 completed novels\n\nlibrary(plotly)        # web interactive plots"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#pride-and-prejudice-jane-austen-1813",
+    "href": "lectures/35-text-analysis2/slides.html#pride-and-prejudice-jane-austen-1813",
+    "title": "Text Analysis II",
+    "section": "Pride and Prejudice (Jane Austen, 1813)",
+    "text": "Pride and Prejudice (Jane Austen, 1813)\n\n\n\n\n\nQuestions:\n\nWhat words are most commonly used?\nWhat is the emotional arc of the novel?\n\nSteps:\n\nAccess text as computer file\nRead into R\nData cleaning\nSummary statistics\nVisualization"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#last-time",
+    "href": "lectures/35-text-analysis2/slides.html#last-time",
+    "title": "Text Analysis II",
+    "section": "Last time …",
+    "text": "Last time …\n\nWe used the vector prideprejudice from the package \"janeaustenr\",\nPut it into a tibble for tidytext convenience,\nTokenize into words.\n\n\n\npride_tbl = tibble(text = prideprejudice)\n\npride_tokens = unnest_tokens(pride_tbl, input = text, output = word)\npride_tokens\n\n\n\n# A tibble: 122,204 × 1\n   word     \n   &lt;chr&gt;    \n 1 pride    \n 2 and      \n 3 prejudice\n 4 by       \n 5 jane     \n 6 austen   \n 7 chapter  \n 8 1        \n 9 it       \n10 is       \n# ℹ 122,194 more rows"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-1",
+    "href": "lectures/35-text-analysis2/slides.html#section-1",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "Goal: Determine the emotional content of text.\n\n\nOne common approach is to consider the text as a combination of its individual words or tokens, and the sentiment of the whole text as the sum of the sentiment content of the individual words.\n \nThis involves assigning a sentiment category to each token, which in turn requires using a Sentiment Lexicon"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#sentiment-lexicon-example",
+    "href": "lectures/35-text-analysis2/slides.html#sentiment-lexicon-example",
+    "title": "Text Analysis II",
+    "section": "Sentiment lexicon example",
+    "text": "Sentiment lexicon example\n\"tidytext\" provides a default sentiment lexicon sentiments\n\n\nsentiments\n\n# A tibble: 6,786 × 2\n   word        sentiment\n   &lt;chr&gt;       &lt;chr&gt;    \n 1 2-faces     negative \n 2 abnormal    negative \n 3 abolish     negative \n 4 abominable  negative \n 5 abominably  negative \n 6 abominate   negative \n 7 abomination negative \n 8 abort       negative \n 9 aborted     negative \n10 aborts      negative \n# ℹ 6,776 more rows\n\n\n\n\nThis lexicon has a list of words and their associated sentiment classified into binary categories: negative and positive."
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#sentiment-lexicons",
+    "href": "lectures/35-text-analysis2/slides.html#sentiment-lexicons",
+    "title": "Text Analysis II",
+    "section": "Sentiment lexicons",
+    "text": "Sentiment lexicons\nYou can get four lexicons with get_lexicon():1\n\n\"bing\": from Bing Liu; this lexicon2 categorizes words in a binary fashion into positive and negative categories.\n\"afinn\": from Finn Arup Nielsen; this lexicon assigns words with a score that runs between -5 and 5, with negative scores indicating negative sentiment and positive scores indicating positive sentiment.\n\"nrc\": from Saif Mohammad and Peter Turney; this lexicon categorizes words in a binary fashion (\"yes\" / \"no\") into categories of positive, negative, anger, anticipation, disgust, fear, joy, sadness, surprise, and trust.\n\"loughran\": another lexicon somewhat similar to \"afinn\".\n\nLexicons from \"tidytext\" sibling package \"textdata\".This is the lexicon in sentiments."
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#sentiment-lexicons-1",
+    "href": "lectures/35-text-analysis2/slides.html#sentiment-lexicons-1",
+    "title": "Text Analysis II",
+    "section": "Sentiment lexicons",
+    "text": "Sentiment lexicons\nThe sentiment lexicons mentioned in the previous slide can be obtained with the get_sentiments(lexicon = ...) function.\n\n\n# run this command in R's console\nafinn = get_sentiment(lexicon = \"afinn\")\n\n\n\n \n\n\n\n\n\n\nWarning\n\n\nThe issue is that get_sentiments() is an interactive function that requires manual input. If you include this function in a qmd file it won’t work.\nIt’s better to download the lexicons to a text or an R file, and then import them with a reading function, e.g. read_csv()."
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-2",
+    "href": "lectures/35-text-analysis2/slides.html#section-2",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "bing |&gt; slice_head(n = 8)\n\n\n\n# A tibble: 8 × 2\n  word        sentiment\n  &lt;chr&gt;       &lt;chr&gt;    \n1 2-faces     negative \n2 abnormal    negative \n3 abolish     negative \n4 abominable  negative \n5 abominably  negative \n6 abominate   negative \n7 abomination negative \n8 abort       negative \n\n\n\nafinn |&gt; slice_head(n = 8)\n\n\n\n# A tibble: 8 × 2\n  word       value\n  &lt;chr&gt;      &lt;dbl&gt;\n1 abandon       -2\n2 abandoned     -2\n3 abandons      -2\n4 abducted      -2\n5 abduction     -2\n6 abductions    -2\n7 abhor         -3\n8 abhorred      -3\n\n\n\n\nloughran |&gt; slice_head(n = 8)\n\n\n\n# A tibble: 8 × 2\n  word         sentiment\n  &lt;chr&gt;        &lt;chr&gt;    \n1 abandon      negative \n2 abandoned    negative \n3 abandoning   negative \n4 abandonment  negative \n5 abandonments negative \n6 abandons     negative \n7 abdicated    negative \n8 abdicates    negative \n\n\n\nnrc |&gt; slice_head(n = 8)\n\n\n\n# A tibble: 8 × 2\n  word      sentiment\n  &lt;chr&gt;     &lt;chr&gt;    \n1 abacus    trust    \n2 abandon   fear     \n3 abandon   negative \n4 abandon   sadness  \n5 abandoned anger    \n6 abandoned fear     \n7 abandoned negative \n8 abandoned sadness"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#assigning-sentiments-to-words",
+    "href": "lectures/35-text-analysis2/slides.html#assigning-sentiments-to-words",
+    "title": "Text Analysis II",
+    "section": "Assigning sentiments to words",
+    "text": "Assigning sentiments to words\n\n\n\npride_tokens\n\n# A tibble: 122,204 × 1\n   word     \n   &lt;chr&gt;    \n 1 pride    \n 2 and      \n 3 prejudice\n 4 by       \n 5 jane     \n 6 austen   \n 7 chapter  \n 8 1        \n 9 it       \n10 is       \n# ℹ 122,194 more rows\n\n\n\n\nsentiments\n\n# A tibble: 6,786 × 2\n   word        sentiment\n   &lt;chr&gt;       &lt;chr&gt;    \n 1 2-faces     negative \n 2 abnormal    negative \n 3 abolish     negative \n 4 abominable  negative \n 5 abominably  negative \n 6 abominate   negative \n 7 abomination negative \n 8 abort       negative \n 9 aborted     negative \n10 aborts      negative \n# ℹ 6,776 more rows\n\n\n\n\n \nHow would you assign sentiments to pride_tokens?\n\n\n\n−+\n00:45"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#assigning-sentiments-to-words-1",
+    "href": "lectures/35-text-analysis2/slides.html#assigning-sentiments-to-words-1",
+    "title": "Text Analysis II",
+    "section": "Assigning sentiments to words",
+    "text": "Assigning sentiments to words\n\n# attaching sentiments with inner_join\npride_sentim = inner_join(pride_tokens, sentiments, by = \"word\")\n\npride_sentim\n\n\n\n# A tibble: 8,704 × 2\n   word        sentiment\n   &lt;chr&gt;       &lt;chr&gt;    \n 1 pride       positive \n 2 prejudice   negative \n 3 good        positive \n 4 fortune     positive \n 5 well        positive \n 6 rightful    positive \n 7 impatiently negative \n 8 objection   negative \n 9 enough      positive \n10 fortune     positive \n# ℹ 8,694 more rows"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-3",
+    "href": "lectures/35-text-analysis2/slides.html#section-3",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "pride_sentim |&gt; \n  count(word, sentiment, name = \"count\", sort = TRUE) |&gt; \n  slice_head(n = 20) |&gt; \n  ggplot(aes(x = count, y = reorder(word, count), fill = sentiment)) +\n  geom_col()"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-4",
+    "href": "lectures/35-text-analysis2/slides.html#section-4",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "# filter out \"miss\", and graph top-20 words\npride_sentim |&gt; \n  count(word, sentiment, name = \"count\", sort = TRUE) |&gt; \n  filter(word != \"miss\") |&gt; slice_head(n = 20) |&gt; \n  ggplot(aes(x = count, y = reorder(word, count), fill = sentiment)) +\n  geom_col()"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#sentiment-score-by-chapter",
+    "href": "lectures/35-text-analysis2/slides.html#sentiment-score-by-chapter",
+    "title": "Text Analysis II",
+    "section": "Sentiment Score by Chapter",
+    "text": "Sentiment Score by Chapter\nAnother type of sentiment analysis that can be performed on the prideprejudice text is to compute a sentiment score for each chapter in the book.\n\nWe need to do a bit of text processing in order to split the text into chapters. Here are the proposed steps:\n\nCollapse prideprejudice into a single element vector\nSplit text into chapters using a regex pattern \"Chapter \\\\d+\"\n2.1) unbox into vector\n2.2) get rid of first lines (not a chapter)\nAssemble table with columns \"chapter\" and \"text\""
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-5",
+    "href": "lectures/35-text-analysis2/slides.html#section-5",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "Notice that prideprejudice contains elements indicating where a chapter begins, like element 7 in the following output (\"Chapter 1\")\n\n\nhead(prideprejudice, n = 10)\n\n [1] \"PRIDE AND PREJUDICE\"                                                    \n [2] \"\"                                                                       \n [3] \"By Jane Austen\"                                                         \n [4] \"\"                                                                       \n [5] \"\"                                                                       \n [6] \"\"                                                                       \n [7] \"Chapter 1\"                                                              \n [8] \"\"                                                                       \n [9] \"\"                                                                       \n[10] \"It is a truth universally acknowledged, that a single man in possession\"\n\n\n\n\n\n\nWe can use these lines of text to detect where a chapter begins."
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-6",
+    "href": "lectures/35-text-analysis2/slides.html#section-6",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "Step 1) collapse text into one-element vector\n\n\npride_collapsed = paste(prideprejudice, collapse = \" \")\n\n\n\n\n\nStep 2) split text into chapters using str_split() which returns a list\n\npride_split = str_split(pride_collapsed, pattern = \"Chapter\\\\s\\\\d+\")"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-7",
+    "href": "lectures/35-text-analysis2/slides.html#section-7",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "Substeps 2.2) and 2.1) unbox and remove first element because it’s not a chapter\n\npride_chapters = pride_split[[1]][-1]\n\n# how many chapters\nlength(pride_chapters)\n\n[1] 61"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-8",
+    "href": "lectures/35-text-analysis2/slides.html#section-8",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "Step 3) Assemble table of chapters, and their text content\n\n\npride_chaps = tibble(\n  text = pride_chapters,\n  chapter = 1:length(pride_chapters))\n\npride_chaps\n\n\n\n# A tibble: 61 × 2\n   text                                                                  chapter\n   &lt;chr&gt;                                                                   &lt;int&gt;\n 1 \"   It is a truth universally acknowledged, that a single man in pos…       1\n 2 \"   Mr. Bennet was among the earliest of those who waited on Mr. Bin…       2\n 3 \"   Not all that Mrs. Bennet, however, with the assistance of her fi…       3\n 4 \"   When Jane and Elizabeth were alone, the former, who had been cau…       4\n 5 \"   Within a short walk of Longbourn lived a family with whom the Be…       5\n 6 \"   The ladies of Longbourn soon waited on those of Netherfield. The…       6\n 7 \"   Mr. Bennet's property consisted almost entirely in an estate of …       7\n 8 \"   At five o'clock the two ladies retired to dress, and at half-pas…       8\n 9 \"   Elizabeth passed the chief of the night in her sister's room, an…       9\n10 \"   The day passed much as the day before had done. Mrs. Hurst and M…      10\n# ℹ 51 more rows"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-9",
+    "href": "lectures/35-text-analysis2/slides.html#section-9",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "Then we proceed as usual: tokenizing the text, getting word count, and assigning sentiments:\n\n\npride_toks = unnest_tokens(pride_chaps, input=text, output=word)"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-10",
+    "href": "lectures/35-text-analysis2/slides.html#section-10",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "Then we proceed as usual: tokenizing the text, removing stopwords, and getting word counts:\n\npride_toks = unnest_tokens(pride_chaps, input=text, output=word)\n\npride_toks_count = pride_toks |&gt; \n  count(word, chapter, name = \"count\", sort = TRUE)\n\npride_toks_count\n\n\n\n# A tibble: 40,120 × 3\n   word  chapter count\n   &lt;chr&gt;   &lt;int&gt; &lt;int&gt;\n 1 the        43   222\n 2 to         18   214\n 3 the        18   197\n 4 of         18   178\n 5 of         43   157\n 6 and        43   156\n 7 and        18   150\n 8 the        16   140\n 9 to         47   135\n10 to         43   133\n# ℹ 40,110 more rows"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-11",
+    "href": "lectures/35-text-analysis2/slides.html#section-11",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "Then we proceed as usual: tokenizing the text, removing stopwords, and getting word counts:\n\npride_toks = unnest_tokens(pride_chaps, input=text, output=word)\n\npride_toks_count = pride_toks |&gt; \n  count(word, chapter, name = \"count\", sort = TRUE)\n\npride_sent = inner_join(pride_toks_count, sentiments, by = \"word\") |&gt; \n  filter(word != \"miss\")"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-12",
+    "href": "lectures/35-text-analysis2/slides.html#section-12",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "# after removing stop-words\npride_sent\n\n# A tibble: 6,460 × 4\n   word         chapter count sentiment\n   &lt;chr&gt;          &lt;int&gt; &lt;int&gt; &lt;chr&gt;    \n 1 well              47    15 positive \n 2 good              43    13 positive \n 3 master            43    13 positive \n 4 pride             16    11 positive \n 5 good              49    10 positive \n 6 happy             55    10 positive \n 7 great             43     9 positive \n 8 well              18     9 positive \n 9 well              40     9 positive \n10 accomplished       8     8 positive \n# ℹ 6,450 more rows\n\n\n\n \nWe need to compute a sentiment score for each chapter:\nscore = # positive words - # negative words"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-13",
+    "href": "lectures/35-text-analysis2/slides.html#section-13",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "Sentiment score for each chapter:\nscore = # positive words - # negative words\n\n\n\npride_sent\n\n# A tibble: 6,460 × 4\n   word         chapter count sentiment\n   &lt;chr&gt;          &lt;int&gt; &lt;int&gt; &lt;chr&gt;    \n 1 well              47    15 positive \n 2 good              43    13 positive \n 3 master            43    13 positive \n 4 pride             16    11 positive \n 5 good              49    10 positive \n 6 happy             55    10 positive \n 7 great             43     9 positive \n 8 well              18     9 positive \n 9 well              40     9 positive \n10 accomplished       8     8 positive \n# ℹ 6,450 more rows\n\n\n\n\nchapter_scores\n\n# A tibble: 61 × 2\n   chapter score\n     &lt;int&gt; &lt;int&gt;\n 1       1    11\n 2       2     2\n 3       3    45\n 4       4    52\n 5       5    30\n 6       6    75\n 7       7    13\n 8       8    25\n 9       9    54\n10      10    43\n# ℹ 51 more rows\n\n\n\n\n \nGiven pride_sent, how would you obtain chapter_scores?\n\n\n\n−+\n02:00"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-14",
+    "href": "lectures/35-text-analysis2/slides.html#section-14",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "chapter_scores = pride_sent |&gt; \n  pivot_wider(names_from = sentiment, \n              values_from = count, \n              values_fill = 0)"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-15",
+    "href": "lectures/35-text-analysis2/slides.html#section-15",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "chapter_scores = pride_sent |&gt; \n  pivot_wider(names_from = sentiment, \n              values_from = count, \n              values_fill = 0) |&gt;\n  group_by(chapter)"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-16",
+    "href": "lectures/35-text-analysis2/slides.html#section-16",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "chapter_scores = pride_sent |&gt; \n  pivot_wider(names_from = sentiment, \n              values_from = count, \n              values_fill = 0) |&gt; \n  group_by(chapter) |&gt; \n  summarize(score = sum(positive) - sum(negative))"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-17",
+    "href": "lectures/35-text-analysis2/slides.html#section-17",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "chapter_scores = pride_sent |&gt; \n  pivot_wider(names_from = sentiment, \n              values_from = count, \n              values_fill = 0) |&gt; \n  group_by(chapter) |&gt; \n  summarize(score = sum(positive) - sum(negative))\n\nslice_head(chapter_scores, n = 10)\n\n\n\n# A tibble: 10 × 2\n   chapter score\n     &lt;int&gt; &lt;int&gt;\n 1       1    11\n 2       2     2\n 3       3    45\n 4       4    52\n 5       5    30\n 6       6    75\n 7       7    13\n 8       8    25\n 9       9    54\n10      10    43"
+  },
+  {
+    "objectID": "lectures/35-text-analysis2/slides.html#section-18",
+    "href": "lectures/35-text-analysis2/slides.html#section-18",
+    "title": "Text Analysis II",
+    "section": "",
+    "text": "Code\nggplotly(\n  chapter_scores |&gt; \n  mutate(sentiment = case_when(\n    score &gt;= 0 ~ \"pos\",\n    score &lt; 0 ~ \"neg\")) |&gt; \n  ggplot(aes(x = chapter, y = score, fill = sentiment)) +\n  geom_col() +\n  labs(title = \"Sentiment score for each chapter in 'Pride and Prejudice'\") +\n  theme_bw()\n)"
+  },
+  {
     "objectID": "lectures/7-lists/slides.html#discuss-with-a-neighbor",
     "href": "lectures/7-lists/slides.html#discuss-with-a-neighbor",
     "title": "Lists",
@@ -6099,7 +6505,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 1 2"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 2 5"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#meet-the-palmer-penguins",
@@ -6309,14 +6715,14 @@
     "href": "lectures/23-date-time1/slides.html#an-r-vector-for-date-times",
     "title": "Dates and Times I",
     "section": "An R vector for date-times",
-    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-11 12:13:08 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1775934788"
+    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-13 08:04:43 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1776092683"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "href": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "title": "Dates and Times I",
     "section": "Why not just use a double vector?",
-    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-11 12:13:08 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-11 12:13:09 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-11 12:13:08 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/11/26\""
+    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-13 08:04:43 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-13 08:04:44 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-13 08:04:43 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/13/26\""
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#creating-date-time-vectors",
@@ -6351,21 +6757,21 @@
     "href": "lectures/23-date-time1/slides.html#getting",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 11\n\n\n\n\n\nwday(now)\n\n\n\n[1] 7\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Sat\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 13\n\n\n\n\n\nwday(now)\n\n\n\n[1] 2\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Mon\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#getting-1",
     "href": "lectures/23-date-time1/slides.html#getting-1",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 11\n\n\n\nwday(now)\n\n[1] 7\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Saturday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 13\n\n\n\nwday(now)\n\n[1] 2\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Monday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#setting",
     "href": "lectures/23-date-time1/slides.html#setting",
     "title": "Dates and Times I",
     "section": "Setting",
-    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-11 12:13:08 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Friday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-13 08:04:43 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Sunday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#your-turn",
@@ -7229,6 +7635,195 @@
     "text": "Replicates with rep()\nrep() replicates the values of the input vector in a handful of different ways:\n\n\nrep(1, times = 3)\n\n\n\n[1] 1 1 1\n\n\n\n\n\nrep(1:3, times = 2)\n\n\n\n[1] 1 2 3 1 2 3\n\n\n\n\n\nrep(1:3, each = 2)\n\n\n\n[1] 1 1 2 2 3 3\n\n\n\n\n\nrep(1:3, each = 2, times = 2)\n\n\n\n [1] 1 1 2 2 3 3 1 1 2 2 3 3\n\n\n\n\n\nrep(1:3, each = 2, times = 2, length.out = 10)\n\n\n\n [1] 1 1 2 2 3 3 1 1 2 2"
   },
   {
+    "objectID": "lectures/34-text-analysis1/slides.html#section",
+    "href": "lectures/34-text-analysis1/slides.html#section",
+    "title": "Text Analysis I",
+    "section": "",
+    "text": "# packages\nlibrary(tidyverse)     # ecosystem of data science packages\n\nlibrary(tidytext)      # text mining using tidy tools\n\nlibrary(gutenbergr)    # download works from Project Gutenberg\n\nlibrary(janeaustenr)   # full texts for Jane Austen's 6 completed novels\n\nlibrary(wordcloud)     # for plotting word clouds"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#sources-of-text",
+    "href": "lectures/34-text-analysis1/slides.html#sources-of-text",
+    "title": "Text Analysis I",
+    "section": "Sources of text",
+    "text": "Sources of text\n\nPapers, articles, journals\nNovels, fiction, non-fiction, books\nScripts: e.g. movie, plays, code\nReviews: e.g amazon, yelp, etc\nTweets, and similar social media outlets\nPolitical speeches\nquestionnaires, surveys, polls, etc\nETC"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#pride-and-prejudice-jane-austen-1813",
+    "href": "lectures/34-text-analysis1/slides.html#pride-and-prejudice-jane-austen-1813",
+    "title": "Text Analysis I",
+    "section": "Pride and Prejudice (Jane Austen, 1813)",
+    "text": "Pride and Prejudice (Jane Austen, 1813)\n\n\n\n\n\nQuestions:\n\nWhat words are most commonly used?\nWhat is the emotional arc of the novel?\n\nSteps:\n\nAccess text as computer file\nRead into R\nData cleaning\nSummary statistics\nVisualization"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#option-1.1-read-txt-file-directly-from-the-web",
+    "href": "lectures/34-text-analysis1/slides.html#option-1.1-read-txt-file-directly-from-the-web",
+    "title": "Text Analysis I",
+    "section": "Option 1.1: Read txt file directly from the web",
+    "text": "Option 1.1: Read txt file directly from the web\n\ntxt &lt;- \"https://www.gutenberg.org/cache/epub/1342/pg1342.txt\"\n\npp_raw &lt;- readLines(txt) # direct from web!\n\n\n\n\n[1] \"The Project Gutenberg eBook of Pride and Prejudice\"                      \n[2] \"    \"                                                                    \n[3] \"This eBook is for the use of anyone anywhere in the United States and\"   \n[4] \"most other parts of the world at no cost and with almost no restrictions\"\n[5] \"whatsoever. You may copy it, give it away or re-use it under the terms\""
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#option-1.2-read-text-from-downloaded-file",
+    "href": "lectures/34-text-analysis1/slides.html#option-1.2-read-text-from-downloaded-file",
+    "title": "Text Analysis I",
+    "section": "Option 1.2: Read text from downloaded file",
+    "text": "Option 1.2: Read text from downloaded file\n\n\n# download txt to working directory\ndownload.file(\n  url = \"https://www.gutenberg.org/cache/epub/1342/pg1342.txt\", \n  destfile = \"pride-prejudice.txt\")\n\n\n\n\n\n\n# assuming txt file in working directory\npp_raw &lt;- readLines(\"pride-prejudice.txt\")\n\nhead(pp_raw, n = 5)\n\n\n\n[1] \"The Project Gutenberg eBook of Pride and Prejudice\"                      \n[2] \"    \"                                                                    \n[3] \"This eBook is for the use of anyone anywhere in the United States and\"   \n[4] \"most other parts of the world at no cost and with almost no restrictions\"\n[5] \"whatsoever. You may copy it, give it away or re-use it under the terms\""
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#option-2-read-from-gutenbergr-package",
+    "href": "lectures/34-text-analysis1/slides.html#option-2-read-from-gutenbergr-package",
+    "title": "Text Analysis I",
+    "section": "Option 2: Read from \"gutenbergr\" package",
+    "text": "Option 2: Read from \"gutenbergr\" package\n\n\n# install.packages(\"gutenbergr\")\nlibrary(gutenbergr)\n\npp_raw &lt;- gutenberg_download(\n  gutenberg_id = 1342,\n  mirror = \"https://aleph.pglaf.org/\")\n\nslice(pp_raw, 1:10)\n\n\n\n# A tibble: 10 × 2\n   gutenberg_id text                                            \n          &lt;int&gt; &lt;chr&gt;                                           \n 1         1342 \"                            [Illustration:\"    \n 2         1342 \"\"                                              \n 3         1342 \"                             GEORGE ALLEN\"     \n 4         1342 \"                               PUBLISHER\"      \n 5         1342 \"\"                                              \n 6         1342 \"                        156 CHARING CROSS ROAD\"\n 7         1342 \"                                LONDON\"        \n 8         1342 \"\"                                              \n 9         1342 \"                             RUSKIN HOUSE\"     \n10         1342 \"                                   ]\""
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#option-3-text-from-janeaustenr-package",
+    "href": "lectures/34-text-analysis1/slides.html#option-3-text-from-janeaustenr-package",
+    "title": "Text Analysis I",
+    "section": "Option 3: Text from \"janeaustenr\" package",
+    "text": "Option 3: Text from \"janeaustenr\" package\n\n\n# install.packages(\"janeaustenr\")\nlibrary(janeaustenr)\n\n# text in character vector\nprideprejudice[1:10]\n\n\n\n[1] \"PRIDE AND PREJUDICE\"                                                    \n [2] \"\"                                                                       \n [3] \"By Jane Austen\"                                                         \n [4] \"\"                                                                       \n [5] \"\"                                                                       \n [6] \"\"                                                                       \n [7] \"Chapter 1\"                                                              \n [8] \"\"                                                                       \n [9] \"\"                                                                       \n[10] \"It is a truth universally acknowledged, that a single man in possession\""
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#about-tidytext",
+    "href": "lectures/34-text-analysis1/slides.html#about-tidytext",
+    "title": "Text Analysis I",
+    "section": "About \"tidytext\"",
+    "text": "About \"tidytext\"\n\"tidytext\" (by Julia Silge and David Robinson) is an R package specifically designed for text mining analysis using Tidy tools1.\n\nWhile not a core component of tidyverse, \"tidytext\" is part of the companion or satellite packages that expand the core functionalities of the core tidy tools.\n\n# install.packages(\"tidytext\")\n\nlibrary(tidytext)\n\n\nIn \"tidytext\", like in many other tidy-companion packages, the data must be in a data.frame or tibble."
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#what-words-are-most-commonly-used",
+    "href": "lectures/34-text-analysis1/slides.html#what-words-are-most-commonly-used",
+    "title": "Text Analysis I",
+    "section": "What words are most commonly used?",
+    "text": "What words are most commonly used?\n\nTo answer this question, we should consider a few key concepts/ideas:\n\nWord or token: a single unit of text\nTokenize or Tokenization: Decompose (break down) a text into individuals tokens.\nBag-of-Words Analysis: this is perhaps the most basic type of text analysis based on counting frequencies of words or tokens."
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#tokenize",
+    "href": "lectures/34-text-analysis1/slides.html#tokenize",
+    "title": "Text Analysis I",
+    "section": "Tokenize",
+    "text": "Tokenize\n\nGiven some object containig text, e.g. vector prideprejudice, there are a couple of different ways to tokenize it.\nAt its core, you need to split the text into “words”.\nYou can tokenize “by-hand” with regex functions such as str_split().\nMore often than not, you will not only split text into tokens but also:\n\nconvert to lower case\nremove punctuation symbols\nremove extra spaces\nremove digits"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#tokenize-1",
+    "href": "lectures/34-text-analysis1/slides.html#tokenize-1",
+    "title": "Text Analysis I",
+    "section": "Tokenize",
+    "text": "Tokenize\nConveniently, you can also use the unnest_tokens() function from package \"tidytext\". This requires data in a tabular format.1\n\n\n# Reshaping text data into a table\npride_tbl = tibble(\"text\" = prideprejudice)\npride_tbl\n\n\n\n# A tibble: 13,030 × 1\n   text                                                                     \n   &lt;chr&gt;                                                                    \n 1 \"PRIDE AND PREJUDICE\"                                                    \n 2 \"\"                                                                       \n 3 \"By Jane Austen\"                                                         \n 4 \"\"                                                                       \n 5 \"\"                                                                       \n 6 \"\"                                                                       \n 7 \"Chapter 1\"                                                              \n 8 \"\"                                                                       \n 9 \"\"                                                                       \n10 \"It is a truth universally acknowledged, that a single man in possession\"\n# ℹ 13,020 more rows\n\n\n\nThe text data must be in a data.frame or tibble."
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#tokenization-with-unnest_tokens",
+    "href": "lectures/34-text-analysis1/slides.html#tokenization-with-unnest_tokens",
+    "title": "Text Analysis I",
+    "section": "Tokenization with unnest_tokens()",
+    "text": "Tokenization with unnest_tokens()\n\n\npride_tokens = unnest_tokens(tbl = pride_tbl, input = text, output = word)\npride_tokens\n\n\n\n# A tibble: 122,204 × 1\n   word     \n   &lt;chr&gt;    \n 1 pride    \n 2 and      \n 3 prejudice\n 4 by       \n 5 jane     \n 6 austen   \n 7 chapter  \n 8 1        \n 9 it       \n10 is       \n# ℹ 122,194 more rows"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#frequency-analysis",
+    "href": "lectures/34-text-analysis1/slides.html#frequency-analysis",
+    "title": "Text Analysis I",
+    "section": "Frequency Analysis",
+    "text": "Frequency Analysis\nNext step: getting frequencies (i.e. counts)\n\n\npride_tokens |&gt; \n  count(word, name = \"count\", sort = TRUE) |&gt; \n  slice(1:20)\n\n\n\n# A tibble: 20 × 2\n   word  count\n   &lt;chr&gt; &lt;int&gt;\n 1 the    4331\n 2 to     4162\n 3 of     3610\n 4 and    3585\n 5 her    2203\n 6 i      2065\n 7 a      1954\n 8 in     1880\n 9 was    1843\n10 she    1695\n11 that   1541\n12 it     1535\n13 not    1421\n14 you    1326\n15 he     1324\n16 his    1258\n17 be     1240\n18 as     1180\n19 had    1173\n20 for    1060"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#frequency-analysis-1",
+    "href": "lectures/34-text-analysis1/slides.html#frequency-analysis-1",
+    "title": "Text Analysis I",
+    "section": "Frequency Analysis",
+    "text": "Frequency Analysis\nNext step: getting frequencies (i.e. counts)\n\npride_tokens |&gt; \n  count(word, name = \"count\", sort = TRUE) |&gt; \n  slice(1:20) |&gt; \n  ggplot(aes(x = count, y = reorder(word, count))) +\n  geom_col()"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#stop-words",
+    "href": "lectures/34-text-analysis1/slides.html#stop-words",
+    "title": "Text Analysis I",
+    "section": "Stop-Words",
+    "text": "Stop-Words\n\nStop-words: very common, uninteresting words that are typically removed in text analyses. \"tidytext\" comes with built-in stop_words\n\n\n\n\n\nstop_words\n\n# A tibble: 1,149 × 2\n   word        lexicon\n   &lt;chr&gt;       &lt;chr&gt;  \n 1 a           SMART  \n 2 a's         SMART  \n 3 able        SMART  \n 4 about       SMART  \n 5 above       SMART  \n 6 according   SMART  \n 7 accordingly SMART  \n 8 across      SMART  \n 9 actually    SMART  \n10 after       SMART  \n# ℹ 1,139 more rows\n\n\n\n\nstop_words |&gt; \n  distinct(lexicon)\n\n# A tibble: 3 × 1\n  lexicon \n  &lt;chr&gt;   \n1 SMART   \n2 snowball\n3 onix"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#removing-stop-words",
+    "href": "lectures/34-text-analysis1/slides.html#removing-stop-words",
+    "title": "Text Analysis I",
+    "section": "Removing stop-words",
+    "text": "Removing stop-words\n\nSo far we have 2 tables:\n\n\n\npride_tokens\n\n# A tibble: 122,204 × 1\n   word     \n   &lt;chr&gt;    \n 1 pride    \n 2 and      \n 3 prejudice\n 4 by       \n 5 jane     \n 6 austen   \n 7 chapter  \n 8 1        \n 9 it       \n10 is       \n# ℹ 122,194 more rows\n\n\n\n\nstop_words\n\n# A tibble: 1,149 × 2\n   word        lexicon\n   &lt;chr&gt;       &lt;chr&gt;  \n 1 a           SMART  \n 2 a's         SMART  \n 3 able        SMART  \n 4 about       SMART  \n 5 above       SMART  \n 6 according   SMART  \n 7 accordingly SMART  \n 8 across      SMART  \n 9 actually    SMART  \n10 after       SMART  \n# ℹ 1,139 more rows\n\n\n\n\n\n \nHow would you remove stop words from pride_tokens?\n\n\n\n−+\n00:45"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#removing-stop-words-1",
+    "href": "lectures/34-text-analysis1/slides.html#removing-stop-words-1",
+    "title": "Text Analysis I",
+    "section": "Removing stop-words",
+    "text": "Removing stop-words\n\n\npride_tokens = anti_join(pride_tokens, stop_words, by = \"word\")"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#removing-stop-words-2",
+    "href": "lectures/34-text-analysis1/slides.html#removing-stop-words-2",
+    "title": "Text Analysis I",
+    "section": "Removing stop-words",
+    "text": "Removing stop-words\n\npride_tokens = anti_join(pride_tokens, stop_words, by = \"word\")\n\npride_tokens |&gt; count(word, name = \"count\", sort = TRUE)\n\n\n\n# A tibble: 6,009 × 2\n   word      count\n   &lt;chr&gt;     &lt;int&gt;\n 1 elizabeth   597\n 2 darcy       373\n 3 bennet      294\n 4 miss        283\n 5 jane        264\n 6 bingley     257\n 7 time        203\n 8 lady        183\n 9 sister      180\n10 wickham     162\n# ℹ 5,999 more rows"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#section-8",
+    "href": "lectures/34-text-analysis1/slides.html#section-8",
+    "title": "Text Analysis I",
+    "section": "",
+    "text": "top50_tokens = pride_tokens |&gt; \n  count(word, name = \"count\", sort = TRUE) |&gt; \n  slice_head(n = 50)\n\ntop50_tokens\n\n# A tibble: 50 × 2\n   word      count\n   &lt;chr&gt;     &lt;int&gt;\n 1 elizabeth   597\n 2 darcy       373\n 3 bennet      294\n 4 miss        283\n 5 jane        264\n 6 bingley     257\n 7 time        203\n 8 lady        183\n 9 sister      180\n10 wickham     162\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#section-9",
+    "href": "lectures/34-text-analysis1/slides.html#section-9",
+    "title": "Text Analysis I",
+    "section": "",
+    "text": "# install.packages(\"wordcloud\")\nlibrary(wordcloud)\n\nwordcloud(\n  words = top50_tokens$word,\n  freq = top50_tokens$count, \n  max.words = 100, \n  colors = c(\"red\", \"orange\", \"green\", \"cyan\", \"blue\", \"purple\"))"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#n-grams",
+    "href": "lectures/34-text-analysis1/slides.html#n-grams",
+    "title": "Text Analysis I",
+    "section": "N-grams",
+    "text": "N-grams\nIn addition to decomposing a text into single words, we can also look for sets of 2 or more consecutive words, which are called n-grams.\n\n \nThe good news is that unnest_tokens() can also be used to obtain these kind of tokens:\n\nbigrams: n=2, decompose text into pairs (2 consecutive words)\ntrigrams: n=3, decompose text into triplets (3 consecutive words)\n4-grams: n=4, decompose text into sets of 4 (4 consecutive words)"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#bigrams-in-pride-and-prejudice",
+    "href": "lectures/34-text-analysis1/slides.html#bigrams-in-pride-and-prejudice",
+    "title": "Text Analysis I",
+    "section": "Bigrams in Pride and Prejudice",
+    "text": "Bigrams in Pride and Prejudice\n\n\n\npride_bigrams = unnest_tokens(\n  tbl = pride_tbl,\n  input = text,\n  output = bigram,\n  token = \"ngrams\",\n  n = 2)\n\npride_bigrams\n\n\n\n\n# A tibble: 114,045 × 1\n   bigram       \n   &lt;chr&gt;        \n 1 pride and    \n 2 and prejudice\n 3 &lt;NA&gt;         \n 4 by jane      \n 5 jane austen  \n 6 &lt;NA&gt;         \n 7 &lt;NA&gt;         \n 8 &lt;NA&gt;         \n 9 chapter 1    \n10 &lt;NA&gt;         \n# ℹ 114,035 more rows"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#section-10",
+    "href": "lectures/34-text-analysis1/slides.html#section-10",
+    "title": "Text Analysis I",
+    "section": "",
+    "text": "Getting rid of NA’s in pride_bigrams\n\npride_bigrams = pride_bigrams |&gt; filter(!is.na(bigram))\n\n# get frequencies\npride_bigrams |&gt; count(bigram, name = \"count\", sort = TRUE)\n\n\n\n# A tibble: 50,265 × 2\n   bigram   count\n   &lt;chr&gt;    &lt;int&gt;\n 1 of the     439\n 2 to be      422\n 3 in the     365\n 4 i am       291\n 5 of her     245\n 6 it was     235\n 7 to the     231\n 8 mr darcy   230\n 9 of his     219\n10 she was    204\n# ℹ 50,255 more rows"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#bigrams-containing-darcy-fitzwilliam-darcy",
+    "href": "lectures/34-text-analysis1/slides.html#bigrams-containing-darcy-fitzwilliam-darcy",
+    "title": "Text Analysis I",
+    "section": "Bigrams containing “darcy” (Fitzwilliam Darcy)",
+    "text": "Bigrams containing “darcy” (Fitzwilliam Darcy)\n\n# male protagonist\npride_bigrams |&gt; \n  filter(str_detect(bigram, pattern = \"darcy\")) |&gt; \n  count(bigram, name = \"count\", sort = TRUE)\n\n# A tibble: 219 × 2\n   bigram     count\n   &lt;chr&gt;      &lt;int&gt;\n 1 mr darcy     230\n 2 miss darcy    32\n 3 mr darcy's    27\n 4 darcy was     23\n 5 darcy and     19\n 6 darcy is      13\n 7 darcy she     13\n 8 darcy had     12\n 9 darcy who     11\n10 darcy i        9\n# ℹ 209 more rows"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#removing-stop-words-when-working-with-n-grams",
+    "href": "lectures/34-text-analysis1/slides.html#removing-stop-words-when-working-with-n-grams",
+    "title": "Text Analysis I",
+    "section": "Removing Stop Words when working with n-grams",
+    "text": "Removing Stop Words when working with n-grams\n\n\n# last time, when working with single tokens\nanti_join(tbl, stop_words, by = \"word\")\n\n\n\nWhat about removing stop-words from bigrams?\n\n\n\nanti_join(pride_bigrams, stop_words, by = c(\"bigram\" = \"word\"))\n\n# A tibble: 111,489 × 1\n   bigram                  \n   &lt;chr&gt;                   \n 1 pride and               \n 2 and prejudice           \n 3 by jane                 \n 4 jane austen             \n 5 chapter 1               \n 6 it is                   \n 7 is a                    \n 8 a truth                 \n 9 truth universally       \n10 universally acknowledged\n# ℹ 111,479 more rows\n\n\n\n\n👎"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#section-11",
+    "href": "lectures/34-text-analysis1/slides.html#section-11",
+    "title": "Text Analysis I",
+    "section": "",
+    "text": "Decompose the bigrams into individual words, and then filter out the entries that correspond to stop-words:\n\n\npride_bigrams2 = pride_bigrams |&gt; \n  mutate(word1 = str_extract(bigram, \"^\\\\w+\"),\n         word2 = str_extract(bigram, \"\\\\w+$\")) |&gt; \n  filter(!(word1 %in% stop_words$word),\n         !(word2 %in% stop_words$word))"
+  },
+  {
+    "objectID": "lectures/34-text-analysis1/slides.html#section-12",
+    "href": "lectures/34-text-analysis1/slides.html#section-12",
+    "title": "Text Analysis I",
+    "section": "",
+    "text": "pride_bigrams2 |&gt; \n  count(bigram, word1, word2, name = \"count\", sort = TRUE) |&gt; \n  filter(count &gt; 20) |&gt; \n  ggplot(aes(x = count, y = reorder(bigram, count))) +\n  geom_col()"
+  },
+  {
     "objectID": "lectures/22-strings3/slides.html#agenda",
     "href": "lectures/22-strings3/slides.html#agenda",
     "title": "Strings III",
@@ -7436,14 +8031,14 @@
     "href": "lectures/24-date-time2/slides.html#how-old-is-oski",
     "title": "Dates and Times II",
     "section": "How old is Oski?",
-    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30877 days"
+    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30879 days"
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#durations",
     "href": "lectures/24-date-time2/slides.html#durations",
     "title": "Dates and Times II",
     "section": "Durations",
-    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2667772800s (~84.54 years)\""
+    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2667945600s (~84.54 years)\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#constructing-a-duration",
@@ -7485,7 +8080,7 @@
     "href": "lectures/24-date-time2/slides.html#how-old-will-oski-be",
     "title": "Dates and Times II",
     "section": "How old will Oski be …",
-    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2667772800s (~84.54 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2699330400s (~85.54 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 196d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 196d 0H 0M 0S\""
+    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2667945600s (~84.54 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2699503200s (~85.54 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 198d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 198d 0H 0M 0S\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#intervals",
@@ -7635,340 +8230,186 @@
     "text": "matches |&gt; \n  mutate(\n    player1_age = interval(player1_dob, date_match) / years(1),\n    player2_age = interval(player2_dob, date_match) / years(1),\n    age_difference = player1_age - player2_age) |&gt; \n  select(date_match, player1, player1_age, player2, player2_age, age_difference)\n\n\n\n# A tibble: 10 × 6\n   date_match player1         player1_age player2     player2_age age_difference\n   &lt;date&gt;     &lt;chr&gt;                 &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;          &lt;dbl&gt;\n 1 2001-08-13 Serena Williams        19.9 Iva Majoli         24.0         -4.12 \n 2 2004-05-24 Serena Williams        22.7 Maria Kiri…        17.3          5.33 \n 3 2005-01-17 Serena Williams        23.3 Sania Mirza        18.2          5.14 \n 4 2007-10-08 Serena Williams        26.0 Tatiana Pe…        24.8          1.22 \n 5 2009-08-31 Serena Williams        27.9 Maria Jose…        27.1          0.877\n 6 2010-01-11 Serena Williams        28.3 Maria Jose…        27.4          0.877\n 7 2014-08-25 Serena Williams        32.9 Caroline W…        24.1          8.79 \n 8 2015-06-29 Serena Williams        33.8 Venus Will…        35.0         -1.28 \n 9 2016-08-29 Serena Williams        34.9 Yaroslava …        29.0          5.96 \n10 2020-08-24 Serena Williams        38.9 Maria Sakk…        25.1         13.8"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#palmer-penguins",
-    "href": "lectures/15-dataviz2/slides.html#palmer-penguins",
-    "title": "The Grammar of Graphics",
-    "section": "Palmer Penguins",
-    "text": "Palmer Penguins\n\nlibrary(palmerpenguins)\npenguins\n\n# A tibble: 344 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+    "objectID": "lectures/12-data-wrangling2/slides.html#agenda",
+    "href": "lectures/12-data-wrangling2/slides.html#agenda",
+    "title": "Data Warngling II",
+    "section": "Agenda",
+    "text": "Agenda\n\nTwo big ideas today:\n\nData Pipelines\nGrouped Operations"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#ggplot-syntax",
-    "href": "lectures/15-dataviz2/slides.html#ggplot-syntax",
-    "title": "The Grammar of Graphics",
-    "section": "ggplot() syntax",
-    "text": "ggplot() syntax\n\nggplot() builds a plot layer by layer, each one added on top of one another with + (not |&gt;).\n\nggplot() creates canvas\naes() creates mappings, called inside ggplot() or a geom()\ngeom_() puts down marks using declared geometry\n\n\n\n\nUsually you specify the data in ggplot()\nthe data must be a dataframe or tibble"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section",
-    "href": "lectures/15-dataviz2/slides.html#section",
-    "title": "The Grammar of Graphics",
+    "objectID": "lectures/12-data-wrangling2/slides.html#section",
+    "href": "lectures/12-data-wrangling2/slides.html#section",
+    "title": "Data Warngling II",
     "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm))"
+    "text": "library(tidyverse)\n\nwizards &lt;- data.frame(\n  name = c(\"Harry\", \"Bellatrix\", \"Hermione\", \"Draco\"),\n  house = c(\"Gryffindor\", \"Slytherin\", \"Gryffindor\",  \"Slytherin\"),\n  height = c(1.78, 1.57, 1.65, 1.75),\n  spells = c(60, 75, 70, 55)\n)\n\nUsing base R data frame subsetting, create from wizards …\n\nThe average height of characters from Gryffindor.\n\n\nLet’s look at three ways to solve this."
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-1",
-    "href": "lectures/15-dataviz2/slides.html#section-1",
-    "title": "The Grammar of Graphics",
+    "objectID": "lectures/12-data-wrangling2/slides.html#nesting",
+    "href": "lectures/12-data-wrangling2/slides.html#nesting",
+    "title": "Data Warngling II",
+    "section": "Nesting",
+    "text": "Nesting\n\nsummarize(filter(wizards, house == \"Gryffindor\"), mean(height))\n\n\n\n  mean(height)\n1        1.715\n\n\n\n\n\n\n\nMust be read from the inside out 👎\nHard to keep track of arguments 👎\n\n\n\nAll in one line of code 👍\nOnly refer to one data frame 👍"
+  },
+  {
+    "objectID": "lectures/12-data-wrangling2/slides.html#step-by-step",
+    "href": "lectures/12-data-wrangling2/slides.html#step-by-step",
+    "title": "Data Warngling II",
+    "section": "Step-by-step",
+    "text": "Step-by-step\n\nwizards2 &lt;- filter(wizards, house == \"Gryffindor\")\nsummarize(wizards2, mean(height))\n\n\n\n  mean(height)\n1        1.715\n\n\n\n\n\n\n\nHave to repeat data frame names 👎\nCreates unnecessary objects 👎\n\n\n\nStores intermediate objects 👍\nCan be read from top to bottom 👍"
+  },
+  {
+    "objectID": "lectures/12-data-wrangling2/slides.html#data-pipelines-in-r",
+    "href": "lectures/12-data-wrangling2/slides.html#data-pipelines-in-r",
+    "title": "Data Warngling II",
+    "section": "Data Pipelines in R",
+    "text": "Data Pipelines in R\n\n\n\n\n2016:\n\"magrittr\" introduces %&gt;%\n\n2021:\n\nR now provides a simple native forward pipe syntax |&gt;. The simple form of the forward pipe inserts the left-had side as the first argument in the right-hand side call."
+  },
+  {
+    "objectID": "lectures/12-data-wrangling2/slides.html#using-the-pipe-operator",
+    "href": "lectures/12-data-wrangling2/slides.html#using-the-pipe-operator",
+    "title": "Data Warngling II",
+    "section": "Using the Pipe Operator",
+    "text": "Using the Pipe Operator\n\nwizards"
+  },
+  {
+    "objectID": "lectures/12-data-wrangling2/slides.html#using-the-pipe-operator-1",
+    "href": "lectures/12-data-wrangling2/slides.html#using-the-pipe-operator-1",
+    "title": "Data Warngling II",
+    "section": "Using the Pipe Operator",
+    "text": "Using the Pipe Operator\n\nwizards |&gt;\n  filter(house == \"Gryffindor\")"
+  },
+  {
+    "objectID": "lectures/12-data-wrangling2/slides.html#using-the-pipe-operator-2",
+    "href": "lectures/12-data-wrangling2/slides.html#using-the-pipe-operator-2",
+    "title": "Data Warngling II",
+    "section": "Using the Pipe Operator",
+    "text": "Using the Pipe Operator\n\nwizards |&gt;\n  filter(house == \"Gryffindor\") |&gt; \n  summarize(mean(height))\n\n\n\n  mean(height)\n1        1.715\n\n\n\n\n\n\n\n🤷\n\n\n\nCan be read like an English paragraph 👍\nOnly type the data once 👍\nNo leftover objects 👍"
+  },
+  {
+    "objectID": "lectures/12-data-wrangling2/slides.html#works-everywhere",
+    "href": "lectures/12-data-wrangling2/slides.html#works-everywhere",
+    "title": "Data Warngling II",
+    "section": "|> works everywhere",
+    "text": "|&gt; works everywhere\n\nR now provides a simple native forward pipe syntax |&gt;. The simple form of the forward pipe inserts the left-hand side as the first argument in the right-hand side call.\n\n\n\nsummary(factor(c(\"owl\", \"fox\", \"owl\")))\n\nfox owl \n  1   2 \n\n\n\n\n\nfactor(c(\"owl\", \"fox\", \"owl\")) |&gt; summary()\n\nfox owl \n  1   2 \n\n\n\n\n\nc(\"owl\", \"fox\", \"owl\") |&gt; factor() |&gt; summary()\n\nfox owl \n  1   2"
+  },
+  {
+    "objectID": "lectures/12-data-wrangling2/slides.html#section-1",
+    "href": "lectures/12-data-wrangling2/slides.html#section-1",
+    "title": "Data Warngling II",
     "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm)) +\n  geom_point()"
+    "text": "wizards\n\n       name      house height spells\n1     Harry Gryffindor   1.78     60\n2 Bellatrix  Slytherin   1.57     75\n3  Hermione Gryffindor   1.65     70\n4     Draco  Slytherin   1.75     55\n\n\n\n\n\nwizards |&gt; # A #&lt;&lt;\n    filter(house == \"Gryffindor\",\n           name %in% c(\"Harry\", \"Hermione\")) |&gt; # B #&lt;&lt;\n    select(height, spells) |&gt; # C #&lt;&lt;\n    summarize(mean(height), sd(height),\n              mean(spells), sd(spells)) # D #&lt;&lt;\n\nQuestion: What are the dimensions of the data frame at each stage of the pipe: A, B, C, and D?\n\n\n\n−+\n02:00"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-2",
-    "href": "lectures/15-dataviz2/slides.html#section-2",
-    "title": "The Grammar of Graphics",
+    "objectID": "lectures/12-data-wrangling2/slides.html#understanding-your-pipeline",
+    "href": "lectures/12-data-wrangling2/slides.html#understanding-your-pipeline",
+    "title": "Data Warngling II",
+    "section": "Understanding your pipeline",
+    "text": "Understanding your pipeline\nIt’s good practice to understand the output of each line by breaking the pipe.\n\n\n\n\n\n\nwizards |&gt; \n  select(house) |&gt; \n  filter(mean(height))\n\n\n\nError in `filter()`:\nℹ In argument: `mean(height)`.\nCaused by error:\n! object 'height' not found\n\n\n\n\nwizards |&gt; \n  select(house)\n\n\n\n       house\n1 Gryffindor\n2  Slytherin\n3 Gryffindor\n4  Slytherin"
+  },
+  {
+    "objectID": "lectures/12-data-wrangling2/slides.html#section-2",
+    "href": "lectures/12-data-wrangling2/slides.html#section-2",
+    "title": "Data Warngling II",
     "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point()"
+    "text": "wizards &lt;- data.frame(\n  name = c(\"Harry\", \"Bellatrix\", \"Hermione\", \"Draco\"),\n  house = c(\"Gryffindor\", \"Slytherin\", \"Gryffindor\",  \"Slytherin\"),\n  height = c(1.78, 1.57, 1.65, 1.75),\n  spells = c(60, 75, 70, 55)\n)\n\nUsing base R data frame subsetting, create from wizards …\n\nThe average height of characters from Gryffindor across each house.\n\n\nYou could set up two pipelines with different filters. But there’s a better way."
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#recap-1",
-    "href": "lectures/15-dataviz2/slides.html#recap-1",
-    "title": "The Grammar of Graphics",
-    "section": "Recap",
-    "text": "Recap\n\nAn aesthetic mapping links a variable in the data to a visual attribute.\nggplot() and geom_() have a mapping argument.\nWe use the aes() to specify such mappings, e.g.\n\nggplot(..., aes(x = species))\ngeom_bar(aes(x = species))"
+    "objectID": "lectures/12-data-wrangling2/slides.html#group_by",
+    "href": "lectures/12-data-wrangling2/slides.html#group_by",
+    "title": "Data Warngling II",
+    "section": "group_by()",
+    "text": "group_by()\nFlag the rows of a dataframe as belong to a group defined by a factor. For use in downstream operations.\n\n\nwizards |&gt;\n  group_by(house)\n\n\n\n# A tibble: 4 × 4\n# Groups:   house [2]\n  name      house      height spells\n  &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;\n1 Harry     Gryffindor   1.78     60\n2 Bellatrix Slytherin    1.57     75\n3 Hermione  Gryffindor   1.65     70\n4 Draco     Slytherin    1.75     55"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#global--vs--local-mappings",
-    "href": "lectures/15-dataviz2/slides.html#global--vs--local-mappings",
-    "title": "The Grammar of Graphics",
-    "section": "Global -vs- Local Mappings",
-    "text": "Global -vs- Local Mappings\nWe distinguish 2 types of aesthetic mappings:\n\nGlobal Mappings: those specified inside ggplot()\n\n\n\n\nLocal Mappings: those specified inside geom_() functions"
+    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-1",
+    "href": "lectures/12-data-wrangling2/slides.html#group_by-1",
+    "title": "Data Warngling II",
+    "section": "group_by()",
+    "text": "group_by()\nFlag the rows of a dataframe as belong to a group defined by a factor. For use in downstream operations.\n\n\nwizards |&gt;\n  group_by(house) |&gt; \n  summarize(mean(height))\n\n\n\n# A tibble: 2 × 2\n  house      `mean(height)`\n  &lt;chr&gt;               &lt;dbl&gt;\n1 Gryffindor           1.72\n2 Slytherin            1.66"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-3",
-    "href": "lectures/15-dataviz2/slides.html#section-3",
-    "title": "The Grammar of Graphics",
+    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-with-summarize",
+    "href": "lectures/12-data-wrangling2/slides.html#group_by-with-summarize",
+    "title": "Data Warngling II",
+    "section": "group_by() with summarize()",
+    "text": "group_by() with summarize()\n\n\nwizards |&gt;\n  summarize(mean(height))\n\n\n\n  mean(height)\n1       1.6875"
+  },
+  {
+    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-with-summarize-1",
+    "href": "lectures/12-data-wrangling2/slides.html#group_by-with-summarize-1",
+    "title": "Data Warngling II",
+    "section": "group_by() with summarize()",
+    "text": "group_by() with summarize()\n\nwizards |&gt;\n  group_by(house) |&gt; \n  summarize(mean(height))\n\n\n\n# A tibble: 2 × 2\n  house      `mean(height)`\n  &lt;chr&gt;               &lt;dbl&gt;\n1 Gryffindor           1.72\n2 Slytherin            1.66\n\n\n\n\n\nMakes a summary row for each group."
+  },
+  {
+    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-with-filter",
+    "href": "lectures/12-data-wrangling2/slides.html#group_by-with-filter",
+    "title": "Data Warngling II",
+    "section": "group_by() with filter()",
+    "text": "group_by() with filter()\n\n\nwizards |&gt;\n  filter(height == max(height))\n\n\n\n   name      house height spells\n1 Harry Gryffindor   1.78     60"
+  },
+  {
+    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-with-filter-1",
+    "href": "lectures/12-data-wrangling2/slides.html#group_by-with-filter-1",
+    "title": "Data Warngling II",
+    "section": "group_by() with filter()",
+    "text": "group_by() with filter()\n\nwizards |&gt;\n  group_by(house) |&gt; \n  filter(height == max(height))\n\n\n\n# A tibble: 2 × 4\n# Groups:   house [2]\n  name  house      height spells\n  &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;\n1 Harry Gryffindor   1.78     60\n2 Draco Slytherin    1.75     55\n\n\n\n\n\nChanges the scope of functions inside filter() to operate within groups."
+  },
+  {
+    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-with-arrange",
+    "href": "lectures/12-data-wrangling2/slides.html#group_by-with-arrange",
+    "title": "Data Warngling II",
+    "section": "group_by() with arrange()",
+    "text": "group_by() with arrange()\n\n\nwizards |&gt;\n  arrange(desc(height))\n\n\n\n       name      house height spells\n1     Harry Gryffindor   1.78     60\n2     Draco  Slytherin   1.75     55\n3  Hermione Gryffindor   1.65     70\n4 Bellatrix  Slytherin   1.57     75"
+  },
+  {
+    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-with-arrange-1",
+    "href": "lectures/12-data-wrangling2/slides.html#group_by-with-arrange-1",
+    "title": "Data Warngling II",
+    "section": "group_by() with arrange()",
+    "text": "group_by() with arrange()\n\nwizards |&gt;\n  group_by(house) |&gt; \n  arrange(desc(height))\n\n\n\n# A tibble: 4 × 4\n# Groups:   house [2]\n  name      house      height spells\n  &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;\n1 Harry     Gryffindor   1.78     60\n2 Draco     Slytherin    1.75     55\n3 Hermione  Gryffindor   1.65     70\n4 Bellatrix Slytherin    1.57     75\n\n\n\n\n\narrange() ignores group_by() and is always global. Why?"
+  },
+  {
+    "objectID": "lectures/12-data-wrangling2/slides.html#section-3",
+    "href": "lectures/12-data-wrangling2/slides.html#section-3",
+    "title": "Data Warngling II",
     "section": "",
-    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\n\n\n# local mappings\nggplot(data = penguins) +\n  geom_point(\n    aes(x = bill_length_mm, \n        y = flipper_length_mm))"
+    "text": "wizards |&gt;\n  arrange(house, height)\n\n\n\n       name      house height spells\n1  Hermione Gryffindor   1.65     70\n2     Harry Gryffindor   1.78     60\n3 Bellatrix  Slytherin   1.57     75\n4     Draco  Slytherin   1.75     55"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-4",
-    "href": "lectures/15-dataviz2/slides.html#section-4",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm)) +\n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n\n\n\n\n\n\n\n\n\n\n\n# local mappings (be careful!!!)\nggplot(data = penguins) +\n  geom_point(\n    aes(x = bill_length_mm, \n        y = flipper_length_mm))  +\n  geom_smooth(method = \"lm\")\n\n\n\nError in `geom_smooth()`:\n! Problem while computing stat.\nℹ Error occurred in the 2nd layer.\nCaused by error in `compute_layer()`:\n! `stat_smooth()` requires the following missing aesthetics: x and y."
+    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-with-mutate",
+    "href": "lectures/12-data-wrangling2/slides.html#group_by-with-mutate",
+    "title": "Data Warngling II",
+    "section": "group_by() with mutate()",
+    "text": "group_by() with mutate()\n\n\nwizards |&gt;\n  mutate(height_z = (height - mean(height)) / sd(height))\n\n\n\n       name      house height spells   height_z\n1     Harry Gryffindor   1.78     60  0.9630715\n2 Bellatrix  Slytherin   1.57     75 -1.2233611\n3  Hermione Gryffindor   1.65     70 -0.3904344\n4     Draco  Slytherin   1.75     55  0.6507240"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-5",
-    "href": "lectures/15-dataviz2/slides.html#section-5",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm)) +\n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n\n\n\n\n\n\n\n\n\n# local mappings (be careful!!!)\nggplot(data = penguins) +\n  geom_point(aes(x = bill_length_mm, \n                 y = flipper_length_mm))  +\n  geom_smooth(aes(x = bill_length_mm, \n                  y = flipper_length_mm),\n              method = \"lm\")"
+    "objectID": "lectures/12-data-wrangling2/slides.html#group_by-with-mutate-1",
+    "href": "lectures/12-data-wrangling2/slides.html#group_by-with-mutate-1",
+    "title": "Data Warngling II",
+    "section": "group_by() with mutate()",
+    "text": "group_by() with mutate()\n\nwizards |&gt;\n  group_by(house) |&gt; \n  mutate(height_z = (height - mean(height)) / sd(height))\n\n\n\n# A tibble: 4 × 5\n# Groups:   house [2]\n  name      house      height spells height_z\n  &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;\n1 Harry     Gryffindor   1.78     60    0.707\n2 Bellatrix Slytherin    1.57     75   -0.707\n3 Hermione  Gryffindor   1.65     70   -0.707\n4 Draco     Slytherin    1.75     55    0.707\n\n\n\n\n\nChanges the scope of functions inside mutate() to operate within groups."
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-6",
-    "href": "lectures/15-dataviz2/slides.html#section-6",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm,\n           color = species)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\n\n\n# local mappings\nggplot(data = penguins) +\n  geom_point(\n    aes(x = bill_length_mm, \n        y = flipper_length_mm,\n        color = species))"
+    "objectID": "lectures/12-data-wrangling2/slides.html#statefulness",
+    "href": "lectures/12-data-wrangling2/slides.html#statefulness",
+    "title": "Data Warngling II",
+    "section": "Statefulness",
+    "text": "Statefulness\nWhat will this produce?\n\nwizards |&gt; \n  group_by(house) |&gt; \n  mutate(height_z = (height - mean(height)) / sd(height)) |&gt; \n  summarize(mean(height_z))\n\n\n\n# A tibble: 2 × 2\n  house      `mean(height_z)`\n  &lt;chr&gt;                 &lt;dbl&gt;\n1 Gryffindor         1.22e-15\n2 Slytherin         -8.88e-16\n\n\n\nOnce grouped, a data frame stays grouped until reduced to one-row-per group or it is ungrouped."
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-7",
-    "href": "lectures/15-dataviz2/slides.html#section-7",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm,\n           color = species)) +\n  geom_point(size = 3) +\n  geom_smooth(method = \"lm\")\n\n\n\n\n\n\n\n\n\n\n\n\n# global and local mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm)) +\n  geom_point(size=3, aes(color = species)) +\n  geom_smooth(method = \"lm\",\n              color = \"black\")"
+    "objectID": "lectures/12-data-wrangling2/slides.html#statefulness-1",
+    "href": "lectures/12-data-wrangling2/slides.html#statefulness-1",
+    "title": "Data Warngling II",
+    "section": "Statefulness",
+    "text": "Statefulness\nWhat will this produce?\n\nwizards |&gt; \n  group_by(house) |&gt; \n  mutate(height_z = (height - mean(height)) / sd(height)) |&gt; \n  ungroup() |&gt; \n  summarize(mean(height_z))\n\n\n\n# A tibble: 1 × 1\n  `mean(height_z)`\n             &lt;dbl&gt;\n1         1.11e-16"
   },
   {
-    "objectID": "lectures/15-dataviz2/slides.html#section-8",
-    "href": "lectures/15-dataviz2/slides.html#section-8",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "# global mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm,\n           color = species)) +\n  geom_smooth(method = \"lm\") +\n  geom_point(size = 3)\n\n\n\n\n\n\n\n\n\n\n\n\n# global and local mappings\nggplot(data = penguins,\n       aes(x = bill_length_mm, \n           y = flipper_length_mm)) +\n  geom_smooth(method = \"lm\",\n              color = \"black\") +\n  geom_point(size=3, aes(color = species))"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#additional-graphical-elements",
-    "href": "lectures/15-dataviz2/slides.html#additional-graphical-elements",
-    "title": "The Grammar of Graphics",
-    "section": "Additional graphical elements",
-    "text": "Additional graphical elements\n\nLabels\n\nTitle\nSubtitle\nAxis labels\n\nAnnotations\nThemes\nFacets\nScales"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#labels",
-    "href": "lectures/15-dataviz2/slides.html#labels",
-    "title": "The Grammar of Graphics",
-    "section": "Labels",
-    "text": "Labels\nlabs() allows you to add\nlabs(\n  title = \"...\",\n  subtitle = \"...\",\n  x = \"...\",\n  y = \"...\"\n)"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-9",
-    "href": "lectures/15-dataviz2/slides.html#section-9",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point()"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-10",
-    "href": "lectures/15-dataviz2/slides.html#section-10",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point() +\n  labs(\n    title = \"Bill and flipper length\",\n    subtitle = \"Positive relation\",\n    x = \"Bill length (mm)\",\n    y = \"Flipper length (mm)\")"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#facets-1",
-    "href": "lectures/15-dataviz2/slides.html#facets-1",
-    "title": "The Grammar of Graphics",
-    "section": "Facets",
-    "text": "Facets\n\nfacet_wrap() wraps a 1d sequence of panels into 2d\nfacet_grid() forms a matrix of panels defined by row and column faceting variables\n\nfacet_grid(rows = vars(...))\nfacet_grid(cols = vars(...))\nfacet_grid(row_var ~ col_var)"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-11",
-    "href": "lectures/15-dataviz2/slides.html#section-11",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_wrap(~ species)"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-12",
-    "href": "lectures/15-dataviz2/slides.html#section-12",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_wrap(~ species, nrow = 2)"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-13",
-    "href": "lectures/15-dataviz2/slides.html#section-13",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_grid(. ~ species)  # facet_grid(cols = vars(species))"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-14",
-    "href": "lectures/15-dataviz2/slides.html#section-14",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_grid(species ~ .)  # facet_grid(rows = vars(species))"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-15",
-    "href": "lectures/15-dataviz2/slides.html#section-15",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_grid(species ~ island)"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#theme-functions",
-    "href": "lectures/15-dataviz2/slides.html#theme-functions",
-    "title": "The Grammar of Graphics",
-    "section": "Theme Functions",
-    "text": "Theme Functions\n\ntheme_gray()\ntheme_bw()\ntheme_minimal()\ntheme_classic()\ntheme_light()\n\n\nThere’s also the package \"ggthemes\"\nhttps://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-16",
-    "href": "lectures/15-dataviz2/slides.html#section-16",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point()"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-17",
-    "href": "lectures/15-dataviz2/slides.html#section-17",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point() +\n  theme_classic()"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-18",
-    "href": "lectures/15-dataviz2/slides.html#section-18",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point() +\n  theme_bw()"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-19",
-    "href": "lectures/15-dataviz2/slides.html#section-19",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point() +\n  theme_minimal()"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#scale-functions",
-    "href": "lectures/15-dataviz2/slides.html#scale-functions",
-    "title": "The Grammar of Graphics",
-    "section": "Scale Functions",
-    "text": "Scale Functions\n\nscale_x_continuous()\nscale_y_continuous()\nscale_color_manual()\nscale_fill_manual()\nETC"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-20",
-    "href": "lectures/15-dataviz2/slides.html#section-20",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point(size = 3)"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-21",
-    "href": "lectures/15-dataviz2/slides.html#section-21",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point(size = 3) +\n  scale_x_continuous(limits = c(0, 60))"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-22",
-    "href": "lectures/15-dataviz2/slides.html#section-22",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point(size = 3) +\n  scale_x_continuous(limits = c(0, 60)) +\n  scale_y_continuous(limits = c(160, 240))"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-23",
-    "href": "lectures/15-dataviz2/slides.html#section-23",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point(size = 3)"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-24",
-    "href": "lectures/15-dataviz2/slides.html#section-24",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = flipper_length_mm,\n                     color = species)) +\n  geom_point(size = 3) +\n  scale_color_manual(\n    values = c(\"orange\", \"magenta\", \"turquoise\"))"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-25",
-    "href": "lectures/15-dataviz2/slides.html#section-25",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "big_males &lt;- penguins |&gt; \n  filter(sex == \"male\") |&gt; \n  group_by(species) |&gt; \n  slice_max(body_mass_g)\n\nbig_males\n\n\n\n# A tibble: 3 × 8\n# Groups:   species [3]\n  species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie    Biscoe           43.2          19                 197        4775\n2 Chinstrap Dream            52            20.7               210        4800\n3 Gentoo    Biscoe           49.2          15.2               221        6300\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-26",
-    "href": "lectures/15-dataviz2/slides.html#section-26",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot() +\n  geom_point(\n    data = filter(penguins, sex == \"male\"),\n    aes(x = bill_length_mm,\n        y = flipper_length_mm,\n        color = species),\n    size = 0.5, alpha = 0.5) +\n  geom_point(\n    data = big_males,\n    aes(x = bill_length_mm,\n        y = flipper_length_mm,\n        color = species),\n    size = 4) +\n  theme_minimal()"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-27",
-    "href": "lectures/15-dataviz2/slides.html#section-27",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "Because the mappings for x, y and color are the same in both calls to geom_point()\n\nx = bill_length_mm\ny = flipper_length_mm\ncolor = species\n\nwe can simplify the command in the previous slides as follows (next slide)"
-  },
-  {
-    "objectID": "lectures/15-dataviz2/slides.html#section-28",
-    "href": "lectures/15-dataviz2/slides.html#section-28",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "ggplot(\n  data = filter(penguins, sex == \"male\"),\n  aes(x = bill_length_mm,\n      y = flipper_length_mm,\n      color = species)) +\n  geom_point(size = 2, alpha = 0.5) +\n  geom_point(\n    data = big_males,\n    size = 4) +\n  theme_minimal()"
-  },
-  {
-    "objectID": "lectures/34-json/slides.html#json-data",
-    "href": "lectures/34-json/slides.html#json-data",
-    "title": "JSON Data",
-    "section": "JSON Data",
-    "text": "JSON Data\nJSON stands for JavaScript Object Notation\nLet’s see the data types, and the kind of data containers"
-  },
-  {
-    "objectID": "lectures/34-json/slides.html#json-data-types",
-    "href": "lectures/34-json/slides.html#json-data-types",
-    "title": "JSON Data",
-    "section": "JSON data types",
-    "text": "JSON data types\n\nstring: \"hello\"\nnumbers: 1, 2, 3\nboolean: true and false\nnull"
-  },
-  {
-    "objectID": "lectures/34-json/slides.html#container-json-arrays",
-    "href": "lectures/34-json/slides.html#container-json-arrays",
-    "title": "JSON Data",
-    "section": "Container: JSON arrays",
-    "text": "Container: JSON arrays\n\nUnnamed ordered arrays\n\n\nExamples\n\n[\"A\", \"B\", \"C\", \"D\"]\n[1, 2, 3, 4, 5]\n[true, true, false]"
-  },
-  {
-    "objectID": "lectures/34-json/slides.html#container-json-object",
-    "href": "lectures/34-json/slides.html#container-json-object",
-    "title": "JSON Data",
-    "section": "Container: JSON object",
-    "text": "Container: JSON object\n\nKey-value pairs\n\n\n{ \"name\": value}\n\n\n\n\nExample\n{ \n  \"class\": \"STAT 133\",\n  \"semester\": \"Spring\",\n  \"year\": 2016,\n  \"prereqs\": null\n}"
-  },
-  {
-    "objectID": "lectures/34-json/slides.html#json-object-and-array",
-    "href": "lectures/34-json/slides.html#json-object-and-array",
-    "title": "JSON Data",
-    "section": "JSON object and array",
-    "text": "JSON object and array\n\n\n\n\n\n\n\n\nArray\n[\"Leia\", \"female\", 1.5, true]\n\nObject\n{ \n  \"name\": \"Leia\",\n  \"gender\": \"female\",\n  \"height\": 1.5,\n  \"force\": true\n}"
-  },
-  {
-    "objectID": "lectures/34-json/slides.html#section-2",
-    "href": "lectures/34-json/slides.html#section-2",
-    "title": "JSON Data",
-    "section": "",
-    "text": "Data in a JSON object\n\n{\n  \"name\": [\"Leia\", \"Luke\", \"Han\"],\n  \"gender\": [\"female\", \"male\", \"male\"],\n  \"height\": [1.6, 1.7, 1.8],\n  \"force\": [true, true, false]\n}\n\n\n\n\nData in a JSON array\n\n\n[\n  {\"name\": \"Leia\", \"gender\": \"female\", \"height\": 1.6, \"force\": true},\n  {\"name\": \"Luke\", \"gender\": \"male\", \"height\": 1.7, \"force\": true},\n  {\"name\": \"Han\", \"gender\": \"male\", \"height\": 1.8, \"force\": false}\n]"
-  },
-  {
-    "objectID": "lectures/34-json/slides.html#section-3",
-    "href": "lectures/34-json/slides.html#section-3",
-    "title": "JSON Data",
-    "section": "",
-    "text": "json1 = '[1, 2, 3, 4, 5]'\n\nr1 = fromJSON(json1)\nclass(r1)\n\n\n\n[1] \"integer\"\n\n\n\n\n\n\n\njson2 = '[true, true, false]'\n\nr2 = fromJSON(json2)\nclass(r2)\n\n\n\n[1] \"logical\""
-  },
-  {
-    "objectID": "lectures/34-json/slides.html#section-4",
-    "href": "lectures/34-json/slides.html#section-4",
-    "title": "JSON Data",
-    "section": "",
-    "text": "json3 = '{\"name\": \"Leia\", \"gender\": \"female\", \"height\": 1.6, \"force\": true}'\n\n\n\nfromJSON(json3)\n\n\n\n$name\n[1] \"Leia\"\n\n$gender\n[1] \"female\"\n\n$height\n[1] 1.6\n\n$force\n[1] TRUE"
-  },
-  {
-    "objectID": "lectures/34-json/slides.html#section-5",
-    "href": "lectures/34-json/slides.html#section-5",
-    "title": "JSON Data",
-    "section": "",
-    "text": "json6 = fromJSON('{\n  \"name\": [\"Leia\", \"Luke\", \"Han\"],\n  \"gender\": [\"female\", \"male\", \"male\"],\n  \"height\": [1.6, 1.7, 1.8],\n  \"force\": [true, true, false]\n}')\n\nas.data.frame(json6)\n\n\n\n  name gender height force\n1 Leia female    1.6  TRUE\n2 Luke   male    1.7  TRUE\n3  Han   male    1.8 FALSE"
-  },
-  {
-    "objectID": "lectures/34-json/slides.html#api-open-notify",
-    "href": "lectures/34-json/slides.html#api-open-notify",
-    "title": "JSON Data",
-    "section": "API “Open Notify”",
-    "text": "API “Open Notify”\nAPI stands for Application Programming Interface. In simpler terms, think of API as a data sharing interface.\n\nurl = \"http://api.open-notify.org/iss-now.json\"\n\nx = fromJSON(url)\nx\n\n$iss_position\n$iss_position$longitude\n[1] \"92.8037\"\n\n$iss_position$latitude\n[1] \"-42.8976\"\n\n\n$timestamp\n[1] 1775934820\n\n$message\n[1] \"success\""
+    "objectID": "lectures/12-data-wrangling2/slides.html#shortcut-.by",
+    "href": "lectures/12-data-wrangling2/slides.html#shortcut-.by",
+    "title": "Data Warngling II",
+    "section": "Shortcut: .by",
+    "text": "Shortcut: .by\nMost \"dplyr\" functions have a .by argument to apply the function to the groups of another variable.\n\nNot stateful\nGood for single line operations\n\n\n\nwizards |&gt; \n    summarize(mean(height), .by = house)\n\n\n\n       house mean(height)\n1 Gryffindor        1.715\n2  Slytherin        1.660"
   },
   {
     "objectID": "lectures/31-choropleth-maps/slides.html#section",
