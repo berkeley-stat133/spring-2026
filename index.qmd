@@ -474,7 +474,7 @@ Raster Data Maps
 
 Lab 12: slides | PS11
 
-Dashboard Demo | Proj6
+Text Analysis 1 | Proj6
 :::
 
 ::: {.column width="45%"}
@@ -506,9 +506,9 @@ Dashboard Demo | Proj6
 
 ::: {.column width="35%"}
 #### Description
-JSON Data
+Text Analysis 2
 
-APIs
+Text Analysis 3
 
 Lab 13: [__Quiz 6__]{.label-Quiz} | slides | PS12
 
@@ -544,9 +544,9 @@ XML Data
 
 ::: {.column width="35%"}
 #### Description
-Text Analysis 1
+JSON Data
 
-Text Analysis 2
+APIs
 
 Lab 14: slides
 
