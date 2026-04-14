@@ -510,9 +510,9 @@ Text Analysis 2
 
 Text Analysis 3
 
-Lab 13: slides | PS12
+Lab 13: slides 
 
-XML Data
+JSON Data
 :::
 
 ::: {.column width="45%"}
@@ -544,9 +544,9 @@ XML Data
 
 ::: {.column width="35%"}
 #### Description
-JSON Data
-
 APIs
+
+XML & HTML Data
 
 Lab 14: [__Quiz 6__]{.label-Quiz} | slides
 
@@ -557,7 +557,7 @@ Closing Lecture
 #### Due
 &nbsp;
 
-[PS12]{.label-Homework}
+&nbsp;
 
 &nbsp;
 
