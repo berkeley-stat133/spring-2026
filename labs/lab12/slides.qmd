@@ -1,10 +1,9 @@
 ---
-title: "Quarto Websites I"
+title: "Lab 12"
 subtitle: "Creating static websites with Quarto"
+author: "STAT 133"
 format: stat133slides-revealjs
-revealjs-plugins:
-  - drop
-chalkboard: true
+embed-resources: true
 ---
 
 ```{r setup, include=FALSE}
@@ -12,6 +11,29 @@ knitr::opts_chunk$set(echo = TRUE, error = TRUE)
 library(tidyverse)
 ```
 
+
+# Announcements
+
+## Quiz Rescheduled
+
+Quiz 6 will now take place on 4/30, during lab time as usual. 
+
+- Next week during lab we will continue working on Quarto Websites. 
+
+
+# Why a Quarto Website?
+
+A personal website is a valuable tool to publish your work, and Quarto makes it easy:
+
+- Host live demos, visualizations, and dashboards 
+
+- No server is needed, so it's fast
+
+- Free to host, easy to maintain
+
+## Disclaimer on Data Privacy
+
+Building a personal website is a great way to showcase your work to potential employers, but we recognize that not everyone is comfortable posting personal (resume) information publicly. For today's publication assignment, feel free to use placeholder/dummy information in place of anything you'd rather keep private.
 
 # Examples
 
@@ -34,34 +56,29 @@ library(tidyverse)
 
 # Creating a Quarto Website
 
-## Open a New Quarto Website in Positron
+## New Quarto Website
 
-Steps to open a new Quarto Website in Positron
+:::: {.columns}
+::: {.column}
+[In Positron:]{.hilit}
 
-1) Click the [New]{.hilit} button (top-left corner in Positron)
-
+1) Click [New]{.hilit} (top-left corner)
 2) Select [New File ...]{.hilit}
-
-3) Choose [Quarto Project Quarto]{.hilit}
-
+3) Choose [Quarto Project]{.hilit}
 4) Select [Website Project]{.hilit}
+5) Choose a directory and name it (e.g. `webdemo`)
+:::
 
-5) Choose a directory for the website, and give it a name (e.g. `webdemo`)
+::: {.column .fragment}
+[In RStudio:]{.mdlit}
 
-
-## Open a New Quarto Website in RStudio
-
-Steps to open a new Quarto Website in RStudio
-
-1) Click on the [File]{.mdlit} tab in the menu bar
-
+1) Click [File]{.mdlit} in the menu bar
 2) Select [New Project ...]{.mdlit}
-
 3) Choose [Quarto Website]{.mdlit}
-
-4) Select a location for your project, and give it a name (e.g. `webdemo`)
-
+4) Select a location and name it (e.g. `webdemo`)
 5) Click [Create]{.mdlit}
+:::
+::::
 
 
 #  Website's File Structure
@@ -250,43 +267,75 @@ When a website is previewed or rendered, you will see an additional folder, `_si
 
 # Your Turn
 
-## Let's add more content
+Navigate to `BCourses > Files > Lab Materials > Lab 12 > pub11-walkthrough.html` for a walkthrough of today's publication assignment. 
 
-- Customize `index.qmd`
-    + Write a welcome blurb
-    + Insert an image
+## Publication 11: Personal Website
 
-- Customize `about.qmd`
-    + Your Name
-    + Your Major(s)/Minor
-    + Personal fun fact
+For Pub 11, you will build and publish a personal Quarto website with four tabs/pages:
 
+. . .
 
-## Add an `analysis.qmd` page
-
-- Open a new `.qmd` file (to be used for a small analysis).
-- Save this file as `analysis.qmd`
-- In the YAML file, include `analysis.qmd` under `- about.qmd`
-(so that your _analysis_ page shows up in the navbar)
-- Add some content to `analysis.qmd`:
-    + Include a yaml header (with a title)
-    + Include a code chunk to load `tidyverse`
-    + Write some narrative and more code chunks
-    + e.g. obtain a graphic and some summary outputs using one of the data sets (`mtcars`, `storms`, `penguins` from `"palmerpenguins"`)
+| Page | Content |
+|------|---------|
+| **Home** | Introduction / welcome |
+| **About** | Background, interests, fun facts |
+| **Resume** | Education, skills, experience |
+| **Projects** | Your Pub 7 dashboard + brief description |
 
 
-## Preview website
+## Publishing website to Netlify
 
-- After you've saved the changes in `analysis.qmd`, preview your website.
+Once finished with the walkthrough, please upload your site to netlify:
 
-- Continue modifying website:
-    + Try to include a simple quarto dashboard as another page.
+- Locate the website folder (here named `lab12-website`)
 
-- Keep previewing website
-
-
-## Publish website to Netlify
-
-- Locate the folder `_site/`
 - This is the folder that you need to upload to Netlify
+
+![](images/netlify-1.png)
+
+
+## Publishing website to Netlify
+
+- Click on 'Add new project' in Netlify
+
+- Drag and drop your website folder to 'Upload your project files'
+
+![](images/netlify-2.png)
+
+
+## Publishing website to Netlify
+
+- Click on 'Quick Setup' to update project name 
+
+- Rename the link to 'your-name.netlify.app'
+
 - Submit netlify link to bCourses (Pub 11)
+
+![](images/netlify-3.png)
+
+# Problem Set 10
+
+## Pset 10
+
+Available in bCourses:
+
+See [Assignments tab \> Problem Sets \> PS10]{.bold-hilit}
+
+You'll find 2 files:
+
+-   `ps10.html`: instructions
+
+-   `ps10.qmd`: template file to write your answers
+
+. . .
+
+In case of trouble: Go to Files tab, folder `problem-sets`, folder `ps10`, and download the `qmd` file.
+
+Sometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome).
+
+## Pset 10 Submission
+
+-   Submit your `qmd` and `html` files to bCourses.
+-   Use assignment problem set **ps10**
+-   Graded credit / no-credit
+-   Credit for evidence of earnest engagement (just don't submit a blank or empty template file)
