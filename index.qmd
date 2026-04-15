@@ -470,7 +470,7 @@ Lab 11: [__Quiz 5__]{.label-Quiz} | [slides](labs/lab11/slides.html) | [PS10](ht
 #### Description
 [Shapefiles](lectures/32-shapefiles/slides.html)
 
-Raster Data Maps
+[Raster Data Maps](lectures/33-raster/slides.html)
 
 Lab 12: slides | PS11
 
