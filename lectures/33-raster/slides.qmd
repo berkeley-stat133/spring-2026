@@ -275,22 +275,44 @@ time (days) : 1895-01-01 to 2026-02-01 (2 steps)
 
 ##
 
+:::: {.columns}
+::: {.column width="40%"}
 Dimensions:
 
 - nrow: 596
 - ncol: 1385
 - nlyr: 1574
+:::
 
-. . .
-
+::: {.column width="60%" .fragment}
 One layer per month:
 
 - 1st layer: January 1895
 - 12th layer: December 1895
+- 13th layer: January 1896
 - layer 120: December 1904
-- layer 1564: April 2025
+:::
+::::
+
+. . .
+
+\
+
+What is the layer number of April 2025?
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+```{r}
+#| echo: false
+# (2000 - 1895) * 12
+```
 
 ## Layer 1: January 1895 {.smaller}
+
+. . .
 
 ```{r}
 #| eval: false
@@ -314,6 +336,8 @@ time (days) : 1895-01-01
 
 ## Layer 1564: April 2025 {.smaller}
 
+. . .
+
 ```{r}
 #| eval: false
 # layer 1564 - April: (2025-1895)*12 + 4
@@ -333,11 +357,12 @@ unit        : degree_Celsius
 time (days) : 2025-04-01 
 ```
 
+
 ## Layer 1564: April 2025 {.smaller}
 
 ```{r}
 #| eval: false
-# "terra" has its plot() method
+# "terra" has its own plot() method
 plot(dat[[1564]])
 ```
 
@@ -345,6 +370,7 @@ plot(dat[[1564]])
 
 ```{r}
 #| echo: false
+#| out-width: 90%
 plot(dat)
 ```
 
@@ -415,6 +441,8 @@ plot(dat, col = viridis(n = 6))
 
 ## Converting temp to Fahrenheit
 
+. . .
+
 ```{r}
 #| eval: false
 plot(dat[[1564]] * (9/5) + 32)
@@ -424,6 +452,7 @@ plot(dat[[1564]] * (9/5) + 32)
 
 ```{r}
 #| echo: false
+#| out-width: 90%
 plot(dat * (9/5) + 32)
 ```
 
@@ -443,10 +472,42 @@ apr_2025 = as.data.frame(dat[[1564]], xy = TRUE)
 head(apr_2025)
 ```
 
+. . .
+
 ```{r}
 #| echo: false
 apr_2025 = as.data.frame(dat, xy = TRUE)
 head(apr_2025)
+```
+
+. . .
+
+\ 
+
+Notice the argument `xy = TRUE`; this gives you the `x` (long) and `y` (lat) coordinates!
+
+
+##
+
+```{r}
+#| eval: false
+ggplot() +
+  geom_raster(data = apr_2025, aes(x = x, y = y, fill = tavg_1564))
+```
+
+. . .
+
+```
+Warning message:
+Raster pixels are placed at uneven horizontal intervals and will be shifted
+ℹ Consider using `geom_tile()` instead. 
+```
+
+```{r}
+#| echo: false
+#| out-width: 75%
+ggplot() +
+  geom_raster(data = apr_2025, aes(x = x, y = y, fill = tavg_1564))
 ```
 
 
@@ -454,6 +515,7 @@ head(apr_2025)
 
 ```{r}
 #| output-location: fragment
+#| out-width: 85%
 ggplot() +
   geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564))
 ```
@@ -462,6 +524,8 @@ ggplot() +
 ##
 
 ```{r}
+#| output-location: fragment
+#| out-width: 85%
 ggplot() +
   geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564)) +
   scale_fill_viridis_c()
@@ -473,6 +537,7 @@ ggplot() +
 . . .
 
 ```{r}
+#| output-location: fragment
 us_states = ne_states(
   country = "United States of America", 
   returnclass = "sf")
@@ -483,10 +548,49 @@ ggplot() +
 ```
 
 
-## 
+## {auto-animate=true}
+
+```{r}
+#| eval: false
+# Superimposing polygons to temperatures
+ggplot()
+```
+
+## {auto-animate=true}
+
+```{r}
+#| eval: false
+# Superimposing polygons to temperatures
+ggplot() +
+  geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564))
+```
+
+## {auto-animate=true}
+
+```{r}
+#| eval: false
+# Superimposing polygons to temperatures
+ggplot() +
+  geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564)) +
+  geom_sf(data = us_states, fill = "#FFFFFF00", color = "white") 
+```
+
+## {auto-animate=true}
 
 ```{r}
 #| output-location: fragment
+#| out-width: 75%
+# Superimposing polygons to temperatures
+ggplot() +
+  geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564)) +
+  geom_sf(data = us_states, fill = "#FFFFFF00", color = "white") +
+  coord_sf(xlim = c(-124.7083, -67), ylim = c(24.5417, 49.37503))
+```
+
+
+## {auto-animate=true}
+
+```{r}
 # Superimposing polygons to temperatures
 ggplot() +
   geom_tile(data = apr_2025, aes(x = x, y = y, fill = tavg_1564)) +
