@@ -98,62 +98,50 @@
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/labs/lab12/slides.html</loc>
-    <lastmod>2026-04-12T04:38:31.584Z</lastmod>
+    <lastmod>2026-04-16T14:41:05.931Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab3/slides.html</loc>
-    <lastmod>2026-02-03T04:02:20.789Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab4/slides.html</loc>
+    <lastmod>2026-02-12T15:58:08.344Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab5/data-cleaning.html</loc>
-    <lastmod>2026-02-19T05:03:27.951Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab2/slides.html</loc>
+    <lastmod>2026-02-24T00:30:32.872Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab5/demo-slides.html</loc>
-    <lastmod>2026-02-22T17:13:36.938Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab5/slides.html</loc>
+    <lastmod>2026-02-19T05:03:27.952Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab10/slides.html</loc>
-    <lastmod>2026-04-02T17:07:38.969Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab10/solns-data-prep.html</loc>
+    <lastmod>2026-03-19T18:43:35.333Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab11/solns-pub10.html</loc>
-    <lastmod>2026-04-10T15:13:09.491Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab10/solns-pub8.html</loc>
+    <lastmod>2026-03-19T15:14:55.821Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab9/slides.html</loc>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab11/slides.html</loc>
+    <lastmod>2026-04-09T15:25:54.172Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab9/solns-demo.html</loc>
     <lastmod>2026-03-19T15:14:55.822Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab7/incremental-graph.html</loc>
-    <lastmod>2026-03-05T16:04:11.110Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab7/slides.html</loc>
+    <lastmod>2026-03-19T15:14:55.822Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab7/viz-effects.html</loc>
-    <lastmod>2026-03-05T16:04:11.110Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab6/closeread-template.html</loc>
+    <lastmod>2026-02-26T15:38:03.327Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab6/slides.html</loc>
-    <lastmod>2026-02-26T15:38:03.328Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab6/scrollytelling-demo.html</loc>
+    <lastmod>2026-02-26T15:38:03.327Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab1/slides.html</loc>
-    <lastmod>2026-01-25T17:54:06.880Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab8/storms-dash1-basic.html</loc>
-    <lastmod>2026-03-12T15:16:42.390Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab8/demo-dashboard.html</loc>
-    <lastmod>2026-03-09T23:53:35.664Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab8/storms-dash3-rows-layout.html</loc>
-    <lastmod>2026-03-12T15:16:42.390Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab8/slides.html</loc>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab8/storms-dash2-value-boxes.html</loc>
     <lastmod>2026-03-12T15:16:42.390Z</lastmod>
   </url>
   <url>
@@ -161,48 +149,64 @@
     <lastmod>2026-03-12T15:16:42.390Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab8/storms-dash2-value-boxes.html</loc>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab8/slides.html</loc>
     <lastmod>2026-03-12T15:16:42.390Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab6/scrollytelling-demo.html</loc>
-    <lastmod>2026-02-26T15:38:03.327Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab8/storms-dash3-rows-layout.html</loc>
+    <lastmod>2026-03-12T15:16:42.390Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab6/closeread-template.html</loc>
-    <lastmod>2026-02-26T15:38:03.327Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab8/demo-dashboard.html</loc>
+    <lastmod>2026-03-09T23:53:35.664Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab7/slides.html</loc>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab8/storms-dash1-basic.html</loc>
+    <lastmod>2026-03-12T15:16:42.390Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab1/slides.html</loc>
+    <lastmod>2026-01-25T17:54:06.880Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab6/slides.html</loc>
+    <lastmod>2026-02-26T15:38:03.328Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab7/viz-effects.html</loc>
+    <lastmod>2026-03-05T16:04:11.110Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab7/incremental-graph.html</loc>
+    <lastmod>2026-03-05T16:04:11.110Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab9/slides.html</loc>
     <lastmod>2026-03-19T15:14:55.822Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab9/solns-demo.html</loc>
-    <lastmod>2026-03-19T15:14:55.822Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab11/solns-pub10.html</loc>
+    <lastmod>2026-04-10T15:13:09.491Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab11/slides.html</loc>
-    <lastmod>2026-04-09T15:25:54.172Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab10/slides.html</loc>
+    <lastmod>2026-04-02T17:07:38.969Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab10/solns-pub8.html</loc>
-    <lastmod>2026-03-19T15:14:55.821Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab5/demo-slides.html</loc>
+    <lastmod>2026-02-22T17:13:36.938Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab10/solns-data-prep.html</loc>
-    <lastmod>2026-03-19T18:43:35.333Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab5/data-cleaning.html</loc>
+    <lastmod>2026-02-19T05:03:27.951Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab5/slides.html</loc>
-    <lastmod>2026-02-19T05:03:27.952Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab3/slides.html</loc>
+    <lastmod>2026-02-03T04:02:20.789Z</lastmod>
   </url>
   <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab2/slides.html</loc>
-    <lastmod>2026-02-24T00:30:32.872Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab4/slides.html</loc>
-    <lastmod>2026-02-12T15:58:08.344Z</lastmod>
+    <loc>https://stat133.berkeley.edu/spring-2026/labs/lab12/pub11-walkthrough.html</loc>
+    <lastmod>2026-04-16T14:41:05.931Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/ed-netiquette.html</loc>
@@ -214,7 +218,7 @@
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/index.html</loc>
-    <lastmod>2026-04-15T04:16:55.603Z</lastmod>
+    <lastmod>2026-04-16T14:42:01.496Z</lastmod>
   </url>
   <url>
     <loc>https://stat133.berkeley.edu/spring-2026/info/about.html</loc>
