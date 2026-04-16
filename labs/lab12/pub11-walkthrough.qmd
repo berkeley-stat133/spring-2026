@@ -1,0 +1,429 @@
+---
+title: "Pub 11: Quarto Website Walkthrough"
+author: STAT 133
+format: 
+  html:
+    toc: true
+    number-sections: true
+embed-resources: true
+---
+
+::: {.callout-note icon=false}
+## About
+
+The goal of this publication is to show you how to create a basic personal 
+Quarto website that you can use to start creating a portfolio. And also how to
+publish it on __Netlify__.
+:::
+
+
+-----
+
+
+# Quarto Website Reminder
+
+The official documentation for Quarto Websites is:
+
+<https://quarto.org/docs/websites/>
+
+Creating a basic Quarto website is super easy by following these steps in Positron:
+
+1) Click on the __New__ tab in the top left corner
+
+2) Select __New File__
+
+3) Choose __Quarto Project__ > __Website Project__
+
+4) Select a location/directory for your project, and give it a name (e.g. `website`)
+
+5) Click __Create__
+
+And in RStudio:
+
+1) Click on the __File__ tab in the menu bar
+
+2) Select __New Project ...__ 
+
+3) Choose __Quarto Website__
+
+4) Select a location/directory for your project, and give it a name (e.g. `website`)
+
+5) Click __Create__
+
+
+## Your Turn: Create a Quarto Website
+
+Follow the steps listed above to create a Quarto Website for this workshop.
+
+
+## File Structure
+
+Positron will open a new session containing your Quarto website with the 
+following file structure:
+
+```
+website/
+  .quarto/
+  _quarto.yml
+  index.qmd
+  about.qmd
+  styles.css
+```
+
+
+
+in RStudio:
+
+```
+website/
+  .quarto/
+  _quarto.yml
+  index.qmd
+  about.qmd
+  styles.css
+```
+
+In Positron, the `.quarto` and in RStudio, the `.Rproj` extensions are auxiliary files used by RStudio to recognize that the contents of this directory constitute a project. 
+
+The yaml file `_quarto.yml` is the configuration file.
+
+The quarto files `index.qmd` and `about.qmd` are the default files that get
+rendered into the pages of the actual website.
+
+The `styles.css` file is a _cascading style-sheet_ file to optionally customize the
+appearance and format of your website.
+
+These files create a very basic website template, which we can preview and then makes edits to for personalization. 
+
+
+## Previewing your website
+
+One option to preview your website is with the `quarto preview` command. 
+In Positron/RStudio, go to the quadrant or pane that has the tab __Terminal__. This is  the same quadrant where the R console is located.
+
+In the terminal, type the following command:
+
+```{.markdown filename="Terminal"}
+quarto preview
+```
+
+\
+
+-----
+
+
+# Sample Personal Website
+
+For illustration purposes, we have prepared a mockup website with some 
+sample content that you can preview at: 
+
+<a href="https://dataviz.quarto.pub/ketzaly1/" target="_blank">https://dataviz.quarto.pub/ketzaly1</a>
+
+The associated files are available in the following github repository:
+
+<a href="https://github.com/gastonstat/quarto-website-ketzaly1" target="_blank">https://github.com/gastonstat/quarto-website-ketzaly1</a>
+
+::: {.callout-note}
+We created another mockup website (link below) with a few changes, mainly 
+the use of _FontAwesome_ icons and a different theme: <a href="https://github.com/gastonstat/quarto-website-ketzaly2" target="_blank">https://github.com/gastonstat/quarto-website-ketzaly2</a>
+:::
+
+
+## Website Content and Files
+
+In the sample website <a href="https://dataviz.quarto.pub/ketzaly1/" target="_blank">https://dataviz.quarto.pub/ketzaly1</a>, in addition to the 
+_home_ page (`index.qmd`) and the _about_ page (`about.qmd`),
+there is also a _resume_ page (`resume.qmd`) and a _projects_ page.
+
+The following diagram shows the entire file structure. BTW: If you inspect 
+the github repository you will see some additional files. They are there for
+github purposes, not for the Quarto website, which means you can ignore them.
+
+```
+website/
+  .quarto/
+  _quarto.yml
+  assets/
+    favicon.ico
+    headshot.png
+  index.qmd
+  about.qmd
+  resume.qmd
+  projects/
+    index.qmd
+    app-screenshot.png
+    report/
+      hispanic-enrollment.qmd
+      report-screenshot.png
+      uc-berkeley-enrollment-2023.png
+    slides/
+      slides-abc.qmd
+      slides-screenshot.png
+  styles.css
+```
+
+\
+
+
+### Your Turn: Edit `_quarto.yml` file
+
+In order to get a similar website to our sample demo, you'll begin by editing
+your file `_quarto.yml` so that it has the content shown below. Customize the 
+`title` option to your _First_ and _Last_ names or your preferred name.
+
+If you get a message indicating that you don't have a `resume.qmd` file, then
+simply create one and add it to your website.
+
+```{.markdown filename="_quarto.yml"}
+project:
+  type: website
+
+website:
+  title: "Your Name"
+  navbar:
+    background: primary
+    right:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - resume.qmd
+
+format:
+  html:
+    theme: yeti
+    css: styles.css
+    toc: true
+```
+
+\
+
+### Your Turn: Customizing the Home Page
+
+The next file you'll edit is the `index.qmd` file located at the top level,
+which is basically your Home page. Here are some ideas for your `index.qmd` file:
+
+- Include a headshot.
+- Include a welcoming paragraph.
+- Include links to your linkedin account, github account, twitter, etc.
+
+<a href="https://github.com/gastonstat/quarto-website-ketzaly1/blob/main/index.qmd" target="_blank">https://github.com/gastonstat/quarto-website-ketzaly1/blob/main/index.qmd</a>
+
+In our sample website, `index.qmd` has the following content. Note the use of 
+the `about` option which in turn contains further options such as `template`, 
+`image`, and `links`.
+
+```{.markdown filename="index.qmd"}
+---
+title: "Welcome"
+about:
+  template: jolla
+  image: assets/headshot.png
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com
+      target: _blank # opens link in a new browser tab
+    - icon: github
+      text: Github
+      href: https://github.com
+      target: _blank # opens link in a new browser tab
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+      target: _blank # opens link in a new browser tab
+---
+
+Hi there! I'm Ket Zaly, and I'm a Jedi padawan at the Force Academy. 
+I love podracing, learning about Kyber crystals, and reading old Jedi
+manuscripts. One more thing, I hate the Galactic Empire.
+```
+
+Notice that the yaml section in the example `index.qmd` uses the `about:` 
+option which in turn includes a _template_ option: `template: jolla`.
+
+There is also an `image` option linking to the headshot file. The associated
+file `headshot.png` is stored in the `assets/` folder.
+
+Likewise, there is an option `links` to LinkedIn, Github, and twitter.
+
+```{.markdown filename="Terminal"}
+quarto preview
+```
+
+::: {.callout-tip}
+## Useful Info
+
+More about Templates: <a href="https://quarto.org/docs/websites/website-about.html#templates" target="_blank">https://quarto.org/docs/websites/website-about.html#templates</a>
+
+More about Image: <a href="https://quarto.org/docs/websites/website-about.html#image" target="_blank">https://quarto.org/docs/websites/website-about.html#image</a>
+
+More about Links: <a href="https://quarto.org/docs/websites/website-about.html#links" target="_blank">https://quarto.org/docs/websites/website-about.html#links</a>
+:::
+
+
+\
+
+### Your Turn: Customizing the About Page
+
+The following file you'll edit is the `about.qmd` file. 
+
+You can tell the world a little bit about you, for instance:
+
+- What your major (or minor) is
+- What year you are in
+- Are you a member of one or more clubs or student associations?
+- Hobbies, interests, fun facts
+- Favorite quote(s)
+- ETC
+
+<a href="https://github.com/gastonstat/quarto-website-ketzaly1/blob/main/about.qmd" target="_blank">https://github.com/gastonstat/quarto-website-ketzaly1/blob/main/about.qmd</a>
+
+In our sample website, `about.qmd` has the following content.
+
+```{.markdown filename="about.qmd"}
+---
+title: "A little bit about me"
+---
+
+I am originally from South Corellia.
+
+I am double majoring in Jedi Studies and Lightsabers Engineering at the Force Academy.
+
+On my spare free time I like to read old Jedi manuscripts especially the sacred Jedi texts dating back to the dawn of the Jedi Order. I also enjoy science fiction books by Wookie authors, and I love to watch documentaries about the moon of Endor. Likewise, I like to bake & bike.
+
+One of my favorite quotes is:
+
+> "Do or do not. There is no try".
+>
+> Jedi Grand Master Yoda
+
+
+My all time favorite poem is _This is the Way_ by Din Djarin.
+
+Have I mentioned that I love PB&J?
+
+My favorite colors are `#FF0000` and `#FFFFFF`.
+
+I own an R3-series personal droid that my grandparents gave me on my 7th birthday.
+
+Last but not least ...
+```
+
+To preview your website, run the following command:
+
+```{.markdown filename="Terminal"}
+quarto preview
+```
+
+::: {.callout-warning}
+Because your website will be publicly available, we recommend to include only
+information that you feel comfortable sharing with the world. Put another way,
+don't share things that you would be embarrassed of, or that you don't want
+future employers to find about you. Keep it professional.
+:::
+
+\
+
+### Your Turn: Customizing the Resume Page
+
+The fourth file you'll work on is `resume.qmd`. You need to create this 
+file, and then edit its contents with the usual stuff that goes in a resume,
+for example:
+
+- Education
+- Experience
+- Skills
+- Awards
+
+<a href="https://github.com/gastonstat/quarto-website-ketzaly1/blob/main/resume.qmd" target="_blank">https://github.com/gastonstat/quarto-website-ketzaly1/blob/main/resume.qmd</a>
+
+```{.markdown filename="Terminal"}
+quarto preview
+```
+
+\
+
+::: {.callout-tip icon=false}
+## Info 
+
+Before adding more content to your website, let's talk more about __previewing__ 
+its content, __rendering__ its content, and also how to __publish__ everything 
+to Netlify.
+:::
+
+\
+
+# Previewing, Rendering, and Publishing
+
+As we mentioned before, one way to preview your website is by running the 
+`quarto preview` command in Terminal:
+
+```{.markdown filename="Terminal"}
+quarto preview
+```
+
+
+## Rendering your website to `_site/`
+
+To render (but not preview) a website, use the `quarto render` command, which 
+will render the website into the `_site` directory by default.
+In the terminal, type the following command:
+
+```{.markdown filename="Terminal"}
+quarto render
+```
+
+Once the website gets rendered to the `_site` directory, you can click on any 
+of the HTML files in this directory---e.g. `index.html`---to visualize your
+website in your browser. Do this sporadically after making changes to ensure you like the edits you have made.
+ 
+
+-----
+
+
+# Adding a Projects Tab to Your Website
+
+The next addition to the website involves adding a `Projects` tab with its
+corresponding webpage, and also embedding your dashboard from Pub 7. 
+
+## Your Turn: Add projects content
+
+1) Create a folder `projects`.
+
+2) Inside `projects`, create an `index.qmd` file. This will become the 
+page of the __Projects__ tab.
+
+3) Also inside `projects`, create a folder `dashboard`. This will contain another quarto file with your dashboard from Pub 7. 
+
+Your file structure should look like this:
+
+```
+website/
+  .quarto/
+  _quarto.yml
+  assets/
+    headshot.png
+  index.qmd
+  about.qmd
+  resume.qmd
+  projects/
+    index.qmd
+    dashboard/
+      ...
+  styles.css
+```
+
+Browse the content of `projects` in our sample website, and feel free to 
+copy-paste a quarto documents contained in this folder and its
+subdirectories if you would like to add more content.
+
+<a href="https://github.com/gastonstat/quarto-website-ketzaly1/tree/main/projects" target="_blank">https://github.com/gastonstat/quarto-website-ketzaly1/tree/main/projects</a>
+
+
+After you've saved the changes in all files, preview your website. If you are happy with your website, continue to publishing.
+
+
+### Publishing website to Netlify
+
+To publish your website to Netlify by dragging your website folder to the 'Add new project' > 'Upload your project files' section. Don't forget to rename your website link! Refer to today's lab slides for more in-depth instructions. 
