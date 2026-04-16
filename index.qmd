@@ -472,7 +472,7 @@ Lab 11: [__Quiz 5__]{.label-Quiz} | [slides](labs/lab11/slides.html) | [PS10](ht
 
 [Raster Data Maps](lectures/33-raster/slides.html)
 
-Lab 12: slides | PS11
+Lab 12: [slides](labs/lab12/slides.html) | [PS11](https://bcourses.berkeley.edu/courses/1551809/assignments/9021604)
 
 Text Analysis 1 | Proj6
 :::
