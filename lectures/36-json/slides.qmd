@@ -13,61 +13,223 @@ library(tidyverse)
 library(jsonlite)
 ```
 
+# Motivation
+
+## {.nostretch}
+
+![](images/leia-luke-han-info.svg){width="84%" fig-align="center"}
+
+
+## Data in some kind of table
+
+\
+
+| Name | Gender | Height | Force |
+|------|--------|--------|-------|
+| Leia | female |  1.50  | TRUE  |
+| Luke |   male |  1.70  | TRUE  |
+| Han  |   male |  1.80  | FALSE |
+
+
+##
+
+Common formats to store tabular data
+
+:::: {.columns}
+
+::: {.column .fragment width="45%"}
+Space separated values
+
+```{.text filename="data.txt"}
+Name Gender Height Force
+Leia female 1.50 TRUE
+Luke male 1.70 TRUE
+Han male 1.80 FALSE
+```
+
+\
+
+::: {.fragment}
+Comma separated values
+
+```{.text filename="data.csv"}
+Name,Gender,Height,Force
+Leia,female,1.50,TRUE
+Luke,male,1.70,TRUE
+Han,male,1.80,FALSE
+```
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column .fragment width="50%"}
+
+Tab separated values
+
+```{.text filename="data.tsv"}
+Name  Gender  Height  Force
+Leia  female  1.50  TRUE
+Luke  male  1.70  TRUE
+Han male  1.80  FALSE
+```
+
+\
+
+::: {.fragment}
+Fixed width format
+
+```{.text filename="data.fwf"}
+Name Gender Height Force
+Leia female 1.50   TRUE
+Luke male   1.70   TRUE
+Han  male   1.80   FALSE
+```
+:::
+:::
+
+::::
+
+
+## Data in non-tabular form
+
+. . .
+
+One option
+
+```{.text filename="datafile1.txt"}
+Leia is a female, 1.50 meters tall, and can feel the force.
+Luke is a male, 1.70 meters tall, and can feel the force.
+Han is a male, 1.80 meters tall, and cannot feel the force.
+```
+
+. . .
+
+\
+
+Another option
+
+```{.text filename="datafile2.txt"}
+Names: Leia, Luke, Han
+Heights: 1.50, 1.70, 1.80
+Force: yes, yes, no
+```
+
+## Data in non-tabular form
+
+Yet another option
+
+```{.text filename="datafile3.txt"}
+Leia: 
+  - female
+  - 1.50
+  - force
+Luke:
+  - male
+  - 1.70
+  - force
+Han:
+  - male
+  - 1.80
+  - no force
+```
+
 
 # JSON
 
 ## JSON Data
 
-JSON stands for [JavaScript Object Notation]{.bold-hilit}
+- JSON stands for [JavaScript Object Notation]{.bold-hilit}
 
-Let's see the data types, and the kind of data containers
+- It is a lightweight, text-based format used for storing and exchanging data.
+
+- It originated from JavaScript, but is supported by virtually all modern programming languages.
+
+- It is primarily used to transmit information between a web server and a client, or between different parts of an application.
+
+- JSON has become the dominant data format for exchaning data over the web, overtaking previous popular formats such as XML.
+
+. . .
+
+\
+
+[Let's see the data types, and the kind of data containers available in JSON]{.mdlit}
 
 
 ## JSON data types
 
--   string: `"hello"`
+. . .
 
--   numbers: `1, 2, 3`
+JSON provides four data types
 
--   boolean: `true` and `false`
+- [string]{.bold-hilit}: `"hello"`
+    + analogous to `character` type in R
 
--   `null`
+- [numbers]{.bold-hilit}: `1, 2, 3`
+    + analogous to `numeric` mode in R
+    + no distinction of integers and doubles in JSON
+
+- [boolean]{.bold-hilit}: `true` and `false`
+    + analogous to `logical` type in R
+
+- [null]{.bold-hilit}: `null`
+    + analogous to `NULL` in R
 
 
 ## Container: JSON arrays 
 
 . . .
 
-Unnamed ordered arrays
+- Unnamed ordered arrays
+- Defined with square brackets `[ ]`
+- Elements separated by commas
+
+. . .
+
+```json
+["A", "B", "C", "D"]
+```
 
 \
 
-[Examples]{.hilit}
+```json
+[1, 2, 3, 4, 5]
+```
 
-- `["A", "B", "C", "D"]`
+\
 
-- `[1, 2, 3, 4, 5]`
+```json
+[true, true, false]
+```
 
-- `[true, true, false]`
+\
+
+```json
+["A", 1, true, null]
+```
 
 
 ## Container: JSON object 
 
 . . .
 
-Key-value pairs
+- Key-value pairs: `"key": value`
+- Defined with curly braces `{ }`
+- Key has to be quoted
+- Key and value separated with a colon `:`
 
 . . .
 
-`{ "name": value}`
+```json
+{ "key": value}
+```
 
 . . .
 
 \
 
-[Example]{.hilit}
-
-```         
+```json       
 { 
   "class": "STAT 133",
   "semester": "Spring",
@@ -84,23 +246,23 @@ Key-value pairs
 
 ## JSON object and array {auto-animate=true}
 
-::: {.columns}
-::: {.column width="25%"}
-![](images/leia-info2.png){fig-align="center" width="75%"}
+:::: {.columns}
+::: {.column width="30%"}
+![](images/leia-info2.png){fig-align="center" width="72%"}
 :::
 
-::: {.column .fragment width="45%"}
+::: {.column .fragment width="70%"}
 [Array]{.bold-hilit}
 
-```         
+```json       
 ["Leia", "female", 1.5, true]
 ```
-:::
 
-::: {.column .fragment width="30%"}
+\
+
 [Object]{.bold-hilit}
 
-```         
+```json
 { 
   "name": "Leia",
   "gender": "female",
@@ -109,7 +271,7 @@ Key-value pairs
 }
 ```
 :::
-:::
+::::
 
 
 ## {.nostretch}
@@ -123,7 +285,7 @@ Data in a [JSON object]{.hilit}
 
 . . .
 
-```         
+```json         
 {
   "name": ["Leia", "Luke", "Han"],
   "gender": ["female", "male", "male"],
@@ -140,7 +302,7 @@ Data in a [JSON array]{.mdlit}
 
 . . .
 
-```         
+```json         
 [
   {"name": "Leia", "gender": "female", "height": 1.6, "force": true},
   {"name": "Luke", "gender": "male", "height": 1.7, "force": true},
@@ -153,13 +315,21 @@ Data in a [JSON array]{.mdlit}
 
 ##
 
+```{r}
+#| eval: false
+# install.packages("jsonlite")
+library(jsonlite)
+```
+
 . . .
+
+\
 
 ```{r}
 #| output-location: fragment
-json1 = '[1, 2, 3, 4, 5]'
+json1 <- '[1, 2, 3, 4, 5]'
 
-r1 = fromJSON(json1)
+r1 <- fromJSON(json1)
 class(r1)
 ```
 
@@ -169,9 +339,9 @@ class(r1)
 
 ```{r}
 #| output-location: fragment
-json2 = '[true, true, false]'
+json2 <- '[true, true, false]'
 
-r2 = fromJSON(json2)
+r2 <- fromJSON(json2)
 class(r2)
 ```
 
@@ -179,10 +349,12 @@ class(r2)
 ## 
 
 ```{r}
-json3 = '{"name": "Leia", "gender": "female", "height": 1.6, "force": true}'
+json3 <- '{"name": "Leia", "gender": "female", "height": 1.6, "force": true}'
 ```
 
 . . .
+
+\
 
 ```{r}
 #| output-location: fragment
@@ -194,7 +366,7 @@ fromJSON(json3)
 
 ```{r}
 #| output-location: fragment
-json6 = fromJSON('{
+json6 <- fromJSON('{
   "name": ["Leia", "Luke", "Han"],
   "gender": ["female", "male", "male"],
   "height": [1.6, 1.7, 1.8],
