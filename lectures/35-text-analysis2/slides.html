@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b7eb3ced35dd28f0c673f192a36525f2.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.28">
 
-  <meta name="author" content="Gaston Sanchez">
+  <meta name="author" content="STAT 133 with Gaston Sanchez">
   <title>STAT 133 – Text Analysis II</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -223,7 +223,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Gaston Sanchez 
+STAT 133 with Gaston Sanchez 
 </div>
 </div>
 </div>
@@ -277,14 +277,13 @@ Gaston Sanchez
 <ol type="1">
 <li class="fragment">We used the vector <code>prideprejudice</code> from the package <code>"janeaustenr"</code>,</li>
 <li class="fragment">Put it into a tibble for <em>tidytext</em> convenience,</li>
-<li class="fragment">Tokenize into words.</li>
+<li class="fragment">Tokenize into words, and counted their frequencies.</li>
 </ol>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>pride_tbl <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">text =</span> prideprejudice)</span>
-<span id="cb2-2"><a></a></span>
-<span id="cb2-3"><a></a>pride_tokens <span class="ot">=</span> <span class="fu">unnest_tokens</span>(pride_tbl, <span class="at">input =</span> text, <span class="at">output =</span> word)</span>
-<span id="cb2-4"><a></a>pride_tokens</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a></a>pride_tokens <span class="ot">=</span> <span class="fu">unnest_tokens</span>(pride_tbl, <span class="at">input=</span>text, <span class="at">output=</span>word)</span>
+<span id="cb2-3"><a></a>pride_tokens</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -318,7 +317,7 @@ Gaston Sanchez
 </p>
 <p>One common approach is to consider the text as a combination of its individual words or tokens, and the <span class="bold-hilit">sentiment</span> of the whole text as the sum of the sentiment content of the individual words.</p>
 <p>&nbsp;</p>
-<p>This involves assigning a sentiment category to each token, which in turn requires using a <span class="bold-hilit">Sentiment Lexicon</span></p>
+<p>This involves assigning a sentiment category to each token, which in turn requires using a <span class="bold-hilit">Sentiment Lexicon</span>.</p>
 </section>
 <section id="section-2" class="slide level2">
 <h2></h2>
@@ -380,7 +379,7 @@ Gaston Sanchez
 <aside><ol class="aside-footnotes"><li id="fn1"><p>Lexicons from <code>"tidytext"</code> sibling package <code>"textdata"</code>.</p></li><li id="fn2"><p>This is the lexicon in <code>sentiments</code>.</p></li></ol></aside></section>
 <section id="sentiment-lexicons-1" class="slide level2">
 <h2>Sentiment lexicons</h2>
-<p>The sentiment lexicons mentioned in the previous slide can be obtained with the <code>get_sentiments(lexicon = ...)</code> function.</p>
+<p>The <code>sentiment</code> lexicons mentioned in the previous slide can be obtained with the <code>get_sentiments(lexicon = ...)</code> function.</p>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># run this command in R's console</span></span>
@@ -398,7 +397,7 @@ Gaston Sanchez
 <p><strong>Warning</strong></p>
 </div>
 <div class="callout-content">
-<p>The issue is that <code>get_sentiments()</code> is an interactive function that requires manual input. If you include this function in a <code>qmd</code> file it won’t work.</p>
+<p><code>get_sentiments()</code> is an interactive function that requires manual input. This is okay in an interactive session, but it won’t work when rendering a <code>qmd</code> file or in a <em>shiny</em> document.</p>
 <p>It’s better to download the lexicons to a text or an R file, and then import them with a reading function, e.g.&nbsp;<code>read_csv()</code>.</p>
 </div>
 </div>
@@ -411,8 +410,6 @@ Gaston Sanchez
 <div class="column">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>bing <span class="sc">|&gt;</span> <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 2
   word        sentiment
@@ -427,10 +424,9 @@ Gaston Sanchez
 8 abort       negative </code></pre>
 </div>
 </div>
+<div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>afinn <span class="sc">|&gt;</span> <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 2
   word       value
@@ -445,11 +441,10 @@ Gaston Sanchez
 8 abhorred      -3</code></pre>
 </div>
 </div>
+</div>
 </div><div class="column fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>loughran <span class="sc">|&gt;</span> <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 2
   word         sentiment
@@ -464,10 +459,9 @@ Gaston Sanchez
 8 abdicates    negative </code></pre>
 </div>
 </div>
+<div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>nrc <span class="sc">|&gt;</span> <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 2
   word      sentiment
@@ -480,6 +474,7 @@ Gaston Sanchez
 6 abandoned fear     
 7 abandoned negative 
 8 abandoned sadness  </code></pre>
+</div>
 </div>
 </div>
 </div></div>
@@ -530,10 +525,10 @@ Gaston Sanchez
 </div></div>
 <div class="fragment">
 <p>&nbsp;</p>
-<p>How would you assign sentiments to <code>pride_tokens</code>?</p>
+<p>How would you assign sentiments to words in <code>pride_tokens</code>?</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_baca9669" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_d93822c8" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">45</span></code>
 </div>
@@ -614,9 +609,9 @@ Gaston Sanchez
 </section>
 <section id="sentiment-score-by-chapter" class="slide level2">
 <h2>Sentiment Score by Chapter</h2>
-<p>Another type of sentiment analysis that can be performed on the <code>prideprejudice</code> text is to compute a sentiment score for each chapter in the book.</p>
+<p>Another type of sentiment analysis that can be performed on the <code>prideprejudice</code> text is to <strong>compute a sentiment score for each chapter</strong> in the book.</p>
 <div class="fragment">
-<p>We need to do a bit of text processing in order to split the text into chapters. Here are the proposed steps:</p>
+<p>We need to do a bit of text processing in order to <span class="bold-hilit">split the text into chapters</span>. Here are the proposed steps:</p>
 <ol type="1">
 <li class="fragment"><p>Collapse <code>prideprejudice</code> into a single element vector</p></li>
 <li class="fragment"><p>Split text into chapters using a regex pattern <code>"Chapter \\d+"</code></p>
@@ -652,12 +647,78 @@ Gaston Sanchez
 <p>We can use these lines of text to detect where a chapter begins.</p>
 </div>
 </section>
-<section id="section-11" class="slide level2">
+<section id="section-11" class="slide level2 smaller">
+<h2></h2>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>prideprejudice[<span class="dv">3</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "By Jane Austen"                                                         
+[2] ""                                                                       
+[3] ""                                                                       
+[4] ""                                                                       
+[5] "Chapter 1"                                                              
+[6] ""                                                                       
+[7] ""                                                                       
+[8] "It is a truth universally acknowledged, that a single man in possession"</code></pre>
+</div>
+</div>
+<p><br>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>prideprejudice[<span class="dv">120</span><span class="sc">:</span><span class="dv">127</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "daughters married; its solace was visiting and news."                    
+[2] ""                                                                        
+[3] ""                                                                        
+[4] ""                                                                        
+[5] "Chapter 2"                                                               
+[6] ""                                                                        
+[7] ""                                                                        
+[8] "Mr. Bennet was among the earliest of those who waited on Mr. Bingley. He"</code></pre>
+</div>
+</div>
+</div><div class="column">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>prideprejudice[<span class="dv">228</span><span class="sc">:</span><span class="dv">235</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "dinner."                                                           
+[2] ""                                                                  
+[3] ""                                                                  
+[4] ""                                                                  
+[5] "Chapter 3"                                                         
+[6] ""                                                                  
+[7] ""                                                                  
+[8] "Not all that Mrs. Bennet, however, with the assistance of her five"</code></pre>
+</div>
+</div>
+<p><br>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>prideprejudice[<span class="dv">398</span><span class="sc">:</span><span class="dv">405</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "dear, to have given him one of your set-downs. I quite detest the man.\""
+[2] ""                                                                        
+[3] ""                                                                        
+[4] ""                                                                        
+[5] "Chapter 4"                                                               
+[6] ""                                                                        
+[7] ""                                                                        
+[8] "When Jane and Elizabeth were alone, the former, who had been cautious in"</code></pre>
+</div>
+</div>
+</div></div>
+<div class="fragment">
+<p><span class="mdlit">Goal: Detect where a chapter begins.</span></p>
+</div>
+</section>
+<section id="section-12" class="slide level2">
 <h2></h2>
 <p>Step 1) collapse text into one-element vector</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>pride_collapsed <span class="ot">=</span> <span class="fu">paste</span>(prideprejudice, <span class="at">collapse =</span> <span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>pride_collapsed <span class="ot">=</span> <span class="fu">paste</span>(prideprejudice, <span class="at">collapse =</span> <span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -665,33 +726,89 @@ Gaston Sanchez
 </p>
 <p>Step 2) split text into chapters using <code>str_split()</code> which returns a list</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>pride_split <span class="ot">=</span> <span class="fu">str_split</span>(pride_collapsed, <span class="at">pattern =</span> <span class="st">"Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>pride_split <span class="ot">=</span> <span class="fu">str_split</span>(pride_collapsed, <span class="at">pattern =</span> <span class="st">"Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</section>
-<section id="section-12" class="slide level2">
-<h2></h2>
-<p>Substeps 2.2) and 2.1) unbox and remove first element because it’s not a chapter</p>
+<div class="fragment">
+<p><br>
+</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>pride_chapters <span class="ot">=</span> pride_split[[<span class="dv">1</span>]][<span class="sc">-</span><span class="dv">1</span>]</span>
-<span id="cb27-2"><a></a></span>
-<span id="cb27-3"><a></a><span class="co"># how many chapters</span></span>
-<span id="cb27-4"><a></a><span class="fu">length</span>(pride_chapters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">class</span>(pride_split)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 61</code></pre>
+<pre><code>[1] "list"</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><br>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">length</span>(pride_split[[<span class="dv">1</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 62</code></pre>
+</div>
 </div>
 </div>
 </section>
 <section id="section-13" class="slide level2">
 <h2></h2>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="co"># first element (book's title; NOT a chapter)</span></span>
+<span id="cb39-2"><a></a>pride_split[[<span class="dv">1</span>]][<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "PRIDE AND PREJUDICE  By Jane Austen    "</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><br>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a><span class="co"># text of chapter 1</span></span>
+<span id="cb41-2"><a></a>pride_split[[<span class="dv">1</span>]][<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<pre><code>[1] "   It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.  However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed ...</code></pre>
+</div>
+<div class="fragment">
+<p><br>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="co"># text of chapter 2</span></span>
+<span id="cb43-2"><a></a>pride_split[[<span class="dv">1</span>]][<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<pre><code>[1] "   Mr. Bennet was among the earliest of those who waited on Mr. Bingley. He had always intended to visit him, though to the last always assuring his wife that he should not go; and till the evening after the visit was paid she had no knowledge of it. It was then ...</code></pre>
+</div>
+</section>
+<section id="section-14" class="slide level2">
+<h2></h2>
+<p>Substeps 2.2) and 2.1) unbox and remove first element because it’s not a chapter</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>pride_chapters <span class="ot">=</span> pride_split[[<span class="dv">1</span>]][<span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb45-2"><a></a></span>
+<span id="cb45-3"><a></a><span class="co"># how many chapters</span></span>
+<span id="cb45-4"><a></a><span class="fu">length</span>(pride_chapters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 61</code></pre>
+</div>
+</div>
+</section>
+<section id="section-15" class="slide level2">
+<h2></h2>
 <p>Step 3) Assemble table of chapters, and their text content</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>pride_chaps <span class="ot">=</span> <span class="fu">tibble</span>(</span>
-<span id="cb29-2"><a></a>  <span class="at">text =</span> pride_chapters,</span>
-<span id="cb29-3"><a></a>  <span class="at">chapter =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(pride_chapters))</span>
-<span id="cb29-4"><a></a></span>
-<span id="cb29-5"><a></a>pride_chaps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>pride_chaps <span class="ot">=</span> <span class="fu">tibble</span>(</span>
+<span id="cb47-2"><a></a>  <span class="at">text =</span> pride_chapters,</span>
+<span id="cb47-3"><a></a>  <span class="at">chapter =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(pride_chapters))</span>
+<span id="cb47-4"><a></a></span>
+<span id="cb47-5"><a></a>pride_chaps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -713,27 +830,35 @@ Gaston Sanchez
 </div>
 </div>
 </section>
-<section id="section-14" class="slide level2" data-auto-animate="true">
+<section id="section-16" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
-<p>Then we proceed as usual: tokenizing the text, getting word count, and assigning sentiments:</p>
+<p>Then we proceed as usual: tokenizing the text, getting word counts taking chapter into account, and assigning sentiments:</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb31-1" class="hljs-ln-code"><a></a>pride_toks <span class="ot">=</span> <span class="fu">unnest_tokens</span>(pride_chaps, <span class="at">input=</span>text, <span class="at">output=</span>word)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb49-1" class="hljs-ln-code"><a></a>pride_toks <span class="ot">=</span> <span class="fu">unnest_tokens</span>(pride_chaps, <span class="at">input=</span>text, <span class="at">output=</span>word)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
-<section id="section-15" class="slide level2" data-auto-animate="true">
+<section id="section-17" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
-<p>Then we proceed as usual: tokenizing the text, removing stopwords, and getting word counts:</p>
+<p>Then we proceed as usual: tokenizing the text, getting word counts taking chapter into account, and assigning sentiments:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb32-1" class="hljs-ln-code"><a></a>pride_toks <span class="ot">=</span> <span class="fu">unnest_tokens</span>(pride_chaps, <span class="at">input=</span>text, <span class="at">output=</span>word)</span>
-<span id="cb32-2" class="hljs-ln-code"><a></a></span>
-<span id="cb32-3" class="hljs-ln-code"><a></a>pride_toks_count <span class="ot">=</span> pride_toks <span class="sc">|&gt;</span> </span>
-<span id="cb32-4" class="hljs-ln-code"><a></a>  <span class="fu">count</span>(word, chapter, <span class="at">name =</span> <span class="st">"count"</span>, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb32-5" class="hljs-ln-code"><a></a></span>
-<span id="cb32-6" class="hljs-ln-code"><a></a>pride_toks_count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb50-1" class="hljs-ln-code"><a></a>pride_toks <span class="ot">=</span> <span class="fu">unnest_tokens</span>(pride_chaps, <span class="at">input=</span>text, <span class="at">output=</span>word)</span>
+<span id="cb50-2" class="hljs-ln-code"><a></a></span>
+<span id="cb50-3" class="hljs-ln-code"><a></a>pride_toks_count <span class="ot">=</span> pride_toks <span class="sc">|&gt;</span> </span>
+<span id="cb50-4" class="hljs-ln-code"><a></a>  <span class="fu">count</span>(word, chapter, <span class="at">name =</span> <span class="st">"count"</span>, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell fragment">
+</section>
+<section id="section-18" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<p>Then we proceed as usual: tokenizing the text, getting word counts taking chapter into account, and assigning sentiments:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb51-1" class="hljs-ln-code"><a></a>pride_toks <span class="ot">=</span> <span class="fu">unnest_tokens</span>(pride_chaps, <span class="at">input=</span>text, <span class="at">output=</span>word)</span>
+<span id="cb51-2" class="hljs-ln-code"><a></a></span>
+<span id="cb51-3" class="hljs-ln-code"><a></a>pride_toks_count <span class="ot">=</span> pride_toks <span class="sc">|&gt;</span> </span>
+<span id="cb51-4" class="hljs-ln-code"><a></a>  <span class="fu">count</span>(word, chapter, <span class="at">name =</span> <span class="st">"count"</span>, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb51-5" class="hljs-ln-code"><a></a></span>
+<span id="cb51-6" class="hljs-ln-code"><a></a>pride_toks_count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 40,120 × 3
    word  chapter count
@@ -752,24 +877,24 @@ Gaston Sanchez
 </div>
 </div>
 </section>
-<section id="section-16" class="slide level2" data-auto-animate="true">
+<section id="section-19" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
-<p>Then we proceed as usual: tokenizing the text, removing stopwords, and getting word counts:</p>
+<p>Then we proceed as usual: tokenizing the text, getting word counts taking chapter into account, and assigning sentiments:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb34-1" class="hljs-ln-code"><a></a>pride_toks <span class="ot">=</span> <span class="fu">unnest_tokens</span>(pride_chaps, <span class="at">input=</span>text, <span class="at">output=</span>word)</span>
-<span id="cb34-2" class="hljs-ln-code"><a></a></span>
-<span id="cb34-3" class="hljs-ln-code"><a></a>pride_toks_count <span class="ot">=</span> pride_toks <span class="sc">|&gt;</span> </span>
-<span id="cb34-4" class="hljs-ln-code"><a></a>  <span class="fu">count</span>(word, chapter, <span class="at">name =</span> <span class="st">"count"</span>, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb34-5" class="hljs-ln-code"><a></a></span>
-<span id="cb34-6" class="hljs-ln-code"><a></a>pride_sent <span class="ot">=</span> <span class="fu">inner_join</span>(pride_toks_count, sentiments, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb34-7" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(word <span class="sc">!=</span> <span class="st">"miss"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb53-1" class="hljs-ln-code"><a></a>pride_toks <span class="ot">=</span> <span class="fu">unnest_tokens</span>(pride_chaps, <span class="at">input=</span>text, <span class="at">output=</span>word)</span>
+<span id="cb53-2" class="hljs-ln-code"><a></a></span>
+<span id="cb53-3" class="hljs-ln-code"><a></a>pride_toks_count <span class="ot">=</span> pride_toks <span class="sc">|&gt;</span> </span>
+<span id="cb53-4" class="hljs-ln-code"><a></a>  <span class="fu">count</span>(word, chapter, <span class="at">name =</span> <span class="st">"count"</span>, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb53-5" class="hljs-ln-code"><a></a></span>
+<span id="cb53-6" class="hljs-ln-code"><a></a>pride_sent <span class="ot">=</span> <span class="fu">inner_join</span>(pride_toks_count, sentiments, <span class="at">by=</span><span class="st">"word"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb53-7" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(word <span class="sc">!=</span> <span class="st">"miss"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-17" class="slide level2">
+<section id="section-20" class="slide level2">
 <h2></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="co"># after removing stop-words</span></span>
-<span id="cb35-2"><a></a>pride_sent</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a><span class="co"># after removing stop-words</span></span>
+<span id="cb54-2"><a></a>pride_sent</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6,460 × 4
    word         chapter count sentiment
@@ -793,14 +918,14 @@ Gaston Sanchez
 <p><span class="bold-hilit">score = # positive words - # negative words</span></p>
 </div>
 </section>
-<section id="section-18" class="slide level2">
+<section id="section-21" class="slide level2">
 <h2></h2>
 <p>Sentiment score for each chapter:</p>
 <p><span class="bold-hilit">score = # positive words - # negative words</span></p>
 <div class="columns">
 <div class="column fragment" style="width:60%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>pride_sent</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a>pride_sent</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6,460 × 4
    word         chapter count sentiment
@@ -820,7 +945,7 @@ Gaston Sanchez
 </div>
 </div><div class="column fragment" style="width:40%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>chapter_scores</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a>chapter_scores</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 61 × 2
    chapter score
@@ -844,55 +969,55 @@ Gaston Sanchez
 <p>Given <code>pride_sent</code>, how would you obtain <code>chapter_scores</code>?</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_9a23aec2" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_899d6923" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 </div>
 </div>
-</div>
-</section>
-<section id="section-19" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title"></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb41-1" class="hljs-ln-code"><a></a>chapter_scores <span class="ot">=</span> pride_sent <span class="sc">|&gt;</span> </span>
-<span id="cb41-2" class="hljs-ln-code"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, </span>
-<span id="cb41-3" class="hljs-ln-code"><a></a>              <span class="at">values_from =</span> count, </span>
-<span id="cb41-4" class="hljs-ln-code"><a></a>              <span class="at">values_fill =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="section-20" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title"></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb42-1" class="hljs-ln-code"><a></a>chapter_scores <span class="ot">=</span> pride_sent <span class="sc">|&gt;</span> </span>
-<span id="cb42-2" class="hljs-ln-code"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, </span>
-<span id="cb42-3" class="hljs-ln-code"><a></a>              <span class="at">values_from =</span> count, </span>
-<span id="cb42-4" class="hljs-ln-code"><a></a>              <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
-<span id="cb42-5" class="hljs-ln-code"><a></a>  <span class="fu">group_by</span>(chapter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="section-21" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title"></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb43-1" class="hljs-ln-code"><a></a>chapter_scores <span class="ot">=</span> pride_sent <span class="sc">|&gt;</span> </span>
-<span id="cb43-2" class="hljs-ln-code"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, </span>
-<span id="cb43-3" class="hljs-ln-code"><a></a>              <span class="at">values_from =</span> count, </span>
-<span id="cb43-4" class="hljs-ln-code"><a></a>              <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb43-5" class="hljs-ln-code"><a></a>  <span class="fu">group_by</span>(chapter) <span class="sc">|&gt;</span> </span>
-<span id="cb43-6" class="hljs-ln-code"><a></a>  <span class="fu">summarize</span>(<span class="at">score =</span> <span class="fu">sum</span>(positive) <span class="sc">-</span> <span class="fu">sum</span>(negative))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="section-22" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb44-1" class="hljs-ln-code"><a></a>chapter_scores <span class="ot">=</span> pride_sent <span class="sc">|&gt;</span> </span>
-<span id="cb44-2" class="hljs-ln-code"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, </span>
-<span id="cb44-3" class="hljs-ln-code"><a></a>              <span class="at">values_from =</span> count, </span>
-<span id="cb44-4" class="hljs-ln-code"><a></a>              <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb44-5" class="hljs-ln-code"><a></a>  <span class="fu">group_by</span>(chapter) <span class="sc">|&gt;</span> </span>
-<span id="cb44-6" class="hljs-ln-code"><a></a>  <span class="fu">summarize</span>(<span class="at">score =</span> <span class="fu">sum</span>(positive) <span class="sc">-</span> <span class="fu">sum</span>(negative))</span>
-<span id="cb44-7" class="hljs-ln-code"><a></a></span>
-<span id="cb44-8" class="hljs-ln-code"><a></a><span class="fu">slice_head</span>(chapter_scores, <span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb60-1" class="hljs-ln-code"><a></a>chapter_scores <span class="ot">=</span> pride_sent <span class="sc">|&gt;</span> </span>
+<span id="cb60-2" class="hljs-ln-code"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, </span>
+<span id="cb60-3" class="hljs-ln-code"><a></a>              <span class="at">values_from =</span> count, </span>
+<span id="cb60-4" class="hljs-ln-code"><a></a>              <span class="at">values_fill =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-23" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb61-1" class="hljs-ln-code"><a></a>chapter_scores <span class="ot">=</span> pride_sent <span class="sc">|&gt;</span> </span>
+<span id="cb61-2" class="hljs-ln-code"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, </span>
+<span id="cb61-3" class="hljs-ln-code"><a></a>              <span class="at">values_from =</span> count, </span>
+<span id="cb61-4" class="hljs-ln-code"><a></a>              <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb61-5" class="hljs-ln-code"><a></a>  <span class="fu">group_by</span>(chapter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-24" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb62-1" class="hljs-ln-code"><a></a>chapter_scores <span class="ot">=</span> pride_sent <span class="sc">|&gt;</span> </span>
+<span id="cb62-2" class="hljs-ln-code"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, </span>
+<span id="cb62-3" class="hljs-ln-code"><a></a>              <span class="at">values_from =</span> count, </span>
+<span id="cb62-4" class="hljs-ln-code"><a></a>              <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb62-5" class="hljs-ln-code"><a></a>  <span class="fu">group_by</span>(chapter) <span class="sc">|&gt;</span> </span>
+<span id="cb62-6" class="hljs-ln-code"><a></a>  <span class="fu">summarize</span>(<span class="at">score =</span> <span class="fu">sum</span>(positive) <span class="sc">-</span> <span class="fu">sum</span>(negative))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-25" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb63-1" class="hljs-ln-code"><a></a>chapter_scores <span class="ot">=</span> pride_sent <span class="sc">|&gt;</span> </span>
+<span id="cb63-2" class="hljs-ln-code"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, </span>
+<span id="cb63-3" class="hljs-ln-code"><a></a>              <span class="at">values_from =</span> count, </span>
+<span id="cb63-4" class="hljs-ln-code"><a></a>              <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb63-5" class="hljs-ln-code"><a></a>  <span class="fu">group_by</span>(chapter) <span class="sc">|&gt;</span> </span>
+<span id="cb63-6" class="hljs-ln-code"><a></a>  <span class="fu">summarize</span>(<span class="at">score =</span> <span class="fu">sum</span>(positive) <span class="sc">-</span> <span class="fu">sum</span>(negative))</span>
+<span id="cb63-7" class="hljs-ln-code"><a></a></span>
+<span id="cb63-8" class="hljs-ln-code"><a></a><span class="fu">slice_head</span>(chapter_scores, <span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -912,25 +1037,25 @@ Gaston Sanchez
 </div>
 </div>
 </section>
-<section id="section-23" class="slide level2">
+<section id="section-26" class="slide level2">
 <h2></h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="fu">ggplotly</span>(</span>
-<span id="cb46-2"><a></a>  chapter_scores <span class="sc">|&gt;</span> </span>
-<span id="cb46-3"><a></a>  <span class="fu">mutate</span>(<span class="at">sentiment =</span> <span class="fu">case_when</span>(</span>
-<span id="cb46-4"><a></a>    score <span class="sc">&gt;=</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"pos"</span>,</span>
-<span id="cb46-5"><a></a>    score <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"neg"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb46-6"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> chapter, <span class="at">y =</span> score, <span class="at">fill =</span> sentiment)) <span class="sc">+</span></span>
-<span id="cb46-7"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb46-8"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Sentiment score for each chapter in 'Pride and Prejudice'"</span>) <span class="sc">+</span></span>
-<span id="cb46-9"><a></a>  <span class="fu">theme_bw</span>()</span>
-<span id="cb46-10"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a><span class="fu">ggplotly</span>(</span>
+<span id="cb65-2"><a></a>  chapter_scores <span class="sc">|&gt;</span> </span>
+<span id="cb65-3"><a></a>  <span class="fu">mutate</span>(<span class="at">sentiment =</span> <span class="fu">case_when</span>(</span>
+<span id="cb65-4"><a></a>    score <span class="sc">&gt;=</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"pos"</span>,</span>
+<span id="cb65-5"><a></a>    score <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"neg"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb65-6"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> chapter, <span class="at">y =</span> score, <span class="at">fill =</span> sentiment)) <span class="sc">+</span></span>
+<span id="cb65-7"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb65-8"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Sentiment score for each chapter in 'Pride and Prejudice'"</span>) <span class="sc">+</span></span>
+<span id="cb65-9"><a></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb65-10"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-6cd8d9e772fb8045c016" style="width:100%;height:768px;"></div>
-<script type="application/json" data-for="htmlwidget-6cd8d9e772fb8045c016">{"x":{"data":[{"orientation":"v","width":[0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568],"base":[-39,-13,-21,-16,-50,-4],"x":[34,35,36,41,46,57],"y":[39,13,21,16,50,4],"text":["chapter: 34<br />score: -39<br />sentiment: neg","chapter: 35<br />score: -13<br />sentiment: neg","chapter: 36<br />score: -21<br />sentiment: neg","chapter: 41<br />score: -16<br />sentiment: neg","chapter: 46<br />score: -50<br />sentiment: neg","chapter: 57<br />score:  -4<br />sentiment: neg"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"neg","legendgroup":"neg","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.89999999999999991,0.90000000000000013,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.89999999999999947,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.90000000000000213,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568],"base":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,37,38,39,40,42,43,44,45,47,48,49,50,51,52,53,54,55,56,58,59,60,61],"y":[11,2,45,52,30,75,13,25,54,43,9,15,29,36,42,72,15,78,34,5,22,62,15,41,27,38,27,33,63,25,41,31,9,3,38,30,10,20,132,51,6,9,0,60,40,29,23,28,41,53,6,5,47,50,26],"text":["chapter:  1<br />score:  11<br />sentiment: pos","chapter:  2<br />score:   2<br />sentiment: pos","chapter:  3<br />score:  45<br />sentiment: pos","chapter:  4<br />score:  52<br />sentiment: pos","chapter:  5<br />score:  30<br />sentiment: pos","chapter:  6<br />score:  75<br />sentiment: pos","chapter:  7<br />score:  13<br />sentiment: pos","chapter:  8<br />score:  25<br />sentiment: pos","chapter:  9<br />score:  54<br />sentiment: pos","chapter: 10<br />score:  43<br />sentiment: pos","chapter: 11<br />score:   9<br />sentiment: pos","chapter: 12<br />score:  15<br />sentiment: pos","chapter: 13<br />score:  29<br />sentiment: pos","chapter: 14<br />score:  36<br />sentiment: pos","chapter: 15<br />score:  42<br />sentiment: pos","chapter: 16<br />score:  72<br />sentiment: pos","chapter: 17<br />score:  15<br />sentiment: pos","chapter: 18<br />score:  78<br />sentiment: pos","chapter: 19<br />score:  34<br />sentiment: pos","chapter: 20<br />score:   5<br />sentiment: pos","chapter: 21<br />score:  22<br />sentiment: pos","chapter: 22<br />score:  62<br />sentiment: pos","chapter: 23<br />score:  15<br />sentiment: pos","chapter: 24<br />score:  41<br />sentiment: pos","chapter: 25<br />score:  27<br />sentiment: pos","chapter: 26<br />score:  38<br />sentiment: pos","chapter: 27<br />score:  27<br />sentiment: pos","chapter: 28<br />score:  33<br />sentiment: pos","chapter: 29<br />score:  63<br />sentiment: pos","chapter: 30<br />score:  25<br />sentiment: pos","chapter: 31<br />score:  41<br />sentiment: pos","chapter: 32<br />score:  31<br />sentiment: pos","chapter: 33<br />score:   9<br />sentiment: pos","chapter: 37<br />score:   3<br />sentiment: pos","chapter: 38<br />score:  38<br />sentiment: pos","chapter: 39<br />score:  30<br />sentiment: pos","chapter: 40<br />score:  10<br />sentiment: pos","chapter: 42<br />score:  20<br />sentiment: pos","chapter: 43<br />score: 132<br />sentiment: pos","chapter: 44<br />score:  51<br />sentiment: pos","chapter: 45<br />score:   6<br />sentiment: pos","chapter: 47<br />score:   9<br />sentiment: pos","chapter: 48<br />score:   0<br />sentiment: pos","chapter: 49<br />score:  60<br />sentiment: pos","chapter: 50<br />score:  40<br />sentiment: pos","chapter: 51<br />score:  29<br />sentiment: pos","chapter: 52<br />score:  23<br />sentiment: pos","chapter: 53<br />score:  28<br />sentiment: pos","chapter: 54<br />score:  41<br />sentiment: pos","chapter: 55<br />score:  53<br />sentiment: pos","chapter: 56<br />score:   6<br />sentiment: pos","chapter: 58<br />score:   5<br />sentiment: pos","chapter: 59<br />score:  47<br />sentiment: pos","chapter: 60<br />score:  50<br />sentiment: pos","chapter: 61<br />score:  26<br />sentiment: pos"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"pos","legendgroup":"pos","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":42.666666666666671,"r":7.3059360730593621,"b":39.086757990867589,"l":43.105022831050235},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Sentiment score for each chapter in 'Pride and Prejudice'","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-2.4950000000000001,64.495000000000005],"tickmode":"array","ticktext":["0","20","40","60"],"tickvals":[0,20,40,60],"categoryorder":"array","categoryarray":["0","20","40","60"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"chapter","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-59.100000000000001,141.09999999999999],"tickmode":"array","ticktext":["-50","0","50","100"],"tickvals":[-50,7.1054273576010019e-15,49.999999999999993,100],"categoryorder":"array","categoryarray":["-50","0","50","100"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"score","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(51,51,51,1)","width":0.66417600664176002,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"sentiment","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"9d2c5a7790f6":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"9d2c5a7790f6","visdat":{"9d2c5a7790f6":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-fe7317713fc5a132fc27" style="width:100%;height:768px;"></div>
+<script type="application/json" data-for="htmlwidget-fe7317713fc5a132fc27">{"x":{"data":[{"orientation":"v","width":[0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568],"base":[-39,-13,-21,-16,-50,-4],"x":[34,35,36,41,46,57],"y":[39,13,21,16,50,4],"text":["chapter: 34<br />score: -39<br />sentiment: neg","chapter: 35<br />score: -13<br />sentiment: neg","chapter: 36<br />score: -21<br />sentiment: neg","chapter: 41<br />score: -16<br />sentiment: neg","chapter: 46<br />score: -50<br />sentiment: neg","chapter: 57<br />score:  -4<br />sentiment: neg"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"neg","legendgroup":"neg","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.89999999999999991,0.90000000000000013,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.89999999999999947,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.90000000000000213,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568,0.90000000000000568],"base":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,37,38,39,40,42,43,44,45,47,48,49,50,51,52,53,54,55,56,58,59,60,61],"y":[11,2,45,52,30,75,13,25,54,43,9,15,29,36,42,72,15,78,34,5,22,62,15,41,27,38,27,33,63,25,41,31,9,3,38,30,10,20,132,51,6,9,0,60,40,29,23,28,41,53,6,5,47,50,26],"text":["chapter:  1<br />score:  11<br />sentiment: pos","chapter:  2<br />score:   2<br />sentiment: pos","chapter:  3<br />score:  45<br />sentiment: pos","chapter:  4<br />score:  52<br />sentiment: pos","chapter:  5<br />score:  30<br />sentiment: pos","chapter:  6<br />score:  75<br />sentiment: pos","chapter:  7<br />score:  13<br />sentiment: pos","chapter:  8<br />score:  25<br />sentiment: pos","chapter:  9<br />score:  54<br />sentiment: pos","chapter: 10<br />score:  43<br />sentiment: pos","chapter: 11<br />score:   9<br />sentiment: pos","chapter: 12<br />score:  15<br />sentiment: pos","chapter: 13<br />score:  29<br />sentiment: pos","chapter: 14<br />score:  36<br />sentiment: pos","chapter: 15<br />score:  42<br />sentiment: pos","chapter: 16<br />score:  72<br />sentiment: pos","chapter: 17<br />score:  15<br />sentiment: pos","chapter: 18<br />score:  78<br />sentiment: pos","chapter: 19<br />score:  34<br />sentiment: pos","chapter: 20<br />score:   5<br />sentiment: pos","chapter: 21<br />score:  22<br />sentiment: pos","chapter: 22<br />score:  62<br />sentiment: pos","chapter: 23<br />score:  15<br />sentiment: pos","chapter: 24<br />score:  41<br />sentiment: pos","chapter: 25<br />score:  27<br />sentiment: pos","chapter: 26<br />score:  38<br />sentiment: pos","chapter: 27<br />score:  27<br />sentiment: pos","chapter: 28<br />score:  33<br />sentiment: pos","chapter: 29<br />score:  63<br />sentiment: pos","chapter: 30<br />score:  25<br />sentiment: pos","chapter: 31<br />score:  41<br />sentiment: pos","chapter: 32<br />score:  31<br />sentiment: pos","chapter: 33<br />score:   9<br />sentiment: pos","chapter: 37<br />score:   3<br />sentiment: pos","chapter: 38<br />score:  38<br />sentiment: pos","chapter: 39<br />score:  30<br />sentiment: pos","chapter: 40<br />score:  10<br />sentiment: pos","chapter: 42<br />score:  20<br />sentiment: pos","chapter: 43<br />score: 132<br />sentiment: pos","chapter: 44<br />score:  51<br />sentiment: pos","chapter: 45<br />score:   6<br />sentiment: pos","chapter: 47<br />score:   9<br />sentiment: pos","chapter: 48<br />score:   0<br />sentiment: pos","chapter: 49<br />score:  60<br />sentiment: pos","chapter: 50<br />score:  40<br />sentiment: pos","chapter: 51<br />score:  29<br />sentiment: pos","chapter: 52<br />score:  23<br />sentiment: pos","chapter: 53<br />score:  28<br />sentiment: pos","chapter: 54<br />score:  41<br />sentiment: pos","chapter: 55<br />score:  53<br />sentiment: pos","chapter: 56<br />score:   6<br />sentiment: pos","chapter: 58<br />score:   5<br />sentiment: pos","chapter: 59<br />score:  47<br />sentiment: pos","chapter: 60<br />score:  50<br />sentiment: pos","chapter: 61<br />score:  26<br />sentiment: pos"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"pos","legendgroup":"pos","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":42.666666666666671,"r":7.3059360730593621,"b":39.086757990867589,"l":43.105022831050235},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Sentiment score for each chapter in 'Pride and Prejudice'","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-2.4950000000000001,64.495000000000005],"tickmode":"array","ticktext":["0","20","40","60"],"tickvals":[0,20,40,60],"categoryorder":"array","categoryarray":["0","20","40","60"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"chapter","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-59.100000000000001,141.09999999999999],"tickmode":"array","ticktext":["-50","0","50","100"],"tickvals":[-50,7.1054273576010019e-15,49.999999999999993,100],"categoryorder":"array","categoryarray":["-50","0","50","100"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"score","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(51,51,51,1)","width":0.66417600664176002,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"sentiment","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"1249c200c017f":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"1249c200c017f","visdat":{"1249c200c017f":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section></section>
@@ -939,7 +1064,7 @@ Gaston Sanchez
 <h1>Narrative Arc</h1>
 
 </section>
-<section id="section-24" class="slide level2 nostretch">
+<section id="section-27" class="slide level2 nostretch">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -947,7 +1072,7 @@ Gaston Sanchez
 </figure>
 </div>
 </section>
-<section id="section-25" class="slide level2 nostretch">
+<section id="section-28" class="slide level2 nostretch">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -955,7 +1080,7 @@ Gaston Sanchez
 </figure>
 </div>
 </section>
-<section id="section-26" class="slide level2 nostretch">
+<section id="section-29" class="slide level2 nostretch">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -963,7 +1088,7 @@ Gaston Sanchez
 </figure>
 </div>
 </section>
-<section id="section-27" class="slide level2 nostretch">
+<section id="section-30" class="slide level2 nostretch">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -971,20 +1096,21 @@ Gaston Sanchez
 </figure>
 </div>
 </section>
-<section id="section-28" class="slide level2 smaller" data-auto-animate="true">
+<section id="section-31" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb47-1" class="hljs-ln-code"><a></a>pride_tbl <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">text =</span> prideprejudice)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb66-1" class="hljs-ln-code"><a></a>pride_tbl <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">text =</span> prideprejudice)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-29" class="slide level2 smaller" data-auto-animate="true">
+<section id="section-32" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb48-1" class="hljs-ln-code"><a></a>pride_tbl <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">text =</span> prideprejudice)</span>
-<span id="cb48-2" class="hljs-ln-code"><a></a></span>
-<span id="cb48-3" class="hljs-ln-code"><a></a>pride_tbl <span class="sc">|&gt;</span> </span>
-<span id="cb48-4" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(text, <span class="st">"^Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>),</span>
-<span id="cb48-5" class="hljs-ln-code"><a></a>         text <span class="sc">!=</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb67-1" class="hljs-ln-code"><a></a>pride_tbl <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">text =</span> prideprejudice)</span>
+<span id="cb67-2" class="hljs-ln-code"><a></a></span>
+<span id="cb67-3" class="hljs-ln-code"><a></a><span class="co"># example: divide text into sections of 80 lines</span></span>
+<span id="cb67-4" class="hljs-ln-code"><a></a>pride_tbl <span class="sc">|&gt;</span> </span>
+<span id="cb67-5" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(text, <span class="st">"^Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>),</span>
+<span id="cb67-6" class="hljs-ln-code"><a></a>         text <span class="sc">!=</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1005,16 +1131,17 @@ Gaston Sanchez
 </div>
 </div>
 </section>
-<section id="section-30" class="slide level2 smaller" data-auto-animate="true">
+<section id="section-33" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb50-1" class="hljs-ln-code"><a></a>pride_tbl <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">text =</span> prideprejudice)</span>
-<span id="cb50-2" class="hljs-ln-code"><a></a></span>
-<span id="cb50-3" class="hljs-ln-code"><a></a>pride_tbl <span class="sc">|&gt;</span> </span>
-<span id="cb50-4" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(text, <span class="st">"^Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>),</span>
-<span id="cb50-5" class="hljs-ln-code"><a></a>         text <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb50-6" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">line_number =</span> <span class="fu">row_number</span>(),</span>
-<span id="cb50-7" class="hljs-ln-code"><a></a>         <span class="at">section =</span> line_number <span class="sc">%/%</span> <span class="dv">80</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb69-1" class="hljs-ln-code"><a></a>pride_tbl <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">text =</span> prideprejudice)</span>
+<span id="cb69-2" class="hljs-ln-code"><a></a></span>
+<span id="cb69-3" class="hljs-ln-code"><a></a><span class="co"># example: divide text into sections of 80 lines</span></span>
+<span id="cb69-4" class="hljs-ln-code"><a></a>pride_tbl <span class="sc">|&gt;</span> </span>
+<span id="cb69-5" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(text, <span class="st">"^Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>),</span>
+<span id="cb69-6" class="hljs-ln-code"><a></a>         text <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb69-7" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">line_number =</span> <span class="fu">row_number</span>(),</span>
+<span id="cb69-8" class="hljs-ln-code"><a></a>         <span class="at">section =</span> line_number <span class="sc">%/%</span> <span class="dv">80</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1035,17 +1162,18 @@ Gaston Sanchez
 </div>
 </div>
 </section>
-<section id="section-31" class="slide level2 smaller" data-auto-animate="true">
+<section id="section-34" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb52-1" class="hljs-ln-code"><a></a>pride_tbl <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">text =</span> prideprejudice)</span>
-<span id="cb52-2" class="hljs-ln-code"><a></a></span>
-<span id="cb52-3" class="hljs-ln-code"><a></a>pride_tbl <span class="sc">|&gt;</span> </span>
-<span id="cb52-4" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(text, <span class="st">"^Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>),</span>
-<span id="cb52-5" class="hljs-ln-code"><a></a>         text <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb52-6" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">line_number =</span> <span class="fu">row_number</span>(),</span>
-<span id="cb52-7" class="hljs-ln-code"><a></a>         <span class="at">section =</span> line_number <span class="sc">%/%</span> <span class="dv">80</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb52-8" class="hljs-ln-code"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> text, <span class="at">output =</span> word)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb71-1" class="hljs-ln-code"><a></a>pride_tbl <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">text =</span> prideprejudice)</span>
+<span id="cb71-2" class="hljs-ln-code"><a></a></span>
+<span id="cb71-3" class="hljs-ln-code"><a></a><span class="co"># example: divide text into sections of 80 lines</span></span>
+<span id="cb71-4" class="hljs-ln-code"><a></a>pride_tbl <span class="sc">|&gt;</span> </span>
+<span id="cb71-5" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(text, <span class="st">"^Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>),</span>
+<span id="cb71-6" class="hljs-ln-code"><a></a>         text <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb71-7" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">line_number =</span> <span class="fu">row_number</span>(),</span>
+<span id="cb71-8" class="hljs-ln-code"><a></a>         <span class="at">section =</span> line_number <span class="sc">%/%</span> <span class="dv">80</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb71-9" class="hljs-ln-code"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> text, <span class="at">output =</span> word)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1066,18 +1194,19 @@ Gaston Sanchez
 </div>
 </div>
 </section>
-<section id="section-32" class="slide level2 smaller" data-auto-animate="true">
+<section id="section-35" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb54-1" class="hljs-ln-code"><a></a>pride_tbl <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">text =</span> prideprejudice)</span>
-<span id="cb54-2" class="hljs-ln-code"><a></a></span>
-<span id="cb54-3" class="hljs-ln-code"><a></a>pride_tbl <span class="sc">|&gt;</span> </span>
-<span id="cb54-4" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(text, <span class="st">"^Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>),</span>
-<span id="cb54-5" class="hljs-ln-code"><a></a>         text <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb54-6" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">line_number =</span> <span class="fu">row_number</span>(),</span>
-<span id="cb54-7" class="hljs-ln-code"><a></a>         <span class="at">section =</span> line_number <span class="sc">%/%</span> <span class="dv">80</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb54-8" class="hljs-ln-code"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> text, <span class="at">output =</span> word) <span class="sc">|&gt;</span> </span>
-<span id="cb54-9" class="hljs-ln-code"><a></a>  <span class="fu">inner_join</span>(sentiments, <span class="at">by =</span> <span class="st">"word"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb73-1" class="hljs-ln-code"><a></a>pride_tbl <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">text =</span> prideprejudice)</span>
+<span id="cb73-2" class="hljs-ln-code"><a></a></span>
+<span id="cb73-3" class="hljs-ln-code"><a></a><span class="co"># example: divide text into sections of 80 lines</span></span>
+<span id="cb73-4" class="hljs-ln-code"><a></a>pride_tbl <span class="sc">|&gt;</span> </span>
+<span id="cb73-5" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(text, <span class="st">"^Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>),</span>
+<span id="cb73-6" class="hljs-ln-code"><a></a>         text <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb73-7" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">line_number =</span> <span class="fu">row_number</span>(),</span>
+<span id="cb73-8" class="hljs-ln-code"><a></a>         <span class="at">section =</span> line_number <span class="sc">%/%</span> <span class="dv">80</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb73-9" class="hljs-ln-code"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> text, <span class="at">output =</span> word) <span class="sc">|&gt;</span> </span>
+<span id="cb73-10" class="hljs-ln-code"><a></a>  <span class="fu">inner_join</span>(sentiments, <span class="at">by =</span> <span class="st">"word"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1098,19 +1227,20 @@ Gaston Sanchez
 </div>
 </div>
 </section>
-<section id="section-33" class="slide level2 smaller" data-auto-animate="true">
+<section id="section-36" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb56-1" class="hljs-ln-code"><a></a>pride_tbl <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">text =</span> prideprejudice)</span>
-<span id="cb56-2" class="hljs-ln-code"><a></a></span>
-<span id="cb56-3" class="hljs-ln-code"><a></a>pride_tbl <span class="sc">|&gt;</span> </span>
-<span id="cb56-4" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(text, <span class="st">"^Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>),</span>
-<span id="cb56-5" class="hljs-ln-code"><a></a>         text <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb56-6" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">line_number =</span> <span class="fu">row_number</span>(),</span>
-<span id="cb56-7" class="hljs-ln-code"><a></a>         <span class="at">section =</span> line_number <span class="sc">%/%</span> <span class="dv">80</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb56-8" class="hljs-ln-code"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> text, <span class="at">output =</span> word) <span class="sc">|&gt;</span> </span>
-<span id="cb56-9" class="hljs-ln-code"><a></a>  <span class="fu">inner_join</span>(sentiments, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb56-10" class="hljs-ln-code"><a></a>  <span class="fu">count</span>(section, sentiment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb75-1" class="hljs-ln-code"><a></a>pride_tbl <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">text =</span> prideprejudice)</span>
+<span id="cb75-2" class="hljs-ln-code"><a></a></span>
+<span id="cb75-3" class="hljs-ln-code"><a></a><span class="co"># example: divide text into sections of 80 lines</span></span>
+<span id="cb75-4" class="hljs-ln-code"><a></a>pride_tbl <span class="sc">|&gt;</span> </span>
+<span id="cb75-5" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(text, <span class="st">"^Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>),</span>
+<span id="cb75-6" class="hljs-ln-code"><a></a>         text <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb75-7" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">line_number =</span> <span class="fu">row_number</span>(),</span>
+<span id="cb75-8" class="hljs-ln-code"><a></a>         <span class="at">section =</span> line_number <span class="sc">%/%</span> <span class="dv">80</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb75-9" class="hljs-ln-code"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> text, <span class="at">output =</span> word) <span class="sc">|&gt;</span> </span>
+<span id="cb75-10" class="hljs-ln-code"><a></a>  <span class="fu">inner_join</span>(sentiments, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb75-11" class="hljs-ln-code"><a></a>  <span class="fu">count</span>(section, sentiment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1131,20 +1261,21 @@ Gaston Sanchez
 </div>
 </div>
 </section>
-<section id="section-34" class="slide level2 smaller" data-auto-animate="true">
+<section id="section-37" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb58-1" class="hljs-ln-code"><a></a>pride_tbl <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">text =</span> prideprejudice)</span>
-<span id="cb58-2" class="hljs-ln-code"><a></a></span>
-<span id="cb58-3" class="hljs-ln-code"><a></a>pride_tbl <span class="sc">|&gt;</span> </span>
-<span id="cb58-4" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(text, <span class="st">"^Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>),</span>
-<span id="cb58-5" class="hljs-ln-code"><a></a>         text <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb58-6" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">line_number =</span> <span class="fu">row_number</span>(),</span>
-<span id="cb58-7" class="hljs-ln-code"><a></a>         <span class="at">section =</span> line_number <span class="sc">%/%</span> <span class="dv">80</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb58-8" class="hljs-ln-code"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> text, <span class="at">output =</span> word) <span class="sc">|&gt;</span> </span>
-<span id="cb58-9" class="hljs-ln-code"><a></a>  <span class="fu">inner_join</span>(sentiments, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb58-10" class="hljs-ln-code"><a></a>  <span class="fu">count</span>(section, sentiment) <span class="sc">|&gt;</span> </span>
-<span id="cb58-11" class="hljs-ln-code"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, <span class="at">values_from =</span> n, <span class="at">values_fill =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb77-1" class="hljs-ln-code"><a></a>pride_tbl <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">text =</span> prideprejudice)</span>
+<span id="cb77-2" class="hljs-ln-code"><a></a></span>
+<span id="cb77-3" class="hljs-ln-code"><a></a><span class="co"># example: divide text into sections of 80 lines</span></span>
+<span id="cb77-4" class="hljs-ln-code"><a></a>pride_tbl <span class="sc">|&gt;</span> </span>
+<span id="cb77-5" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(text, <span class="st">"^Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>),</span>
+<span id="cb77-6" class="hljs-ln-code"><a></a>         text <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb77-7" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">line_number =</span> <span class="fu">row_number</span>(),</span>
+<span id="cb77-8" class="hljs-ln-code"><a></a>         <span class="at">section =</span> line_number <span class="sc">%/%</span> <span class="dv">80</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb77-9" class="hljs-ln-code"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> text, <span class="at">output =</span> word) <span class="sc">|&gt;</span> </span>
+<span id="cb77-10" class="hljs-ln-code"><a></a>  <span class="fu">inner_join</span>(sentiments, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb77-11" class="hljs-ln-code"><a></a>  <span class="fu">count</span>(section, sentiment) <span class="sc">|&gt;</span> </span>
+<span id="cb77-12" class="hljs-ln-code"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, <span class="at">values_from =</span> n, <span class="at">values_fill =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1165,21 +1296,22 @@ Gaston Sanchez
 </div>
 </div>
 </section>
-<section id="section-35" class="slide level2 smaller" data-auto-animate="true">
+<section id="section-38" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb60-1" class="hljs-ln-code"><a></a>pride_tbl <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">text =</span> prideprejudice)</span>
-<span id="cb60-2" class="hljs-ln-code"><a></a></span>
-<span id="cb60-3" class="hljs-ln-code"><a></a>pride_tbl <span class="sc">|&gt;</span> </span>
-<span id="cb60-4" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(text, <span class="st">"^Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>),</span>
-<span id="cb60-5" class="hljs-ln-code"><a></a>         text <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb60-6" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">line_number =</span> <span class="fu">row_number</span>(),</span>
-<span id="cb60-7" class="hljs-ln-code"><a></a>         <span class="at">section =</span> line_number <span class="sc">%/%</span> <span class="dv">80</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb60-8" class="hljs-ln-code"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> text, <span class="at">output =</span> word) <span class="sc">|&gt;</span> </span>
-<span id="cb60-9" class="hljs-ln-code"><a></a>  <span class="fu">inner_join</span>(sentiments, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb60-10" class="hljs-ln-code"><a></a>  <span class="fu">count</span>(section, sentiment) <span class="sc">|&gt;</span> </span>
-<span id="cb60-11" class="hljs-ln-code"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, <span class="at">values_from =</span> n, <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
-<span id="cb60-12" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">score =</span> positive <span class="sc">-</span> negative)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb79-1" class="hljs-ln-code"><a></a>pride_tbl <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">text =</span> prideprejudice)</span>
+<span id="cb79-2" class="hljs-ln-code"><a></a></span>
+<span id="cb79-3" class="hljs-ln-code"><a></a><span class="co"># example: divide text into sections of 80 lines</span></span>
+<span id="cb79-4" class="hljs-ln-code"><a></a>pride_tbl <span class="sc">|&gt;</span> </span>
+<span id="cb79-5" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(text, <span class="st">"^Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>),</span>
+<span id="cb79-6" class="hljs-ln-code"><a></a>         text <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb79-7" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">line_number =</span> <span class="fu">row_number</span>(),</span>
+<span id="cb79-8" class="hljs-ln-code"><a></a>         <span class="at">section =</span> line_number <span class="sc">%/%</span> <span class="dv">80</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb79-9" class="hljs-ln-code"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> text, <span class="at">output =</span> word) <span class="sc">|&gt;</span> </span>
+<span id="cb79-10" class="hljs-ln-code"><a></a>  <span class="fu">inner_join</span>(sentiments, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb79-11" class="hljs-ln-code"><a></a>  <span class="fu">count</span>(section, sentiment) <span class="sc">|&gt;</span> </span>
+<span id="cb79-12" class="hljs-ln-code"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, <span class="at">values_from =</span> n, <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb79-13" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">score =</span> positive <span class="sc">-</span> negative)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1200,41 +1332,41 @@ Gaston Sanchez
 </div>
 </div>
 </section>
-<section id="section-36" class="slide level2" data-auto-animate="true">
+<section id="section-39" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb62-1" class="hljs-ln-code"><a></a>section_scores <span class="ot">=</span> pride_tbl <span class="sc">|&gt;</span> </span>
-<span id="cb62-2" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(text, <span class="st">"^Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>),</span>
-<span id="cb62-3" class="hljs-ln-code"><a></a>         text <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb62-4" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">line_number =</span> <span class="fu">row_number</span>(),</span>
-<span id="cb62-5" class="hljs-ln-code"><a></a>         <span class="at">section =</span> line_number <span class="sc">%/%</span> <span class="dv">80</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb62-6" class="hljs-ln-code"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> text, <span class="at">output =</span> word) <span class="sc">|&gt;</span> </span>
-<span id="cb62-7" class="hljs-ln-code"><a></a>  <span class="fu">inner_join</span>(sentiments, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb62-8" class="hljs-ln-code"><a></a>  <span class="fu">count</span>(section, sentiment) <span class="sc">|&gt;</span> </span>
-<span id="cb62-9" class="hljs-ln-code"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, </span>
-<span id="cb62-10" class="hljs-ln-code"><a></a>              <span class="at">values_from =</span> n, </span>
-<span id="cb62-11" class="hljs-ln-code"><a></a>              <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
-<span id="cb62-12" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">score =</span> positive <span class="sc">-</span> negative)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb81-1" class="hljs-ln-code"><a></a>section_scores <span class="ot">=</span> pride_tbl <span class="sc">|&gt;</span> </span>
+<span id="cb81-2" class="hljs-ln-code"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(text, <span class="st">"^Chapter</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d+"</span>),</span>
+<span id="cb81-3" class="hljs-ln-code"><a></a>         text <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb81-4" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">line_number =</span> <span class="fu">row_number</span>(),</span>
+<span id="cb81-5" class="hljs-ln-code"><a></a>         <span class="at">section =</span> line_number <span class="sc">%/%</span> <span class="dv">80</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb81-6" class="hljs-ln-code"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> text, <span class="at">output =</span> word) <span class="sc">|&gt;</span> </span>
+<span id="cb81-7" class="hljs-ln-code"><a></a>  <span class="fu">inner_join</span>(sentiments, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb81-8" class="hljs-ln-code"><a></a>  <span class="fu">count</span>(section, sentiment) <span class="sc">|&gt;</span> </span>
+<span id="cb81-9" class="hljs-ln-code"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, </span>
+<span id="cb81-10" class="hljs-ln-code"><a></a>              <span class="at">values_from =</span> n, </span>
+<span id="cb81-11" class="hljs-ln-code"><a></a>              <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb81-12" class="hljs-ln-code"><a></a>  <span class="fu">mutate</span>(<span class="at">score =</span> positive <span class="sc">-</span> negative)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-37" class="slide level2">
+<section id="section-40" class="slide level2">
 <h2></h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a>section_scores <span class="sc">|&gt;</span> </span>
-<span id="cb63-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> section, <span class="at">y =</span> score, <span class="at">fill =</span> score)) <span class="sc">+</span></span>
-<span id="cb63-3"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb63-4"><a></a>  <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
-<span id="cb63-5"><a></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb63-6"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Narrative arc of Pride and Prejudice"</span>,</span>
-<span id="cb63-7"><a></a>       <span class="at">subtitle =</span> <span class="st">"Each section involves 80 lines of text"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a></a>section_scores <span class="sc">|&gt;</span> </span>
+<span id="cb82-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> section, <span class="at">y =</span> score, <span class="at">fill =</span> score)) <span class="sc">+</span></span>
+<span id="cb82-3"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb82-4"><a></a>  <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb82-5"><a></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb82-6"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Narrative arc of Pride and Prejudice"</span>,</span>
+<span id="cb82-7"><a></a>       <span class="at">subtitle =</span> <span class="st">"Each section involves 80 lines of text"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
 
 
-<img data-src="slides_files/figure-revealjs/unnamed-chunk-41-1.png" style="width:80.0%" class="r-stretch"></section></section>
+<img data-src="slides_files/figure-revealjs/unnamed-chunk-51-1.png" style="width:80.0%" class="r-stretch"></section></section>
 
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
