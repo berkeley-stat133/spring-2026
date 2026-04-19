@@ -68,7 +68,7 @@ library(plotly)        # web interactive plots
 
 1) We used the vector `prideprejudice` from the package `"janeaustenr"`,
 2) Put it into a tibble for _tidytext_ convenience,
-3) Tokenize into words.
+3) Tokenize into words, and counted their frequencies.
 
 . . .
 
@@ -92,7 +92,7 @@ One common approach is to consider the text as a combination of its individual w
 
 \ 
 
-This involves assigning a sentiment category to each token, which in turn requires using a [Sentiment Lexicon]{.bold-hilit}
+This involves assigning a sentiment category to each token, which in turn requires using a [Sentiment Lexicon]{.bold-hilit}.
 
 
 ##
@@ -155,7 +155,7 @@ anger, anticipation, disgust, fear, joy, sadness, surprise, and trust.
 
 ## Sentiment lexicons
 
-The sentiment lexicons mentioned in the previous slide can be obtained with the `get_sentiments(lexicon = ...)` function.
+The `sentiment` lexicons mentioned in the previous slide can be obtained with the `get_sentiments(lexicon = ...)` function.
 
 . . .
 
