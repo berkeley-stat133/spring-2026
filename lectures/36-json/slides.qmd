@@ -33,10 +33,10 @@ So far you've been dealing with data sets in various formats:
 
 \
 
-But you also need to learn how to get data from the web.
+But you also need to learn how to get data from the web through APIs.
 
 
-## Web Data
+## Web Data and JSON format
 
 - Reading data from the Web entails a whole other set of considerations. 
 
@@ -46,7 +46,7 @@ But you also need to learn how to get data from the web.
 
 - Why to focus on APIs? Because nowadays many companies, services, websites, etc. use APIs as their primary means to share information and data.
 
-- An increasing number of APIs have adopted a common format to share data: [JSON]{.bold-hilit}
+- BTW: An increasing number of APIs have adopted a common format to share data: [JSON]{.bold-hilit}
 
 - So before discussing how to work with APIs, we'll begin with JSON data.
 
@@ -215,9 +215,20 @@ JSON provides four data types
     + analogous to `NULL` in R
 
 
-## Container: JSON arrays 
+## JSON Containers or "data structures" 
 
-. . .
+JSON values (e.g. strings, numbers, booleans, null) are typically contained in one of two kind of structures:
+
+\
+
+1) JSON Arrays
+
+\
+
+2) JSON Objects
+
+
+## Container: JSON arrays 
 
 - Unnamed ordered arrays
 - Defined with square brackets `[ ]`
@@ -248,9 +259,7 @@ JSON provides four data types
 ```
 
 
-## Container: JSON object 
-
-. . .
+## Container: JSON objects
 
 - Key-value pairs: `"key": value`
 - Defined with curly braces `{ }`
@@ -260,7 +269,7 @@ JSON provides four data types
 . . .
 
 ```json
-{ "key": value}
+{ "key": value }
 ```
 
 . . .
@@ -380,6 +389,12 @@ There are 2 main functions:
 json1 <- '[1, 2, 3, 4, 5]'
 
 r1 <- fromJSON(json1)
+r1
+```
+
+. . . 
+
+```{r}
 class(r1)
 ```
 
@@ -392,6 +407,12 @@ class(r1)
 json2 <- '[true, true, false]'
 
 r2 <- fromJSON(json2)
+r2
+```
+
+. . .
+
+```{r}
 class(r2)
 ```
 
@@ -416,14 +437,14 @@ fromJSON(json3)
 
 ```{r}
 #| output-location: fragment
-json6 <- fromJSON('{
+json4 <- fromJSON('{
   "name": ["Leia", "Luke", "Han"],
   "gender": ["female", "male", "male"],
   "height": [1.6, 1.7, 1.8],
   "force": [true, true, false]
 }')
 
-as.data.frame(json6)
+as.data.frame(json4)
 ```
 
 
@@ -462,7 +483,7 @@ leia_lst <- list(
   "height" = 1.50, 
   "force" = TRUE)
 
-toJSON(leia_lst, auto_unbox = FALSE, pretty = TRUE)
+toJSON(leia_lst, auto_unbox = TRUE, pretty = TRUE)
 ```
 
 
