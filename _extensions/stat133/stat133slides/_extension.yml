@@ -6,7 +6,7 @@ contributes:
   formats:
     revealjs:
       subtitle: "STAT 133: Concepts in Computing with Data"
-      author: "Gaston Sanchez"
+      author: "STAT 133 with Gaston Sanchez"
       theme: [slides.scss]
       logo: stat133-hex-num-logo.png
       height: 900
