@@ -75,8 +75,7 @@ library(plotly)        # web interactive plots
 ```{r}
 #| output-location: fragment
 pride_tbl = tibble(text = prideprejudice)
-
-pride_tokens = unnest_tokens(pride_tbl, input = text, output = word)
+pride_tokens = unnest_tokens(pride_tbl, input=text, output=word)
 pride_tokens
 ```
 
@@ -171,7 +170,7 @@ afinn = get_sentiment(lexicon = "afinn")
 \ 
 
 ::: {.callout-warning icon=true}
-The issue is that `get_sentiments()` is an interactive function that requires manual input. If you include this function in a `qmd` file it won't work.
+`get_sentiments()` is an interactive function that requires manual input. This is okay in an interactive session, but it won't work when rendering a `qmd` file or in a _shiny_ document.
 
 It's better to download the lexicons to a text or an R file, and then import them with a reading function, e.g. `read_csv()`.
 :::
@@ -182,26 +181,27 @@ It's better to download the lexicons to a text or an R file, and then import the
 :::: {.columns}
 ::: {.column}
 ```{r}
-#| output-location: fragment
 bing |> slice_head(n = 8)
 ```
 
+::: {.fragment}
 ```{r}
-#| output-location: fragment
 afinn |> slice_head(n = 8)
 ```
 :::
 
+:::
+
 ::: {.column .fragment}
 ```{r}
-#| output-location: fragment
 loughran |> slice_head(n = 8)
 ```
 
+::: {.fragment}
 ```{r}
-#| output-location: fragment
 nrc |> slice_head(n = 8)
 ```
+:::
 :::
 ::::
 
@@ -226,7 +226,7 @@ sentiments
 
 \ 
 
-How would you assign sentiments to `pride_tokens`?
+How would you assign sentiments to words in `pride_tokens`?
 
 ```{r}
 #| echo: false
@@ -276,11 +276,11 @@ pride_sentim |>
 ## Sentiment Score by Chapter
 
 Another type of sentiment analysis that can be performed on the `prideprejudice`
-text is to compute a sentiment score for each chapter in the book.
+text is to __compute a sentiment score for each chapter__ in the book.
 
 . . .
 
-We need to do a bit of text processing in order to split the text into chapters.
+We need to do a bit of text processing in order to [split the text into chapters]{.bold-hilit}.
 Here are the proposed steps:
 
 1) Collapse `prideprejudice` into a single element vector
@@ -312,6 +312,38 @@ head(prideprejudice, n = 10)
 We can use these lines of text to detect where a chapter begins.
 
 
+## {.smaller}
+
+:::: {.columns}
+::: {.column}
+```{r}
+prideprejudice[3:10]
+```
+
+\
+
+```{r}
+prideprejudice[120:127]
+```
+:::
+
+::: {.column}
+```{r}
+prideprejudice[228:235]
+```
+
+\
+
+```{r}
+prideprejudice[398:405]
+```
+:::
+::::
+
+. . .
+
+[Goal: Detect where a chapter begins.]{.mdlit}
+
 ##
 
 Step 1) collapse text into one-element vector
@@ -330,6 +362,65 @@ Step 2) split text into chapters using `str_split()` which returns a list
 
 ```{r}
 pride_split = str_split(pride_collapsed, pattern = "Chapter\\s\\d+")
+```
+
+. . .
+
+\
+
+```{r}
+class(pride_split)
+```
+
+. . .
+
+\
+
+```{r}
+length(pride_split[[1]])
+```
+
+
+##
+
+. . .
+
+```{r}
+#| output-location: fragment
+# first element (book's title; NOT a chapter)
+pride_split[[1]][1]
+```
+
+. . .
+
+\
+
+```{r}
+#| eval: false
+# text of chapter 1
+pride_split[[1]][2]
+```
+
+. . .
+
+```
+[1] "   It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.  However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed ...
+```
+
+. . .
+
+\
+
+```{r}
+#| eval: false
+# text of chapter 2
+pride_split[[1]][3]
+```
+
+. . .
+
+```
+[1] "   Mr. Bennet was among the earliest of those who waited on Mr. Bingley. He had always intended to visit him, though to the last always assuring his wife that he should not go; and till the evening after the visit was paid she had no knowledge of it. It was then ...
 ```
 
 
@@ -364,7 +455,7 @@ pride_chaps
 ## {auto-animate=true}
 
 Then we proceed as usual: tokenizing the text, getting
-word count, and assigning sentiments:
+word counts taking chapter into account, and assigning sentiments:
 
 . . .
 
@@ -376,11 +467,24 @@ pride_toks = unnest_tokens(pride_chaps, input=text, output=word)
 
 ## {auto-animate=true}
 
-Then we proceed as usual: tokenizing the text, removing stopwords, and getting
-word counts:
+Then we proceed as usual: tokenizing the text, getting
+word counts taking chapter into account, and assigning sentiments:
 
 ```{r}
-#| output-location: fragment
+#| eval: false
+pride_toks = unnest_tokens(pride_chaps, input=text, output=word)
+
+pride_toks_count = pride_toks |> 
+  count(word, chapter, name = "count", sort = TRUE)
+```
+
+
+## {auto-animate=true}
+
+Then we proceed as usual: tokenizing the text, getting
+word counts taking chapter into account, and assigning sentiments:
+
+```{r}
 pride_toks = unnest_tokens(pride_chaps, input=text, output=word)
 
 pride_toks_count = pride_toks |> 
@@ -392,8 +496,8 @@ pride_toks_count
 
 ## {auto-animate=true}
 
-Then we proceed as usual: tokenizing the text, removing stopwords, and getting
-word counts:
+Then we proceed as usual: tokenizing the text, getting
+word counts taking chapter into account, and assigning sentiments:
 
 ```{r}
 pride_toks = unnest_tokens(pride_chaps, input=text, output=word)
@@ -401,7 +505,7 @@ pride_toks = unnest_tokens(pride_chaps, input=text, output=word)
 pride_toks_count = pride_toks |> 
   count(word, chapter, name = "count", sort = TRUE)
 
-pride_sent = inner_join(pride_toks_count, sentiments, by = "word") |> 
+pride_sent = inner_join(pride_toks_count, sentiments, by="word") |> 
   filter(word != "miss")
 ```
 
@@ -460,7 +564,7 @@ Given `pride_sent`, how would you obtain `chapter_scores`?
 
 ```{r}
 #| echo: false
-countdown::countdown(2, bottom = 0)
+countdown::countdown(1.5, bottom = 0)
 ```
 
 
@@ -567,6 +671,7 @@ pride_tbl = tibble(text = prideprejudice)
 #| output-location: fragment
 pride_tbl = tibble(text = prideprejudice)
 
+# example: divide text into sections of 80 lines
 pride_tbl |> 
   filter(!str_detect(text, "^Chapter\\s\\d+"),
          text != "")
@@ -578,6 +683,7 @@ pride_tbl |>
 #| output-location: fragment
 pride_tbl = tibble(text = prideprejudice)
 
+# example: divide text into sections of 80 lines
 pride_tbl |> 
   filter(!str_detect(text, "^Chapter\\s\\d+"),
          text != "") |> 
@@ -592,6 +698,7 @@ pride_tbl |>
 #| output-location: fragment
 pride_tbl = tibble(text = prideprejudice)
 
+# example: divide text into sections of 80 lines
 pride_tbl |> 
   filter(!str_detect(text, "^Chapter\\s\\d+"),
          text != "") |> 
@@ -606,6 +713,7 @@ pride_tbl |>
 #| output-location: fragment
 pride_tbl = tibble(text = prideprejudice)
 
+# example: divide text into sections of 80 lines
 pride_tbl |> 
   filter(!str_detect(text, "^Chapter\\s\\d+"),
          text != "") |> 
@@ -621,6 +729,7 @@ pride_tbl |>
 #| output-location: fragment
 pride_tbl = tibble(text = prideprejudice)
 
+# example: divide text into sections of 80 lines
 pride_tbl |> 
   filter(!str_detect(text, "^Chapter\\s\\d+"),
          text != "") |> 
@@ -637,6 +746,7 @@ pride_tbl |>
 #| output-location: fragment
 pride_tbl = tibble(text = prideprejudice)
 
+# example: divide text into sections of 80 lines
 pride_tbl |> 
   filter(!str_detect(text, "^Chapter\\s\\d+"),
          text != "") |> 
@@ -654,6 +764,7 @@ pride_tbl |>
 #| output-location: fragment
 pride_tbl = tibble(text = prideprejudice)
 
+# example: divide text into sections of 80 lines
 pride_tbl |> 
   filter(!str_detect(text, "^Chapter\\s\\d+"),
          text != "") |> 
