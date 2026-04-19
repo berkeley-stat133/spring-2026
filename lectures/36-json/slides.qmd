@@ -1,5 +1,5 @@
 ---
-title: "JSON Data"
+title: "JSON Data, and APIs I"
 subtitle: "Web Technologies"
 format: stat133slides-revealjs
 revealjs-plugins:
@@ -13,7 +13,45 @@ library(tidyverse)
 library(jsonlite)
 ```
 
-# Motivation
+# Introduction
+
+## Data in various formats
+
+So far you've been dealing with data sets in various formats: 
+
+- internal data objects in R 
+    + data frames such as `mtcars` or `faithful`
+    + tibbles like `storms` or `penguins`
+
+- text files with tabular structure (txt, csv, tsv, etc)
+
+- unstructured text files (e.g. Jane Austen's novels)
+
+- binary files like shapefiles or NetCDF files
+
+. . .
+
+\
+
+But you also need to learn how to get data from the web.
+
+
+## Web Data
+
+- Reading data from the Web entails a whole other set of considerations. 
+
+- Because of the large variety of data formats available in the Web, we will primarily focus on retrieving data from [Application Programming Interfaces]{.bold-hilit} also known as **_APIs_**.
+
+- Think of an API as a ["Data Sharing Interface"]{.bold-hilit}
+
+- Why to focus on APIs? Because nowadays many companies, services, websites, etc. use APIs as their primary means to share information and data.
+
+- An increasing number of APIs have adopted a common format to share data: [JSON]{.bold-hilit}
+
+- So before discussing how to work with APIs, we'll begin with JSON data.
+
+
+# Preamble
 
 ## {.nostretch}
 
@@ -233,7 +271,7 @@ JSON provides four data types
 { 
   "class": "STAT 133",
   "semester": "Spring",
-  "year": 2016,
+  "year": 2026,
   "prereqs": null
 }
 ```
@@ -260,6 +298,7 @@ JSON provides four data types
 
 \
 
+::: {.fragment}
 [Object]{.bold-hilit}
 
 ```json
@@ -270,6 +309,8 @@ JSON provides four data types
   "force": true
 }
 ```
+:::
+
 :::
 ::::
 
@@ -325,6 +366,15 @@ library(jsonlite)
 
 \
 
+There are 2 main functions:
+
+1) `fromJSON()`: convert JSON data (entered as text) to R objects
+
+2) `toJSON()`: convert R objects to JSON data
+
+
+##
+
 ```{r}
 #| output-location: fragment
 json1 <- '[1, 2, 3, 4, 5]'
@@ -377,16 +427,175 @@ as.data.frame(json6)
 ```
 
 
-# Example: "Open Notify"
-
-## API "Open Notify"
-
-API stands for _Application Programming Interface_. In simpler terms, think of
-API as a __data sharing interface__.
+## 
 
 ```{r}
-url = "http://api.open-notify.org/iss-now.json"
+#| output-location: fragment
+leia_vec <- c('Leia', 'female', '1.50', 'true')
 
-x = fromJSON(url)
-x
+toJSON(leia_vec)
 ```
+
+. . .
+
+\
+
+```{r}
+#| output-location: fragment
+leia_lst <- list(
+  "name" = "Leia", 
+  "gender" = "female", 
+  "height" = 1.50, 
+  "force" = TRUE)
+
+toJSON(leia_lst)
+```
+
+
+## 
+
+```{r}
+#| output-location: fragment
+leia_lst <- list(
+  "name" = "Leia", 
+  "gender" = "female", 
+  "height" = 1.50, 
+  "force" = TRUE)
+
+toJSON(leia_lst, auto_unbox = FALSE, pretty = TRUE)
+```
+
+
+# Web Basics
+
+##
+
+In this section we'll give you a crash introduction to [HTTP]{.bold-hilit} so you can be prepared to work with [Application Programming Interfaces]{.hilit} (APIs). 
+
+Specifically, we cover:
+
+- Web made of Clients and Servers
+- HTTP basics
+- HTTP requests and responses
+
+
+## {.nostretch}
+
+![](images/web-basics1.svg){width="78%" fig-align="center"}
+
+##
+
+- You access websites using software called a **Web browser** (e.g. Chrome, Firefox, etc).
+
+- The browser in your computer is the [Client]{.hilit} that requests a variety of resources.
+
+- The client’s request is sent to [Web Servers]{.mdlit} which send responses back to the client.
+
+- The way [Client]{.hilit} and [Server]{.mdlit} dialogue between each other is by following a **_formal protocol of communication_**.
+
+
+## {.nostretch}
+
+![](images/web-basics2.svg){width="80%" fig-align="center"}
+
+## {.nostretch}
+
+![](images/web-basics3.svg){width="80%" fig-align="center"}
+
+## Clients and Servers
+
+- The software-and-computers that form the Web are divided into two types: [Clients]{.hilit} and [Servers]{.mdlit}.
+
+- A [Client]{.hilit} is the software that requests information (html pages, scripts, images, video, audio).
+
+- A [Server]{.mdlit} is the software-computer in charge of serving the resources that the clients request.
+
+- [Clients]{.hilit} and [Servers]{.mdlit} communicate via the [HyperText Transfer Protocol (HTTP)]{.bold-hilit} and other protocols.
+
+
+## {.nostretch}
+
+![](images/web-basics4.svg){width="90%" fig-align="center"}
+
+
+# HTTP Basics
+
+## HyperText Transfer Protocol
+
+- Protocol: a system of rules that explain the correct conduct and procedures to be followed in formal situations.
+
+- HTTP stands for **_HyperText Transfer Protocol_**
+
+- HTTP is a communications protocol, i.e. a system of digital rules for data exchange within or between computers.
+
+- HTTP allows clients and servers to communicate (send and receive messages).
+
+- HTTP can be used to transfer documents, images, movies, audio files, data, scripts, and all other web resources that make up websites and applications.
+
+
+## {.nostretch}
+
+![](images/web-basics5.svg){width="78%" fig-align="center"}
+
+
+## Anatomy of HTTP message
+
+. . .
+
+HTTP messages consist of 2 parts (separated by a blank line)
+
+1) A [message header]{.bold-hilit}:
+    + The 1st line in the header is the request/response line
+    + The rest of the lines are __headers__ formed by `key:value` pairs.
+
+2) An optional [message body]{.bold-hilit}
+
+## {.nostretch}
+
+![](images/web-basics6.svg){width="80%" fig-align="center"}
+
+## {.nostretch}
+
+![](images/web-basics7.svg){width="90%" fig-align="center"}
+
+## {.nostretch}
+
+![](images/web-basics8.svg){width="90%" fig-align="center"}
+
+
+## HTTP Methods {.smaller}
+
+| Method   | Description |
+|----------|-------------|
+| `GET`    | Retrieves whatever information is identified by the Request URI |
+| `POST`   | Request with data enclosed in the request body |
+| `HEAD`   | Identical to `GET` except that the server must not return a message-body in the response |
+| `PUT`    | Requests that the enclosed entity be stored under the supplied request-URI |
+| `DELETE` | Requests that the origin server delete the resource identified by the request-URI |
+| `TRACE`  | Invokes a remote, application-layer loop-back of the request message |
+| `CONNECT`| For use with a proxy that can dynamically switch to being a tunnel |
+
+
+## Status Codes
+
+| Status | Description |
+|--------|-------------|
+| `1xx`  | Informational messages |
+| `2xx`  | Successful (e.g. 200, 202, 204, 205, 206) |
+| `3xx`  | Redirection (e.g. 301, 303, 304) |
+| `4xx`  | Client error (e.g. 400, 401, 403, 404) |
+| `5xx`  | Server error (e.g. 500, 501, 503) |
+
+
+## Recap
+
+- The HTTP protocol is a standardized method for transfering data or documents over the Web.
+
+- The software-and-computers that form the Web are divided into two types: [Clients]{.hilit} and [Servers]{.mdlit}.
+
+- The clients' requests and the servers' responses are handled via HTTP.
+
+- There are 2 types of HTTP messages: [requests]{.hilit} and [responses]{.mdlit}.
+
+- We don't actually see HTTP dialogues but they are there behind the scenes.
+
