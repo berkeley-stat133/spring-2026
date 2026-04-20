@@ -506,7 +506,7 @@ Lab 12: [slides](labs/lab12/slides.html) | [PS11](https://bcourses.berkeley.edu/
 
 ::: {.column width="35%"}
 #### Description
-Text Analysis 2
+[Text Analysis 2](lectures/35-text-analysis2/slides.html)
 
 Text Analysis 3
 
