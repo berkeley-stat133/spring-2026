@@ -1,0 +1,307 @@
+---
+title: "Pub 12: Quarto Website for Project 5"
+author: STAT 133
+format: 
+  html:
+    toc: true
+    number-sections: true
+embed-resources: true
+---
+
+::: {.callout-note icon=false}
+## About
+
+The goal of this publication is to show you how to create a basic website to present your Project 6, and how to publish it on __Netlify__.
+:::
+
+
+-----
+
+# Quarto Website Reminder
+
+The official documentation for Quarto Websites is:
+
+<https://quarto.org/docs/websites/>
+
+Creating a basic Quarto website is super easy by following these steps in Positron:
+
+1) Click on the __New__ tab in the top left corner
+
+2) Select __New File__
+
+3) Choose __Quarto Project__ > __Website Project__
+
+4) Select a location/directory for your project, and give it a name (e.g. `website`)
+
+5) Click __Create__
+
+And in RStudio:
+
+1) Click on the __File__ tab in the menu bar
+
+2) Select __New Project ...__ 
+
+3) Choose __Quarto Website__
+
+4) Select a location/directory for your project, and give it a name (e.g. `website`)
+
+5) Click __Create__
+
+
+## Your Turn: Create a Quarto Website
+
+Follow the steps listed above to create a Quarto Website for your Project 6 to be presented in.
+
+
+## File Structure
+
+After creating the project, you will have the following file structure:
+
+```
+project6-website/
+  .quarto/
+  _quarto.yml
+  index.qmd
+  about.qmd
+  styles.css
+```
+
+The `_quarto.yml` file is the configuration file — it controls site-wide settings like the title, navbar, and theme.
+
+The `.qmd` files (`index.qmd`, `about.qmd`) are the pages of your website written in Quarto markdown.
+
+The `styles.css` file lets you optionally customize the look and feel of your site.
+
+
+
+## Previewing your website
+
+To preview your website, go to the __Terminal__ pane (same area as the R console) and run:
+
+```{.markdown filename="Terminal"}
+quarto preview
+```
+
+This will open a live preview in your browser. Any time you save a `.qmd` file, the preview will automatically refresh. Alternatively, you can also click the Preview button.
+
+\
+
+---
+
+# Setting Up Your Project 6 Website
+
+## Add Analysis Pages
+
+Your Project 6 website needs pages for each of your two text analyses. To add them:
+
+1) Create a new file called `analysis1.qmd` in your project folder
+2) Create a second file called `analysis2.qmd`
+
+Each file should have a YAML header at the top, for example:
+
+```{.markdown filename="analysis1.qmd"}
+---
+title: "Analysis 1: [Your Text Title Here]"
+---
+```
+
+Then add your narrative text, code chunks, and any plots or output below the header.
+
+
+## Add a `data/` Directory
+
+Create a folder called `data/` inside your project. Move any datasets you are using into this folder. For example, your text files and lexicons (`bing.csv`, `nrc.csv`, `afinn.csv`).
+
+
+## Add an `assets/` Directory
+
+Create a folder called `assets/` inside your project. This is where you will store your favicon (see Section 3 below).
+
+
+## Final File Structure
+
+After completing the steps above, your project should look like this:
+
+```
+project6-website/
+  .quarto/
+  _quarto.yml
+  index.qmd
+  about.qmd
+  styles.css
+  analysis1.qmd
+  analysis2.qmd
+  assets/
+    favicon.ico
+  data/
+```
+
+---
+
+# Adding a Favicon
+
+A favicon is the small icon that appears in the browser tab for your website. This makes your website look more polished and professional.
+
+
+## Create a Favicon
+
+A quick way to create a text-based favicon is with <a href="https://favicon.io/favicon-generator/" target="_blank">https://favicon.io/favicon-generator/</a> — choose the __Generate From Text__ option.
+
+For example, use the initials of your first and last name. Once you have designed it, click __Download__ to get a zipped file. Unzip it and copy just the `favicon.ico` file into your project's `assets/` folder.
+
+
+## Include the Favicon in Your Site
+
+Open `_quarto.yml` and add a `favicon` option under the `website` section:
+
+```{.yaml filename="_quarto.yml"}
+project:
+  type: website
+
+website:
+  favicon: assets/favicon.ico
+  title: "Your Name"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: analysis1.qmd
+        text: Analysis 1
+      - href: analysis2.qmd
+        text: Analysis 2
+      - href: about.qmd
+        text: About
+```
+
+::: {.callout-note}
+The `navbar` section above is how you control which pages appear in your site's top navigation bar. Make sure all four pages are listed.
+:::
+
+Re-run `quarto preview` to confirm the favicon and navbar appear correctly.
+
+---
+
+# Customizing Your Pages
+
+## Customize `index.qmd` (Home Page)
+
+Your home page should introduce your project. Include:
+
+- A brief description of your Project 6 and which texts you chose to analyze
+- An image (optional but encouraged)
+- Links to your two analysis pages (see Section 5 for how to link correctly)
+
+
+## Customize `about.qmd`
+
+Your About page should include:
+
+- Your name
+- A brief description of what this website is for and why you created it
+
+
+## Customize the Theme
+
+You can change the visual theme of your site by editing `_quarto.yml`. For example:
+
+```{.yaml filename="_quarto.yml"}
+format:
+  html:
+    theme: cosmo
+```
+
+Browse all available themes at <https://quarto.org/docs/output-formats/html-themes.html> and pick one you like.
+
+---
+
+# Linking to Your Analysis Pages from `index.qmd`
+
+This is an important step to help website viewers navigate to your main content. 
+
+## Why Link to `.html` Files, Not `.qmd` Files
+
+When Quarto renders/previews your website, it converts every `.qmd` file into a corresponding `.html` file and saves everything in the `_site/` folder. The `.html` files are what actually get served as your website. The `.qmd` files are just the source.
+
+This means:
+
+- `analysis1.qmd` becomes `analysis1.html`
+- `analysis2.qmd` becomes `analysis2.html`
+
+When you add links inside `index.qmd`, you need to link to `analysis1.html` (not `analysis1.qmd`), because that is the file that will exist when someone visits your site.
+
+
+## How to Add Links in `index.qmd`
+
+Use standard markdown link syntax, pointing to the `.html` files:
+
+```{.markdown filename="index.qmd"}
+## Analyses
+
+This website presents two text analyses:
+
+- [Analysis 1: Title of Your First Text Analysis](analysis1.html)
+- [Analysis 2: Title of Your Second Text Analysis](analysis2.html)
+```
+
+::: {.callout-tip}
+## Summary
+
+| Situation | What to write |
+|-----------|---------------|
+| Links inside `.qmd` files | Use `.html` extension (like `analysis1.html`) |
+| Navbar entries in `_quarto.yml` | Use `.qmd` extension (Quarto handles this automatically) |
+
+The navbar in `_quarto.yml` is managed by Quarto directly, so it is fine to reference `.qmd` files there. But for any links you write by hand inside page content, always use `.html`.
+:::
+
+---
+
+# Rendering Your Website
+
+Once you are happy with your content, render the full site with:
+
+```{.markdown filename="Terminal"}
+quarto render
+```
+
+Or by clicking the preview/render button.
+
+This will:
+
+1. Read each `.qmd` file
+2. Run any R code inside it
+3. Convert everything to `.html`
+4. Save all output files into the `_site/` folder
+
+The `_site/` folder is your finished website. Do not manually edit files inside `_site/` — they will be overwritten every time you render.
+
+---
+
+# Publishing to Netlify
+
+## Upload Your Site
+
+1) Go to <https://app.netlify.com> and log in
+2) From your dashboard, scroll to the bottom where it says __"Want to deploy a new site without connecting to Git?"__
+3) Drag and drop your `_site/` folder into the upload area
+
+## Change Your Site URL
+
+After uploading, Netlify will give your site a random URL. To change it:
+
+1) Go to __Quick Setup__
+2) Rename it to `your-name-project6.netlify.app` and click > __Update project name__
+
+
+---
+
+# Checklist Before Submitting
+
+Before you submit, verify your site has:
+
+- [ ] A favicon
+- [ ] A theme applied in `_quarto.yml`
+- [ ] 4 pages in the navbar: Home, Analysis 1, Analysis 2, About
+- [ ] Home page with a brief intro and working links to both analysis pages (using `.html` extensions)
+- [ ] Basic setup content in both `analysis1.qmd` and `analysis2.qmd`
+- [ ] Site published to Netlify at `your-name-project6.netlify.app`
