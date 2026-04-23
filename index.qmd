@@ -510,7 +510,7 @@ Lab 12: [slides](labs/lab12/slides.html) | [PS11](https://bcourses.berkeley.edu/
 
 [Text Analysis 3](lectures/35-text-analysis2/slides.html)
 
-Lab 13: slides 
+[Lab 13: slides](labs/lab13/slides.html)
 
 JSON Data
 :::
