@@ -2933,7 +2933,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 55     \"Derrick Jo… LAC   SF           78    210 February … US      8         \n2 7      \"Cam Whitmo… HOU   SF           78    230 July 8, 2… US      1         \n3 24     \"Corey Kisp… WAS   SF           78    224 March 3, … US      3         \n4 5      \"Jarace Wal… IND   PF           79    235 September… US      1         \n5 0      \"Dominick B… ATL   PF           81    215 May 26, 2… US      2         \n6 77     \"Luka DonÄ\\… DAL   PG           80    230 February … SI      6         \n7 12     \"Steven Ada… HOU   C            83    265 July 20, … NZ      10        \n8 22     \"Ulrich Cho… TOR   PF           83    235 December … CM      R         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 9      Kelly Oubre… PHI   SF           80    203 December … US      9         \n2 13     Bam Adebayo  MIA   C            81    255 July 18, … US      7         \n3 30     Adem Bona    PHI   C            82    235 March 28,… NG      R         \n4 35     Tolu Smith   DET   PF           83    254 July 26, … US      R         \n5 15     Austin Reav… LAL   SG           77    197 May 29, 1… US      3         \n6 20     Georges Nia… CLE   PF           78    230 June 17, … US      8         \n7 13     Tristan Tho… CLE   C            81    254 March 13,… CA      13        \n8 0      Tyrese Hali… IND   PG           77    185 February … US      4         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -3570,7 +3570,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"bronze\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"silver\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -3584,7 +3584,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"junior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"senior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -3873,6 +3873,90 @@
     "title": "Ed-Discussion Netiquette",
     "section": "Post all your work",
     "text": "Post all your work\nDon’t post one line saying:\n\n“At step n, I get XYZ, and I’m now confused.”\nThis forces the GSIs to guess:\nWhat happened in steps 1, 2, …, n - 1?\n\nMost likely, the GSIs will guess wrong, and we run into a mess of followup questions trying to figure out what steps 1, 2, …, n - 1 were.\nInstead, post:\n\nStarting out, we have: ….\nThen, I do …, and I get …\nNext, I do …, and I get …\nNext, I do …, and I get …\nNow, I get $&%&#(, and this makes no sense.\nThen, the GSI can respond:\nThe mistake is at step 3, you’re not allowed to apply ABC to XYZ because …\n\nIn summary, when you do ask for help, include details of what attempts you’ve made to solve the problem. It will save time and also show people that you are making an effort to help yourself.\n\nWe reserve the right to delete any posts\nWe reserve the right to delete, move, or edit any posts, and even to make Ed-Discussion inactive, at any time, without previous notice.\nDiscussion resources can be a great tools if used appropriately, respectfully, and wisely. Take advantage of Ed, and make the most out of it."
+  },
+  {
+    "objectID": "labs/lab13/slides.html#steps-to-get-started",
+    "href": "labs/lab13/slides.html#steps-to-get-started",
+    "title": "Lab 12",
+    "section": "Steps to Get Started",
+    "text": "Steps to Get Started\n\n\nIn Positron:\n\nClick New (top-left corner)\nSelect New File …\nChoose Quarto Project\nSelect Website Project\nChoose a directory and name it (e.g. webdemo)\n\n\nIn RStudio:\n\nClick File in the menu bar\nSelect New Project …\nChoose Quarto Website\nSelect a location and name it (e.g. webdemo)\nClick Create"
+  },
+  {
+    "objectID": "labs/lab13/slides.html#website-project-parts",
+    "href": "labs/lab13/slides.html#website-project-parts",
+    "title": "Lab 12",
+    "section": "Website Project Parts",
+    "text": "Website Project Parts\nCreating a website project in your IDE will create the following files:\n\n\n\n\n\n\n\nFile\nWhat it does\n\n\n\n\n_quarto.yml\nThe “settings” file, which controls site title, navigation, theme, etc.\n\n\n.quarto/\nInternal info used by Quarto when rendering\n\n\nindex.qmd\nYour homepage\n\n\nabout.qmd\nA standard ‘about this site’ page\n\n\nstyles.css\nOptional custom styling"
+  },
+  {
+    "objectID": "labs/lab13/slides.html#rendering-your-website",
+    "href": "labs/lab13/slides.html#rendering-your-website",
+    "title": "Lab 12",
+    "section": "Rendering your Website",
+    "text": "Rendering your Website\nThink of rendering like baking: Your .qmd files are the raw ingredients, and rendering is the oven that turns them into a finished website, consisting of html files.\nWhen you run quarto render or click preview:\n\nQuarto reads each .qmd file\nRuns any code inside it\nConverts everything to .html\nSaves the result in the _site/ folder\nThe _site/ folder is your actual website — that’s what gets uploaded when you publish."
+  },
+  {
+    "objectID": "labs/lab13/slides.html#website-project-parts-after-renderingpreviewing",
+    "href": "labs/lab13/slides.html#website-project-parts-after-renderingpreviewing",
+    "title": "Lab 12",
+    "section": "Website Project Parts (After Rendering/Previewing)",
+    "text": "Website Project Parts (After Rendering/Previewing)\nNow you will have the following files:\n\n\n\n\n\n\n\nFile\nWhat it does\n\n\n\n\n_quarto.yml\nThe “settings” file, which controls site title, navigation, theme, etc.\n\n\n.quarto/\nInternal info used by Quarto when rendering\n\n\nindex.qmd\nYour homepage\n\n\nabout.qmd\nA standard ‘about this site’ page\n\n\nstyles.css\nOptional custom styling\n\n\n_site/ folder\nWhere Quarto puts the finished HTML files (don’t edit this!)"
+  },
+  {
+    "objectID": "labs/lab13/slides.html#sample-website-code",
+    "href": "labs/lab13/slides.html#sample-website-code",
+    "title": "Lab 12",
+    "section": "Sample Website + Code",
+    "text": "Sample Website + Code\nFor illustration purposes, we have prepared a mockup website with some sample Quarto website content that you can preview at:\nhttps://dataviz.quarto.pub/ketzaly1\nThe associated files are available in the following github repository:\nhttps://github.com/gastonstat/quarto-website-ketzaly1"
+  },
+  {
+    "objectID": "labs/lab13/slides.html#uploading-to-netlify",
+    "href": "labs/lab13/slides.html#uploading-to-netlify",
+    "title": "Lab 12",
+    "section": "Uploading to Netlify",
+    "text": "Uploading to Netlify\n\n\n\n\n\n\nNote\n\n\nAs usual, we use the ‘drag and drop’ feature to upload our websites to Netlify. In this case, you will drag and drop the _site folder that is created when you render/preview your website.\n\n\n\n\nClick ‘choose a folder’ and select your _site folder."
+  },
+  {
+    "objectID": "labs/lab13/slides.html#creating-a-favicon",
+    "href": "labs/lab13/slides.html#creating-a-favicon",
+    "title": "Lab 12",
+    "section": "Creating a Favicon",
+    "text": "Creating a Favicon\n\nCan be logos\nEasy way to create text-based favicon is Favicon Icon Generator\nChoose the Generate From Text option\nOnce you have designed your favicon in favicon.io, click on the download button &gt; unzip the downloaded file &gt; move or copy the file favicon.ico to the assets folder in your Quarto website."
+  },
+  {
+    "objectID": "labs/lab13/slides.html#publication-assignment",
+    "href": "labs/lab13/slides.html#publication-assignment",
+    "title": "Lab 12",
+    "section": "Publication Assignment",
+    "text": "Publication Assignment\nIn addition to the file structure, your website should have:\n\nA favicon\nA theme (find HTML theme options here)\n4 pages linked in the navbar: Home (index.qmd), Analysis 1 (analysis1.qmd), Analysis 2 (analysis2.qmd), and About (about.qmd)\nHome page which links to the analysis 1 and analysis 2 pages"
+  },
+  {
+    "objectID": "labs/lab13/slides.html#sample-layout",
+    "href": "labs/lab13/slides.html#sample-layout",
+    "title": "Lab 12",
+    "section": "Sample Layout",
+    "text": "Sample Layout\nWhen completed, your website should have the same structure as this sample.\nFor more a step-by-step walkthrough, refer to BCourses &gt; Files &gt; lab-materials &gt; lab13 &gt; pub12-walkthrough.qmd."
+  },
+  {
+    "objectID": "labs/lab13/slides.html#submitting-to-netlify",
+    "href": "labs/lab13/slides.html#submitting-to-netlify",
+    "title": "Lab 12",
+    "section": "Submitting to Netlify",
+    "text": "Submitting to Netlify\nAfter uploading your _site folder, don’t forget to change the website link to your-name-project6.netlify.app."
+  },
+  {
+    "objectID": "labs/lab13/slides.html#pset-11",
+    "href": "labs/lab13/slides.html#pset-11",
+    "title": "Lab 12",
+    "section": "Pset 11",
+    "text": "Pset 11\nAvailable in bCourses:\nSee Assignments tab &gt; Problem Sets &gt; PS11\nYou’ll find 2 files:\n\nps11.html: instructions\nps11.qmd: template file to write your answers\n\n\nIn case of trouble: Go to Files tab, folder problem-sets, folder ps11, and download the qmd file.\nSometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome)."
+  },
+  {
+    "objectID": "labs/lab13/slides.html#pset-11-submission",
+    "href": "labs/lab13/slides.html#pset-11-submission",
+    "title": "Lab 12",
+    "section": "Pset 11 Submission",
+    "text": "Pset 11 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps11\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
   {
     "objectID": "labs/lab12/pub11-walkthrough.html",
@@ -5751,6 +5835,125 @@
     "text": "Pset 10 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps10\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
   {
+    "objectID": "labs/lab13/pub12-walkthrough.html",
+    "href": "labs/lab13/pub12-walkthrough.html",
+    "title": "Pub 12: Quarto Website for Project 5",
+    "section": "",
+    "text": "About\n\n\n\nThe goal of this publication is to show you how to create a basic website to present your Project 6, and how to publish it on Netlify."
+  },
+  {
+    "objectID": "labs/lab13/pub12-walkthrough.html#your-turn-create-a-quarto-website",
+    "href": "labs/lab13/pub12-walkthrough.html#your-turn-create-a-quarto-website",
+    "title": "Pub 12: Quarto Website for Project 5",
+    "section": "1.1 Your Turn: Create a Quarto Website",
+    "text": "1.1 Your Turn: Create a Quarto Website\nFollow the steps listed above to create a Quarto Website for your Project 6 to be presented in."
+  },
+  {
+    "objectID": "labs/lab13/pub12-walkthrough.html#file-structure",
+    "href": "labs/lab13/pub12-walkthrough.html#file-structure",
+    "title": "Pub 12: Quarto Website for Project 5",
+    "section": "1.2 File Structure",
+    "text": "1.2 File Structure\nAfter creating the project, you will have the following file structure:\nproject6-website/\n  .quarto/\n  _quarto.yml\n  index.qmd\n  about.qmd\n  styles.css\nThe _quarto.yml file is the configuration file — it controls site-wide settings like the title, navbar, and theme.\nThe .qmd files (index.qmd, about.qmd) are the pages of your website written in Quarto markdown.\nThe styles.css file lets you optionally customize the look and feel of your site."
+  },
+  {
+    "objectID": "labs/lab13/pub12-walkthrough.html#previewing-your-website",
+    "href": "labs/lab13/pub12-walkthrough.html#previewing-your-website",
+    "title": "Pub 12: Quarto Website for Project 5",
+    "section": "1.3 Previewing your website",
+    "text": "1.3 Previewing your website\nTo preview your website, go to the Terminal pane (same area as the R console) and run:\n\n\nTerminal\n\nquarto preview\n\nThis will open a live preview in your browser. Any time you save a .qmd file, the preview will automatically refresh. Alternatively, you can also click the Preview button."
+  },
+  {
+    "objectID": "labs/lab13/pub12-walkthrough.html#add-analysis-pages",
+    "href": "labs/lab13/pub12-walkthrough.html#add-analysis-pages",
+    "title": "Pub 12: Quarto Website for Project 5",
+    "section": "2.1 Add Analysis Pages",
+    "text": "2.1 Add Analysis Pages\nYour Project 6 website needs pages for each of your two text analyses. To add them:\n\nCreate a new file called analysis1.qmd in your project folder\nCreate a second file called analysis2.qmd\n\nEach file should have a YAML header at the top, for example:\n\n\nanalysis1.qmd\n\n---\ntitle: \"Analysis 1: [Your Text Title Here]\"\n---\n\nThen add your narrative text, code chunks, and any plots or output below the header."
+  },
+  {
+    "objectID": "labs/lab13/pub12-walkthrough.html#add-a-data-directory",
+    "href": "labs/lab13/pub12-walkthrough.html#add-a-data-directory",
+    "title": "Pub 12: Quarto Website for Project 5",
+    "section": "2.2 Add a data/ Directory",
+    "text": "2.2 Add a data/ Directory\nCreate a folder called data/ inside your project. Move any datasets you are using into this folder. For example, your text files and lexicons (bing.csv, nrc.csv, afinn.csv)."
+  },
+  {
+    "objectID": "labs/lab13/pub12-walkthrough.html#add-an-assets-directory",
+    "href": "labs/lab13/pub12-walkthrough.html#add-an-assets-directory",
+    "title": "Pub 12: Quarto Website for Project 5",
+    "section": "2.3 Add an assets/ Directory",
+    "text": "2.3 Add an assets/ Directory\nCreate a folder called assets/ inside your project. This is where you will store your favicon (see Section 3 below)."
+  },
+  {
+    "objectID": "labs/lab13/pub12-walkthrough.html#final-file-structure",
+    "href": "labs/lab13/pub12-walkthrough.html#final-file-structure",
+    "title": "Pub 12: Quarto Website for Project 5",
+    "section": "2.4 Final File Structure",
+    "text": "2.4 Final File Structure\nAfter completing the steps above, your project should look like this:\nproject6-website/\n  .quarto/\n  _quarto.yml\n  index.qmd\n  about.qmd\n  styles.css\n  analysis1.qmd\n  analysis2.qmd\n  assets/\n    favicon.ico\n  data/"
+  },
+  {
+    "objectID": "labs/lab13/pub12-walkthrough.html#create-a-favicon",
+    "href": "labs/lab13/pub12-walkthrough.html#create-a-favicon",
+    "title": "Pub 12: Quarto Website for Project 5",
+    "section": "3.1 Create a Favicon",
+    "text": "3.1 Create a Favicon\nA quick way to create a text-based favicon is with https://favicon.io/favicon-generator/ — choose the Generate From Text option.\nFor example, use the initials of your first and last name. Once you have designed it, click Download to get a zipped file. Unzip it and copy just the favicon.ico file into your project’s assets/ folder."
+  },
+  {
+    "objectID": "labs/lab13/pub12-walkthrough.html#include-the-favicon-in-your-site",
+    "href": "labs/lab13/pub12-walkthrough.html#include-the-favicon-in-your-site",
+    "title": "Pub 12: Quarto Website for Project 5",
+    "section": "3.2 Include the Favicon in Your Site",
+    "text": "3.2 Include the Favicon in Your Site\nOpen _quarto.yml and add a favicon option under the website section:\n\n\n_quarto.yml\n\nproject:\n  type: website\n\nwebsite:\n  favicon: assets/favicon.ico\n  title: \"Your Name\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - href: analysis1.qmd\n        text: Analysis 1\n      - href: analysis2.qmd\n        text: Analysis 2\n      - href: about.qmd\n        text: About\n\n\n\n\n\n\n\nNote\n\n\n\nThe navbar section above is how you control which pages appear in your site’s top navigation bar. Make sure all four pages are listed.\n\n\nRe-run quarto preview to confirm the favicon and navbar appear correctly."
+  },
+  {
+    "objectID": "labs/lab13/pub12-walkthrough.html#customize-index.qmd-home-page",
+    "href": "labs/lab13/pub12-walkthrough.html#customize-index.qmd-home-page",
+    "title": "Pub 12: Quarto Website for Project 5",
+    "section": "4.1 Customize index.qmd (Home Page)",
+    "text": "4.1 Customize index.qmd (Home Page)\nYour home page should introduce your project. Include:\n\nA brief description of your Project 6 and which texts you chose to analyze\nAn image (optional but encouraged)\nLinks to your two analysis pages (see Section 5 for how to link correctly)"
+  },
+  {
+    "objectID": "labs/lab13/pub12-walkthrough.html#customize-about.qmd",
+    "href": "labs/lab13/pub12-walkthrough.html#customize-about.qmd",
+    "title": "Pub 12: Quarto Website for Project 5",
+    "section": "4.2 Customize about.qmd",
+    "text": "4.2 Customize about.qmd\nYour About page should include:\n\nYour name\nA brief description of what this website is for and why you created it"
+  },
+  {
+    "objectID": "labs/lab13/pub12-walkthrough.html#customize-the-theme",
+    "href": "labs/lab13/pub12-walkthrough.html#customize-the-theme",
+    "title": "Pub 12: Quarto Website for Project 5",
+    "section": "4.3 Customize the Theme",
+    "text": "4.3 Customize the Theme\nYou can change the visual theme of your site by editing _quarto.yml. For example:\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme: cosmo\n\nBrowse all available themes at https://quarto.org/docs/output-formats/html-themes.html and pick one you like."
+  },
+  {
+    "objectID": "labs/lab13/pub12-walkthrough.html#why-link-to-.html-files-not-.qmd-files",
+    "href": "labs/lab13/pub12-walkthrough.html#why-link-to-.html-files-not-.qmd-files",
+    "title": "Pub 12: Quarto Website for Project 5",
+    "section": "5.1 Why Link to .html Files, Not .qmd Files",
+    "text": "5.1 Why Link to .html Files, Not .qmd Files\nWhen Quarto renders/previews your website, it converts every .qmd file into a corresponding .html file and saves everything in the _site/ folder. The .html files are what actually get served as your website. The .qmd files are just the source.\nThis means:\n\nanalysis1.qmd becomes analysis1.html\nanalysis2.qmd becomes analysis2.html\n\nWhen you add links inside index.qmd, you need to link to analysis1.html (not analysis1.qmd), because that is the file that will exist when someone visits your site."
+  },
+  {
+    "objectID": "labs/lab13/pub12-walkthrough.html#how-to-add-links-in-index.qmd",
+    "href": "labs/lab13/pub12-walkthrough.html#how-to-add-links-in-index.qmd",
+    "title": "Pub 12: Quarto Website for Project 5",
+    "section": "5.2 How to Add Links in index.qmd",
+    "text": "5.2 How to Add Links in index.qmd\nUse standard markdown link syntax, pointing to the .html files:\n\n\nindex.qmd\n\n## Analyses\n\nThis website presents two text analyses:\n\n- [Analysis 1: Title of Your First Text Analysis](analysis1.html)\n- [Analysis 2: Title of Your Second Text Analysis](analysis2.html)\n\n\n\n\n\n\n\nSummary\n\n\n\n\n\n\n\n\n\n\nSituation\nWhat to write\n\n\n\n\nLinks inside .qmd files\nUse .html extension (like analysis1.html)\n\n\nNavbar entries in _quarto.yml\nUse .qmd extension (Quarto handles this automatically)\n\n\n\nThe navbar in _quarto.yml is managed by Quarto directly, so it is fine to reference .qmd files there. But for any links you write by hand inside page content, always use .html."
+  },
+  {
+    "objectID": "labs/lab13/pub12-walkthrough.html#upload-your-site",
+    "href": "labs/lab13/pub12-walkthrough.html#upload-your-site",
+    "title": "Pub 12: Quarto Website for Project 5",
+    "section": "7.1 Upload Your Site",
+    "text": "7.1 Upload Your Site\n\nGo to https://app.netlify.com and log in\nFrom your dashboard, scroll to the bottom where it says “Want to deploy a new site without connecting to Git?”\nDrag and drop your _site/ folder into the upload area"
+  },
+  {
+    "objectID": "labs/lab13/pub12-walkthrough.html#change-your-site-url",
+    "href": "labs/lab13/pub12-walkthrough.html#change-your-site-url",
+    "title": "Pub 12: Quarto Website for Project 5",
+    "section": "7.2 Change Your Site URL",
+    "text": "7.2 Change Your Site URL\nAfter uploading, Netlify will give your site a random URL. To change it:\n\nGo to Quick Setup\nRename it to your-name-project6.netlify.app and click &gt; Update project name"
+  },
+  {
     "objectID": "officehours.html",
     "href": "officehours.html",
     "title": "Office Hours",
@@ -6967,7 +7170,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 3 1"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 2 4"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#meet-the-palmer-penguins",
@@ -7177,14 +7380,14 @@
     "href": "lectures/23-date-time1/slides.html#an-r-vector-for-date-times",
     "title": "Dates and Times I",
     "section": "An R vector for date-times",
-    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-22 08:08:59 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1776870540"
+    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-23 12:15:17 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1776971718"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "href": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "title": "Dates and Times I",
     "section": "Why not just use a double vector?",
-    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-22 08:08:59 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-22 08:09:00 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-22 08:09:00 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/22/26\""
+    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-23 12:15:17 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-23 12:15:18 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-23 12:15:18 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/23/26\""
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#creating-date-time-vectors",
@@ -7219,21 +7422,21 @@
     "href": "lectures/23-date-time1/slides.html#getting",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 22\n\n\n\n\n\nwday(now)\n\n\n\n[1] 4\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Wed\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 23\n\n\n\n\n\nwday(now)\n\n\n\n[1] 5\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Thu\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#getting-1",
     "href": "lectures/23-date-time1/slides.html#getting-1",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 22\n\n\n\nwday(now)\n\n[1] 4\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Wednesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 23\n\n\n\nwday(now)\n\n[1] 5\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Thursday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#setting",
     "href": "lectures/23-date-time1/slides.html#setting",
     "title": "Dates and Times I",
     "section": "Setting",
-    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-22 08:08:59 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Tuesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-23 12:15:17 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Wednesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#your-turn",
@@ -8493,14 +8696,14 @@
     "href": "lectures/24-date-time2/slides.html#how-old-is-oski",
     "title": "Dates and Times II",
     "section": "How old is Oski?",
-    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30888 days"
+    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30889 days"
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#durations",
     "href": "lectures/24-date-time2/slides.html#durations",
     "title": "Dates and Times II",
     "section": "Durations",
-    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2668723200s (~84.57 years)\""
+    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2668809600s (~84.57 years)\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#constructing-a-duration",
@@ -8542,7 +8745,7 @@
     "href": "lectures/24-date-time2/slides.html#how-old-will-oski-be",
     "title": "Dates and Times II",
     "section": "How old will Oski be …",
-    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2668723200s (~84.57 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2700280800s (~85.57 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 207d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 207d 0H 0M 0S\""
+    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2668809600s (~84.57 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2700367200s (~85.57 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 208d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 208d 0H 0M 0S\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#intervals",

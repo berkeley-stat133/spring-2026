@@ -8,7 +8,7 @@
 
 <meta name="author" content="STAT 133">
 
-<title>Pub 8 Solutions – STAT 133</title>
+<title>Pub 12: Quarto Website for Project 5 – STAT 133</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4881,16 +4881,56 @@ display: inline-block; // a bit of separation from text outside button
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#quarto-website-reminder" id="toc-quarto-website-reminder" class="nav-link active" data-scroll-target="#quarto-website-reminder"><span class="header-section-number">1</span> Quarto Website Reminder</a>
+  <ul class="collapse">
+  <li><a href="#your-turn-create-a-quarto-website" id="toc-your-turn-create-a-quarto-website" class="nav-link" data-scroll-target="#your-turn-create-a-quarto-website"><span class="header-section-number">1.1</span> Your Turn: Create a Quarto Website</a></li>
+  <li><a href="#file-structure" id="toc-file-structure" class="nav-link" data-scroll-target="#file-structure"><span class="header-section-number">1.2</span> File Structure</a></li>
+  <li><a href="#previewing-your-website" id="toc-previewing-your-website" class="nav-link" data-scroll-target="#previewing-your-website"><span class="header-section-number">1.3</span> Previewing your website</a></li>
+  </ul></li>
+  <li><a href="#setting-up-your-project-6-website" id="toc-setting-up-your-project-6-website" class="nav-link" data-scroll-target="#setting-up-your-project-6-website"><span class="header-section-number">2</span> Setting Up Your Project 6 Website</a>
+  <ul class="collapse">
+  <li><a href="#add-analysis-pages" id="toc-add-analysis-pages" class="nav-link" data-scroll-target="#add-analysis-pages"><span class="header-section-number">2.1</span> Add Analysis Pages</a></li>
+  <li><a href="#add-a-data-directory" id="toc-add-a-data-directory" class="nav-link" data-scroll-target="#add-a-data-directory"><span class="header-section-number">2.2</span> Add a <code>data/</code> Directory</a></li>
+  <li><a href="#add-an-assets-directory" id="toc-add-an-assets-directory" class="nav-link" data-scroll-target="#add-an-assets-directory"><span class="header-section-number">2.3</span> Add an <code>assets/</code> Directory</a></li>
+  <li><a href="#final-file-structure" id="toc-final-file-structure" class="nav-link" data-scroll-target="#final-file-structure"><span class="header-section-number">2.4</span> Final File Structure</a></li>
+  </ul></li>
+  <li><a href="#adding-a-favicon" id="toc-adding-a-favicon" class="nav-link" data-scroll-target="#adding-a-favicon"><span class="header-section-number">3</span> Adding a Favicon</a>
+  <ul class="collapse">
+  <li><a href="#create-a-favicon" id="toc-create-a-favicon" class="nav-link" data-scroll-target="#create-a-favicon"><span class="header-section-number">3.1</span> Create a Favicon</a></li>
+  <li><a href="#include-the-favicon-in-your-site" id="toc-include-the-favicon-in-your-site" class="nav-link" data-scroll-target="#include-the-favicon-in-your-site"><span class="header-section-number">3.2</span> Include the Favicon in Your Site</a></li>
+  </ul></li>
+  <li><a href="#customizing-your-pages" id="toc-customizing-your-pages" class="nav-link" data-scroll-target="#customizing-your-pages"><span class="header-section-number">4</span> Customizing Your Pages</a>
+  <ul class="collapse">
+  <li><a href="#customize-index.qmd-home-page" id="toc-customize-index.qmd-home-page" class="nav-link" data-scroll-target="#customize-index.qmd-home-page"><span class="header-section-number">4.1</span> Customize <code>index.qmd</code> (Home Page)</a></li>
+  <li><a href="#customize-about.qmd" id="toc-customize-about.qmd" class="nav-link" data-scroll-target="#customize-about.qmd"><span class="header-section-number">4.2</span> Customize <code>about.qmd</code></a></li>
+  <li><a href="#customize-the-theme" id="toc-customize-the-theme" class="nav-link" data-scroll-target="#customize-the-theme"><span class="header-section-number">4.3</span> Customize the Theme</a></li>
+  </ul></li>
+  <li><a href="#linking-to-your-analysis-pages-from-index.qmd" id="toc-linking-to-your-analysis-pages-from-index.qmd" class="nav-link" data-scroll-target="#linking-to-your-analysis-pages-from-index.qmd"><span class="header-section-number">5</span> Linking to Your Analysis Pages from <code>index.qmd</code></a>
+  <ul class="collapse">
+  <li><a href="#why-link-to-.html-files-not-.qmd-files" id="toc-why-link-to-.html-files-not-.qmd-files" class="nav-link" data-scroll-target="#why-link-to-.html-files-not-.qmd-files"><span class="header-section-number">5.1</span> Why Link to <code>.html</code> Files, Not <code>.qmd</code> Files</a></li>
+  <li><a href="#how-to-add-links-in-index.qmd" id="toc-how-to-add-links-in-index.qmd" class="nav-link" data-scroll-target="#how-to-add-links-in-index.qmd"><span class="header-section-number">5.2</span> How to Add Links in <code>index.qmd</code></a></li>
+  </ul></li>
+  <li><a href="#rendering-your-website" id="toc-rendering-your-website" class="nav-link" data-scroll-target="#rendering-your-website"><span class="header-section-number">6</span> Rendering Your Website</a></li>
+  <li><a href="#publishing-to-netlify" id="toc-publishing-to-netlify" class="nav-link" data-scroll-target="#publishing-to-netlify"><span class="header-section-number">7</span> Publishing to Netlify</a>
+  <ul class="collapse">
+  <li><a href="#upload-your-site" id="toc-upload-your-site" class="nav-link" data-scroll-target="#upload-your-site"><span class="header-section-number">7.1</span> Upload Your Site</a></li>
+  <li><a href="#change-your-site-url" id="toc-change-your-site-url" class="nav-link" data-scroll-target="#change-your-site-url"><span class="header-section-number">7.2</span> Change Your Site URL</a></li>
+  </ul></li>
+  <li><a href="#checklist-before-submitting" id="toc-checklist-before-submitting" class="nav-link" data-scroll-target="#checklist-before-submitting"><span class="header-section-number">8</span> Checklist Before Submitting</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Pub 8 Solutions</h1>
-<p class="subtitle lead">Cleaning Text Data and Visualizing Activity</p>
+<h1 class="title">Pub 12: Quarto Website for Project 5</h1>
 </div>
 
 
@@ -4913,84 +4953,319 @@ display: inline-block; // a bit of separation from text outside button
 </header>
 
 
-<p><strong>Setup - Data</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package &#39;readr&#39; was built under R version 4.5.2</code></pre>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package &#39;dplyr&#39; was built under R version 4.5.2</code></pre>
+<div class="callout-title-container flex-fill">
+About
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>times_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">timestamp =</span> <span class="fu">c</span>(</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;03/12/24 14:03&quot;</span>,</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;03/12/24 14:05&quot;</span>,</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;03/12/24 15:10&quot;</span>,</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;03/12/24 15:22&quot;</span>,</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;03/12/24 16:01&quot;</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">message =</span> <span class="fu">c</span>(</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;ERROR: user=482 failed-login&quot;</span>,</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;INFO: user=511 login-success&quot;</span>,</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;WARN: user=482 retry-login&quot;</span>,</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;ERROR: user=222 failed-login&quot;</span>,</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;INFO: user=482 login-success&quot;</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Part 1 - Extract Information with Regex</strong> The message column contains multiple pieces of information.</p>
-<p><em>Tasks:</em></p>
-<p>Use regex to extract the log level (ERROR, WARN, INFO).</p>
-<p>Extract the user ID number.</p>
-<p>Extract the event type (failed-login, login-success, etc.).</p>
-<p>Create new columns: <code>level</code>, <code>user_id</code>, <code>event</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract Information with Regex</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>times_clean <span class="ot">&lt;-</span> times_data <span class="sc">|&gt;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">level =</span> <span class="fu">str_extract</span>(message, <span class="st">&quot;ERROR|WARN|INFO&quot;</span>),</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">user_id =</span> <span class="fu">str_extract</span>(message, <span class="st">&quot;(?&lt;=user=)</span><span class="sc">\\</span><span class="st">d+&quot;</span>),</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">event =</span> <span class="fu">str_extract</span>(message, <span class="st">&quot;(failed-login|login-success|retry-login)&quot;</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-body-container callout-body">
+<p>The goal of this publication is to show you how to create a basic website to present your Project 6, and how to publish it on <strong>Netlify</strong>.</p>
 </div>
-<p><strong>Part 2 - Work with Dates and Times</strong> Convert the <code>timestamp</code> column to a date-time object. Then extract: <code>hour of day</code> and <code>date</code>. Create <code>hour</code> and <code>date</code> columns.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Work with Dates and Times</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>times_clean <span class="ot">&lt;-</span> times_clean <span class="sc">|&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">timestamp =</span> <span class="fu">mdy_hm</span>(timestamp),</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">hour =</span> <span class="fu">hour</span>(timestamp),</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">as_date</span>(timestamp)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Part 3 - Create Chart of Events by Hour</strong></p>
-<p>Show how many events occurred during each hour.</p>
-<p>x-axis: <code>hour</code></p>
-<p>y-axis: <code>number of events</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create Chart of Events by Hour</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>events_by_hour <span class="ot">&lt;-</span> times_clean <span class="sc">|&gt;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(hour)</span>
+<hr>
+<section id="quarto-website-reminder" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Quarto Website Reminder</h1>
+<p>The official documentation for Quarto Websites is:</p>
+<p><a href="https://quarto.org/docs/websites/" class="uri">https://quarto.org/docs/websites/</a></p>
+<p>Creating a basic Quarto website is super easy by following these steps in Positron:</p>
+<ol type="1">
+<li><p>Click on the <strong>New</strong> tab in the top left corner</p></li>
+<li><p>Select <strong>New File</strong></p></li>
+<li><p>Choose <strong>Quarto Project</strong> &gt; <strong>Website Project</strong></p></li>
+<li><p>Select a location/directory for your project, and give it a name (e.g. <code>website</code>)</p></li>
+<li><p>Click <strong>Create</strong></p></li>
+</ol>
+<p>And in RStudio:</p>
+<ol type="1">
+<li><p>Click on the <strong>File</strong> tab in the menu bar</p></li>
+<li><p>Select <strong>New Project …</strong></p></li>
+<li><p>Choose <strong>Quarto Website</strong></p></li>
+<li><p>Select a location/directory for your project, and give it a name (e.g. <code>website</code>)</p></li>
+<li><p>Click <strong>Create</strong></p></li>
+</ol>
+<section id="your-turn-create-a-quarto-website" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="your-turn-create-a-quarto-website"><span class="header-section-number">1.1</span> Your Turn: Create a Quarto Website</h2>
+<p>Follow the steps listed above to create a Quarto Website for your Project 6 to be presented in.</p>
+</section>
+<section id="file-structure" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="file-structure"><span class="header-section-number">1.2</span> File Structure</h2>
+<p>After creating the project, you will have the following file structure:</p>
+<pre><code>project6-website/
+  .quarto/
+  _quarto.yml
+  index.qmd
+  about.qmd
+  styles.css</code></pre>
+<p>The <code>_quarto.yml</code> file is the configuration file — it controls site-wide settings like the title, navbar, and theme.</p>
+<p>The <code>.qmd</code> files (<code>index.qmd</code>, <code>about.qmd</code>) are the pages of your website written in Quarto markdown.</p>
+<p>The <code>styles.css</code> file lets you optionally customize the look and feel of your site.</p>
+</section>
+<section id="previewing-your-website" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="previewing-your-website"><span class="header-section-number">1.3</span> Previewing your website</h2>
+<p>To preview your website, go to the <strong>Terminal</strong> pane (same area as the R console) and run:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb2" data-filename="Terminal"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>quarto preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This will open a live preview in your browser. Any time you save a <code>.qmd</code> file, the preview will automatically refresh. Alternatively, you can also click the Preview button.</p>
+<p><br>
+</p>
+<hr>
+</section>
+</section>
+<section id="setting-up-your-project-6-website" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Setting Up Your Project 6 Website</h1>
+<section id="add-analysis-pages" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="add-analysis-pages"><span class="header-section-number">2.1</span> Add Analysis Pages</h2>
+<p>Your Project 6 website needs pages for each of your two text analyses. To add them:</p>
+<ol type="1">
+<li>Create a new file called <code>analysis1.qmd</code> in your project folder</li>
+<li>Create a second file called <code>analysis2.qmd</code></li>
+</ol>
+<p>Each file should have a YAML header at the top, for example:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>analysis1.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb3" data-filename="analysis1.qmd"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Analysis 1: [Your Text Title Here]&quot;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then add your narrative text, code chunks, and any plots or output below the header.</p>
+</section>
+<section id="add-a-data-directory" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="add-a-data-directory"><span class="header-section-number">2.2</span> Add a <code>data/</code> Directory</h2>
+<p>Create a folder called <code>data/</code> inside your project. Move any datasets you are using into this folder. For example, your text files and lexicons (<code>bing.csv</code>, <code>nrc.csv</code>, <code>afinn.csv</code>).</p>
+</section>
+<section id="add-an-assets-directory" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="add-an-assets-directory"><span class="header-section-number">2.3</span> Add an <code>assets/</code> Directory</h2>
+<p>Create a folder called <code>assets/</code> inside your project. This is where you will store your favicon (see Section 3 below).</p>
+</section>
+<section id="final-file-structure" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="final-file-structure"><span class="header-section-number">2.4</span> Final File Structure</h2>
+<p>After completing the steps above, your project should look like this:</p>
+<pre><code>project6-website/
+  .quarto/
+  _quarto.yml
+  index.qmd
+  about.qmd
+  styles.css
+  analysis1.qmd
+  analysis2.qmd
+  assets/
+    favicon.ico
+  data/</code></pre>
+<hr>
+</section>
+</section>
+<section id="adding-a-favicon" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Adding a Favicon</h1>
+<p>A favicon is the small icon that appears in the browser tab for your website. This makes your website look more polished and professional.</p>
+<section id="create-a-favicon" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="create-a-favicon"><span class="header-section-number">3.1</span> Create a Favicon</h2>
+<p>A quick way to create a text-based favicon is with <a href="https://favicon.io/favicon-generator/" target="_blank">https://favicon.io/favicon-generator/</a> — choose the <strong>Generate From Text</strong> option.</p>
+<p>For example, use the initials of your first and last name. Once you have designed it, click <strong>Download</strong> to get a zipped file. Unzip it and copy just the <code>favicon.ico</code> file into your project’s <code>assets/</code> folder.</p>
+</section>
+<section id="include-the-favicon-in-your-site" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="include-the-favicon-in-your-site"><span class="header-section-number">3.2</span> Include the Favicon in Your Site</h2>
+<p>Open <code>_quarto.yml</code> and add a <code>favicon</code> option under the <code>website</code> section:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_quarto.yml</strong></pre>
+</div>
+<div class="sourceCode" id="cb5" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">favicon</span><span class="kw">:</span><span class="at"> assets/favicon.ico</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Your Name&quot;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> analysis1.qmd</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Analysis 1</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> analysis2.qmd</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Analysis 2</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> about.qmd</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> About</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>navbar</code> section above is how you control which pages appear in your site’s top navigation bar. Make sure all four pages are listed.</p>
+</div>
+</div>
+<p>Re-run <code>quarto preview</code> to confirm the favicon and navbar appear correctly.</p>
+<hr>
+</section>
+</section>
+<section id="customizing-your-pages" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Customizing Your Pages</h1>
+<section id="customize-index.qmd-home-page" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="customize-index.qmd-home-page"><span class="header-section-number">4.1</span> Customize <code>index.qmd</code> (Home Page)</h2>
+<p>Your home page should introduce your project. Include:</p>
+<ul>
+<li>A brief description of your Project 6 and which texts you chose to analyze</li>
+<li>An image (optional but encouraged)</li>
+<li>Links to your two analysis pages (see Section 5 for how to link correctly)</li>
+</ul>
+</section>
+<section id="customize-about.qmd" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="customize-about.qmd"><span class="header-section-number">4.2</span> Customize <code>about.qmd</code></h2>
+<p>Your About page should include:</p>
+<ul>
+<li>Your name</li>
+<li>A brief description of what this website is for and why you created it</li>
+</ul>
+</section>
+<section id="customize-the-theme" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="customize-the-theme"><span class="header-section-number">4.3</span> Customize the Theme</h2>
+<p>You can change the visual theme of your site by editing <code>_quarto.yml</code>. For example:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_quarto.yml</strong></pre>
+</div>
+<div class="sourceCode" id="cb6" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Browse all available themes at <a href="https://quarto.org/docs/output-formats/html-themes.html" class="uri">https://quarto.org/docs/output-formats/html-themes.html</a> and pick one you like.</p>
+<hr>
+</section>
+</section>
+<section id="linking-to-your-analysis-pages-from-index.qmd" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Linking to Your Analysis Pages from <code>index.qmd</code></h1>
+<p>This is an important step to help website viewers navigate to your main content.</p>
+<section id="why-link-to-.html-files-not-.qmd-files" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="why-link-to-.html-files-not-.qmd-files"><span class="header-section-number">5.1</span> Why Link to <code>.html</code> Files, Not <code>.qmd</code> Files</h2>
+<p>When Quarto renders/previews your website, it converts every <code>.qmd</code> file into a corresponding <code>.html</code> file and saves everything in the <code>_site/</code> folder. The <code>.html</code> files are what actually get served as your website. The <code>.qmd</code> files are just the source.</p>
+<p>This means:</p>
+<ul>
+<li><code>analysis1.qmd</code> becomes <code>analysis1.html</code></li>
+<li><code>analysis2.qmd</code> becomes <code>analysis2.html</code></li>
+</ul>
+<p>When you add links inside <code>index.qmd</code>, you need to link to <code>analysis1.html</code> (not <code>analysis1.qmd</code>), because that is the file that will exist when someone visits your site.</p>
+</section>
+<section id="how-to-add-links-in-index.qmd" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="how-to-add-links-in-index.qmd"><span class="header-section-number">5.2</span> How to Add Links in <code>index.qmd</code></h2>
+<p>Use standard markdown link syntax, pointing to the <code>.html</code> files:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>index.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb7" data-filename="index.qmd"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analyses</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>This website presents two text analyses:</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>events_chart <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(events_by_hour, <span class="fu">aes</span>(<span class="at">x =</span> hour, <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Events by Hour&quot;</span>,</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Hour of Day&quot;</span>,</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Number of Events&quot;</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Analysis 1: Title of Your First Text Analysis</span><span class="co">](analysis1.html)</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Analysis 2: Title of Your Second Text Analysis</span><span class="co">](analysis2.html)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Part 4 - Brief Analysis</strong> Explain what hour had the most events happening or other interesting findings in 1-2 sentences in the second Tab of your dashboard:   Most activity occurs at 14:00 and 15:00, each with two events recorded. The data suggests login activity is concentrated in the early afternoon, with fewer events later in the day.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Summary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 57%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Situation</th>
+<th>What to write</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Links inside <code>.qmd</code> files</td>
+<td>Use <code>.html</code> extension (like <code>analysis1.html</code>)</td>
+</tr>
+<tr class="even">
+<td>Navbar entries in <code>_quarto.yml</code></td>
+<td>Use <code>.qmd</code> extension (Quarto handles this automatically)</td>
+</tr>
+</tbody>
+</table>
+<p>The navbar in <code>_quarto.yml</code> is managed by Quarto directly, so it is fine to reference <code>.qmd</code> files there. But for any links you write by hand inside page content, always use <code>.html</code>.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="rendering-your-website" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Rendering Your Website</h1>
+<p>Once you are happy with your content, render the full site with:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb8" data-filename="Terminal"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>quarto render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Or by clicking the preview/render button.</p>
+<p>This will:</p>
+<ol type="1">
+<li>Read each <code>.qmd</code> file</li>
+<li>Run any R code inside it</li>
+<li>Convert everything to <code>.html</code></li>
+<li>Save all output files into the <code>_site/</code> folder</li>
+</ol>
+<p>The <code>_site/</code> folder is your finished website. Do not manually edit files inside <code>_site/</code> — they will be overwritten every time you render.</p>
+<hr>
+</section>
+<section id="publishing-to-netlify" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Publishing to Netlify</h1>
+<section id="upload-your-site" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="upload-your-site"><span class="header-section-number">7.1</span> Upload Your Site</h2>
+<ol type="1">
+<li>Go to <a href="https://app.netlify.com" class="uri">https://app.netlify.com</a> and log in</li>
+<li>From your dashboard, scroll to the bottom where it says <strong>“Want to deploy a new site without connecting to Git?”</strong></li>
+<li>Drag and drop your <code>_site/</code> folder into the upload area</li>
+</ol>
+</section>
+<section id="change-your-site-url" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="change-your-site-url"><span class="header-section-number">7.2</span> Change Your Site URL</h2>
+<p>After uploading, Netlify will give your site a random URL. To change it:</p>
+<ol type="1">
+<li>Go to <strong>Quick Setup</strong></li>
+<li>Rename it to <code>your-name-project6.netlify.app</code> and click &gt; <strong>Update project name</strong></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="checklist-before-submitting" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Checklist Before Submitting</h1>
+<p>Before you submit, verify your site has:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">A favicon</label></li>
+<li><label><input type="checkbox">A theme applied in <code>_quarto.yml</code></label></li>
+<li><label><input type="checkbox">4 pages in the navbar: Home, Analysis 1, Analysis 2, About</label></li>
+<li><label><input type="checkbox">Home page with a brief intro and working links to both analysis pages (using <code>.html</code> extensions)</label></li>
+<li><label><input type="checkbox">Basic setup content in both <code>analysis1.qmd</code> and <code>analysis2.qmd</code></label></li>
+<li><label><input type="checkbox">Site published to Netlify at <code>your-name-project6.netlify.app</code></label></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
