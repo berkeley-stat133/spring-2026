@@ -1,5 +1,5 @@
 ---
-title: "Lab 12"
+title: "Lab 13"
 subtitle: "More Websites with Quarto"
 author: "STAT 133"
 format: stat133slides-revealjs
