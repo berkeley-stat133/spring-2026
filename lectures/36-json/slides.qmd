@@ -437,6 +437,22 @@ fromJSON(json3)
 
 ```{r}
 #| output-location: fragment
+json4 <- '{
+  "name": ["Leia", "Luke", "Han"],
+  "gender": ["female", "male", "male"],
+  "height": [1.6, 1.7, 1.8],
+  "force": [true, true, false]
+}'
+
+fromJSON(json4)
+```
+
+
+
+## 
+
+```{r}
+#| output-location: fragment
 json4 <- fromJSON('{
   "name": ["Leia", "Luke", "Han"],
   "gender": ["female", "male", "male"],
@@ -445,6 +461,20 @@ json4 <- fromJSON('{
 }')
 
 as.data.frame(json4)
+```
+
+
+## 
+
+```{r}
+#| output-location: fragment
+json5 <- '[
+  {"name": "Leia", "gender": "female", "height": 1.6, "force": true},
+  {"name": "Luke", "gender": "male", "height": 1.7, "force": true},
+  {"name": "Han", "gender": "male", "height": 1.8, "force": false}
+]'
+
+fromJSON(json5)
 ```
 
 
