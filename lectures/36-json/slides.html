@@ -670,14 +670,42 @@ $force
 <section id="section-8" class="slide level2">
 <h2></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>json4 <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(<span class="st">'{</span></span>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>json4 <span class="ot">&lt;-</span> <span class="st">'{</span></span>
 <span id="cb30-2"><a></a><span class="st">  "name": ["Leia", "Luke", "Han"],</span></span>
 <span id="cb30-3"><a></a><span class="st">  "gender": ["female", "male", "male"],</span></span>
 <span id="cb30-4"><a></a><span class="st">  "height": [1.6, 1.7, 1.8],</span></span>
 <span id="cb30-5"><a></a><span class="st">  "force": [true, true, false]</span></span>
-<span id="cb30-6"><a></a><span class="st">}'</span>)</span>
+<span id="cb30-6"><a></a><span class="st">}'</span></span>
 <span id="cb30-7"><a></a></span>
-<span id="cb30-8"><a></a><span class="fu">as.data.frame</span>(json4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-8"><a></a><span class="fu">fromJSON</span>(json4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>$name
+[1] "Leia" "Luke" "Han" 
+
+$gender
+[1] "female" "male"   "male"  
+
+$height
+[1] 1.6 1.7 1.8
+
+$force
+[1]  TRUE  TRUE FALSE</code></pre>
+</div>
+</div>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>json4 <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(<span class="st">'{</span></span>
+<span id="cb32-2"><a></a><span class="st">  "name": ["Leia", "Luke", "Han"],</span></span>
+<span id="cb32-3"><a></a><span class="st">  "gender": ["female", "male", "male"],</span></span>
+<span id="cb32-4"><a></a><span class="st">  "height": [1.6, 1.7, 1.8],</span></span>
+<span id="cb32-5"><a></a><span class="st">  "force": [true, true, false]</span></span>
+<span id="cb32-6"><a></a><span class="st">}'</span>)</span>
+<span id="cb32-7"><a></a></span>
+<span id="cb32-8"><a></a><span class="fu">as.data.frame</span>(json4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -688,12 +716,32 @@ $force
 </div>
 </div>
 </section>
-<section id="section-9" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>leia_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'Leia'</span>, <span class="st">'female'</span>, <span class="st">'1.50'</span>, <span class="st">'true'</span>)</span>
-<span id="cb32-2"><a></a></span>
-<span id="cb32-3"><a></a><span class="fu">toJSON</span>(leia_vec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>json5 <span class="ot">&lt;-</span> <span class="st">'[</span></span>
+<span id="cb34-2"><a></a><span class="st">  {"name": "Leia", "gender": "female", "height": 1.6, "force": true},</span></span>
+<span id="cb34-3"><a></a><span class="st">  {"name": "Luke", "gender": "male", "height": 1.7, "force": true},</span></span>
+<span id="cb34-4"><a></a><span class="st">  {"name": "Han", "gender": "male", "height": 1.8, "force": false}</span></span>
+<span id="cb34-5"><a></a><span class="st">]'</span></span>
+<span id="cb34-6"><a></a></span>
+<span id="cb34-7"><a></a><span class="fu">fromJSON</span>(json5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>  name gender height force
+1 Leia female    1.6  TRUE
+2 Luke   male    1.7  TRUE
+3  Han   male    1.8 FALSE</code></pre>
+</div>
+</div>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>leia_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'Leia'</span>, <span class="st">'female'</span>, <span class="st">'1.50'</span>, <span class="st">'true'</span>)</span>
+<span id="cb36-2"><a></a></span>
+<span id="cb36-3"><a></a><span class="fu">toJSON</span>(leia_vec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -704,13 +752,13 @@ $force
 <p><br>
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>leia_lst <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb34-2"><a></a>  <span class="st">"name"</span> <span class="ot">=</span> <span class="st">"Leia"</span>, </span>
-<span id="cb34-3"><a></a>  <span class="st">"gender"</span> <span class="ot">=</span> <span class="st">"female"</span>, </span>
-<span id="cb34-4"><a></a>  <span class="st">"height"</span> <span class="ot">=</span> <span class="fl">1.50</span>, </span>
-<span id="cb34-5"><a></a>  <span class="st">"force"</span> <span class="ot">=</span> <span class="cn">TRUE</span>)</span>
-<span id="cb34-6"><a></a></span>
-<span id="cb34-7"><a></a><span class="fu">toJSON</span>(leia_lst)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>leia_lst <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb38-2"><a></a>  <span class="st">"name"</span> <span class="ot">=</span> <span class="st">"Leia"</span>, </span>
+<span id="cb38-3"><a></a>  <span class="st">"gender"</span> <span class="ot">=</span> <span class="st">"female"</span>, </span>
+<span id="cb38-4"><a></a>  <span class="st">"height"</span> <span class="ot">=</span> <span class="fl">1.50</span>, </span>
+<span id="cb38-5"><a></a>  <span class="st">"force"</span> <span class="ot">=</span> <span class="cn">TRUE</span>)</span>
+<span id="cb38-6"><a></a></span>
+<span id="cb38-7"><a></a><span class="fu">toJSON</span>(leia_lst)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -719,16 +767,16 @@ $force
 </div>
 </div>
 </section>
-<section id="section-10" class="slide level2">
+<section id="section-12" class="slide level2">
 <h2></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>leia_lst <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb36-2"><a></a>  <span class="st">"name"</span> <span class="ot">=</span> <span class="st">"Leia"</span>, </span>
-<span id="cb36-3"><a></a>  <span class="st">"gender"</span> <span class="ot">=</span> <span class="st">"female"</span>, </span>
-<span id="cb36-4"><a></a>  <span class="st">"height"</span> <span class="ot">=</span> <span class="fl">1.50</span>, </span>
-<span id="cb36-5"><a></a>  <span class="st">"force"</span> <span class="ot">=</span> <span class="cn">TRUE</span>)</span>
-<span id="cb36-6"><a></a></span>
-<span id="cb36-7"><a></a><span class="fu">toJSON</span>(leia_lst, <span class="at">auto_unbox =</span> <span class="cn">TRUE</span>, <span class="at">pretty =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>leia_lst <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb40-2"><a></a>  <span class="st">"name"</span> <span class="ot">=</span> <span class="st">"Leia"</span>, </span>
+<span id="cb40-3"><a></a>  <span class="st">"gender"</span> <span class="ot">=</span> <span class="st">"female"</span>, </span>
+<span id="cb40-4"><a></a>  <span class="st">"height"</span> <span class="ot">=</span> <span class="fl">1.50</span>, </span>
+<span id="cb40-5"><a></a>  <span class="st">"force"</span> <span class="ot">=</span> <span class="cn">TRUE</span>)</span>
+<span id="cb40-6"><a></a></span>
+<span id="cb40-7"><a></a><span class="fu">toJSON</span>(leia_lst, <span class="at">auto_unbox =</span> <span class="cn">TRUE</span>, <span class="at">pretty =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -746,7 +794,7 @@ $force
 <h1>Web Basics</h1>
 
 </section>
-<section id="section-11" class="slide level2">
+<section id="section-13" class="slide level2">
 <h2></h2>
 <p>In this section we’ll give you a crash introduction to <span class="bold-hilit">HTTP</span> so you can be prepared to work with <span class="hilit">Application Programming Interfaces</span> (APIs).</p>
 <p>Specifically, we cover:</p>
@@ -756,7 +804,7 @@ $force
 <li class="fragment">HTTP requests and responses</li>
 </ul>
 </section>
-<section id="section-12" class="slide level2 nostretch">
+<section id="section-14" class="slide level2 nostretch">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -764,7 +812,7 @@ $force
 </figure>
 </div>
 </section>
-<section id="section-13" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
 <ul>
 <li class="fragment"><p>You access websites using software called a <strong>Web browser</strong> (e.g.&nbsp;Chrome, Firefox, etc).</p></li>
@@ -773,7 +821,7 @@ $force
 <li class="fragment"><p>The way <span class="hilit">Client</span> and <span class="mdlit">Server</span> dialogue between each other is by following a <strong><em>formal protocol of communication</em></strong>.</p></li>
 </ul>
 </section>
-<section id="section-14" class="slide level2 nostretch">
+<section id="section-16" class="slide level2 nostretch">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -781,7 +829,7 @@ $force
 </figure>
 </div>
 </section>
-<section id="section-15" class="slide level2 nostretch">
+<section id="section-17" class="slide level2 nostretch">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -798,7 +846,7 @@ $force
 <li class="fragment"><p><span class="hilit">Clients</span> and <span class="mdlit">Servers</span> communicate via the <span class="bold-hilit">HyperText Transfer Protocol (HTTP)</span> and other protocols.</p></li>
 </ul>
 </section>
-<section id="section-16" class="slide level2 nostretch">
+<section id="section-18" class="slide level2 nostretch">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -821,7 +869,7 @@ $force
 <li class="fragment"><p>HTTP can be used to transfer documents, images, movies, audio files, data, scripts, and all other web resources that make up websites and applications.</p></li>
 </ul>
 </section>
-<section id="section-17" class="slide level2 nostretch">
+<section id="section-19" class="slide level2 nostretch">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -843,7 +891,7 @@ $force
 </ol>
 </div>
 </section>
-<section id="section-18" class="slide level2 nostretch">
+<section id="section-20" class="slide level2 nostretch">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -851,7 +899,7 @@ $force
 </figure>
 </div>
 </section>
-<section id="section-19" class="slide level2 nostretch">
+<section id="section-21" class="slide level2 nostretch">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -859,7 +907,7 @@ $force
 </figure>
 </div>
 </section>
-<section id="section-20" class="slide level2 nostretch">
+<section id="section-22" class="slide level2 nostretch">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>

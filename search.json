@@ -2933,7 +2933,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 9      Kelly Oubre… PHI   SF           80    203 December … US      9         \n2 13     Bam Adebayo  MIA   C            81    255 July 18, … US      7         \n3 30     Adem Bona    PHI   C            82    235 March 28,… NG      R         \n4 35     Tolu Smith   DET   PF           83    254 July 26, … US      R         \n5 15     Austin Reav… LAL   SG           77    197 May 29, 1… US      3         \n6 20     Georges Nia… CLE   PF           78    230 June 17, … US      8         \n7 13     Tristan Tho… CLE   C            81    254 March 13,… CA      13        \n8 0      Tyrese Hali… IND   PG           77    185 February … US      4         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 99     KJ Martin    UTA   SF           78    215 January 6… US      4         \n2 5      Cam Reddish  LAL   SF           79    230 September… US      5         \n3 24     Haywood Hig… MIA   SF           77    220 December … US      4         \n4 20     A.J. Green   MIL   SG           76    190 September… US      2         \n5 23     Monte Morris PHO   PG           74    183 June 27, … US      7         \n6 33     Nic Claxton  BRK   C            83    215 April 17,… US      5         \n7 10     Jimmy Butler GSW   SF           78    230 September… US      13        \n8 8      Zach LaVine  CHI   SF           77    200 March 10,… US      10        \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -3255,32 +3255,46 @@
     "href": "lectures/36-json/slides.html#section-8",
     "title": "JSON Data, and APIs I",
     "section": "",
-    "text": "json4 &lt;- fromJSON('{\n  \"name\": [\"Leia\", \"Luke\", \"Han\"],\n  \"gender\": [\"female\", \"male\", \"male\"],\n  \"height\": [1.6, 1.7, 1.8],\n  \"force\": [true, true, false]\n}')\n\nas.data.frame(json4)\n\n\n\n  name gender height force\n1 Leia female    1.6  TRUE\n2 Luke   male    1.7  TRUE\n3  Han   male    1.8 FALSE"
+    "text": "json4 &lt;- '{\n  \"name\": [\"Leia\", \"Luke\", \"Han\"],\n  \"gender\": [\"female\", \"male\", \"male\"],\n  \"height\": [1.6, 1.7, 1.8],\n  \"force\": [true, true, false]\n}'\n\nfromJSON(json4)\n\n\n\n$name\n[1] \"Leia\" \"Luke\" \"Han\" \n\n$gender\n[1] \"female\" \"male\"   \"male\"  \n\n$height\n[1] 1.6 1.7 1.8\n\n$force\n[1]  TRUE  TRUE FALSE"
   },
   {
     "objectID": "lectures/36-json/slides.html#section-9",
     "href": "lectures/36-json/slides.html#section-9",
     "title": "JSON Data, and APIs I",
     "section": "",
-    "text": "leia_vec &lt;- c('Leia', 'female', '1.50', 'true')\n\ntoJSON(leia_vec)\n\n\n\n[\"Leia\",\"female\",\"1.50\",\"true\"] \n\n\n\n\n\n\nleia_lst &lt;- list(\n  \"name\" = \"Leia\", \n  \"gender\" = \"female\", \n  \"height\" = 1.50, \n  \"force\" = TRUE)\n\ntoJSON(leia_lst)\n\n\n\n{\"name\":[\"Leia\"],\"gender\":[\"female\"],\"height\":[1.5],\"force\":[true]}"
+    "text": "json4 &lt;- fromJSON('{\n  \"name\": [\"Leia\", \"Luke\", \"Han\"],\n  \"gender\": [\"female\", \"male\", \"male\"],\n  \"height\": [1.6, 1.7, 1.8],\n  \"force\": [true, true, false]\n}')\n\nas.data.frame(json4)\n\n\n\n  name gender height force\n1 Leia female    1.6  TRUE\n2 Luke   male    1.7  TRUE\n3  Han   male    1.8 FALSE"
   },
   {
     "objectID": "lectures/36-json/slides.html#section-10",
     "href": "lectures/36-json/slides.html#section-10",
     "title": "JSON Data, and APIs I",
     "section": "",
-    "text": "leia_lst &lt;- list(\n  \"name\" = \"Leia\", \n  \"gender\" = \"female\", \n  \"height\" = 1.50, \n  \"force\" = TRUE)\n\ntoJSON(leia_lst, auto_unbox = TRUE, pretty = TRUE)\n\n\n\n{\n  \"name\": \"Leia\",\n  \"gender\": \"female\",\n  \"height\": 1.5,\n  \"force\": true\n}"
+    "text": "json5 &lt;- '[\n  {\"name\": \"Leia\", \"gender\": \"female\", \"height\": 1.6, \"force\": true},\n  {\"name\": \"Luke\", \"gender\": \"male\", \"height\": 1.7, \"force\": true},\n  {\"name\": \"Han\", \"gender\": \"male\", \"height\": 1.8, \"force\": false}\n]'\n\nfromJSON(json5)\n\n\n\n  name gender height force\n1 Leia female    1.6  TRUE\n2 Luke   male    1.7  TRUE\n3  Han   male    1.8 FALSE"
   },
   {
     "objectID": "lectures/36-json/slides.html#section-11",
     "href": "lectures/36-json/slides.html#section-11",
     "title": "JSON Data, and APIs I",
     "section": "",
-    "text": "In this section we’ll give you a crash introduction to HTTP so you can be prepared to work with Application Programming Interfaces (APIs).\nSpecifically, we cover:\n\nWeb made of Clients and Servers\nHTTP basics\nHTTP requests and responses"
+    "text": "leia_vec &lt;- c('Leia', 'female', '1.50', 'true')\n\ntoJSON(leia_vec)\n\n\n\n[\"Leia\",\"female\",\"1.50\",\"true\"] \n\n\n\n\n\n\nleia_lst &lt;- list(\n  \"name\" = \"Leia\", \n  \"gender\" = \"female\", \n  \"height\" = 1.50, \n  \"force\" = TRUE)\n\ntoJSON(leia_lst)\n\n\n\n{\"name\":[\"Leia\"],\"gender\":[\"female\"],\"height\":[1.5],\"force\":[true]}"
+  },
+  {
+    "objectID": "lectures/36-json/slides.html#section-12",
+    "href": "lectures/36-json/slides.html#section-12",
+    "title": "JSON Data, and APIs I",
+    "section": "",
+    "text": "leia_lst &lt;- list(\n  \"name\" = \"Leia\", \n  \"gender\" = \"female\", \n  \"height\" = 1.50, \n  \"force\" = TRUE)\n\ntoJSON(leia_lst, auto_unbox = TRUE, pretty = TRUE)\n\n\n\n{\n  \"name\": \"Leia\",\n  \"gender\": \"female\",\n  \"height\": 1.5,\n  \"force\": true\n}"
   },
   {
     "objectID": "lectures/36-json/slides.html#section-13",
     "href": "lectures/36-json/slides.html#section-13",
+    "title": "JSON Data, and APIs I",
+    "section": "",
+    "text": "In this section we’ll give you a crash introduction to HTTP so you can be prepared to work with Application Programming Interfaces (APIs).\nSpecifically, we cover:\n\nWeb made of Clients and Servers\nHTTP basics\nHTTP requests and responses"
+  },
+  {
+    "objectID": "lectures/36-json/slides.html#section-15",
+    "href": "lectures/36-json/slides.html#section-15",
     "title": "JSON Data, and APIs I",
     "section": "",
     "text": "You access websites using software called a Web browser (e.g. Chrome, Firefox, etc).\nThe browser in your computer is the Client that requests a variety of resources.\nThe client’s request is sent to Web Servers which send responses back to the client.\nThe way Client and Server dialogue between each other is by following a formal protocol of communication."
@@ -3570,7 +3584,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"silver\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"gold\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -3584,7 +3598,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"senior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"freshman\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -3877,84 +3891,84 @@
   {
     "objectID": "labs/lab13/slides.html#steps-to-get-started",
     "href": "labs/lab13/slides.html#steps-to-get-started",
-    "title": "Lab 12",
+    "title": "Lab 13",
     "section": "Steps to Get Started",
     "text": "Steps to Get Started\n\n\nIn Positron:\n\nClick New (top-left corner)\nSelect New File …\nChoose Quarto Project\nSelect Website Project\nChoose a directory and name it (e.g. webdemo)\n\n\nIn RStudio:\n\nClick File in the menu bar\nSelect New Project …\nChoose Quarto Website\nSelect a location and name it (e.g. webdemo)\nClick Create"
   },
   {
     "objectID": "labs/lab13/slides.html#website-project-parts",
     "href": "labs/lab13/slides.html#website-project-parts",
-    "title": "Lab 12",
+    "title": "Lab 13",
     "section": "Website Project Parts",
     "text": "Website Project Parts\nCreating a website project in your IDE will create the following files:\n\n\n\n\n\n\n\nFile\nWhat it does\n\n\n\n\n_quarto.yml\nThe “settings” file, which controls site title, navigation, theme, etc.\n\n\n.quarto/\nInternal info used by Quarto when rendering\n\n\nindex.qmd\nYour homepage\n\n\nabout.qmd\nA standard ‘about this site’ page\n\n\nstyles.css\nOptional custom styling"
   },
   {
     "objectID": "labs/lab13/slides.html#rendering-your-website",
     "href": "labs/lab13/slides.html#rendering-your-website",
-    "title": "Lab 12",
+    "title": "Lab 13",
     "section": "Rendering your Website",
     "text": "Rendering your Website\nThink of rendering like baking: Your .qmd files are the raw ingredients, and rendering is the oven that turns them into a finished website, consisting of html files.\nWhen you run quarto render or click preview:\n\nQuarto reads each .qmd file\nRuns any code inside it\nConverts everything to .html\nSaves the result in the _site/ folder\nThe _site/ folder is your actual website — that’s what gets uploaded when you publish."
   },
   {
     "objectID": "labs/lab13/slides.html#website-project-parts-after-renderingpreviewing",
     "href": "labs/lab13/slides.html#website-project-parts-after-renderingpreviewing",
-    "title": "Lab 12",
+    "title": "Lab 13",
     "section": "Website Project Parts (After Rendering/Previewing)",
     "text": "Website Project Parts (After Rendering/Previewing)\nNow you will have the following files:\n\n\n\n\n\n\n\nFile\nWhat it does\n\n\n\n\n_quarto.yml\nThe “settings” file, which controls site title, navigation, theme, etc.\n\n\n.quarto/\nInternal info used by Quarto when rendering\n\n\nindex.qmd\nYour homepage\n\n\nabout.qmd\nA standard ‘about this site’ page\n\n\nstyles.css\nOptional custom styling\n\n\n_site/ folder\nWhere Quarto puts the finished HTML files (don’t edit this!)"
   },
   {
     "objectID": "labs/lab13/slides.html#sample-website-code",
     "href": "labs/lab13/slides.html#sample-website-code",
-    "title": "Lab 12",
+    "title": "Lab 13",
     "section": "Sample Website + Code",
     "text": "Sample Website + Code\nFor illustration purposes, we have prepared a mockup website with some sample Quarto website content that you can preview at:\nhttps://dataviz.quarto.pub/ketzaly1\nThe associated files are available in the following github repository:\nhttps://github.com/gastonstat/quarto-website-ketzaly1"
   },
   {
     "objectID": "labs/lab13/slides.html#uploading-to-netlify",
     "href": "labs/lab13/slides.html#uploading-to-netlify",
-    "title": "Lab 12",
+    "title": "Lab 13",
     "section": "Uploading to Netlify",
     "text": "Uploading to Netlify\n\n\n\n\n\n\nNote\n\n\nAs usual, we use the ‘drag and drop’ feature to upload our websites to Netlify. In this case, you will drag and drop the _site folder that is created when you render/preview your website.\n\n\n\n\nClick ‘choose a folder’ and select your _site folder."
   },
   {
     "objectID": "labs/lab13/slides.html#creating-a-favicon",
     "href": "labs/lab13/slides.html#creating-a-favicon",
-    "title": "Lab 12",
+    "title": "Lab 13",
     "section": "Creating a Favicon",
     "text": "Creating a Favicon\n\nCan be logos\nEasy way to create text-based favicon is Favicon Icon Generator\nChoose the Generate From Text option\nOnce you have designed your favicon in favicon.io, click on the download button &gt; unzip the downloaded file &gt; move or copy the file favicon.ico to the assets folder in your Quarto website."
   },
   {
     "objectID": "labs/lab13/slides.html#publication-assignment",
     "href": "labs/lab13/slides.html#publication-assignment",
-    "title": "Lab 12",
+    "title": "Lab 13",
     "section": "Publication Assignment",
     "text": "Publication Assignment\nIn addition to the file structure, your website should have:\n\nA favicon\nA theme (find HTML theme options here)\n4 pages linked in the navbar: Home (index.qmd), Analysis 1 (analysis1.qmd), Analysis 2 (analysis2.qmd), and About (about.qmd)\nHome page which links to the analysis 1 and analysis 2 pages"
   },
   {
     "objectID": "labs/lab13/slides.html#sample-layout",
     "href": "labs/lab13/slides.html#sample-layout",
-    "title": "Lab 12",
+    "title": "Lab 13",
     "section": "Sample Layout",
     "text": "Sample Layout\nWhen completed, your website should have the same structure as this sample.\nFor more a step-by-step walkthrough, refer to BCourses &gt; Files &gt; lab-materials &gt; lab13 &gt; pub12-walkthrough.qmd."
   },
   {
     "objectID": "labs/lab13/slides.html#submitting-to-netlify",
     "href": "labs/lab13/slides.html#submitting-to-netlify",
-    "title": "Lab 12",
+    "title": "Lab 13",
     "section": "Submitting to Netlify",
     "text": "Submitting to Netlify\nAfter uploading your _site folder, don’t forget to change the website link to your-name-project6.netlify.app."
   },
   {
     "objectID": "labs/lab13/slides.html#pset-11",
     "href": "labs/lab13/slides.html#pset-11",
-    "title": "Lab 12",
+    "title": "Lab 13",
     "section": "Pset 11",
     "text": "Pset 11\nAvailable in bCourses:\nSee Assignments tab &gt; Problem Sets &gt; PS11\nYou’ll find 2 files:\n\nps11.html: instructions\nps11.qmd: template file to write your answers\n\n\nIn case of trouble: Go to Files tab, folder problem-sets, folder ps11, and download the qmd file.\nSometimes Safari blocks or denies you access. If this is the case you may want to use another browser (e.g. Chrome)."
   },
   {
     "objectID": "labs/lab13/slides.html#pset-11-submission",
     "href": "labs/lab13/slides.html#pset-11-submission",
-    "title": "Lab 12",
+    "title": "Lab 13",
     "section": "Pset 11 Submission",
     "text": "Pset 11 Submission\n\nSubmit your qmd and html files to bCourses.\nUse assignment problem set ps11\nGraded credit / no-credit\nCredit for evidence of earnest engagement (just don’t submit a blank or empty template file)"
   },
@@ -7170,7 +7184,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 2 4"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 4 1"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#meet-the-palmer-penguins",
@@ -7380,14 +7394,14 @@
     "href": "lectures/23-date-time1/slides.html#an-r-vector-for-date-times",
     "title": "Dates and Times I",
     "section": "An R vector for date-times",
-    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-23 12:15:17 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1776971718"
+    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-23 18:05:37 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1776992738"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "href": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "title": "Dates and Times I",
     "section": "Why not just use a double vector?",
-    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-23 12:15:17 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-23 12:15:18 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-23 12:15:18 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/23/26\""
+    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-23 18:05:37 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-23 18:05:38 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-23 18:05:38 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/23/26\""
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#creating-date-time-vectors",
@@ -7436,7 +7450,7 @@
     "href": "lectures/23-date-time1/slides.html#setting",
     "title": "Dates and Times I",
     "section": "Setting",
-    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-23 12:15:17 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Wednesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-23 18:05:37 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Wednesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#your-turn",
