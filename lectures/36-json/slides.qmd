@@ -291,7 +291,29 @@ JSON values (e.g. strings, numbers, booleans, null) are typically contained in o
 ![](images/leia-info.svg){width="83%" fig-align="center"}
 
 
-## JSON object and array {auto-animate=true}
+## JSON array and object {auto-animate=true}
+
+:::: {.columns}
+::: {.column width="30%"}
+![](images/leia-info2.png){fig-align="center" width="72%"}
+:::
+
+::: {.column .fragment width="70%"}
+How would you store Leis's data using a:
+
+1) JSON array?
+
+2) JSON object?
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+:::
+::::
+
+
+## JSON array and object {auto-animate=true}
 
 :::: {.columns}
 ::: {.column width="30%"}
@@ -324,12 +346,46 @@ JSON values (e.g. strings, numbers, booleans, null) are typically contained in o
 ::::
 
 
-## {.nostretch}
+## {.nostretch auto-animate=true}
 
 ![](images/leia-luke-han-info.svg){width="84%" fig-align="center"}
 
 
+## {.nostretch auto-animate=true}
+
+![](images/leia-luke-han-info.svg){width="54%" fig-align="center"}
+
+How would you store this data using a:
+
+::: {.nonincremental}
+1) JSON array?
+
+2) JSON object?
+:::
+
+```{r}
+#| echo: false
+countdown::countdown(1.5, bottom = 0)
+```
+
+
 ##
+
+Data in a [JSON array]{.mdlit}
+
+. . .
+
+```json         
+[
+  {"name": "Leia", "gender": "female", "height": 1.6, "force": true},
+  {"name": "Luke", "gender": "male", "height": 1.7, "force": true},
+  {"name": "Han", "gender": "male", "height": 1.8, "force": false}
+]
+```
+
+. . .
+
+\
 
 Data in a [JSON object]{.hilit}
 
@@ -342,22 +398,6 @@ Data in a [JSON object]{.hilit}
   "height": [1.6, 1.7, 1.8],
   "force": [true, true, false]
 }
-```
-
-. . .
-
-\
-
-Data in a [JSON array]{.mdlit}
-
-. . .
-
-```json         
-[
-  {"name": "Leia", "gender": "female", "height": 1.6, "force": true},
-  {"name": "Luke", "gender": "male", "height": 1.7, "force": true},
-  {"name": "Han", "gender": "male", "height": 1.8, "force": false}
-]
 ```
 
 
