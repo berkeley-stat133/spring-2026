@@ -2933,7 +2933,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 14     TyTy Washin… PHO   PG           75    195 November … US      2         \n2 2      Josh Okogie  PHO   SG           76    213 September… NG      6         \n3 7      Gabe Vincent LAL   PG           74    200 June 14, … US      5         \n4 12     Trevelin Qu… ORL   SG           77    190 February … US      3         \n5 24     Devin Vasse… SAS   SG           77    200 August 23… US      4         \n6 13     Ousmane Die… OKC   C            81    185 May 21, 2… FR      2         \n7 00     Reggie Jack… PHI   PG           74    208 April 16,… IT      13        \n8 10     Justin Mina… POR   SF           77    205 March 26,… US      2         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 2      Deandre Ayt… POR   C            84    252 July 23, … BS      6         \n2 4      Jaylen Mart… WAS   SF           78    216 January 2… US      R         \n3 13     Torrey Craig CHI   SF           77    221 December … US      7         \n4 3      Jaden McDan… MIN   PF           81    185 September… US      4         \n5 44     Patrick Wil… CHI   PF           78    215 August 26… US      4         \n6 12     De'Andre Hu… CLE   SF           79    221 December … US      5         \n7 27     Alex Len     LAL   C            84    250 June 16, … UA      11        \n8 23     Lauri Markk… UTA   PF           85    240 May 22, 1… FI      7         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -3216,85 +3216,99 @@
     "text": "Container: JSON objects\n\nKey-value pairs: \"key\": value\nDefined with curly braces { }\nKey has to be quoted\nKey and value separated with a colon :\n\n\n{ \"key\": value }\n\n\n\n\n{ \n  \"class\": \"STAT 133\",\n  \"semester\": \"Spring\",\n  \"year\": 2026,\n  \"prereqs\": null\n}"
   },
   {
-    "objectID": "lectures/36-json/slides.html#json-object-and-array",
-    "href": "lectures/36-json/slides.html#json-object-and-array",
+    "objectID": "lectures/36-json/slides.html#json-array-and-object",
+    "href": "lectures/36-json/slides.html#json-array-and-object",
     "title": "JSON Data, and APIs I",
-    "section": "JSON object and array",
-    "text": "JSON object and array\n\n\n\n\n\n\n\n\nArray\n[\"Leia\", \"female\", 1.5, true]\n\n\n\nObject\n{ \n  \"name\": \"Leia\",\n  \"gender\": \"female\",\n  \"height\": 1.5,\n  \"force\": true\n}"
+    "section": "JSON array and object",
+    "text": "JSON array and object\n\n\n\n\n\n\n\n\nHow would you store Leis’s data using a:\n\nJSON array?\nJSON object?\n\n\n\n\n−+\n01:30"
+  },
+  {
+    "objectID": "lectures/36-json/slides.html#json-array-and-object-1",
+    "href": "lectures/36-json/slides.html#json-array-and-object-1",
+    "title": "JSON Data, and APIs I",
+    "section": "JSON array and object",
+    "text": "JSON array and object\n\n\n\n\n\n\n\n\nArray\n[\"Leia\", \"female\", 1.5, true]\n\n\n\nObject\n{ \n  \"name\": \"Leia\",\n  \"gender\": \"female\",\n  \"height\": 1.5,\n  \"force\": true\n}"
   },
   {
     "objectID": "lectures/36-json/slides.html#section-4",
     "href": "lectures/36-json/slides.html#section-4",
     "title": "JSON Data, and APIs I",
     "section": "",
-    "text": "Data in a JSON object\n\n{\n  \"name\": [\"Leia\", \"Luke\", \"Han\"],\n  \"gender\": [\"female\", \"male\", \"male\"],\n  \"height\": [1.6, 1.7, 1.8],\n  \"force\": [true, true, false]\n}\n\n\n\n\nData in a JSON array\n\n\n[\n  {\"name\": \"Leia\", \"gender\": \"female\", \"height\": 1.6, \"force\": true},\n  {\"name\": \"Luke\", \"gender\": \"male\", \"height\": 1.7, \"force\": true},\n  {\"name\": \"Han\", \"gender\": \"male\", \"height\": 1.8, \"force\": false}\n]"
+    "text": "How would you store this data using a:\n\nJSON array?\nJSON object?\n\n\n\n\n−+\n01:30"
   },
   {
     "objectID": "lectures/36-json/slides.html#section-5",
     "href": "lectures/36-json/slides.html#section-5",
     "title": "JSON Data, and APIs I",
     "section": "",
-    "text": "# install.packages(\"jsonlite\")\nlibrary(jsonlite)\n\n\n\n\nThere are 2 main functions:\n\nfromJSON(): convert JSON data (entered as text) to R objects\ntoJSON(): convert R objects to JSON data"
+    "text": "Data in a JSON array\n\n[\n  {\"name\": \"Leia\", \"gender\": \"female\", \"height\": 1.6, \"force\": true},\n  {\"name\": \"Luke\", \"gender\": \"male\", \"height\": 1.7, \"force\": true},\n  {\"name\": \"Han\", \"gender\": \"male\", \"height\": 1.8, \"force\": false}\n]\n\n\n\n\nData in a JSON object\n\n\n{\n  \"name\": [\"Leia\", \"Luke\", \"Han\"],\n  \"gender\": [\"female\", \"male\", \"male\"],\n  \"height\": [1.6, 1.7, 1.8],\n  \"force\": [true, true, false]\n}"
   },
   {
     "objectID": "lectures/36-json/slides.html#section-6",
     "href": "lectures/36-json/slides.html#section-6",
     "title": "JSON Data, and APIs I",
     "section": "",
-    "text": "json1 &lt;- '[1, 2, 3, 4, 5]'\n\nr1 &lt;- fromJSON(json1)\nr1\n\n\n\n[1] 1 2 3 4 5\n\n\n\n\nclass(r1)\n\n[1] \"integer\"\n\n\n\n\n\n\n\njson2 &lt;- '[true, true, false]'\n\nr2 &lt;- fromJSON(json2)\nr2\n\n\n\n[1]  TRUE  TRUE FALSE\n\n\n\n\n\nclass(r2)\n\n[1] \"logical\""
+    "text": "# install.packages(\"jsonlite\")\nlibrary(jsonlite)\n\n\n\n\nThere are 2 main functions:\n\nfromJSON(): convert JSON data (entered as text) to R objects\ntoJSON(): convert R objects to JSON data"
   },
   {
     "objectID": "lectures/36-json/slides.html#section-7",
     "href": "lectures/36-json/slides.html#section-7",
     "title": "JSON Data, and APIs I",
     "section": "",
-    "text": "json3 &lt;- '{\"name\": \"Leia\", \"gender\": \"female\", \"height\": 1.6, \"force\": true}'\n\n\n\n\n\nfromJSON(json3)\n\n\n\n$name\n[1] \"Leia\"\n\n$gender\n[1] \"female\"\n\n$height\n[1] 1.6\n\n$force\n[1] TRUE"
+    "text": "json1 &lt;- '[1, 2, 3, 4, 5]'\n\nr1 &lt;- fromJSON(json1)\nr1\n\n\n\n[1] 1 2 3 4 5\n\n\n\n\nclass(r1)\n\n[1] \"integer\"\n\n\n\n\n\n\n\njson2 &lt;- '[true, true, false]'\n\nr2 &lt;- fromJSON(json2)\nr2\n\n\n\n[1]  TRUE  TRUE FALSE\n\n\n\n\n\nclass(r2)\n\n[1] \"logical\""
   },
   {
     "objectID": "lectures/36-json/slides.html#section-8",
     "href": "lectures/36-json/slides.html#section-8",
     "title": "JSON Data, and APIs I",
     "section": "",
-    "text": "json4 &lt;- '{\n  \"name\": [\"Leia\", \"Luke\", \"Han\"],\n  \"gender\": [\"female\", \"male\", \"male\"],\n  \"height\": [1.6, 1.7, 1.8],\n  \"force\": [true, true, false]\n}'\n\nfromJSON(json4)\n\n\n\n$name\n[1] \"Leia\" \"Luke\" \"Han\" \n\n$gender\n[1] \"female\" \"male\"   \"male\"  \n\n$height\n[1] 1.6 1.7 1.8\n\n$force\n[1]  TRUE  TRUE FALSE"
+    "text": "json3 &lt;- '{\"name\": \"Leia\", \"gender\": \"female\", \"height\": 1.6, \"force\": true}'\n\n\n\n\n\nfromJSON(json3)\n\n\n\n$name\n[1] \"Leia\"\n\n$gender\n[1] \"female\"\n\n$height\n[1] 1.6\n\n$force\n[1] TRUE"
   },
   {
     "objectID": "lectures/36-json/slides.html#section-9",
     "href": "lectures/36-json/slides.html#section-9",
     "title": "JSON Data, and APIs I",
     "section": "",
-    "text": "json4 &lt;- fromJSON('{\n  \"name\": [\"Leia\", \"Luke\", \"Han\"],\n  \"gender\": [\"female\", \"male\", \"male\"],\n  \"height\": [1.6, 1.7, 1.8],\n  \"force\": [true, true, false]\n}')\n\nas.data.frame(json4)\n\n\n\n  name gender height force\n1 Leia female    1.6  TRUE\n2 Luke   male    1.7  TRUE\n3  Han   male    1.8 FALSE"
+    "text": "json4 &lt;- '{\n  \"name\": [\"Leia\", \"Luke\", \"Han\"],\n  \"gender\": [\"female\", \"male\", \"male\"],\n  \"height\": [1.6, 1.7, 1.8],\n  \"force\": [true, true, false]\n}'\n\nfromJSON(json4)\n\n\n\n$name\n[1] \"Leia\" \"Luke\" \"Han\" \n\n$gender\n[1] \"female\" \"male\"   \"male\"  \n\n$height\n[1] 1.6 1.7 1.8\n\n$force\n[1]  TRUE  TRUE FALSE"
   },
   {
     "objectID": "lectures/36-json/slides.html#section-10",
     "href": "lectures/36-json/slides.html#section-10",
     "title": "JSON Data, and APIs I",
     "section": "",
-    "text": "json5 &lt;- '[\n  {\"name\": \"Leia\", \"gender\": \"female\", \"height\": 1.6, \"force\": true},\n  {\"name\": \"Luke\", \"gender\": \"male\", \"height\": 1.7, \"force\": true},\n  {\"name\": \"Han\", \"gender\": \"male\", \"height\": 1.8, \"force\": false}\n]'\n\nfromJSON(json5)\n\n\n\n  name gender height force\n1 Leia female    1.6  TRUE\n2 Luke   male    1.7  TRUE\n3  Han   male    1.8 FALSE"
+    "text": "json4 &lt;- fromJSON('{\n  \"name\": [\"Leia\", \"Luke\", \"Han\"],\n  \"gender\": [\"female\", \"male\", \"male\"],\n  \"height\": [1.6, 1.7, 1.8],\n  \"force\": [true, true, false]\n}')\n\nas.data.frame(json4)\n\n\n\n  name gender height force\n1 Leia female    1.6  TRUE\n2 Luke   male    1.7  TRUE\n3  Han   male    1.8 FALSE"
   },
   {
     "objectID": "lectures/36-json/slides.html#section-11",
     "href": "lectures/36-json/slides.html#section-11",
     "title": "JSON Data, and APIs I",
     "section": "",
-    "text": "leia_vec &lt;- c('Leia', 'female', '1.50', 'true')\n\ntoJSON(leia_vec)\n\n\n\n[\"Leia\",\"female\",\"1.50\",\"true\"] \n\n\n\n\n\n\nleia_lst &lt;- list(\n  \"name\" = \"Leia\", \n  \"gender\" = \"female\", \n  \"height\" = 1.50, \n  \"force\" = TRUE)\n\ntoJSON(leia_lst)\n\n\n\n{\"name\":[\"Leia\"],\"gender\":[\"female\"],\"height\":[1.5],\"force\":[true]}"
+    "text": "json5 &lt;- '[\n  {\"name\": \"Leia\", \"gender\": \"female\", \"height\": 1.6, \"force\": true},\n  {\"name\": \"Luke\", \"gender\": \"male\", \"height\": 1.7, \"force\": true},\n  {\"name\": \"Han\", \"gender\": \"male\", \"height\": 1.8, \"force\": false}\n]'\n\nfromJSON(json5)\n\n\n\n  name gender height force\n1 Leia female    1.6  TRUE\n2 Luke   male    1.7  TRUE\n3  Han   male    1.8 FALSE"
   },
   {
     "objectID": "lectures/36-json/slides.html#section-12",
     "href": "lectures/36-json/slides.html#section-12",
     "title": "JSON Data, and APIs I",
     "section": "",
-    "text": "leia_lst &lt;- list(\n  \"name\" = \"Leia\", \n  \"gender\" = \"female\", \n  \"height\" = 1.50, \n  \"force\" = TRUE)\n\ntoJSON(leia_lst, auto_unbox = TRUE, pretty = TRUE)\n\n\n\n{\n  \"name\": \"Leia\",\n  \"gender\": \"female\",\n  \"height\": 1.5,\n  \"force\": true\n}"
+    "text": "leia_vec &lt;- c('Leia', 'female', '1.50', 'true')\n\ntoJSON(leia_vec)\n\n\n\n[\"Leia\",\"female\",\"1.50\",\"true\"] \n\n\n\n\n\n\nleia_lst &lt;- list(\n  \"name\" = \"Leia\", \n  \"gender\" = \"female\", \n  \"height\" = 1.50, \n  \"force\" = TRUE)\n\ntoJSON(leia_lst)\n\n\n\n{\"name\":[\"Leia\"],\"gender\":[\"female\"],\"height\":[1.5],\"force\":[true]}"
   },
   {
     "objectID": "lectures/36-json/slides.html#section-13",
     "href": "lectures/36-json/slides.html#section-13",
     "title": "JSON Data, and APIs I",
     "section": "",
+    "text": "leia_lst &lt;- list(\n  \"name\" = \"Leia\", \n  \"gender\" = \"female\", \n  \"height\" = 1.50, \n  \"force\" = TRUE)\n\ntoJSON(leia_lst, auto_unbox = TRUE, pretty = TRUE)\n\n\n\n{\n  \"name\": \"Leia\",\n  \"gender\": \"female\",\n  \"height\": 1.5,\n  \"force\": true\n}"
+  },
+  {
+    "objectID": "lectures/36-json/slides.html#section-14",
+    "href": "lectures/36-json/slides.html#section-14",
+    "title": "JSON Data, and APIs I",
+    "section": "",
     "text": "In this section we’ll give you a crash introduction to HTTP so you can be prepared to work with Application Programming Interfaces (APIs).\nSpecifically, we cover:\n\nWeb made of Clients and Servers\nHTTP basics\nHTTP requests and responses"
   },
   {
-    "objectID": "lectures/36-json/slides.html#section-15",
-    "href": "lectures/36-json/slides.html#section-15",
+    "objectID": "lectures/36-json/slides.html#section-16",
+    "href": "lectures/36-json/slides.html#section-16",
     "title": "JSON Data, and APIs I",
     "section": "",
     "text": "You access websites using software called a Web browser (e.g. Chrome, Firefox, etc).\nThe browser in your computer is the Client that requests a variety of resources.\nThe client’s request is sent to Web Servers which send responses back to the client.\nThe way Client and Server dialogue between each other is by following a formal protocol of communication."
@@ -3584,7 +3598,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"gold\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"bronze\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -3598,7 +3612,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"senior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"junior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -7394,14 +7408,14 @@
     "href": "lectures/23-date-time1/slides.html#an-r-vector-for-date-times",
     "title": "Dates and Times I",
     "section": "An R vector for date-times",
-    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-24 07:36:07 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1777041368"
+    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-24 08:01:25 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1777042886"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "href": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "title": "Dates and Times I",
     "section": "Why not just use a double vector?",
-    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-24 07:36:07 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-24 07:36:08 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-24 07:36:08 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/24/26\""
+    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-24 08:01:25 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-24 08:01:26 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-24 08:01:26 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/24/26\""
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#creating-date-time-vectors",
@@ -7450,7 +7464,7 @@
     "href": "lectures/23-date-time1/slides.html#setting",
     "title": "Dates and Times I",
     "section": "Setting",
-    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-24 07:36:07 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Thursday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-24 08:01:25 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Thursday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#your-turn",
