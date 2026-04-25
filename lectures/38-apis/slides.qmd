@@ -123,7 +123,7 @@ curl "http://api.open-notify.org/iss-now.json"
 ```
 
 
-## Interacting from R (option 1 _quick & dirty_)
+## Interacting from R (option 1 _quick & dirty_)[^1]
 
 . . .
 
@@ -153,6 +153,9 @@ $message
 [1] "success"
 ```
 
+[^1]: This is okay for a one-off file download.
+
+
 ## {.smaller}
 
 ```{r}
@@ -170,12 +173,14 @@ leaflet() |>
 
 ```{r}
 #| echo: false
+#| fig-width: 12
+#| fig-height: 7
 iss_lat <- -66.4643
 iss_lng <- -47.3791
 
 leaflet() |> 
   addTiles() |> 
-  setView(lng = iss_lng, iss_lat, zoom = 2) |> 
+  setView(lng = iss_lng, iss_lat, zoom = 3) |> 
   addCircles(lng = iss_lng, lat = iss_lat, radius = 70000)
 ```
 
@@ -332,7 +337,7 @@ BART Legacy API
 
 ## API's Documentation
 
-- In order to use an API, the first step consists of finding and reading the API's Documentation.
+- In order to use an API, the first step consists of finding and reading the [API's Documentation]{.bold-hilit}.
 
 - The Documentation defines what information you can ask for and how to format your request.
 
