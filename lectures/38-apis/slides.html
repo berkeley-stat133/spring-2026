@@ -257,7 +257,7 @@ STAT 133 with Gaston Sanchez
 </ul></li>
 </ol>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Both of these APIs take no inputs.</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>This is okay for a one-off file download.</p></li></ol></aside></section>
 <section id="section-1" class="slide level2 nostretch">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
@@ -330,8 +330,8 @@ STAT 133 with Gaston Sanchez
 <pre><code>{"timestamp": 1776564579, "iss_position": {"latitude": "-66.4643", "longitude": "-47.3791"}, "message": "success"}</code></pre>
 </div>
 </section>
-<section id="interacting-from-r-option-1-quick-dirty" class="slide level2">
-<h2>Interacting from R (option 1 <em>quick &amp; dirty</em>)</h2>
+<section id="interacting-from-r-option-1-quick-dirty1" class="slide level2">
+<h2>Interacting from R (option 1 <em>quick &amp; dirty</em>)<sup>1</sup></h2>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>iss_loc_json <span class="ot">&lt;-</span> <span class="st">"http://api.open-notify.org/iss-now.json"</span></span>
@@ -355,7 +355,7 @@ $iss_position$latitude
 $message
 [1] "success"</code></pre>
 </div>
-</section>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>This is okay for a one-off file download.</p></li></ol></aside></section>
 <section id="section-3" class="slide level2 smaller">
 <h2></h2>
 <div class="cell">
@@ -370,8 +370,8 @@ $message
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-44828e2ab34cbf5c9846" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-44828e2ab34cbf5c9846">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircles","args":[-66.46429999999999,-47.3791,70000,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null,null]}],"setView":[[-66.46429999999999,-47.3791],2,[]],"limits":{"lat":[-66.46429999999999,-66.46429999999999],"lng":[-47.3791,-47.3791]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-f1bed9f3982c18190e67" style="width:1152px;height:672px;"></div>
+<script type="application/json" data-for="htmlwidget-f1bed9f3982c18190e67">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircles","args":[-66.46429999999999,-47.3791,70000,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null,null]}],"setView":[[-66.46429999999999,-47.3791],3,[]],"limits":{"lat":[-66.46429999999999,-66.46429999999999],"lng":[-47.3791,-47.3791]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -501,7 +501,7 @@ $message
 <section id="apis-documentation" class="slide level2">
 <h2>API’s Documentation</h2>
 <ul>
-<li class="fragment"><p>In order to use an API, the first step consists of finding and reading the API’s Documentation.</p></li>
+<li class="fragment"><p>In order to use an API, the first step consists of finding and reading the <span class="bold-hilit">API’s Documentation</span>.</p></li>
 <li class="fragment"><p>The Documentation defines what information you can ask for and how to format your request.</p></li>
 <li class="fragment"><p>Keep in mind that some API’s provide minimal or almost no documentation, while others provide extensive—and sometimes not-user-friendly—documentation.</p></li>
 <li class="fragment"><p>BART Legacy API provides a fair amount of documentation but it can feel a bit intimidating to a beginner user.</p></li>
