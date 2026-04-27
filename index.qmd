@@ -20,10 +20,9 @@ title: "STAT 133: Concepts in Computing with Data"
 ::::
 
 ::: {.callout-tip icon="false"}
-## Week 14 Announcements
+## Week 15 Announcements
 
-- [Problem Set 11]{.label-Homework} due Wed 4/22 by 6PM
-- [12th Publication]{.label-Pub} due Thu 4/23 in lab
+- [Quiz 6]{.label-Quiz} due Thu 4/30 in lab
 - [Project 6]{.label-Project} due Fri 5/01 by 6PM
 :::
 
@@ -544,7 +543,7 @@ Lab 12: [slides](labs/lab12/slides.html) | [PS11](https://bcourses.berkeley.edu/
 
 ::: {.column width="35%"}
 #### Description
-APIs
+[APIs](lectures/38-apis/slides.html)
 
 XML & HTML Data
 
