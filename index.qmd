@@ -543,7 +543,7 @@ Lab 12: [slides](labs/lab12/slides.html) | [PS11](https://bcourses.berkeley.edu/
 
 ::: {.column width="35%"}
 #### Description
-[APIs](lectures/38-apis/slides.html)
+[APIs](lectures/38-apis1/slides.html)
 
 XML & HTML Data
 
