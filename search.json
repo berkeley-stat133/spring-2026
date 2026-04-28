@@ -2891,7 +2891,7 @@
     "href": "lectures/18-eda1/slides.html#nba-roster-data-season-2024-2025-2",
     "title": "Exploratory Data Analysis",
     "section": "NBA Roster Data (season 2024-2025)",
-    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 12     Cole Swider  TOR   SF           82    220 May 8, 19… US      2         \n2 21     David Roddy  HOU   PF           77    255 March 27,… US      2         \n3 12     Josh Okogie  CHO   SG           76    213 September… NG      6         \n4 13     Tony Bradley IND   C            82    248 January 8… US      6         \n5 55     Delon Wright MIL   PG           76    185 April 26,… US      9         \n6 13     Jett Howard  ORL   SF           80    215 September… US      1         \n7 23     Kai Jones    DAL   C            83    221 January 1… BS      2         \n8 26     Xavier Till… BOS   C            80    245 January 1… US      4         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
+    "text": "NBA Roster Data (season 2024-2025)\n\nslice_sample(dat, n = 8)\n\n# A tibble: 8 × 10\n  number player       team  position height weight birth_date country experience\n  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     \n1 30     Seth Curry   CHO   SG           73    185 August 23… US      10        \n2 11     Jaxson Hayes LAL   C            84    220 May 23, 2… US      5         \n3 24     Jalen Picke… DEN   SG           74    202 October 2… US      1         \n4 21     Adama Sanogo CHI   C            81    245 February … ML      1         \n5 0      Aaron Holid… HOU   PG           72    185 September… US      6         \n6 19     Simone Font… DET   SF           79    209 December … IT      2         \n7 9      Nickeil Ale… MIN   SG           77    205 September… CA      5         \n8 14     Moussa Diab… CHO   C            82    210 January 2… FR      2         \n# ℹ 1 more variable: college &lt;chr&gt;\n\n\n\n\nLet’s explore the height of NBA players"
   },
   {
     "objectID": "lectures/18-eda1/slides.html#sanity-checks",
@@ -3556,7 +3556,7 @@
     "href": "lectures/8-control-flow/slides.html#section",
     "title": "Control Flow",
     "section": "",
-    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"silver\""
+    "text": "place &lt;- sample(1:3, size = 1)\n\nif (place == 1) {\n  medal &lt;- \"gold\"\n} else if (place == 2) {\n  medal &lt;- \"silver\"\n} else {\n  medal &lt;- \"bronze\"\n}\n\nmedal\n\n\n\n[1] \"gold\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#college-years",
@@ -3570,7 +3570,7 @@
     "href": "lectures/8-control-flow/slides.html#section-1",
     "title": "Control Flow",
     "section": "",
-    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"junior\""
+    "text": "year &lt;- sample(1:4, size = 1)\n\nif (year == 1) {\n  name &lt;- \"freshman\"\n} else if (year == 2) {\n  name &lt;- \"sophomore\"\n} else if (year == 3) {\n  name &lt;- \"junior\"\n} else {\n  name &lt;- \"senior\"\n}\n\nname\n\n\n\n[1] \"senior\""
   },
   {
     "objectID": "lectures/8-control-flow/slides.html#big-favor",
@@ -3718,7 +3718,7 @@
     "href": "info/about.html",
     "title": "About",
     "section": "",
-    "text": "Instructor: Gaston Sanchez\nLecture: MWF 9am-10am in Lewis Hall 100\nLab:\n\nLab 101, Th 9am-11am, Evans 342 (GSI Drew)\nLab 102, Th 10am-12pm, Evans 340 (GSI Will)\nLab 103, Th 11am-1pm, Evans 342 (GSI Clara)\nLab 104, Th 12pm-2pm, Evans 340 (GSI Will)\nLab 105, Th 1pm-3pm, Evans 342 (GSI Clara)\nLab 106, Th 3pm-5pm, Evans 342 (GSI Drew)\n\nPrerequisites: None\nRequirements: Internet connection and a computer\nCode #: 31203\nUnits: 3\nFinal Exam: Mon May-11th, 7pm-10pm, location TBD.\nDates: Jan-21 / May-01",
+    "text": "Instructor: Gaston Sanchez\nLecture: MWF 9am-10am in Lewis Hall 100\nLab:\n\nLab 101, Th 9am-11am, Evans 342 (GSI Drew)\nLab 102, Th 10am-12pm, Evans 340 (GSI Will)\nLab 103, Th 11am-1pm, Evans 342 (GSI Clara)\nLab 104, Th 12pm-2pm, Evans 340 (GSI Will)\nLab 105, Th 1pm-3pm, Evans 342 (GSI Clara)\nLab 106, Th 3pm-5pm, Evans 342 (GSI Drew)\n\nPrerequisites: None\nRequirements: Internet connection and a computer\nCode #: 31203\nUnits: 3\nFinal Exam: Mon May-11th, 7pm-10pm, Lewis Hall 100.\nDates: Jan-21 / May-01",
     "crumbs": [
       "More",
       "About"
@@ -7086,7 +7086,7 @@
     "href": "lectures/9-functions/slides.html#warning-messages-with-warning",
     "title": "Functions",
     "section": "Warning Messages with warning()",
-    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 5 3"
+    "text": "Warning Messages with warning()\n\nroll_die &lt;- function(n_sides = 6, n_rolls = 1) {\n  if (n_sides &lt;= 0) {\n    warning(\"invalid n_sides, default n_sides = 6\")\n    n_sides = 6\n  }\n  sample(x = 1:n_sides, size = n_rolls, replace = TRUE)\n}\n\n\n\n\n\nroll_die(n_sides = -3, n_rolls = 2)\n\n\n\nWarning in roll_die(n_sides = -3, n_rolls = 2): invalid n_sides, default\nn_sides = 6\n\n\n[1] 3 3"
   },
   {
     "objectID": "lectures/14-dataviz1/slides.html#meet-the-palmer-penguins",
@@ -7296,14 +7296,14 @@
     "href": "lectures/23-date-time1/slides.html#an-r-vector-for-date-times",
     "title": "Dates and Times I",
     "section": "An R vector for date-times",
-    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-27 21:26:19 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1777350380"
+    "text": "An R vector for date-times\nPOSIXct (Portable Operating System Interface Calendar Time) is an atomic vector to store date-times that is built on top of a double vector.\n\n\nnow &lt;- Sys.time()\nnow\n\n\n\n[1] \"2026-04-28 12:19:09 PDT\"\n\n\n\n\n\nclass(now)\n\n\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n\ntypeof(now)\n\n\n\n[1] \"double\"\n\n\n\n\n\n# unix time (when rendering slides)\nunclass(now)\n\n\n\n[1] 1777403950"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "href": "lectures/23-date-time1/slides.html#why-not-just-use-a-double-vector",
     "title": "Dates and Times I",
     "section": "Why not just use a double vector?",
-    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-27 21:26:19 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-27 21:26:20 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-27 21:26:20 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/27/26\""
+    "text": "Why not just use a double vector?\n\n# it prints as a legible string\nnow\n\n\n\n[1] \"2026-04-28 12:19:09 PDT\"\n\n\n\n\n# while respecting arithmetic\nnow + 1\n\n\n\n[1] \"2026-04-28 12:19:10 PDT\"\n\n\n\n\n\n# and other sensible operations\nround(now)\n\n\n\n[1] \"2026-04-28 12:19:10 PDT\"\n\n\n\n\n\n# and makes it easy to use other formats\nformat(now, \"%m/%d/%y\")\n\n\n\n[1] \"04/28/26\""
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#creating-date-time-vectors",
@@ -7338,21 +7338,21 @@
     "href": "lectures/23-date-time1/slides.html#getting",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 27\n\n\n\n\n\nwday(now)\n\n\n\n[1] 2\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Mon\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n\n\n[1] 2026\n\n\n\n\nday(now)\n\n\n\n[1] 28\n\n\n\n\n\nwday(now)\n\n\n\n[1] 3\n\n\n\n\n\nwday(now, label = TRUE)\n\n\n\n[1] Tue\nLevels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#getting-1",
     "href": "lectures/23-date-time1/slides.html#getting-1",
     "title": "Dates and Times I",
     "section": "Getting",
-    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 27\n\n\n\nwday(now)\n\n[1] 2\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Monday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Getting\nYou can extract components of the date-time object using year(), month(), week(), day(), wday(), hour(), etc.\n\nyear(now)\n\n[1] 2026\n\n\n\nday(now)\n\n[1] 28\n\n\n\nwday(now)\n\n[1] 3\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Tuesday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#setting",
     "href": "lectures/23-date-time1/slides.html#setting",
     "title": "Dates and Times I",
     "section": "Setting",
-    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-27 21:26:19 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Sunday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Setting\nYou can set those same components in an existing date-time object using change-in-place notation.\n\n\nyear(now) &lt;- 2025\nnow\n\n\n\n[1] \"2025-04-28 12:19:09 PDT\"\n\n\n\n\n\nwday(now, label = TRUE, abbr = FALSE)\n\n\n\n[1] Monday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "lectures/23-date-time1/slides.html#your-turn",
@@ -8815,14 +8815,14 @@
     "href": "lectures/24-date-time2/slides.html#how-old-is-oski",
     "title": "Dates and Times II",
     "section": "How old is Oski?",
-    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30893 days"
+    "text": "How old is Oski?\nOski, the official mascot for UC Berkeley, was debuted on September 27, 1941, during a freshman rally at the Greek Theatre.\n\n\na &lt;- today()\nb &lt;- ymd(\"1941-09-27\")\nclass(a)\n\n\n\n[1] \"Date\"\n\n\n\n\n\nclass(b)\n\n\n\n[1] \"Date\"\n\n\n\n\n\na - b\n\n\n\nTime difference of 30894 days"
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#durations",
     "href": "lectures/24-date-time2/slides.html#durations",
     "title": "Dates and Times II",
     "section": "Durations",
-    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2669155200s (~84.58 years)\""
+    "text": "Durations\nSubtraction of two base R Date vectors -&gt; difftime vector.\n\n\nclass(a - b)\n\n\n\n[1] \"difftime\"\n\n\n\n\nA difftime can be recorded in many different units, so better to use lubridate::as.duration() to always record it in seconds.\n\n\n\noski_age_sec &lt;- as.duration(a - b)\nclass(oski_age_sec)\n\n\n\n[1] \"Duration\"\nattr(,\"package\")\n[1] \"lubridate\"\n\n\n\n\n\noski_age_sec\n\n\n\n[1] \"2669241600s (~84.58 years)\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#constructing-a-duration",
@@ -8864,7 +8864,7 @@
     "href": "lectures/24-date-time2/slides.html#how-old-will-oski-be",
     "title": "Dates and Times II",
     "section": "How old will Oski be …",
-    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2669155200s (~84.58 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2700712800s (~85.58 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 212d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 212d 0H 0M 0S\""
+    "text": "How old will Oski be …\n\nIn a year?\n\noski_age_sec\n\n\n\n[1] \"2669241600s (~84.58 years)\"\n\n\n\n\n\noski_age_sec + dyears(1) # adding average seconds in a year\n\n\n\n[1] \"2700799200s (~85.58 years)\"\n\n\n\n\n\nas.period(oski_age_sec)\n\n\n\n[1] \"84y 0m 213d 0H 0M 0S\"\n\n\n\n\n\nas.period(oski_age_sec) + years(1)\n\n\n\n[1] \"85y 0m 213d 0H 0M 0S\""
   },
   {
     "objectID": "lectures/24-date-time2/slides.html#intervals",
