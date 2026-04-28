@@ -6,6 +6,12 @@ website:
   site-url: "https://stat133.berkeley.edu/spring-2026/"
   favicon: assets/stat133-hex-logo.png
   google-analytics: G-CES9J82GLL
+  announcement:
+    icon: info-circle
+    dismissable: true
+    content: "Student Data Scrollytelling Contest <a href='https://www.causeweb.org/cause/contests/data-scrollytelling'>More information</a>"
+    type: success
+    position: below-navbar
   page-footer: 
     center:
       - text: About
