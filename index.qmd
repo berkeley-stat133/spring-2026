@@ -545,7 +545,7 @@ Lab 12: [slides](labs/lab12/slides.html) | [PS11](https://bcourses.berkeley.edu/
 #### Description
 [APIs I](lectures/38-apis1/slides.html)
 
-APIs II
+[APIs II](lectures/39-apis2/slides.html)
 
 Lab 14: [__Quiz 6__]{.label-Quiz} | slides
 
