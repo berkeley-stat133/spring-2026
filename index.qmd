@@ -547,7 +547,7 @@ Lab 12: [slides](labs/lab12/slides.html) | [PS11](https://bcourses.berkeley.edu/
 
 [APIs II](lectures/39-apis2/slides.html)
 
-Lab 14: [__Quiz 6__]{.label-Quiz} | slides
+Lab 14: [__Quiz 6__]{.label-Quiz} | [slides](labs/lab14/slides.html)
 
 Closing Lecture
 :::
