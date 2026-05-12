@@ -20,10 +20,9 @@ title: "STAT 133: Concepts in Computing with Data"
 ::::
 
 ::: {.callout-tip icon="false"}
-## Week 15 Announcements
+## Announcements
 
-- [Quiz 6]{.label-Quiz} due Thu 4/30 in lab
-- [Project 6]{.label-Project} due Fri 5/01 by 6PM
+- [Final Exam]{.label-Quiz} on Mon 5/11 (7-10PM), in Lewis Hall 100
 :::
 
 -----
